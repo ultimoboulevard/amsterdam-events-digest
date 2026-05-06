@@ -1,14 +1,13 @@
-name: Weekly Amsterdam Events Digest
+name: Amsterdam Events Pipeline
 
 on:
   schedule:
-    # Every Monday at 04:00 UTC = 06:00 CEST (Amsterdam summer)
-    # In winter (CET) this fires at 05:00 local — close enough.
-    - cron: '0 4 * * 1'
+    # Every day at 04:00 UTC = 06:00 CEST (Amsterdam summer)
+    - cron: '0 4 * * *'
   workflow_dispatch:  # Manual trigger button in GitHub Actions UI
 
 jobs:
-  digest:
+  update:
     runs-on: ubuntu-latest
     permissions:
       contents: write
@@ -29,16 +28,27 @@ jobs:
           python -m pip install --upgrade pip
           pip install -r requirements.txt
 
-      - name: Collect, build & send weekly digest
+      # ── Daily: collect events + update site ──
+      - name: Collect events from all sources
+        run: python main.py collect
+
+      - name: Export events JSON for calendar site
+        run: python export_json.py
+
+      # ── Monday only: build digest + send email ──
+      - name: Check day of week
+        id: check_day
+        run: echo "day=$(date -u +%a)" >> $GITHUB_OUTPUT
+
+      - name: Build & send weekly email digest (Monday only)
+        if: steps.check_day.outputs.day == 'Mon' || github.event_name == 'workflow_dispatch'
         env:
           EMAIL_USER: ${{ secrets.EMAIL_USER }}
           EMAIL_PASS: ${{ secrets.EMAIL_PASS }}
           EMAIL_TO: "domizianafrancescon@gmail.com"
         run: python main.py send
 
-      - name: Export events JSON for calendar site
-        run: python export_json.py
-
+      # ── Daily: persist DB + deploy site ──
       - name: Persist DB back to repo
         run: |
           git config user.name "GitHub Action"
