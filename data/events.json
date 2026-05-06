@@ -1,6 +1,6 @@
 {
-  "generated_at": "2026-05-06T15:01:17.226016",
-  "event_count": 872,
+  "generated_at": "2026-05-06T15:22:08.398828",
+  "event_count": 883,
   "events": [
     {
       "id": "cb101c1a2940e964",
@@ -85,6 +85,24 @@
     {
       "id": "0ac53cb90545e67d",
       "title": "Memoire x 22Night",
+      "date": "2026-05-06T15:00:00",
+      "date_end": "2026-05-08T00:30:00",
+      "venue": "Chin Chin Club",
+      "venue_address": "Rozengracht 133, 1016LV Amsterdam",
+      "event_type": "Club",
+      "artists": [],
+      "genres": [],
+      "price_min": null,
+      "price_max": null,
+      "tickets_url": "",
+      "tickets_status": "available",
+      "source": "ra",
+      "source_url": "https://ra.co/events/2436346",
+      "match": null
+    },
+    {
+      "id": "ac93d544a71caba8",
+      "title": "Memoire",
       "date": "2026-05-06T15:00:00",
       "date_end": "2026-05-08T00:30:00",
       "venue": "Chin Chin Club",
@@ -3173,6 +3191,24 @@
       "match": null
     },
     {
+      "id": "87e6baaaa3d363cb",
+      "title": "Dynasty",
+      "date": "2026-05-09T23:00:00",
+      "date_end": "2026-05-10T05:00:00",
+      "venue": "Chin Chin Club",
+      "venue_address": "Rozengracht 133, 1016LV Amsterdam",
+      "event_type": "Club",
+      "artists": [],
+      "genres": [],
+      "price_min": null,
+      "price_max": null,
+      "tickets_url": "",
+      "tickets_status": "available",
+      "source": "ra",
+      "source_url": "https://ra.co/events/2436385",
+      "match": null
+    },
+    {
       "id": "65b52506678e5b06",
       "title": "The Narrative x Doka Studio with Nedda Sou - John Agesilas - LYLO",
       "date": "2026-05-09T23:59:00",
@@ -3925,6 +3961,24 @@
       "tickets_status": "available",
       "source": "ra",
       "source_url": "https://ra.co/events/2405313",
+      "match": null
+    },
+    {
+      "id": "c861624890dd32d9",
+      "title": "FAM x Give Me Amsterdam",
+      "date": "2026-05-12T23:00:00",
+      "date_end": "2026-05-13T05:00:00",
+      "venue": "Chin Chin Club",
+      "venue_address": "Rozengracht 133, 1016LV Amsterdam",
+      "event_type": "Club",
+      "artists": [],
+      "genres": [],
+      "price_min": null,
+      "price_max": null,
+      "tickets_url": "",
+      "tickets_status": "available",
+      "source": "ra",
+      "source_url": "https://ra.co/events/2436454",
       "match": null
     },
     {
@@ -4706,6 +4760,24 @@
       "tickets_status": "available",
       "source": "paradiso",
       "source_url": "https://www.paradiso.nl/en/program/nombe/2817617",
+      "match": null
+    },
+    {
+      "id": "b8cce81de5a9c91e",
+      "title": "Memoire",
+      "date": "2026-05-14T22:00:00",
+      "date_end": "2026-05-15T05:00:00",
+      "venue": "Chin Chin Club",
+      "venue_address": "Rozengracht 133, 1016LV Amsterdam",
+      "event_type": "Club",
+      "artists": [],
+      "genres": [],
+      "price_min": null,
+      "price_max": null,
+      "tickets_url": "",
+      "tickets_status": "available",
+      "source": "ra",
+      "source_url": "https://ra.co/events/2436359",
       "match": null
     },
     {
@@ -6776,6 +6848,24 @@
       "match": null
     },
     {
+      "id": "e0e4edbabc4d0823",
+      "title": "Dynasty",
+      "date": "2026-05-16T23:00:00",
+      "date_end": "2026-05-17T05:00:00",
+      "venue": "Chin Chin Club",
+      "venue_address": "Rozengracht 133, 1016LV Amsterdam",
+      "event_type": "Club",
+      "artists": [],
+      "genres": [],
+      "price_min": null,
+      "price_max": null,
+      "tickets_url": "",
+      "tickets_status": "available",
+      "source": "ra",
+      "source_url": "https://ra.co/events/2436386",
+      "match": null
+    },
+    {
       "id": "0de5c9ea2c34bcd1",
       "title": "Mantis with Forest Drive West, DB1 (live), Lynne, Mattikk",
       "date": "2026-05-16T23:30:00",
@@ -7622,6 +7712,24 @@
       "match": null
     },
     {
+      "id": "c65d2bd9d0763868",
+      "title": "FAM x New Wave",
+      "date": "2026-05-19T23:00:00",
+      "date_end": "2026-05-20T05:00:00",
+      "venue": "Chin Chin Club",
+      "venue_address": "Rozengracht 133, 1016LV Amsterdam",
+      "event_type": "Club",
+      "artists": [],
+      "genres": [],
+      "price_min": null,
+      "price_max": null,
+      "tickets_url": "",
+      "tickets_status": "available",
+      "source": "ra",
+      "source_url": "https://ra.co/events/2436463",
+      "match": null
+    },
+    {
       "id": "5978a3b72150d081",
       "title": "Techno Tuesday Amsterdam, A.R.T., Dexon, Alix",
       "date": "2026-05-19T23:30:00",
@@ -8250,6 +8358,24 @@
       "tickets_status": "available",
       "source": "ra",
       "source_url": "https://ra.co/events/2431404",
+      "match": null
+    },
+    {
+      "id": "68ba20a67d9103e8",
+      "title": "Memoire",
+      "date": "2026-05-21T23:00:00",
+      "date_end": "2026-05-22T05:00:00",
+      "venue": "Chin Chin Club",
+      "venue_address": "Rozengracht 133, 1016LV Amsterdam",
+      "event_type": "Club",
+      "artists": [],
+      "genres": [],
+      "price_min": null,
+      "price_max": null,
+      "tickets_url": "",
+      "tickets_status": "available",
+      "source": "ra",
+      "source_url": "https://ra.co/events/2436362",
       "match": null
     },
     {
@@ -10071,6 +10197,24 @@
       "tickets_status": "available",
       "source": "paradiso",
       "source_url": "https://www.paradiso.nl/en/program/kurashi/2848523",
+      "match": null
+    },
+    {
+      "id": "043e264da306e837",
+      "title": "Dynasty",
+      "date": "2026-05-23T23:00:00",
+      "date_end": "2026-05-24T05:00:00",
+      "venue": "Chin Chin Club",
+      "venue_address": "Rozengracht 133, 1016LV Amsterdam",
+      "event_type": "Club",
+      "artists": [],
+      "genres": [],
+      "price_min": null,
+      "price_max": null,
+      "tickets_url": "",
+      "tickets_status": "available",
+      "source": "ra",
+      "source_url": "https://ra.co/events/2436390",
       "match": null
     },
     {
@@ -11990,6 +12134,24 @@
       "match": null
     },
     {
+      "id": "a7ae79a8f9e92e89",
+      "title": "Memoire",
+      "date": "2026-05-28T23:00:00",
+      "date_end": "2026-05-29T05:00:00",
+      "venue": "Chin Chin Club",
+      "venue_address": "Rozengracht 133, 1016LV Amsterdam",
+      "event_type": "Club",
+      "artists": [],
+      "genres": [],
+      "price_min": null,
+      "price_max": null,
+      "tickets_url": "",
+      "tickets_status": "available",
+      "source": "ra",
+      "source_url": "https://ra.co/events/2436371",
+      "match": null
+    },
+    {
       "id": "3b25ce496fc5fbbc",
       "title": "No Barrier",
       "date": "2026-05-29T00:00:00",
@@ -13733,6 +13895,24 @@
       "match": null
     },
     {
+      "id": "5f1af1f354e2f727",
+      "title": "Dynasty",
+      "date": "2026-05-30T23:00:00",
+      "date_end": "2026-05-31T05:00:00",
+      "venue": "Chin Chin Club",
+      "venue_address": "Rozengracht 133, 1016LV Amsterdam",
+      "event_type": "Club",
+      "artists": [],
+      "genres": [],
+      "price_min": null,
+      "price_max": null,
+      "tickets_url": "",
+      "tickets_status": "available",
+      "source": "ra",
+      "source_url": "https://ra.co/events/2436392",
+      "match": null
+    },
+    {
       "id": "a1f354a216d5405e",
       "title": "Pacific Ondergronds & KRUISPUNT present 3523 (Andre & Tommy's b-day bash)",
       "date": "2026-05-30T23:30:00",
@@ -14856,7 +15036,7 @@
     {
       "id": "8039ab457bfa5e33",
       "title": "Mokum Records",
-      "date": "2026-06-05T14:58:00",
+      "date": "2026-06-05T15:21:00",
       "date_end": null,
       "venue": "Paradiso",
       "venue_address": "Paradiso - Grote Zaal, Paradiso - Kelder",
@@ -17573,6 +17753,33 @@
       "tickets_status": "available",
       "source": "paradiso",
       "source_url": "https://www.paradiso.nl/en/program/tropikali-afterparty/2874152",
+      "match": null
+    },
+    {
+      "id": "5a2af9eba33cb402",
+      "title": "Club Roto",
+      "date": "2026-06-13T23:00:00",
+      "date_end": null,
+      "venue": "Paradiso",
+      "venue_address": "Paradiso - Grote Zaal, Paradiso - Kelder",
+      "event_type": "Club",
+      "artists": [
+        "Jesse Maas",
+        "Noach",
+        "Mateo Dufour",
+        "Samuel Deep",
+        "Hosted by Scala"
+      ],
+      "genres": [
+        "Electronic",
+        "Club"
+      ],
+      "price_min": null,
+      "price_max": null,
+      "tickets_url": "https://tickets.paradiso.nl/610bfc67ace24fd891c2f43259a6f4b2",
+      "tickets_status": "available",
+      "source": "paradiso",
+      "source_url": "https://www.paradiso.nl/en/program/club-roto/2890952",
       "match": null
     },
     {
