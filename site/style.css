@@ -117,10 +117,8 @@ body {
     display: flex;
     gap: 8px;
     align-items: center;
-    overflow-x: auto;
-    scrollbar-width: none;
+    flex-wrap: wrap;
 }
-.filters-inner::-webkit-scrollbar { display: none; }
 
 .dropdown { position: relative; }
 
@@ -172,7 +170,7 @@ body {
     border-radius: var(--radius);
     padding: 8px;
     box-shadow: var(--shadow-lg);
-    z-index: 300;
+    z-index: 9999;
 }
 .dropdown.open .dropdown-menu { display: block; }
 
