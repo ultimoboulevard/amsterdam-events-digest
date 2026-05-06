@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Amsterdam Events Calendar</title>
+    <meta name="description" content="Interactive monthly calendar of live music, club nights, and cultural events in Amsterdam.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- ── Header ── -->
+    <header id="site-header">
+        <div class="header-inner">
+            <h1 class="logo">🎛️ Amsterdam Events</h1>
+            <div class="search-box">
+                <svg class="search-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/></svg>
+                <input type="text" id="search-input" placeholder="Search events, artists, venues…" autocomplete="off">
+            </div>
+        </div>
+    </header>
+
+    <!-- ── Filters ── -->
+    <div class="filters-bar" id="filters-bar">
+        <div class="filters-inner">
+            <div class="dropdown" id="dd-venue">
+                <button class="dropdown-toggle" type="button">Venue <span class="dd-badge" data-count="0"></span></button>
+                <div class="dropdown-menu" id="menu-venue"></div>
+            </div>
+            <div class="dropdown" id="dd-genre">
+                <button class="dropdown-toggle" type="button">Genre <span class="dd-badge" data-count="0"></span></button>
+                <div class="dropdown-menu" id="menu-genre"></div>
+            </div>
+            <div class="dropdown" id="dd-type">
+                <button class="dropdown-toggle" type="button">Type <span class="dd-badge" data-count="0"></span></button>
+                <div class="dropdown-menu" id="menu-type"></div>
+            </div>
+            <button class="fav-toggle" id="btn-favorites" type="button">⭐ Favorites</button>
+            <button class="clear-btn hidden" id="btn-clear" type="button">✕ Clear</button>
+        </div>
+    </div>
+
+    <!-- ── Main ── -->
+    <main class="container">
+        <!-- Calendar -->
+        <section class="calendar-section" id="calendar-section">
+            <div class="cal-nav">
+                <button id="btn-prev" class="nav-btn" type="button" aria-label="Previous month">◀</button>
+                <h2 id="cal-title" class="cal-title">May 2026</h2>
+                <button id="btn-next" class="nav-btn" type="button" aria-label="Next month">▶</button>
+                <button id="btn-today" class="today-btn" type="button">Today</button>
+            </div>
+            <div class="cal-grid" id="cal-grid">
+                <div class="cal-hdr">Mon</div>
+                <div class="cal-hdr">Tue</div>
+                <div class="cal-hdr">Wed</div>
+                <div class="cal-hdr">Thu</div>
+                <div class="cal-hdr">Fri</div>
+                <div class="cal-hdr">Sat</div>
+                <div class="cal-hdr">Sun</div>
+            </div>
+        </section>
+
+        <!-- Day Detail Panel -->
+        <section class="day-detail" id="day-detail">
+            <div class="detail-header">
+                <h3 id="detail-title">Select a day to see events</h3>
+                <span class="detail-count" id="detail-count"></span>
+            </div>
+            <div class="events-grid" id="events-grid"></div>
+        </section>
+
+        <!-- Stats -->
+        <section class="stats-section" id="stats-section">
+            <div class="stat-card"><span class="stat-val" id="stat-total">0</span><span class="stat-lbl">Events</span></div>
+            <div class="stat-card"><span class="stat-val" id="stat-venues">0</span><span class="stat-lbl">Venues</span></div>
+            <div class="stat-card"><span class="stat-val" id="stat-days">0</span><span class="stat-lbl">Days</span></div>
+            <div class="stat-card"><span class="stat-val" id="stat-matches">0</span><span class="stat-lbl">Matches</span></div>
+        </section>
+    </main>
+
+    <!-- ── Footer ── -->
+    <footer id="site-footer">
+        <p>Amsterdam Event Aggregator · Auto-updated weekly via GitHub Actions</p>
+        <p class="gen-time" id="gen-time"></p>
+    </footer>
+
+    <script src="app.js"></script>
+</body>
+</html>
