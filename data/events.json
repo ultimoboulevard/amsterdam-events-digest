@@ -1,6 +1,6 @@
 {
-  "generated_at": "2026-05-06T15:22:08.398828",
-  "event_count": 883,
+  "generated_at": "2026-05-06T15:33:56.775107",
+  "event_count": 884,
   "events": [
     {
       "id": "cb101c1a2940e964",
@@ -11343,6 +11343,24 @@
       "match": null
     },
     {
+      "id": "dbee03734949b22a",
+      "title": "FAM x Pequeno's Latin Night",
+      "date": "2026-05-26T23:00:00",
+      "date_end": "2026-05-27T05:00:00",
+      "venue": "Chin Chin Club",
+      "venue_address": "Rozengracht 133, 1016LV Amsterdam",
+      "event_type": "Club",
+      "artists": [],
+      "genres": [],
+      "price_min": null,
+      "price_max": null,
+      "tickets_url": "",
+      "tickets_status": "available",
+      "source": "ra",
+      "source_url": "https://ra.co/events/2436470",
+      "match": null
+    },
+    {
       "id": "577b9c8d8ba890d0",
       "title": "Techno Tuesday Amsterdam, Stefano Richetta & Dexon",
       "date": "2026-05-26T23:30:00",
@@ -14192,12 +14210,14 @@
     {
       "id": "f1cc3c681ffef07c",
       "title": "SKDG - BRET",
-      "date": "2026-05-31T15:00:00",
-      "date_end": "2026-06-01T03:00:00",
+      "date": "2026-05-31T17:00:00",
+      "date_end": "2026-06-01T02:00:00",
       "venue": "BRET",
       "venue_address": "Orlyplein 76, 1043 DP Amsterdam, Netherlands",
       "event_type": "Club",
-      "artists": [],
+      "artists": [
+        "Lasse Top"
+      ],
       "genres": [],
       "price_min": null,
       "price_max": null,
@@ -15036,7 +15056,7 @@
     {
       "id": "8039ab457bfa5e33",
       "title": "Mokum Records",
-      "date": "2026-06-05T15:21:00",
+      "date": "2026-06-05T15:33:00",
       "date_end": null,
       "venue": "Paradiso",
       "venue_address": "Paradiso - Grote Zaal, Paradiso - Kelder",
