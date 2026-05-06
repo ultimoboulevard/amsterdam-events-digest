@@ -67,11 +67,41 @@ body {
     text-shadow: 0 2px 12px rgba(0,0,0,0.3);
 }
 
+.header-actions {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    flex: 1;
+    justify-content: flex-end;
+}
+
 .search-box {
     position: relative;
     flex: 1;
     max-width: 340px;
     min-width: 180px;
+}
+
+.refresh-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+    padding: 9px 16px;
+    background: rgba(255,255,255,0.15);
+    border: 1px solid rgba(255,255,255,0.25);
+    border-radius: 24px;
+    color: #fff;
+    font-family: inherit;
+    font-size: 0.8rem;
+    font-weight: 600;
+    text-decoration: none;
+    white-space: nowrap;
+    transition: 0.2s ease;
+    backdrop-filter: blur(8px);
+}
+.refresh-btn:hover {
+    background: rgba(255,255,255,0.25);
+    transform: scale(1.05);
 }
 
 .search-icon {
