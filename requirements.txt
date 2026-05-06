@@ -1,0 +1,4 @@
+beautifulsoup4>=4.12
+httpx>=0.25
+thefuzz>=0.22
+python-Levenshtein>=0.25
