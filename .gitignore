@@ -4,3 +4,4 @@ output/
 .env
 venv/
 .DS_Store
+site/data/

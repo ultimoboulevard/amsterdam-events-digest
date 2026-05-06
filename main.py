@@ -18,8 +18,10 @@ import logging
 import sys
 import webbrowser
 from datetime import datetime
+from pathlib import Path
 
 from config import OUTPUT_DIR
+from export_json import export_events_json, SITE_DIR
 from db import init_db, upsert_many, get_upcoming_events, get_stats
 from html_builder import build_html_digest
 from mailer import send_digest
@@ -112,6 +114,19 @@ def cmd_send(args: argparse.Namespace) -> None:
         sys.exit(1)
 
 
+def cmd_site(args: argparse.Namespace) -> None:
+    """Export events JSON and open the static site locally."""
+    args.source = None
+    cmd_collect(args)
+    path = export_events_json(days=45)
+    log.info("JSON exported: %s", path)
+
+    index = SITE_DIR / "index.html"
+    if index.exists():
+        webbrowser.open(f"file://{index.resolve()}")
+        log.info("Opened site in browser")
+
+
 def cmd_stats(args: argparse.Namespace) -> None:
     """Show database stats."""
     init_db()
@@ -156,6 +171,10 @@ def main() -> None:
     # send (used by GitHub Actions)
     p_send = sub.add_parser("send", help="Collect this week + digest + email")
     p_send.set_defaults(func=cmd_send)
+
+    # site
+    p_site = sub.add_parser("site", help="Collect + export JSON + open calendar site")
+    p_site.set_defaults(func=cmd_site)
 
     # stats
     p_stats = sub.add_parser("stats", help="Show database statistics")

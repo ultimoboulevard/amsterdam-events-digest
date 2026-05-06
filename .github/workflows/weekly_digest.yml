@@ -12,6 +12,7 @@ jobs:
     runs-on: ubuntu-latest
     permissions:
       contents: write
+      pages: write
     steps:
       - name: Checkout code
         uses: actions/checkout@v5
@@ -35,6 +36,9 @@ jobs:
           EMAIL_TO: "domizianafrancescon@gmail.com"
         run: python main.py send
 
+      - name: Export events JSON for calendar site
+        run: python export_json.py
+
       - name: Persist DB back to repo
         run: |
           git config user.name "GitHub Action"
@@ -42,3 +46,9 @@ jobs:
           git add data/events.db data/lastfm_cache.db
           git commit -m "Auto-update DB: $(date +'%Y-%m-%d')" || echo "No changes"
           git push
+
+      - name: Deploy calendar site to GitHub Pages
+        uses: peaceiris/actions-gh-pages@v4
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./site
