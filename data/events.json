@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-05-06T15:33:56.775107",
+  "generated_at": "2026-05-06T15:53:50.729761",
   "event_count": 884,
   "events": [
     {
@@ -11671,7 +11671,14 @@
       "venue": "Melkweg",
       "venue_address": "Lijnbaansgracht 234A, Amsterdam",
       "event_type": "Concert",
-      "artists": [],
+      "artists": [
+        "Bokoedro",
+        "xCarra",
+        "Trevv",
+        "YunGNillio",
+        "Maybens",
+        "Skye Indy"
+      ],
       "genres": [],
       "price_min": null,
       "price_max": null,
@@ -15056,7 +15063,7 @@
     {
       "id": "8039ab457bfa5e33",
       "title": "Mokum Records",
-      "date": "2026-06-05T15:33:00",
+      "date": "2026-06-05T15:53:00",
       "date_end": null,
       "venue": "Paradiso",
       "venue_address": "Paradiso - Grote Zaal, Paradiso - Kelder",
