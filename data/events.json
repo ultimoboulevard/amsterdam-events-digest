@@ -1,462 +1,7 @@
 {
-  "generated_at": "2026-05-06T16:04:42.098692",
-  "event_count": 884,
+  "generated_at": "2026-05-07T06:39:41.358099",
+  "event_count": 891,
   "events": [
-    {
-      "id": "cb101c1a2940e964",
-      "title": "DISSOLVE",
-      "date": "2026-05-06T00:00:00",
-      "date_end": null,
-      "venue": "Melkweg",
-      "venue_address": "Lijnbaansgracht 234A, Amsterdam",
-      "event_type": "Concert",
-      "artists": [
-        "Hüzyn",
-        "John Doe",
-        "Yan Lâle",
-        "Cavolo Nero",
-        "Icra"
-      ],
-      "genres": [],
-      "price_min": null,
-      "price_max": null,
-      "tickets_url": "",
-      "tickets_status": "available",
-      "source": "melkweg",
-      "source_url": "https://www.melkweg.nl/en/agenda/dissolve-06-05-2026/",
-      "match": null
-    },
-    {
-      "id": "69cf2c9ff92d5eb3",
-      "title": "Move Ya Body: The Birth of House (2025)",
-      "date": "2026-05-06T00:00:00",
-      "date_end": null,
-      "venue": "Melkweg",
-      "venue_address": "Lijnbaansgracht 234A, Amsterdam",
-      "event_type": "Film",
-      "artists": [],
-      "genres": [],
-      "price_min": null,
-      "price_max": null,
-      "tickets_url": "",
-      "tickets_status": "available",
-      "source": "melkweg",
-      "source_url": "https://www.melkweg.nl/en/agenda/move-ya-body-the-birth-of-house-2025-06-05-2026/",
-      "match": null
-    },
-    {
-      "id": "6f86367d634cde86",
-      "title": "Jessica Baio",
-      "date": "2026-05-06T00:00:00",
-      "date_end": null,
-      "venue": "Melkweg",
-      "venue_address": "Lijnbaansgracht 234A, Amsterdam",
-      "event_type": "Concert",
-      "artists": [
-        "Odhrán Murphy"
-      ],
-      "genres": [],
-      "price_min": null,
-      "price_max": null,
-      "tickets_url": "",
-      "tickets_status": "available",
-      "source": "melkweg",
-      "source_url": "https://www.melkweg.nl/en/agenda/jessica-baio-06-05-2026/",
-      "match": null
-    },
-    {
-      "id": "20d497fc7082479c",
-      "title": "Lunch at Café Gilde",
-      "date": "2026-05-06T12:00:00",
-      "date_end": null,
-      "venue": "OT301",
-      "venue_address": "",
-      "event_type": "",
-      "artists": [],
-      "genres": [],
-      "price_min": 0.0,
-      "price_max": null,
-      "tickets_url": "",
-      "tickets_status": "available",
-      "source": "amsterdam_alt",
-      "source_url": "https://www.amsterdamalternative.nl/agenda/21195",
-      "match": null
-    },
-    {
-      "id": "0ac53cb90545e67d",
-      "title": "Memoire x 22Night",
-      "date": "2026-05-06T15:00:00",
-      "date_end": "2026-05-08T00:30:00",
-      "venue": "Chin Chin Club",
-      "venue_address": "Rozengracht 133, 1016LV Amsterdam",
-      "event_type": "Club",
-      "artists": [],
-      "genres": [],
-      "price_min": null,
-      "price_max": null,
-      "tickets_url": "",
-      "tickets_status": "available",
-      "source": "ra",
-      "source_url": "https://ra.co/events/2436346",
-      "match": null
-    },
-    {
-      "id": "ac93d544a71caba8",
-      "title": "Memoire",
-      "date": "2026-05-06T15:00:00",
-      "date_end": "2026-05-08T00:30:00",
-      "venue": "Chin Chin Club",
-      "venue_address": "Rozengracht 133, 1016LV Amsterdam",
-      "event_type": "Club",
-      "artists": [],
-      "genres": [],
-      "price_min": null,
-      "price_max": null,
-      "tickets_url": "",
-      "tickets_status": "available",
-      "source": "ra",
-      "source_url": "https://ra.co/events/2436346",
-      "match": null
-    },
-    {
-      "id": "d2dc237633f3c898",
-      "title": "Stomp 101",
-      "date": "2026-05-06T17:00:00",
-      "date_end": null,
-      "venue": "Plantage Dok",
-      "venue_address": "",
-      "event_type": "",
-      "artists": [],
-      "genres": [],
-      "price_min": 0.0,
-      "price_max": null,
-      "tickets_url": "",
-      "tickets_status": "available",
-      "source": "amsterdam_alt",
-      "source_url": "https://www.amsterdamalternative.nl/agenda/21884",
-      "match": null
-    },
-    {
-      "id": "751b083f0bf5d556",
-      "title": "Zu Hause - Amsterdam",
-      "date": "2026-05-06T17:00:00",
-      "date_end": "2026-05-06T23:59:00",
-      "venue": "CREA",
-      "venue_address": "Nieuwe Achtergracht 170; 1018 WV Amsterdam; The Netherlands",
-      "event_type": "Club",
-      "artists": [
-        "Larry De Kat",
-        "Judoc",
-        "Munay",
-        "Major K"
-      ],
-      "genres": [],
-      "price_min": null,
-      "price_max": null,
-      "tickets_url": "",
-      "tickets_status": "available",
-      "source": "ra",
-      "source_url": "https://ra.co/events/2428175",
-      "match": null
-    },
-    {
-      "id": "79ae8a4e8cb102f7",
-      "title": "common ground: Welcome",
-      "date": "2026-05-06T18:00:00",
-      "date_end": null,
-      "venue": "[ woonruimte coöperatief ]",
-      "venue_address": "",
-      "event_type": "",
-      "artists": [],
-      "genres": [],
-      "price_min": 0.0,
-      "price_max": null,
-      "tickets_url": "",
-      "tickets_status": "available",
-      "source": "amsterdam_alt",
-      "source_url": "https://www.amsterdamalternative.nl/agenda/21799",
-      "match": null
-    },
-    {
-      "id": "f3841402c6118204",
-      "title": "World’s Appreciated Kitsch proudly presents: BAD BREEDING (UK) + KLONNS (JP) + ZENOCIDE (JP) + ROBBER",
-      "date": "2026-05-06T18:00:00",
-      "date_end": null,
-      "venue": "OCCII",
-      "venue_address": "",
-      "event_type": "",
-      "artists": [],
-      "genres": [],
-      "price_min": 10.0,
-      "price_max": null,
-      "tickets_url": "",
-      "tickets_status": "available",
-      "source": "amsterdam_alt",
-      "source_url": "https://www.amsterdamalternative.nl/agenda/21595",
-      "match": null
-    },
-    {
-      "id": "6c4101ccd5f84f9e",
-      "title": "Brazil Unfiltered: My Foreign Land (Minha Terra Estrangeira)",
-      "date": "2026-05-06T18:30:00",
-      "date_end": null,
-      "venue": "Filmhuis Cavia",
-      "venue_address": "",
-      "event_type": "",
-      "artists": [],
-      "genres": [],
-      "price_min": 5.0,
-      "price_max": null,
-      "tickets_url": "",
-      "tickets_status": "available",
-      "source": "amsterdam_alt",
-      "source_url": "https://www.amsterdamalternative.nl/agenda/21418",
-      "match": null
-    },
-    {
-      "id": "a945e305d1eda9ea",
-      "title": "TEMPERATURA",
-      "date": "2026-05-06T18:30:00",
-      "date_end": null,
-      "venue": "Bajesdorp - GROND",
-      "venue_address": "",
-      "event_type": "",
-      "artists": [],
-      "genres": [],
-      "price_min": 10.0,
-      "price_max": null,
-      "tickets_url": "",
-      "tickets_status": "available",
-      "source": "amsterdam_alt",
-      "source_url": "https://www.amsterdamalternative.nl/agenda/21817",
-      "match": null
-    },
-    {
-      "id": "eb5a1ef1043dd663",
-      "title": "Songcycle for a Sad Clown",
-      "date": "2026-05-06T18:30:00",
-      "date_end": null,
-      "venue": "Splendor",
-      "venue_address": "",
-      "event_type": "",
-      "artists": [],
-      "genres": [],
-      "price_min": 8.0,
-      "price_max": null,
-      "tickets_url": "",
-      "tickets_status": "available",
-      "source": "amsterdam_alt",
-      "source_url": "https://www.amsterdamalternative.nl/agenda/21897",
-      "match": null
-    },
-    {
-      "id": "8afce58edfb9896f",
-      "title": "Herres op Woensdag",
-      "date": "2026-05-06T19:00:00",
-      "date_end": null,
-      "venue": "Maloe Melo",
-      "venue_address": "",
-      "event_type": "",
-      "artists": [],
-      "genres": [],
-      "price_min": 7.0,
-      "price_max": null,
-      "tickets_url": "",
-      "tickets_status": "available",
-      "source": "amsterdam_alt",
-      "source_url": "https://www.amsterdamalternative.nl/agenda/21733",
-      "match": null
-    },
-    {
-      "id": "adfe8601f498f775",
-      "title": "Kes",
-      "date": "2026-05-06T20:30:00",
-      "date_end": null,
-      "venue": "Paradiso",
-      "venue_address": "Paradiso - Grote Zaal",
-      "event_type": "Concert",
-      "artists": [
-        "Kes",
-        "Coutain"
-      ],
-      "genres": [
-        "Concert",
-        "Pop",
-        "Afro / Reggae / Dancehall / Latin",
-        "Hip hop / R&B"
-      ],
-      "price_min": null,
-      "price_max": null,
-      "tickets_url": "https://tickets.paradiso.nl/6a80450488cc48ffa5a19103dcd669d9",
-      "tickets_status": "available",
-      "source": "paradiso",
-      "source_url": "https://www.paradiso.nl/en/program/kes/2847681",
-      "match": null
-    },
-    {
-      "id": "ee13049e5576ef1a",
-      "title": "Bella Kay",
-      "date": "2026-05-06T20:30:00",
-      "date_end": null,
-      "venue": "Tolhuistuin",
-      "venue_address": "Tolhuistuin - Club",
-      "event_type": "Concert",
-      "artists": [
-        "Bella Kay",
-        "Leonie Biney"
-      ],
-      "genres": [
-        "Concert",
-        "Pop",
-        "Singer-songwriter / Folk"
-      ],
-      "price_min": null,
-      "price_max": null,
-      "tickets_url": "https://tickets.paradiso.nl/e1c5b6a392c54dbabe7676fceb6b672c",
-      "tickets_status": "changeofvenue",
-      "source": "paradiso",
-      "source_url": "https://www.paradiso.nl/en/program/bella-kay/2855448",
-      "match": null
-    },
-    {
-      "id": "daf3f3129d63b7b0",
-      "title": "Grade 2",
-      "date": "2026-05-06T21:30:00",
-      "date_end": null,
-      "venue": "Paradiso",
-      "venue_address": "Paradiso - Boven Zaal",
-      "event_type": "Concert",
-      "artists": [
-        "Grade 2"
-      ],
-      "genres": [
-        "Concert",
-        "Rock",
-        "Alternative / Indie",
-        "Punk / Noise"
-      ],
-      "price_min": null,
-      "price_max": null,
-      "tickets_url": "https://tickets.paradiso.nl/c50f7ef117154549a8075ed3330f6192",
-      "tickets_status": "available",
-      "source": "paradiso",
-      "source_url": "https://www.paradiso.nl/en/program/grade-2/2827922",
-      "match": null
-    },
-    {
-      "id": "f8cef0aa63b4379c",
-      "title": "RAVELAND x 20kHz: Groove, Bounce  and Neo Rave",
-      "date": "2026-05-06T23:00:00",
-      "date_end": "2026-05-07T04:00:00",
-      "venue": "John Doe",
-      "venue_address": "Rembrandtplein 31, 1017 CT Amsterdam, Netherlands",
-      "event_type": "Club",
-      "artists": [
-        "BVNNII"
-      ],
-      "genres": [],
-      "price_min": null,
-      "price_max": null,
-      "tickets_url": "",
-      "tickets_status": "available",
-      "source": "ra",
-      "source_url": "https://ra.co/events/2377152",
-      "match": null
-    },
-    {
-      "id": "41097ade204fb7ca",
-      "title": "RAVING CHARLIE: Hard Techno / Rave w/ UTOPIA / POKEDECKS / DYLØNE / PURE2",
-      "date": "2026-05-06T23:00:00",
-      "date_end": "2026-05-07T04:00:00",
-      "venue": "nachbar",
-      "venue_address": "Nieuwezijds Voorburgwal 169a",
-      "event_type": "Club",
-      "artists": [],
-      "genres": [],
-      "price_min": null,
-      "price_max": null,
-      "tickets_url": "",
-      "tickets_status": "available",
-      "source": "ra",
-      "source_url": "https://ra.co/events/2396831",
-      "match": null
-    },
-    {
-      "id": "01dc2ac6361db7b9",
-      "title": "Public Image Ltd.",
-      "date": "2026-05-07T00:00:00",
-      "date_end": null,
-      "venue": "Melkweg",
-      "venue_address": "Lijnbaansgracht 234A, Amsterdam",
-      "event_type": "Concert",
-      "artists": [],
-      "genres": [],
-      "price_min": null,
-      "price_max": null,
-      "tickets_url": "",
-      "tickets_status": "available",
-      "source": "melkweg",
-      "source_url": "https://www.melkweg.nl/en/agenda/public-image-ltd-07-05-2026/",
-      "match": {
-        "type": "Library Match",
-        "reason": "In your TIDAL library",
-        "score": 1
-      }
-    },
-    {
-      "id": "35b45a03aaa1fc55",
-      "title": "Summer Wars (2009)",
-      "date": "2026-05-07T00:00:00",
-      "date_end": null,
-      "venue": "Melkweg",
-      "venue_address": "Lijnbaansgracht 234A, Amsterdam",
-      "event_type": "Film",
-      "artists": [],
-      "genres": [],
-      "price_min": null,
-      "price_max": null,
-      "tickets_url": "",
-      "tickets_status": "available",
-      "source": "melkweg",
-      "source_url": "https://www.melkweg.nl/en/agenda/summer-wars-2009-07-05-2026/",
-      "match": null
-    },
-    {
-      "id": "a23b379189e912b4",
-      "title": "Robert Jon & The Wreck",
-      "date": "2026-05-07T00:00:00",
-      "date_end": null,
-      "venue": "Melkweg",
-      "venue_address": "Lijnbaansgracht 234A, Amsterdam",
-      "event_type": "Concert",
-      "artists": [],
-      "genres": [],
-      "price_min": null,
-      "price_max": null,
-      "tickets_url": "",
-      "tickets_status": "available",
-      "source": "melkweg",
-      "source_url": "https://www.melkweg.nl/en/agenda/robert-jon-the-wreck-07-05-2026/",
-      "match": null
-    },
-    {
-      "id": "14ab3195684b1f50",
-      "title": "Billie Eilish - Hit Me Hard and Soft: The Tour (2026)",
-      "date": "2026-05-07T00:00:00",
-      "date_end": null,
-      "venue": "Melkweg",
-      "venue_address": "Lijnbaansgracht 234A, Amsterdam",
-      "event_type": "Film",
-      "artists": [],
-      "genres": [],
-      "price_min": null,
-      "price_max": null,
-      "tickets_url": "",
-      "tickets_status": "available",
-      "source": "melkweg",
-      "source_url": "https://www.melkweg.nl/en/agenda/billie-eilish-hit-me-hard-and-soft-the-tour-2026-07-05-2026/",
-      "match": null
-    },
     {
       "id": "deaca7401f9645ec",
       "title": "Lunch at Café Gilde",
@@ -602,6 +147,55 @@
       "match": null
     },
     {
+      "id": "01dc2ac6361db7b9",
+      "title": "Public Image Ltd.",
+      "date": "2026-05-07T19:00:00",
+      "date_end": null,
+      "venue": "Melkweg",
+      "venue_address": "Lijnbaansgracht 234A, Amsterdam",
+      "event_type": "Concert",
+      "artists": [],
+      "genres": [
+        "Postpunk",
+        "Experimental",
+        "Alternative rock",
+        "Heavy"
+      ],
+      "price_min": null,
+      "price_max": null,
+      "tickets_url": "",
+      "tickets_status": "available",
+      "source": "melkweg",
+      "source_url": "https://www.melkweg.nl/en/agenda/public-image-ltd-07-05-2026",
+      "match": {
+        "type": "Library Match",
+        "reason": "In your TIDAL library",
+        "score": 1
+      }
+    },
+    {
+      "id": "35b45a03aaa1fc55",
+      "title": "Summer Wars (2009)",
+      "date": "2026-05-07T19:00:00",
+      "date_end": "2026-05-07T21:00:00",
+      "venue": "Melkweg",
+      "venue_address": "Lijnbaansgracht 234A, Amsterdam",
+      "event_type": "Film",
+      "artists": [],
+      "genres": [
+        "Anime",
+        "Japan",
+        "Sci-fi"
+      ],
+      "price_min": null,
+      "price_max": null,
+      "tickets_url": "",
+      "tickets_status": "available",
+      "source": "melkweg",
+      "source_url": "https://www.melkweg.nl/en/agenda/summer-wars-2009-07-05-2026",
+      "match": null
+    },
+    {
       "id": "710d3ac83ac08bc2",
       "title": "STC #48",
       "date": "2026-05-07T19:00:00",
@@ -644,6 +238,29 @@
       "tickets_status": "available",
       "source": "paradiso",
       "source_url": "https://www.paradiso.nl/en/program/astronaut/2696166",
+      "match": null
+    },
+    {
+      "id": "a23b379189e912b4",
+      "title": "Robert Jon & The Wreck",
+      "date": "2026-05-07T19:30:00",
+      "date_end": null,
+      "venue": "Melkweg",
+      "venue_address": "Lijnbaansgracht 234A, Amsterdam",
+      "event_type": "Concert",
+      "artists": [],
+      "genres": [
+        "Southern",
+        "Blues rock",
+        "Country",
+        "Roots"
+      ],
+      "price_min": null,
+      "price_max": null,
+      "tickets_url": "",
+      "tickets_status": "available",
+      "source": "melkweg",
+      "source_url": "https://www.melkweg.nl/en/agenda/robert-jon-the-wreck-07-05-2026",
       "match": null
     },
     {
@@ -813,6 +430,28 @@
       "match": null
     },
     {
+      "id": "14ab3195684b1f50",
+      "title": "Billie Eilish - Hit Me Hard and Soft: The Tour (2026)",
+      "date": "2026-05-07T21:15:00",
+      "date_end": "2026-05-07T23:15:00",
+      "venue": "Melkweg",
+      "venue_address": "Lijnbaansgracht 234A, Amsterdam",
+      "event_type": "Film",
+      "artists": [],
+      "genres": [
+        "Concert film",
+        "Electro pop",
+        "Pop"
+      ],
+      "price_min": null,
+      "price_max": null,
+      "tickets_url": "",
+      "tickets_status": "available",
+      "source": "melkweg",
+      "source_url": "https://www.melkweg.nl/en/agenda/billie-eilish-hit-me-hard-and-soft-the-tour-2026-07-05-2026",
+      "match": null
+    },
+    {
       "id": "6b7c4e2196fe358e",
       "title": "Trinix",
       "date": "2026-05-07T21:30:00",
@@ -931,78 +570,6 @@
       "tickets_status": "available",
       "source": "ra",
       "source_url": "https://ra.co/events/2434291",
-      "match": null
-    },
-    {
-      "id": "89193aca530f9b32",
-      "title": "VroegZat",
-      "date": "2026-05-08T00:00:00",
-      "date_end": null,
-      "venue": "Melkweg",
-      "venue_address": "Lijnbaansgracht 234A, Amsterdam",
-      "event_type": "Club",
-      "artists": [],
-      "genres": [],
-      "price_min": null,
-      "price_max": null,
-      "tickets_url": "",
-      "tickets_status": "available",
-      "source": "melkweg",
-      "source_url": "https://www.melkweg.nl/en/agenda/vroegzat-08-05-2026/",
-      "match": null
-    },
-    {
-      "id": "9439317d5657a356",
-      "title": "Billie Eilish - Hit Me Hard and Soft: The Tour (2026)",
-      "date": "2026-05-08T00:00:00",
-      "date_end": null,
-      "venue": "Melkweg",
-      "venue_address": "Lijnbaansgracht 234A, Amsterdam",
-      "event_type": "Film",
-      "artists": [],
-      "genres": [],
-      "price_min": null,
-      "price_max": null,
-      "tickets_url": "",
-      "tickets_status": "available",
-      "source": "melkweg",
-      "source_url": "https://www.melkweg.nl/en/agenda/billie-eilish-hit-me-hard-and-soft-the-tour-2026-08-05-2026-1/",
-      "match": null
-    },
-    {
-      "id": "bba51aa62f2f0d0e",
-      "title": "Van Pletzen / Early B",
-      "date": "2026-05-08T00:00:00",
-      "date_end": null,
-      "venue": "Melkweg",
-      "venue_address": "Lijnbaansgracht 234A, Amsterdam",
-      "event_type": "Concert",
-      "artists": [],
-      "genres": [],
-      "price_min": null,
-      "price_max": null,
-      "tickets_url": "",
-      "tickets_status": "available",
-      "source": "melkweg",
-      "source_url": "https://www.melkweg.nl/en/agenda/van-pletzen-08-05-2026/",
-      "match": null
-    },
-    {
-      "id": "3686b6e38a87e769",
-      "title": "High Tea presents Souped Up Amsterdam",
-      "date": "2026-05-08T00:00:00",
-      "date_end": null,
-      "venue": "Melkweg",
-      "venue_address": "Lijnbaansgracht 234A, Amsterdam",
-      "event_type": "Club",
-      "artists": [],
-      "genres": [],
-      "price_min": null,
-      "price_max": null,
-      "tickets_url": "",
-      "tickets_status": "available",
-      "source": "melkweg",
-      "source_url": "https://www.melkweg.nl/en/agenda/high-tea-presents-souped-up-amsterdam-08-05-2026/",
       "match": null
     },
     {
@@ -1240,6 +807,28 @@
       "match": null
     },
     {
+      "id": "89193aca530f9b32",
+      "title": "VroegZat",
+      "date": "2026-05-08T19:00:00",
+      "date_end": "2026-05-08T23:00:00",
+      "venue": "Melkweg",
+      "venue_address": "Lijnbaansgracht 234A, Amsterdam",
+      "event_type": "Clubnacht",
+      "artists": [],
+      "genres": [
+        "Hits",
+        "Party",
+        "Pop"
+      ],
+      "price_min": null,
+      "price_max": null,
+      "tickets_url": "",
+      "tickets_status": "available",
+      "source": "melkweg",
+      "source_url": "https://www.melkweg.nl/en/agenda/vroegzat-08-05-2026",
+      "match": null
+    },
+    {
       "id": "59170c6d571c3b74",
       "title": "'Swifty 'Wat Nu' Album Release & 10 Jarig Jubileum Party'",
       "date": "2026-05-08T19:00:00",
@@ -1275,6 +864,29 @@
       "tickets_status": "available",
       "source": "ra",
       "source_url": "https://ra.co/events/2426873",
+      "match": null
+    },
+    {
+      "id": "bba51aa62f2f0d0e",
+      "title": "Van Pletzen / Early B",
+      "date": "2026-05-08T19:30:00",
+      "date_end": null,
+      "venue": "Melkweg",
+      "venue_address": "Lijnbaansgracht 234A, Amsterdam",
+      "event_type": "Concert",
+      "artists": [],
+      "genres": [
+        "South Africa",
+        "Electro pop",
+        "Feel good",
+        "Pop"
+      ],
+      "price_min": null,
+      "price_max": null,
+      "tickets_url": "",
+      "tickets_status": "available",
+      "source": "melkweg",
+      "source_url": "https://www.melkweg.nl/en/agenda/van-pletzen-08-05-2026",
       "match": null
     },
     {
@@ -1532,6 +1144,28 @@
       "match": null
     },
     {
+      "id": "9439317d5657a356",
+      "title": "Billie Eilish - Hit Me Hard and Soft: The Tour (2026)",
+      "date": "2026-05-08T21:15:00",
+      "date_end": "2026-05-08T23:15:00",
+      "venue": "Melkweg",
+      "venue_address": "Lijnbaansgracht 234A, Amsterdam",
+      "event_type": "Film",
+      "artists": [],
+      "genres": [
+        "Concert film",
+        "Electro pop",
+        "Pop"
+      ],
+      "price_min": null,
+      "price_max": null,
+      "tickets_url": "",
+      "tickets_status": "available",
+      "source": "melkweg",
+      "source_url": "https://www.melkweg.nl/en/agenda/billie-eilish-hit-me-hard-and-soft-the-tour-2026-08-05-2026-1",
+      "match": null
+    },
+    {
       "id": "33f606404eef99c9",
       "title": "Hot Since 82 [3hrs] + support",
       "date": "2026-05-08T22:00:00",
@@ -1615,6 +1249,24 @@
       "tickets_status": "available",
       "source": "paradiso",
       "source_url": "https://www.paradiso.nl/en/program/after/2829402",
+      "match": null
+    },
+    {
+      "id": "fd10b61d79604522",
+      "title": "GET TO IT",
+      "date": "2026-05-08T22:00:00",
+      "date_end": "2026-05-09T02:00:00",
+      "venue": "Het Dorp",
+      "venue_address": "Noordwal 1, 1021 PX Amsterdam, Netherlands",
+      "event_type": "Club",
+      "artists": [],
+      "genres": [],
+      "price_min": null,
+      "price_max": null,
+      "tickets_url": "",
+      "tickets_status": "available",
+      "source": "ra",
+      "source_url": "https://ra.co/events/2436854",
       "match": null
     },
     {
@@ -1930,6 +1582,29 @@
       "match": null
     },
     {
+      "id": "3686b6e38a87e769",
+      "title": "High Tea presents Souped Up Amsterdam",
+      "date": "2026-05-08T23:30:00",
+      "date_end": "2026-05-09T05:30:00",
+      "venue": "Melkweg",
+      "venue_address": "Lijnbaansgracht 234A, Amsterdam",
+      "event_type": "Clubnacht",
+      "artists": [],
+      "genres": [
+        "Drum & Bass",
+        "Jungle",
+        "Club night",
+        "Electronic"
+      ],
+      "price_min": null,
+      "price_max": null,
+      "tickets_url": "",
+      "tickets_status": "available",
+      "source": "melkweg",
+      "source_url": "https://www.melkweg.nl/en/agenda/high-tea-presents-souped-up-amsterdam-08-05-2026",
+      "match": null
+    },
+    {
       "id": "bfd9a913d42b64f3",
       "title": "The Bug, Jo FLM, Rrita Jashari, + bar40 GROUNDSOUN",
       "date": "2026-05-08T23:30:00",
@@ -1975,66 +1650,6 @@
       "tickets_status": "available",
       "source": "ra",
       "source_url": "https://ra.co/events/2418307",
-      "match": null
-    },
-    {
-      "id": "aa97facf9388721a",
-      "title": "Milk Made: Welcome to Womanhood",
-      "date": "2026-05-09T00:00:00",
-      "date_end": null,
-      "venue": "Melkweg",
-      "venue_address": "Lijnbaansgracht 234A, Amsterdam",
-      "event_type": "Concert",
-      "artists": [],
-      "genres": [],
-      "price_min": null,
-      "price_max": null,
-      "tickets_url": "",
-      "tickets_status": "available",
-      "source": "melkweg",
-      "source_url": "https://www.melkweg.nl/en/agenda/milk-made-womenhood-09-05-2026/",
-      "match": null
-    },
-    {
-      "id": "d17b6326095bac9c",
-      "title": "Sokratis Malamas, Ioulia Karapataki & Giannis Malamas",
-      "date": "2026-05-09T00:00:00",
-      "date_end": null,
-      "venue": "Melkweg",
-      "venue_address": "Lijnbaansgracht 234A, Amsterdam",
-      "event_type": "Concert",
-      "artists": [],
-      "genres": [],
-      "price_min": null,
-      "price_max": null,
-      "tickets_url": "",
-      "tickets_status": "available",
-      "source": "melkweg",
-      "source_url": "https://www.melkweg.nl/en/agenda/sokratis-malamas-ioulia-karapataki-giannis-malamas-09-05-2026/",
-      "match": null
-    },
-    {
-      "id": "10d13308b0bca77b",
-      "title": "Lagos in NL",
-      "date": "2026-05-09T00:00:00",
-      "date_end": null,
-      "venue": "Melkweg",
-      "venue_address": "Lijnbaansgracht 234A, Amsterdam",
-      "event_type": "Club",
-      "artists": [
-        "DOPE CAESAR",
-        "EMSIFLYBOKOE",
-        "GODSENDO",
-        "TAYORISTAR",
-        "HOSTED BY BADMAN FLIINT"
-      ],
-      "genres": [],
-      "price_min": null,
-      "price_max": null,
-      "tickets_url": "",
-      "tickets_status": "available",
-      "source": "melkweg",
-      "source_url": "https://www.melkweg.nl/en/agenda/lagos-in-nl-09-05-2026/",
       "match": null
     },
     {
@@ -2151,6 +1766,28 @@
       "tickets_status": "available",
       "source": "ra",
       "source_url": "https://ra.co/events/2294896",
+      "match": null
+    },
+    {
+      "id": "aa97facf9388721a",
+      "title": "Milk Made: Welcome to Womanhood",
+      "date": "2026-05-09T13:00:00",
+      "date_end": "2026-05-09T17:00:00",
+      "venue": "Melkweg",
+      "venue_address": "Lijnbaansgracht 234A, Amsterdam",
+      "event_type": "Concert",
+      "artists": [],
+      "genres": [
+        "Music",
+        "Workshop",
+        "Feminism"
+      ],
+      "price_min": null,
+      "price_max": null,
+      "tickets_url": "",
+      "tickets_status": "available",
+      "source": "melkweg",
+      "source_url": "https://www.melkweg.nl/en/agenda/milk-made-womenhood-09-05-2026",
       "match": null
     },
     {
@@ -2402,6 +2039,28 @@
       "tickets_status": "available",
       "source": "amsterdam_alt",
       "source_url": "https://www.amsterdamalternative.nl/agenda/21470",
+      "match": null
+    },
+    {
+      "id": "d17b6326095bac9c",
+      "title": "Sokratis Malamas, Ioulia Karapataki & Giannis Malamas",
+      "date": "2026-05-09T19:00:00",
+      "date_end": null,
+      "venue": "Melkweg",
+      "venue_address": "Lijnbaansgracht 234A, Amsterdam",
+      "event_type": "Concert",
+      "artists": [],
+      "genres": [
+        "Greek folk music",
+        "Rock",
+        "Roots"
+      ],
+      "price_min": null,
+      "price_max": null,
+      "tickets_url": "",
+      "tickets_status": "available",
+      "source": "melkweg",
+      "source_url": "https://www.melkweg.nl/en/agenda/sokratis-malamas-ioulia-karapataki-giannis-malamas-09-05-2026",
       "match": null
     },
     {
@@ -3209,6 +2868,34 @@
       "match": null
     },
     {
+      "id": "10d13308b0bca77b",
+      "title": "Lagos in NL",
+      "date": "2026-05-09T23:30:00",
+      "date_end": "2026-05-10T05:00:00",
+      "venue": "Melkweg",
+      "venue_address": "Lijnbaansgracht 234A, Amsterdam",
+      "event_type": "Clubnacht",
+      "artists": [
+        "DOPE CAESAR",
+        "EMSIFLYBOKOE",
+        "GODSENDO",
+        "TAYORISTAR",
+        "HOSTED BY BADMAN FLIINT"
+      ],
+      "genres": [
+        "Afrobeats",
+        "Afro pop",
+        "Afro"
+      ],
+      "price_min": null,
+      "price_max": null,
+      "tickets_url": "",
+      "tickets_status": "free",
+      "source": "melkweg",
+      "source_url": "https://www.melkweg.nl/en/agenda/lagos-in-nl-09-05-2026",
+      "match": null
+    },
+    {
       "id": "65b52506678e5b06",
       "title": "The Narrative x Doka Studio with Nedda Sou - John Agesilas - LYLO",
       "date": "2026-05-09T23:59:00",
@@ -3597,48 +3284,6 @@
       "match": null
     },
     {
-      "id": "31180440e0b28aec",
-      "title": "Planet Funk",
-      "date": "2026-05-11T00:00:00",
-      "date_end": null,
-      "venue": "Melkweg",
-      "venue_address": "Lijnbaansgracht 234A, Amsterdam",
-      "event_type": "Concert",
-      "artists": [],
-      "genres": [],
-      "price_min": null,
-      "price_max": null,
-      "tickets_url": "",
-      "tickets_status": "available",
-      "source": "melkweg",
-      "source_url": "https://www.melkweg.nl/en/agenda/planet-funk-11-05-2026/",
-      "match": null
-    },
-    {
-      "id": "b2a5b863112421ab",
-      "title": "Cheeky Monday: NYMFO!",
-      "date": "2026-05-11T00:00:00",
-      "date_end": null,
-      "venue": "Melkweg",
-      "venue_address": "Lijnbaansgracht 234A, Amsterdam",
-      "event_type": "Club",
-      "artists": [
-        "Nymfo",
-        "Serpnt",
-        "Adi-j",
-        "Verj",
-        "Multiplex"
-      ],
-      "genres": [],
-      "price_min": null,
-      "price_max": null,
-      "tickets_url": "",
-      "tickets_status": "available",
-      "source": "melkweg",
-      "source_url": "https://www.melkweg.nl/en/agenda/cheeky-monday-nymfo-11-05-2026/",
-      "match": null
-    },
-    {
       "id": "002710c0e8c344b4",
       "title": "Eetcafe: Bar la Papa",
       "date": "2026-05-11T15:00:00",
@@ -3672,6 +3317,28 @@
       "tickets_status": "available",
       "source": "amsterdam_alt",
       "source_url": "https://www.amsterdamalternative.nl/agenda/21656",
+      "match": null
+    },
+    {
+      "id": "31180440e0b28aec",
+      "title": "Planet Funk",
+      "date": "2026-05-11T19:30:00",
+      "date_end": null,
+      "venue": "Melkweg",
+      "venue_address": "Lijnbaansgracht 234A, Amsterdam",
+      "event_type": "Concert",
+      "artists": [],
+      "genres": [
+        "Electronic",
+        "Funk",
+        "House"
+      ],
+      "price_min": null,
+      "price_max": null,
+      "tickets_url": "",
+      "tickets_status": "available",
+      "source": "melkweg",
+      "source_url": "https://www.melkweg.nl/en/agenda/planet-funk-11-05-2026",
       "match": null
     },
     {
@@ -3768,6 +3435,35 @@
       "match": null
     },
     {
+      "id": "b2a5b863112421ab",
+      "title": "Cheeky Monday: NYMFO!",
+      "date": "2026-05-11T23:00:00",
+      "date_end": "2026-05-12T04:00:00",
+      "venue": "Melkweg",
+      "venue_address": "Lijnbaansgracht 234A, Amsterdam",
+      "event_type": "Clubnacht",
+      "artists": [
+        "Nymfo",
+        "Serpnt",
+        "Adi-j",
+        "Verj",
+        "Multiplex"
+      ],
+      "genres": [
+        "Drum & Bass",
+        "Jungle",
+        "Club night",
+        "Electronic"
+      ],
+      "price_min": null,
+      "price_max": null,
+      "tickets_url": "",
+      "tickets_status": "available",
+      "source": "melkweg",
+      "source_url": "https://www.melkweg.nl/en/agenda/cheeky-monday-nymfo-11-05-2026",
+      "match": null
+    },
+    {
       "id": "a7ba60aa8e361c26",
       "title": "Hard Mondays Amsterdam - HARD TECHNO NIGHT",
       "date": "2026-05-11T23:00:00",
@@ -3805,42 +3501,6 @@
       "tickets_status": "available",
       "source": "ra",
       "source_url": "https://ra.co/events/2427091",
-      "match": null
-    },
-    {
-      "id": "55ee92af05945f0a",
-      "title": "Stuzzi",
-      "date": "2026-05-12T00:00:00",
-      "date_end": null,
-      "venue": "Melkweg",
-      "venue_address": "Lijnbaansgracht 234A, Amsterdam",
-      "event_type": "Concert",
-      "artists": [],
-      "genres": [],
-      "price_min": null,
-      "price_max": null,
-      "tickets_url": "",
-      "tickets_status": "available",
-      "source": "melkweg",
-      "source_url": "https://www.melkweg.nl/en/agenda/stuzzi-12-05-2026/",
-      "match": null
-    },
-    {
-      "id": "8fb61e34604a6748",
-      "title": "Techno Tuesday: Esther Dune & Dexon",
-      "date": "2026-05-12T00:00:00",
-      "date_end": null,
-      "venue": "Melkweg",
-      "venue_address": "Lijnbaansgracht 234A, Amsterdam",
-      "event_type": "Club",
-      "artists": [],
-      "genres": [],
-      "price_min": null,
-      "price_max": null,
-      "tickets_url": "",
-      "tickets_status": "available",
-      "source": "melkweg",
-      "source_url": "https://www.melkweg.nl/en/agenda/techno-tuesday-12-05-2026/",
       "match": null
     },
     {
@@ -3895,6 +3555,27 @@
       "tickets_status": "available",
       "source": "ra",
       "source_url": "https://ra.co/events/2400208",
+      "match": null
+    },
+    {
+      "id": "55ee92af05945f0a",
+      "title": "Stuzzi",
+      "date": "2026-05-12T19:30:00",
+      "date_end": null,
+      "venue": "Melkweg",
+      "venue_address": "Lijnbaansgracht 234A, Amsterdam",
+      "event_type": "Concert",
+      "artists": [],
+      "genres": [
+        "Cumbia",
+        "Electronic"
+      ],
+      "price_min": null,
+      "price_max": null,
+      "tickets_url": "",
+      "tickets_status": "free",
+      "source": "melkweg",
+      "source_url": "https://www.melkweg.nl/en/agenda/stuzzi-12-05-2026",
       "match": null
     },
     {
@@ -3982,6 +3663,31 @@
       "match": null
     },
     {
+      "id": "8fb61e34604a6748",
+      "title": "Techno Tuesday: Esther Dune & Dexon",
+      "date": "2026-05-12T23:30:00",
+      "date_end": "2026-05-13T05:00:00",
+      "venue": "Melkweg",
+      "venue_address": "Lijnbaansgracht 234A, Amsterdam",
+      "event_type": "Clubnacht",
+      "artists": [
+        "Esther Dune & Dexon"
+      ],
+      "genres": [
+        "Techno",
+        "Industrial",
+        "Club night",
+        "Electronic"
+      ],
+      "price_min": null,
+      "price_max": null,
+      "tickets_url": "",
+      "tickets_status": "available",
+      "source": "melkweg",
+      "source_url": "https://www.melkweg.nl/en/agenda/techno-tuesday-12-05-2026",
+      "match": null
+    },
+    {
       "id": "3b91267172a4ea6b",
       "title": "Techno Tuesday Amsterdam, Esther Dune & Dexon",
       "date": "2026-05-12T23:30:00",
@@ -4000,50 +3706,6 @@
       "tickets_status": "available",
       "source": "ra",
       "source_url": "https://ra.co/events/2432660",
-      "match": null
-    },
-    {
-      "id": "654d12db9b459ebb",
-      "title": "Randall King",
-      "date": "2026-05-13T00:00:00",
-      "date_end": null,
-      "venue": "Melkweg",
-      "venue_address": "Lijnbaansgracht 234A, Amsterdam",
-      "event_type": "Concert",
-      "artists": [
-        "Dan Smalley"
-      ],
-      "genres": [],
-      "price_min": null,
-      "price_max": null,
-      "tickets_url": "",
-      "tickets_status": "available",
-      "source": "melkweg",
-      "source_url": "https://www.melkweg.nl/en/agenda/randall-king-13-05-2026/",
-      "match": null
-    },
-    {
-      "id": "384d2fb9b566660a",
-      "title": "The Amsterdelics",
-      "date": "2026-05-13T00:00:00",
-      "date_end": null,
-      "venue": "Melkweg",
-      "venue_address": "Lijnbaansgracht 234A, Amsterdam",
-      "event_type": "Concert",
-      "artists": [
-        "Special guests: Def P",
-        "Pieter Both",
-        "Maikal X - a.k.a Shy Rock",
-        "Joe Bowie",
-        "Joost Belinfante"
-      ],
-      "genres": [],
-      "price_min": null,
-      "price_max": null,
-      "tickets_url": "",
-      "tickets_status": "available",
-      "source": "melkweg",
-      "source_url": "https://www.melkweg.nl/en/agenda/amsterdelics-13-05-2026/",
       "match": null
     },
     {
@@ -4155,6 +3817,30 @@
       "match": null
     },
     {
+      "id": "654d12db9b459ebb",
+      "title": "Randall King",
+      "date": "2026-05-13T19:00:00",
+      "date_end": null,
+      "venue": "Melkweg",
+      "venue_address": "Lijnbaansgracht 234A, Amsterdam",
+      "event_type": "Concert",
+      "artists": [
+        "support: Dan Smalley"
+      ],
+      "genres": [
+        "Country",
+        "Line dance",
+        "Roots"
+      ],
+      "price_min": null,
+      "price_max": null,
+      "tickets_url": "",
+      "tickets_status": "cancelled",
+      "source": "melkweg",
+      "source_url": "https://www.melkweg.nl/en/agenda/randall-king-13-05-2026",
+      "match": null
+    },
+    {
       "id": "bc16d580bfda1ee1",
       "title": "Young Wild & Free",
       "date": "2026-05-13T19:00:00",
@@ -4170,6 +3856,38 @@
       "tickets_status": "available",
       "source": "ra",
       "source_url": "https://ra.co/events/2434085",
+      "match": null
+    },
+    {
+      "id": "384d2fb9b566660a",
+      "title": "The Amsterdelics",
+      "date": "2026-05-13T19:30:00",
+      "date_end": null,
+      "venue": "Melkweg",
+      "venue_address": "Lijnbaansgracht 234A, Amsterdam",
+      "event_type": "Concert",
+      "artists": [
+        "special guests: Def P",
+        "Pieter Both",
+        "Maikal X - a.k.a Shy Rock",
+        "Joe Bowie",
+        "Joost Belinfante"
+      ],
+      "genres": [
+        "Psychedelic",
+        "Funk",
+        "Soul",
+        "Reggae",
+        "Dub",
+        "R&B",
+        "Pop"
+      ],
+      "price_min": null,
+      "price_max": null,
+      "tickets_url": "",
+      "tickets_status": "available",
+      "source": "melkweg",
+      "source_url": "https://www.melkweg.nl/en/agenda/amsterdelics-13-05-2026",
       "match": null
     },
     {
@@ -4372,44 +4090,6 @@
       "match": null
     },
     {
-      "id": "21ee77dc220b18cf",
-      "title": "Steve Ignorant Band",
-      "date": "2026-05-14T00:00:00",
-      "date_end": null,
-      "venue": "Melkweg",
-      "venue_address": "Lijnbaansgracht 234A, Amsterdam",
-      "event_type": "Concert",
-      "artists": [
-        "Hagar the Womb"
-      ],
-      "genres": [],
-      "price_min": null,
-      "price_max": null,
-      "tickets_url": "",
-      "tickets_status": "available",
-      "source": "melkweg",
-      "source_url": "https://www.melkweg.nl/en/agenda/steve-ignorant-band-14-05-2026/",
-      "match": null
-    },
-    {
-      "id": "09ed17f8a3714cb5",
-      "title": "Iron Maiden: Burning Ambition (2026)",
-      "date": "2026-05-14T00:00:00",
-      "date_end": null,
-      "venue": "Melkweg",
-      "venue_address": "Lijnbaansgracht 234A, Amsterdam",
-      "event_type": "Film",
-      "artists": [],
-      "genres": [],
-      "price_min": null,
-      "price_max": null,
-      "tickets_url": "",
-      "tickets_status": "available",
-      "source": "melkweg",
-      "source_url": "https://www.melkweg.nl/en/agenda/iron-maiden-burning-ambition-2026-14-05-2026/",
-      "match": null
-    },
-    {
       "id": "60bfa5316f6439e9",
       "title": "Lunch at Café Gilde",
       "date": "2026-05-14T10:00:00",
@@ -4601,6 +4281,30 @@
       "match": null
     },
     {
+      "id": "21ee77dc220b18cf",
+      "title": "Steve Ignorant Band",
+      "date": "2026-05-14T19:30:00",
+      "date_end": null,
+      "venue": "Melkweg",
+      "venue_address": "Lijnbaansgracht 234A, Amsterdam",
+      "event_type": "Concert",
+      "artists": [
+        "support: Hagar the Womb"
+      ],
+      "genres": [
+        "Anarchical",
+        "Punk rock",
+        "Heavy"
+      ],
+      "price_min": null,
+      "price_max": null,
+      "tickets_url": "",
+      "tickets_status": "available",
+      "source": "melkweg",
+      "source_url": "https://www.melkweg.nl/en/agenda/steve-ignorant-band-14-05-2026",
+      "match": null
+    },
+    {
       "id": "3197f02ea6b4fb47",
       "title": "Nine Sparks Riots",
       "date": "2026-05-14T19:30:00",
@@ -4738,6 +4442,28 @@
       }
     },
     {
+      "id": "09ed17f8a3714cb5",
+      "title": "Iron Maiden: Burning Ambition (2026)",
+      "date": "2026-05-14T21:15:00",
+      "date_end": "2026-05-14T23:00:00",
+      "venue": "Melkweg",
+      "venue_address": "Lijnbaansgracht 234A, Amsterdam",
+      "event_type": "Film",
+      "artists": [],
+      "genres": [
+        "Music documentary",
+        "Heavy metal",
+        "Heavy"
+      ],
+      "price_min": null,
+      "price_max": null,
+      "tickets_url": "",
+      "tickets_status": "available",
+      "source": "melkweg",
+      "source_url": "https://www.melkweg.nl/en/agenda/iron-maiden-burning-ambition-2026-14-05-2026",
+      "match": null
+    },
+    {
       "id": "e546ff17f6bf6fd6",
       "title": "NoMBe",
       "date": "2026-05-14T22:00:00",
@@ -4838,82 +4564,6 @@
       "tickets_status": "available",
       "source": "ra",
       "source_url": "https://ra.co/events/2431400",
-      "match": null
-    },
-    {
-      "id": "ce47eb63ee433ae1",
-      "title": "DakhaBrakha",
-      "date": "2026-05-15T00:00:00",
-      "date_end": null,
-      "venue": "Melkweg",
-      "venue_address": "Lijnbaansgracht 234A, Amsterdam",
-      "event_type": "Concert",
-      "artists": [],
-      "genres": [],
-      "price_min": null,
-      "price_max": null,
-      "tickets_url": "",
-      "tickets_status": "available",
-      "source": "melkweg",
-      "source_url": "https://www.melkweg.nl/en/agenda/dakhabrakha-15-05-2026/",
-      "match": {
-        "type": "Library Match",
-        "reason": "In your TIDAL library",
-        "score": 1
-      }
-    },
-    {
-      "id": "cbcdc83ad25cb525",
-      "title": "Seedhe Maut",
-      "date": "2026-05-15T00:00:00",
-      "date_end": null,
-      "venue": "Melkweg",
-      "venue_address": "Lijnbaansgracht 234A, Amsterdam",
-      "event_type": "Concert",
-      "artists": [],
-      "genres": [],
-      "price_min": null,
-      "price_max": null,
-      "tickets_url": "",
-      "tickets_status": "available",
-      "source": "melkweg",
-      "source_url": "https://www.melkweg.nl/en/agenda/seedhe-maut-15-05-2026/",
-      "match": null
-    },
-    {
-      "id": "ebae80e9b527fe43",
-      "title": "Iron Maiden: Burning Ambition (2026)",
-      "date": "2026-05-15T00:00:00",
-      "date_end": null,
-      "venue": "Melkweg",
-      "venue_address": "Lijnbaansgracht 234A, Amsterdam",
-      "event_type": "Film",
-      "artists": [],
-      "genres": [],
-      "price_min": null,
-      "price_max": null,
-      "tickets_url": "",
-      "tickets_status": "available",
-      "source": "melkweg",
-      "source_url": "https://www.melkweg.nl/en/agenda/iron-maiden-burning-ambition-2026-15-05-2026/",
-      "match": null
-    },
-    {
-      "id": "7f4506f9d4abbb9d",
-      "title": "Just Harry & 1D",
-      "date": "2026-05-15T00:00:00",
-      "date_end": null,
-      "venue": "Melkweg",
-      "venue_address": "Lijnbaansgracht 234A, Amsterdam",
-      "event_type": "Club",
-      "artists": [],
-      "genres": [],
-      "price_min": null,
-      "price_max": null,
-      "tickets_url": "",
-      "tickets_status": "available",
-      "source": "melkweg",
-      "source_url": "https://www.melkweg.nl/en/agenda/just-harry-1d-15-05-2026/",
       "match": null
     },
     {
@@ -5203,6 +4853,33 @@
       "match": null
     },
     {
+      "id": "ce47eb63ee433ae1",
+      "title": "DakhaBrakha",
+      "date": "2026-05-15T19:00:00",
+      "date_end": null,
+      "venue": "Melkweg",
+      "venue_address": "Lijnbaansgracht 234A, Amsterdam",
+      "event_type": "Concert",
+      "artists": [],
+      "genres": [
+        "Traditional",
+        "Folk",
+        "Experimental",
+        "Roots"
+      ],
+      "price_min": null,
+      "price_max": null,
+      "tickets_url": "",
+      "tickets_status": "available",
+      "source": "melkweg",
+      "source_url": "https://www.melkweg.nl/en/agenda/dakhabrakha-15-05-2026",
+      "match": {
+        "type": "Library Match",
+        "reason": "In your TIDAL library",
+        "score": 1
+      }
+    },
+    {
       "id": "94c5855b16f93e19",
       "title": "Jahtari Disrupt Live",
       "date": "2026-05-15T19:00:00",
@@ -5238,6 +4915,29 @@
       "tickets_status": "available",
       "source": "ra",
       "source_url": "https://ra.co/events/2431605",
+      "match": null
+    },
+    {
+      "id": "cbcdc83ad25cb525",
+      "title": "Seedhe Maut",
+      "date": "2026-05-15T19:30:00",
+      "date_end": null,
+      "venue": "Melkweg",
+      "venue_address": "Lijnbaansgracht 234A, Amsterdam",
+      "event_type": "Concert",
+      "artists": [],
+      "genres": [
+        "India",
+        "Hip hop duo",
+        "Desi",
+        "Hiphop"
+      ],
+      "price_min": null,
+      "price_max": null,
+      "tickets_url": "",
+      "tickets_status": "available",
+      "source": "melkweg",
+      "source_url": "https://www.melkweg.nl/en/agenda/seedhe-maut-15-05-2026",
       "match": null
     },
     {
@@ -5369,6 +5069,28 @@
       "tickets_status": "available",
       "source": "ra",
       "source_url": "https://ra.co/events/2411610",
+      "match": null
+    },
+    {
+      "id": "ebae80e9b527fe43",
+      "title": "Iron Maiden: Burning Ambition (2026)",
+      "date": "2026-05-15T21:15:00",
+      "date_end": "2026-05-15T23:00:00",
+      "venue": "Melkweg",
+      "venue_address": "Lijnbaansgracht 234A, Amsterdam",
+      "event_type": "Film",
+      "artists": [],
+      "genres": [
+        "Music documentary",
+        "Heavy metal",
+        "Heavy"
+      ],
+      "price_min": null,
+      "price_max": null,
+      "tickets_url": "",
+      "tickets_status": "available",
+      "source": "melkweg",
+      "source_url": "https://www.melkweg.nl/en/agenda/iron-maiden-burning-ambition-2026-15-05-2026",
       "match": null
     },
     {
@@ -5722,6 +5444,29 @@
       "match": null
     },
     {
+      "id": "7f4506f9d4abbb9d",
+      "title": "Just Harry & 1D",
+      "date": "2026-05-15T23:30:00",
+      "date_end": "2026-05-16T04:30:00",
+      "venue": "Melkweg",
+      "venue_address": "Lijnbaansgracht 234A, Amsterdam",
+      "event_type": "Clubnacht",
+      "artists": [],
+      "genres": [
+        "Brit pop",
+        "Party hits",
+        "Boy band",
+        "Pop"
+      ],
+      "price_min": null,
+      "price_max": null,
+      "tickets_url": "",
+      "tickets_status": "free",
+      "source": "melkweg",
+      "source_url": "https://www.melkweg.nl/en/agenda/just-harry-1d-15-05-2026",
+      "match": null
+    },
+    {
       "id": "8a1bc8fd8abea896",
       "title": "Club Romantico with DNGDNGDNG, Florentino, Styn, VALILA + Bar40 by Asnam",
       "date": "2026-05-15T23:30:00",
@@ -5804,78 +5549,6 @@
       "tickets_status": "available",
       "source": "ra",
       "source_url": "https://ra.co/events/2434493",
-      "match": null
-    },
-    {
-      "id": "7a8c1370e7209e48",
-      "title": "Joey Valence & Brae",
-      "date": "2026-05-16T00:00:00",
-      "date_end": null,
-      "venue": "Melkweg",
-      "venue_address": "Lijnbaansgracht 234A, Amsterdam",
-      "event_type": "Concert",
-      "artists": [],
-      "genres": [],
-      "price_min": null,
-      "price_max": null,
-      "tickets_url": "",
-      "tickets_status": "available",
-      "source": "melkweg",
-      "source_url": "https://www.melkweg.nl/en/agenda/joey-valence-brae-16-05-2026/",
-      "match": null
-    },
-    {
-      "id": "d73252b36ef84f69",
-      "title": "The Great Adventure of Horus Prince of the Sun (1968)",
-      "date": "2026-05-16T00:00:00",
-      "date_end": null,
-      "venue": "Melkweg",
-      "venue_address": "Lijnbaansgracht 234A, Amsterdam",
-      "event_type": "Film",
-      "artists": [],
-      "genres": [],
-      "price_min": null,
-      "price_max": null,
-      "tickets_url": "",
-      "tickets_status": "available",
-      "source": "melkweg",
-      "source_url": "https://www.melkweg.nl/en/agenda/the-great-adventure-of-horus-prince-of-the-sun-1968-16-05-2026/",
-      "match": null
-    },
-    {
-      "id": "791fefe6b16500ea",
-      "title": "Febre90's",
-      "date": "2026-05-16T00:00:00",
-      "date_end": null,
-      "venue": "Melkweg",
-      "venue_address": "Lijnbaansgracht 234A, Amsterdam",
-      "event_type": "Concert",
-      "artists": [],
-      "genres": [],
-      "price_min": null,
-      "price_max": null,
-      "tickets_url": "",
-      "tickets_status": "available",
-      "source": "melkweg",
-      "source_url": "https://www.melkweg.nl/en/agenda/febre90s-16-05-2026/",
-      "match": null
-    },
-    {
-      "id": "83d7f5763500acfa",
-      "title": "Iron Maiden: Burning Ambition (2026)",
-      "date": "2026-05-16T00:00:00",
-      "date_end": null,
-      "venue": "Melkweg",
-      "venue_address": "Lijnbaansgracht 234A, Amsterdam",
-      "event_type": "Film",
-      "artists": [],
-      "genres": [],
-      "price_min": null,
-      "price_max": null,
-      "tickets_url": "",
-      "tickets_status": "available",
-      "source": "melkweg",
-      "source_url": "https://www.melkweg.nl/en/agenda/iron-maiden-burning-ambition-2026-16-05-2026/",
       "match": null
     },
     {
@@ -6403,6 +6076,54 @@
       "match": null
     },
     {
+      "id": "7a8c1370e7209e48",
+      "title": "Joey Valence & Brae",
+      "date": "2026-05-16T19:00:00",
+      "date_end": null,
+      "venue": "Melkweg",
+      "venue_address": "Lijnbaansgracht 234A, Amsterdam",
+      "event_type": "Concert",
+      "artists": [
+        "SUPPORT: WHATMORE"
+      ],
+      "genres": [
+        "Alternative hip-hop",
+        "Punk",
+        "Rap",
+        "Hiphop"
+      ],
+      "price_min": null,
+      "price_max": null,
+      "tickets_url": "",
+      "tickets_status": "sold_out",
+      "source": "melkweg",
+      "source_url": "https://www.melkweg.nl/en/agenda/joey-valence-brae-16-05-2026",
+      "match": null
+    },
+    {
+      "id": "d73252b36ef84f69",
+      "title": "The Great Adventure of Horus Prince of the Sun (1968)",
+      "date": "2026-05-16T19:00:00",
+      "date_end": "2026-05-16T21:00:00",
+      "venue": "Melkweg",
+      "venue_address": "Lijnbaansgracht 234A, Amsterdam",
+      "event_type": "Film",
+      "artists": [
+        "Intro: Rabia Sitabi"
+      ],
+      "genres": [
+        "Anime",
+        "History"
+      ],
+      "price_min": null,
+      "price_max": null,
+      "tickets_url": "",
+      "tickets_status": "available",
+      "source": "melkweg",
+      "source_url": "https://www.melkweg.nl/en/agenda/the-great-adventure-of-horus-prince-of-the-sun-1968-16-05-2026",
+      "match": null
+    },
+    {
       "id": "e627581ab0417545",
       "title": "D.E.L.S. x Doka Studio with Kaap - Ambu Bambu - David Lee - Julien Chaptal",
       "date": "2026-05-16T19:00:00",
@@ -6443,6 +6164,28 @@
       "tickets_status": "available",
       "source": "ra",
       "source_url": "https://ra.co/events/2385616",
+      "match": null
+    },
+    {
+      "id": "791fefe6b16500ea",
+      "title": "Febre90's",
+      "date": "2026-05-16T19:30:00",
+      "date_end": null,
+      "venue": "Melkweg",
+      "venue_address": "Lijnbaansgracht 234A, Amsterdam",
+      "event_type": "Concert",
+      "artists": [],
+      "genres": [
+        "Hip hop",
+        "Boombap",
+        "Hiphop"
+      ],
+      "price_min": null,
+      "price_max": null,
+      "tickets_url": "",
+      "tickets_status": "available",
+      "source": "melkweg",
+      "source_url": "https://www.melkweg.nl/en/agenda/febre90s-16-05-2026",
       "match": null
     },
     {
@@ -6547,6 +6290,28 @@
       "tickets_status": "available",
       "source": "ra",
       "source_url": "https://ra.co/events/2411613",
+      "match": null
+    },
+    {
+      "id": "83d7f5763500acfa",
+      "title": "Iron Maiden: Burning Ambition (2026)",
+      "date": "2026-05-16T21:15:00",
+      "date_end": "2026-05-16T23:00:00",
+      "venue": "Melkweg",
+      "venue_address": "Lijnbaansgracht 234A, Amsterdam",
+      "event_type": "Film",
+      "artists": [],
+      "genres": [
+        "Music documentary",
+        "Heavy metal",
+        "Heavy"
+      ],
+      "price_min": null,
+      "price_max": null,
+      "tickets_url": "",
+      "tickets_status": "available",
+      "source": "melkweg",
+      "source_url": "https://www.melkweg.nl/en/agenda/iron-maiden-burning-ambition-2026-16-05-2026",
       "match": null
     },
     {
@@ -6949,42 +6714,6 @@
       "match": null
     },
     {
-      "id": "20a43b0c88c69712",
-      "title": "High Society",
-      "date": "2026-05-17T00:00:00",
-      "date_end": null,
-      "venue": "Melkweg",
-      "venue_address": "Lijnbaansgracht 234A, Amsterdam",
-      "event_type": "Concert",
-      "artists": [],
-      "genres": [],
-      "price_min": null,
-      "price_max": null,
-      "tickets_url": "",
-      "tickets_status": "available",
-      "source": "melkweg",
-      "source_url": "https://www.melkweg.nl/en/agenda/high-society-17-05-2026/",
-      "match": null
-    },
-    {
-      "id": "e6b8d736f55d9d4f",
-      "title": "Clinton Kane",
-      "date": "2026-05-17T00:00:00",
-      "date_end": null,
-      "venue": "Melkweg",
-      "venue_address": "Lijnbaansgracht 234A, Amsterdam",
-      "event_type": "Concert",
-      "artists": [],
-      "genres": [],
-      "price_min": null,
-      "price_max": null,
-      "tickets_url": "",
-      "tickets_status": "available",
-      "source": "melkweg",
-      "source_url": "https://www.melkweg.nl/en/agenda/clinton-kane-17-05-2026/",
-      "match": null
-    },
-    {
       "id": "270987176fd6e014",
       "title": "TROUPIRILAMP Family show",
       "date": "2026-05-17T09:00:00",
@@ -7178,6 +6907,51 @@
       "match": null
     },
     {
+      "id": "20a43b0c88c69712",
+      "title": "High Society",
+      "date": "2026-05-17T19:00:00",
+      "date_end": null,
+      "venue": "Melkweg",
+      "venue_address": "Lijnbaansgracht 234A, Amsterdam",
+      "event_type": "Concert",
+      "artists": [],
+      "genres": [
+        "Dutch hip hop",
+        "Hip hop",
+        "Dutch",
+        "Hiphop"
+      ],
+      "price_min": null,
+      "price_max": null,
+      "tickets_url": "",
+      "tickets_status": "available",
+      "source": "melkweg",
+      "source_url": "https://www.melkweg.nl/en/agenda/high-society-17-05-2026",
+      "match": null
+    },
+    {
+      "id": "e6b8d736f55d9d4f",
+      "title": "Clinton Kane",
+      "date": "2026-05-17T19:30:00",
+      "date_end": null,
+      "venue": "Melkweg",
+      "venue_address": "Lijnbaansgracht 234A, Amsterdam",
+      "event_type": "Concert",
+      "artists": [],
+      "genres": [
+        "Singer-songwriter",
+        "TikTok sensation",
+        "Pop"
+      ],
+      "price_min": null,
+      "price_max": null,
+      "tickets_url": "",
+      "tickets_status": "available",
+      "source": "melkweg",
+      "source_url": "https://www.melkweg.nl/en/agenda/clinton-kane-17-05-2026",
+      "match": null
+    },
+    {
       "id": "cbea284b177aaba8",
       "title": "sosocamo",
       "date": "2026-05-17T19:30:00",
@@ -7319,31 +7093,6 @@
       "match": null
     },
     {
-      "id": "1ca0be1005203bce",
-      "title": "Cheeky Monday: VIBEZ RECORDINGS!",
-      "date": "2026-05-18T00:00:00",
-      "date_end": null,
-      "venue": "Melkweg",
-      "venue_address": "Lijnbaansgracht 234A, Amsterdam",
-      "event_type": "Club",
-      "artists": [
-        "Subject13",
-        "Equinox",
-        "Lady Lena",
-        "Abby Daze",
-        "Hidden Memory",
-        "Merger"
-      ],
-      "genres": [],
-      "price_min": null,
-      "price_max": null,
-      "tickets_url": "",
-      "tickets_status": "available",
-      "source": "melkweg",
-      "source_url": "https://www.melkweg.nl/en/agenda/cheeky-monday-vibez-recordings-18-05-2026/",
-      "match": null
-    },
-    {
       "id": "586328777f81a199",
       "title": "Eetcafe: Bar la Papa",
       "date": "2026-05-18T15:00:00",
@@ -7450,6 +7199,36 @@
       "match": null
     },
     {
+      "id": "1ca0be1005203bce",
+      "title": "Cheeky Monday: VIBEZ RECORDINGS!",
+      "date": "2026-05-18T23:00:00",
+      "date_end": "2026-05-19T04:00:00",
+      "venue": "Melkweg",
+      "venue_address": "Lijnbaansgracht 234A, Amsterdam",
+      "event_type": "Clubnacht",
+      "artists": [
+        "Subject13",
+        "Equinox",
+        "Lady Lena",
+        "Abby Daze",
+        "Hidden Memory",
+        "Merger"
+      ],
+      "genres": [
+        "Drum & Bass",
+        "Jungle",
+        "Club night",
+        "Electronic"
+      ],
+      "price_min": null,
+      "price_max": null,
+      "tickets_url": "",
+      "tickets_status": "available",
+      "source": "melkweg",
+      "source_url": "https://www.melkweg.nl/en/agenda/cheeky-monday-vibez-recordings-18-05-2026",
+      "match": null
+    },
+    {
       "id": "9a54bcf1a6e62c9e",
       "title": "Hard Mondays Amsterdam - HARD TECHNO NIGHT",
       "date": "2026-05-18T23:00:00",
@@ -7493,70 +7272,6 @@
       "match": null
     },
     {
-      "id": "5d17427673ffa3fd",
-      "title": "-init-*",
-      "date": "2026-05-19T00:00:00",
-      "date_end": null,
-      "venue": "Melkweg",
-      "venue_address": "Lijnbaansgracht 234A, Amsterdam",
-      "event_type": "Concert",
-      "artists": [
-        "Lenny Monsou",
-        "Guusje Walstra",
-        "Sien",
-        "Lo–Seleen",
-        "Thilo Match"
-      ],
-      "genres": [],
-      "price_min": null,
-      "price_max": null,
-      "tickets_url": "",
-      "tickets_status": "available",
-      "source": "melkweg",
-      "source_url": "https://www.melkweg.nl/en/agenda/init-19-05-2026/",
-      "match": null
-    },
-    {
-      "id": "38a5153adc494c2f",
-      "title": "Katie Tupper",
-      "date": "2026-05-19T00:00:00",
-      "date_end": null,
-      "venue": "Melkweg",
-      "venue_address": "Lijnbaansgracht 234A, Amsterdam",
-      "event_type": "Concert",
-      "artists": [],
-      "genres": [],
-      "price_min": null,
-      "price_max": null,
-      "tickets_url": "",
-      "tickets_status": "available",
-      "source": "melkweg",
-      "source_url": "https://www.melkweg.nl/en/agenda/katie-tupper-19-05-2026/",
-      "match": null
-    },
-    {
-      "id": "df1106679e5dbb35",
-      "title": "Techno Tuesday: A.R.T.",
-      "date": "2026-05-19T00:00:00",
-      "date_end": null,
-      "venue": "Melkweg",
-      "venue_address": "Lijnbaansgracht 234A, Amsterdam",
-      "event_type": "Club",
-      "artists": [
-        "A.R.T.",
-        "Dexon",
-        "Alix"
-      ],
-      "genres": [],
-      "price_min": null,
-      "price_max": null,
-      "tickets_url": "",
-      "tickets_status": "available",
-      "source": "melkweg",
-      "source_url": "https://www.melkweg.nl/en/agenda/techno-tuesday-19-05-2026/",
-      "match": null
-    },
-    {
       "id": "a70df943bb19012b",
       "title": "Lunch at Café Gilde",
       "date": "2026-05-19T10:00:00",
@@ -7572,6 +7287,61 @@
       "tickets_status": "available",
       "source": "amsterdam_alt",
       "source_url": "https://www.amsterdamalternative.nl/agenda/20835",
+      "match": null
+    },
+    {
+      "id": "5d17427673ffa3fd",
+      "title": "-init-*",
+      "date": "2026-05-19T19:00:00",
+      "date_end": null,
+      "venue": "Melkweg",
+      "venue_address": "Lijnbaansgracht 234A, Amsterdam",
+      "event_type": "Concert",
+      "artists": [
+        "Lenny Monsou",
+        "Guusje Walstra",
+        "Sien",
+        "Lo–Seleen",
+        "Thilo Match"
+      ],
+      "genres": [
+        "Electro pop",
+        "Indie rock",
+        "Danceable",
+        "Pop",
+        "Indie",
+        "Electronic"
+      ],
+      "price_min": null,
+      "price_max": null,
+      "tickets_url": "",
+      "tickets_status": "available",
+      "source": "melkweg",
+      "source_url": "https://www.melkweg.nl/en/agenda/init-19-05-2026",
+      "match": null
+    },
+    {
+      "id": "38a5153adc494c2f",
+      "title": "Katie Tupper",
+      "date": "2026-05-19T19:30:00",
+      "date_end": null,
+      "venue": "Melkweg",
+      "venue_address": "Lijnbaansgracht 234A, Amsterdam",
+      "event_type": "Concert",
+      "artists": [],
+      "genres": [
+        "Neo-soul",
+        "Indie pop",
+        "Alternative R&B",
+        "Indie",
+        "R&B"
+      ],
+      "price_min": null,
+      "price_max": null,
+      "tickets_url": "",
+      "tickets_status": "available",
+      "source": "melkweg",
+      "source_url": "https://www.melkweg.nl/en/agenda/katie-tupper-19-05-2026",
       "match": null
     },
     {
@@ -7730,6 +7500,33 @@
       "match": null
     },
     {
+      "id": "df1106679e5dbb35",
+      "title": "Techno Tuesday: A.R.T.",
+      "date": "2026-05-19T23:30:00",
+      "date_end": "2026-05-20T05:00:00",
+      "venue": "Melkweg",
+      "venue_address": "Lijnbaansgracht 234A, Amsterdam",
+      "event_type": "Clubnacht",
+      "artists": [
+        "A.R.T.",
+        "Dexon",
+        "Alix"
+      ],
+      "genres": [
+        "Techno",
+        "Industrial",
+        "Club night",
+        "Electronic"
+      ],
+      "price_min": null,
+      "price_max": null,
+      "tickets_url": "",
+      "tickets_status": "available",
+      "source": "melkweg",
+      "source_url": "https://www.melkweg.nl/en/agenda/techno-tuesday-19-05-2026",
+      "match": null
+    },
+    {
       "id": "5978a3b72150d081",
       "title": "Techno Tuesday Amsterdam, A.R.T., Dexon, Alix",
       "date": "2026-05-19T23:30:00",
@@ -7748,44 +7545,6 @@
       "tickets_status": "available",
       "source": "ra",
       "source_url": "https://ra.co/events/2432662",
-      "match": null
-    },
-    {
-      "id": "c3b902193ddaa964",
-      "title": "Maruja",
-      "date": "2026-05-20T00:00:00",
-      "date_end": null,
-      "venue": "Melkweg",
-      "venue_address": "Lijnbaansgracht 234A, Amsterdam",
-      "event_type": "Concert",
-      "artists": [
-        "Slap Rash"
-      ],
-      "genres": [],
-      "price_min": null,
-      "price_max": null,
-      "tickets_url": "",
-      "tickets_status": "available",
-      "source": "melkweg",
-      "source_url": "https://www.melkweg.nl/en/agenda/maruja-20-05-2026/",
-      "match": null
-    },
-    {
-      "id": "8fe8c30130312e47",
-      "title": "There Will Be Blood (2007)",
-      "date": "2026-05-20T00:00:00",
-      "date_end": null,
-      "venue": "Melkweg",
-      "venue_address": "Lijnbaansgracht 234A, Amsterdam",
-      "event_type": "Film",
-      "artists": [],
-      "genres": [],
-      "price_min": null,
-      "price_max": null,
-      "tickets_url": "",
-      "tickets_status": "available",
-      "source": "melkweg",
-      "source_url": "https://www.melkweg.nl/en/agenda/there-will-be-blood-2007-20-05-2026/",
       "match": null
     },
     {
@@ -7822,6 +7581,55 @@
       "tickets_status": "available",
       "source": "amsterdam_alt",
       "source_url": "https://www.amsterdamalternative.nl/agenda/21804",
+      "match": null
+    },
+    {
+      "id": "c3b902193ddaa964",
+      "title": "Maruja",
+      "date": "2026-05-20T19:00:00",
+      "date_end": null,
+      "venue": "Melkweg",
+      "venue_address": "Lijnbaansgracht 234A, Amsterdam",
+      "event_type": "Concert",
+      "artists": [
+        "support: Slap Rash"
+      ],
+      "genres": [
+        "Jazz",
+        "Experimental",
+        "Postpunk",
+        "Heavy",
+        "Indie"
+      ],
+      "price_min": null,
+      "price_max": null,
+      "tickets_url": "",
+      "tickets_status": "available",
+      "source": "melkweg",
+      "source_url": "https://www.melkweg.nl/en/agenda/maruja-20-05-2026",
+      "match": null
+    },
+    {
+      "id": "8fe8c30130312e47",
+      "title": "There Will Be Blood (2007)",
+      "date": "2026-05-20T20:00:00",
+      "date_end": "2026-05-20T22:53:00",
+      "venue": "Melkweg",
+      "venue_address": "Lijnbaansgracht 234A, Amsterdam",
+      "event_type": "Film",
+      "artists": [
+        "Intro: Véras Fawaz"
+      ],
+      "genres": [
+        "Drama",
+        "History"
+      ],
+      "price_min": null,
+      "price_max": null,
+      "tickets_url": "",
+      "tickets_status": "available",
+      "source": "melkweg",
+      "source_url": "https://www.melkweg.nl/en/agenda/there-will-be-blood-2007-20-05-2026",
       "match": null
     },
     {
@@ -7931,52 +7739,6 @@
       "source": "ra",
       "source_url": "https://ra.co/events/2396849",
       "match": null
-    },
-    {
-      "id": "af9cb33ab4ee2fe4",
-      "title": "Omar Souleyman",
-      "date": "2026-05-21T00:00:00",
-      "date_end": null,
-      "venue": "Melkweg",
-      "venue_address": "Lijnbaansgracht 234A, Amsterdam",
-      "event_type": "Concert",
-      "artists": [],
-      "genres": [],
-      "price_min": null,
-      "price_max": null,
-      "tickets_url": "",
-      "tickets_status": "available",
-      "source": "melkweg",
-      "source_url": "https://www.melkweg.nl/en/agenda/omar-souleyman-21-05-2026/",
-      "match": {
-        "type": "Discovery",
-        "reason": "Similar to Suuns, Natacha Atlas, Silver Apples",
-        "score": 13
-      }
-    },
-    {
-      "id": "868aae6327c85572",
-      "title": "Puma Blue",
-      "date": "2026-05-21T00:00:00",
-      "date_end": null,
-      "venue": "Melkweg",
-      "venue_address": "Lijnbaansgracht 234A, Amsterdam",
-      "event_type": "Concert",
-      "artists": [
-        "Tony Njoku"
-      ],
-      "genres": [],
-      "price_min": null,
-      "price_max": null,
-      "tickets_url": "",
-      "tickets_status": "available",
-      "source": "melkweg",
-      "source_url": "https://www.melkweg.nl/en/agenda/puma-blue-21-05-2026/",
-      "match": {
-        "type": "Discovery",
-        "reason": "Similar to Alabaster Deplume, Kaitlyn Aurelia Smith, Lucrecia Dalt",
-        "score": 15
-      }
     },
     {
       "id": "c7f7bbcf46479619",
@@ -8105,6 +7867,33 @@
       "match": null
     },
     {
+      "id": "af9cb33ab4ee2fe4",
+      "title": "Omar Souleyman",
+      "date": "2026-05-21T19:00:00",
+      "date_end": null,
+      "venue": "Melkweg",
+      "venue_address": "Lijnbaansgracht 234A, Amsterdam",
+      "event_type": "Concert",
+      "artists": [],
+      "genres": [
+        "Electronic",
+        "Arabic",
+        "Speed dabke",
+        "Roots"
+      ],
+      "price_min": null,
+      "price_max": null,
+      "tickets_url": "",
+      "tickets_status": "available",
+      "source": "melkweg",
+      "source_url": "https://www.melkweg.nl/en/agenda/omar-souleyman-21-05-2026",
+      "match": {
+        "type": "Discovery",
+        "reason": "Similar to Suuns, Natacha Atlas, Silver Apples",
+        "score": 13
+      }
+    },
+    {
       "id": "8c9078487f1f4405",
       "title": "ZEP - NO ENEMIES TOUR",
       "date": "2026-05-21T19:00:00",
@@ -8122,6 +7911,31 @@
       "tickets_status": "available",
       "source": "ra",
       "source_url": "https://ra.co/events/2421439",
+      "match": null
+    },
+    {
+      "id": "868aae6327c85572",
+      "title": "Puma Blue",
+      "date": "2026-05-21T19:30:00",
+      "date_end": null,
+      "venue": "Melkweg",
+      "venue_address": "Lijnbaansgracht 234A, Amsterdam",
+      "event_type": "Concert",
+      "artists": [
+        "support: Tony Njoku"
+      ],
+      "genres": [
+        "Jazzy",
+        "Indie folk",
+        "Ambient",
+        "Indie"
+      ],
+      "price_min": null,
+      "price_max": null,
+      "tickets_url": "",
+      "tickets_status": "available",
+      "source": "melkweg",
+      "source_url": "https://www.melkweg.nl/en/agenda/puma-blue-21-05-2026",
       "match": null
     },
     {
@@ -8404,68 +8218,6 @@
       "match": null
     },
     {
-      "id": "b064b554aa737e37",
-      "title": "CineCarib 2 (2026)",
-      "date": "2026-05-22T00:00:00",
-      "date_end": null,
-      "venue": "Melkweg",
-      "venue_address": "Lijnbaansgracht 234A, Amsterdam",
-      "event_type": "Film",
-      "artists": [
-        "Shorts: Awo Now Nu (2026, 19 min)",
-        "Kaya ta nos Arena (2026, 28 min)",
-        "Fort Buku (2025, 35 min) ",
-        " Q&A: Roland Colastica",
-        "Bianca Calmero",
-        "Loëlle Monsanto",
-        "Moderator: Angel Misier"
-      ],
-      "genres": [],
-      "price_min": null,
-      "price_max": null,
-      "tickets_url": "",
-      "tickets_status": "available",
-      "source": "melkweg",
-      "source_url": "https://www.melkweg.nl/en/agenda/cinecarib-2-2026-22-05-2026/",
-      "match": null
-    },
-    {
-      "id": "6dc62881621e0e5c",
-      "title": "Hasan Raheem",
-      "date": "2026-05-22T00:00:00",
-      "date_end": null,
-      "venue": "Melkweg",
-      "venue_address": "Lijnbaansgracht 234A, Amsterdam",
-      "event_type": "Concert",
-      "artists": [],
-      "genres": [],
-      "price_min": null,
-      "price_max": null,
-      "tickets_url": "",
-      "tickets_status": "available",
-      "source": "melkweg",
-      "source_url": "https://www.melkweg.nl/en/agenda/hasan-raheem-22-05-2026/",
-      "match": null
-    },
-    {
-      "id": "e0b0687d5ee6e61f",
-      "title": "Zion (2025)",
-      "date": "2026-05-22T00:00:00",
-      "date_end": null,
-      "venue": "Melkweg",
-      "venue_address": "Lijnbaansgracht 234A, Amsterdam",
-      "event_type": "Film",
-      "artists": [],
-      "genres": [],
-      "price_min": null,
-      "price_max": null,
-      "tickets_url": "",
-      "tickets_status": "available",
-      "source": "melkweg",
-      "source_url": "https://www.melkweg.nl/en/agenda/zion-2025-22-05-2026/",
-      "match": null
-    },
-    {
       "id": "c5b5148ae29bd104",
       "title": "Jon K",
       "date": "2026-05-22T00:00:00",
@@ -8725,6 +8477,34 @@
       "match": null
     },
     {
+      "id": "b064b554aa737e37",
+      "title": "CineCarib 2 (2026)",
+      "date": "2026-05-22T19:00:00",
+      "date_end": "2026-05-22T20:45:00",
+      "venue": "Melkweg",
+      "venue_address": "Lijnbaansgracht 234A, Amsterdam",
+      "event_type": "Film",
+      "artists": [
+        "Shorts: Awo Now Nu (2026, 19 min)",
+        "Kaya ta nos Arena (2026, 28 min)",
+        "Fort Buku (2025, 35 min) ",
+        " Q&A: Roland Colastica",
+        "Bianca Calmero",
+        "Loëlle Monsanto",
+        "Moderator: Angel Misier"
+      ],
+      "genres": [
+        "Shorts"
+      ],
+      "price_min": null,
+      "price_max": null,
+      "tickets_url": "",
+      "tickets_status": "available",
+      "source": "melkweg",
+      "source_url": "https://www.melkweg.nl/en/agenda/cinecarib-2-2026-22-05-2026",
+      "match": null
+    },
+    {
       "id": "b8c0472748ed0641",
       "title": "Animal - Opening Night",
       "date": "2026-05-22T19:00:00",
@@ -8768,6 +8548,29 @@
       "tickets_status": "available",
       "source": "ra",
       "source_url": "https://ra.co/events/2399191",
+      "match": null
+    },
+    {
+      "id": "6dc62881621e0e5c",
+      "title": "Hasan Raheem",
+      "date": "2026-05-22T19:30:00",
+      "date_end": null,
+      "venue": "Melkweg",
+      "venue_address": "Lijnbaansgracht 234A, Amsterdam",
+      "event_type": "Concert",
+      "artists": [],
+      "genres": [
+        "R&B",
+        "Hip hop",
+        "Indie pop",
+        "Hiphop"
+      ],
+      "price_min": null,
+      "price_max": null,
+      "tickets_url": "",
+      "tickets_status": "available",
+      "source": "melkweg",
+      "source_url": "https://www.melkweg.nl/en/agenda/hasan-raheem-22-05-2026",
       "match": null
     },
     {
@@ -8928,6 +8731,29 @@
       "tickets_status": "available",
       "source": "ra",
       "source_url": "https://ra.co/events/2411614",
+      "match": null
+    },
+    {
+      "id": "e0b0687d5ee6e61f",
+      "title": "Zion (2025)",
+      "date": "2026-05-22T21:15:00",
+      "date_end": "2026-05-22T23:04:00",
+      "venue": "Melkweg",
+      "venue_address": "Lijnbaansgracht 234A, Amsterdam",
+      "event_type": "Film",
+      "artists": [
+        "Intro: Sandra Roberts"
+      ],
+      "genres": [
+        "Drama",
+        "Crime"
+      ],
+      "price_min": null,
+      "price_max": null,
+      "tickets_url": "",
+      "tickets_status": "available",
+      "source": "melkweg",
+      "source_url": "https://www.melkweg.nl/en/agenda/zion-2025-22-05-2026",
       "match": null
     },
     {
@@ -9298,56 +9124,6 @@
       "match": null
     },
     {
-      "id": "80245b4a3162a07f",
-      "title": "Pretty Pissed 2026",
-      "date": "2026-05-23T00:00:00",
-      "date_end": null,
-      "venue": "Melkweg",
-      "venue_address": "Lijnbaansgracht 234A, Amsterdam",
-      "event_type": "Festival",
-      "artists": [
-        "Line-up: Aerial Salad",
-        "C'est Qui?",
-        "Deki Alem",
-        "Hammok",
-        "Kaboutertje Putlucht",
-        "Kid Kapichi",
-        "Martial Arts",
-        "Swim School",
-        "The Meffs"
-      ],
-      "genres": [],
-      "price_min": null,
-      "price_max": null,
-      "tickets_url": "",
-      "tickets_status": "available",
-      "source": "melkweg",
-      "source_url": "https://www.melkweg.nl/en/agenda/pretty-pissed-23-05-2026/",
-      "match": null
-    },
-    {
-      "id": "6a2c930bbe26c198",
-      "title": "Wap Shoo Wap X Pretty Pissed Afterparty",
-      "date": "2026-05-23T00:00:00",
-      "date_end": null,
-      "venue": "Melkweg",
-      "venue_address": "Lijnbaansgracht 234A, Amsterdam",
-      "event_type": "Festival",
-      "artists": [
-        "Line-Up: Automatic Lovers (Album release show)",
-        "The Etters",
-        "The Protos"
-      ],
-      "genres": [],
-      "price_min": null,
-      "price_max": null,
-      "tickets_url": "",
-      "tickets_status": "available",
-      "source": "melkweg",
-      "source_url": "https://www.melkweg.nl/en/agenda/wap-shoo-wap-x-pretty-pissed-afterparty-23-05-2026/",
-      "match": null
-    },
-    {
       "id": "d51fb3f54449ea44",
       "title": "Ascha & Maki",
       "date": "2026-05-23T00:00:00",
@@ -9674,6 +9450,39 @@
       "match": null
     },
     {
+      "id": "80245b4a3162a07f",
+      "title": "Pretty Pissed 2026",
+      "date": "2026-05-23T15:30:00",
+      "date_end": null,
+      "venue": "Melkweg",
+      "venue_address": "Lijnbaansgracht 234A, Amsterdam",
+      "event_type": "Festival",
+      "artists": [
+        "Line-up: Aerial Salad",
+        "C'est Qui?",
+        "Deki Alem",
+        "Hammok",
+        "Kaboutertje Putlucht",
+        "Kid Kapichi",
+        "Martial Arts",
+        "Swim School",
+        "The Meffs"
+      ],
+      "genres": [
+        "Punk",
+        "Postpunk",
+        "Alternative",
+        "Heavy"
+      ],
+      "price_min": null,
+      "price_max": null,
+      "tickets_url": "",
+      "tickets_status": "available",
+      "source": "melkweg",
+      "source_url": "https://www.melkweg.nl/en/agenda/pretty-pissed-23-05-2026",
+      "match": null
+    },
+    {
       "id": "d4f0e58a76630e65",
       "title": "Between Women Filmmakers Caravan.",
       "date": "2026-05-23T15:30:00",
@@ -9985,6 +9794,51 @@
       "match": null
     },
     {
+      "id": "c20ac537fd741f69",
+      "title": "The Deep Vault @ Akhnaton",
+      "date": "2026-05-23T22:00:00",
+      "date_end": "2026-05-24T04:00:00",
+      "venue": "Akhnaton",
+      "venue_address": "Nieuwezijds Kolk 25, 1012 PV Amsterdam",
+      "event_type": "Club",
+      "artists": [],
+      "genres": [],
+      "price_min": null,
+      "price_max": null,
+      "tickets_url": "",
+      "tickets_status": "available",
+      "source": "ra",
+      "source_url": "https://ra.co/events/2393542",
+      "match": null
+    },
+    {
+      "id": "6a2c930bbe26c198",
+      "title": "Wap Shoo Wap X Pretty Pissed Afterparty",
+      "date": "2026-05-23T23:00:00",
+      "date_end": "2026-05-24T03:00:00",
+      "venue": "Melkweg",
+      "venue_address": "Lijnbaansgracht 234A, Amsterdam",
+      "event_type": "Festival",
+      "artists": [
+        "Line-Up: Automatic Lovers (Album release show)",
+        "The Etters",
+        "The Protos"
+      ],
+      "genres": [
+        "Punk",
+        "Raw",
+        "After party",
+        "Heavy"
+      ],
+      "price_min": null,
+      "price_max": null,
+      "tickets_url": "",
+      "tickets_status": "available",
+      "source": "melkweg",
+      "source_url": "https://www.melkweg.nl/en/agenda/wap-shoo-wap-x-pretty-pissed-afterparty-23-05-2026",
+      "match": null
+    },
+    {
       "id": "ec2c331bbf9e0bdb",
       "title": "Jasper James, Juliana X, Sem Jacobs",
       "date": "2026-05-23T23:00:00",
@@ -10258,24 +10112,6 @@
       "tickets_status": "available",
       "source": "ra",
       "source_url": "https://ra.co/events/2401553",
-      "match": null
-    },
-    {
-      "id": "91e4b7a938898fa6",
-      "title": "Fokofpolisiekar + Die Heuwels Fantasties",
-      "date": "2026-05-24T00:00:00",
-      "date_end": null,
-      "venue": "Melkweg",
-      "venue_address": "Lijnbaansgracht 234A, Amsterdam",
-      "event_type": "Concert",
-      "artists": [],
-      "genres": [],
-      "price_min": null,
-      "price_max": null,
-      "tickets_url": "",
-      "tickets_status": "available",
-      "source": "melkweg",
-      "source_url": "https://www.melkweg.nl/en/agenda/fokofpolisiekar-die-heuwels-fantasties-24-05-2026/",
       "match": null
     },
     {
@@ -10621,6 +10457,30 @@
       "match": null
     },
     {
+      "id": "91e4b7a938898fa6",
+      "title": "Fokofpolisiekar + Die Heuwels Fantasties",
+      "date": "2026-05-24T19:00:00",
+      "date_end": null,
+      "venue": "Melkweg",
+      "venue_address": "Lijnbaansgracht 234A, Amsterdam",
+      "event_type": "Concert",
+      "artists": [],
+      "genres": [
+        "Punk",
+        "Rock",
+        "Heavy",
+        "Roots",
+        "Pop"
+      ],
+      "price_min": null,
+      "price_max": null,
+      "tickets_url": "",
+      "tickets_status": "available",
+      "source": "melkweg",
+      "source_url": "https://www.melkweg.nl/en/agenda/fokofpolisiekar-die-heuwels-fantasties-24-05-2026",
+      "match": null
+    },
+    {
       "id": "5a83ece8b93ff68d",
       "title": "Stray Bodies",
       "date": "2026-05-24T19:00:00",
@@ -10858,46 +10718,6 @@
       }
     },
     {
-      "id": "c177b4710b2bec3f",
-      "title": "SOFIA ISELLA",
-      "date": "2026-05-25T00:00:00",
-      "date_end": null,
-      "venue": "Melkweg",
-      "venue_address": "Lijnbaansgracht 234A, Amsterdam",
-      "event_type": "Concert",
-      "artists": [
-        "Seb Lowe"
-      ],
-      "genres": [],
-      "price_min": null,
-      "price_max": null,
-      "tickets_url": "",
-      "tickets_status": "available",
-      "source": "melkweg",
-      "source_url": "https://www.melkweg.nl/en/agenda/sofia-isella-25-05-2026/",
-      "match": null
-    },
-    {
-      "id": "12b9e1c2ec44ca5b",
-      "title": "Jutes",
-      "date": "2026-05-25T00:00:00",
-      "date_end": null,
-      "venue": "Melkweg",
-      "venue_address": "Lijnbaansgracht 234A, Amsterdam",
-      "event_type": "Concert",
-      "artists": [
-        "Ally Nicholas"
-      ],
-      "genres": [],
-      "price_min": null,
-      "price_max": null,
-      "tickets_url": "",
-      "tickets_status": "available",
-      "source": "melkweg",
-      "source_url": "https://www.melkweg.nl/en/agenda/jutes-25-05-2026/",
-      "match": null
-    },
-    {
       "id": "7bd67896ed7919f5",
       "title": "SLPFNK 15 YEARS AMS TOUR - WEEKENDER - BRET",
       "date": "2026-05-25T06:00:00",
@@ -10970,6 +10790,31 @@
       "match": null
     },
     {
+      "id": "c177b4710b2bec3f",
+      "title": "SOFIA ISELLA",
+      "date": "2026-05-25T19:00:00",
+      "date_end": null,
+      "venue": "Melkweg",
+      "venue_address": "Lijnbaansgracht 234A, Amsterdam",
+      "event_type": "Concert",
+      "artists": [
+        "Support: Seb Lowe"
+      ],
+      "genres": [
+        "Indie rock",
+        "Alternative",
+        "Singer-songwriter",
+        "Indie"
+      ],
+      "price_min": null,
+      "price_max": null,
+      "tickets_url": "",
+      "tickets_status": "sold_out",
+      "source": "melkweg",
+      "source_url": "https://www.melkweg.nl/en/agenda/sofia-isella-25-05-2026",
+      "match": null
+    },
+    {
       "id": "f6cd3531623b6d8b",
       "title": "Dorian Electra",
       "date": "2026-05-25T19:00:00",
@@ -10991,6 +10836,30 @@
       "tickets_status": "available",
       "source": "paradiso",
       "source_url": "https://www.paradiso.nl/en/program/dorian-electra/2876915",
+      "match": null
+    },
+    {
+      "id": "12b9e1c2ec44ca5b",
+      "title": "Jutes",
+      "date": "2026-05-25T19:30:00",
+      "date_end": null,
+      "venue": "Melkweg",
+      "venue_address": "Lijnbaansgracht 234A, Amsterdam",
+      "event_type": "Concert",
+      "artists": [
+        "support: Ally Nicholas"
+      ],
+      "genres": [
+        "Alternative",
+        "Metal",
+        "Heavy"
+      ],
+      "price_min": null,
+      "price_max": null,
+      "tickets_url": "",
+      "tickets_status": "available",
+      "source": "melkweg",
+      "source_url": "https://www.melkweg.nl/en/agenda/jutes-25-05-2026",
       "match": null
     },
     {
@@ -11075,62 +10944,6 @@
       "tickets_status": "available",
       "source": "ra",
       "source_url": "https://ra.co/events/2433254",
-      "match": null
-    },
-    {
-      "id": "e150660a8825c7a0",
-      "title": "SOFIA ISELLA",
-      "date": "2026-05-26T00:00:00",
-      "date_end": null,
-      "venue": "Melkweg",
-      "venue_address": "Lijnbaansgracht 234A, Amsterdam",
-      "event_type": "Concert",
-      "artists": [
-        "Seb Lowe"
-      ],
-      "genres": [],
-      "price_min": null,
-      "price_max": null,
-      "tickets_url": "",
-      "tickets_status": "available",
-      "source": "melkweg",
-      "source_url": "https://www.melkweg.nl/en/agenda/sofia-isella-26-05-2026/",
-      "match": null
-    },
-    {
-      "id": "4220987a18ce9667",
-      "title": "Fcukers",
-      "date": "2026-05-26T00:00:00",
-      "date_end": null,
-      "venue": "Melkweg",
-      "venue_address": "Lijnbaansgracht 234A, Amsterdam",
-      "event_type": "Concert",
-      "artists": [],
-      "genres": [],
-      "price_min": null,
-      "price_max": null,
-      "tickets_url": "",
-      "tickets_status": "available",
-      "source": "melkweg",
-      "source_url": "https://www.melkweg.nl/en/agenda/fcukers-26-05-2026/",
-      "match": null
-    },
-    {
-      "id": "88dde436a35ffe8d",
-      "title": "Techno Tuesday: Stefano Richetta & Dexon",
-      "date": "2026-05-26T00:00:00",
-      "date_end": null,
-      "venue": "Melkweg",
-      "venue_address": "Lijnbaansgracht 234A, Amsterdam",
-      "event_type": "Club",
-      "artists": [],
-      "genres": [],
-      "price_min": null,
-      "price_max": null,
-      "tickets_url": "",
-      "tickets_status": "available",
-      "source": "melkweg",
-      "source_url": "https://www.melkweg.nl/en/agenda/techno-tuesday-26-05-2026/",
       "match": null
     },
     {
@@ -11221,6 +11034,55 @@
       "tickets_status": "available",
       "source": "amsterdam_alt",
       "source_url": "https://www.amsterdamalternative.nl/agenda/21521",
+      "match": null
+    },
+    {
+      "id": "e150660a8825c7a0",
+      "title": "SOFIA ISELLA",
+      "date": "2026-05-26T19:00:00",
+      "date_end": null,
+      "venue": "Melkweg",
+      "venue_address": "Lijnbaansgracht 234A, Amsterdam",
+      "event_type": "Concert",
+      "artists": [
+        "Support: Seb Lowe"
+      ],
+      "genres": [
+        "Indie rock",
+        "Singer-songwriter",
+        "Alternative",
+        "Indie"
+      ],
+      "price_min": null,
+      "price_max": null,
+      "tickets_url": "",
+      "tickets_status": "sold_out",
+      "source": "melkweg",
+      "source_url": "https://www.melkweg.nl/en/agenda/sofia-isella-26-05-2026",
+      "match": null
+    },
+    {
+      "id": "4220987a18ce9667",
+      "title": "Fcukers",
+      "date": "2026-05-26T19:30:00",
+      "date_end": null,
+      "venue": "Melkweg",
+      "venue_address": "Lijnbaansgracht 234A, Amsterdam",
+      "event_type": "Concert",
+      "artists": [],
+      "genres": [
+        "Electro",
+        "Indie",
+        "Rave",
+        "Electronic",
+        "Pop"
+      ],
+      "price_min": null,
+      "price_max": null,
+      "tickets_url": "",
+      "tickets_status": "available",
+      "source": "melkweg",
+      "source_url": "https://www.melkweg.nl/en/agenda/fcukers-26-05-2026",
       "match": null
     },
     {
@@ -11361,6 +11223,29 @@
       "match": null
     },
     {
+      "id": "88dde436a35ffe8d",
+      "title": "Techno Tuesday: Stefano Richetta & Dexon",
+      "date": "2026-05-26T23:30:00",
+      "date_end": "2026-05-27T05:00:00",
+      "venue": "Melkweg",
+      "venue_address": "Lijnbaansgracht 234A, Amsterdam",
+      "event_type": "Clubnacht",
+      "artists": [],
+      "genres": [
+        "Techno",
+        "Industrial",
+        "Club night",
+        "Electronic"
+      ],
+      "price_min": null,
+      "price_max": null,
+      "tickets_url": "",
+      "tickets_status": "available",
+      "source": "melkweg",
+      "source_url": "https://www.melkweg.nl/en/agenda/techno-tuesday-26-05-2026",
+      "match": null
+    },
+    {
       "id": "577b9c8d8ba890d0",
       "title": "Techno Tuesday Amsterdam, Stefano Richetta & Dexon",
       "date": "2026-05-26T23:30:00",
@@ -11379,42 +11264,6 @@
       "tickets_status": "available",
       "source": "ra",
       "source_url": "https://ra.co/events/2432665",
-      "match": null
-    },
-    {
-      "id": "210813796643bf32",
-      "title": "Goose (USA)",
-      "date": "2026-05-27T00:00:00",
-      "date_end": null,
-      "venue": "Melkweg",
-      "venue_address": "Lijnbaansgracht 234A, Amsterdam",
-      "event_type": "Concert",
-      "artists": [],
-      "genres": [],
-      "price_min": null,
-      "price_max": null,
-      "tickets_url": "",
-      "tickets_status": "available",
-      "source": "melkweg",
-      "source_url": "https://www.melkweg.nl/en/agenda/goose-usa-27-05-2026/",
-      "match": null
-    },
-    {
-      "id": "7c45164d81d172a3",
-      "title": "JMSN",
-      "date": "2026-05-27T00:00:00",
-      "date_end": null,
-      "venue": "Melkweg",
-      "venue_address": "Lijnbaansgracht 234A, Amsterdam",
-      "event_type": "Concert",
-      "artists": [],
-      "genres": [],
-      "price_min": null,
-      "price_max": null,
-      "tickets_url": "",
-      "tickets_status": "available",
-      "source": "melkweg",
-      "source_url": "https://www.melkweg.nl/en/agenda/jmsn-27-05-2026/",
       "match": null
     },
     {
@@ -11526,6 +11375,29 @@
       "match": null
     },
     {
+      "id": "210813796643bf32",
+      "title": "Goose (USA)",
+      "date": "2026-05-27T19:00:00",
+      "date_end": null,
+      "venue": "Melkweg",
+      "venue_address": "Lijnbaansgracht 234A, Amsterdam",
+      "event_type": "Concert",
+      "artists": [],
+      "genres": [
+        "Psychedelic rock",
+        "Folk",
+        "Groovy",
+        "Indie"
+      ],
+      "price_min": null,
+      "price_max": null,
+      "tickets_url": "",
+      "tickets_status": "sold_out",
+      "source": "melkweg",
+      "source_url": "https://www.melkweg.nl/en/agenda/goose-usa-27-05-2026",
+      "match": null
+    },
+    {
       "id": "881b598dce7abd1c",
       "title": "Herres in de Maloe Melo!",
       "date": "2026-05-27T19:00:00",
@@ -11541,6 +11413,30 @@
       "tickets_status": "available",
       "source": "amsterdam_alt",
       "source_url": "https://www.amsterdamalternative.nl/agenda/21889",
+      "match": null
+    },
+    {
+      "id": "7c45164d81d172a3",
+      "title": "JMSN",
+      "date": "2026-05-27T19:30:00",
+      "date_end": null,
+      "venue": "Melkweg",
+      "venue_address": "Lijnbaansgracht 234A, Amsterdam",
+      "event_type": "Concert",
+      "artists": [
+        "SUPPORT: SAMY SHARIF"
+      ],
+      "genres": [
+        "R&B",
+        "Soul",
+        "Singer-songwriter"
+      ],
+      "price_min": null,
+      "price_max": null,
+      "tickets_url": "",
+      "tickets_status": "available",
+      "source": "melkweg",
+      "source_url": "https://www.melkweg.nl/en/agenda/jmsn-27-05-2026",
       "match": null
     },
     {
@@ -11643,67 +11539,6 @@
       "tickets_status": "available",
       "source": "ra",
       "source_url": "https://ra.co/events/2396851",
-      "match": null
-    },
-    {
-      "id": "ed1b2997dfcad51f",
-      "title": "Goose (USA)",
-      "date": "2026-05-28T00:00:00",
-      "date_end": null,
-      "venue": "Melkweg",
-      "venue_address": "Lijnbaansgracht 234A, Amsterdam",
-      "event_type": "Concert",
-      "artists": [],
-      "genres": [],
-      "price_min": null,
-      "price_max": null,
-      "tickets_url": "",
-      "tickets_status": "available",
-      "source": "melkweg",
-      "source_url": "https://www.melkweg.nl/en/agenda/goose-usa-28-05-2026/",
-      "match": null
-    },
-    {
-      "id": "a3399c306850477f",
-      "title": "MILK MADE: Pillars of the Underground",
-      "date": "2026-05-28T00:00:00",
-      "date_end": null,
-      "venue": "Melkweg",
-      "venue_address": "Lijnbaansgracht 234A, Amsterdam",
-      "event_type": "Concert",
-      "artists": [
-        "Bokoedro",
-        "xCarra",
-        "Trevv",
-        "YunGNillio",
-        "Maybens",
-        "Skye Indy"
-      ],
-      "genres": [],
-      "price_min": null,
-      "price_max": null,
-      "tickets_url": "",
-      "tickets_status": "available",
-      "source": "melkweg",
-      "source_url": "https://www.melkweg.nl/en/agenda/milk-made-pillars-of-the-underground-28-05-2026/",
-      "match": null
-    },
-    {
-      "id": "e407e0f8e3673b56",
-      "title": "Fave",
-      "date": "2026-05-28T00:00:00",
-      "date_end": null,
-      "venue": "Melkweg",
-      "venue_address": "Lijnbaansgracht 234A, Amsterdam",
-      "event_type": "Concert",
-      "artists": [],
-      "genres": [],
-      "price_min": null,
-      "price_max": null,
-      "tickets_url": "",
-      "tickets_status": "available",
-      "source": "melkweg",
-      "source_url": "https://www.melkweg.nl/en/agenda/fave-28-05-2026/",
       "match": null
     },
     {
@@ -11887,6 +11722,59 @@
       "match": null
     },
     {
+      "id": "ed1b2997dfcad51f",
+      "title": "Goose (USA)",
+      "date": "2026-05-28T19:00:00",
+      "date_end": null,
+      "venue": "Melkweg",
+      "venue_address": "Lijnbaansgracht 234A, Amsterdam",
+      "event_type": "Concert",
+      "artists": [],
+      "genres": [
+        "Psychedelic rock",
+        "Folk",
+        "Groovy",
+        "Indie"
+      ],
+      "price_min": null,
+      "price_max": null,
+      "tickets_url": "",
+      "tickets_status": "sold_out",
+      "source": "melkweg",
+      "source_url": "https://www.melkweg.nl/en/agenda/goose-usa-28-05-2026",
+      "match": null
+    },
+    {
+      "id": "a3399c306850477f",
+      "title": "MILK MADE: Pillars of the Underground",
+      "date": "2026-05-28T19:00:00",
+      "date_end": null,
+      "venue": "Melkweg",
+      "venue_address": "Lijnbaansgracht 234A, Amsterdam",
+      "event_type": "Concert",
+      "artists": [
+        "Bokoedro",
+        "xCarra",
+        "Trevv",
+        "YunGNillio",
+        "Maybens",
+        "Skye Indy"
+      ],
+      "genres": [
+        "Hip hop",
+        "Underground",
+        "Trap",
+        "Hiphop"
+      ],
+      "price_min": null,
+      "price_max": null,
+      "tickets_url": "",
+      "tickets_status": "available",
+      "source": "melkweg",
+      "source_url": "https://www.melkweg.nl/en/agenda/milk-made-pillars-of-the-underground-28-05-2026",
+      "match": null
+    },
+    {
       "id": "d16a8c3fc9506a8e",
       "title": "NAAZ (LIVE)",
       "date": "2026-05-28T19:00:00",
@@ -11922,6 +11810,30 @@
       "tickets_status": "available",
       "source": "ra",
       "source_url": "https://ra.co/events/2433198",
+      "match": null
+    },
+    {
+      "id": "e407e0f8e3673b56",
+      "title": "Fave",
+      "date": "2026-05-28T19:30:00",
+      "date_end": null,
+      "venue": "Melkweg",
+      "venue_address": "Lijnbaansgracht 234A, Amsterdam",
+      "event_type": "Concert",
+      "artists": [],
+      "genres": [
+        "Afro pop",
+        "R&B",
+        "Afrobeats",
+        "Afro",
+        "Pop"
+      ],
+      "price_min": null,
+      "price_max": null,
+      "tickets_url": "",
+      "tickets_status": "rescheduled",
+      "source": "melkweg",
+      "source_url": "https://www.melkweg.nl/en/agenda/fave-28-05-2026",
       "match": null
     },
     {
@@ -12177,44 +12089,6 @@
       "match": null
     },
     {
-      "id": "3b25ce496fc5fbbc",
-      "title": "No Barrier",
-      "date": "2026-05-29T00:00:00",
-      "date_end": null,
-      "venue": "Melkweg",
-      "venue_address": "Lijnbaansgracht 234A, Amsterdam",
-      "event_type": "Club",
-      "artists": [],
-      "genres": [],
-      "price_min": null,
-      "price_max": null,
-      "tickets_url": "",
-      "tickets_status": "available",
-      "source": "melkweg",
-      "source_url": "https://www.melkweg.nl/en/agenda/no-barrier-29-05-2026/",
-      "match": null
-    },
-    {
-      "id": "79440b8da4c55bac",
-      "title": "Antony Szmierek",
-      "date": "2026-05-29T00:00:00",
-      "date_end": null,
-      "venue": "Melkweg",
-      "venue_address": "Lijnbaansgracht 234A, Amsterdam",
-      "event_type": "Concert",
-      "artists": [
-        "MAXRADMAXRAD"
-      ],
-      "genres": [],
-      "price_min": null,
-      "price_max": null,
-      "tickets_url": "",
-      "tickets_status": "available",
-      "source": "melkweg",
-      "source_url": "https://www.melkweg.nl/en/agenda/antony-szmierek-29-05-2026/",
-      "match": null
-    },
-    {
       "id": "9dc7de469f001ce1",
       "title": "Film",
       "date": "2026-05-29T00:00:00",
@@ -12386,6 +12260,30 @@
       "match": null
     },
     {
+      "id": "3b25ce496fc5fbbc",
+      "title": "No Barrier",
+      "date": "2026-05-29T18:00:00",
+      "date_end": "2026-05-29T23:00:00",
+      "venue": "Melkweg",
+      "venue_address": "Lijnbaansgracht 234A, Amsterdam",
+      "event_type": "Clubnacht",
+      "artists": [],
+      "genres": [
+        "Emo",
+        "Punk",
+        "Metalcore",
+        "Club night",
+        "Heavy"
+      ],
+      "price_min": null,
+      "price_max": null,
+      "tickets_url": "",
+      "tickets_status": "available",
+      "source": "melkweg",
+      "source_url": "https://www.melkweg.nl/en/agenda/no-barrier-29-05-2026",
+      "match": null
+    },
+    {
       "id": "3ce32f0d12454108",
       "title": "Zen and Singing",
       "date": "2026-05-29T18:00:00",
@@ -12509,6 +12407,30 @@
       "tickets_status": "available",
       "source": "amsterdam_alt",
       "source_url": "https://www.amsterdamalternative.nl/agenda/21805",
+      "match": null
+    },
+    {
+      "id": "79440b8da4c55bac",
+      "title": "Antony Szmierek",
+      "date": "2026-05-29T19:00:00",
+      "date_end": null,
+      "venue": "Melkweg",
+      "venue_address": "Lijnbaansgracht 234A, Amsterdam",
+      "event_type": "Concert",
+      "artists": [
+        "support: MAXRADMAXRAD"
+      ],
+      "genres": [
+        "Spoken word",
+        "UK Garage",
+        "Indie"
+      ],
+      "price_min": null,
+      "price_max": null,
+      "tickets_url": "",
+      "tickets_status": "sold_out",
+      "source": "melkweg",
+      "source_url": "https://www.melkweg.nl/en/agenda/antony-szmierek-29-05-2026",
       "match": null
     },
     {
@@ -13021,6 +12943,28 @@
       }
     },
     {
+      "id": "6d2c90c0113edfab",
+      "title": "Fiesta Macumba",
+      "date": "2026-05-29T23:30:00",
+      "date_end": "2026-05-30T05:00:00",
+      "venue": "Melkweg",
+      "venue_address": "Lijnbaansgracht 234A, Amsterdam",
+      "event_type": "Clubnacht",
+      "artists": [],
+      "genres": [
+        "Latin",
+        "Club night",
+        "Film"
+      ],
+      "price_min": null,
+      "price_max": null,
+      "tickets_url": "",
+      "tickets_status": "available",
+      "source": "melkweg",
+      "source_url": "https://www.melkweg.nl/en/agenda/fiesta-macumba-29-05-2026",
+      "match": null
+    },
+    {
       "id": "68b26e087b87c9c5",
       "title": "Sin Señal x Doka Studio with Hannecart - Hofmann - Mite Ashwel",
       "date": "2026-05-29T23:59:00",
@@ -13107,78 +13051,6 @@
         "reason": "Similar to El Michels Affair, Tony Allen, Mildlife",
         "score": 9
       }
-    },
-    {
-      "id": "2cfff8e3bc5a4e38",
-      "title": "Mari Froes",
-      "date": "2026-05-30T00:00:00",
-      "date_end": null,
-      "venue": "Melkweg",
-      "venue_address": "Lijnbaansgracht 234A, Amsterdam",
-      "event_type": "Concert",
-      "artists": [],
-      "genres": [],
-      "price_min": null,
-      "price_max": null,
-      "tickets_url": "",
-      "tickets_status": "available",
-      "source": "melkweg",
-      "source_url": "https://www.melkweg.nl/en/agenda/mari-froes-30-05-2026/",
-      "match": null
-    },
-    {
-      "id": "582e076b9e727e93",
-      "title": "Metejoor",
-      "date": "2026-05-30T00:00:00",
-      "date_end": null,
-      "venue": "Melkweg",
-      "venue_address": "Lijnbaansgracht 234A, Amsterdam",
-      "event_type": "Concert",
-      "artists": [],
-      "genres": [],
-      "price_min": null,
-      "price_max": null,
-      "tickets_url": "",
-      "tickets_status": "available",
-      "source": "melkweg",
-      "source_url": "https://www.melkweg.nl/en/agenda/metejoor-30-05-2026/",
-      "match": null
-    },
-    {
-      "id": "1b134eb8d24062b4",
-      "title": "East Africa Conekt x Jollove",
-      "date": "2026-05-30T00:00:00",
-      "date_end": null,
-      "venue": "Melkweg",
-      "venue_address": "Lijnbaansgracht 234A, Amsterdam",
-      "event_type": "Club",
-      "artists": [],
-      "genres": [],
-      "price_min": null,
-      "price_max": null,
-      "tickets_url": "",
-      "tickets_status": "available",
-      "source": "melkweg",
-      "source_url": "https://www.melkweg.nl/en/agenda/east-africa-conekt-30-05-2026/",
-      "match": null
-    },
-    {
-      "id": "65cdf64e83e31d11",
-      "title": "Encore",
-      "date": "2026-05-30T00:00:00",
-      "date_end": null,
-      "venue": "Melkweg",
-      "venue_address": "Lijnbaansgracht 234A, Amsterdam",
-      "event_type": "Club",
-      "artists": [],
-      "genres": [],
-      "price_min": null,
-      "price_max": null,
-      "tickets_url": "",
-      "tickets_status": "available",
-      "source": "melkweg",
-      "source_url": "https://www.melkweg.nl/en/agenda/encore-30-05-2026/",
-      "match": null
     },
     {
       "id": "f1d8f39c1d0269c1",
@@ -13330,6 +13202,28 @@
       "match": null
     },
     {
+      "id": "2cfff8e3bc5a4e38",
+      "title": "Mari Froes",
+      "date": "2026-05-30T19:00:00",
+      "date_end": null,
+      "venue": "Melkweg",
+      "venue_address": "Lijnbaansgracht 234A, Amsterdam",
+      "event_type": "Concert",
+      "artists": [],
+      "genres": [
+        "MPB",
+        "Pop",
+        "Roots"
+      ],
+      "price_min": null,
+      "price_max": null,
+      "tickets_url": "",
+      "tickets_status": "available",
+      "source": "melkweg",
+      "source_url": "https://www.melkweg.nl/en/agenda/mari-froes-30-05-2026",
+      "match": null
+    },
+    {
       "id": "366cbc590205f25a",
       "title": "N4 x Percy Mingle x Singularity - Amsterdam Sessions V",
       "date": "2026-05-30T19:00:00",
@@ -13400,6 +13294,29 @@
       "match": null
     },
     {
+      "id": "582e076b9e727e93",
+      "title": "Metejoor",
+      "date": "2026-05-30T19:30:00",
+      "date_end": null,
+      "venue": "Melkweg",
+      "venue_address": "Lijnbaansgracht 234A, Amsterdam",
+      "event_type": "Concert",
+      "artists": [],
+      "genres": [
+        "Flemish",
+        "Dutch pop",
+        "Belgium",
+        "Pop"
+      ],
+      "price_min": null,
+      "price_max": null,
+      "tickets_url": "",
+      "tickets_status": "available",
+      "source": "melkweg",
+      "source_url": "https://www.melkweg.nl/en/agenda/metejoor-30-05-2026",
+      "match": null
+    },
+    {
       "id": "5f6353a9bbbfb45c",
       "title": "Heidi Curtis",
       "date": "2026-05-30T19:30:00",
@@ -13429,10 +13346,18 @@
       "event_type": "Club",
       "artists": [
         "Batu",
+        "gyrofield",
+        "Simo Cell",
+        "NVST",
         "Mesocosm",
+        "Polar Inertia",
+        "Brent Jacko",
+        "Emily Jeanne",
         "Slowfoam",
         "Formella",
-        "CORIN"
+        "CORIN",
+        "Marco Segato",
+        "Elina Tapio"
       ],
       "genres": [],
       "price_min": null,
@@ -13442,9 +13367,9 @@
       "source": "ra",
       "source_url": "https://ra.co/events/2405552",
       "match": {
-        "type": "Discovery",
-        "reason": "Similar to Simo Cell, Polygonia, Verraco",
-        "score": 6
+        "type": "Library Match",
+        "reason": "In your TIDAL library",
+        "score": 2
       }
     },
     {
@@ -13956,6 +13881,50 @@
       "match": null
     },
     {
+      "id": "1b134eb8d24062b4",
+      "title": "East Africa Conekt x Jollove",
+      "date": "2026-05-30T23:59:00",
+      "date_end": "2026-05-31T05:00:00",
+      "venue": "Melkweg",
+      "venue_address": "Lijnbaansgracht 234A, Amsterdam",
+      "event_type": "Clubnacht",
+      "artists": [],
+      "genres": [
+        "Afro",
+        "Pop"
+      ],
+      "price_min": null,
+      "price_max": null,
+      "tickets_url": "",
+      "tickets_status": "free",
+      "source": "melkweg",
+      "source_url": "https://www.melkweg.nl/en/agenda/east-africa-conekt-30-05-2026",
+      "match": null
+    },
+    {
+      "id": "65cdf64e83e31d11",
+      "title": "Encore",
+      "date": "2026-05-30T23:59:00",
+      "date_end": "2026-05-31T05:00:00",
+      "venue": "Melkweg",
+      "venue_address": "Lijnbaansgracht 234A, Amsterdam",
+      "event_type": "Clubnacht",
+      "artists": [],
+      "genres": [
+        "R&B",
+        "Hip hop",
+        "Afro",
+        "Hiphop"
+      ],
+      "price_min": null,
+      "price_max": null,
+      "tickets_url": "",
+      "tickets_status": "available",
+      "source": "melkweg",
+      "source_url": "https://www.melkweg.nl/en/agenda/encore-30-05-2026",
+      "match": null
+    },
+    {
       "id": "3279f54399647171",
       "title": "Likeminded & The Joint with Charonne, Daan Donk",
       "date": "2026-05-30T23:59:00",
@@ -13997,42 +13966,6 @@
       "tickets_status": "available",
       "source": "paradiso",
       "source_url": "https://www.paradiso.nl/en/program/afrofest/2887506",
-      "match": null
-    },
-    {
-      "id": "cae42e7dafd1d7e3",
-      "title": "COBRAH",
-      "date": "2026-05-31T00:00:00",
-      "date_end": null,
-      "venue": "Melkweg",
-      "venue_address": "Lijnbaansgracht 234A, Amsterdam",
-      "event_type": "Concert",
-      "artists": [],
-      "genres": [],
-      "price_min": null,
-      "price_max": null,
-      "tickets_url": "",
-      "tickets_status": "available",
-      "source": "melkweg",
-      "source_url": "https://www.melkweg.nl/en/agenda/cobrah-31-05-2026/",
-      "match": null
-    },
-    {
-      "id": "5d2fdd21b3564149",
-      "title": "John Vincent III",
-      "date": "2026-05-31T00:00:00",
-      "date_end": null,
-      "venue": "Melkweg",
-      "venue_address": "Lijnbaansgracht 234A, Amsterdam",
-      "event_type": "Concert",
-      "artists": [],
-      "genres": [],
-      "price_min": null,
-      "price_max": null,
-      "tickets_url": "",
-      "tickets_status": "available",
-      "source": "melkweg",
-      "source_url": "https://www.melkweg.nl/en/agenda/john-vincent-iii-31-05-2026/",
       "match": null
     },
     {
@@ -14271,6 +14204,30 @@
       "match": null
     },
     {
+      "id": "cae42e7dafd1d7e3",
+      "title": "COBRAH",
+      "date": "2026-05-31T19:00:00",
+      "date_end": null,
+      "venue": "Melkweg",
+      "venue_address": "Lijnbaansgracht 234A, Amsterdam",
+      "event_type": "Concert",
+      "artists": [],
+      "genres": [
+        "Queer",
+        "Electro pop",
+        "Electronic",
+        "Pop",
+        "LGBTQIA+"
+      ],
+      "price_min": null,
+      "price_max": null,
+      "tickets_url": "",
+      "tickets_status": "available",
+      "source": "melkweg",
+      "source_url": "https://www.melkweg.nl/en/agenda/cobrah-31-05-2026",
+      "match": null
+    },
+    {
       "id": "867bd7e5b478a0dd",
       "title": "Exert!",
       "date": "2026-05-31T19:00:00",
@@ -14286,6 +14243,46 @@
       "tickets_status": "available",
       "source": "ra",
       "source_url": "https://ra.co/events/2426425",
+      "match": null
+    },
+    {
+      "id": "5d2fdd21b3564149",
+      "title": "John Vincent III",
+      "date": "2026-05-31T19:30:00",
+      "date_end": null,
+      "venue": "Melkweg",
+      "venue_address": "Lijnbaansgracht 234A, Amsterdam",
+      "event_type": "Concert",
+      "artists": [],
+      "genres": [
+        "Singer-songwriter",
+        "Folk",
+        "Roots"
+      ],
+      "price_min": null,
+      "price_max": null,
+      "tickets_url": "",
+      "tickets_status": "available",
+      "source": "melkweg",
+      "source_url": "https://www.melkweg.nl/en/agenda/john-vincent-iii-31-05-2026",
+      "match": null
+    },
+    {
+      "id": "0f976f10aa910813",
+      "title": "Freï invites Robyn",
+      "date": "2026-05-31T21:00:00",
+      "date_end": "2026-06-01T02:00:00",
+      "venue": "nachbar",
+      "venue_address": "Nieuwezijds Voorburgwal 169a",
+      "event_type": "Club",
+      "artists": [],
+      "genres": [],
+      "price_min": null,
+      "price_max": null,
+      "tickets_url": "",
+      "tickets_status": "available",
+      "source": "ra",
+      "source_url": "https://ra.co/events/2436494",
       "match": null
     },
     {
@@ -14334,19 +14331,23 @@
     {
       "id": "e7aba9a1b634184f",
       "title": "The Young Analogues",
-      "date": "2026-06-01T00:00:00",
+      "date": "2026-06-01T19:30:00",
       "date_end": null,
       "venue": "Melkweg",
       "venue_address": "Lijnbaansgracht 234A, Amsterdam",
       "event_type": "Concert",
       "artists": [],
-      "genres": [],
+      "genres": [
+        "Tribute",
+        "Rock-‘n-roll",
+        "Indie"
+      ],
       "price_min": null,
       "price_max": null,
       "tickets_url": "",
       "tickets_status": "available",
       "source": "melkweg",
-      "source_url": "https://www.melkweg.nl/en/agenda/young-analogues-01-06-2026/",
+      "source_url": "https://www.melkweg.nl/en/agenda/young-analogues-01-06-2026",
       "match": null
     },
     {
@@ -14371,6 +14372,24 @@
       "tickets_status": "available",
       "source": "paradiso",
       "source_url": "https://www.paradiso.nl/en/program/forest-blakk/2777406",
+      "match": null
+    },
+    {
+      "id": "b3f6ef87402f43d0",
+      "title": "cupcakKe (US) – live in Amsterdam",
+      "date": "2026-06-01T20:00:00",
+      "date_end": "2026-06-02T22:00:00",
+      "venue": "Panama",
+      "venue_address": "Oostelijke Handelskade 4; 1019 Zeeburg; Amsterdam; Netherlands",
+      "event_type": "Club",
+      "artists": [],
+      "genres": [],
+      "price_min": null,
+      "price_max": null,
+      "tickets_url": "",
+      "tickets_status": "available",
+      "source": "ra",
+      "source_url": "https://ra.co/events/2436566",
       "match": null
     },
     {
@@ -14446,26 +14465,6 @@
       "match": null
     },
     {
-      "id": "b08a2eb3f387a835",
-      "title": "Bilmuri",
-      "date": "2026-06-02T00:00:00",
-      "date_end": null,
-      "venue": "Melkweg",
-      "venue_address": "Lijnbaansgracht 234A, Amsterdam",
-      "event_type": "Concert",
-      "artists": [
-        "Vianova"
-      ],
-      "genres": [],
-      "price_min": null,
-      "price_max": null,
-      "tickets_url": "",
-      "tickets_status": "available",
-      "source": "melkweg",
-      "source_url": "https://www.melkweg.nl/en/agenda/bilmuri-02-06-2026/",
-      "match": null
-    },
-    {
       "id": "224ac3c8b214c733",
       "title": "Lunch at Café Gilde",
       "date": "2026-06-02T10:00:00",
@@ -14481,6 +14480,30 @@
       "tickets_status": "available",
       "source": "amsterdam_alt",
       "source_url": "https://www.amsterdamalternative.nl/agenda/20837",
+      "match": null
+    },
+    {
+      "id": "b08a2eb3f387a835",
+      "title": "Bilmuri",
+      "date": "2026-06-02T19:00:00",
+      "date_end": null,
+      "venue": "Melkweg",
+      "venue_address": "Lijnbaansgracht 234A, Amsterdam",
+      "event_type": "Concert",
+      "artists": [
+        "support: Vianova"
+      ],
+      "genres": [
+        "Post-hardcore",
+        "Alternative rock",
+        "Heavy"
+      ],
+      "price_min": null,
+      "price_max": null,
+      "tickets_url": "",
+      "tickets_status": "available",
+      "source": "melkweg",
+      "source_url": "https://www.melkweg.nl/en/agenda/bilmuri-02-06-2026",
       "match": null
     },
     {
@@ -14580,24 +14603,6 @@
       "match": null
     },
     {
-      "id": "0de31bdf0712e3d3",
-      "title": "Lalalar",
-      "date": "2026-06-03T00:00:00",
-      "date_end": null,
-      "venue": "Melkweg",
-      "venue_address": "Lijnbaansgracht 234A, Amsterdam",
-      "event_type": "Concert",
-      "artists": [],
-      "genres": [],
-      "price_min": null,
-      "price_max": null,
-      "tickets_url": "",
-      "tickets_status": "available",
-      "source": "melkweg",
-      "source_url": "https://www.melkweg.nl/en/agenda/lalalar-03-06-2026/",
-      "match": null
-    },
-    {
       "id": "cfe184b4375b834a",
       "title": "Lunch at Café Gilde",
       "date": "2026-06-03T10:00:00",
@@ -14634,6 +14639,46 @@
       "match": null
     },
     {
+      "id": "968b63b9554e86f6",
+      "title": "common ground: Break!",
+      "date": "2026-06-03T18:00:00",
+      "date_end": null,
+      "venue": "[ woonruimte coöperatief ]",
+      "venue_address": "",
+      "event_type": "",
+      "artists": [],
+      "genres": [],
+      "price_min": 0.0,
+      "price_max": null,
+      "tickets_url": "",
+      "tickets_status": "available",
+      "source": "amsterdam_alt",
+      "source_url": "https://www.amsterdamalternative.nl/agenda/21931",
+      "match": null
+    },
+    {
+      "id": "0de31bdf0712e3d3",
+      "title": "Lalalar",
+      "date": "2026-06-03T19:30:00",
+      "date_end": null,
+      "venue": "Melkweg",
+      "venue_address": "Lijnbaansgracht 234A, Amsterdam",
+      "event_type": "Concert",
+      "artists": [],
+      "genres": [
+        "Psychedelic",
+        "Electronic",
+        "Indie"
+      ],
+      "price_min": null,
+      "price_max": null,
+      "tickets_url": "",
+      "tickets_status": "available",
+      "source": "melkweg",
+      "source_url": "https://www.melkweg.nl/en/agenda/lalalar-03-06-2026",
+      "match": null
+    },
+    {
       "id": "8655341ffa1b8427",
       "title": "Buckshot",
       "date": "2026-06-03T19:30:00",
@@ -14653,6 +14698,24 @@
       "tickets_status": "available",
       "source": "paradiso",
       "source_url": "https://www.paradiso.nl/en/program/buckshot/2870735",
+      "match": null
+    },
+    {
+      "id": "a52760db65814529",
+      "title": "SUBTERRANEA",
+      "date": "2026-06-03T20:00:00",
+      "date_end": "2026-06-03T23:00:00",
+      "venue": "RADION",
+      "venue_address": "Louwesweg 1 ,1066 EA Amsterdam",
+      "event_type": "Club",
+      "artists": [],
+      "genres": [],
+      "price_min": null,
+      "price_max": null,
+      "tickets_url": "",
+      "tickets_status": "available",
+      "source": "ra",
+      "source_url": "https://ra.co/events/2436610",
       "match": null
     },
     {
@@ -14739,24 +14802,6 @@
       "match": null
     },
     {
-      "id": "f3298e7547aeee97",
-      "title": "Don't Stop Talking About Congo",
-      "date": "2026-06-04T00:00:00",
-      "date_end": null,
-      "venue": "Melkweg",
-      "venue_address": "Lijnbaansgracht 234A, Amsterdam",
-      "event_type": "Concert",
-      "artists": [],
-      "genres": [],
-      "price_min": null,
-      "price_max": null,
-      "tickets_url": "",
-      "tickets_status": "available",
-      "source": "melkweg",
-      "source_url": "https://www.melkweg.nl/en/agenda/dont-stop-talking-about-congo-04-06-2026/",
-      "match": null
-    },
-    {
       "id": "78a5b7b74e803742",
       "title": "Lunch at Café Gilde",
       "date": "2026-06-04T10:00:00",
@@ -14826,6 +14871,27 @@
       "tickets_status": "available",
       "source": "amsterdam_alt",
       "source_url": "https://www.amsterdamalternative.nl/agenda/21466",
+      "match": null
+    },
+    {
+      "id": "f3298e7547aeee97",
+      "title": "Don't Stop Talking About Congo",
+      "date": "2026-06-04T19:00:00",
+      "date_end": null,
+      "venue": "Melkweg",
+      "venue_address": "Lijnbaansgracht 234A, Amsterdam",
+      "event_type": "Concert",
+      "artists": [],
+      "genres": [
+        "Fundraiser",
+        "Congo"
+      ],
+      "price_min": null,
+      "price_max": null,
+      "tickets_url": "",
+      "tickets_status": "available",
+      "source": "melkweg",
+      "source_url": "https://www.melkweg.nl/en/agenda/dont-stop-talking-about-congo-04-06-2026",
       "match": null
     },
     {
@@ -14957,39 +15023,34 @@
       "match": null
     },
     {
-      "id": "57c243774c183b03",
-      "title": "Rootsriders feat. Mo Ali",
-      "date": "2026-06-05T00:00:00",
+      "id": "8039ab457bfa5e33",
+      "title": "Mokum Records",
+      "date": "2026-06-05T06:39:00",
       "date_end": null,
-      "venue": "Melkweg",
-      "venue_address": "Lijnbaansgracht 234A, Amsterdam",
-      "event_type": "Concert",
-      "artists": [],
-      "genres": [],
+      "venue": "Paradiso",
+      "venue_address": "Paradiso - Grote Zaal, Paradiso - Kelder",
+      "event_type": "Club",
+      "artists": [
+        "DJ Dano",
+        "Tellurian",
+        "Remsy",
+        "WICKED XXX",
+        "Party Animals (live)",
+        "T-GO",
+        "Arvid",
+        "Los Muñaños",
+        "XTNA"
+      ],
+      "genres": [
+        "Electronic",
+        "Club"
+      ],
       "price_min": null,
       "price_max": null,
-      "tickets_url": "",
+      "tickets_url": "https://tickets.paradiso.nl/76de8d60b85f4ab5b8b55413e895fe1f",
       "tickets_status": "available",
-      "source": "melkweg",
-      "source_url": "https://www.melkweg.nl/en/agenda/rootsriders-feat-mo-ali-05-06-2026/",
-      "match": null
-    },
-    {
-      "id": "f7b43c085dfe0e44",
-      "title": "Roel",
-      "date": "2026-06-05T00:00:00",
-      "date_end": null,
-      "venue": "Melkweg",
-      "venue_address": "Lijnbaansgracht 234A, Amsterdam",
-      "event_type": "Concert",
-      "artists": [],
-      "genres": [],
-      "price_min": null,
-      "price_max": null,
-      "tickets_url": "",
-      "tickets_status": "available",
-      "source": "melkweg",
-      "source_url": "https://www.melkweg.nl/en/agenda/roel-05-06-2026/",
+      "source": "paradiso",
+      "source_url": "https://www.paradiso.nl/en/program/mokum-records/2785742",
       "match": null
     },
     {
@@ -15061,37 +15122,6 @@
       "match": null
     },
     {
-      "id": "8039ab457bfa5e33",
-      "title": "Mokum Records",
-      "date": "2026-06-05T16:04:00",
-      "date_end": null,
-      "venue": "Paradiso",
-      "venue_address": "Paradiso - Grote Zaal, Paradiso - Kelder",
-      "event_type": "Club",
-      "artists": [
-        "DJ Dano",
-        "Tellurian",
-        "Remsy",
-        "WICKED XXX",
-        "Party Animals (live)",
-        "T-GO",
-        "Arvid",
-        "Los Muñaños",
-        "XTNA"
-      ],
-      "genres": [
-        "Electronic",
-        "Club"
-      ],
-      "price_min": null,
-      "price_max": null,
-      "tickets_url": "https://tickets.paradiso.nl/76de8d60b85f4ab5b8b55413e895fe1f",
-      "tickets_status": "available",
-      "source": "paradiso",
-      "source_url": "https://www.paradiso.nl/en/program/mokum-records/2785742",
-      "match": null
-    },
-    {
       "id": "3192ab8c99292391",
       "title": "Queer Latin Night Amsterdam!",
       "date": "2026-06-05T17:00:00",
@@ -15146,6 +15176,28 @@
       "match": null
     },
     {
+      "id": "57c243774c183b03",
+      "title": "Rootsriders feat. Mo Ali",
+      "date": "2026-06-05T19:30:00",
+      "date_end": null,
+      "venue": "Melkweg",
+      "venue_address": "Lijnbaansgracht 234A, Amsterdam",
+      "event_type": "Concert",
+      "artists": [],
+      "genres": [
+        "Reggae",
+        "Tribute",
+        "Bob Marley"
+      ],
+      "price_min": null,
+      "price_max": null,
+      "tickets_url": "",
+      "tickets_status": "available",
+      "source": "melkweg",
+      "source_url": "https://www.melkweg.nl/en/agenda/rootsriders-feat-mo-ali-05-06-2026",
+      "match": null
+    },
+    {
       "id": "08cc0a86114846aa",
       "title": "puntjudith",
       "date": "2026-06-05T19:30:00",
@@ -15172,6 +15224,30 @@
       "tickets_status": "available",
       "source": "paradiso",
       "source_url": "https://www.paradiso.nl/en/program/puntjudith/2769020",
+      "match": null
+    },
+    {
+      "id": "f7b43c085dfe0e44",
+      "title": "Roel",
+      "date": "2026-06-05T20:00:00",
+      "date_end": null,
+      "venue": "Melkweg",
+      "venue_address": "Lijnbaansgracht 234A, Amsterdam",
+      "event_type": "Concert",
+      "artists": [],
+      "genres": [
+        "Alt pop",
+        "Pop punk",
+        "Nostalgia",
+        "Pop",
+        "Indie"
+      ],
+      "price_min": null,
+      "price_max": null,
+      "tickets_url": "",
+      "tickets_status": "available",
+      "source": "melkweg",
+      "source_url": "https://www.melkweg.nl/en/agenda/roel-05-06-2026",
       "match": null
     },
     {
@@ -16227,19 +16303,23 @@
     {
       "id": "ebf9fe9e4773878c",
       "title": "letlive.",
-      "date": "2026-06-08T00:00:00",
+      "date": "2026-06-08T19:30:00",
       "date_end": null,
       "venue": "Melkweg",
       "venue_address": "Lijnbaansgracht 234A, Amsterdam",
       "event_type": "Concert",
       "artists": [],
-      "genres": [],
+      "genres": [
+        "Post-hardcore",
+        "Experimental",
+        "Heavy"
+      ],
       "price_min": null,
       "price_max": null,
       "tickets_url": "",
       "tickets_status": "available",
       "source": "melkweg",
-      "source_url": "https://www.melkweg.nl/en/agenda/letlive-08-06-2026/",
+      "source_url": "https://www.melkweg.nl/en/agenda/letlive-08-06-2026",
       "match": null
     },
     {
@@ -16296,24 +16376,6 @@
       }
     },
     {
-      "id": "07203fcaaefddbf1",
-      "title": "Don Broco",
-      "date": "2026-06-09T00:00:00",
-      "date_end": null,
-      "venue": "Melkweg",
-      "venue_address": "Lijnbaansgracht 234A, Amsterdam",
-      "event_type": "Concert",
-      "artists": [],
-      "genres": [],
-      "price_min": null,
-      "price_max": null,
-      "tickets_url": "",
-      "tickets_status": "available",
-      "source": "melkweg",
-      "source_url": "https://www.melkweg.nl/en/agenda/don-broco-09-06-2026/",
-      "match": null
-    },
-    {
       "id": "cb015783cf2710f8",
       "title": "Lunch at Café Gilde",
       "date": "2026-06-09T10:00:00",
@@ -16347,6 +16409,29 @@
       "tickets_status": "available",
       "source": "amsterdam_alt",
       "source_url": "https://www.amsterdamalternative.nl/agenda/21873",
+      "match": null
+    },
+    {
+      "id": "07203fcaaefddbf1",
+      "title": "Don Broco",
+      "date": "2026-06-09T19:30:00",
+      "date_end": null,
+      "venue": "Melkweg",
+      "venue_address": "Lijnbaansgracht 234A, Amsterdam",
+      "event_type": "Concert",
+      "artists": [],
+      "genres": [
+        "Alternative rock",
+        "Post-hardcore",
+        "Nu metal",
+        "Heavy"
+      ],
+      "price_min": null,
+      "price_max": null,
+      "tickets_url": "",
+      "tickets_status": "available",
+      "source": "melkweg",
+      "source_url": "https://www.melkweg.nl/en/agenda/don-broco-09-06-2026",
       "match": null
     },
     {
@@ -16422,47 +16507,6 @@
       "match": null
     },
     {
-      "id": "2a55388505f36554",
-      "title": "The Story So Far",
-      "date": "2026-06-10T00:00:00",
-      "date_end": null,
-      "venue": "Melkweg",
-      "venue_address": "Lijnbaansgracht 234A, Amsterdam",
-      "event_type": "Concert",
-      "artists": [
-        "Drain"
-      ],
-      "genres": [],
-      "price_min": null,
-      "price_max": null,
-      "tickets_url": "",
-      "tickets_status": "available",
-      "source": "melkweg",
-      "source_url": "https://www.melkweg.nl/en/agenda/the-story-so-far-10-06-2026/",
-      "match": null
-    },
-    {
-      "id": "ab2d238590893f87",
-      "title": "YONAKA",
-      "date": "2026-06-10T00:00:00",
-      "date_end": null,
-      "venue": "Melkweg",
-      "venue_address": "Lijnbaansgracht 234A, Amsterdam",
-      "event_type": "Concert",
-      "artists": [
-        "Support: Overgrown",
-        "Artio"
-      ],
-      "genres": [],
-      "price_min": null,
-      "price_max": null,
-      "tickets_url": "",
-      "tickets_status": "available",
-      "source": "melkweg",
-      "source_url": "https://www.melkweg.nl/en/agenda/yonaka-10-06-2026/",
-      "match": null
-    },
-    {
       "id": "e76b0dd2ae65b3a5",
       "title": "Lunch at Café Gilde",
       "date": "2026-06-10T10:00:00",
@@ -16496,6 +16540,57 @@
       "tickets_status": "available",
       "source": "amsterdam_alt",
       "source_url": "https://www.amsterdamalternative.nl/agenda/21606",
+      "match": null
+    },
+    {
+      "id": "2a55388505f36554",
+      "title": "The Story So Far",
+      "date": "2026-06-10T19:00:00",
+      "date_end": null,
+      "venue": "Melkweg",
+      "venue_address": "Lijnbaansgracht 234A, Amsterdam",
+      "event_type": "Concert",
+      "artists": [
+        "Support: Drain"
+      ],
+      "genres": [
+        "Pop punk",
+        "Hardcore punk",
+        "Heavy"
+      ],
+      "price_min": null,
+      "price_max": null,
+      "tickets_url": "",
+      "tickets_status": "available",
+      "source": "melkweg",
+      "source_url": "https://www.melkweg.nl/en/agenda/the-story-so-far-10-06-2026",
+      "match": null
+    },
+    {
+      "id": "ab2d238590893f87",
+      "title": "YONAKA",
+      "date": "2026-06-10T19:30:00",
+      "date_end": null,
+      "venue": "Melkweg",
+      "venue_address": "Lijnbaansgracht 234A, Amsterdam",
+      "event_type": "Concert",
+      "artists": [
+        "support: Overgrown",
+        "Artio"
+      ],
+      "genres": [
+        "British",
+        "Alternative rock",
+        "Pop punk",
+        "Heavy",
+        "Pop"
+      ],
+      "price_min": null,
+      "price_max": null,
+      "tickets_url": "",
+      "tickets_status": "available",
+      "source": "melkweg",
+      "source_url": "https://www.melkweg.nl/en/agenda/yonaka-10-06-2026",
       "match": null
     },
     {
@@ -16870,42 +16965,6 @@
       "match": null
     },
     {
-      "id": "e24fd6b04b2d731b",
-      "title": "The Girl Who Leapt Through Time (2006)",
-      "date": "2026-06-12T00:00:00",
-      "date_end": null,
-      "venue": "Melkweg",
-      "venue_address": "Lijnbaansgracht 234A, Amsterdam",
-      "event_type": "Film",
-      "artists": [],
-      "genres": [],
-      "price_min": null,
-      "price_max": null,
-      "tickets_url": "",
-      "tickets_status": "available",
-      "source": "melkweg",
-      "source_url": "https://www.melkweg.nl/en/agenda/the-girl-who-leapt-through-time-2006-12-06-2026/",
-      "match": null
-    },
-    {
-      "id": "99b56f65bc076851",
-      "title": "The Boy and the Beast (2015)",
-      "date": "2026-06-12T00:00:00",
-      "date_end": null,
-      "venue": "Melkweg",
-      "venue_address": "Lijnbaansgracht 234A, Amsterdam",
-      "event_type": "Film",
-      "artists": [],
-      "genres": [],
-      "price_min": null,
-      "price_max": null,
-      "tickets_url": "",
-      "tickets_status": "available",
-      "source": "melkweg",
-      "source_url": "https://www.melkweg.nl/en/agenda/the-boy-and-the-beast-2015-12-06-2026/",
-      "match": null
-    },
-    {
       "id": "3d02130d3e647388",
       "title": "Lunch at Café Gilde",
       "date": "2026-06-12T10:00:00",
@@ -16975,6 +17034,30 @@
       "tickets_status": "available",
       "source": "amsterdam_alt",
       "source_url": "https://www.amsterdamalternative.nl/agenda/21655",
+      "match": null
+    },
+    {
+      "id": "e24fd6b04b2d731b",
+      "title": "The Girl Who Leapt Through Time (2006)",
+      "date": "2026-06-12T19:00:00",
+      "date_end": "2026-06-12T20:40:00",
+      "venue": "Melkweg",
+      "venue_address": "Lijnbaansgracht 234A, Amsterdam",
+      "event_type": "Film",
+      "artists": [],
+      "genres": [
+        "Anime",
+        "Sci-fi",
+        "Romantic",
+        "Japan",
+        "English subs"
+      ],
+      "price_min": null,
+      "price_max": null,
+      "tickets_url": "",
+      "tickets_status": "available",
+      "source": "melkweg",
+      "source_url": "https://www.melkweg.nl/en/agenda/the-girl-who-leapt-through-time-2006-12-06-2026",
       "match": null
     },
     {
@@ -17089,6 +17172,28 @@
       "tickets_status": "available",
       "source": "ra",
       "source_url": "https://ra.co/events/2434818",
+      "match": null
+    },
+    {
+      "id": "99b56f65bc076851",
+      "title": "The Boy and the Beast (2015)",
+      "date": "2026-06-12T21:15:00",
+      "date_end": "2026-06-12T23:30:00",
+      "venue": "Melkweg",
+      "venue_address": "Lijnbaansgracht 234A, Amsterdam",
+      "event_type": "Film",
+      "artists": [],
+      "genres": [
+        "Anime",
+        "Fantasy",
+        "Coming-of-age"
+      ],
+      "price_min": null,
+      "price_max": null,
+      "tickets_url": "",
+      "tickets_status": "available",
+      "source": "melkweg",
+      "source_url": "https://www.melkweg.nl/en/agenda/the-boy-and-the-beast-2015-12-06-2026",
       "match": null
     },
     {
@@ -17220,44 +17325,6 @@
       "tickets_status": "available",
       "source": "ra",
       "source_url": "https://ra.co/events/2422976",
-      "match": null
-    },
-    {
-      "id": "8e4e608b8551cb6d",
-      "title": "Billy Talent",
-      "date": "2026-06-13T00:00:00",
-      "date_end": null,
-      "venue": "Melkweg",
-      "venue_address": "Lijnbaansgracht 234A, Amsterdam",
-      "event_type": "Concert",
-      "artists": [
-        "Hollerado"
-      ],
-      "genres": [],
-      "price_min": null,
-      "price_max": null,
-      "tickets_url": "",
-      "tickets_status": "available",
-      "source": "melkweg",
-      "source_url": "https://www.melkweg.nl/en/agenda/billy-talent-13-06-2026/",
-      "match": null
-    },
-    {
-      "id": "17452d16311165ec",
-      "title": "Zer00's Heroes",
-      "date": "2026-06-13T00:00:00",
-      "date_end": null,
-      "venue": "Melkweg",
-      "venue_address": "Lijnbaansgracht 234A, Amsterdam",
-      "event_type": "Club",
-      "artists": [],
-      "genres": [],
-      "price_min": null,
-      "price_max": null,
-      "tickets_url": "",
-      "tickets_status": "available",
-      "source": "melkweg",
-      "source_url": "https://www.melkweg.nl/en/agenda/zer00s-heroes-13-06-2026/",
       "match": null
     },
     {
@@ -17508,6 +17575,30 @@
       "tickets_status": "available",
       "source": "ra",
       "source_url": "https://ra.co/events/2433107",
+      "match": null
+    },
+    {
+      "id": "8e4e608b8551cb6d",
+      "title": "Billy Talent",
+      "date": "2026-06-13T19:00:00",
+      "date_end": null,
+      "venue": "Melkweg",
+      "venue_address": "Lijnbaansgracht 234A, Amsterdam",
+      "event_type": "Concert",
+      "artists": [
+        "support: Hollerado"
+      ],
+      "genres": [
+        "Punk",
+        "Alternative rock",
+        "Heavy"
+      ],
+      "price_min": null,
+      "price_max": null,
+      "tickets_url": "",
+      "tickets_status": "sold_out",
+      "source": "melkweg",
+      "source_url": "https://www.melkweg.nl/en/agenda/billy-talent-13-06-2026",
       "match": null
     },
     {
@@ -17810,6 +17901,30 @@
       "match": null
     },
     {
+      "id": "17452d16311165ec",
+      "title": "Zer00's Heroes",
+      "date": "2026-06-13T23:30:00",
+      "date_end": "2026-06-14T04:00:00",
+      "venue": "Melkweg",
+      "venue_address": "Lijnbaansgracht 234A, Amsterdam",
+      "event_type": "Clubnacht",
+      "artists": [],
+      "genres": [
+        "Club night",
+        "Zeroes",
+        "Hits",
+        "Pop",
+        "Hiphop"
+      ],
+      "price_min": null,
+      "price_max": null,
+      "tickets_url": "",
+      "tickets_status": "available",
+      "source": "melkweg",
+      "source_url": "https://www.melkweg.nl/en/agenda/zer00s-heroes-13-06-2026",
+      "match": null
+    },
+    {
       "id": "be9b12be4e3eb0fe",
       "title": "Nieuwe Noten Amsterdam: Opdoemende fluisteringen",
       "date": "2026-06-14T13:00:00",
@@ -18042,24 +18157,6 @@
       "match": null
     },
     {
-      "id": "b8eb980e502d3dd2",
-      "title": "Don West",
-      "date": "2026-06-15T00:00:00",
-      "date_end": null,
-      "venue": "Melkweg",
-      "venue_address": "Lijnbaansgracht 234A, Amsterdam",
-      "event_type": "Concert",
-      "artists": [],
-      "genres": [],
-      "price_min": null,
-      "price_max": null,
-      "tickets_url": "",
-      "tickets_status": "available",
-      "source": "melkweg",
-      "source_url": "https://www.melkweg.nl/en/agenda/don-west-15-06-2026/",
-      "match": null
-    },
-    {
       "id": "79573b81f72aaf00",
       "title": "Good Flying Birds",
       "date": "2026-06-15T18:00:00",
@@ -18075,6 +18172,28 @@
       "tickets_status": "available",
       "source": "amsterdam_alt",
       "source_url": "https://www.amsterdamalternative.nl/agenda/21524",
+      "match": null
+    },
+    {
+      "id": "b8eb980e502d3dd2",
+      "title": "Don West",
+      "date": "2026-06-15T19:00:00",
+      "date_end": null,
+      "venue": "Melkweg",
+      "venue_address": "Lijnbaansgracht 234A, Amsterdam",
+      "event_type": "Concert",
+      "artists": [],
+      "genres": [
+        "Soul",
+        "Cinematic",
+        "R&B"
+      ],
+      "price_min": null,
+      "price_max": null,
+      "tickets_url": "",
+      "tickets_status": "available",
+      "source": "melkweg",
+      "source_url": "https://www.melkweg.nl/en/agenda/don-west-15-06-2026",
       "match": null
     },
     {
@@ -18215,6 +18334,24 @@
       "match": null
     },
     {
+      "id": "99d4994f4998b2f7",
+      "title": "filmHuis: De Kracht van Onze Handen",
+      "date": "2026-06-17T17:30:00",
+      "date_end": null,
+      "venue": "[ woonruimte coöperatief ]",
+      "venue_address": "",
+      "event_type": "",
+      "artists": [],
+      "genres": [],
+      "price_min": 0.0,
+      "price_max": null,
+      "tickets_url": "",
+      "tickets_status": "available",
+      "source": "amsterdam_alt",
+      "source_url": "https://www.amsterdamalternative.nl/agenda/21932",
+      "match": null
+    },
+    {
       "id": "9b2abdd7f2cbc32c",
       "title": "Sina Bathaie White Lotus World Tour - Live in Amsterdam",
       "date": "2026-06-17T19:30:00",
@@ -18325,42 +18462,6 @@
       "match": null
     },
     {
-      "id": "72ff5df86c180797",
-      "title": "Ke Personajes",
-      "date": "2026-06-18T00:00:00",
-      "date_end": null,
-      "venue": "Melkweg",
-      "venue_address": "Lijnbaansgracht 234A, Amsterdam",
-      "event_type": "Concert",
-      "artists": [],
-      "genres": [],
-      "price_min": null,
-      "price_max": null,
-      "tickets_url": "",
-      "tickets_status": "available",
-      "source": "melkweg",
-      "source_url": "https://www.melkweg.nl/en/agenda/ke-personajes-18-06-2026/",
-      "match": null
-    },
-    {
-      "id": "3678031599f5fff9",
-      "title": "Celine Cairo",
-      "date": "2026-06-18T00:00:00",
-      "date_end": null,
-      "venue": "Melkweg",
-      "venue_address": "Lijnbaansgracht 234A, Amsterdam",
-      "event_type": "Concert",
-      "artists": [],
-      "genres": [],
-      "price_min": null,
-      "price_max": null,
-      "tickets_url": "",
-      "tickets_status": "available",
-      "source": "melkweg",
-      "source_url": "https://www.melkweg.nl/en/agenda/celine-cairo-18-06-2026/",
-      "match": null
-    },
-    {
       "id": "a7e3aca0fcd7615d",
       "title": "Lunch at Café Gilde",
       "date": "2026-06-18T10:00:00",
@@ -18430,6 +18531,51 @@
       "tickets_status": "available",
       "source": "amsterdam_alt",
       "source_url": "https://www.amsterdamalternative.nl/agenda/21693",
+      "match": null
+    },
+    {
+      "id": "72ff5df86c180797",
+      "title": "Ke Personajes",
+      "date": "2026-06-18T19:00:00",
+      "date_end": null,
+      "venue": "Melkweg",
+      "venue_address": "Lijnbaansgracht 234A, Amsterdam",
+      "event_type": "Concert",
+      "artists": [],
+      "genres": [
+        "Latin",
+        "Cumbia"
+      ],
+      "price_min": null,
+      "price_max": null,
+      "tickets_url": "",
+      "tickets_status": "available",
+      "source": "melkweg",
+      "source_url": "https://www.melkweg.nl/en/agenda/ke-personajes-18-06-2026",
+      "match": null
+    },
+    {
+      "id": "3678031599f5fff9",
+      "title": "Celine Cairo",
+      "date": "2026-06-18T19:30:00",
+      "date_end": null,
+      "venue": "Melkweg",
+      "venue_address": "Lijnbaansgracht 234A, Amsterdam",
+      "event_type": "Concert",
+      "artists": [],
+      "genres": [
+        "Singer-songwriter",
+        "Dreamy",
+        "Indie pop",
+        "Indie",
+        "Pop"
+      ],
+      "price_min": null,
+      "price_max": null,
+      "tickets_url": "",
+      "tickets_status": "available",
+      "source": "melkweg",
+      "source_url": "https://www.melkweg.nl/en/agenda/celine-cairo-18-06-2026",
       "match": null
     },
     {
@@ -18548,42 +18694,6 @@
       "match": null
     },
     {
-      "id": "c2799ee01b75ea26",
-      "title": "80's Verantwoord",
-      "date": "2026-06-19T00:00:00",
-      "date_end": null,
-      "venue": "Melkweg",
-      "venue_address": "Lijnbaansgracht 234A, Amsterdam",
-      "event_type": "Club",
-      "artists": [],
-      "genres": [],
-      "price_min": null,
-      "price_max": null,
-      "tickets_url": "",
-      "tickets_status": "available",
-      "source": "melkweg",
-      "source_url": "https://www.melkweg.nl/en/agenda/80s-verantwoord-19-06-2026/",
-      "match": null
-    },
-    {
-      "id": "4fe25fcd7b53cbf3",
-      "title": "Phantogram",
-      "date": "2026-06-19T00:00:00",
-      "date_end": null,
-      "venue": "Melkweg",
-      "venue_address": "Lijnbaansgracht 234A, Amsterdam",
-      "event_type": "Concert",
-      "artists": [],
-      "genres": [],
-      "price_min": null,
-      "price_max": null,
-      "tickets_url": "",
-      "tickets_status": "available",
-      "source": "melkweg",
-      "source_url": "https://www.melkweg.nl/en/agenda/phantogram-19-06-2026/",
-      "match": null
-    },
-    {
       "id": "19cecf63e64621d7",
       "title": "Lunch at Café Gilde",
       "date": "2026-06-19T10:00:00",
@@ -18653,6 +18763,51 @@
       "tickets_status": "available",
       "source": "amsterdam_alt",
       "source_url": "https://www.amsterdamalternative.nl/agenda/21608",
+      "match": null
+    },
+    {
+      "id": "c2799ee01b75ea26",
+      "title": "80's Verantwoord",
+      "date": "2026-06-19T19:00:00",
+      "date_end": "2026-06-19T23:00:00",
+      "venue": "Melkweg",
+      "venue_address": "Lijnbaansgracht 234A, Amsterdam",
+      "event_type": "Clubnacht",
+      "artists": [],
+      "genres": [
+        "Hits",
+        "80's",
+        "Pop"
+      ],
+      "price_min": null,
+      "price_max": null,
+      "tickets_url": "",
+      "tickets_status": "available",
+      "source": "melkweg",
+      "source_url": "https://www.melkweg.nl/en/agenda/80s-verantwoord-19-06-2026",
+      "match": null
+    },
+    {
+      "id": "4fe25fcd7b53cbf3",
+      "title": "Phantogram",
+      "date": "2026-06-19T19:30:00",
+      "date_end": null,
+      "venue": "Melkweg",
+      "venue_address": "Lijnbaansgracht 234A, Amsterdam",
+      "event_type": "Concert",
+      "artists": [],
+      "genres": [
+        "Electro pop",
+        "Shoegaze",
+        "Trip hop",
+        "Indie"
+      ],
+      "price_min": null,
+      "price_max": null,
+      "tickets_url": "",
+      "tickets_status": "sold_out",
+      "source": "melkweg",
+      "source_url": "https://www.melkweg.nl/en/agenda/phantogram-19-06-2026",
       "match": null
     },
     {
@@ -18920,6 +19075,417 @@
       "source": "ra",
       "source_url": "https://ra.co/events/2396911",
       "match": null
+    },
+    {
+      "id": "91ce45ff5d982670",
+      "title": "20 JUN - Thuishaven with Colyn 10HRS",
+      "date": "2026-06-20T13:00:00",
+      "date_end": "2026-06-20T23:00:00",
+      "venue": "Thuishaven",
+      "venue_address": "Contactweg 68, 1014BW, Amsterdam, Nederland",
+      "event_type": "Club",
+      "artists": [
+        "Colyn"
+      ],
+      "genres": [],
+      "price_min": null,
+      "price_max": null,
+      "tickets_url": "",
+      "tickets_status": "available",
+      "source": "ra",
+      "source_url": "https://ra.co/events/2384616",
+      "match": null
+    },
+    {
+      "id": "0def26ff8846d2df",
+      "title": "Mystic Garden Echo's of Amsterdam",
+      "date": "2026-06-20T13:00:00",
+      "date_end": "2026-06-21T23:00:00",
+      "venue": "Sloterpark",
+      "venue_address": "Geuzenveld/Slotermeer Nederland",
+      "event_type": "Club",
+      "artists": [
+        "ANNĒ",
+        "AUTOFLOWER",
+        "Beau Didier",
+        "Isaiah (NL)",
+        "DJ Westfa",
+        "DVS1",
+        "Ely Oaks",
+        "Entasia",
+        "Essy",
+        "Fafi Abdel Nour",
+        "Grace Dahl",
+        "Sandrien",
+        "Hashashin",
+        "Jen Cardini",
+        "Kléo",
+        "Moody Mehran",
+        "Octo Octa",
+        "Rozie",
+        "Sex Wax (2)",
+        "SUPERSTRINGS",
+        "Surf 2 Glory",
+        "Suze Ijó"
+      ],
+      "genres": [],
+      "price_min": null,
+      "price_max": null,
+      "tickets_url": "",
+      "tickets_status": "available",
+      "source": "ra",
+      "source_url": "https://ra.co/events/2384077",
+      "match": null
+    },
+    {
+      "id": "2ee0961339f68484",
+      "title": "Life Drawing Weekend Intensive",
+      "date": "2026-06-20T14:00:00",
+      "date_end": null,
+      "venue": "OT301",
+      "venue_address": "",
+      "event_type": "",
+      "artists": [],
+      "genres": [],
+      "price_min": 150.0,
+      "price_max": null,
+      "tickets_url": "",
+      "tickets_status": "available",
+      "source": "amsterdam_alt",
+      "source_url": "https://www.amsterdamalternative.nl/agenda/21569",
+      "match": null
+    },
+    {
+      "id": "a012c1c2e373cce9",
+      "title": "Agrio Club x Ritmo Fatale",
+      "date": "2026-06-20T14:00:00",
+      "date_end": "2026-06-21T07:00:00",
+      "venue": "Lofi",
+      "venue_address": "Basisweg 63, Amsterdam 1043AN, Netherlands",
+      "event_type": "Club",
+      "artists": [
+        "Bella Claxton",
+        "DJ Frank",
+        "Herr Krank",
+        "Jenny Cara",
+        "Kendal",
+        "NewTone",
+        "OLIVIA LENSEN",
+        "Schwesta P",
+        "Tjade"
+      ],
+      "genres": [],
+      "price_min": null,
+      "price_max": null,
+      "tickets_url": "",
+      "tickets_status": "available",
+      "source": "ra",
+      "source_url": "https://ra.co/events/2398936",
+      "match": null
+    },
+    {
+      "id": "8ff5b3a575d7bdd3",
+      "title": "Hard Attack Summerfest",
+      "date": "2026-06-20T14:00:00",
+      "date_end": "2026-06-21T02:00:00",
+      "venue": "De Fik Garden",
+      "venue_address": "Sportparklaan 19, 1062 ZA Amsterdam, The Netherlands",
+      "event_type": "Club",
+      "artists": [
+        "Da Gremlin",
+        "Emma (2)",
+        "HyperLili"
+      ],
+      "genres": [],
+      "price_min": null,
+      "price_max": null,
+      "tickets_url": "",
+      "tickets_status": "available",
+      "source": "ra",
+      "source_url": "https://ra.co/events/2402426",
+      "match": null
+    },
+    {
+      "id": "5475dff990a61de7",
+      "title": "Dubrising by King Shiloh Soundsystem",
+      "date": "2026-06-20T15:00:00",
+      "date_end": "2026-06-21T03:00:00",
+      "venue": "Skatecafe",
+      "venue_address": "Gedempt Hamerkanaal 42",
+      "event_type": "Club",
+      "artists": [
+        "King Shiloh"
+      ],
+      "genres": [],
+      "price_min": null,
+      "price_max": null,
+      "tickets_url": "",
+      "tickets_status": "available",
+      "source": "ra",
+      "source_url": "https://ra.co/events/2407355",
+      "match": null
+    },
+    {
+      "id": "85620c16f153b455",
+      "title": "Progressive Hub AMS PRESENTS EMERGE",
+      "date": "2026-06-20T16:00:00",
+      "date_end": "2026-06-21T04:00:00",
+      "venue": "Veronica Schip",
+      "venue_address": "NDSM-Pier 1, 1033 RG Amsterdam, Netherlands",
+      "event_type": "Club",
+      "artists": [
+        "Antrim",
+        "Kevin Di Serna"
+      ],
+      "genres": [],
+      "price_min": null,
+      "price_max": null,
+      "tickets_url": "",
+      "tickets_status": "available",
+      "source": "ra",
+      "source_url": "https://ra.co/events/2433237",
+      "match": null
+    },
+    {
+      "id": "45d45d57f75885e5",
+      "title": "Jardin Rouge Festival",
+      "date": "2026-06-20T17:00:00",
+      "date_end": null,
+      "venue": "Roode Bioscoop",
+      "venue_address": "",
+      "event_type": "",
+      "artists": [],
+      "genres": [],
+      "price_min": 15.0,
+      "price_max": null,
+      "tickets_url": "",
+      "tickets_status": "available",
+      "source": "amsterdam_alt",
+      "source_url": "https://www.amsterdamalternative.nl/agenda/21546",
+      "match": null
+    },
+    {
+      "id": "d4896f64138f9178",
+      "title": "Nightbus",
+      "date": "2026-06-20T18:00:00",
+      "date_end": null,
+      "venue": "Cinetol",
+      "venue_address": "",
+      "event_type": "",
+      "artists": [],
+      "genres": [],
+      "price_min": 17.0,
+      "price_max": null,
+      "tickets_url": "",
+      "tickets_status": "available",
+      "source": "amsterdam_alt",
+      "source_url": "https://www.amsterdamalternative.nl/agenda/21421",
+      "match": {
+        "type": "Discovery",
+        "reason": "Similar to Sorry, Just Mustard, Nation Of Language",
+        "score": 5
+      }
+    },
+    {
+      "id": "41a53115f03815ae",
+      "title": "TA2REEBAN – تقريبًا (LB, BEIRUT) + EMIRHAN X + SUPERMARKT",
+      "date": "2026-06-20T18:00:00",
+      "date_end": null,
+      "venue": "OCCII",
+      "venue_address": "",
+      "event_type": "",
+      "artists": [],
+      "genres": [],
+      "price_min": 12.0,
+      "price_max": null,
+      "tickets_url": "",
+      "tickets_status": "available",
+      "source": "amsterdam_alt",
+      "source_url": "https://www.amsterdamalternative.nl/agenda/21735",
+      "match": null
+    },
+    {
+      "id": "c7a15ad734636dc2",
+      "title": "Celeste",
+      "date": "2026-06-20T20:30:00",
+      "date_end": null,
+      "venue": "Paradiso",
+      "venue_address": "Paradiso - Grote Zaal",
+      "event_type": "Concert",
+      "artists": [
+        "Celeste"
+      ],
+      "genres": [
+        "Concert",
+        "Soul / Jazz / Funk",
+        "Hip hop / R&B"
+      ],
+      "price_min": null,
+      "price_max": null,
+      "tickets_url": "https://tickets.paradiso.nl/3d5fc2a8f75f4863b69b573f0a2f50b2",
+      "tickets_status": "available",
+      "source": "paradiso",
+      "source_url": "https://www.paradiso.nl/en/program/celeste/2741303",
+      "match": {
+        "type": "Discovery",
+        "reason": "Similar to Cult Of Luna, Amenra, Neurosis",
+        "score": 5
+      }
+    },
+    {
+      "id": "22f7512a26587eff",
+      "title": "Crowe Boys",
+      "date": "2026-06-20T20:30:00",
+      "date_end": null,
+      "venue": "Tolhuistuin",
+      "venue_address": "Tolhuistuin - Zonzij",
+      "event_type": "Concert",
+      "artists": [
+        "Crowe Boys"
+      ],
+      "genres": [
+        "Roots / Americana / Country / Blues",
+        "Singer-songwriter / Folk"
+      ],
+      "price_min": null,
+      "price_max": null,
+      "tickets_url": "https://tickets.paradiso.nl/3f568c85c54e4c728fe658e7c321d488",
+      "tickets_status": "available",
+      "source": "paradiso",
+      "source_url": "https://www.paradiso.nl/en/program/crowe-boys/2887305",
+      "match": null
+    },
+    {
+      "id": "ce1f260a433efd54",
+      "title": "Madam by Night invites: The Jungle Room",
+      "date": "2026-06-20T21:00:00",
+      "date_end": "2026-06-21T03:00:00",
+      "venue": "Madam",
+      "venue_address": "Overhoeksplein 3, 1031 KS Amsterdam, Netherlands",
+      "event_type": "Club",
+      "artists": [
+        "DIROS",
+        "Silven"
+      ],
+      "genres": [],
+      "price_min": null,
+      "price_max": null,
+      "tickets_url": "",
+      "tickets_status": "available",
+      "source": "ra",
+      "source_url": "https://ra.co/events/2372165",
+      "match": null
+    },
+    {
+      "id": "f0aa9b6d498d1dd9",
+      "title": "Phono Lake's First Night of Summer",
+      "date": "2026-06-20T23:00:00",
+      "date_end": "2026-06-21T05:00:00",
+      "venue": "Phono Lake",
+      "venue_address": "Christoffel Plantijngracht 4, 1065 DA Amsterdam, The Netherlands",
+      "event_type": "Club",
+      "artists": [],
+      "genres": [],
+      "price_min": null,
+      "price_max": null,
+      "tickets_url": "",
+      "tickets_status": "available",
+      "source": "ra",
+      "source_url": "https://ra.co/events/2419543",
+      "match": null
+    },
+    {
+      "id": "d4232744defe636c",
+      "title": "Moody Mehran curated",
+      "date": "2026-06-20T23:00:00",
+      "date_end": "2026-06-21T06:00:00",
+      "venue": "Shelter Amsterdam",
+      "venue_address": "Overhoeksplein 3, 1031KS, Amsterdam",
+      "event_type": "Club",
+      "artists": [
+        "Merel Helderman",
+        "Cromby",
+        "Papa Nugs",
+        "Moody Mehran",
+        "Margaux (2)"
+      ],
+      "genres": [],
+      "price_min": null,
+      "price_max": null,
+      "tickets_url": "",
+      "tickets_status": "available",
+      "source": "ra",
+      "source_url": "https://ra.co/events/2425780",
+      "match": null
+    },
+    {
+      "id": "cd356d25f100109c",
+      "title": "Amsterdam Techno Sessions with Fixon (ANAØH- SOMA-MORD) MEXICO",
+      "date": "2026-06-20T23:00:00",
+      "date_end": "2026-06-21T07:00:00",
+      "venue": "John Doe",
+      "venue_address": "Rembrandtplein 31, 1017 CT Amsterdam, Netherlands",
+      "event_type": "Club",
+      "artists": [
+        "Fixon",
+        "Marco Ramos"
+      ],
+      "genres": [],
+      "price_min": null,
+      "price_max": null,
+      "tickets_url": "",
+      "tickets_status": "available",
+      "source": "ra",
+      "source_url": "https://ra.co/events/2433286",
+      "match": null
+    },
+    {
+      "id": "6ba9ec2dcaf6d52c",
+      "title": "Frenzy x Echo's of Amsterdam Afterparty",
+      "date": "2026-06-20T23:00:00",
+      "date_end": "2026-06-21T08:00:00",
+      "venue": "RADION",
+      "venue_address": "Louwesweg 1 ,1066 EA Amsterdam",
+      "event_type": "Club",
+      "artists": [
+        "Flits",
+        "Karina Schneider",
+        "Mac Declos",
+        "Thoms Traxx",
+        "TWIENA"
+      ],
+      "genres": [],
+      "price_min": null,
+      "price_max": null,
+      "tickets_url": "",
+      "tickets_status": "available",
+      "source": "ra",
+      "source_url": "https://ra.co/events/2425975",
+      "match": null
+    },
+    {
+      "id": "cf6f7c3a64d81f8a",
+      "title": "2DEHUIS x TILLATEC / Alberto Tolo, Bailey Ibbs, KETCH + more",
+      "date": "2026-06-20T23:00:00",
+      "date_end": "2026-06-21T09:00:00",
+      "venue": "TILLATEC",
+      "venue_address": "Doctor Jan van Breemenstraat 1; 1056 AB Amsterdam",
+      "event_type": "Club",
+      "artists": [
+        "Alberto Tolo",
+        "Aretam",
+        "Bailey Ibbs",
+        "KETCH",
+        "PHARRISM"
+      ],
+      "genres": [],
+      "price_min": null,
+      "price_max": null,
+      "tickets_url": "",
+      "tickets_status": "available",
+      "source": "ra",
+      "source_url": "https://ra.co/events/2431734",
+      "match": null
     }
   ],
   "venues": [
@@ -18942,7 +19508,6 @@
     "Buurtwerkplaats Noorderhof",
     "CLUB RAUM",
     "CONTACT",
-    "CREA",
     "Café Katoen",
     "Chin Chin Club",
     "Cinetol",
@@ -18963,6 +19528,7 @@
     "H7 Warehouse",
     "Helling 7",
     "Hemkade 48",
+    "Het Dorp",
     "Het Groene Veld",
     "Het Sieraad",
     "Het Twiske",
@@ -18979,7 +19545,6 @@
     "Lofi",
     "Loods 12",
     "Madam",
-    "Maloe Melo",
     "Malou Melo",
     "Meerpark",
     "Melkweg",
@@ -19001,6 +19566,7 @@
     "Paradiso Noord / Tolhuistuin",
     "Parallel",
     "Patronaat",
+    "Phono Lake",
     "Plantage Dok",
     "Plein Theater",
     "RADION",
@@ -19014,6 +19580,7 @@
     "Shelter Amsterdam",
     "Skatecafe",
     "Skatepark Haarlem",
+    "Sloterpark",
     "Spaarnwoude (Deelplan Houtrak)",
     "Splendor",
     "Studio Tumbuh",
@@ -19044,28 +19611,148 @@
     "nachbar"
   ],
   "genres": [
+    "80's",
+    "Afro",
     "Afro / Reggae / Dancehall / Latin",
+    "Afro pop",
+    "Afrobeats",
+    "After party",
+    "Alt pop",
+    "Alternative",
     "Alternative / Indie",
+    "Alternative R&B",
+    "Alternative hip-hop",
+    "Alternative rock",
+    "Ambient",
+    "Anarchical",
+    "Anime",
+    "Arabic",
+    "Belgium",
+    "Blues rock",
+    "Bob Marley",
+    "Boombap",
+    "Boy band",
+    "Brit pop",
+    "British",
+    "Cinematic",
     "Club",
+    "Club night",
+    "Coming-of-age",
     "Concert",
+    "Concert film",
+    "Congo",
+    "Country",
+    "Crime",
+    "Cumbia",
     "DIP",
+    "Danceable",
+    "Desi",
+    "Drama",
+    "Dreamy",
+    "Drum & Bass",
+    "Dub",
+    "Dutch",
+    "Dutch hip hop",
+    "Dutch pop",
+    "Electro",
+    "Electro pop",
     "Electronic",
+    "Emo",
+    "English subs",
+    "Experimental",
+    "Fantasy",
+    "Feel good",
+    "Feminism",
+    "Film",
+    "Flemish",
+    "Folk",
+    "Fundraiser",
+    "Funk",
+    "Greek folk music",
+    "Groovy",
+    "Hardcore punk",
+    "Heavy",
+    "Heavy metal",
+    "Hip hop",
     "Hip hop / R&B",
+    "Hip hop duo",
+    "Hiphop",
+    "History",
+    "Hits",
+    "House",
+    "India",
+    "Indie",
+    "Indie folk",
+    "Indie pop",
+    "Indie rock",
+    "Industrial",
+    "Japan",
+    "Jazz",
+    "Jazzy",
+    "Jungle",
     "LGBTQ+",
+    "LGBTQIA+",
+    "Latin",
+    "Line dance",
     "Literature / Science / Politics / Art",
+    "MPB",
+    "Metal",
+    "Metalcore",
+    "Music",
+    "Music documentary",
+    "Neo-soul",
+    "Nostalgia",
+    "Nu metal",
+    "Party",
+    "Party hits",
     "Pop",
+    "Pop punk",
+    "Post-hardcore",
+    "Postpunk",
     "Poëzie / Spoken Word",
+    "Psychedelic",
+    "Psychedelic rock",
+    "Punk",
     "Punk / Noise",
+    "Punk rock",
+    "Queer",
+    "R&B",
+    "Rap",
+    "Rave",
+    "Raw",
+    "Reggae",
     "Rock",
+    "Rock-‘n-roll",
+    "Romantic",
     "Roots",
     "Roots / Americana / Country / Blues",
+    "Sci-fi",
+    "Shoegaze",
+    "Shorts",
+    "Singer-songwriter",
     "Singer-songwriter / Folk",
+    "Soul",
     "Soul / Jazz / Funk",
+    "South Africa",
+    "Southern",
+    "Speed dabke",
+    "Spoken word",
     "Stadspas",
-    "Surprise me"
+    "Surprise me",
+    "Techno",
+    "TikTok sensation",
+    "Traditional",
+    "Trap",
+    "Tribute",
+    "Trip hop",
+    "UK Garage",
+    "Underground",
+    "Workshop",
+    "Zeroes"
   ],
   "event_types": [
     "Club",
+    "Clubnacht",
     "Concert",
     "Festival",
     "Film",
