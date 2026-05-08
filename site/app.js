@@ -3,7 +3,7 @@
 
 const supabaseUrl = 'https://ktewpglahibpymvshwra.supabase.co';
 const supabaseKey = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Imt0ZXdwZ2xhaGlicHltdnNod3JhIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NzgyMzE0NTQsImV4cCI6MjA5MzgwNzQ1NH0.uOxMdL9JMMl3CMG6x0FRy8lgXQ5B6Me1JJxGV4kQBgg';
-const supabase = window.supabase ? window.supabase.createClient(supabaseUrl, supabaseKey) : null;
+const supabaseClient = window.supabase ? window.supabase.createClient(supabaseUrl, supabaseKey) : null;
 
 const SOURCE_LABELS = {
     melkweg: 'Melkweg', amsterdam_alt: 'Amsterdam Alternative',
@@ -50,11 +50,11 @@ async function init() {
     loadFavorites();
 
     // Auth Listener
-    if (supabase) {
-        supabase.auth.getSession().then(({ data: { session } }) => {
+    if (supabaseClient) {
+        supabaseClient.auth.getSession().then(({ data: { session } }) => {
             handleAuthChange(session);
         });
-        supabase.auth.onAuthStateChange((_event, session) => {
+        supabaseClient.auth.onAuthStateChange((_event, session) => {
             handleAuthChange(session);
         });
     }
@@ -191,25 +191,25 @@ function bindEvents() {
         document.getElementById('login-modal').classList.add('hidden');
     });
     document.getElementById('btn-logout')?.addEventListener('click', async () => {
-        if (supabase) await supabase.auth.signOut();
+        if (supabaseClient) await supabaseClient.auth.signOut();
     });
     
     document.getElementById('btn-google-login')?.addEventListener('click', async () => {
-        if (supabase) await supabase.auth.signInWithOAuth({ provider: 'google' });
+        if (supabaseClient) await supabaseClient.auth.signInWithOAuth({ provider: 'google' });
     });
     document.getElementById('btn-apple-login')?.addEventListener('click', async () => {
-        if (supabase) await supabase.auth.signInWithOAuth({ provider: 'apple' });
+        if (supabaseClient) await supabaseClient.auth.signInWithOAuth({ provider: 'apple' });
     });
     
     document.getElementById('magic-link-form')?.addEventListener('submit', async (e) => {
         e.preventDefault();
-        if (!supabase) return;
+        if (!supabaseClient) return;
         const email = document.getElementById('login-email').value;
         const msgEl = document.getElementById('login-message');
         
         msgEl.textContent = 'Sending...';
         msgEl.className = 'login-message';
-        const { error } = await supabase.auth.signInWithOtp({ email });
+        const { error } = await supabaseClient.auth.signInWithOtp({ email });
         
         if (error) {
             msgEl.textContent = error.message;
@@ -621,17 +621,17 @@ async function toggleFavorite(id) {
     }
     saveFavorites();
     
-    if (state.user && supabase) {
+    if (state.user && supabaseClient) {
         if (isAdding) {
             const userName = state.user.email ? state.user.email.split('@')[0] : 'User';
-            await supabase.from('saved_events').insert([{ 
+            await supabaseClient.from('saved_events').insert([{ 
                 user_id: state.user.id, 
                 user_name: userName, 
                 event_id: id 
             }]);
             state.globalSavedEvents.push({ user_id: state.user.id, user_name: userName, event_id: id });
         } else {
-            await supabase.from('saved_events').delete().match({ user_id: state.user.id, event_id: id });
+            await supabaseClient.from('saved_events').delete().match({ user_id: state.user.id, event_id: id });
             state.globalSavedEvents = state.globalSavedEvents.filter(s => !(s.user_id === state.user.id && s.event_id === id));
         }
     }
@@ -666,9 +666,9 @@ async function handleAuthChange(session) {
 }
 
 async function fetchSavedEvents() {
-    if (!supabase || !state.user) return;
+    if (!supabaseClient || !state.user) return;
     try {
-        const { data, error } = await supabase.from('saved_events').select('*');
+        const { data, error } = await supabaseClient.from('saved_events').select('*');
         if (error) throw error;
         state.globalSavedEvents = data || [];
         
