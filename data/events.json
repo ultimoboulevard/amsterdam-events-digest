@@ -1,6 +1,6 @@
 {
-  "generated_at": "2026-05-08T13:51:40.114790",
-  "event_count": 1060,
+  "generated_at": "2026-05-08T14:14:31.241648",
+  "event_count": 1095,
   "events": [
     {
       "id": "38d52751d1c39af0",
@@ -831,6 +831,24 @@
       "match": null
     },
     {
+      "id": "1ffe54defd7b0cb1",
+      "title": "Her Voice",
+      "date": "2026-05-08T17:30:00",
+      "date_end": null,
+      "venue": "Splendor",
+      "venue_address": "",
+      "event_type": "",
+      "artists": [],
+      "genres": [],
+      "price_min": 20.0,
+      "price_max": null,
+      "tickets_url": "",
+      "tickets_status": "available",
+      "source": "amsterdam_alt",
+      "source_url": "https://www.amsterdamalternative.nl/agenda/21899",
+      "match": null
+    },
+    {
       "id": "cad69dadd3a24218",
       "title": "de Nieuwe Meent OPEN CALL for a mural: info meeting",
       "date": "2026-05-08T17:30:00",
@@ -1001,26 +1019,6 @@
       "tickets_status": "available",
       "source": "melkweg",
       "source_url": "https://www.melkweg.nl/en/agenda/van-pletzen-08-05-2026",
-      "match": null
-    },
-    {
-      "id": "1ffe54defd7b0cb1",
-      "title": "Her Voice",
-      "date": "2026-05-08T19:30:00",
-      "date_end": null,
-      "venue": "Splendor",
-      "venue_address": "Nieuwe Uilenburgerstraat 116, 1011 LX Amsterdam",
-      "event_type": "Concert",
-      "artists": [
-        "Sarah Jeffery"
-      ],
-      "genres": [],
-      "price_min": null,
-      "price_max": null,
-      "tickets_url": "https://splendor.stager.co/shop/default/events/111648054",
-      "tickets_status": "available",
-      "source": "splendor",
-      "source_url": "https://www.splendoramsterdam.com/agenda/111648054/her-voice",
       "match": null
     },
     {
@@ -1216,6 +1214,28 @@
       "source": "paradiso",
       "source_url": "https://www.paradiso.nl/en/program/rose-gray/2752654",
       "match": null
+    },
+    {
+      "id": "e76b6bc99f6b6c08",
+      "title": "Rosa Brunello",
+      "date": "2026-05-08T20:30:00",
+      "date_end": null,
+      "venue": "Bimhuis",
+      "venue_address": "Piet Heinkade 3, 1019 BR Amsterdam",
+      "event_type": "Concert",
+      "artists": [],
+      "genres": [],
+      "price_min": null,
+      "price_max": null,
+      "tickets_url": "https://activetickets.bimhuis.nl/en-GB/Show/Details/54246",
+      "tickets_status": "available",
+      "source": "bimhuis",
+      "source_url": "https://www.bimhuis.nl/en/calendar/rosa-brunello/",
+      "match": {
+        "type": "Library Match",
+        "reason": "In your TIDAL library",
+        "score": 1
+      }
     },
     {
       "id": "6ecb8a5f0545c2fa",
@@ -2557,6 +2577,26 @@
       }
     },
     {
+      "id": "0a129058f16673e4",
+      "title": "Kaja Draksler Octet",
+      "date": "2026-05-09T20:30:00",
+      "date_end": null,
+      "venue": "Bimhuis",
+      "venue_address": "Piet Heinkade 3, 1019 BR Amsterdam",
+      "event_type": "Concert",
+      "artists": [],
+      "genres": [
+        "Impro Focus"
+      ],
+      "price_min": null,
+      "price_max": null,
+      "tickets_url": "https://activetickets.bimhuis.nl/en-GB/Show/Details/54244",
+      "tickets_status": "available",
+      "source": "bimhuis",
+      "source_url": "https://www.bimhuis.nl/en/calendar/kaja-draksler-octet/",
+      "match": null
+    },
+    {
       "id": "276cac7bcf5ab078",
       "title": "Madam by Night invites: Guerrilla",
       "date": "2026-05-09T21:00:00",
@@ -3720,6 +3760,26 @@
       "match": null
     },
     {
+      "id": "7daab888ce866e7f",
+      "title": "John Scofield & Gerald Clayton Duo",
+      "date": "2026-05-10T20:30:00",
+      "date_end": null,
+      "venue": "Bimhuis",
+      "venue_address": "Piet Heinkade 3, 1019 BR Amsterdam",
+      "event_type": "Concert",
+      "artists": [],
+      "genres": [
+        "Headliners"
+      ],
+      "price_min": null,
+      "price_max": null,
+      "tickets_url": "https://activetickets.bimhuis.nl/en-GB/Show/Details/54168",
+      "tickets_status": "available",
+      "source": "bimhuis",
+      "source_url": "https://www.bimhuis.nl/en/calendar/john-scofield-gerald-clayton-duo-3/",
+      "match": null
+    },
+    {
       "id": "f3a193bff35c3033",
       "title": "Black Star",
       "date": "2026-05-10T21:00:00",
@@ -3820,6 +3880,24 @@
       "match": null
     },
     {
+      "id": "93b97e1d9091cf1e",
+      "title": "Jeong Lim Yang's Synchronicity",
+      "date": "2026-05-11T18:00:00",
+      "date_end": null,
+      "venue": "Splendor",
+      "venue_address": "",
+      "event_type": "",
+      "artists": [],
+      "genres": [],
+      "price_min": 16.0,
+      "price_max": null,
+      "tickets_url": "",
+      "tickets_status": "available",
+      "source": "amsterdam_alt",
+      "source_url": "https://www.amsterdamalternative.nl/agenda/21656",
+      "match": null
+    },
+    {
       "id": "31180440e0b28aec",
       "title": "Planet Funk",
       "date": "2026-05-11T19:30:00",
@@ -3879,26 +3957,6 @@
       "tickets_status": "available",
       "source": "splendor",
       "source_url": "https://www.splendoramsterdam.com/agenda/111571564/ledenconcert-brandt-attema",
-      "match": null
-    },
-    {
-      "id": "93b97e1d9091cf1e",
-      "title": "Jeong Lim Yang's Synchronicity",
-      "date": "2026-05-11T20:15:00",
-      "date_end": null,
-      "venue": "Splendor",
-      "venue_address": "Nieuwe Uilenburgerstraat 116, 1011 LX Amsterdam",
-      "event_type": "Concert",
-      "artists": [
-        "Michael Moore"
-      ],
-      "genres": [],
-      "price_min": null,
-      "price_max": null,
-      "tickets_url": "https://splendor.stager.co/shop/default/events/111651807",
-      "tickets_status": "available",
-      "source": "splendor",
-      "source_url": "https://www.splendoramsterdam.com/agenda/111651807/jeong-lim-yangs-synchronicity",
       "match": null
     },
     {
@@ -4110,6 +4168,24 @@
       "match": null
     },
     {
+      "id": "ce2e8a2abb3245db",
+      "title": "Webb Crawford Solo // Michael Foster, Raoul van der Weide & George Hadow",
+      "date": "2026-05-12T17:30:00",
+      "date_end": null,
+      "venue": "Splendor",
+      "venue_address": "",
+      "event_type": "",
+      "artists": [],
+      "genres": [],
+      "price_min": 13.0,
+      "price_max": null,
+      "tickets_url": "",
+      "tickets_status": "available",
+      "source": "amsterdam_alt",
+      "source_url": "https://www.amsterdamalternative.nl/agenda/21902",
+      "match": null
+    },
+    {
       "id": "52aa8f7884462ade",
       "title": "Film Screening: 'In This Together' a film by Lisette Olsthoorn",
       "date": "2026-05-12T17:30:00",
@@ -4164,26 +4240,6 @@
       "tickets_status": "free",
       "source": "melkweg",
       "source_url": "https://www.melkweg.nl/en/agenda/stuzzi-12-05-2026",
-      "match": null
-    },
-    {
-      "id": "ce2e8a2abb3245db",
-      "title": "Webb Crawford Solo // Michael Foster, Raoul van der Weide & George Hadow",
-      "date": "2026-05-12T19:30:00",
-      "date_end": null,
-      "venue": "Splendor",
-      "venue_address": "Nieuwe Uilenburgerstraat 116, 1011 LX Amsterdam",
-      "event_type": "Concert",
-      "artists": [
-        "River Adomeit"
-      ],
-      "genres": [],
-      "price_min": null,
-      "price_max": null,
-      "tickets_url": "https://splendor.stager.co/shop/default/events/111651892",
-      "tickets_status": "available",
-      "source": "splendor",
-      "source_url": "https://www.splendoramsterdam.com/agenda/111651892/webb-crawford-solo-michael-foster-raoul-van-der-weide-george-hadow",
       "match": null
     },
     {
@@ -4275,6 +4331,24 @@
       "tickets_status": "changeofvenue",
       "source": "paradiso",
       "source_url": "https://www.paradiso.nl/en/program/florry/2730724",
+      "match": null
+    },
+    {
+      "id": "e111820f603d090e",
+      "title": "Tuesday Jam",
+      "date": "2026-05-12T22:00:00",
+      "date_end": null,
+      "venue": "Bimhuis",
+      "venue_address": "Piet Heinkade 3, 1019 BR Amsterdam",
+      "event_type": "Concert",
+      "artists": [],
+      "genres": [],
+      "price_min": 0.0,
+      "price_max": null,
+      "tickets_url": "",
+      "tickets_status": "free",
+      "source": "bimhuis",
+      "source_url": "https://www.bimhuis.nl/en/calendar/tuesday-jam-266/",
       "match": null
     },
     {
@@ -4718,18 +4792,20 @@
       "id": "e7ff88c597d0e72a",
       "title": "JELISA",
       "date": "2026-05-13T20:30:00",
-      "date_end": "2026-05-13T22:00:00",
+      "date_end": null,
       "venue": "Bimhuis",
-      "venue_address": "Piet Heinkade 3; 1019 Zeeburg; Amsterdam; Netherlands",
-      "event_type": "Club",
+      "venue_address": "Piet Heinkade 3, 1019 BR Amsterdam",
+      "event_type": "Concert",
       "artists": [],
-      "genres": [],
+      "genres": [
+        "DATSKAT"
+      ],
       "price_min": null,
       "price_max": null,
-      "tickets_url": "",
+      "tickets_url": "https://activetickets.bimhuis.nl/en-GB/Show/Details/54305",
       "tickets_status": "available",
-      "source": "ra",
-      "source_url": "https://ra.co/events/2435034",
+      "source": "bimhuis",
+      "source_url": "https://www.bimhuis.nl/en/calendar/jelisa/",
       "match": null
     },
     {
@@ -5301,6 +5377,26 @@
       }
     },
     {
+      "id": "410a489526a2af05",
+      "title": "Music Meets Dance: Annelie Koning & Miri Lee | Joshua Herwig & Lea Ved | Raphael Vanoli & Tú Hoàng | Amber Docters van Leeuwen & Klára Alexová",
+      "date": "2026-05-14T20:30:00",
+      "date_end": null,
+      "venue": "Bimhuis",
+      "venue_address": "Piet Heinkade 3, 1019 BR Amsterdam",
+      "event_type": "Concert",
+      "artists": [],
+      "genres": [
+        "WhyNot x BIMHUIS"
+      ],
+      "price_min": null,
+      "price_max": null,
+      "tickets_url": "https://activetickets.bimhuis.nl/en-GB/Show/Details/54297",
+      "tickets_status": "available",
+      "source": "bimhuis",
+      "source_url": "https://www.bimhuis.nl/en/calendar/music-meets-dance-annelie-koning-miri-lee-joshua-herwig-lea-ved-raphael-vanoli-tu-hoang-amber-docters-van-leeuwen-klara-alexova/",
+      "match": null
+    },
+    {
       "id": "09ed17f8a3714cb5",
       "title": "Iron Maiden: Burning Ambition (2026)",
       "date": "2026-05-14T21:15:00",
@@ -5579,6 +5675,24 @@
       "match": null
     },
     {
+      "id": "178f34f2526f0946",
+      "title": "Cinema: The Mousetrap",
+      "date": "2026-05-15T17:00:00",
+      "date_end": null,
+      "venue": "Splendor",
+      "venue_address": "",
+      "event_type": "",
+      "artists": [],
+      "genres": [],
+      "price_min": 12.0,
+      "price_max": null,
+      "tickets_url": "",
+      "tickets_status": "available",
+      "source": "amsterdam_alt",
+      "source_url": "https://www.amsterdamalternative.nl/agenda/21644",
+      "match": null
+    },
+    {
       "id": "f906916f589015b5",
       "title": "Simon Vuarambon l All day long",
       "date": "2026-05-15T17:00:00",
@@ -5739,26 +5853,6 @@
         "reason": "In your TIDAL library",
         "score": 1
       }
-    },
-    {
-      "id": "178f34f2526f0946",
-      "title": "Cinema: The Mousetrap",
-      "date": "2026-05-15T19:00:00",
-      "date_end": null,
-      "venue": "Splendor",
-      "venue_address": "Nieuwe Uilenburgerstraat 116, 1011 LX Amsterdam",
-      "event_type": "Concert",
-      "artists": [
-        "Antonii Baryshevskyi presenteert Splendoor to Ukraine XXIX:"
-      ],
-      "genres": [],
-      "price_min": null,
-      "price_max": null,
-      "tickets_url": "https://splendor.stager.co/shop/default/events/111624980",
-      "tickets_status": "available",
-      "source": "splendor",
-      "source_url": "https://www.splendoramsterdam.com/agenda/111624980/cinema-mousetrap",
-      "match": null
     },
     {
       "id": "94c5855b16f93e19",
@@ -5949,6 +6043,27 @@
       "tickets_status": "available",
       "source": "muziekgebouw",
       "source_url": "https://www.muziekgebouw.nl/en/agenda/lucrecia-dalt-rbdy",
+      "match": null
+    },
+    {
+      "id": "ae9158b8d23b8b2d",
+      "title": "Lucrecia Dalt: A Danger to Ourselves | Alex Lazaro | Karim Semin",
+      "date": "2026-05-15T20:30:00",
+      "date_end": null,
+      "venue": "Bimhuis",
+      "venue_address": "Piet Heinkade 3, 1019 BR Amsterdam",
+      "event_type": "Concert",
+      "artists": [],
+      "genres": [
+        "Headliners",
+        "BIMHUIS & The Rest is Noise"
+      ],
+      "price_min": null,
+      "price_max": null,
+      "tickets_url": "https://activetickets.bimhuis.nl/en-GB/Show/Details/54196",
+      "tickets_status": "available",
+      "source": "bimhuis",
+      "source_url": "https://www.bimhuis.nl/en/calendar/lucrecia-dalt-a-danger-to-ourselves/",
       "match": null
     },
     {
@@ -7345,6 +7460,26 @@
       "match": null
     },
     {
+      "id": "e03e4544d6b212cd",
+      "title": "Jazz Orchestra of the Concertgebouw – 30 Years",
+      "date": "2026-05-16T20:30:00",
+      "date_end": null,
+      "venue": "Bimhuis",
+      "venue_address": "Piet Heinkade 3, 1019 BR Amsterdam",
+      "event_type": "Concert",
+      "artists": [],
+      "genres": [
+        "BIG"
+      ],
+      "price_min": null,
+      "price_max": null,
+      "tickets_url": "https://activetickets.bimhuis.nl/en-GB/Show/Details/54282",
+      "tickets_status": "available",
+      "source": "bimhuis",
+      "source_url": "https://www.bimhuis.nl/en/calendar/jazz-orchestra-of-the-concertgebouw-30-years-2/",
+      "match": null
+    },
+    {
       "id": "8b1e05fc1766de35",
       "title": "Madam by Night: A'DAM 10 Years",
       "date": "2026-05-16T21:00:00",
@@ -8305,6 +8440,26 @@
       "match": null
     },
     {
+      "id": "c77c4a170241687b",
+      "title": "Jazz Orchestra of the Concertgebouw – 30 Years",
+      "date": "2026-05-17T20:30:00",
+      "date_end": null,
+      "venue": "Bimhuis",
+      "venue_address": "Piet Heinkade 3, 1019 BR Amsterdam",
+      "event_type": "Concert",
+      "artists": [],
+      "genres": [
+        "BIG"
+      ],
+      "price_min": null,
+      "price_max": null,
+      "tickets_url": "https://activetickets.bimhuis.nl/en-GB/Show/Details/54283",
+      "tickets_status": "available",
+      "source": "bimhuis",
+      "source_url": "https://www.bimhuis.nl/en/calendar/jazz-orchestra-of-the-concertgebouw-30-years/",
+      "match": null
+    },
+    {
       "id": "3f8868fbb33a652e",
       "title": "PartyOf2",
       "date": "2026-05-17T22:00:00",
@@ -8865,6 +9020,26 @@
       "tickets_status": "available",
       "source": "paradiso",
       "source_url": "https://www.paradiso.nl/en/program/the-fatal-flowers-try-out/2876892",
+      "match": null
+    },
+    {
+      "id": "8ce4d8182fcc310c",
+      "title": "Rough Diamonds: Joep Grotendorst Quartet | brukle & Chamber Ensemble",
+      "date": "2026-05-19T21:30:00",
+      "date_end": null,
+      "venue": "Bimhuis",
+      "venue_address": "Piet Heinkade 3, 1019 BR Amsterdam",
+      "event_type": "Concert",
+      "artists": [],
+      "genres": [
+        "Rough Diamonds"
+      ],
+      "price_min": 0.0,
+      "price_max": null,
+      "tickets_url": "",
+      "tickets_status": "free",
+      "source": "bimhuis",
+      "source_url": "https://www.bimhuis.nl/en/calendar/rough-diamonds-joep-grotendorst-quartet-brukle-chamber-ensemble/",
       "match": null
     },
     {
@@ -9703,6 +9878,26 @@
       "match": null
     },
     {
+      "id": "2d9b8310ecf6c4fd",
+      "title": "Fra Fra Sound – 45 Years on the road",
+      "date": "2026-05-21T20:30:00",
+      "date_end": null,
+      "venue": "Bimhuis",
+      "venue_address": "Piet Heinkade 3, 1019 BR Amsterdam",
+      "event_type": "Concert",
+      "artists": [],
+      "genres": [
+        "Legacy"
+      ],
+      "price_min": null,
+      "price_max": null,
+      "tickets_url": "https://activetickets.bimhuis.nl/en-GB/Show/Details/54258",
+      "tickets_status": "available",
+      "source": "bimhuis",
+      "source_url": "https://www.bimhuis.nl/en/calendar/fra-fra-sound-45-years-on-the-road/",
+      "match": null
+    },
+    {
       "id": "60b6e956b4867f71",
       "title": "Jack Van Cleaf",
       "date": "2026-05-21T21:30:00",
@@ -10303,6 +10498,28 @@
         "type": "Discovery",
         "reason": "Similar to El Michels Affair, Nubiyan Twist, Thundercat",
         "score": 11
+      }
+    },
+    {
+      "id": "6dcb56ed8924e671",
+      "title": "Delvon Lamarr Organ Trio",
+      "date": "2026-05-22T20:30:00",
+      "date_end": null,
+      "venue": "Bimhuis",
+      "venue_address": "Piet Heinkade 3, 1019 BR Amsterdam",
+      "event_type": "Concert",
+      "artists": [],
+      "genres": [],
+      "price_min": null,
+      "price_max": null,
+      "tickets_url": "https://activetickets.bimhuis.nl/en-GB/Show/Details/54255",
+      "tickets_status": "available",
+      "source": "bimhuis",
+      "source_url": "https://www.bimhuis.nl/en/calendar/delvon-lamarr-organ-trio/",
+      "match": {
+        "type": "Library Match",
+        "reason": "In your TIDAL library",
+        "score": 1
       }
     },
     {
@@ -11459,6 +11676,26 @@
       "match": null
     },
     {
+      "id": "f394508c63183762",
+      "title": "Aaron Parks Little Big",
+      "date": "2026-05-23T20:30:00",
+      "date_end": null,
+      "venue": "Bimhuis",
+      "venue_address": "Piet Heinkade 3, 1019 BR Amsterdam",
+      "event_type": "Concert",
+      "artists": [],
+      "genres": [
+        "Headliners"
+      ],
+      "price_min": null,
+      "price_max": null,
+      "tickets_url": "",
+      "tickets_status": "sold_out",
+      "source": "bimhuis",
+      "source_url": "https://www.bimhuis.nl/en/calendar/aaron-parks-little-big/",
+      "match": null
+    },
+    {
       "id": "528a3ab734dc1738",
       "title": "Madam by Night invites: Henry X, Mojela b2b KUKU",
       "date": "2026-05-23T21:00:00",
@@ -12352,6 +12589,24 @@
       "match": null
     },
     {
+      "id": "1114570f4e7b0536",
+      "title": "Koen Visser & Roman Willems",
+      "date": "2026-05-24T18:00:00",
+      "date_end": null,
+      "venue": "Splendor",
+      "venue_address": "",
+      "event_type": "",
+      "artists": [],
+      "genres": [],
+      "price_min": 12.0,
+      "price_max": null,
+      "tickets_url": "",
+      "tickets_status": "available",
+      "source": "amsterdam_alt",
+      "source_url": "https://www.amsterdamalternative.nl/agenda/21646",
+      "match": null
+    },
+    {
       "id": "91e4b7a938898fa6",
       "title": "Fokofpolisiekar + Die Heuwels Fantasties",
       "date": "2026-05-24T19:00:00",
@@ -12408,29 +12663,9 @@
       "price_min": 59.0,
       "price_max": null,
       "tickets_url": "https://www.concertgebouw.nl/en/concerts/38042352-emmylou-harris---european-farewell-tour",
-      "tickets_status": "sold_out",
+      "tickets_status": "last_tickets",
       "source": "concertgebouw",
       "source_url": "https://www.concertgebouw.nl/en/concerts/38042352-emmylou-harris---european-farewell-tour",
-      "match": null
-    },
-    {
-      "id": "1114570f4e7b0536",
-      "title": "Koen Visser & Roman Willems",
-      "date": "2026-05-24T20:00:00",
-      "date_end": null,
-      "venue": "Splendor",
-      "venue_address": "Nieuwe Uilenburgerstraat 116, 1011 LX Amsterdam",
-      "event_type": "Concert",
-      "artists": [
-        "Anne La Berge"
-      ],
-      "genres": [],
-      "price_min": null,
-      "price_max": null,
-      "tickets_url": "https://splendor.stager.co/shop/default/events/111646413",
-      "tickets_status": "available",
-      "source": "splendor",
-      "source_url": "https://www.splendoramsterdam.com/agenda/111646413/koen-visser-roman-willems",
       "match": null
     },
     {
@@ -12536,6 +12771,24 @@
         "reason": "In your TIDAL library",
         "score": 11
       }
+    },
+    {
+      "id": "b90e239cd73c8d67",
+      "title": "Vadim Neselovskyi – Perseverantia",
+      "date": "2026-05-24T20:30:00",
+      "date_end": null,
+      "venue": "Bimhuis",
+      "venue_address": "Piet Heinkade 3, 1019 BR Amsterdam",
+      "event_type": "Concert",
+      "artists": [],
+      "genres": [],
+      "price_min": null,
+      "price_max": null,
+      "tickets_url": "https://activetickets.bimhuis.nl/en-GB/Show/Details/54253",
+      "tickets_status": "available",
+      "source": "bimhuis",
+      "source_url": "https://www.bimhuis.nl/en/calendar/vadim-neselovskyi-perseverantia/",
+      "match": null
     },
     {
       "id": "5b7a8142d4028b28",
@@ -12957,6 +13210,26 @@
       "match": null
     },
     {
+      "id": "d831eaf185e32c41",
+      "title": "Korhan Futacı",
+      "date": "2026-05-25T20:30:00",
+      "date_end": null,
+      "venue": "Bimhuis",
+      "venue_address": "Piet Heinkade 3, 1019 BR Amsterdam",
+      "event_type": "Concert",
+      "artists": [],
+      "genres": [
+        "Impro Focus"
+      ],
+      "price_min": null,
+      "price_max": null,
+      "tickets_url": "https://activetickets.bimhuis.nl/en-GB/Show/Details/54280",
+      "tickets_status": "available",
+      "source": "bimhuis",
+      "source_url": "https://www.bimhuis.nl/en/calendar/korhan-futaci/",
+      "match": null
+    },
+    {
       "id": "efc95173e1c2aa87",
       "title": "Surf Trash",
       "date": "2026-05-25T22:00:00",
@@ -13033,6 +13306,24 @@
       "tickets_status": "available",
       "source": "amsterdam_alt",
       "source_url": "https://www.amsterdamalternative.nl/agenda/20836",
+      "match": null
+    },
+    {
+      "id": "8fd16b86ebdc8082",
+      "title": "North Star Comes to Splendor",
+      "date": "2026-05-26T14:00:00",
+      "date_end": null,
+      "venue": "Splendor",
+      "venue_address": "",
+      "event_type": "",
+      "artists": [],
+      "genres": [],
+      "price_min": 15.0,
+      "price_max": null,
+      "tickets_url": "",
+      "tickets_status": "available",
+      "source": "amsterdam_alt",
+      "source_url": "https://www.amsterdamalternative.nl/agenda/21647",
       "match": null
     },
     {
@@ -13167,26 +13458,6 @@
       "match": null
     },
     {
-      "id": "8fd16b86ebdc8082",
-      "title": "North Star comes to Splendor",
-      "date": "2026-05-26T20:00:00",
-      "date_end": null,
-      "venue": "Splendor",
-      "venue_address": "Nieuwe Uilenburgerstraat 116, 1011 LX Amsterdam",
-      "event_type": "Concert",
-      "artists": [
-        "Oene van Geel"
-      ],
-      "genres": [],
-      "price_min": null,
-      "price_max": null,
-      "tickets_url": "https://splendor.stager.co/shop/default/events/111649429",
-      "tickets_status": "available",
-      "source": "splendor",
-      "source_url": "https://www.splendoramsterdam.com/agenda/111649429/north-star-comes-to-splendor",
-      "match": null
-    },
-    {
       "id": "5921405a24fcdce0",
       "title": "CvA's Birdflight Band // North Star",
       "date": "2026-05-26T20:00:00",
@@ -13298,6 +13569,26 @@
       "tickets_status": "available",
       "source": "paradiso",
       "source_url": "https://www.paradiso.nl/en/program/hans-dulfer/2882390",
+      "match": null
+    },
+    {
+      "id": "d02f64a0f0853494",
+      "title": "Rough Diamonds: WAZO BEAN | LO-V",
+      "date": "2026-05-26T21:30:00",
+      "date_end": null,
+      "venue": "Bimhuis",
+      "venue_address": "Piet Heinkade 3, 1019 BR Amsterdam",
+      "event_type": "Concert",
+      "artists": [],
+      "genres": [
+        "Rough Diamonds"
+      ],
+      "price_min": 0.0,
+      "price_max": null,
+      "tickets_url": "",
+      "tickets_status": "free",
+      "source": "bimhuis",
+      "source_url": "https://www.bimhuis.nl/en/calendar/rough-diamonds-wazo-bean-lo-v/",
       "match": null
     },
     {
@@ -14232,6 +14523,26 @@
       }
     },
     {
+      "id": "f24f5b0e3214d4f5",
+      "title": "Michael Moore Universe Quartet",
+      "date": "2026-05-28T20:30:00",
+      "date_end": null,
+      "venue": "Bimhuis",
+      "venue_address": "Piet Heinkade 3, 1019 BR Amsterdam",
+      "event_type": "Concert",
+      "artists": [],
+      "genres": [
+        "Impro Focus"
+      ],
+      "price_min": null,
+      "price_max": null,
+      "tickets_url": "https://activetickets.bimhuis.nl/en-GB/Show/Details/54264",
+      "tickets_status": "available",
+      "source": "bimhuis",
+      "source_url": "https://www.bimhuis.nl/en/calendar/michael-moore-universe-quartet-3/",
+      "match": null
+    },
+    {
       "id": "34e3ee039d28e937",
       "title": "Alex Coly & Travis Allen: Unannounced Family Session",
       "date": "2026-05-28T22:00:00",
@@ -14913,6 +15224,26 @@
         "reason": "Similar to Leifur James, Rahill, Loma",
         "score": 5
       }
+    },
+    {
+      "id": "d5329a3482886748",
+      "title": "Yanna Pelser: Songbirds",
+      "date": "2026-05-29T20:30:00",
+      "date_end": null,
+      "venue": "Bimhuis",
+      "venue_address": "Piet Heinkade 3, 1019 BR Amsterdam",
+      "event_type": "Concert",
+      "artists": [],
+      "genres": [
+        "BIMHUIS Productions"
+      ],
+      "price_min": null,
+      "price_max": null,
+      "tickets_url": "https://activetickets.bimhuis.nl/en-GB/Show/Details/54220",
+      "tickets_status": "available",
+      "source": "bimhuis",
+      "source_url": "https://www.bimhuis.nl/en/calendar/yanna-pelser/",
+      "match": null
     },
     {
       "id": "3cb72ecaf492e904",
@@ -15967,6 +16298,24 @@
       "match": null
     },
     {
+      "id": "af187e4e87ac7692",
+      "title": "Ustad Noor Bakhsh",
+      "date": "2026-05-30T20:30:00",
+      "date_end": null,
+      "venue": "Bimhuis",
+      "venue_address": "Piet Heinkade 3, 1019 BR Amsterdam",
+      "event_type": "Concert",
+      "artists": [],
+      "genres": [],
+      "price_min": null,
+      "price_max": null,
+      "tickets_url": "https://activetickets.bimhuis.nl/en-GB/Show/Details/54261",
+      "tickets_status": "available",
+      "source": "bimhuis",
+      "source_url": "https://www.bimhuis.nl/en/calendar/ustad-noor-bakhsh/",
+      "match": null
+    },
+    {
       "id": "5b300003a6ab79c8",
       "title": "Madam by Night invites: WE ARE ICONYC",
       "date": "2026-05-30T21:00:00",
@@ -16881,6 +17230,27 @@
       "match": null
     },
     {
+      "id": "6d682dc9e60a6631",
+      "title": "Abdullah Miniawy Trio | KUNTARI",
+      "date": "2026-05-31T20:30:00",
+      "date_end": null,
+      "venue": "Bimhuis",
+      "venue_address": "Piet Heinkade 3, 1019 BR Amsterdam",
+      "event_type": "Concert",
+      "artists": [],
+      "genres": [
+        "Double concert",
+        "FIBER Festival 2026"
+      ],
+      "price_min": null,
+      "price_max": null,
+      "tickets_url": "https://fiber.stager.co/shop/fiberfestival2026",
+      "tickets_status": "available",
+      "source": "bimhuis",
+      "source_url": "https://www.bimhuis.nl/en/calendar/abdullah-miniawy-trio-kuntari/",
+      "match": null
+    },
+    {
       "id": "0f976f10aa910813",
       "title": "Freï invites Robyn",
       "date": "2026-05-31T21:00:00",
@@ -17003,6 +17373,27 @@
       "tickets_status": "available",
       "source": "ra",
       "source_url": "https://ra.co/events/2436566",
+      "match": null
+    },
+    {
+      "id": "96c9b431323603c7",
+      "title": "An Intergalactic Night: Ernst Glerum plays Misha, Terrie Ex & Emma Fischer, Meis Vranken ‘Flat News’, Beatrice Sberna & Friends",
+      "date": "2026-06-01T20:15:00",
+      "date_end": null,
+      "venue": "Bimhuis",
+      "venue_address": "Piet Heinkade 3, 1019 BR Amsterdam",
+      "event_type": "Concert",
+      "artists": [],
+      "genres": [
+        "BIMHUIS & Space is the Place",
+        "Mishakosmos"
+      ],
+      "price_min": null,
+      "price_max": null,
+      "tickets_url": "https://activetickets.bimhuis.nl/en-GB/Show/Details/54294",
+      "tickets_status": "available",
+      "source": "bimhuis",
+      "source_url": "https://www.bimhuis.nl/en/calendar/an-intergalactic-night-ernst-glerum-plays-misha-terrie-ex-emma-fischer-meis-vrancken-flat-news-beatrice-sberna-friends/",
       "match": null
     },
     {
@@ -17193,6 +17584,26 @@
       "tickets_status": "available",
       "source": "paradiso",
       "source_url": "https://www.paradiso.nl/en/program/westside-gunn-heel-the-world-tour-with-smoke-dza-feed-the-family-and-special-guests/2877705",
+      "match": null
+    },
+    {
+      "id": "aff9fc2efa720786",
+      "title": "Rough Diamonds: Stuck in an Elevator | Yehorii Uzhva – The Trace",
+      "date": "2026-06-02T21:30:00",
+      "date_end": null,
+      "venue": "Bimhuis",
+      "venue_address": "Piet Heinkade 3, 1019 BR Amsterdam",
+      "event_type": "Concert",
+      "artists": [],
+      "genres": [
+        "Rough Diamonds"
+      ],
+      "price_min": 0.0,
+      "price_max": null,
+      "tickets_url": "",
+      "tickets_status": "free",
+      "source": "bimhuis",
+      "source_url": "https://www.bimhuis.nl/en/calendar/rough-diamonds-stuck-in-an-elevator-yehorii-uzhva-the-trace/",
       "match": null
     },
     {
@@ -17746,7 +18157,7 @@
     {
       "id": "8039ab457bfa5e33",
       "title": "Mokum Records",
-      "date": "2026-06-05T13:51:00",
+      "date": "2026-06-05T14:13:00",
       "date_end": null,
       "venue": "Paradiso",
       "venue_address": "Paradiso - Grote Zaal, Paradiso - Kelder",
@@ -17996,6 +18407,28 @@
       "tickets_status": "available",
       "source": "paradiso",
       "source_url": "https://www.paradiso.nl/en/program/seasick-steve/2861017",
+      "match": null
+    },
+    {
+      "id": "baa6a3104fe8beac",
+      "title": "Goede Maten: Misha Mengelberg & Louis Andriessen",
+      "date": "2026-06-05T20:30:00",
+      "date_end": null,
+      "venue": "Bimhuis",
+      "venue_address": "Piet Heinkade 3, 1019 BR Amsterdam",
+      "event_type": "Concert",
+      "artists": [],
+      "genres": [
+        "Impro Focus",
+        "Legacy",
+        "Red Light Jazz"
+      ],
+      "price_min": null,
+      "price_max": null,
+      "tickets_url": "https://activetickets.bimhuis.nl/en-GB/Show/Details/54310",
+      "tickets_status": "available",
+      "source": "bimhuis",
+      "source_url": "https://www.bimhuis.nl/en/calendar/misha-mengelberg-louis-andriessen-goede-maten/",
       "match": null
     },
     {
@@ -18554,18 +18987,21 @@
       "id": "67e4a34b68b8dc67",
       "title": "Samora Pinderhughes",
       "date": "2026-06-06T20:30:00",
-      "date_end": "2026-06-06T22:00:00",
+      "date_end": null,
       "venue": "Bimhuis",
-      "venue_address": "Piet Heinkade 3; 1019 Zeeburg; Amsterdam; Netherlands",
-      "event_type": "Club",
+      "venue_address": "Piet Heinkade 3, 1019 BR Amsterdam",
+      "event_type": "Concert",
       "artists": [],
-      "genres": [],
+      "genres": [
+        "DATSKAT",
+        "Red Light Jazz"
+      ],
       "price_min": null,
       "price_max": null,
-      "tickets_url": "",
+      "tickets_url": "https://activetickets.bimhuis.nl/en-GB/Show/Details/54265",
       "tickets_status": "available",
-      "source": "ra",
-      "source_url": "https://ra.co/events/2373337",
+      "source": "bimhuis",
+      "source_url": "https://www.bimhuis.nl/en/calendar/samora-pinderhughes/",
       "match": {
         "type": "Discovery",
         "reason": "Similar to Emma-Jean Thackray, Speakers Corner Quartet, Arooj Aftab",
@@ -19008,6 +19444,28 @@
       "match": null
     },
     {
+      "id": "5ecc17ae0c143cd4",
+      "title": "ICP Orchestra",
+      "date": "2026-06-07T14:30:00",
+      "date_end": null,
+      "venue": "Bimhuis",
+      "venue_address": "Piet Heinkade 3, 1019 BR Amsterdam",
+      "event_type": "Concert",
+      "artists": [],
+      "genres": [
+        "Impro Focus",
+        "Legacy",
+        "Red Light Jazz"
+      ],
+      "price_min": null,
+      "price_max": null,
+      "tickets_url": "https://activetickets.bimhuis.nl/en-GB/Show/Details/54306",
+      "tickets_status": "available",
+      "source": "bimhuis",
+      "source_url": "https://www.bimhuis.nl/en/calendar/icp-orchestra/",
+      "match": null
+    },
+    {
       "id": "b2c7e6ec0f40e365",
       "title": "Miguelle & TONS X BRET",
       "date": "2026-06-07T15:00:00",
@@ -19119,6 +19577,27 @@
         "reason": "In your TIDAL library",
         "score": 1
       }
+    },
+    {
+      "id": "37f4a289d3736e42",
+      "title": "Ella Zirina & Teis Semey | Ella Zirina Trio ft. Felix Moseholm & Jamie Peet",
+      "date": "2026-06-07T20:30:00",
+      "date_end": null,
+      "venue": "Bimhuis",
+      "venue_address": "Piet Heinkade 3, 1019 BR Amsterdam",
+      "event_type": "Concert",
+      "artists": [],
+      "genres": [
+        "New Dutch Jazz",
+        "Red Light Jazz"
+      ],
+      "price_min": null,
+      "price_max": null,
+      "tickets_url": "https://activetickets.bimhuis.nl/en-GB/Show/Details/54268",
+      "tickets_status": "available",
+      "source": "bimhuis",
+      "source_url": "https://www.bimhuis.nl/en/calendar/ella-zirina-teis-semey-ella-zirina-trio-ft-felix-moseholm-jamie-peet/",
+      "match": null
     },
     {
       "id": "deaecd29633be26e",
@@ -19350,6 +19829,26 @@
       "tickets_status": "available",
       "source": "muziekgebouw",
       "source_url": "https://www.muziekgebouw.nl/en/agenda/salukat-mlz8",
+      "match": null
+    },
+    {
+      "id": "d9aeabe564430b1c",
+      "title": "Rough Diamonds: Dasamife | Teis Ortved Quintet",
+      "date": "2026-06-09T21:30:00",
+      "date_end": null,
+      "venue": "Bimhuis",
+      "venue_address": "Piet Heinkade 3, 1019 BR Amsterdam",
+      "event_type": "Concert",
+      "artists": [],
+      "genres": [
+        "Rough Diamonds"
+      ],
+      "price_min": 0.0,
+      "price_max": null,
+      "tickets_url": "",
+      "tickets_status": "free",
+      "source": "bimhuis",
+      "source_url": "https://www.bimhuis.nl/en/calendar/rough-diamonds-dasamife-teis-ortved-quintet/",
       "match": null
     },
     {
@@ -19807,6 +20306,24 @@
       "match": null
     },
     {
+      "id": "ebd075e8e377e78b",
+      "title": "Guitari Baro",
+      "date": "2026-06-11T20:30:00",
+      "date_end": null,
+      "venue": "Bimhuis",
+      "venue_address": "Piet Heinkade 3, 1019 BR Amsterdam",
+      "event_type": "Concert",
+      "artists": [],
+      "genres": [],
+      "price_min": null,
+      "price_max": null,
+      "tickets_url": "https://activetickets.bimhuis.nl/en-GB/Show/Details/54252",
+      "tickets_status": "available",
+      "source": "bimhuis",
+      "source_url": "https://www.bimhuis.nl/en/calendar/guitari-baro/",
+      "match": null
+    },
+    {
       "id": "fa4c22f07157abca",
       "title": "Headsend",
       "date": "2026-06-11T21:30:00",
@@ -20036,6 +20553,26 @@
         "reason": "In your TIDAL library",
         "score": 1
       }
+    },
+    {
+      "id": "f89174c73d721980",
+      "title": "William Barrett Band",
+      "date": "2026-06-12T20:30:00",
+      "date_end": null,
+      "venue": "Bimhuis",
+      "venue_address": "Piet Heinkade 3, 1019 BR Amsterdam",
+      "event_type": "Concert",
+      "artists": [],
+      "genres": [
+        "New Dutch Jazz"
+      ],
+      "price_min": null,
+      "price_max": null,
+      "tickets_url": "https://activetickets.bimhuis.nl/en-GB/Show/Details/54298",
+      "tickets_status": "available",
+      "source": "bimhuis",
+      "source_url": "https://www.bimhuis.nl/en/calendar/william-barrett-band/",
+      "match": null
     },
     {
       "id": "d2dc5ca61517287a",
@@ -20637,6 +21174,26 @@
       "match": null
     },
     {
+      "id": "910e312a4b1369e1",
+      "title": "Yuri Honing Acoustic Quartet",
+      "date": "2026-06-13T20:30:00",
+      "date_end": null,
+      "venue": "Bimhuis",
+      "venue_address": "Piet Heinkade 3, 1019 BR Amsterdam",
+      "event_type": "Concert",
+      "artists": [],
+      "genres": [
+        "New Dutch Jazz"
+      ],
+      "price_min": null,
+      "price_max": null,
+      "tickets_url": "https://activetickets.bimhuis.nl/en-GB/Show/Details/54203",
+      "tickets_status": "available",
+      "source": "bimhuis",
+      "source_url": "https://www.bimhuis.nl/en/calendar/yuri-honing-acoustic-quartet/",
+      "match": null
+    },
+    {
       "id": "edd09b8afa58bd50",
       "title": "MASSIEF",
       "date": "2026-06-13T21:00:00",
@@ -21227,6 +21784,26 @@
       "match": null
     },
     {
+      "id": "6ee3ee389bd25b8c",
+      "title": "Ton Felices – so warm | Evan and Carolina’s Super Duper Group & Fun",
+      "date": "2026-06-14T20:30:00",
+      "date_end": null,
+      "venue": "Bimhuis",
+      "venue_address": "Piet Heinkade 3, 1019 BR Amsterdam",
+      "event_type": "Concert",
+      "artists": [],
+      "genres": [
+        "New Dutch Jazz"
+      ],
+      "price_min": null,
+      "price_max": null,
+      "tickets_url": "https://activetickets.bimhuis.nl/en-GB/Show/Details/54318",
+      "tickets_status": "available",
+      "source": "bimhuis",
+      "source_url": "https://www.bimhuis.nl/en/calendar/ton-felices-so-warm-evan-and-carolinas-super-duper-group-fun/",
+      "match": null
+    },
+    {
       "id": "79573b81f72aaf00",
       "title": "Good Flying Birds",
       "date": "2026-06-15T18:00:00",
@@ -21388,6 +21965,26 @@
       "match": null
     },
     {
+      "id": "74ac362935892d7e",
+      "title": "Rough Diamonds: Andrew Moreno Trio | INNEC",
+      "date": "2026-06-16T21:30:00",
+      "date_end": null,
+      "venue": "Bimhuis",
+      "venue_address": "Piet Heinkade 3, 1019 BR Amsterdam",
+      "event_type": "Concert",
+      "artists": [],
+      "genres": [
+        "Rough Diamonds"
+      ],
+      "price_min": 0.0,
+      "price_max": null,
+      "tickets_url": "",
+      "tickets_status": "free",
+      "source": "bimhuis",
+      "source_url": "https://www.bimhuis.nl/en/calendar/rough-diamonds-andrew-moreno-trio-innec/",
+      "match": null
+    },
+    {
       "id": "a6fb52e88f9333ee",
       "title": "[PHANTOM GROUP] KLUBNACHT",
       "date": "2026-06-16T23:00:00",
@@ -21533,6 +22130,26 @@
       "tickets_status": "available",
       "source": "paradiso",
       "source_url": "https://www.paradiso.nl/en/program/don-west/2834611",
+      "match": null
+    },
+    {
+      "id": "5bbacc6c8f371229",
+      "title": "Ossama Helmy – Oz Oz: Sada (Echo)",
+      "date": "2026-06-17T20:30:00",
+      "date_end": null,
+      "venue": "Bimhuis",
+      "venue_address": "Piet Heinkade 3, 1019 BR Amsterdam",
+      "event_type": "Concert",
+      "artists": [],
+      "genres": [
+        "BIMHUIS x Holland Festival"
+      ],
+      "price_min": null,
+      "price_max": null,
+      "tickets_url": "https://hollandfestival.nl/nl/sada-echo",
+      "tickets_status": "available",
+      "source": "bimhuis",
+      "source_url": "https://www.bimhuis.nl/en/calendar/ossama-helmy-oz-oz-sada-echo/",
       "match": null
     },
     {
@@ -21782,6 +22399,24 @@
       "tickets_status": "available",
       "source": "ra",
       "source_url": "https://ra.co/events/2401489",
+      "match": null
+    },
+    {
+      "id": "9518dbeba52f173a",
+      "title": "Mike Reed’s The Separatist Party feat. Ben LaMar Gay, Bitchin Bajas & Marvin Tate",
+      "date": "2026-06-18T21:00:00",
+      "date_end": null,
+      "venue": "Bimhuis",
+      "venue_address": "Piet Heinkade 3, 1019 BR Amsterdam",
+      "event_type": "Concert",
+      "artists": [],
+      "genres": [],
+      "price_min": null,
+      "price_max": null,
+      "tickets_url": "https://activetickets.bimhuis.nl/en-GB/Show/Details/54281",
+      "tickets_status": "available",
+      "source": "bimhuis",
+      "source_url": "https://www.bimhuis.nl/en/calendar/mike-reeds-separatist-party-feat-ben-lamar-gay-bitchin-bajas-marvin-tate/",
       "match": null
     },
     {
@@ -22106,6 +22741,27 @@
       "tickets_status": "available",
       "source": "muziekgebouw",
       "source_url": "https://www.muziekgebouw.nl/en/agenda/spem-in-alium-7dn6",
+      "match": null
+    },
+    {
+      "id": "4d64cf2669f1f9a6",
+      "title": "Eric Vloeimans’ Pico Belllo Extended",
+      "date": "2026-06-19T20:30:00",
+      "date_end": null,
+      "venue": "Bimhuis",
+      "venue_address": "Piet Heinkade 3, 1019 BR Amsterdam",
+      "event_type": "Concert",
+      "artists": [],
+      "genres": [
+        "New Dutch Jazz",
+        "Headliners"
+      ],
+      "price_min": null,
+      "price_max": null,
+      "tickets_url": "https://activetickets.bimhuis.nl/en-GB/Show/Details/54221",
+      "tickets_status": "available",
+      "source": "bimhuis",
+      "source_url": "https://www.bimhuis.nl/en/calendar/eric-vloeimans-pico-belllo-extended/",
       "match": null
     },
     {
@@ -22528,6 +23184,26 @@
       "match": null
     },
     {
+      "id": "15f2741ce573dd6b",
+      "title": "BvR Flamenco Bigband",
+      "date": "2026-06-20T20:30:00",
+      "date_end": null,
+      "venue": "Bimhuis",
+      "venue_address": "Piet Heinkade 3, 1019 BR Amsterdam",
+      "event_type": "Concert",
+      "artists": [],
+      "genres": [
+        "BIG"
+      ],
+      "price_min": null,
+      "price_max": null,
+      "tickets_url": "https://activetickets.bimhuis.nl/en-GB/Show/Details/54249",
+      "tickets_status": "available",
+      "source": "bimhuis",
+      "source_url": "https://www.bimhuis.nl/en/calendar/bvr-flamenco-bigband/",
+      "match": null
+    },
+    {
       "id": "ce1f260a433efd54",
       "title": "Madam by Night invites: The Jungle Room",
       "date": "2026-06-20T21:00:00",
@@ -22931,6 +23607,26 @@
       "source": "paradiso",
       "source_url": "https://www.paradiso.nl/en/program/asal/2854164",
       "match": null
+    },
+    {
+      "id": "2b5a6bec36da53d8",
+      "title": "Meredith Monk & John Hollenbeck: Duet Behavior 2026",
+      "date": "2026-06-21T20:30:00",
+      "date_end": null,
+      "venue": "Bimhuis",
+      "venue_address": "Piet Heinkade 3, 1019 BR Amsterdam",
+      "event_type": "Concert",
+      "artists": [],
+      "genres": [
+        "BIMHUIS x Holland Festival"
+      ],
+      "price_min": null,
+      "price_max": null,
+      "tickets_url": "",
+      "tickets_status": "sold_out",
+      "source": "bimhuis",
+      "source_url": "https://www.bimhuis.nl/en/calendar/meredith-monk-john-hollenbeck/",
+      "match": null
     }
   ],
   "venues": [
@@ -23109,6 +23805,11 @@
     "Anarchical",
     "Anime",
     "Arabic",
+    "BIG",
+    "BIMHUIS & Space is the Place",
+    "BIMHUIS & The Rest is Noise",
+    "BIMHUIS Productions",
+    "BIMHUIS x Holland Festival",
     "Belgium",
     "Bob Marley",
     "Boombap",
@@ -23127,9 +23828,11 @@
     "Country",
     "Crime",
     "Cumbia",
+    "DATSKAT",
     "DIP",
     "Danceable",
     "Desi",
+    "Double concert",
     "Drama",
     "Dreamy",
     "Drum & Bass",
@@ -23143,6 +23846,7 @@
     "Emo",
     "English subs",
     "Experimental",
+    "FIBER Festival 2026",
     "Family",
     "Fantasy",
     "Feel good",
@@ -23157,6 +23861,7 @@
     "Greek folk music",
     "Groovy",
     "Hardcore punk",
+    "Headliners",
     "Heavy",
     "Heavy metal",
     "Hip hop",
@@ -23166,6 +23871,7 @@
     "History",
     "Hits",
     "House",
+    "Impro Focus",
     "India",
     "Indie",
     "Indie folk",
@@ -23179,14 +23885,17 @@
     "LGBTQ+",
     "LGBTQIA+",
     "Latin",
+    "Legacy",
     "Line dance",
     "Literature / Science / Politics / Art",
     "MPB",
     "Metal",
     "Metalcore",
+    "Mishakosmos",
     "Music",
     "Music documentary",
     "Neo-soul",
+    "New Dutch Jazz",
     "Nostalgia",
     "Nu metal",
     "Orchestra",
@@ -23209,12 +23918,14 @@
     "Rap",
     "Rave",
     "Raw",
+    "Red Light Jazz",
     "Reggae",
     "Rock",
     "Rock-‘n-roll",
     "Romantic",
     "Roots",
     "Roots / Americana / Country / Blues",
+    "Rough Diamonds",
     "Samba",
     "Sci-fi",
     "Shoegaze",
@@ -23237,6 +23948,7 @@
     "UK Garage",
     "Underground",
     "Vocal Music",
+    "WhyNot x BIMHUIS",
     "Workshop",
     "Zeroes"
   ],
