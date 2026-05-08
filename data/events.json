@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-05-08T08:23:51.034008",
+  "generated_at": "2026-05-08T08:38:00.361771",
   "event_count": 1051,
   "events": [
     {
@@ -831,24 +831,6 @@
       "match": null
     },
     {
-      "id": "1ffe54defd7b0cb1",
-      "title": "Her Voice",
-      "date": "2026-05-08T17:30:00",
-      "date_end": null,
-      "venue": "Splendor",
-      "venue_address": "",
-      "event_type": "",
-      "artists": [],
-      "genres": [],
-      "price_min": 20.0,
-      "price_max": null,
-      "tickets_url": "",
-      "tickets_status": "available",
-      "source": "amsterdam_alt",
-      "source_url": "https://www.amsterdamalternative.nl/agenda/21899",
-      "match": null
-    },
-    {
       "id": "cad69dadd3a24218",
       "title": "de Nieuwe Meent OPEN CALL for a mural: info meeting",
       "date": "2026-05-08T17:30:00",
@@ -1001,6 +983,26 @@
       "tickets_status": "available",
       "source": "melkweg",
       "source_url": "https://www.melkweg.nl/en/agenda/van-pletzen-08-05-2026",
+      "match": null
+    },
+    {
+      "id": "1ffe54defd7b0cb1",
+      "title": "Her Voice",
+      "date": "2026-05-08T19:30:00",
+      "date_end": null,
+      "venue": "Splendor",
+      "venue_address": "Nieuwe Uilenburgerstraat 116, 1011 LX Amsterdam",
+      "event_type": "Concert",
+      "artists": [
+        "Sarah Jeffery"
+      ],
+      "genres": [],
+      "price_min": null,
+      "price_max": null,
+      "tickets_url": "https://splendor.stager.co/shop/default/events/111648054",
+      "tickets_status": "available",
+      "source": "splendor",
+      "source_url": "https://www.splendoramsterdam.com/agenda/111648054/her-voice",
       "match": null
     },
     {
@@ -3799,24 +3801,6 @@
       "match": null
     },
     {
-      "id": "93b97e1d9091cf1e",
-      "title": "Jeong Lim Yang's Synchronicity",
-      "date": "2026-05-11T18:00:00",
-      "date_end": null,
-      "venue": "Splendor",
-      "venue_address": "",
-      "event_type": "",
-      "artists": [],
-      "genres": [],
-      "price_min": 16.0,
-      "price_max": null,
-      "tickets_url": "",
-      "tickets_status": "available",
-      "source": "amsterdam_alt",
-      "source_url": "https://www.amsterdamalternative.nl/agenda/21656",
-      "match": null
-    },
-    {
       "id": "31180440e0b28aec",
       "title": "Planet Funk",
       "date": "2026-05-11T19:30:00",
@@ -3876,6 +3860,26 @@
       "tickets_status": "available",
       "source": "splendor",
       "source_url": "https://www.splendoramsterdam.com/agenda/111571564/ledenconcert-brandt-attema",
+      "match": null
+    },
+    {
+      "id": "93b97e1d9091cf1e",
+      "title": "Jeong Lim Yang's Synchronicity",
+      "date": "2026-05-11T20:15:00",
+      "date_end": null,
+      "venue": "Splendor",
+      "venue_address": "Nieuwe Uilenburgerstraat 116, 1011 LX Amsterdam",
+      "event_type": "Concert",
+      "artists": [
+        "Michael Moore"
+      ],
+      "genres": [],
+      "price_min": null,
+      "price_max": null,
+      "tickets_url": "https://splendor.stager.co/shop/default/events/111651807",
+      "tickets_status": "available",
+      "source": "splendor",
+      "source_url": "https://www.splendoramsterdam.com/agenda/111651807/jeong-lim-yangs-synchronicity",
       "match": null
     },
     {
@@ -4087,24 +4091,6 @@
       "match": null
     },
     {
-      "id": "ce2e8a2abb3245db",
-      "title": "Webb Crawford Solo // Michael Foster, Raoul van der Weide & George Hadow",
-      "date": "2026-05-12T17:30:00",
-      "date_end": null,
-      "venue": "Splendor",
-      "venue_address": "",
-      "event_type": "",
-      "artists": [],
-      "genres": [],
-      "price_min": 13.0,
-      "price_max": null,
-      "tickets_url": "",
-      "tickets_status": "available",
-      "source": "amsterdam_alt",
-      "source_url": "https://www.amsterdamalternative.nl/agenda/21902",
-      "match": null
-    },
-    {
       "id": "52aa8f7884462ade",
       "title": "Film Screening: 'In This Together' a film by Lisette Olsthoorn",
       "date": "2026-05-12T17:30:00",
@@ -4159,6 +4145,26 @@
       "tickets_status": "free",
       "source": "melkweg",
       "source_url": "https://www.melkweg.nl/en/agenda/stuzzi-12-05-2026",
+      "match": null
+    },
+    {
+      "id": "ce2e8a2abb3245db",
+      "title": "Webb Crawford Solo // Michael Foster, Raoul van der Weide & George Hadow",
+      "date": "2026-05-12T19:30:00",
+      "date_end": null,
+      "venue": "Splendor",
+      "venue_address": "Nieuwe Uilenburgerstraat 116, 1011 LX Amsterdam",
+      "event_type": "Concert",
+      "artists": [
+        "River Adomeit"
+      ],
+      "genres": [],
+      "price_min": null,
+      "price_max": null,
+      "tickets_url": "https://splendor.stager.co/shop/default/events/111651892",
+      "tickets_status": "available",
+      "source": "splendor",
+      "source_url": "https://www.splendoramsterdam.com/agenda/111651892/webb-crawford-solo-michael-foster-raoul-van-der-weide-george-hadow",
       "match": null
     },
     {
@@ -5554,24 +5560,6 @@
       "match": null
     },
     {
-      "id": "178f34f2526f0946",
-      "title": "Cinema: The Mousetrap",
-      "date": "2026-05-15T17:00:00",
-      "date_end": null,
-      "venue": "Splendor",
-      "venue_address": "",
-      "event_type": "",
-      "artists": [],
-      "genres": [],
-      "price_min": 12.0,
-      "price_max": null,
-      "tickets_url": "",
-      "tickets_status": "available",
-      "source": "amsterdam_alt",
-      "source_url": "https://www.amsterdamalternative.nl/agenda/21644",
-      "match": null
-    },
-    {
       "id": "f906916f589015b5",
       "title": "Simon Vuarambon l All day long",
       "date": "2026-05-15T17:00:00",
@@ -5732,6 +5720,26 @@
         "reason": "In your TIDAL library",
         "score": 1
       }
+    },
+    {
+      "id": "178f34f2526f0946",
+      "title": "Cinema: The Mousetrap",
+      "date": "2026-05-15T19:00:00",
+      "date_end": null,
+      "venue": "Splendor",
+      "venue_address": "Nieuwe Uilenburgerstraat 116, 1011 LX Amsterdam",
+      "event_type": "Concert",
+      "artists": [
+        "Antonii Baryshevskyi presenteert Splendoor to Ukraine XXIX:"
+      ],
+      "genres": [],
+      "price_min": null,
+      "price_max": null,
+      "tickets_url": "https://splendor.stager.co/shop/default/events/111624980",
+      "tickets_status": "available",
+      "source": "splendor",
+      "source_url": "https://www.splendoramsterdam.com/agenda/111624980/cinema-mousetrap",
+      "match": null
     },
     {
       "id": "94c5855b16f93e19",
@@ -12304,24 +12312,6 @@
       "match": null
     },
     {
-      "id": "1114570f4e7b0536",
-      "title": "Koen Visser & Roman Willems",
-      "date": "2026-05-24T18:00:00",
-      "date_end": null,
-      "venue": "Splendor",
-      "venue_address": "",
-      "event_type": "",
-      "artists": [],
-      "genres": [],
-      "price_min": 12.0,
-      "price_max": null,
-      "tickets_url": "",
-      "tickets_status": "available",
-      "source": "amsterdam_alt",
-      "source_url": "https://www.amsterdamalternative.nl/agenda/21646",
-      "match": null
-    },
-    {
       "id": "91e4b7a938898fa6",
       "title": "Fokofpolisiekar + Die Heuwels Fantasties",
       "date": "2026-05-24T19:00:00",
@@ -12381,6 +12371,26 @@
       "tickets_status": "sold_out",
       "source": "concertgebouw",
       "source_url": "https://www.concertgebouw.nl/en/concerts/38042352-emmylou-harris---european-farewell-tour",
+      "match": null
+    },
+    {
+      "id": "1114570f4e7b0536",
+      "title": "Koen Visser & Roman Willems",
+      "date": "2026-05-24T20:00:00",
+      "date_end": null,
+      "venue": "Splendor",
+      "venue_address": "Nieuwe Uilenburgerstraat 116, 1011 LX Amsterdam",
+      "event_type": "Concert",
+      "artists": [
+        "Anne La Berge"
+      ],
+      "genres": [],
+      "price_min": null,
+      "price_max": null,
+      "tickets_url": "https://splendor.stager.co/shop/default/events/111646413",
+      "tickets_status": "available",
+      "source": "splendor",
+      "source_url": "https://www.splendoramsterdam.com/agenda/111646413/koen-visser-roman-willems",
       "match": null
     },
     {
@@ -12986,24 +12996,6 @@
       "match": null
     },
     {
-      "id": "8fd16b86ebdc8082",
-      "title": "North Star Comes to Splendor",
-      "date": "2026-05-26T14:00:00",
-      "date_end": null,
-      "venue": "Splendor",
-      "venue_address": "",
-      "event_type": "",
-      "artists": [],
-      "genres": [],
-      "price_min": 15.0,
-      "price_max": null,
-      "tickets_url": "",
-      "tickets_status": "available",
-      "source": "amsterdam_alt",
-      "source_url": "https://www.amsterdamalternative.nl/agenda/21647",
-      "match": null
-    },
-    {
       "id": "0890496cc35453e3",
       "title": "UNFOLD",
       "date": "2026-05-26T15:30:00",
@@ -13132,6 +13124,26 @@
       "tickets_status": "available",
       "source": "paradiso",
       "source_url": "https://www.paradiso.nl/en/program/miles-davis-100th-birthday-party/2836714",
+      "match": null
+    },
+    {
+      "id": "8fd16b86ebdc8082",
+      "title": "North Star comes to Splendor",
+      "date": "2026-05-26T20:00:00",
+      "date_end": null,
+      "venue": "Splendor",
+      "venue_address": "Nieuwe Uilenburgerstraat 116, 1011 LX Amsterdam",
+      "event_type": "Concert",
+      "artists": [
+        "Oene van Geel"
+      ],
+      "genres": [],
+      "price_min": null,
+      "price_max": null,
+      "tickets_url": "https://splendor.stager.co/shop/default/events/111649429",
+      "tickets_status": "available",
+      "source": "splendor",
+      "source_url": "https://www.splendoramsterdam.com/agenda/111649429/north-star-comes-to-splendor",
       "match": null
     },
     {
@@ -17565,7 +17577,7 @@
     {
       "id": "8039ab457bfa5e33",
       "title": "Mokum Records",
-      "date": "2026-06-05T08:23:00",
+      "date": "2026-06-05T08:37:00",
       "date_end": null,
       "venue": "Paradiso",
       "venue_address": "Paradiso - Grote Zaal, Paradiso - Kelder",
