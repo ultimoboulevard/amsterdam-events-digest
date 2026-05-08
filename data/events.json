@@ -1,577 +1,7 @@
 {
-  "generated_at": "2026-05-07T06:39:41.358099",
-  "event_count": 891,
+  "generated_at": "2026-05-08T05:30:23.194981",
+  "event_count": 899,
   "events": [
-    {
-      "id": "deaca7401f9645ec",
-      "title": "Lunch at Café Gilde",
-      "date": "2026-05-07T10:00:00",
-      "date_end": null,
-      "venue": "OT301",
-      "venue_address": "",
-      "event_type": "",
-      "artists": [],
-      "genres": [],
-      "price_min": 0.0,
-      "price_max": null,
-      "tickets_url": "",
-      "tickets_status": "available",
-      "source": "amsterdam_alt",
-      "source_url": "https://www.amsterdamalternative.nl/agenda/20857",
-      "match": null
-    },
-    {
-      "id": "4d54b579ac87e02e",
-      "title": "Kidskunstlab Expeditie Noordpool",
-      "date": "2026-05-07T13:30:00",
-      "date_end": null,
-      "venue": "ADMnoord - ‘t Groene Veld",
-      "venue_address": "",
-      "event_type": "",
-      "artists": [],
-      "genres": [],
-      "price_min": 0.0,
-      "price_max": null,
-      "tickets_url": "",
-      "tickets_status": "available",
-      "source": "amsterdam_alt",
-      "source_url": "https://www.amsterdamalternative.nl/agenda/21841",
-      "match": null
-    },
-    {
-      "id": "1362b9c65800bbe4",
-      "title": "Dok Night - Local Pollution",
-      "date": "2026-05-07T16:00:00",
-      "date_end": null,
-      "venue": "Plantage Dok",
-      "venue_address": "",
-      "event_type": "",
-      "artists": [],
-      "genres": [],
-      "price_min": 0.0,
-      "price_max": null,
-      "tickets_url": "",
-      "tickets_status": "available",
-      "source": "amsterdam_alt",
-      "source_url": "https://www.amsterdamalternative.nl/agenda/21725",
-      "match": null
-    },
-    {
-      "id": "84feb9cc9fcf630f",
-      "title": "Book Presentation: Dreaming of Dreams",
-      "date": "2026-05-07T17:00:00",
-      "date_end": null,
-      "venue": "Framer Framed",
-      "venue_address": "",
-      "event_type": "",
-      "artists": [],
-      "genres": [],
-      "price_min": 0.0,
-      "price_max": null,
-      "tickets_url": "",
-      "tickets_status": "available",
-      "source": "amsterdam_alt",
-      "source_url": "https://www.amsterdamalternative.nl/agenda/21826",
-      "match": null
-    },
-    {
-      "id": "45a46ebcc688c756",
-      "title": "16mm Cult Movie Night",
-      "date": "2026-05-07T17:30:00",
-      "date_end": null,
-      "venue": "OT301",
-      "venue_address": "",
-      "event_type": "",
-      "artists": [],
-      "genres": [],
-      "price_min": 5.0,
-      "price_max": null,
-      "tickets_url": "",
-      "tickets_status": "available",
-      "source": "amsterdam_alt",
-      "source_url": "https://www.amsterdamalternative.nl/agenda/21667",
-      "match": null
-    },
-    {
-      "id": "3018426e2113fed3",
-      "title": "David Mitchell’s Natural Light – album release",
-      "date": "2026-05-07T18:00:00",
-      "date_end": null,
-      "venue": "Bajesdorp - GROND",
-      "venue_address": "",
-      "event_type": "",
-      "artists": [],
-      "genres": [],
-      "price_min": 0.0,
-      "price_max": null,
-      "tickets_url": "",
-      "tickets_status": "available",
-      "source": "amsterdam_alt",
-      "source_url": "https://www.amsterdamalternative.nl/agenda/21818",
-      "match": null
-    },
-    {
-      "id": "b8d23c0edfd5427e",
-      "title": "I Am The Joker by Fee Aaij 4tet",
-      "date": "2026-05-07T18:00:00",
-      "date_end": null,
-      "venue": "Teatro Munganga",
-      "venue_address": "",
-      "event_type": "",
-      "artists": [],
-      "genres": [],
-      "price_min": 16.0,
-      "price_max": null,
-      "tickets_url": "",
-      "tickets_status": "available",
-      "source": "amsterdam_alt",
-      "source_url": "https://www.amsterdamalternative.nl/agenda/21658",
-      "match": null
-    },
-    {
-      "id": "8d222d1185c32158",
-      "title": "Songcycle for a Sad Clown",
-      "date": "2026-05-07T18:30:00",
-      "date_end": null,
-      "venue": "Splendor",
-      "venue_address": "",
-      "event_type": "",
-      "artists": [],
-      "genres": [],
-      "price_min": 8.0,
-      "price_max": null,
-      "tickets_url": "",
-      "tickets_status": "available",
-      "source": "amsterdam_alt",
-      "source_url": "https://www.amsterdamalternative.nl/agenda/21898",
-      "match": null
-    },
-    {
-      "id": "01dc2ac6361db7b9",
-      "title": "Public Image Ltd.",
-      "date": "2026-05-07T19:00:00",
-      "date_end": null,
-      "venue": "Melkweg",
-      "venue_address": "Lijnbaansgracht 234A, Amsterdam",
-      "event_type": "Concert",
-      "artists": [],
-      "genres": [
-        "Postpunk",
-        "Experimental",
-        "Alternative rock",
-        "Heavy"
-      ],
-      "price_min": null,
-      "price_max": null,
-      "tickets_url": "",
-      "tickets_status": "available",
-      "source": "melkweg",
-      "source_url": "https://www.melkweg.nl/en/agenda/public-image-ltd-07-05-2026",
-      "match": {
-        "type": "Library Match",
-        "reason": "In your TIDAL library",
-        "score": 1
-      }
-    },
-    {
-      "id": "35b45a03aaa1fc55",
-      "title": "Summer Wars (2009)",
-      "date": "2026-05-07T19:00:00",
-      "date_end": "2026-05-07T21:00:00",
-      "venue": "Melkweg",
-      "venue_address": "Lijnbaansgracht 234A, Amsterdam",
-      "event_type": "Film",
-      "artists": [],
-      "genres": [
-        "Anime",
-        "Japan",
-        "Sci-fi"
-      ],
-      "price_min": null,
-      "price_max": null,
-      "tickets_url": "",
-      "tickets_status": "available",
-      "source": "melkweg",
-      "source_url": "https://www.melkweg.nl/en/agenda/summer-wars-2009-07-05-2026",
-      "match": null
-    },
-    {
-      "id": "710d3ac83ac08bc2",
-      "title": "STC #48",
-      "date": "2026-05-07T19:00:00",
-      "date_end": "2026-05-07T23:59:00",
-      "venue": "Borisov Amsterdam",
-      "venue_address": "Rigakade 10 1013 BC Amsterdam, Netherlands",
-      "event_type": "Club",
-      "artists": [
-        "Sebax"
-      ],
-      "genres": [],
-      "price_min": null,
-      "price_max": null,
-      "tickets_url": "",
-      "tickets_status": "available",
-      "source": "ra",
-      "source_url": "https://ra.co/events/2432041",
-      "match": null
-    },
-    {
-      "id": "42cc6b8574829f19",
-      "title": "Astronaut",
-      "date": "2026-05-07T19:00:00",
-      "date_end": null,
-      "venue": "Paradiso",
-      "venue_address": "Paradiso - Boven Zaal",
-      "event_type": "Concert",
-      "artists": [
-        "Astronaut"
-      ],
-      "genres": [
-        "Concert",
-        "Alternative / Indie",
-        "Pop",
-        "Singer-songwriter / Folk"
-      ],
-      "price_min": null,
-      "price_max": null,
-      "tickets_url": "https://tickets.paradiso.nl/c2cd1e617fb5468d87e94511efab2f0e",
-      "tickets_status": "available",
-      "source": "paradiso",
-      "source_url": "https://www.paradiso.nl/en/program/astronaut/2696166",
-      "match": null
-    },
-    {
-      "id": "a23b379189e912b4",
-      "title": "Robert Jon & The Wreck",
-      "date": "2026-05-07T19:30:00",
-      "date_end": null,
-      "venue": "Melkweg",
-      "venue_address": "Lijnbaansgracht 234A, Amsterdam",
-      "event_type": "Concert",
-      "artists": [],
-      "genres": [
-        "Southern",
-        "Blues rock",
-        "Country",
-        "Roots"
-      ],
-      "price_min": null,
-      "price_max": null,
-      "tickets_url": "",
-      "tickets_status": "available",
-      "source": "melkweg",
-      "source_url": "https://www.melkweg.nl/en/agenda/robert-jon-the-wreck-07-05-2026",
-      "match": null
-    },
-    {
-      "id": "32b4021e0d68df3b",
-      "title": "Super-Sonic Jam",
-      "date": "2026-05-07T19:30:00",
-      "date_end": null,
-      "venue": "Skatecafe",
-      "venue_address": "Extern - Overig",
-      "event_type": "Concert",
-      "artists": [],
-      "genres": [
-        "Concert",
-        "Soul / Jazz / Funk",
-        "Hip hop / R&B"
-      ],
-      "price_min": null,
-      "price_max": null,
-      "tickets_url": "https://tickets.paradiso.nl/f0f9f388a5cd4f77ba20365a80657fcc",
-      "tickets_status": "available",
-      "source": "paradiso",
-      "source_url": "https://www.paradiso.nl/en/program/super-sonic-jam/2860716",
-      "match": null
-    },
-    {
-      "id": "5b15b251fc4c84c7",
-      "title": "Zonneprijs #8 FERAL • Lara •  The Bird Experience • Roel",
-      "date": "2026-05-07T19:30:00",
-      "date_end": null,
-      "venue": "Zonnehuis",
-      "venue_address": "Zonnehuis - Theaterzaal",
-      "event_type": "Concert",
-      "artists": [
-        "Lara",
-        "The Bird Experience",
-        "Roel",
-        "FERAL"
-      ],
-      "genres": [
-        "Rock",
-        "Alternative / Indie",
-        "Pop",
-        "Singer-songwriter / Folk"
-      ],
-      "price_min": null,
-      "price_max": null,
-      "tickets_url": "https://tickets.paradiso.nl/fd50695e565a44f7aa9d9c04a861fa88",
-      "tickets_status": "available",
-      "source": "paradiso",
-      "source_url": "https://www.paradiso.nl/en/program/zonneprijs-8/2679861",
-      "match": null
-    },
-    {
-      "id": "5c6d4b7bcbb4a15e",
-      "title": "WAHJ Live Performance Premiere",
-      "date": "2026-05-07T20:00:00",
-      "date_end": "2026-05-07T23:59:00",
-      "venue": "OT301",
-      "venue_address": "Overtoom 301; 1054 Oud-West; Amsterdam; Netherlands",
-      "event_type": "Club",
-      "artists": [
-        "YA Z AN"
-      ],
-      "genres": [],
-      "price_min": null,
-      "price_max": null,
-      "tickets_url": "",
-      "tickets_status": "available",
-      "source": "ra",
-      "source_url": "https://ra.co/events/2404683",
-      "match": null
-    },
-    {
-      "id": "e0cd41a121a0db80",
-      "title": "100% KATOEN",
-      "date": "2026-05-07T20:00:00",
-      "date_end": "2026-05-10T01:00:00",
-      "venue": "Café Katoen",
-      "venue_address": "Oude Turfmarkt 153, 1012 GC Amsterdam",
-      "event_type": "Club",
-      "artists": [
-        "Kevin Lo"
-      ],
-      "genres": [],
-      "price_min": null,
-      "price_max": null,
-      "tickets_url": "",
-      "tickets_status": "available",
-      "source": "ra",
-      "source_url": "https://ra.co/events/2432906",
-      "match": null
-    },
-    {
-      "id": "c3f75260beacf8a4",
-      "title": "Max Cooper 3D/AV Live",
-      "date": "2026-05-07T20:30:00",
-      "date_end": null,
-      "venue": "Paradiso",
-      "venue_address": "Paradiso - Grote Zaal",
-      "event_type": "Club",
-      "artists": [
-        "Max Cooper"
-      ],
-      "genres": [
-        "Concert",
-        "Electronic",
-        "Club"
-      ],
-      "price_min": null,
-      "price_max": null,
-      "tickets_url": "https://tickets.paradiso.nl/606f5fdff8fe494e85bb1cc95d9cae88",
-      "tickets_status": "available",
-      "source": "paradiso",
-      "source_url": "https://www.paradiso.nl/en/program/max-cooper-3d-av-live/2791997",
-      "match": {
-        "type": "Library Match",
-        "reason": "In your TIDAL library",
-        "score": 1
-      }
-    },
-    {
-      "id": "33cf9bf38323149c",
-      "title": "Trinix",
-      "date": "2026-05-07T20:30:00",
-      "date_end": null,
-      "venue": "Tolhuistuin",
-      "venue_address": "Tolhuistuin - Club",
-      "event_type": "Concert",
-      "artists": [
-        "Trinix",
-        "Ella Noar"
-      ],
-      "genres": [
-        "Concert",
-        "Electronic",
-        "Stadspas"
-      ],
-      "price_min": null,
-      "price_max": null,
-      "tickets_url": "https://tickets.paradiso.nl/acec405810464444a327274ca2576b65",
-      "tickets_status": "available",
-      "source": "paradiso",
-      "source_url": "https://www.paradiso.nl/en/program/trinix/2791600",
-      "match": null
-    },
-    {
-      "id": "6b7a00a99f2b17d5",
-      "title": "Wesley Joseph",
-      "date": "2026-05-07T20:30:00",
-      "date_end": null,
-      "venue": "Bitterzoet",
-      "venue_address": "Bitterzoet - Concertzaal",
-      "event_type": "Concert",
-      "artists": [
-        "Wesley Joseph"
-      ],
-      "genres": [
-        "Concert",
-        "Hip hop / R&B"
-      ],
-      "price_min": null,
-      "price_max": null,
-      "tickets_url": "https://tickets.paradiso.nl/44173df4fb524a35a9a06d5bbfcfd076",
-      "tickets_status": "available",
-      "source": "paradiso",
-      "source_url": "https://www.paradiso.nl/en/program/wesley-joseph/2854159",
-      "match": null
-    },
-    {
-      "id": "14ab3195684b1f50",
-      "title": "Billie Eilish - Hit Me Hard and Soft: The Tour (2026)",
-      "date": "2026-05-07T21:15:00",
-      "date_end": "2026-05-07T23:15:00",
-      "venue": "Melkweg",
-      "venue_address": "Lijnbaansgracht 234A, Amsterdam",
-      "event_type": "Film",
-      "artists": [],
-      "genres": [
-        "Concert film",
-        "Electro pop",
-        "Pop"
-      ],
-      "price_min": null,
-      "price_max": null,
-      "tickets_url": "",
-      "tickets_status": "available",
-      "source": "melkweg",
-      "source_url": "https://www.melkweg.nl/en/agenda/billie-eilish-hit-me-hard-and-soft-the-tour-2026-07-05-2026",
-      "match": null
-    },
-    {
-      "id": "6b7c4e2196fe358e",
-      "title": "Trinix",
-      "date": "2026-05-07T21:30:00",
-      "date_end": "2026-05-07T23:59:00",
-      "venue": "Paradiso",
-      "venue_address": "Weteringschans 6; 1017 Binnenstad; Amsterdam; Netherlands",
-      "event_type": "Club",
-      "artists": [],
-      "genres": [],
-      "price_min": null,
-      "price_max": null,
-      "tickets_url": "",
-      "tickets_status": "available",
-      "source": "ra",
-      "source_url": "https://ra.co/events/2379567",
-      "match": null
-    },
-    {
-      "id": "36698ed46a32636d",
-      "title": "24kGoldn",
-      "date": "2026-05-07T22:00:00",
-      "date_end": null,
-      "venue": "Paradiso",
-      "venue_address": "Paradiso - Boven Zaal",
-      "event_type": "Concert",
-      "artists": [
-        "24kGoldn"
-      ],
-      "genres": [
-        "Concert",
-        "Pop",
-        "Hip hop / R&B",
-        "Stadspas"
-      ],
-      "price_min": null,
-      "price_max": null,
-      "tickets_url": "https://tickets.paradiso.nl/07357f79da384b31880983ee918509ab",
-      "tickets_status": "available",
-      "source": "paradiso",
-      "source_url": "https://www.paradiso.nl/en/program/24kgoldn/2815746",
-      "match": null
-    },
-    {
-      "id": "22c46ae2a508445c",
-      "title": "DE MOND (BE, Ultra Eczema) + HEBBEX D’EXPECTATIO EXPECTATA (NO) + Tetuzi Akiyama, Toshi Nakamura, Bryan Eubanks & GJ Prins (JP/DE/NL)",
-      "date": "2026-05-07T22:00:00",
-      "date_end": null,
-      "venue": "OCCII",
-      "venue_address": "",
-      "event_type": "",
-      "artists": [],
-      "genres": [],
-      "price_min": 10.0,
-      "price_max": null,
-      "tickets_url": "",
-      "tickets_status": "available",
-      "source": "amsterdam_alt",
-      "source_url": "https://www.amsterdamalternative.nl/agenda/21596",
-      "match": null
-    },
-    {
-      "id": "e854822d20be352f",
-      "title": "Amsterdam Techno Sessions with A.Paul (ONHCET- NAKED LUNCH) PT",
-      "date": "2026-05-07T23:00:00",
-      "date_end": "2026-05-08T04:00:00",
-      "venue": "John Doe",
-      "venue_address": "Rembrandtplein 31, 1017 CT Amsterdam, Netherlands",
-      "event_type": "Club",
-      "artists": [
-        "A.Paul",
-        "Marco Ramos"
-      ],
-      "genres": [],
-      "price_min": null,
-      "price_max": null,
-      "tickets_url": "",
-      "tickets_status": "available",
-      "source": "ra",
-      "source_url": "https://ra.co/events/2429870",
-      "match": null
-    },
-    {
-      "id": "451a928564935731",
-      "title": "Sweetlips w/ Djora, Fion, Jaden Anthony, Housekes",
-      "date": "2026-05-07T23:00:00",
-      "date_end": "2026-05-08T04:00:00",
-      "venue": "nachbar",
-      "venue_address": "Nieuwezijds Voorburgwal 169a",
-      "event_type": "Club",
-      "artists": [],
-      "genres": [],
-      "price_min": null,
-      "price_max": null,
-      "tickets_url": "",
-      "tickets_status": "available",
-      "source": "ra",
-      "source_url": "https://ra.co/events/2431395",
-      "match": null
-    },
-    {
-      "id": "2148b0d47222bdf6",
-      "title": "Monark",
-      "date": "2026-05-07T23:00:00",
-      "date_end": "2026-05-08T05:00:00",
-      "venue": "TBA - Soul Kitchen",
-      "venue_address": "",
-      "event_type": "Club",
-      "artists": [
-        "THE FLAG TWINS",
-        "Silven"
-      ],
-      "genres": [],
-      "price_min": null,
-      "price_max": null,
-      "tickets_url": "",
-      "tickets_status": "available",
-      "source": "ra",
-      "source_url": "https://ra.co/events/2434291",
-      "match": null
-    },
     {
       "id": "38d52751d1c39af0",
       "title": "Ozzy Jones & Lex",
@@ -1526,7 +956,11 @@
       "venue": "De Fik Garden",
       "venue_address": "Sportparklaan 19, 1062 ZA Amsterdam, The Netherlands",
       "event_type": "Club",
-      "artists": [],
+      "artists": [
+        "Slimfit",
+        "DelFuturo",
+        "Bongoat"
+      ],
       "genres": [],
       "price_min": null,
       "price_max": null,
@@ -1895,6 +1329,42 @@
       "match": null
     },
     {
+      "id": "0865e25f681825f1",
+      "title": "Dinner at Café Gilde",
+      "date": "2026-05-09T15:00:00",
+      "date_end": null,
+      "venue": "OT301",
+      "venue_address": "",
+      "event_type": "",
+      "artists": [],
+      "genres": [],
+      "price_min": 12.0,
+      "price_max": null,
+      "tickets_url": "",
+      "tickets_status": "available",
+      "source": "amsterdam_alt",
+      "source_url": "https://www.amsterdamalternative.nl/agenda/21938",
+      "match": null
+    },
+    {
+      "id": "f8868e9b5af6208d",
+      "title": "The long middle | Exhibition Opening",
+      "date": "2026-05-09T15:00:00",
+      "date_end": null,
+      "venue": "WG",
+      "venue_address": "",
+      "event_type": "",
+      "artists": [],
+      "genres": [],
+      "price_min": 0.0,
+      "price_max": null,
+      "tickets_url": "",
+      "tickets_status": "available",
+      "source": "amsterdam_alt",
+      "source_url": "https://www.amsterdamalternative.nl/agenda/21944",
+      "match": null
+    },
+    {
       "id": "81e4be45233df73f",
       "title": "glitch404 x angirû present: digital alchemy with Forever United, ity, + more",
       "date": "2026-05-09T16:00:00",
@@ -2156,6 +1626,7 @@
         "Annemarie Lekkerkerker",
         "Speeddating met Ballenbingo",
         "Van Gogh Museum",
+        "Laurens Dassen",
         "Yusu Selectors",
         "Malindi B2B Bibitiana B2B Fendi",
         "EUROTECH"
@@ -3395,7 +2866,8 @@
       "event_type": "Concert",
       "artists": [
         "Worldpeace DMT",
-        "The Femcels"
+        "The Femcels",
+        "Samo"
       ],
       "genres": [
         "Alternative / Indie",
@@ -3540,6 +3012,24 @@
       "match": null
     },
     {
+      "id": "52aa8f7884462ade",
+      "title": "Film Screening: 'In This Together' a film by Lisette Olsthoorn",
+      "date": "2026-05-12T17:30:00",
+      "date_end": null,
+      "venue": "Nieuwland",
+      "venue_address": "",
+      "event_type": "",
+      "artists": [],
+      "genres": [],
+      "price_min": 0.0,
+      "price_max": null,
+      "tickets_url": "",
+      "tickets_status": "available",
+      "source": "amsterdam_alt",
+      "source_url": "https://www.amsterdamalternative.nl/agenda/21949",
+      "match": null
+    },
+    {
       "id": "504ffe1d4196120e",
       "title": "TRUE STORY: CONSERVATORIUM VAN AMSTERDAM W/ THE SET, JUNEBUG, LOIS AVA & HYLA",
       "date": "2026-05-12T19:00:00",
@@ -3660,6 +3150,27 @@
       "tickets_status": "available",
       "source": "ra",
       "source_url": "https://ra.co/events/2436454",
+      "match": null
+    },
+    {
+      "id": "3b3641cd4c90fed5",
+      "title": "[PHANTOM GROUP] INDUSTRIAL NIGHT",
+      "date": "2026-05-12T23:00:00",
+      "date_end": "2026-05-13T04:00:00",
+      "venue": "John Doe",
+      "venue_address": "Rembrandtplein 31, 1017 CT Amsterdam, Netherlands",
+      "event_type": "Club",
+      "artists": [
+        "NELLIE",
+        "Deuvren"
+      ],
+      "genres": [],
+      "price_min": null,
+      "price_max": null,
+      "tickets_url": "",
+      "tickets_status": "available",
+      "source": "ra",
+      "source_url": "https://ra.co/events/2405313",
       "match": null
     },
     {
@@ -5898,6 +5409,24 @@
       "match": null
     },
     {
+      "id": "ffa5036a67225bab",
+      "title": "VHS Archive Jam Session",
+      "date": "2026-05-16T14:00:00",
+      "date_end": null,
+      "venue": "Filmhuis Cavia",
+      "venue_address": "",
+      "event_type": "",
+      "artists": [],
+      "genres": [],
+      "price_min": null,
+      "price_max": null,
+      "tickets_url": "",
+      "tickets_status": "available",
+      "source": "amsterdam_alt",
+      "source_url": "https://www.amsterdamalternative.nl/agenda/21951",
+      "match": null
+    },
+    {
       "id": "ae667097ce4362a0",
       "title": "CLUB.RECORD",
       "date": "2026-05-16T15:00:00",
@@ -5946,6 +5475,24 @@
       "match": null
     },
     {
+      "id": "29b596fef10f2123",
+      "title": "Trash Skeleton (she/her)",
+      "date": "2026-05-16T16:00:00",
+      "date_end": null,
+      "venue": "OT301",
+      "venue_address": "",
+      "event_type": "",
+      "artists": [],
+      "genres": [],
+      "price_min": 10.0,
+      "price_max": null,
+      "tickets_url": "",
+      "tickets_status": "available",
+      "source": "amsterdam_alt",
+      "source_url": "https://www.amsterdamalternative.nl/agenda/21941",
+      "match": null
+    },
+    {
       "id": "df48c9e844919f46",
       "title": "Rising Tide",
       "date": "2026-05-16T17:00:00",
@@ -5983,6 +5530,24 @@
       "tickets_status": "available",
       "source": "ra",
       "source_url": "https://ra.co/events/2390865",
+      "match": null
+    },
+    {
+      "id": "8e5578b5887f34fc",
+      "title": "Plan B Album Release Party",
+      "date": "2026-05-16T17:00:00",
+      "date_end": null,
+      "venue": "De (Roze) Tanker",
+      "venue_address": "",
+      "event_type": "",
+      "artists": [],
+      "genres": [],
+      "price_min": 5.0,
+      "price_max": null,
+      "tickets_url": "",
+      "tickets_status": "available",
+      "source": "amsterdam_alt",
+      "source_url": "https://www.amsterdamalternative.nl/agenda/21935",
       "match": null
     },
     {
@@ -6848,6 +6413,27 @@
       "match": null
     },
     {
+      "id": "e4dc5a54cc401f7a",
+      "title": "HIGH5 OPENING PARTY with Boogie House",
+      "date": "2026-05-17T14:00:00",
+      "date_end": "2026-05-17T19:00:00",
+      "venue": "TBA - Frans Otten Stadium",
+      "venue_address": "",
+      "event_type": "Club",
+      "artists": [
+        "Kirilski",
+        "Pura Pachanga"
+      ],
+      "genres": [],
+      "price_min": null,
+      "price_max": null,
+      "tickets_url": "",
+      "tickets_status": "available",
+      "source": "ra",
+      "source_url": "https://ra.co/events/2437534",
+      "match": null
+    },
+    {
       "id": "f547ebaa968a7778",
       "title": "Mohammed & Paul – Once Upon a Time in Tangier",
       "date": "2026-05-17T17:00:00",
@@ -6904,6 +6490,24 @@
       "tickets_status": "available",
       "source": "ra",
       "source_url": "https://ra.co/events/2384265",
+      "match": null
+    },
+    {
+      "id": "981555e78469c614",
+      "title": "In This Together",
+      "date": "2026-05-17T18:30:00",
+      "date_end": null,
+      "venue": "Filmhuis Cavia",
+      "venue_address": "",
+      "event_type": "",
+      "artists": [],
+      "genres": [],
+      "price_min": 5.0,
+      "price_max": null,
+      "tickets_url": "",
+      "tickets_status": "available",
+      "source": "amsterdam_alt",
+      "source_url": "https://www.amsterdamalternative.nl/agenda/21943",
       "match": null
     },
     {
@@ -7581,6 +7185,24 @@
       "tickets_status": "available",
       "source": "amsterdam_alt",
       "source_url": "https://www.amsterdamalternative.nl/agenda/21804",
+      "match": null
+    },
+    {
+      "id": "070f98109eb9452f",
+      "title": "VHS Session: Digna Sinke’s Private Archive",
+      "date": "2026-05-20T18:30:00",
+      "date_end": null,
+      "venue": "Filmhuis Cavia",
+      "venue_address": "",
+      "event_type": "",
+      "artists": [],
+      "genres": [],
+      "price_min": null,
+      "price_max": null,
+      "tickets_url": "",
+      "tickets_status": "available",
+      "source": "amsterdam_alt",
+      "source_url": "https://www.amsterdamalternative.nl/agenda/21942",
       "match": null
     },
     {
@@ -8558,7 +8180,10 @@
       "venue": "Melkweg",
       "venue_address": "Lijnbaansgracht 234A, Amsterdam",
       "event_type": "Concert",
-      "artists": [],
+      "artists": [
+        "SUPPORT: SAIF ALTAF",
+        "SHAHEER"
+      ],
       "genres": [
         "R&B",
         "Hip hop",
@@ -8837,6 +8462,26 @@
       "tickets_status": "available",
       "source": "paradiso",
       "source_url": "https://www.paradiso.nl/en/program/cardigan-inn/2741547",
+      "match": null
+    },
+    {
+      "id": "126e6cd8c6a6f935",
+      "title": "PANACEA",
+      "date": "2026-05-22T22:00:00",
+      "date_end": "2026-05-23T05:00:00",
+      "venue": "THE OTHER SIDE",
+      "venue_address": "Rigakade 10, 1013BC, Amsterdam, The Netherlands",
+      "event_type": "Club",
+      "artists": [
+        "Emma Champagne Queen"
+      ],
+      "genres": [],
+      "price_min": null,
+      "price_max": null,
+      "tickets_url": "",
+      "tickets_status": "available",
+      "source": "ra",
+      "source_url": "https://ra.co/events/2437269",
       "match": null
     },
     {
@@ -10072,6 +9717,24 @@
       "match": null
     },
     {
+      "id": "b6d84c27f451ad36",
+      "title": "Sayyad x Subterra",
+      "date": "2026-05-23T23:00:00",
+      "date_end": "2026-05-24T05:00:00",
+      "venue": "Bar Dancing Multipla",
+      "venue_address": "Valschermkade 16, 1059 CD, Amsterdam",
+      "event_type": "Club",
+      "artists": [],
+      "genres": [],
+      "price_min": null,
+      "price_max": null,
+      "tickets_url": "",
+      "tickets_status": "available",
+      "source": "ra",
+      "source_url": "https://ra.co/events/2437544",
+      "match": null
+    },
+    {
       "id": "6c016dc26463aef7",
       "title": "Lentekabinet after with Han, Elias Mazian, Stella Zekri, AMZ, DJ SWISHA",
       "date": "2026-05-23T23:30:00",
@@ -10213,6 +9876,24 @@
       "match": null
     },
     {
+      "id": "fb9ed7e474260dce",
+      "title": "The long middle | Exhibition Finissage",
+      "date": "2026-05-24T12:00:00",
+      "date_end": null,
+      "venue": "WG",
+      "venue_address": "",
+      "event_type": "",
+      "artists": [],
+      "genres": [],
+      "price_min": 0.0,
+      "price_max": null,
+      "tickets_url": "",
+      "tickets_status": "available",
+      "source": "amsterdam_alt",
+      "source_url": "https://www.amsterdamalternative.nl/agenda/21945",
+      "match": null
+    },
+    {
       "id": "20d1832076448eb2",
       "title": "DISFF on the Road - SHORT FILM BLOCK II",
       "date": "2026-05-24T13:00:00",
@@ -10299,6 +9980,30 @@
       "date_end": "2026-05-25T05:00:00",
       "venue": "TBA - Secret Location",
       "venue_address": "",
+      "event_type": "Club",
+      "artists": [
+        "Karine",
+        "Idilay",
+        "Hofmann (BE)",
+        "Yela",
+        "Daan Donk"
+      ],
+      "genres": [],
+      "price_min": null,
+      "price_max": null,
+      "tickets_url": "",
+      "tickets_status": "available",
+      "source": "ra",
+      "source_url": "https://ra.co/events/2432545",
+      "match": null
+    },
+    {
+      "id": "fe7cb63379c6188b",
+      "title": "Tale of Bus invites Oridoo",
+      "date": "2026-05-24T14:00:00",
+      "date_end": "2026-05-25T05:00:00",
+      "venue": "Het Salon",
+      "venue_address": "Condensatorweg 36, 1014 AX Amsterdam",
       "event_type": "Club",
       "artists": [
         "Karine",
@@ -12179,6 +11884,24 @@
       "match": null
     },
     {
+      "id": "9b910b31733e620a",
+      "title": "Circus Caranova",
+      "date": "2026-05-29T16:30:00",
+      "date_end": null,
+      "venue": "OT301",
+      "venue_address": "",
+      "event_type": "",
+      "artists": [],
+      "genres": [],
+      "price_min": 0.0,
+      "price_max": null,
+      "tickets_url": "",
+      "tickets_status": "available",
+      "source": "amsterdam_alt",
+      "source_url": "https://www.amsterdamalternative.nl/agenda/21940",
+      "match": null
+    },
+    {
       "id": "234de95cf6e5c717",
       "title": "Decolonizing Minds – The Blida-Joinville Chronicles (Fanon, 1953–56)",
       "date": "2026-05-29T17:00:00",
@@ -13166,6 +12889,24 @@
       "match": null
     },
     {
+      "id": "b96a6579005414a4",
+      "title": "Common Ground 3rd Edition",
+      "date": "2026-05-30T17:00:00",
+      "date_end": "2026-05-31T03:00:00",
+      "venue": "Toekomstmuziek",
+      "venue_address": "Danzigerbocht 29, 1013 AM Amsterdam",
+      "event_type": "Club",
+      "artists": [],
+      "genres": [],
+      "price_min": null,
+      "price_max": null,
+      "tickets_url": "",
+      "tickets_status": "available",
+      "source": "ra",
+      "source_url": "https://ra.co/events/2437295",
+      "match": null
+    },
+    {
       "id": "677b6c0086605edb",
       "title": "Kronkeltje: 3L3D3P + Sexverbot + Clitteband + Oscar Jan Hoogland (Mishakosmos) + DJs Yoke+Jooke & Bandgurl666",
       "date": "2026-05-30T18:00:00",
@@ -13966,6 +13707,30 @@
       "tickets_status": "available",
       "source": "paradiso",
       "source_url": "https://www.paradiso.nl/en/program/afrofest/2887506",
+      "match": null
+    },
+    {
+      "id": "3209f704b1cb9f3b",
+      "title": "DLT",
+      "date": "2026-05-30T23:59:00",
+      "date_end": null,
+      "venue": "Parallel",
+      "venue_address": "Tolhuistuin - Club",
+      "event_type": "Club",
+      "artists": [
+        "TBA"
+      ],
+      "genres": [
+        "Electronic",
+        "Afro / Reggae / Dancehall / Latin",
+        "Club"
+      ],
+      "price_min": null,
+      "price_max": null,
+      "tickets_url": "https://tickets.parallel.am/083d90432b09419ab630b6829029fe50",
+      "tickets_status": "available",
+      "source": "paradiso",
+      "source_url": "https://www.paradiso.nl/en/program/dlt/2890798",
       "match": null
     },
     {
@@ -15025,7 +14790,7 @@
     {
       "id": "8039ab457bfa5e33",
       "title": "Mokum Records",
-      "date": "2026-06-05T06:39:00",
+      "date": "2026-06-05T05:30:00",
       "date_end": null,
       "venue": "Paradiso",
       "venue_address": "Paradiso - Grote Zaal, Paradiso - Kelder",
@@ -15414,6 +15179,29 @@
       "match": null
     },
     {
+      "id": "aa3765b3f91c090c",
+      "title": "DAMn Techno",
+      "date": "2026-06-05T22:00:00",
+      "date_end": "2026-06-06T06:00:00",
+      "venue": "Waterhouse Studios",
+      "venue_address": "Danzigerkade 1, 1013 AP Amsterdam",
+      "event_type": "Club",
+      "artists": [
+        "Antonio Fevola",
+        "Inez Akker",
+        "rebrånded",
+        "Walichi"
+      ],
+      "genres": [],
+      "price_min": null,
+      "price_max": null,
+      "tickets_url": "",
+      "tickets_status": "available",
+      "source": "ra",
+      "source_url": "https://ra.co/events/2437788",
+      "match": null
+    },
+    {
       "id": "9b847e08d8ea5812",
       "title": "BOPS • queer. pop. party",
       "date": "2026-06-05T23:00:00",
@@ -15488,6 +15276,27 @@
       "tickets_status": "available",
       "source": "ra",
       "source_url": "https://ra.co/events/2396855",
+      "match": null
+    },
+    {
+      "id": "6a837487dda542ff",
+      "title": "Kiss All Hipsters",
+      "date": "2026-06-05T23:30:00",
+      "date_end": "2026-06-06T05:00:00",
+      "venue": "Melkweg",
+      "venue_address": "Lijnbaansgracht 234A, Amsterdam",
+      "event_type": "Clubnacht",
+      "artists": [],
+      "genres": [
+        "Indie",
+        "Club night"
+      ],
+      "price_min": null,
+      "price_max": null,
+      "tickets_url": "",
+      "tickets_status": "available",
+      "source": "melkweg",
+      "source_url": "https://www.melkweg.nl/en/agenda/kiss-all-hipsters-05-06-2026",
       "match": null
     },
     {
@@ -15814,6 +15623,26 @@
       "match": null
     },
     {
+      "id": "00f3766ed1bee12a",
+      "title": "FLS FASHION WEEK CLOSING EVENT with Boogie House",
+      "date": "2026-06-06T20:00:00",
+      "date_end": "2026-06-07T01:00:00",
+      "venue": "Art'otel Amsterdam",
+      "venue_address": "Prins Hendrikkade 33, 1012 TM, Amsterdam, Netherlands",
+      "event_type": "Club",
+      "artists": [
+        "Kirilski"
+      ],
+      "genres": [],
+      "price_min": null,
+      "price_max": null,
+      "tickets_url": "",
+      "tickets_status": "available",
+      "source": "ra",
+      "source_url": "https://ra.co/events/2437547",
+      "match": null
+    },
+    {
       "id": "67e4a34b68b8dc67",
       "title": "Samora Pinderhughes",
       "date": "2026-06-06T20:30:00",
@@ -16118,6 +15947,24 @@
       "match": null
     },
     {
+      "id": "efdd54283e9eb4d5",
+      "title": "VBX Summer After Hours",
+      "date": "2026-06-06T23:00:00",
+      "date_end": "2026-06-07T06:00:00",
+      "venue": "TBA",
+      "venue_address": "",
+      "event_type": "Club",
+      "artists": [],
+      "genres": [],
+      "price_min": null,
+      "price_max": null,
+      "tickets_url": "",
+      "tickets_status": "available",
+      "source": "ra",
+      "source_url": "https://ra.co/events/2437819",
+      "match": null
+    },
+    {
       "id": "43a3c4d584dfd30d",
       "title": "Bixaria",
       "date": "2026-06-06T23:30:00",
@@ -16207,6 +16054,27 @@
       "tickets_status": "available",
       "source": "ra",
       "source_url": "https://ra.co/events/2370298",
+      "match": null
+    },
+    {
+      "id": "b2c7e6ec0f40e365",
+      "title": "Miguelle & TONS X BRET",
+      "date": "2026-06-07T15:00:00",
+      "date_end": "2026-06-08T03:00:00",
+      "venue": "BRET",
+      "venue_address": "Orlyplein 76, 1043 DP Amsterdam, Netherlands",
+      "event_type": "Club",
+      "artists": [
+        "Miguelle",
+        "TONS"
+      ],
+      "genres": [],
+      "price_min": null,
+      "price_max": null,
+      "tickets_url": "",
+      "tickets_status": "available",
+      "source": "ra",
+      "source_url": "https://ra.co/events/2437641",
       "match": null
     },
     {
@@ -16474,6 +16342,7 @@
       "event_type": "Concert",
       "artists": [
         "The Dandy Warhols",
+        "Moss",
         "MOSS"
       ],
       "genres": [
@@ -17086,7 +16955,7 @@
     },
     {
       "id": "d0e1299a3417445f",
-      "title": "Kans",
+      "title": "kans",
       "date": "2026-06-12T20:30:00",
       "date_end": null,
       "venue": "Paradiso",
@@ -17307,6 +17176,26 @@
       "tickets_status": "available",
       "source": "ra",
       "source_url": "https://ra.co/events/2420593",
+      "match": null
+    },
+    {
+      "id": "1338000e531e5de7",
+      "title": "AAT - All Night Long",
+      "date": "2026-06-12T23:00:00",
+      "date_end": "2026-06-13T05:00:00",
+      "venue": "BRET",
+      "venue_address": "Orlyplein 76, 1043 DP Amsterdam, Netherlands",
+      "event_type": "Club",
+      "artists": [
+        "Aat (1)"
+      ],
+      "genres": [],
+      "price_min": null,
+      "price_max": null,
+      "tickets_url": "",
+      "tickets_status": "available",
+      "source": "ra",
+      "source_url": "https://ra.co/events/2437238",
       "match": null
     },
     {
@@ -17557,6 +17446,27 @@
       "tickets_status": "available",
       "source": "ra",
       "source_url": "https://ra.co/events/2427093",
+      "match": null
+    },
+    {
+      "id": "ea21383b63c1b449",
+      "title": "Motiv Boatparty x Flourish by Rozie",
+      "date": "2026-06-13T16:30:00",
+      "date_end": "2026-06-13T22:00:00",
+      "venue": "Pier 14",
+      "venue_address": "PIER 14",
+      "event_type": "Club",
+      "artists": [
+        "Rozie",
+        "Valeby"
+      ],
+      "genres": [],
+      "price_min": null,
+      "price_max": null,
+      "tickets_url": "",
+      "tickets_status": "available",
+      "source": "ra",
+      "source_url": "https://ra.co/events/2437441",
       "match": null
     },
     {
@@ -17898,6 +17808,28 @@
       "tickets_status": "available",
       "source": "paradiso",
       "source_url": "https://www.paradiso.nl/en/program/club-roto/2890952",
+      "match": null
+    },
+    {
+      "id": "9dd345344601d863",
+      "title": "AURA",
+      "date": "2026-06-13T23:00:00",
+      "date_end": "2026-06-14T07:00:00",
+      "venue": "RADION",
+      "venue_address": "Louwesweg 1 ,1066 EA Amsterdam",
+      "event_type": "Club",
+      "artists": [
+        "Border One",
+        "Hashashin",
+        "Sol Ortega"
+      ],
+      "genres": [],
+      "price_min": null,
+      "price_max": null,
+      "tickets_url": "",
+      "tickets_status": "available",
+      "source": "ra",
+      "source_url": "https://ra.co/events/2437752",
       "match": null
     },
     {
@@ -18694,6 +18626,28 @@
       "match": null
     },
     {
+      "id": "87c05553eecc4040",
+      "title": "DIP - CLUB KIDS/COMMON CULTURE",
+      "date": "2026-06-18T23:00:00",
+      "date_end": null,
+      "venue": "Paradiso",
+      "venue_address": "Paradiso - Kelder",
+      "event_type": "Club",
+      "artists": [],
+      "genres": [
+        "Afro / Reggae / Dancehall / Latin",
+        "Club",
+        "DIP"
+      ],
+      "price_min": null,
+      "price_max": null,
+      "tickets_url": "https://tickets.paradiso.nl/03ada2b176f9420a83b7b6e77911bf87",
+      "tickets_status": "available",
+      "source": "paradiso",
+      "source_url": "https://www.paradiso.nl/en/program/dip-club-kids-common-culture/2890571",
+      "match": null
+    },
+    {
       "id": "19cecf63e64621d7",
       "title": "Lunch at Café Gilde",
       "date": "2026-06-19T10:00:00",
@@ -19486,6 +19440,207 @@
       "source": "ra",
       "source_url": "https://ra.co/events/2431734",
       "match": null
+    },
+    {
+      "id": "927a4dc08ffe62f5",
+      "title": "21 JUN - Thuishaven with DIØN 10HRS",
+      "date": "2026-06-21T13:00:00",
+      "date_end": "2026-06-21T23:00:00",
+      "venue": "Thuishaven",
+      "venue_address": "Contactweg 68, 1014BW, Amsterdam, Nederland",
+      "event_type": "Club",
+      "artists": [
+        "DIØN"
+      ],
+      "genres": [],
+      "price_min": null,
+      "price_max": null,
+      "tickets_url": "",
+      "tickets_status": "available",
+      "source": "ra",
+      "source_url": "https://ra.co/events/2390992",
+      "match": null
+    },
+    {
+      "id": "3fc76ec6c3c03572",
+      "title": "Life Drawing Weekend Intensive",
+      "date": "2026-06-21T14:00:00",
+      "date_end": null,
+      "venue": "OT301",
+      "venue_address": "",
+      "event_type": "",
+      "artists": [],
+      "genres": [],
+      "price_min": 150.0,
+      "price_max": null,
+      "tickets_url": "",
+      "tickets_status": "available",
+      "source": "amsterdam_alt",
+      "source_url": "https://www.amsterdamalternative.nl/agenda/21570",
+      "match": null
+    },
+    {
+      "id": "fd2006223bb36bd7",
+      "title": "Olivier Weiter b2b Miss Melera",
+      "date": "2026-06-21T15:00:00",
+      "date_end": "2026-06-21T22:00:00",
+      "venue": "Ijland",
+      "venue_address": "Tt. Vasumweg 171, 1033 SG Amsterdam",
+      "event_type": "Club",
+      "artists": [
+        "Olivier Weiter",
+        "Miss Melera"
+      ],
+      "genres": [],
+      "price_min": null,
+      "price_max": null,
+      "tickets_url": "",
+      "tickets_status": "available",
+      "source": "ra",
+      "source_url": "https://ra.co/events/2414839",
+      "match": null
+    },
+    {
+      "id": "c03578749a44a47e",
+      "title": "Bloodywood",
+      "date": "2026-06-21T19:00:00",
+      "date_end": null,
+      "venue": "Melkweg",
+      "venue_address": "Lijnbaansgracht 234A, Amsterdam",
+      "event_type": "Concert",
+      "artists": [],
+      "genres": [
+        "Metal",
+        "Folk metal",
+        "Heavy"
+      ],
+      "price_min": null,
+      "price_max": null,
+      "tickets_url": "",
+      "tickets_status": "available",
+      "source": "melkweg",
+      "source_url": "https://www.melkweg.nl/en/agenda/bloodywood-21-06-2026",
+      "match": null
+    },
+    {
+      "id": "0313b8adec6f2589",
+      "title": "Exert!",
+      "date": "2026-06-21T19:00:00",
+      "date_end": "2026-06-22T22:00:00",
+      "venue": "Studio Tumbuh",
+      "venue_address": "NDSM-Plein 88c  1033WB  Amsterdam, The Netherlands",
+      "event_type": "Club",
+      "artists": [
+        "DEROZAN"
+      ],
+      "genres": [],
+      "price_min": null,
+      "price_max": null,
+      "tickets_url": "",
+      "tickets_status": "available",
+      "source": "ra",
+      "source_url": "https://ra.co/events/2426427",
+      "match": null
+    },
+    {
+      "id": "72b28d0b98623b9d",
+      "title": "Baco Exu do Blues",
+      "date": "2026-06-21T19:30:00",
+      "date_end": null,
+      "venue": "Melkweg",
+      "venue_address": "Lijnbaansgracht 234A, Amsterdam",
+      "event_type": "Concert",
+      "artists": [],
+      "genres": [
+        "MPB",
+        "Samba",
+        "Rap",
+        "Hiphop",
+        "Latin"
+      ],
+      "price_min": null,
+      "price_max": null,
+      "tickets_url": "",
+      "tickets_status": "available",
+      "source": "melkweg",
+      "source_url": "https://www.melkweg.nl/en/agenda/baco-exu-do-blues-21-06-2026",
+      "match": null
+    },
+    {
+      "id": "9650dccd16563c73",
+      "title": "Celeste",
+      "date": "2026-06-21T20:30:00",
+      "date_end": null,
+      "venue": "Paradiso",
+      "venue_address": "Paradiso - Grote Zaal",
+      "event_type": "Concert",
+      "artists": [
+        "Celeste"
+      ],
+      "genres": [
+        "Concert",
+        "Soul / Jazz / Funk"
+      ],
+      "price_min": null,
+      "price_max": null,
+      "tickets_url": "https://tickets.paradiso.nl/1b063d974aad4624b54235806ebf8f8e",
+      "tickets_status": "available",
+      "source": "paradiso",
+      "source_url": "https://www.paradiso.nl/en/program/celeste/2741317",
+      "match": {
+        "type": "Discovery",
+        "reason": "Similar to Cult Of Luna, Amenra, Neurosis",
+        "score": 5
+      }
+    },
+    {
+      "id": "bba5e987c356afe2",
+      "title": "Sorry",
+      "date": "2026-06-21T20:30:00",
+      "date_end": null,
+      "venue": "Tolhuistuin",
+      "venue_address": "Tolhuistuin - Club",
+      "event_type": "Concert",
+      "artists": [
+        "Sorry"
+      ],
+      "genres": [
+        "Concert",
+        "Alternative / Indie"
+      ],
+      "price_min": null,
+      "price_max": null,
+      "tickets_url": "https://tickets.paradiso.nl/dce5865e313b498b80a404896f0811a1",
+      "tickets_status": "available",
+      "source": "paradiso",
+      "source_url": "https://www.paradiso.nl/en/program/sorry/2854151",
+      "match": {
+        "type": "Library Match",
+        "reason": "In your TIDAL library",
+        "score": 3
+      }
+    },
+    {
+      "id": "090ffdc80020ad72",
+      "title": "Asal",
+      "date": "2026-06-21T20:30:00",
+      "date_end": null,
+      "venue": "Bitterzoet",
+      "venue_address": "Bitterzoet - Concertzaal",
+      "event_type": "Concert",
+      "artists": [
+        "Asal"
+      ],
+      "genres": [
+        "Concert"
+      ],
+      "price_min": null,
+      "price_max": null,
+      "tickets_url": "https://tickets.paradiso.nl/d22a76a9a5b64a1c9dc57d020747ddc7",
+      "tickets_status": "available",
+      "source": "paradiso",
+      "source_url": "https://www.paradiso.nl/en/program/asal/2854164",
+      "match": null
     }
   ],
   "venues": [
@@ -19494,6 +19649,7 @@
     "Akhnaton",
     "Amsterdams Most Wanted",
     "Amsterdamse Bos",
+    "Art'otel Amsterdam",
     "BRET",
     "Bajesdorp - GROND",
     "Balkenhaven",
@@ -19503,7 +19659,6 @@
     "Bijhuub",
     "Bimhuis",
     "Bitterzoet",
-    "Borisov Amsterdam",
     "Bronze Beach",
     "Buurtwerkplaats Noorderhof",
     "CLUB RAUM",
@@ -19513,6 +19668,7 @@
     "Cinetol",
     "Club Leidse",
     "Club Up",
+    "De (Roze) Tanker",
     "De Appel",
     "De Brakke Grond",
     "De Duif",
@@ -19530,6 +19686,7 @@
     "Hemkade 48",
     "Het Dorp",
     "Het Groene Veld",
+    "Het Salon",
     "Het Sieraad",
     "Het Twiske",
     "Houtbaar Haarlem",
@@ -19567,6 +19724,7 @@
     "Parallel",
     "Patronaat",
     "Phono Lake",
+    "Pier 14",
     "Plantage Dok",
     "Plein Theater",
     "RADION",
@@ -19586,9 +19744,9 @@
     "Studio Tumbuh",
     "TBA",
     "TBA - 48h before the event only to the ticket holders via email",
+    "TBA - Frans Otten Stadium",
     "TBA - Het Vapen van Amsterdam NDSM",
     "TBA - Secret Location",
-    "TBA - Soul Kitchen",
     "TBA - Steiger 14, De Ruijterkade 14, 1011 Amsterdam",
     "THE OTHER SIDE",
     "TILLATEC",
@@ -19601,6 +19759,7 @@
     "Undercurrent",
     "Veronica Schip",
     "Vondelbunker",
+    "WG",
     "Warehouse Elementenstraat",
     "Waterhouse Studios",
     "Woodstock'69",
@@ -19628,7 +19787,6 @@
     "Anime",
     "Arabic",
     "Belgium",
-    "Blues rock",
     "Bob Marley",
     "Boombap",
     "Boy band",
@@ -19666,6 +19824,7 @@
     "Film",
     "Flemish",
     "Folk",
+    "Folk metal",
     "Fundraiser",
     "Funk",
     "Greek folk music",
@@ -19726,6 +19885,7 @@
     "Romantic",
     "Roots",
     "Roots / Americana / Country / Blues",
+    "Samba",
     "Sci-fi",
     "Shoegaze",
     "Shorts",
@@ -19734,7 +19894,6 @@
     "Soul",
     "Soul / Jazz / Funk",
     "South Africa",
-    "Southern",
     "Speed dabke",
     "Spoken word",
     "Stadspas",
