@@ -6,7 +6,7 @@ const SOURCE_LABELS = {
     ra: 'Resident Advisor', paradiso: 'Paradiso', murmur: 'Murmur',
     museumkaart: 'Museumkaart', gallery_viewer: 'Gallery Viewer',
     concertgebouw: 'Concertgebouw', muziekgebouw: 'Muziekgebouw',
-    sitp: 'Space is the Place',
+    sitp: 'Space is the Place', splendor: 'Splendor',
 };
 const TYPE_EMOJI = {
     Concert: '🎸', Club: '🎧', Film: '🎬', Festival: '🎪', Expositie: '🖼️',
@@ -15,7 +15,7 @@ const TYPE_EMOJI = {
 /* ── Category definitions ─────────────────────────────────────── */
 const CATEGORIES = {
     art:      { sources: ['museumkaart', 'gallery_viewer'], venues: [], genres: [] },
-    classica: { sources: ['concertgebouw', 'muziekgebouw'], venues: ['Concertgebouw', 'Muziekgebouw'], genres: ['Classical'] },
+    classica: { sources: ['concertgebouw', 'muziekgebouw', 'splendor'], venues: ['Concertgebouw', 'Muziekgebouw', 'De Duif', 'Splendor'], genres: ['Classical'] },
     jazz:     { sources: ['sitp'], venues: ['Bimhuis'], genres: ['Jazz'] },
 };
 const MONTHS = [
