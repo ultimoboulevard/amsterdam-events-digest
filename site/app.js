@@ -617,15 +617,21 @@ async function toggleFavorite(id) {
     if (state.user && supabaseClient) {
         if (isAdding) {
             const userName = state.user.email ? state.user.email.split('@')[0] : 'User';
-            await supabaseClient.from('saved_events').insert([{ 
+            const { error } = await supabaseClient.from('saved_events').insert([{ 
                 user_id: state.user.id, 
                 user_name: userName, 
                 event_id: id 
             }]);
-            state.globalSavedEvents.push({ user_id: state.user.id, user_name: userName, event_id: id });
+            if (error) {
+                console.error("Supabase Save Error:", error);
+                alert("Could not save to cloud: " + error.message);
+            } else {
+                state.globalSavedEvents.push({ user_id: state.user.id, user_name: userName, event_id: id });
+            }
         } else {
-            await supabaseClient.from('saved_events').delete().match({ user_id: state.user.id, event_id: id });
-            state.globalSavedEvents = state.globalSavedEvents.filter(s => !(s.user_id === state.user.id && s.event_id === id));
+            const { error } = await supabaseClient.from('saved_events').delete().match({ user_id: state.user.id, event_id: id });
+            if (error) console.error("Supabase Unsave Error:", error);
+            else state.globalSavedEvents = state.globalSavedEvents.filter(s => !(s.user_id === state.user.id && s.event_id === id));
         }
     }
     
