@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-05-08T11:47:53.449605",
+  "generated_at": "2026-05-08T11:50:47.717106",
   "event_count": 1057,
   "events": [
     {
@@ -3188,6 +3188,7 @@
       "venue_address": "Lijnbaansgracht 234A, Amsterdam",
       "event_type": "Clubnacht",
       "artists": [
+        "DOPE CAESAR",
         "EMSIFLYBOKOE",
         "GODSENDO",
         "TAYORISTAR",
@@ -7935,7 +7936,7 @@
       "price_min": 21.0,
       "price_max": null,
       "tickets_url": "https://www.concertgebouw.nl/en/concerts/7557179-amsterdam-sinfonietta-vivaldis-the-four-seasons",
-      "tickets_status": "last_tickets",
+      "tickets_status": "sold_out",
       "source": "concertgebouw",
       "source_url": "https://www.concertgebouw.nl/en/concerts/7557179-amsterdam-sinfonietta-vivaldis-the-four-seasons",
       "match": null
@@ -17692,7 +17693,7 @@
     {
       "id": "8039ab457bfa5e33",
       "title": "Mokum Records",
-      "date": "2026-06-05T11:47:00",
+      "date": "2026-06-05T11:50:00",
       "date_end": null,
       "venue": "Paradiso",
       "venue_address": "Paradiso - Grote Zaal, Paradiso - Kelder",
