@@ -1,6 +1,6 @@
 {
-  "generated_at": "2026-05-08T06:00:28.479736",
-  "event_count": 899,
+  "generated_at": "2026-05-08T07:16:56.485638",
+  "event_count": 1051,
   "events": [
     {
       "id": "38d52751d1c39af0",
@@ -39,6 +39,672 @@
       "match": null
     },
     {
+      "id": "20e903fa92f762ca",
+      "title": "Edam in 14 steps",
+      "date": "2026-05-08T10:00:00",
+      "date_end": null,
+      "venue": "Edams Museum, Edam",
+      "venue_address": "",
+      "event_type": "Exhibition",
+      "artists": [],
+      "genres": [],
+      "price_min": null,
+      "price_max": null,
+      "tickets_url": "",
+      "tickets_status": "available",
+      "source": "museumkaart",
+      "source_url": "https://www.museum.nl/en/edams-museum/exhibition/edam-in-14-steps",
+      "match": null
+    },
+    {
+      "id": "1f5a6989be5b4872",
+      "title": "From Nile to Amstel",
+      "date": "2026-05-08T10:00:00",
+      "date_end": null,
+      "venue": "Allard Pierson, Amsterdam",
+      "venue_address": "",
+      "event_type": "Exhibition",
+      "artists": [],
+      "genres": [],
+      "price_min": null,
+      "price_max": null,
+      "tickets_url": "",
+      "tickets_status": "available",
+      "source": "museumkaart",
+      "source_url": "https://www.museum.nl/en/allard-pierson/exhibition/from-nile-to-amstel",
+      "match": null
+    },
+    {
+      "id": "b35251265478c81c",
+      "title": "The Amsterdam canals",
+      "date": "2026-05-08T10:00:00",
+      "date_end": null,
+      "venue": "Grachtenmuseum Amsterdam, Amsterdam",
+      "venue_address": "",
+      "event_type": "Exhibition",
+      "artists": [],
+      "genres": [],
+      "price_min": null,
+      "price_max": null,
+      "tickets_url": "",
+      "tickets_status": "available",
+      "source": "museumkaart",
+      "source_url": "https://www.museum.nl/en/grachtenmuseum-amsterdam/exhibition/the-amsterdam-canals",
+      "match": null
+    },
+    {
+      "id": "7296648d0e8979ab",
+      "title": "The story of Pampus",
+      "date": "2026-05-08T10:00:00",
+      "date_end": null,
+      "venue": "Forteiland Pampus, Muiden",
+      "venue_address": "",
+      "event_type": "Scavenger hunt",
+      "artists": [],
+      "genres": [],
+      "price_min": null,
+      "price_max": null,
+      "tickets_url": "",
+      "tickets_status": "available",
+      "source": "museumkaart",
+      "source_url": "https://www.museum.nl/en/forteiland-pampus/scavenger-hunt/the-story-of-pampus",
+      "match": null
+    },
+    {
+      "id": "0d3710ab4b05395b",
+      "title": "100% Connected",
+      "date": "2026-05-08T10:00:00",
+      "date_end": null,
+      "venue": "ARTIS-Groote Museum, Amsterdam",
+      "venue_address": "",
+      "event_type": "Activity",
+      "artists": [],
+      "genres": [],
+      "price_min": null,
+      "price_max": null,
+      "tickets_url": "",
+      "tickets_status": "available",
+      "source": "museumkaart",
+      "source_url": "https://www.museum.nl/en/artis-groote-museum/activity/100-connected",
+      "match": null
+    },
+    {
+      "id": "89d8fc6742c53a66",
+      "title": "Audiotours",
+      "date": "2026-05-08T10:00:00",
+      "date_end": null,
+      "venue": "Koninklijk Paleis Amsterdam, Amsterdam",
+      "venue_address": "",
+      "event_type": "Audio tour",
+      "artists": [],
+      "genres": [],
+      "price_min": null,
+      "price_max": null,
+      "tickets_url": "",
+      "tickets_status": "available",
+      "source": "museumkaart",
+      "source_url": "https://www.museum.nl/en/koninklijk-paleis-amsterdam/audio-tour/audiotours",
+      "match": null
+    },
+    {
+      "id": "2e4189f5a46b23b6",
+      "title": "Celebrate your birthday with friends at the National Lifeboat Rescue Museum",
+      "date": "2026-05-08T10:00:00",
+      "date_end": null,
+      "venue": "Nationaal Reddingmuseum Dorus Rijkers, Den Helder",
+      "venue_address": "",
+      "event_type": "Children’s party",
+      "artists": [],
+      "genres": [],
+      "price_min": null,
+      "price_max": null,
+      "tickets_url": "",
+      "tickets_status": "available",
+      "source": "museumkaart",
+      "source_url": "https://www.museum.nl/en/nationaal-reddingmuseum-dorus-rijkers/childrens-party/celebrate-your-birthday-with-friends-at-the-national-lifeboat-rescue-museum",
+      "match": null
+    },
+    {
+      "id": "d0c1f9bd5770574e",
+      "title": "Discover the National Lifeboat Museum Dorus Rijkers at home",
+      "date": "2026-05-08T10:00:00",
+      "date_end": null,
+      "venue": "",
+      "venue_address": "",
+      "event_type": "Online activity",
+      "artists": [],
+      "genres": [],
+      "price_min": null,
+      "price_max": null,
+      "tickets_url": "",
+      "tickets_status": "available",
+      "source": "museumkaart",
+      "source_url": "https://www.museum.nl/en/nationaal-reddingmuseum-dorus-rijkers/activity/discover-the-national-lifeboat-museum-dorus-rijkers-at-home",
+      "match": null
+    },
+    {
+      "id": "79ec696c3f49ff62",
+      "title": "Diver Doris",
+      "date": "2026-05-08T10:00:00",
+      "date_end": null,
+      "venue": "Het Scheepvaartmuseum, Amsterdam",
+      "venue_address": "",
+      "event_type": "Exhibition",
+      "artists": [],
+      "genres": [],
+      "price_min": null,
+      "price_max": null,
+      "tickets_url": "",
+      "tickets_status": "available",
+      "source": "museumkaart",
+      "source_url": "https://www.museum.nl/en/het-scheepvaartmuseum/exhibition/diver-doris",
+      "match": null
+    },
+    {
+      "id": "6ff4623df76d6f05",
+      "title": "Do you want to rescue people at sea?",
+      "date": "2026-05-08T10:00:00",
+      "date_end": null,
+      "venue": "Nationaal Reddingmuseum Dorus Rijkers, Den Helder",
+      "venue_address": "",
+      "event_type": "Activity",
+      "artists": [],
+      "genres": [],
+      "price_min": null,
+      "price_max": null,
+      "tickets_url": "",
+      "tickets_status": "available",
+      "source": "museumkaart",
+      "source_url": "https://www.museum.nl/en/nationaal-reddingmuseum-dorus-rijkers/activity/do-you-want-to-rescue-people-at-sea",
+      "match": null
+    },
+    {
+      "id": "6df7eb72471d76fe",
+      "title": "Essentials Tour",
+      "date": "2026-05-08T10:00:00",
+      "date_end": null,
+      "venue": "Stedelijk Museum Amsterdam, Amsterdam",
+      "venue_address": "",
+      "event_type": "Event",
+      "artists": [],
+      "genres": [],
+      "price_min": null,
+      "price_max": null,
+      "tickets_url": "",
+      "tickets_status": "available",
+      "source": "museumkaart",
+      "source_url": "https://www.museum.nl/en/stedelijk-museum-amsterdam/event/essentials-tour",
+      "match": null
+    },
+    {
+      "id": "068a958021d98cc9",
+      "title": "Everyday, Someday and Other Stories. Collection 1950–1980",
+      "date": "2026-05-08T10:00:00",
+      "date_end": null,
+      "venue": "Stedelijk Museum Amsterdam, Amsterdam",
+      "venue_address": "",
+      "event_type": "Exhibition",
+      "artists": [],
+      "genres": [],
+      "price_min": null,
+      "price_max": null,
+      "tickets_url": "",
+      "tickets_status": "available",
+      "source": "museumkaart",
+      "source_url": "https://www.museum.nl/en/stedelijk-museum-amsterdam/exhibition/everyday-someday-and-other-stories-collection-19501980",
+      "match": null
+    },
+    {
+      "id": "cc7631c69c106a4a",
+      "title": "Highlights",
+      "date": "2026-05-08T10:00:00",
+      "date_end": null,
+      "venue": "Frans Hals Museum, Haarlem",
+      "venue_address": "",
+      "event_type": "Exhibition",
+      "artists": [],
+      "genres": [],
+      "price_min": null,
+      "price_max": null,
+      "tickets_url": "",
+      "tickets_status": "available",
+      "source": "museumkaart",
+      "source_url": "https://www.museum.nl/en/frans-hals-museum/exhibition/highlights",
+      "match": null
+    },
+    {
+      "id": "5b011ed2ece31993",
+      "title": "Humania",
+      "date": "2026-05-08T10:00:00",
+      "date_end": null,
+      "venue": "NEMO Science Museum, Amsterdam",
+      "venue_address": "",
+      "event_type": "Exhibition",
+      "artists": [],
+      "genres": [],
+      "price_min": null,
+      "price_max": null,
+      "tickets_url": "",
+      "tickets_status": "available",
+      "source": "museumkaart",
+      "source_url": "https://www.museum.nl/en/nemo-science-museum/exhibition/humania",
+      "match": null
+    },
+    {
+      "id": "4019cb23325e334f",
+      "title": "Kids at the castle",
+      "date": "2026-05-08T10:00:00",
+      "date_end": null,
+      "venue": "Rijksmuseum Muiderslot, Muiden",
+      "venue_address": "",
+      "event_type": "Workshop",
+      "artists": [],
+      "genres": [],
+      "price_min": null,
+      "price_max": null,
+      "tickets_url": "",
+      "tickets_status": "available",
+      "source": "museumkaart",
+      "source_url": "https://www.museum.nl/en/rijksmuseum-muiderslot/workshop/kids-at-the-castle",
+      "match": null
+    },
+    {
+      "id": "6455e061f5cd7c73",
+      "title": "Movies for the whole family",
+      "date": "2026-05-08T10:00:00",
+      "date_end": null,
+      "venue": "Eye Filmmuseum, Amsterdam",
+      "venue_address": "",
+      "event_type": "Other",
+      "artists": [],
+      "genres": [],
+      "price_min": null,
+      "price_max": null,
+      "tickets_url": "",
+      "tickets_status": "available",
+      "source": "museumkaart",
+      "source_url": "https://www.museum.nl/en/eye-filmmuseum/other/movies-for-the-whole-family",
+      "match": null
+    },
+    {
+      "id": "576b763d80419a91",
+      "title": "Museum ships",
+      "date": "2026-05-08T10:00:00",
+      "date_end": null,
+      "venue": "Nationaal Reddingmuseum Dorus Rijkers, Den Helder",
+      "venue_address": "",
+      "event_type": "Other",
+      "artists": [],
+      "genres": [],
+      "price_min": null,
+      "price_max": null,
+      "tickets_url": "",
+      "tickets_status": "available",
+      "source": "museumkaart",
+      "source_url": "https://www.museum.nl/en/nationaal-reddingmuseum-dorus-rijkers/other/museum-ships",
+      "match": null
+    },
+    {
+      "id": "7b2166bb75223bad",
+      "title": "POST/NO/BILLS #6",
+      "date": "2026-05-08T10:00:00",
+      "date_end": null,
+      "venue": "Stedelijk Museum Amsterdam, Amsterdam",
+      "venue_address": "",
+      "event_type": "Exhibition",
+      "artists": [],
+      "genres": [],
+      "price_min": null,
+      "price_max": null,
+      "tickets_url": "",
+      "tickets_status": "available",
+      "source": "museumkaart",
+      "source_url": "https://www.museum.nl/en/stedelijk-museum-amsterdam/exhibition/postnobills-6",
+      "match": null
+    },
+    {
+      "id": "4413b19e353ca61b",
+      "title": "Permanent Exhibition Van Eesteren",
+      "date": "2026-05-08T10:00:00",
+      "date_end": null,
+      "venue": "Van Eesteren Museum, Amsterdam",
+      "venue_address": "",
+      "event_type": "Exhibition",
+      "artists": [],
+      "genres": [],
+      "price_min": null,
+      "price_max": null,
+      "tickets_url": "",
+      "tickets_status": "available",
+      "source": "museumkaart",
+      "source_url": "https://www.museum.nl/en/van-eesteren-museum/exhibition/permanent-exhibition-van-eesteren",
+      "match": null
+    },
+    {
+      "id": "3551b043529ef386",
+      "title": "Permanent exhibition",
+      "date": "2026-05-08T10:00:00",
+      "date_end": null,
+      "venue": "Huis van Hilde, Castricum",
+      "venue_address": "",
+      "event_type": "Exhibition",
+      "artists": [],
+      "genres": [],
+      "price_min": null,
+      "price_max": null,
+      "tickets_url": "",
+      "tickets_status": "available",
+      "source": "museumkaart",
+      "source_url": "https://www.museum.nl/en/huis-van-hilde/exhibition/permanent-exhibition",
+      "match": null
+    },
+    {
+      "id": "2d829ae9e6a50d09",
+      "title": "Sammie's stories",
+      "date": "2026-05-08T10:00:00",
+      "date_end": null,
+      "venue": "The Willet-Holthuysen House, Amsterdam",
+      "venue_address": "",
+      "event_type": "Activity",
+      "artists": [],
+      "genres": [],
+      "price_min": null,
+      "price_max": null,
+      "tickets_url": "",
+      "tickets_status": "available",
+      "source": "museumkaart",
+      "source_url": "https://www.museum.nl/en/the-willet-holthuysen-house/activity/sammies-stories",
+      "match": null
+    },
+    {
+      "id": "9fb1733da1f47ff5",
+      "title": "Sea of stories",
+      "date": "2026-05-08T10:00:00",
+      "date_end": null,
+      "venue": "Zuiderzeemuseum, Enkhuizen",
+      "venue_address": "",
+      "event_type": "Exhibition",
+      "artists": [],
+      "genres": [],
+      "price_min": null,
+      "price_max": null,
+      "tickets_url": "",
+      "tickets_status": "available",
+      "source": "museumkaart",
+      "source_url": "https://www.museum.nl/en/zuiderzeemuseum/exhibition/sea-of-stories",
+      "match": null
+    },
+    {
+      "id": "0e2842f335e28ca7",
+      "title": "Shadows on the Atlantic",
+      "date": "2026-05-08T10:00:00",
+      "date_end": null,
+      "venue": "Het Scheepvaartmuseum, Amsterdam",
+      "venue_address": "",
+      "event_type": "Exhibition",
+      "artists": [],
+      "genres": [],
+      "price_min": null,
+      "price_max": null,
+      "tickets_url": "",
+      "tickets_status": "available",
+      "source": "museumkaart",
+      "source_url": "https://www.museum.nl/en/het-scheepvaartmuseum/exhibition/shadows-on-the-atlantic",
+      "match": null
+    },
+    {
+      "id": "0f1b51f1fb485a2f",
+      "title": "Ships hall",
+      "date": "2026-05-08T10:00:00",
+      "date_end": null,
+      "venue": "Zuiderzeemuseum, Enkhuizen",
+      "venue_address": "",
+      "event_type": "Exhibition",
+      "artists": [],
+      "genres": [],
+      "price_min": null,
+      "price_max": null,
+      "tickets_url": "",
+      "tickets_status": "available",
+      "source": "museumkaart",
+      "source_url": "https://www.museum.nl/en/zuiderzeemuseum/exhibition/ships-hall",
+      "match": null
+    },
+    {
+      "id": "841213e89c995712",
+      "title": "Sketching in the Sculpture Hall",
+      "date": "2026-05-08T10:00:00",
+      "date_end": null,
+      "venue": "Stedelijk Museum Amsterdam, Amsterdam",
+      "venue_address": "",
+      "event_type": "Activity",
+      "artists": [],
+      "genres": [],
+      "price_min": null,
+      "price_max": null,
+      "tickets_url": "",
+      "tickets_status": "available",
+      "source": "museumkaart",
+      "source_url": "https://www.museum.nl/en/stedelijk-museum-amsterdam/activity/sketching-in-the-sculpture-hall",
+      "match": null
+    },
+    {
+      "id": "c66421aab8157b08",
+      "title": "Street furniture collection",
+      "date": "2026-05-08T10:00:00",
+      "date_end": null,
+      "venue": "Museum Het Schip, Amsterdam",
+      "venue_address": "",
+      "event_type": "Exhibition",
+      "artists": [],
+      "genres": [],
+      "price_min": null,
+      "price_max": null,
+      "tickets_url": "",
+      "tickets_status": "available",
+      "source": "museumkaart",
+      "source_url": "https://www.museum.nl/en/museum-het-schip/exhibition/street-furniture-collection",
+      "match": null
+    },
+    {
+      "id": "e3441f68a933ca9d",
+      "title": "The Diamond Heist",
+      "date": "2026-05-08T10:00:00",
+      "date_end": null,
+      "venue": "Diamant Museum Amsterdam, Amsterdam",
+      "venue_address": "",
+      "event_type": "Activity",
+      "artists": [],
+      "genres": [],
+      "price_min": null,
+      "price_max": null,
+      "tickets_url": "",
+      "tickets_status": "available",
+      "source": "museumkaart",
+      "source_url": "https://www.museum.nl/en/diamant-museum-amsterdam/activity/the-diamond-heist",
+      "match": null
+    },
+    {
+      "id": "058746903c4dd824",
+      "title": "The Lab Technician Speaks",
+      "date": "2026-05-08T10:00:00",
+      "date_end": null,
+      "venue": "ARTIS-Micropia, Amsterdam",
+      "venue_address": "",
+      "event_type": "Activity",
+      "artists": [],
+      "genres": [],
+      "price_min": null,
+      "price_max": null,
+      "tickets_url": "",
+      "tickets_status": "available",
+      "source": "museumkaart",
+      "source_url": "https://www.museum.nl/en/artis-micropia/activity/the-lab-technician-speaks",
+      "match": null
+    },
+    {
+      "id": "4b88c49161693be9",
+      "title": "The Pieter Teyler House",
+      "date": "2026-05-08T10:00:00",
+      "date_end": null,
+      "venue": "Teylers Museum, Haarlem",
+      "venue_address": "",
+      "event_type": "Exhibition",
+      "artists": [],
+      "genres": [],
+      "price_min": null,
+      "price_max": null,
+      "tickets_url": "",
+      "tickets_status": "available",
+      "source": "museumkaart",
+      "source_url": "https://www.museum.nl/en/teylers-museum/exhibition/the-pieter-teyler-house",
+      "match": null
+    },
+    {
+      "id": "1a0ba07f26a13e64",
+      "title": "The former Dutch colonies: from World War II to independence",
+      "date": "2026-05-08T10:00:00",
+      "date_end": null,
+      "venue": "Verzetsmuseum Amsterdam, Amsterdam",
+      "venue_address": "",
+      "event_type": "Exhibition",
+      "artists": [],
+      "genres": [],
+      "price_min": null,
+      "price_max": null,
+      "tickets_url": "",
+      "tickets_status": "available",
+      "source": "museumkaart",
+      "source_url": "https://www.museum.nl/en/verzetsmuseum-amsterdam/exhibition/the-former-dutch-colonies-from-world-war-ii-to-independence",
+      "match": null
+    },
+    {
+      "id": "7cae4cec5c1c674b",
+      "title": "The stories of rescuers",
+      "date": "2026-05-08T10:00:00",
+      "date_end": null,
+      "venue": "Nationaal Reddingmuseum Dorus Rijkers, Den Helder",
+      "venue_address": "",
+      "event_type": "Audio tour",
+      "artists": [],
+      "genres": [],
+      "price_min": null,
+      "price_max": null,
+      "tickets_url": "",
+      "tickets_status": "available",
+      "source": "museumkaart",
+      "source_url": "https://www.museum.nl/en/nationaal-reddingmuseum-dorus-rijkers/audio-tour/the-stories-of-rescuers",
+      "match": null
+    },
+    {
+      "id": "8dad9d3bcb23b8e9",
+      "title": "Tomorrow is a Different Day. Collection 1980–Now",
+      "date": "2026-05-08T10:00:00",
+      "date_end": null,
+      "venue": "Stedelijk Museum Amsterdam, Amsterdam",
+      "venue_address": "",
+      "event_type": "Exhibition",
+      "artists": [],
+      "genres": [],
+      "price_min": null,
+      "price_max": null,
+      "tickets_url": "",
+      "tickets_status": "available",
+      "source": "museumkaart",
+      "source_url": "https://www.museum.nl/en/stedelijk-museum-amsterdam/exhibition/tomorrow-is-a-different-day-collection-1980now",
+      "match": null
+    },
+    {
+      "id": "42694794182eb332",
+      "title": "Verkade Experience",
+      "date": "2026-05-08T10:00:00",
+      "date_end": null,
+      "venue": "Zaans Museum, Zaandam",
+      "venue_address": "",
+      "event_type": "Scavenger hunt",
+      "artists": [],
+      "genres": [],
+      "price_min": null,
+      "price_max": null,
+      "tickets_url": "",
+      "tickets_status": "available",
+      "source": "museumkaart",
+      "source_url": "https://www.museum.nl/en/zaans-museum/scavenger-hunt/verkade-experience",
+      "match": null
+    },
+    {
+      "id": "936e08152bc1d25a",
+      "title": "Walk: Free Thinkers of Amsterdam",
+      "date": "2026-05-08T10:00:00",
+      "date_end": null,
+      "venue": "Embassy of the Free Mind, Amsterdam",
+      "venue_address": "",
+      "event_type": "Activity",
+      "artists": [],
+      "genres": [],
+      "price_min": null,
+      "price_max": null,
+      "tickets_url": "",
+      "tickets_status": "available",
+      "source": "museumkaart",
+      "source_url": "https://www.museum.nl/en/embassy-of-the-free-mind/activity/walk-free-thinkers-of-amsterdam",
+      "match": null
+    },
+    {
+      "id": "ee2438350b17fdfa",
+      "title": "Willemsoord audio tour",
+      "date": "2026-05-08T10:00:00",
+      "date_end": null,
+      "venue": "Nationaal Reddingmuseum Dorus Rijkers, Den Helder",
+      "venue_address": "",
+      "event_type": "Audio tour",
+      "artists": [],
+      "genres": [],
+      "price_min": null,
+      "price_max": null,
+      "tickets_url": "",
+      "tickets_status": "available",
+      "source": "museumkaart",
+      "source_url": "https://www.museum.nl/en/nationaal-reddingmuseum-dorus-rijkers/audio-tour/willemsoord-audio-tour",
+      "match": null
+    },
+    {
+      "id": "e6a16c049bc98064",
+      "title": "Yesterday Today. Collection Until 1950",
+      "date": "2026-05-08T10:00:00",
+      "date_end": null,
+      "venue": "Stedelijk Museum Amsterdam, Amsterdam",
+      "venue_address": "",
+      "event_type": "Exhibition",
+      "artists": [],
+      "genres": [],
+      "price_min": null,
+      "price_max": null,
+      "tickets_url": "",
+      "tickets_status": "available",
+      "source": "museumkaart",
+      "source_url": "https://www.museum.nl/en/stedelijk-museum-amsterdam/exhibition/yesterday-today-collection-until-1950",
+      "match": null
+    },
+    {
+      "id": "084bca2d7cf49a78",
+      "title": "Guided tour",
+      "date": "2026-05-08T10:45:00",
+      "date_end": null,
+      "venue": "Muziekgebouw aan 't IJ",
+      "venue_address": "Rondleiding, Piet Heinkade 1, 1019 BR Amsterdam",
+      "event_type": "Concert",
+      "artists": [],
+      "genres": [],
+      "price_min": 10.0,
+      "price_max": 12.5,
+      "tickets_url": "",
+      "tickets_status": "sold_out",
+      "source": "muziekgebouw",
+      "source_url": "https://www.muziekgebouw.nl/en/agenda/guided-tour-tm8d",
+      "match": null
+    },
+    {
       "id": "6d22993cd6462e7c",
       "title": "Green Ass Garden(ing)",
       "date": "2026-05-08T11:00:00",
@@ -72,6 +738,24 @@
       "tickets_status": "available",
       "source": "amsterdam_alt",
       "source_url": "https://www.amsterdamalternative.nl/agenda/21927",
+      "match": null
+    },
+    {
+      "id": "6f85a7e92eb22db7",
+      "title": "Alicia De Keulenaer, Floor Kes + Katja Naegele",
+      "date": "2026-05-08T12:30:00",
+      "date_end": null,
+      "venue": "Muziekgebouw aan 't IJ",
+      "venue_address": "Grote Zaal, Piet Heinkade 1, 1019 BR Amsterdam",
+      "event_type": "Concert",
+      "artists": [],
+      "genres": [],
+      "price_min": 6.5,
+      "price_max": 6.5,
+      "tickets_url": "https://tickets.muziekgebouw.nl/en/buyingflow/tickets/43992/100986",
+      "tickets_status": "available",
+      "source": "muziekgebouw",
+      "source_url": "https://www.muziekgebouw.nl/en/agenda/alicia-de-keulenaer-floor-kes-katja-naegele-fk17",
       "match": null
     },
     {
@@ -144,24 +828,6 @@
       "tickets_status": "available",
       "source": "amsterdam_alt",
       "source_url": "https://www.amsterdamalternative.nl/agenda/21516",
-      "match": null
-    },
-    {
-      "id": "1ffe54defd7b0cb1",
-      "title": "Her Voice",
-      "date": "2026-05-08T17:30:00",
-      "date_end": null,
-      "venue": "Splendor",
-      "venue_address": "",
-      "event_type": "",
-      "artists": [],
-      "genres": [],
-      "price_min": 20.0,
-      "price_max": null,
-      "tickets_url": "",
-      "tickets_status": "available",
-      "source": "amsterdam_alt",
-      "source_url": "https://www.amsterdamalternative.nl/agenda/21899",
       "match": null
     },
     {
@@ -320,6 +986,26 @@
       "match": null
     },
     {
+      "id": "1ffe54defd7b0cb1",
+      "title": "Her Voice",
+      "date": "2026-05-08T19:30:00",
+      "date_end": null,
+      "venue": "Splendor",
+      "venue_address": "Nieuwe Uilenburgerstraat 116, 1011 LX Amsterdam",
+      "event_type": "Concert",
+      "artists": [
+        "Sarah Jeffery"
+      ],
+      "genres": [],
+      "price_min": null,
+      "price_max": null,
+      "tickets_url": "https://splendor.stager.co/shop/default/events/111648054",
+      "tickets_status": "available",
+      "source": "splendor",
+      "source_url": "https://www.splendoramsterdam.com/agenda/111648054/her-voice",
+      "match": null
+    },
+    {
       "id": "089bb7a490f8c49e",
       "title": "Anne-Fay",
       "date": "2026-05-08T19:30:00",
@@ -418,6 +1104,50 @@
       "tickets_status": "available",
       "source": "ra",
       "source_url": "https://ra.co/events/2400205",
+      "match": null
+    },
+    {
+      "id": "a8bb94b8536b4cc8",
+      "title": "By Her Absence – A Portrait of Marianna Martines",
+      "date": "2026-05-08T20:15:00",
+      "date_end": null,
+      "venue": "Muziekgebouw aan 't IJ",
+      "venue_address": "Grote Zaal, Piet Heinkade 1, 1019 BR Amsterdam",
+      "event_type": "Concert",
+      "artists": [
+        "Orchestra of the Eighteenth Century",
+        "Elisabeth Hetherington"
+      ],
+      "genres": [],
+      "price_min": 31.0,
+      "price_max": 39.0,
+      "tickets_url": "https://tickets.muziekgebouw.nl/en/buyingflow/tickets/43640/100477",
+      "tickets_status": "available",
+      "source": "muziekgebouw",
+      "source_url": "https://www.muziekgebouw.nl/en/agenda/by-her-absence-a-portrait-of-marianna-martines-nwc1",
+      "match": null
+    },
+    {
+      "id": "1741a52cac3fe55c",
+      "title": "Shane van Neerden: Beethoven, Ives and Barber",
+      "date": "2026-05-08T20:15:00",
+      "date_end": "2026-05-08T22:00:00",
+      "venue": "Het Concertgebouw",
+      "venue_address": "Recital Hall",
+      "event_type": "Concert",
+      "artists": [
+        "BarberSonata in E-flat minor, op. 26",
+        "IvesThree Page Sonata"
+      ],
+      "genres": [
+        "Chamber Music"
+      ],
+      "price_min": 19.0,
+      "price_max": null,
+      "tickets_url": "https://www.concertgebouw.nl/en/concerts/8507468-shane-van-neerden-beethoven-ives-and-barber",
+      "tickets_status": "available",
+      "source": "concertgebouw",
+      "source_url": "https://www.concertgebouw.nl/en/concerts/8507468-shane-van-neerden-beethoven-ives-and-barber",
       "match": null
     },
     {
@@ -571,6 +1301,28 @@
       "tickets_status": "available",
       "source": "ra",
       "source_url": "https://ra.co/events/2411596",
+      "match": null
+    },
+    {
+      "id": "3e4437e376f16cd7",
+      "title": "Concertgebouw Orchestra Essentials: Brahms' Symphony No. 4",
+      "date": "2026-05-08T21:00:00",
+      "date_end": "2026-05-08T22:10:00",
+      "venue": "Het Concertgebouw",
+      "venue_address": "Main Hall",
+      "event_type": "Concert",
+      "artists": [
+        "BrahmsSymphony No. 4 in e minor, op. 98"
+      ],
+      "genres": [
+        "Orchestra"
+      ],
+      "price_min": 20.0,
+      "price_max": null,
+      "tickets_url": "https://www.concertgebouw.nl/en/concerts/11154812-concertgebouw-orchestra-essentials-brahms-symphony-no.-4",
+      "tickets_status": "available",
+      "source": "concertgebouw",
+      "source_url": "https://www.concertgebouw.nl/en/concerts/11154812-concertgebouw-orchestra-essentials-brahms-symphony-no.-4",
       "match": null
     },
     {
@@ -1309,6 +2061,29 @@
       "match": null
     },
     {
+      "id": "df575488e72ebb72",
+      "title": "In higher spheres with Ligeti and Langgaard",
+      "date": "2026-05-09T14:15:00",
+      "date_end": "2026-05-09T16:25:00",
+      "venue": "Het Concertgebouw",
+      "venue_address": "Main Hall",
+      "event_type": "Concert",
+      "artists": [
+        "LanggaardSfærernes Musik (Muziek der sferen), BVN 128",
+        "LigetiLux aeterna"
+      ],
+      "genres": [
+        "Classical"
+      ],
+      "price_min": 45.0,
+      "price_max": null,
+      "tickets_url": "https://www.concertgebouw.nl/en/concerts/8923976-in-higher-spheres-with-ligeti-and-langgaard",
+      "tickets_status": "available",
+      "source": "concertgebouw",
+      "source_url": "https://www.concertgebouw.nl/en/concerts/8923976-in-higher-spheres-with-ligeti-and-langgaard",
+      "match": null
+    },
+    {
       "id": "1138f1569bb0de4e",
       "title": "SCENE (By Day) with CHRISS - h_nk - Izle - Sounds Like Christian - Taylor Taylor",
       "date": "2026-05-09T15:00:00",
@@ -1643,6 +2418,70 @@
       "tickets_status": "available",
       "source": "paradiso",
       "source_url": "https://www.paradiso.nl/en/program/europanacht-met-o-a-de-kiesmannen-yusu-en-ray-fuego/2848272",
+      "match": null
+    },
+    {
+      "id": "89afc791d1ba5c7a",
+      "title": "GenZ Voice Recitals: The Female Voice / Corde e canto / Songs without Shores",
+      "date": "2026-05-09T20:00:00",
+      "date_end": null,
+      "venue": "Splendor",
+      "venue_address": "Nieuwe Uilenburgerstraat 116, 1011 LX Amsterdam",
+      "event_type": "Concert",
+      "artists": [
+        "De zangers van Splendor presenteren:"
+      ],
+      "genres": [],
+      "price_min": null,
+      "price_max": null,
+      "tickets_url": "https://splendor.stager.co/shop/default/events/111605627",
+      "tickets_status": "available",
+      "source": "splendor",
+      "source_url": "https://www.splendoramsterdam.com/agenda/111605627/genz-voice-recitals-the-female-voice-corde-e-canto-songs-without-shores",
+      "match": null
+    },
+    {
+      "id": "569d09e27abbc7b9",
+      "title": "A ladder to paradise",
+      "date": "2026-05-09T20:15:00",
+      "date_end": null,
+      "venue": "Muziekgebouw aan 't IJ",
+      "venue_address": "Grote Zaal, Piet Heinkade 1, 1019 BR Amsterdam",
+      "event_type": "Concert",
+      "artists": [
+        "Collegium Vocale Gent",
+        "Philippe Herreweghe"
+      ],
+      "genres": [],
+      "price_min": 34.5,
+      "price_max": 43.0,
+      "tickets_url": "https://tickets.muziekgebouw.nl/en/buyingflow/tickets/43746/100663",
+      "tickets_status": "available",
+      "source": "muziekgebouw",
+      "source_url": "https://www.muziekgebouw.nl/en/agenda/a-ladder-to-paradise-rb2l",
+      "match": null
+    },
+    {
+      "id": "9472edac7a343ed7",
+      "title": "Mahler’s Symphony No. 10 performed by the Netherlands Philharmonic",
+      "date": "2026-05-09T20:15:00",
+      "date_end": "2026-05-09T22:30:00",
+      "venue": "Het Concertgebouw",
+      "venue_address": "Main Hall",
+      "event_type": "Concert",
+      "artists": [
+        "MahlerSymphony No. 10 (Adagio)",
+        "R. StraussDon Juan"
+      ],
+      "genres": [
+        "Orchestra"
+      ],
+      "price_min": 35.0,
+      "price_max": null,
+      "tickets_url": "https://www.concertgebouw.nl/en/concerts/9133504-mahlers-symphony-no.-10-performed-by-the-netherlands-philharmonic",
+      "tickets_status": "last_tickets",
+      "source": "concertgebouw",
+      "source_url": "https://www.concertgebouw.nl/en/concerts/9133504-mahlers-symphony-no.-10-performed-by-the-netherlands-philharmonic",
       "match": null
     },
     {
@@ -2443,6 +3282,49 @@
       "match": null
     },
     {
+      "id": "cb6e9002568b584e",
+      "title": "Slow Roads",
+      "date": "2026-05-10T11:00:00",
+      "date_end": null,
+      "venue": "Muziekgebouw aan 't IJ",
+      "venue_address": "Kleine Zaal, Piet Heinkade 1, 1019 BR Amsterdam",
+      "event_type": "Concert",
+      "artists": [
+        "Tineke Steenbrink"
+      ],
+      "genres": [],
+      "price_min": 15.0,
+      "price_max": 19.0,
+      "tickets_url": "https://tickets.muziekgebouw.nl/en/buyingflow/tickets/44154/101272",
+      "tickets_status": "available",
+      "source": "muziekgebouw",
+      "source_url": "https://www.muziekgebouw.nl/en/agenda/slow-roads-168z",
+      "match": null
+    },
+    {
+      "id": "6e2e2370bf35dd30",
+      "title": "Family Concert: Moeder de Gans (6+, Dutch Spoken)",
+      "date": "2026-05-10T11:00:00",
+      "date_end": "2026-05-10T12:00:00",
+      "venue": "Het Concertgebouw",
+      "venue_address": "Main Hall",
+      "event_type": "Concert",
+      "artists": [
+        "OffenbachGalop infernale (uit 'Orphée aux enfers')",
+        "RavelLe jardin féerique"
+      ],
+      "genres": [
+        "Family"
+      ],
+      "price_min": 25.0,
+      "price_max": null,
+      "tickets_url": "https://www.concertgebouw.nl/en/concerts/7557178-family-concert-moeder-de-gans-6-dutch-spoken",
+      "tickets_status": "available",
+      "source": "concertgebouw",
+      "source_url": "https://www.concertgebouw.nl/en/concerts/7557178-family-concert-moeder-de-gans-6-dutch-spoken",
+      "match": null
+    },
+    {
       "id": "3026139dd8d36fce",
       "title": "Lokhipster Album Launch",
       "date": "2026-05-10T12:30:00",
@@ -2505,6 +3387,45 @@
       "match": null
     },
     {
+      "id": "443c7dd3dad30d22",
+      "title": "SoundLAB workshop",
+      "date": "2026-05-10T13:00:00",
+      "date_end": null,
+      "venue": "Muziekgebouw aan 't IJ",
+      "venue_address": "Atriumzaal, Piet Heinkade 1, 1019 BR Amsterdam",
+      "event_type": "Concert",
+      "artists": [
+        "Workshop for children (7",
+        ") with adults"
+      ],
+      "genres": [],
+      "price_min": 10.0,
+      "price_max": 13.5,
+      "tickets_url": "https://tickets.muziekgebouw.nl/en/buyingflow/tickets/48365/106569",
+      "tickets_status": "available",
+      "source": "muziekgebouw",
+      "source_url": "https://www.muziekgebouw.nl/en/agenda/soundlab-workshop-d4tp",
+      "match": null
+    },
+    {
+      "id": "171b3c9a0efe46ba",
+      "title": "Guided tour",
+      "date": "2026-05-10T13:00:00",
+      "date_end": null,
+      "venue": "Muziekgebouw aan 't IJ",
+      "venue_address": "Rondleiding, Piet Heinkade 1, 1019 BR Amsterdam",
+      "event_type": "Concert",
+      "artists": [],
+      "genres": [],
+      "price_min": 10.0,
+      "price_max": 12.5,
+      "tickets_url": "",
+      "tickets_status": "available",
+      "source": "muziekgebouw",
+      "source_url": "https://www.muziekgebouw.nl/en/agenda/guided-tour-cxs5",
+      "match": null
+    },
+    {
       "id": "2ed556bbe33e6829",
       "title": "Josee Koning presents: 60 Years of Brasil ’66 – The music of Sergio Mendes",
       "date": "2026-05-10T14:00:00",
@@ -2520,6 +3441,29 @@
       "tickets_status": "available",
       "source": "amsterdam_alt",
       "source_url": "https://www.amsterdamalternative.nl/agenda/21712",
+      "match": null
+    },
+    {
+      "id": "fc1899435002bf99",
+      "title": "Augustin Hadelich plays Tchaikovsky’s Violin Concerto with the Concertgebouw Orchestra",
+      "date": "2026-05-10T14:15:00",
+      "date_end": "2026-05-10T16:15:00",
+      "venue": "Het Concertgebouw",
+      "venue_address": "Main Hall",
+      "event_type": "Concert",
+      "artists": [
+        "BrahmsSymphony No. 4 in e minor, op. 98",
+        "TsjaikovskiViolin Concerto in D major, op. 35"
+      ],
+      "genres": [
+        "Orchestra"
+      ],
+      "price_min": 29.0,
+      "price_max": null,
+      "tickets_url": "https://www.concertgebouw.nl/en/concerts/11154813-augustin-hadelich-plays-tchaikovskys-violin-concerto-with-the-concertgebouw-orchestra",
+      "tickets_status": "last_tickets",
+      "source": "concertgebouw",
+      "source_url": "https://www.concertgebouw.nl/en/concerts/11154813-augustin-hadelich-plays-tchaikovskys-violin-concerto-with-the-concertgebouw-orchestra",
       "match": null
     },
     {
@@ -2559,6 +3503,26 @@
       "match": null
     },
     {
+      "id": "fb0aa2f480612312",
+      "title": "Bach's inspiration",
+      "date": "2026-05-10T15:00:00",
+      "date_end": null,
+      "venue": "Muziekgebouw aan 't IJ",
+      "venue_address": "Grote Zaal, Piet Heinkade 1, 1019 BR Amsterdam",
+      "event_type": "Concert",
+      "artists": [
+        "The Netherlands Bach Society"
+      ],
+      "genres": [],
+      "price_min": 38.5,
+      "price_max": 48.0,
+      "tickets_url": "https://tickets.muziekgebouw.nl/en/buyingflow/tickets/44155/101274",
+      "tickets_status": "available",
+      "source": "muziekgebouw",
+      "source_url": "https://www.muziekgebouw.nl/en/agenda/bach-s-inspiration-zrwx",
+      "match": null
+    },
+    {
       "id": "1050a5b56d9c53a2",
       "title": "Het Zwermatelier 2026 performance",
       "date": "2026-05-10T17:00:00",
@@ -2592,6 +3556,26 @@
       "tickets_status": "available",
       "source": "ra",
       "source_url": "https://ra.co/events/2354547",
+      "match": null
+    },
+    {
+      "id": "58e5a318475be2ee",
+      "title": "The Big Splendor Piano Book for Antonii",
+      "date": "2026-05-10T17:00:00",
+      "date_end": null,
+      "venue": "Splendor",
+      "venue_address": "Nieuwe Uilenburgerstraat 116, 1011 LX Amsterdam",
+      "event_type": "Concert",
+      "artists": [
+        "Antonii Baryshevskyi presenteert LEDENCONCERT"
+      ],
+      "genres": [],
+      "price_min": null,
+      "price_max": null,
+      "tickets_url": "https://splendor.stager.co/shop/default/events/111571563",
+      "tickets_status": "available",
+      "source": "splendor",
+      "source_url": "https://www.splendoramsterdam.com/agenda/111571563/ledenconcert-antonii-baryshevskyi",
       "match": null
     },
     {
@@ -2669,6 +3653,30 @@
       "match": null
     },
     {
+      "id": "9818e58e574518f5",
+      "title": "Great Pianists: Alexander Malofeev",
+      "date": "2026-05-10T20:15:00",
+      "date_end": "2026-05-10T22:20:00",
+      "venue": "Het Concertgebouw",
+      "venue_address": "Main Hall",
+      "event_type": "Concert",
+      "artists": [
+        "GriegHolberg Suite, op. 40",
+        "RachmaninoffSonata No. 2 in B-flat minor, op. 36"
+      ],
+      "genres": [
+        "Chamber Music",
+        "Piano"
+      ],
+      "price_min": 19.0,
+      "price_max": null,
+      "tickets_url": "https://www.concertgebouw.nl/en/concerts/7604262-great-pianists-alexander-malofeev",
+      "tickets_status": "available",
+      "source": "concertgebouw",
+      "source_url": "https://www.concertgebouw.nl/en/concerts/7604262-great-pianists-alexander-malofeev",
+      "match": null
+    },
+    {
       "id": "ff86e300a2632281",
       "title": "Isak Danielson",
       "date": "2026-05-10T20:30:00",
@@ -2714,6 +3722,26 @@
       "tickets_status": "available",
       "source": "paradiso",
       "source_url": "https://www.paradiso.nl/en/program/black-star/2764632",
+      "match": null
+    },
+    {
+      "id": "6e9a9c3add68ecd7",
+      "title": "Diamanda La Berge Dramm",
+      "date": "2026-05-10T21:00:00",
+      "date_end": null,
+      "venue": "Muziekgebouw aan 't IJ",
+      "venue_address": "Kleine Zaal, Piet Heinkade 1, 1019 BR Amsterdam",
+      "event_type": "Concert",
+      "artists": [
+        "Chimp"
+      ],
+      "genres": [],
+      "price_min": 15.0,
+      "price_max": 19.0,
+      "tickets_url": "https://tickets.muziekgebouw.nl/en/buyingflow/tickets/52080/111978",
+      "tickets_status": "available",
+      "source": "muziekgebouw",
+      "source_url": "https://www.muziekgebouw.nl/en/agenda/diamanda-la-berge-dramm-nwj2",
       "match": null
     },
     {
@@ -2773,24 +3801,6 @@
       "match": null
     },
     {
-      "id": "93b97e1d9091cf1e",
-      "title": "Jeong Lim Yang's Synchronicity",
-      "date": "2026-05-11T18:00:00",
-      "date_end": null,
-      "venue": "Splendor",
-      "venue_address": "",
-      "event_type": "",
-      "artists": [],
-      "genres": [],
-      "price_min": 16.0,
-      "price_max": null,
-      "tickets_url": "",
-      "tickets_status": "available",
-      "source": "amsterdam_alt",
-      "source_url": "https://www.amsterdamalternative.nl/agenda/21656",
-      "match": null
-    },
-    {
       "id": "31180440e0b28aec",
       "title": "Planet Funk",
       "date": "2026-05-11T19:30:00",
@@ -2830,6 +3840,93 @@
       "tickets_status": "postponed",
       "source": "paradiso",
       "source_url": "https://www.paradiso.nl/en/program/customs/2850318",
+      "match": null
+    },
+    {
+      "id": "13d02c0afff015fb",
+      "title": "Muziek verbindt",
+      "date": "2026-05-11T20:00:00",
+      "date_end": null,
+      "venue": "Splendor",
+      "venue_address": "Nieuwe Uilenburgerstraat 116, 1011 LX Amsterdam",
+      "event_type": "Concert",
+      "artists": [
+        "Brandt Attema presenteert LEDENCONCERT"
+      ],
+      "genres": [],
+      "price_min": null,
+      "price_max": null,
+      "tickets_url": "https://splendor.stager.co/shop/default/events/111571564",
+      "tickets_status": "available",
+      "source": "splendor",
+      "source_url": "https://www.splendoramsterdam.com/agenda/111571564/ledenconcert-brandt-attema",
+      "match": null
+    },
+    {
+      "id": "93b97e1d9091cf1e",
+      "title": "Jeong Lim Yang's Synchronicity",
+      "date": "2026-05-11T20:15:00",
+      "date_end": null,
+      "venue": "Splendor",
+      "venue_address": "Nieuwe Uilenburgerstraat 116, 1011 LX Amsterdam",
+      "event_type": "Concert",
+      "artists": [
+        "Michael Moore"
+      ],
+      "genres": [],
+      "price_min": null,
+      "price_max": null,
+      "tickets_url": "https://splendor.stager.co/shop/default/events/111651807",
+      "tickets_status": "available",
+      "source": "splendor",
+      "source_url": "https://www.splendoramsterdam.com/agenda/111651807/jeong-lim-yangs-synchronicity",
+      "match": null
+    },
+    {
+      "id": "5353acc7294084df",
+      "title": "Mahler’s Symphony No. 10 performed by the Netherlands Philharmonic",
+      "date": "2026-05-11T20:15:00",
+      "date_end": "2026-05-11T22:35:00",
+      "venue": "Het Concertgebouw",
+      "venue_address": "Main Hall",
+      "event_type": "Concert",
+      "artists": [
+        "MahlerSymphony No. 10 (Adagio)",
+        "R. StraussDon Juan"
+      ],
+      "genres": [
+        "Orchestra"
+      ],
+      "price_min": 35.0,
+      "price_max": null,
+      "tickets_url": "https://www.concertgebouw.nl/en/concerts/9336094-mahlers-symphony-no.-10-performed-by-the-netherlands-philharmonic",
+      "tickets_status": "available",
+      "source": "concertgebouw",
+      "source_url": "https://www.concertgebouw.nl/en/concerts/9336094-mahlers-symphony-no.-10-performed-by-the-netherlands-philharmonic",
+      "match": null
+    },
+    {
+      "id": "620a08bdb2f308ac",
+      "title": "Busch Trio: Schubert and Ives",
+      "date": "2026-05-11T20:15:00",
+      "date_end": "2026-05-11T22:20:00",
+      "venue": "Het Concertgebouw",
+      "venue_address": "Recital Hall",
+      "event_type": "Concert",
+      "artists": [
+        "SchubertPiano Trio in E-flat major, D 929, op. 100",
+        "IvesPiano Trio, op. 86, S 86"
+      ],
+      "genres": [
+        "Chamber Music",
+        "Piano"
+      ],
+      "price_min": 25.0,
+      "price_max": null,
+      "tickets_url": "https://www.concertgebouw.nl/en/concerts/8503293-busch-trio-schubert-and-ives",
+      "tickets_status": "available",
+      "source": "concertgebouw",
+      "source_url": "https://www.concertgebouw.nl/en/concerts/8503293-busch-trio-schubert-and-ives",
       "match": null
     },
     {
@@ -2994,24 +4091,6 @@
       "match": null
     },
     {
-      "id": "ce2e8a2abb3245db",
-      "title": "Webb Crawford Solo // Michael Foster, Raoul van der Weide & George Hadow",
-      "date": "2026-05-12T17:30:00",
-      "date_end": null,
-      "venue": "Splendor",
-      "venue_address": "",
-      "event_type": "",
-      "artists": [],
-      "genres": [],
-      "price_min": 13.0,
-      "price_max": null,
-      "tickets_url": "",
-      "tickets_status": "available",
-      "source": "amsterdam_alt",
-      "source_url": "https://www.amsterdamalternative.nl/agenda/21902",
-      "match": null
-    },
-    {
       "id": "52aa8f7884462ade",
       "title": "Film Screening: 'In This Together' a film by Lisette Olsthoorn",
       "date": "2026-05-12T17:30:00",
@@ -3069,6 +4148,26 @@
       "match": null
     },
     {
+      "id": "ce2e8a2abb3245db",
+      "title": "Webb Crawford Solo // Michael Foster, Raoul van der Weide & George Hadow",
+      "date": "2026-05-12T19:30:00",
+      "date_end": null,
+      "venue": "Splendor",
+      "venue_address": "Nieuwe Uilenburgerstraat 116, 1011 LX Amsterdam",
+      "event_type": "Concert",
+      "artists": [
+        "River Adomeit"
+      ],
+      "genres": [],
+      "price_min": null,
+      "price_max": null,
+      "tickets_url": "https://splendor.stager.co/shop/default/events/111651892",
+      "tickets_status": "available",
+      "source": "splendor",
+      "source_url": "https://www.splendoramsterdam.com/agenda/111651892/webb-crawford-solo-michael-foster-raoul-van-der-weide-george-hadow",
+      "match": null
+    },
+    {
       "id": "7ddf7810eb7dc396",
       "title": "Bex",
       "date": "2026-05-12T19:30:00",
@@ -3089,6 +4188,49 @@
       "tickets_status": "available",
       "source": "paradiso",
       "source_url": "https://www.paradiso.nl/en/program/bex/2867127",
+      "match": null
+    },
+    {
+      "id": "8056149117f0a729",
+      "title": "Eén hoopvol",
+      "date": "2026-05-12T20:00:00",
+      "date_end": null,
+      "venue": "Splendor",
+      "venue_address": "Nieuwe Uilenburgerstraat 116, 1011 LX Amsterdam",
+      "event_type": "Concert",
+      "artists": [
+        "Remy van Kesteren"
+      ],
+      "genres": [],
+      "price_min": null,
+      "price_max": null,
+      "tickets_url": "https://splendor.stager.co/shop/default/events/111646338",
+      "tickets_status": "available",
+      "source": "splendor",
+      "source_url": "https://www.splendoramsterdam.com/agenda/111646338/eén-hoopvol",
+      "match": null
+    },
+    {
+      "id": "5bd8e84c2591d8b1",
+      "title": "Janine Jansen & Camerata Salzburg: Vivaldi's Four Seasons",
+      "date": "2026-05-12T20:15:00",
+      "date_end": "2026-05-12T22:10:00",
+      "venue": "Het Concertgebouw",
+      "venue_address": "Main Hall",
+      "event_type": "Concert",
+      "artists": [
+        "VivaldiThe Four Seasons, op. 8",
+        "GeminianiConcerto grosso in d minor 'La follia'"
+      ],
+      "genres": [
+        "Orchestra"
+      ],
+      "price_min": 25.0,
+      "price_max": null,
+      "tickets_url": "https://www.concertgebouw.nl/en/concerts/7605199-janine-jansen-camerata-salzburg-vivaldis-four-seasons",
+      "tickets_status": "last_tickets",
+      "source": "concertgebouw",
+      "source_url": "https://www.concertgebouw.nl/en/concerts/7605199-janine-jansen-camerata-salzburg-vivaldis-four-seasons",
       "match": null
     },
     {
@@ -3220,6 +4362,29 @@
       "match": null
     },
     {
+      "id": "3ce2ca8a0d722ad4",
+      "title": "Vriendenrepetitie: Concertgebouw Orchestra and Sol Gabetta play Martinů",
+      "date": "2026-05-13T09:30:00",
+      "date_end": "2026-05-13T13:00:00",
+      "venue": "Het Concertgebouw",
+      "venue_address": "Main Hall",
+      "event_type": "Concert",
+      "artists": [
+        "RavelDaphnis et Chloé, Suite No. 2",
+        "StravinskyJeu de cartes, ballet en trois donnes"
+      ],
+      "genres": [
+        "Orchestra"
+      ],
+      "price_min": 17.5,
+      "price_max": null,
+      "tickets_url": "https://www.concertgebouw.nl/en/concerts/11158052-vriendenrepetitie-concertgebouw-orchestra-and-sol-gabetta-play-martinu",
+      "tickets_status": "available",
+      "source": "concertgebouw",
+      "source_url": "https://www.concertgebouw.nl/en/concerts/11158052-vriendenrepetitie-concertgebouw-orchestra-and-sol-gabetta-play-martinu",
+      "match": null
+    },
+    {
       "id": "300f114a91556481",
       "title": "Lunch at Café Gilde",
       "date": "2026-05-13T10:00:00",
@@ -3235,6 +4400,26 @@
       "tickets_status": "available",
       "source": "amsterdam_alt",
       "source_url": "https://www.amsterdamalternative.nl/agenda/21196",
+      "match": null
+    },
+    {
+      "id": "f411e161803730aa",
+      "title": "Free Lunchtime Concert: World Harp Competition",
+      "date": "2026-05-13T12:30:00",
+      "date_end": "2026-05-13T13:00:00",
+      "venue": "Het Concertgebouw",
+      "venue_address": "Recital Hall",
+      "event_type": "Concert",
+      "artists": [],
+      "genres": [
+        "Free Lunchtime"
+      ],
+      "price_min": null,
+      "price_max": null,
+      "tickets_url": "https://www.concertgebouw.nl/en/concerts/36977911-free-lunchtime-concert-world-harp-competition",
+      "tickets_status": "sold_out",
+      "source": "concertgebouw",
+      "source_url": "https://www.concertgebouw.nl/en/concerts/36977911-free-lunchtime-concert-world-harp-competition",
       "match": null
     },
     {
@@ -3444,6 +4629,73 @@
       "match": null
     },
     {
+      "id": "6b5f05e2288c436d",
+      "title": "The Age of Greed",
+      "date": "2026-05-13T20:15:00",
+      "date_end": null,
+      "venue": "Muziekgebouw aan 't IJ",
+      "venue_address": "Grote Zaal, Piet Heinkade 1, 1019 BR Amsterdam",
+      "event_type": "Concert",
+      "artists": [
+        "ORBI"
+      ],
+      "genres": [],
+      "price_min": 20.0,
+      "price_max": 25.0,
+      "tickets_url": "https://tickets.muziekgebouw.nl/en/buyingflow/tickets/54482/114525",
+      "tickets_status": "available",
+      "source": "muziekgebouw",
+      "source_url": "https://www.muziekgebouw.nl/en/agenda/the-age-of-greed-d44t",
+      "match": null
+    },
+    {
+      "id": "8b93318c74470f71",
+      "title": "Concertgebouw Orchestra and cellist Sol Gabetta play Martinů",
+      "date": "2026-05-13T20:15:00",
+      "date_end": "2026-05-13T22:15:00",
+      "venue": "Het Concertgebouw",
+      "venue_address": "Main Hall",
+      "event_type": "Concert",
+      "artists": [
+        "RavelDaphnis et Chloé, Suite No. 2",
+        "StravinskyJeu de cartes, ballet en trois donnes"
+      ],
+      "genres": [
+        "Orchestra"
+      ],
+      "price_min": 20.0,
+      "price_max": null,
+      "tickets_url": "https://www.concertgebouw.nl/en/concerts/11154814-concertgebouw-orchestra-and-cellist-sol-gabetta-play-martinu",
+      "tickets_status": "available",
+      "source": "concertgebouw",
+      "source_url": "https://www.concertgebouw.nl/en/concerts/11154814-concertgebouw-orchestra-and-cellist-sol-gabetta-play-martinu",
+      "match": null
+    },
+    {
+      "id": "82b4be2751465a00",
+      "title": "Busch Trio: Schubert and Ives",
+      "date": "2026-05-13T20:15:00",
+      "date_end": "2026-05-13T22:20:00",
+      "venue": "Het Concertgebouw",
+      "venue_address": "Recital Hall",
+      "event_type": "Concert",
+      "artists": [
+        "SchubertPiano Trio in E-flat major, D 929, op. 100",
+        "IvesPiano Trio, op. 86, S 86"
+      ],
+      "genres": [
+        "Chamber Music",
+        "Piano"
+      ],
+      "price_min": 25.0,
+      "price_max": null,
+      "tickets_url": "https://www.concertgebouw.nl/en/concerts/8503294-busch-trio-schubert-and-ives",
+      "tickets_status": "available",
+      "source": "concertgebouw",
+      "source_url": "https://www.concertgebouw.nl/en/concerts/8503294-busch-trio-schubert-and-ives",
+      "match": null
+    },
+    {
       "id": "e7ff88c597d0e72a",
       "title": "JELISA",
       "date": "2026-05-13T20:30:00",
@@ -3616,6 +4868,42 @@
       "tickets_status": "available",
       "source": "amsterdam_alt",
       "source_url": "https://www.amsterdamalternative.nl/agenda/20858",
+      "match": null
+    },
+    {
+      "id": "b6c63e08bbab155e",
+      "title": "Guided tour",
+      "date": "2026-05-14T10:45:00",
+      "date_end": null,
+      "venue": "Muziekgebouw aan 't IJ",
+      "venue_address": "Rondleiding, Piet Heinkade 1, 1019 BR Amsterdam",
+      "event_type": "Concert",
+      "artists": [],
+      "genres": [],
+      "price_min": 10.0,
+      "price_max": 12.5,
+      "tickets_url": "https://tickets.muziekgebouw.nl/en/buyingflow/tickets/46408/104326",
+      "tickets_status": "available",
+      "source": "muziekgebouw",
+      "source_url": "https://www.muziekgebouw.nl/en/agenda/guided-tour-tm85",
+      "match": null
+    },
+    {
+      "id": "0ce144d2a586f3a1",
+      "title": "CvA Harp",
+      "date": "2026-05-14T12:30:00",
+      "date_end": null,
+      "venue": "Muziekgebouw aan 't IJ",
+      "venue_address": "Grote Zaal, Piet Heinkade 1, 1019 BR Amsterdam",
+      "event_type": "Concert",
+      "artists": [],
+      "genres": [],
+      "price_min": 6.5,
+      "price_max": 6.5,
+      "tickets_url": "https://tickets.muziekgebouw.nl/en/buyingflow/tickets/43994/100987",
+      "tickets_status": "available",
+      "source": "muziekgebouw",
+      "source_url": "https://www.muziekgebouw.nl/en/agenda/cva-harp-5pt8",
       "match": null
     },
     {
@@ -3901,6 +5189,47 @@
       "match": null
     },
     {
+      "id": "84246c725d3f2349",
+      "title": "The best Dutch wind players 1: Maite Hontelé",
+      "date": "2026-05-14T20:15:00",
+      "date_end": null,
+      "venue": "Muziekgebouw aan 't IJ",
+      "venue_address": "Grote Zaal, Piet Heinkade 1, 1019 BR Amsterdam",
+      "event_type": "Concert",
+      "artists": [
+        "Netherlands Wind Ensemble",
+        "Maite Hontelé"
+      ],
+      "genres": [],
+      "price_min": 35.5,
+      "price_max": 44.0,
+      "tickets_url": "https://tickets.muziekgebouw.nl/en/buyingflow/tickets/44156/101275",
+      "tickets_status": "available",
+      "source": "muziekgebouw",
+      "source_url": "https://www.muziekgebouw.nl/en/agenda/the-best-dutch-wind-players-1-maite-hontele-d4f4",
+      "match": null
+    },
+    {
+      "id": "937addb787060e1a",
+      "title": "Aretha Franklin: Queen of Soul - Metropole Orkest & Sheléa, conducted by Jules Buckley",
+      "date": "2026-05-14T20:15:00",
+      "date_end": "2026-05-14T22:10:00",
+      "venue": "Het Concertgebouw",
+      "venue_address": "Main Hall",
+      "event_type": "Concert",
+      "artists": [],
+      "genres": [
+        "Classical"
+      ],
+      "price_min": 35.0,
+      "price_max": null,
+      "tickets_url": "https://www.concertgebouw.nl/en/concerts/16108614-aretha-franklin-queen-of-soul---metropole-orkest-shelea-conducted-by-jules-buckley",
+      "tickets_status": "sold_out",
+      "source": "concertgebouw",
+      "source_url": "https://www.concertgebouw.nl/en/concerts/16108614-aretha-franklin-queen-of-soul---metropole-orkest-shelea-conducted-by-jules-buckley",
+      "match": null
+    },
+    {
       "id": "fe85c953e90abce1",
       "title": "Ellen ten Damme",
       "date": "2026-05-14T20:30:00",
@@ -4096,6 +5425,26 @@
       "match": null
     },
     {
+      "id": "7e7eb2c9343eafd6",
+      "title": "Moving as a Mountain",
+      "date": "2026-05-15T00:00:00",
+      "date_end": "2026-07-11T00:00:00",
+      "venue": "Bradwolff & Partners",
+      "venue_address": "Amsterdam, Nederland",
+      "event_type": "Expositie",
+      "artists": [
+        "Eva Spierenburg"
+      ],
+      "genres": [],
+      "price_min": null,
+      "price_max": null,
+      "tickets_url": "",
+      "tickets_status": "available",
+      "source": "gallery_viewer",
+      "source_url": "https://galleryviewer.com/en/exhibition/6153",
+      "match": null
+    },
+    {
       "id": "4975a132097334ae",
       "title": "Lunch at Café Gilde",
       "date": "2026-05-15T10:00:00",
@@ -4208,24 +5557,6 @@
       "tickets_status": "available",
       "source": "amsterdam_alt",
       "source_url": "https://www.amsterdamalternative.nl/agenda/21880",
-      "match": null
-    },
-    {
-      "id": "178f34f2526f0946",
-      "title": "Cinema: The Mousetrap",
-      "date": "2026-05-15T17:00:00",
-      "date_end": null,
-      "venue": "Splendor",
-      "venue_address": "",
-      "event_type": "",
-      "artists": [],
-      "genres": [],
-      "price_min": 12.0,
-      "price_max": null,
-      "tickets_url": "",
-      "tickets_status": "available",
-      "source": "amsterdam_alt",
-      "source_url": "https://www.amsterdamalternative.nl/agenda/21644",
       "match": null
     },
     {
@@ -4391,6 +5722,26 @@
       }
     },
     {
+      "id": "178f34f2526f0946",
+      "title": "Cinema: The Mousetrap",
+      "date": "2026-05-15T19:00:00",
+      "date_end": null,
+      "venue": "Splendor",
+      "venue_address": "Nieuwe Uilenburgerstraat 116, 1011 LX Amsterdam",
+      "event_type": "Concert",
+      "artists": [
+        "Antonii Baryshevskyi presenteert Splendoor to Ukraine XXIX:"
+      ],
+      "genres": [],
+      "price_min": null,
+      "price_max": null,
+      "tickets_url": "https://splendor.stager.co/shop/default/events/111624980",
+      "tickets_status": "available",
+      "source": "splendor",
+      "source_url": "https://www.splendoramsterdam.com/agenda/111624980/cinema-mousetrap",
+      "match": null
+    },
+    {
       "id": "94c5855b16f93e19",
       "title": "Jahtari Disrupt Live",
       "date": "2026-05-15T19:00:00",
@@ -4473,6 +5824,50 @@
       "match": null
     },
     {
+      "id": "d9fcf24364281d59",
+      "title": "Cairo’s Golden Age",
+      "date": "2026-05-15T20:15:00",
+      "date_end": null,
+      "venue": "Muziekgebouw aan 't IJ",
+      "venue_address": "Grote Zaal, Piet Heinkade 1, 1019 BR Amsterdam",
+      "event_type": "Concert",
+      "artists": [
+        "Amsterdam Andalusian Orchestra, Abir el Abed",
+        "Youssef Jrifi"
+      ],
+      "genres": [],
+      "price_min": 12.5,
+      "price_max": 39.0,
+      "tickets_url": "https://tickets.muziekgebouw.nl/en/buyingflow/tickets/44073/101131",
+      "tickets_status": "available",
+      "source": "muziekgebouw",
+      "source_url": "https://www.muziekgebouw.nl/en/agenda/cairo-s-golden-age-qvry",
+      "match": null
+    },
+    {
+      "id": "c9f9c85ae705873b",
+      "title": "Concertgebouw Orchestra and cellist Sol Gabetta play Martinů",
+      "date": "2026-05-15T20:15:00",
+      "date_end": "2026-05-15T22:15:00",
+      "venue": "Het Concertgebouw",
+      "venue_address": "Main Hall",
+      "event_type": "Concert",
+      "artists": [
+        "RavelDaphnis et Chloé, Suite No. 2",
+        "StravinskyJeu de cartes, ballet en trois donnes"
+      ],
+      "genres": [
+        "Orchestra"
+      ],
+      "price_min": 20.0,
+      "price_max": null,
+      "tickets_url": "https://www.concertgebouw.nl/en/concerts/11156974-concertgebouw-orchestra-and-cellist-sol-gabetta-play-martinu",
+      "tickets_status": "available",
+      "source": "concertgebouw",
+      "source_url": "https://www.concertgebouw.nl/en/concerts/11156974-concertgebouw-orchestra-and-cellist-sol-gabetta-play-martinu",
+      "match": null
+    },
+    {
       "id": "e1cbec287e1f3b90",
       "title": "Corey Kent",
       "date": "2026-05-15T20:30:00",
@@ -4515,6 +5910,26 @@
       "tickets_status": "available",
       "source": "paradiso",
       "source_url": "https://www.paradiso.nl/en/program/dotan-european-solo-acoustic-tour/2758915",
+      "match": null
+    },
+    {
+      "id": "6d31eb9aa2c3d811",
+      "title": "Lucrecia Dalt",
+      "date": "2026-05-15T20:30:00",
+      "date_end": null,
+      "venue": "Muziekgebouw aan 't IJ",
+      "venue_address": "Bimhuis, Piet Heinkade 1, 1019 BR Amsterdam",
+      "event_type": "Concert",
+      "artists": [
+        "A Danger to Ourselves"
+      ],
+      "genres": [],
+      "price_min": null,
+      "price_max": null,
+      "tickets_url": "https://www.bimhuis.nl/en/calendar/lucrecia-dalt-a-danger-to-ourselves",
+      "tickets_status": "available",
+      "source": "muziekgebouw",
+      "source_url": "https://www.muziekgebouw.nl/en/agenda/lucrecia-dalt-rbdy",
       "match": null
     },
     {
@@ -5081,6 +6496,34 @@
       "match": null
     },
     {
+      "id": "139a963a757f5c83",
+      "title": "High Season",
+      "date": "2026-05-16T00:00:00",
+      "date_end": "2026-08-23T00:00:00",
+      "venue": "Galerie Franzis Engels",
+      "venue_address": "Amsterdam, Nederland",
+      "event_type": "Expositie",
+      "artists": [
+        "Afroditi Terzi",
+        "Marga Knaven",
+        "Judy van Luyk",
+        "Patrick Bergsma",
+        "Marinke van Zandwijk",
+        "Pim Palsgraaf",
+        "Kees de Vries",
+        "Marian Bijlenga",
+        "Sophia de Vries"
+      ],
+      "genres": [],
+      "price_min": null,
+      "price_max": null,
+      "tickets_url": "",
+      "tickets_status": "available",
+      "source": "gallery_viewer",
+      "source_url": "https://galleryviewer.com/en/exhibition/6363",
+      "match": null
+    },
+    {
       "id": "3a497ff34ce81e33",
       "title": "The Rat Raise",
       "date": "2026-05-16T11:00:00",
@@ -5427,6 +6870,29 @@
       "match": null
     },
     {
+      "id": "22a1efd9fd5c2b58",
+      "title": "Greenwood x Strootman: solo guitar and solo violin",
+      "date": "2026-05-16T14:15:00",
+      "date_end": "2026-05-16T16:20:00",
+      "venue": "Het Concertgebouw",
+      "venue_address": "Main Hall",
+      "event_type": "Concert",
+      "artists": [
+        "GreenwoodViolin Concerto ‘æþm’ (after Horror vacui)",
+        "ReichElectric Counterpoint"
+      ],
+      "genres": [
+        "Orchestra"
+      ],
+      "price_min": 45.0,
+      "price_max": null,
+      "tickets_url": "https://www.concertgebouw.nl/en/concerts/8924598-greenwood-x-strootman-solo-guitar-and-solo-violin",
+      "tickets_status": "sold_out",
+      "source": "concertgebouw",
+      "source_url": "https://www.concertgebouw.nl/en/concerts/8924598-greenwood-x-strootman-solo-guitar-and-solo-violin",
+      "match": null
+    },
+    {
       "id": "ae667097ce4362a0",
       "title": "CLUB.RECORD",
       "date": "2026-05-16T15:00:00",
@@ -5769,6 +7235,70 @@
       "tickets_status": "available",
       "source": "ra",
       "source_url": "https://ra.co/events/2419156",
+      "match": null
+    },
+    {
+      "id": "fb9f0bc9bfbcbe51",
+      "title": "Traffic is the New Silence",
+      "date": "2026-05-16T20:00:00",
+      "date_end": null,
+      "venue": "Splendor",
+      "venue_address": "Nieuwe Uilenburgerstraat 116, 1011 LX Amsterdam",
+      "event_type": "Concert",
+      "artists": [
+        "Michael Moore"
+      ],
+      "genres": [],
+      "price_min": null,
+      "price_max": null,
+      "tickets_url": "https://splendor.stager.co/shop/default/events/111651812",
+      "tickets_status": "available",
+      "source": "splendor",
+      "source_url": "https://www.splendoramsterdam.com/agenda/111651812/traffic-is-the-new-silence",
+      "match": null
+    },
+    {
+      "id": "3cb1295acc833095",
+      "title": "Salve Susato",
+      "date": "2026-05-16T20:15:00",
+      "date_end": null,
+      "venue": "Muziekgebouw aan 't IJ",
+      "venue_address": "Grote Zaal, Piet Heinkade 1, 1019 BR Amsterdam",
+      "event_type": "Concert",
+      "artists": [
+        "Utopia"
+      ],
+      "genres": [],
+      "price_min": 12.5,
+      "price_max": 37.0,
+      "tickets_url": "https://tickets.muziekgebouw.nl/en/buyingflow/tickets/44157/101276",
+      "tickets_status": "available",
+      "source": "muziekgebouw",
+      "source_url": "https://www.muziekgebouw.nl/en/agenda/salve-susato-lt4x",
+      "match": null
+    },
+    {
+      "id": "943b5de07688020f",
+      "title": "Netherlands Chamber Orchestra: Falla and Rodrigo",
+      "date": "2026-05-16T20:15:00",
+      "date_end": "2026-05-16T22:05:00",
+      "venue": "Het Concertgebouw",
+      "venue_address": "Main Hall",
+      "event_type": "Concert",
+      "artists": [
+        "FallaEl amor brujo",
+        "RodrigoConcierto de Aranjuez"
+      ],
+      "genres": [
+        "Orchestra",
+        "Chamber Music"
+      ],
+      "price_min": 35.0,
+      "price_max": null,
+      "tickets_url": "https://www.concertgebouw.nl/en/concerts/9336095-netherlands-chamber-orchestra-falla-and-rodrigo",
+      "tickets_status": "available",
+      "source": "concertgebouw",
+      "source_url": "https://www.concertgebouw.nl/en/concerts/9336095-netherlands-chamber-orchestra-falla-and-rodrigo",
       "match": null
     },
     {
@@ -6297,6 +7827,42 @@
       "match": null
     },
     {
+      "id": "eddda2a4394b9423",
+      "title": "An Ode to Printmaking – The Unique Album ‘L’Estampe originale’",
+      "date": "2026-05-17T09:00:00",
+      "date_end": null,
+      "venue": "Van Gogh Museum, Amsterdam",
+      "venue_address": "",
+      "event_type": "Exhibition",
+      "artists": [],
+      "genres": [],
+      "price_min": null,
+      "price_max": null,
+      "tickets_url": "",
+      "tickets_status": "available",
+      "source": "museumkaart",
+      "source_url": "https://www.museum.nl/en/van-gogh-museum/exhibition/an-ode-to-printmaking-the-unique-album-lestampe-originale",
+      "match": null
+    },
+    {
+      "id": "f1734ff323739274",
+      "title": "Yellow. Beyond Van Gogh’s Colour",
+      "date": "2026-05-17T09:00:00",
+      "date_end": null,
+      "venue": "Van Gogh Museum, Amsterdam",
+      "venue_address": "",
+      "event_type": "Exhibition",
+      "artists": [],
+      "genres": [],
+      "price_min": null,
+      "price_max": null,
+      "tickets_url": "",
+      "tickets_status": "available",
+      "source": "museumkaart",
+      "source_url": "https://www.museum.nl/en/van-gogh-museum/exhibition/yellow-beyond-van-goghs-colour",
+      "match": null
+    },
+    {
       "id": "f8952b99616df778",
       "title": "De Feministische Bibliotheek",
       "date": "2026-05-17T11:00:00",
@@ -6348,6 +7914,29 @@
       "tickets_status": "available",
       "source": "amsterdam_alt",
       "source_url": "https://www.amsterdamalternative.nl/agenda/21872",
+      "match": null
+    },
+    {
+      "id": "145467b7fd957cb6",
+      "title": "Amsterdam Sinfonietta: Vivaldi’s The Four Seasons",
+      "date": "2026-05-17T11:00:00",
+      "date_end": "2026-05-17T12:00:00",
+      "venue": "Het Concertgebouw",
+      "venue_address": "Main Hall",
+      "event_type": "Concert",
+      "artists": [
+        "VivaldiThe Four Seasons, op. 8",
+        "J.S. BachBrandenburg Concerto No. 3 in G major, BWV 1048"
+      ],
+      "genres": [
+        "Orchestra"
+      ],
+      "price_min": 21.0,
+      "price_max": null,
+      "tickets_url": "https://www.concertgebouw.nl/en/concerts/7557179-amsterdam-sinfonietta-vivaldis-the-four-seasons",
+      "tickets_status": "last_tickets",
+      "source": "concertgebouw",
+      "source_url": "https://www.concertgebouw.nl/en/concerts/7557179-amsterdam-sinfonietta-vivaldis-the-four-seasons",
       "match": null
     },
     {
@@ -6431,6 +8020,50 @@
       "tickets_status": "available",
       "source": "ra",
       "source_url": "https://ra.co/events/2437534",
+      "match": null
+    },
+    {
+      "id": "c387aa1400ff3b42",
+      "title": "The Bach Choir and Orchestra: Mozart's Requiem",
+      "date": "2026-05-17T14:15:00",
+      "date_end": "2026-05-17T16:20:00",
+      "venue": "Het Concertgebouw",
+      "venue_address": "Main Hall",
+      "event_type": "Concert",
+      "artists": [
+        "MozartEine kleine Nachtmusik in G major",
+        "MozartRequiem in d minor, KV 626"
+      ],
+      "genres": [
+        "Orchestra",
+        "Vocal Music"
+      ],
+      "price_min": 37.5,
+      "price_max": null,
+      "tickets_url": "https://www.concertgebouw.nl/en/concerts/14281544-the-bach-choir-and-orchestra-mozarts-requiem",
+      "tickets_status": "last_tickets",
+      "source": "concertgebouw",
+      "source_url": "https://www.concertgebouw.nl/en/concerts/14281544-the-bach-choir-and-orchestra-mozarts-requiem",
+      "match": null
+    },
+    {
+      "id": "780d990683359f8c",
+      "title": "Maceration Musicale",
+      "date": "2026-05-17T15:00:00",
+      "date_end": null,
+      "venue": "Splendor",
+      "venue_address": "Nieuwe Uilenburgerstraat 116, 1011 LX Amsterdam",
+      "event_type": "Concert",
+      "artists": [
+        "-Thomas Myrmel"
+      ],
+      "genres": [],
+      "price_min": null,
+      "price_max": null,
+      "tickets_url": "https://splendor.stager.co/shop/default/events/111654570",
+      "tickets_status": "available",
+      "source": "splendor",
+      "source_url": "https://www.splendoramsterdam.com/agenda/111654570/maceration-musicale",
       "match": null
     },
     {
@@ -6577,6 +8210,27 @@
       "tickets_status": "available",
       "source": "paradiso",
       "source_url": "https://www.paradiso.nl/en/program/sosocamo/2835743",
+      "match": null
+    },
+    {
+      "id": "d582a94a8c5e4447",
+      "title": "Festival Sacred Sounds of India",
+      "date": "2026-05-17T19:30:00",
+      "date_end": null,
+      "venue": "Muziekgebouw aan 't IJ",
+      "venue_address": "Grote Zaal, Piet Heinkade 1, 1019 BR Amsterdam",
+      "event_type": "Concert",
+      "artists": [
+        "Parvaty Baul, Ustad Sabir Sultan Khan, Ashwani Shankar, Ustad Shahbaz Hussain",
+        "Mysore Brothers"
+      ],
+      "genres": [],
+      "price_min": 12.5,
+      "price_max": 40.0,
+      "tickets_url": "https://tickets.muziekgebouw.nl/en/buyingflow/tickets/55529/116179",
+      "tickets_status": "available",
+      "source": "muziekgebouw",
+      "source_url": "https://www.muziekgebouw.nl/en/agenda/festival-sacred-sounds-of-india-cxd4",
       "match": null
     },
     {
@@ -6752,6 +8406,66 @@
       "tickets_status": "available",
       "source": "paradiso",
       "source_url": "https://www.paradiso.nl/en/program/veulpoepers/2743631",
+      "match": null
+    },
+    {
+      "id": "eea89981bba92cf2",
+      "title": "Co-session #8 (Dance & Music)",
+      "date": "2026-05-18T20:00:00",
+      "date_end": null,
+      "venue": "Splendor",
+      "venue_address": "Nieuwe Uilenburgerstraat 116, 1011 LX Amsterdam",
+      "event_type": "Concert",
+      "artists": [
+        "Michael Moore"
+      ],
+      "genres": [],
+      "price_min": null,
+      "price_max": null,
+      "tickets_url": "https://splendor.stager.co/shop/default/events/111651810",
+      "tickets_status": "available",
+      "source": "splendor",
+      "source_url": "https://www.splendoramsterdam.com/agenda/111651810/co-session-8-dance-music",
+      "match": null
+    },
+    {
+      "id": "b231353f20f792a7",
+      "title": "Anoushka Shankar presents Chapters with London Contemporary Orchestra",
+      "date": "2026-05-18T20:15:00",
+      "date_end": "2026-05-18T21:30:00",
+      "venue": "Het Concertgebouw",
+      "venue_address": "Main Hall",
+      "event_type": "Concert",
+      "artists": [],
+      "genres": [
+        "Orchestra"
+      ],
+      "price_min": 29.0,
+      "price_max": null,
+      "tickets_url": "https://www.concertgebouw.nl/en/concerts/43786493-anoushka-shankar-presents-chapters-with-london-contemporary-orchestra",
+      "tickets_status": "sold_out",
+      "source": "concertgebouw",
+      "source_url": "https://www.concertgebouw.nl/en/concerts/43786493-anoushka-shankar-presents-chapters-with-london-contemporary-orchestra",
+      "match": null
+    },
+    {
+      "id": "03449f79a2a21249",
+      "title": "Splendor Muziek Talkshow: Het Paloma Project",
+      "date": "2026-05-18T20:15:00",
+      "date_end": null,
+      "venue": "Splendor",
+      "venue_address": "Nieuwe Uilenburgerstraat 116, 1011 LX Amsterdam",
+      "event_type": "Concert",
+      "artists": [
+        "Splendor"
+      ],
+      "genres": [],
+      "price_min": null,
+      "price_max": null,
+      "tickets_url": "",
+      "tickets_status": "available",
+      "source": "splendor",
+      "source_url": "https://www.splendoramsterdam.com/agenda/111653305/splendor-muziek-talkshow-talkshow-het-paloma-project",
       "match": null
     },
     {
@@ -6974,6 +8688,72 @@
       "match": null
     },
     {
+      "id": "e393a2af79878965",
+      "title": "VIOLAVIOLA",
+      "date": "2026-05-19T19:30:00",
+      "date_end": null,
+      "venue": "Splendor",
+      "venue_address": "Nieuwe Uilenburgerstraat 116, 1011 LX Amsterdam",
+      "event_type": "Concert",
+      "artists": [
+        "Francien Schatborn"
+      ],
+      "genres": [],
+      "price_min": null,
+      "price_max": null,
+      "tickets_url": "https://splendor.stager.co/shop/default/events/111655930",
+      "tickets_status": "available",
+      "source": "splendor",
+      "source_url": "https://www.splendoramsterdam.com/agenda/111655930/violaviola",
+      "match": null
+    },
+    {
+      "id": "a4dcefff10abf835",
+      "title": "Piano Nights with Wibi Soerjadi and Lestari Scholtes",
+      "date": "2026-05-19T20:15:00",
+      "date_end": "2026-05-19T21:45:00",
+      "venue": "Het Concertgebouw",
+      "venue_address": "Main Hall",
+      "event_type": "Concert",
+      "artists": [
+        "SoerjadiFlashback",
+        "SoerjadiDisney Parafrase"
+      ],
+      "genres": [
+        "Piano"
+      ],
+      "price_min": 19.0,
+      "price_max": null,
+      "tickets_url": "https://www.concertgebouw.nl/en/concerts/8110226-piano-nights-with-wibi-soerjadi-and-lestari-scholtes",
+      "tickets_status": "last_tickets",
+      "source": "concertgebouw",
+      "source_url": "https://www.concertgebouw.nl/en/concerts/8110226-piano-nights-with-wibi-soerjadi-and-lestari-scholtes",
+      "match": null
+    },
+    {
+      "id": "02a61eae456e2ac3",
+      "title": "Katharina Konradi & Catriona Morison: from Schumann to Chausson",
+      "date": "2026-05-19T20:15:00",
+      "date_end": "2026-05-19T22:35:00",
+      "venue": "Het Concertgebouw",
+      "venue_address": "Recital Hall",
+      "event_type": "Concert",
+      "artists": [
+        "FauréTarentelle",
+        "BonisLe Ruisseau, op. 21"
+      ],
+      "genres": [
+        "Chamber Music"
+      ],
+      "price_min": 35.0,
+      "price_max": null,
+      "tickets_url": "https://www.concertgebouw.nl/en/concerts/8505072-katharina-konradi-catriona-morison-from-schumann-to-chausson",
+      "tickets_status": "available",
+      "source": "concertgebouw",
+      "source_url": "https://www.concertgebouw.nl/en/concerts/8505072-katharina-konradi-catriona-morison-from-schumann-to-chausson",
+      "match": null
+    },
+    {
       "id": "57e9a24ba91fe837",
       "title": "Science & Cocktails: Predicting human life",
       "date": "2026-05-19T20:30:00",
@@ -7170,6 +8950,30 @@
       "match": null
     },
     {
+      "id": "753248d221b0986c",
+      "title": "Free Lunchtime Concert: Budapest Festival Orchestra Academy",
+      "date": "2026-05-20T12:30:00",
+      "date_end": "2026-05-20T13:00:00",
+      "venue": "Het Concertgebouw",
+      "venue_address": "Recital Hall",
+      "event_type": "Concert",
+      "artists": [
+        "GriegString Quartet No. 1 in g minor, op. 27"
+      ],
+      "genres": [
+        "Orchestra",
+        "Chamber Music",
+        "Free Lunchtime"
+      ],
+      "price_min": null,
+      "price_max": null,
+      "tickets_url": "https://www.concertgebouw.nl/en/concerts/36977912-free-lunchtime-concert-budapest-festival-orchestra-academy",
+      "tickets_status": "free",
+      "source": "concertgebouw",
+      "source_url": "https://www.concertgebouw.nl/en/concerts/36977912-free-lunchtime-concert-budapest-festival-orchestra-academy",
+      "match": null
+    },
+    {
       "id": "9d443ae8b5cab967",
       "title": "filmHuis: DIY  Housing  Projects, You-Tube night",
       "date": "2026-05-20T17:30:00",
@@ -7252,6 +9056,50 @@
       "tickets_status": "available",
       "source": "melkweg",
       "source_url": "https://www.melkweg.nl/en/agenda/there-will-be-blood-2007-20-05-2026",
+      "match": null
+    },
+    {
+      "id": "0915dcfb60ff91ed",
+      "title": "Hatem & Suleika",
+      "date": "2026-05-20T20:15:00",
+      "date_end": null,
+      "venue": "Muziekgebouw aan 't IJ",
+      "venue_address": "Grote Zaal, Piet Heinkade 1, 1019 BR Amsterdam",
+      "event_type": "Concert",
+      "artists": [
+        "Amsterdam Sinfonietta, Candida Thompson, Kian Soltani",
+        "Kayhan Kalhor"
+      ],
+      "genres": [],
+      "price_min": 12.5,
+      "price_max": 49.0,
+      "tickets_url": "",
+      "tickets_status": "sold_out",
+      "source": "muziekgebouw",
+      "source_url": "https://www.muziekgebouw.nl/en/agenda/hatem-and-suleika-16s4",
+      "match": null
+    },
+    {
+      "id": "5c03eea62f111f41",
+      "title": "Iván Fischer & Budapest Festival Orchestra: Wagner",
+      "date": "2026-05-20T20:15:00",
+      "date_end": "2026-05-20T22:30:00",
+      "venue": "Het Concertgebouw",
+      "venue_address": "Main Hall",
+      "event_type": "Concert",
+      "artists": [
+        "WagnerDerde akte, derde scène",
+        "R. SchumannSymphony No. 3 in E-flat major, op. 97 'Rhenish'"
+      ],
+      "genres": [
+        "Orchestra"
+      ],
+      "price_min": 29.0,
+      "price_max": null,
+      "tickets_url": "https://www.concertgebouw.nl/en/concerts/7605200-ivan-fischer-budapest-festival-orchestra-wagner",
+      "tickets_status": "available",
+      "source": "concertgebouw",
+      "source_url": "https://www.concertgebouw.nl/en/concerts/7605200-ivan-fischer-budapest-festival-orchestra-wagner",
       "match": null
     },
     {
@@ -7605,6 +9453,29 @@
       "match": null
     },
     {
+      "id": "1609ca8c60899931",
+      "title": "Vivaldi's Four Seasons",
+      "date": "2026-05-21T19:30:00",
+      "date_end": "2026-05-21T21:30:00",
+      "venue": "Het Concertgebouw",
+      "venue_address": "Main Hall",
+      "event_type": "Concert",
+      "artists": [
+        "Vivaldiaria's",
+        "VivaldiThe Four Seasons, op. 8"
+      ],
+      "genres": [
+        "Classical"
+      ],
+      "price_min": 37.5,
+      "price_max": null,
+      "tickets_url": "https://www.concertgebouw.nl/en/concerts/14281545-vivaldis-four-seasons",
+      "tickets_status": "last_tickets",
+      "source": "concertgebouw",
+      "source_url": "https://www.concertgebouw.nl/en/concerts/14281545-vivaldis-four-seasons",
+      "match": null
+    },
+    {
       "id": "f56fa3f651be9a6c",
       "title": "Toni Geitani x Marmoucha Orchestra",
       "date": "2026-05-21T20:00:00",
@@ -7658,6 +9529,45 @@
       "tickets_status": "available",
       "source": "ra",
       "source_url": "https://ra.co/events/2435135",
+      "match": null
+    },
+    {
+      "id": "1d01ee5e2634ff63",
+      "title": "Bartolomeo Fortino-Shields",
+      "date": "2026-05-21T20:00:00",
+      "date_end": null,
+      "venue": "Splendor",
+      "venue_address": "Nieuwe Uilenburgerstraat 116, 1011 LX Amsterdam",
+      "event_type": "Concert",
+      "artists": [],
+      "genres": [],
+      "price_min": null,
+      "price_max": null,
+      "tickets_url": "https://splendor.stager.co/shop/default/events/111574249",
+      "tickets_status": "available",
+      "source": "splendor",
+      "source_url": "https://www.splendoramsterdam.com/agenda/111574249/bartolomeo-fortino-shields",
+      "match": null
+    },
+    {
+      "id": "667628abf6670d2d",
+      "title": "Steve Reich: Six Pianos",
+      "date": "2026-05-21T20:15:00",
+      "date_end": null,
+      "venue": "Muziekgebouw aan 't IJ",
+      "venue_address": "Grote Zaal, Piet Heinkade 1, 1019 BR Amsterdam",
+      "event_type": "Concert",
+      "artists": [
+        "Amaral, Croene, Van Houdt, Oya, Picavet",
+        "Shichijo"
+      ],
+      "genres": [],
+      "price_min": 12.5,
+      "price_max": 35.0,
+      "tickets_url": "",
+      "tickets_status": "sold_out",
+      "source": "muziekgebouw",
+      "source_url": "https://www.muziekgebouw.nl/en/agenda/steve-reich-six-pianos-qkfj",
       "match": null
     },
     {
@@ -7730,6 +9640,26 @@
       "tickets_status": "available",
       "source": "paradiso",
       "source_url": "https://www.paradiso.nl/en/program/okgiorgio/2792670",
+      "match": null
+    },
+    {
+      "id": "7805f27b8b8e2b1c",
+      "title": "Het Goede Pad",
+      "date": "2026-05-21T20:30:00",
+      "date_end": null,
+      "venue": "Splendor",
+      "venue_address": "Nieuwe Uilenburgerstraat 116, 1011 LX Amsterdam",
+      "event_type": "Concert",
+      "artists": [
+        "Ties Mellema presenteert LEDENCONCERT"
+      ],
+      "genres": [],
+      "price_min": null,
+      "price_max": null,
+      "tickets_url": "https://splendor.stager.co/shop/default/events/111572580",
+      "tickets_status": "available",
+      "source": "splendor",
+      "source_url": "https://www.splendoramsterdam.com/agenda/111572580/ledenconcert-ties-mellema",
       "match": null
     },
     {
@@ -8199,6 +10129,29 @@
       "match": null
     },
     {
+      "id": "8a07727fd1d4e8d8",
+      "title": "Mozart's Requiem and Eine kleine Nachtmusik",
+      "date": "2026-05-22T19:30:00",
+      "date_end": "2026-05-22T21:35:00",
+      "venue": "Het Concertgebouw",
+      "venue_address": "Main Hall",
+      "event_type": "Concert",
+      "artists": [
+        "MozartRequiem in d minor, KV 626",
+        "MozartAllegro aperto"
+      ],
+      "genres": [
+        "Classical"
+      ],
+      "price_min": 37.5,
+      "price_max": null,
+      "tickets_url": "https://www.concertgebouw.nl/en/concerts/13173399-mozarts-requiem-and-eine-kleine-nachtmusik",
+      "tickets_status": "last_tickets",
+      "source": "concertgebouw",
+      "source_url": "https://www.concertgebouw.nl/en/concerts/13173399-mozarts-requiem-and-eine-kleine-nachtmusik",
+      "match": null
+    },
+    {
       "id": "8beb672cccf12517",
       "title": "Here come the Drumz",
       "date": "2026-05-22T20:00:00",
@@ -8214,6 +10167,49 @@
       "tickets_status": "available",
       "source": "amsterdam_alt",
       "source_url": "https://www.amsterdamalternative.nl/agenda/21586",
+      "match": null
+    },
+    {
+      "id": "89a3c3c31e6bf577",
+      "title": "Nuala McKenna & Antonii Baryshevskyi",
+      "date": "2026-05-22T20:00:00",
+      "date_end": null,
+      "venue": "Splendor",
+      "venue_address": "Nieuwe Uilenburgerstraat 116, 1011 LX Amsterdam",
+      "event_type": "Concert",
+      "artists": [
+        "Nuala McKenna"
+      ],
+      "genres": [],
+      "price_min": null,
+      "price_max": null,
+      "tickets_url": "https://splendor.stager.co/shop/default/events/111648902",
+      "tickets_status": "available",
+      "source": "splendor",
+      "source_url": "https://www.splendoramsterdam.com/agenda/111648902/nuala-mckenna-antonii-baryshevskyi",
+      "match": null
+    },
+    {
+      "id": "ff8b3245fa0df7eb",
+      "title": "Anna Fedorova & Friends: Carnival of Sounds!",
+      "date": "2026-05-22T20:15:00",
+      "date_end": "2026-05-22T22:45:00",
+      "venue": "Het Concertgebouw",
+      "venue_address": "Recital Hall",
+      "event_type": "Concert",
+      "artists": [
+        "ChopinIntroduction et polonaise brillante in C major",
+        "VivaldiTrio Sonata in d minor, op. 1, nr. 12 'La follia'"
+      ],
+      "genres": [
+        "Chamber Music"
+      ],
+      "price_min": 39.5,
+      "price_max": null,
+      "tickets_url": "https://www.concertgebouw.nl/en/concerts/43353321-anna-fedorova-friends-carnival-of-sounds",
+      "tickets_status": "available",
+      "source": "concertgebouw",
+      "source_url": "https://www.concertgebouw.nl/en/concerts/43353321-anna-fedorova-friends-carnival-of-sounds",
       "match": null
     },
     {
@@ -9095,6 +11091,29 @@
       "match": null
     },
     {
+      "id": "8d20b1008fad9e71",
+      "title": "Euregio Youth Orchestra plays Shostakovich, Rachmaninoff and John Williams",
+      "date": "2026-05-23T14:15:00",
+      "date_end": "2026-05-23T16:15:00",
+      "venue": "Het Concertgebouw",
+      "venue_address": "Main Hall",
+      "event_type": "Concert",
+      "artists": [
+        "RachmaninoffCaprice bohémien, op. 12",
+        "WilliamsFlight to Neverland"
+      ],
+      "genres": [
+        "Orchestra"
+      ],
+      "price_min": 26.0,
+      "price_max": null,
+      "tickets_url": "https://www.concertgebouw.nl/en/concerts/36485016-euregio-youth-orchestra-plays-shostakovich-rachmaninoff-and-john-williams",
+      "tickets_status": "available",
+      "source": "concertgebouw",
+      "source_url": "https://www.concertgebouw.nl/en/concerts/36485016-euregio-youth-orchestra-plays-shostakovich-rachmaninoff-and-john-williams",
+      "match": null
+    },
+    {
       "id": "80245b4a3162a07f",
       "title": "Pretty Pissed 2026",
       "date": "2026-05-23T15:30:00",
@@ -9161,6 +11180,27 @@
       "tickets_status": "available",
       "source": "amsterdam_alt",
       "source_url": "https://www.amsterdamalternative.nl/agenda/21789",
+      "match": null
+    },
+    {
+      "id": "6c8a070f84397fe6",
+      "title": "About the River and the Sea",
+      "date": "2026-05-23T16:00:00",
+      "date_end": null,
+      "venue": "Muziekgebouw aan 't IJ",
+      "venue_address": "Kleine Zaal, Piet Heinkade 1, 1019 BR Amsterdam",
+      "event_type": "Concert",
+      "artists": [
+        "Um Al Gaith Collectief",
+        "World Opera Lab"
+      ],
+      "genres": [],
+      "price_min": 12.5,
+      "price_max": 20.0,
+      "tickets_url": "https://tickets.muziekgebouw.nl/en/buyingflow/tickets/58110/119715",
+      "tickets_status": "available",
+      "source": "muziekgebouw",
+      "source_url": "https://www.muziekgebouw.nl/en/agenda/about-the-river-and-the-sea-ml4s",
       "match": null
     },
     {
@@ -9242,6 +11282,29 @@
       "match": null
     },
     {
+      "id": "33d09bb219710cb7",
+      "title": "Vivaldi's Four Seasons",
+      "date": "2026-05-23T19:30:00",
+      "date_end": "2026-05-23T21:30:00",
+      "venue": "Het Concertgebouw",
+      "venue_address": "Main Hall",
+      "event_type": "Concert",
+      "artists": [
+        "Vivaldiaria's",
+        "VivaldiThe Four Seasons, op. 8"
+      ],
+      "genres": [
+        "Classical"
+      ],
+      "price_min": 37.5,
+      "price_max": null,
+      "tickets_url": "https://www.concertgebouw.nl/en/concerts/14281546-vivaldis-four-seasons",
+      "tickets_status": "last_tickets",
+      "source": "concertgebouw",
+      "source_url": "https://www.concertgebouw.nl/en/concerts/14281546-vivaldis-four-seasons",
+      "match": null
+    },
+    {
       "id": "b566e04816e7897a",
       "title": "Dj Gripper",
       "date": "2026-05-23T20:00:00",
@@ -9257,6 +11320,50 @@
       "tickets_status": "available",
       "source": "ra",
       "source_url": "https://ra.co/events/2367692",
+      "match": null
+    },
+    {
+      "id": "9e3aecb3fddd758c",
+      "title": "Messiaen’s war monument",
+      "date": "2026-05-23T20:15:00",
+      "date_end": null,
+      "venue": "Muziekgebouw aan 't IJ",
+      "venue_address": "Grote Zaal, Piet Heinkade 1, 1019 BR Amsterdam",
+      "event_type": "Concert",
+      "artists": [
+        "Isabelle Faust, Jörg Widmann, Jean-Guihen Queyras",
+        "Pierre-Laurent Aimard"
+      ],
+      "genres": [],
+      "price_min": 12.5,
+      "price_max": 59.0,
+      "tickets_url": "https://tickets.muziekgebouw.nl/en/buyingflow/tickets/43629/100453",
+      "tickets_status": "available",
+      "source": "muziekgebouw",
+      "source_url": "https://www.muziekgebouw.nl/en/agenda/messiaen-s-war-monument-r6q3",
+      "match": null
+    },
+    {
+      "id": "e9a20e1b6174890d",
+      "title": "Quatuor Danel & Quatuor Arod: Enescu's Octet",
+      "date": "2026-05-23T20:15:00",
+      "date_end": "2026-05-23T22:00:00",
+      "venue": "Het Concertgebouw",
+      "venue_address": "Recital Hall",
+      "event_type": "Concert",
+      "artists": [
+        "EnescuOctet in C major, op. 7",
+        "BrahmsString Sextet No. 2 in G major, op. 36"
+      ],
+      "genres": [
+        "Classical"
+      ],
+      "price_min": 29.0,
+      "price_max": null,
+      "tickets_url": "https://www.concertgebouw.nl/en/concerts/8505073-quatuor-danel-quatuor-arod-enescus-octet",
+      "tickets_status": "available",
+      "source": "concertgebouw",
+      "source_url": "https://www.concertgebouw.nl/en/concerts/8505073-quatuor-danel-quatuor-arod-enescus-octet",
       "match": null
     },
     {
@@ -9814,6 +11921,24 @@
       "match": null
     },
     {
+      "id": "29a1f6a5abc536df",
+      "title": "Not My Soul: Slavery, Law and Freedom",
+      "date": "2026-05-24T10:00:00",
+      "date_end": null,
+      "venue": "Allard Pierson, Amsterdam",
+      "venue_address": "",
+      "event_type": "Exhibition",
+      "artists": [],
+      "genres": [],
+      "price_min": null,
+      "price_max": null,
+      "tickets_url": "",
+      "tickets_status": "available",
+      "source": "museumkaart",
+      "source_url": "https://www.museum.nl/en/allard-pierson/exhibition/not-my-soul-slavery-law-and-freedom",
+      "match": null
+    },
+    {
       "id": "843b2f58b8464575",
       "title": "De Feministische Bibliotheek",
       "date": "2026-05-24T11:00:00",
@@ -9847,6 +11972,28 @@
       "tickets_status": "available",
       "source": "amsterdam_alt",
       "source_url": "https://www.amsterdamalternative.nl/agenda/21860",
+      "match": null
+    },
+    {
+      "id": "6c7cb0cc75d6f513",
+      "title": "Mendelssohn's A Midsummer Night’s Dream",
+      "date": "2026-05-24T11:00:00",
+      "date_end": "2026-05-24T12:00:00",
+      "venue": "Het Concertgebouw",
+      "venue_address": "Main Hall",
+      "event_type": "Concert",
+      "artists": [
+        "Felix MendelssohnA Midsummer Night's Dream"
+      ],
+      "genres": [
+        "Classical"
+      ],
+      "price_min": 21.0,
+      "price_max": null,
+      "tickets_url": "https://www.concertgebouw.nl/en/concerts/7557180-mendelssohns-a-midsummer-nights-dream",
+      "tickets_status": "available",
+      "source": "concertgebouw",
+      "source_url": "https://www.concertgebouw.nl/en/concerts/7557180-mendelssohns-a-midsummer-nights-dream",
       "match": null
     },
     {
@@ -10106,6 +12253,27 @@
       "match": null
     },
     {
+      "id": "ccb3edadebefe92a",
+      "title": "About the River and the Sea",
+      "date": "2026-05-24T16:00:00",
+      "date_end": null,
+      "venue": "Muziekgebouw aan 't IJ",
+      "venue_address": "Kleine Zaal, Piet Heinkade 1, 1019 BR Amsterdam",
+      "event_type": "Concert",
+      "artists": [
+        "Um Al Gaith Collectief",
+        "World Opera Lab"
+      ],
+      "genres": [],
+      "price_min": 12.5,
+      "price_max": 20.0,
+      "tickets_url": "https://tickets.muziekgebouw.nl/en/buyingflow/tickets/58111/119716",
+      "tickets_status": "available",
+      "source": "muziekgebouw",
+      "source_url": "https://www.muziekgebouw.nl/en/agenda/about-the-river-and-the-sea-jf19",
+      "match": null
+    },
+    {
       "id": "9ca3f348fd1c0f67",
       "title": "Tjade & Friends",
       "date": "2026-05-24T17:00:00",
@@ -10141,24 +12309,6 @@
       "tickets_status": "available",
       "source": "amsterdam_alt",
       "source_url": "https://www.amsterdamalternative.nl/agenda/21761",
-      "match": null
-    },
-    {
-      "id": "1114570f4e7b0536",
-      "title": "Koen Visser & Roman Willems",
-      "date": "2026-05-24T18:00:00",
-      "date_end": null,
-      "venue": "Splendor",
-      "venue_address": "",
-      "event_type": "",
-      "artists": [],
-      "genres": [],
-      "price_min": 12.0,
-      "price_max": null,
-      "tickets_url": "",
-      "tickets_status": "available",
-      "source": "amsterdam_alt",
-      "source_url": "https://www.amsterdamalternative.nl/agenda/21646",
       "match": null
     },
     {
@@ -10201,6 +12351,46 @@
       "tickets_status": "available",
       "source": "amsterdam_alt",
       "source_url": "https://www.amsterdamalternative.nl/agenda/21796",
+      "match": null
+    },
+    {
+      "id": "c217909431802b02",
+      "title": "Emmylou Harris - European Farewell Tour",
+      "date": "2026-05-24T19:30:00",
+      "date_end": "2026-05-24T22:15:00",
+      "venue": "Het Concertgebouw",
+      "venue_address": "Main Hall",
+      "event_type": "Concert",
+      "artists": [],
+      "genres": [
+        "Classical"
+      ],
+      "price_min": 59.0,
+      "price_max": null,
+      "tickets_url": "https://www.concertgebouw.nl/en/concerts/38042352-emmylou-harris---european-farewell-tour",
+      "tickets_status": "sold_out",
+      "source": "concertgebouw",
+      "source_url": "https://www.concertgebouw.nl/en/concerts/38042352-emmylou-harris---european-farewell-tour",
+      "match": null
+    },
+    {
+      "id": "1114570f4e7b0536",
+      "title": "Koen Visser & Roman Willems",
+      "date": "2026-05-24T20:00:00",
+      "date_end": null,
+      "venue": "Splendor",
+      "venue_address": "Nieuwe Uilenburgerstraat 116, 1011 LX Amsterdam",
+      "event_type": "Concert",
+      "artists": [
+        "Anne La Berge"
+      ],
+      "genres": [],
+      "price_min": null,
+      "price_max": null,
+      "tickets_url": "https://splendor.stager.co/shop/default/events/111646413",
+      "tickets_status": "available",
+      "source": "splendor",
+      "source_url": "https://www.splendoramsterdam.com/agenda/111646413/koen-visser-roman-willems",
       "match": null
     },
     {
@@ -10441,6 +12631,60 @@
       "match": null
     },
     {
+      "id": "5f77f812ec4cfe6b",
+      "title": "FAKE!",
+      "date": "2026-05-25T09:00:00",
+      "date_end": null,
+      "venue": "Rijksmuseum Amsterdam, Amsterdam",
+      "venue_address": "",
+      "event_type": "Exhibition",
+      "artists": [],
+      "genres": [],
+      "price_min": null,
+      "price_max": null,
+      "tickets_url": "",
+      "tickets_status": "available",
+      "source": "museumkaart",
+      "source_url": "https://www.museum.nl/en/rijksmuseum-amsterdam/exhibition/fake",
+      "match": null
+    },
+    {
+      "id": "35a56b598490325b",
+      "title": "Exhibition Metamorphoses at the Rijksmuseum",
+      "date": "2026-05-25T09:00:00",
+      "date_end": null,
+      "venue": "Rijksmuseum Amsterdam, Amsterdam",
+      "venue_address": "",
+      "event_type": "Exhibition",
+      "artists": [],
+      "genres": [],
+      "price_min": null,
+      "price_max": null,
+      "tickets_url": "",
+      "tickets_status": "available",
+      "source": "museumkaart",
+      "source_url": "https://www.museum.nl/en/rijksmuseum-amsterdam/exhibition/exhibition-metamorphoses-at-the-rijksmuseum",
+      "match": null
+    },
+    {
+      "id": "762e6eaac738104d",
+      "title": "Rembrandts Masterclass",
+      "date": "2026-05-25T10:00:00",
+      "date_end": null,
+      "venue": "Museum Rembrandthuis, Amsterdam",
+      "venue_address": "",
+      "event_type": "Exhibition",
+      "artists": [],
+      "genres": [],
+      "price_min": null,
+      "price_max": null,
+      "tickets_url": "",
+      "tickets_status": "available",
+      "source": "museumkaart",
+      "source_url": "https://www.museum.nl/en/museum-rembrandthuis/exhibition/rembrandts-masterclass",
+      "match": null
+    },
+    {
       "id": "7aad16a278766f35",
       "title": "Harimau (3+)",
       "date": "2026-05-25T13:00:00",
@@ -10474,6 +12718,27 @@
       "tickets_status": "available",
       "source": "amsterdam_alt",
       "source_url": "https://www.amsterdamalternative.nl/agenda/21861",
+      "match": null
+    },
+    {
+      "id": "90cbc3f9ed8655a5",
+      "title": "About the River and the Sea",
+      "date": "2026-05-25T16:00:00",
+      "date_end": null,
+      "venue": "Muziekgebouw aan 't IJ",
+      "venue_address": "Kleine Zaal, Piet Heinkade 1, 1019 BR Amsterdam",
+      "event_type": "Concert",
+      "artists": [
+        "Um Al Gaith Collectief",
+        "World Opera Lab"
+      ],
+      "genres": [],
+      "price_min": 12.5,
+      "price_max": 20.0,
+      "tickets_url": "https://tickets.muziekgebouw.nl/en/buyingflow/tickets/58112/119717",
+      "tickets_status": "available",
+      "source": "muziekgebouw",
+      "source_url": "https://www.muziekgebouw.nl/en/agenda/about-the-river-and-the-sea-yqrn",
       "match": null
     },
     {
@@ -10544,6 +12809,26 @@
       "match": null
     },
     {
+      "id": "dcabbf9bcbe88267",
+      "title": "Antwerp Philharmonic Orchestra plays The Focus Symphony",
+      "date": "2026-05-25T19:00:00",
+      "date_end": "2026-05-25T21:20:00",
+      "venue": "Het Concertgebouw",
+      "venue_address": "Main Hall",
+      "event_type": "Concert",
+      "artists": [],
+      "genres": [
+        "Orchestra"
+      ],
+      "price_min": 52.5,
+      "price_max": null,
+      "tickets_url": "https://www.concertgebouw.nl/en/concerts/32631996-antwerp-philharmonic-orchestra-plays-the-focus-symphony",
+      "tickets_status": "available",
+      "source": "concertgebouw",
+      "source_url": "https://www.concertgebouw.nl/en/concerts/32631996-antwerp-philharmonic-orchestra-plays-the-focus-symphony",
+      "match": null
+    },
+    {
       "id": "12b9e1c2ec44ca5b",
       "title": "Jutes",
       "date": "2026-05-25T19:30:00",
@@ -10568,6 +12853,27 @@
       "match": null
     },
     {
+      "id": "23b79cc451e88e15",
+      "title": "The Legacy Tour",
+      "date": "2026-05-25T20:15:00",
+      "date_end": null,
+      "venue": "Muziekgebouw aan 't IJ",
+      "venue_address": "Grote Zaal, Piet Heinkade 1, 1019 BR Amsterdam",
+      "event_type": "Concert",
+      "artists": [
+        "Marcel Khalife, Rami Khalife",
+        "Sary Khalife"
+      ],
+      "genres": [],
+      "price_min": 49.0,
+      "price_max": 49.0,
+      "tickets_url": "",
+      "tickets_status": "sold_out",
+      "source": "muziekgebouw",
+      "source_url": "https://www.muziekgebouw.nl/en/agenda/the-legacy-tour-xg7t",
+      "match": null
+    },
+    {
       "id": "ec76b79f341caee0",
       "title": "Son Mieux",
       "date": "2026-05-25T20:30:00",
@@ -10588,6 +12894,26 @@
       "tickets_status": "available",
       "source": "paradiso",
       "source_url": "https://www.paradiso.nl/en/program/son-mieux/2623743",
+      "match": null
+    },
+    {
+      "id": "515f18eb28b19979",
+      "title": "STABAT MATER  van Luigi Boccherini",
+      "date": "2026-05-25T20:30:00",
+      "date_end": null,
+      "venue": "Splendor",
+      "venue_address": "Nieuwe Uilenburgerstraat 116, 1011 LX Amsterdam",
+      "event_type": "Concert",
+      "artists": [
+        "Claron McFadden zingt:"
+      ],
+      "genres": [],
+      "price_min": null,
+      "price_max": null,
+      "tickets_url": "https://splendor.stager.co/shop/default/events/111630135",
+      "tickets_status": "available",
+      "source": "splendor",
+      "source_url": "https://www.splendoramsterdam.com/agenda/111630135/stabat-mater-van-luigi-boccherini",
       "match": null
     },
     {
@@ -10819,6 +13145,49 @@
       "match": null
     },
     {
+      "id": "5921405a24fcdce0",
+      "title": "CvA's Birdflight Band // North Star",
+      "date": "2026-05-26T20:00:00",
+      "date_end": null,
+      "venue": "Splendor",
+      "venue_address": "Nieuwe Uilenburgerstraat 116, 1011 LX Amsterdam",
+      "event_type": "Concert",
+      "artists": [
+        "Oene van Geel"
+      ],
+      "genres": [],
+      "price_min": null,
+      "price_max": null,
+      "tickets_url": "https://splendor.stager.co/shop/default/events/111649429",
+      "tickets_status": "available",
+      "source": "splendor",
+      "source_url": "https://www.splendoramsterdam.com/agenda/111649429/north-star-comes-to-splendor",
+      "match": null
+    },
+    {
+      "id": "910eccd684de7031",
+      "title": "Pianist Antoine Préat makes his debut in The Concertgebouw",
+      "date": "2026-05-26T20:15:00",
+      "date_end": "2026-05-26T22:25:00",
+      "venue": "Het Concertgebouw",
+      "venue_address": "Recital Hall",
+      "event_type": "Concert",
+      "artists": [
+        "ProkofjevParts from 'Romeo and Juliet', op.  75",
+        "R. SchumannArabeske in C major, op. 18"
+      ],
+      "genres": [
+        "Classical"
+      ],
+      "price_min": 25.5,
+      "price_max": null,
+      "tickets_url": "https://www.concertgebouw.nl/en/concerts/19026833-pianist-antoine-preat-makes-his-debut-in-the-concertgebouw",
+      "tickets_status": "available",
+      "source": "concertgebouw",
+      "source_url": "https://www.concertgebouw.nl/en/concerts/19026833-pianist-antoine-preat-makes-his-debut-in-the-concertgebouw",
+      "match": null
+    },
+    {
       "id": "468cd9ba825333a6",
       "title": "Son Mieux",
       "date": "2026-05-26T20:30:00",
@@ -10987,6 +13356,30 @@
       "tickets_status": "available",
       "source": "amsterdam_alt",
       "source_url": "https://www.amsterdamalternative.nl/agenda/21198",
+      "match": null
+    },
+    {
+      "id": "99758fb456eeb856",
+      "title": "Free Lunchtime Concert: Organ Concert Laurens de Man",
+      "date": "2026-05-27T12:30:00",
+      "date_end": "2026-05-27T13:00:00",
+      "venue": "Het Concertgebouw",
+      "venue_address": "Main Hall",
+      "event_type": "Concert",
+      "artists": [
+        "KorngoldKings Row Suite (arr. L. de Man)",
+        "BarberAdagio for Strings, op.  11 (arr. W. Strickland)"
+      ],
+      "genres": [
+        "Organ",
+        "Free Lunchtime"
+      ],
+      "price_min": null,
+      "price_max": null,
+      "tickets_url": "https://www.concertgebouw.nl/en/concerts/36977913-free-lunchtime-concert-organ-concert-laurens-de-man",
+      "tickets_status": "free",
+      "source": "concertgebouw",
+      "source_url": "https://www.concertgebouw.nl/en/concerts/36977913-free-lunchtime-concert-organ-concert-laurens-de-man",
       "match": null
     },
     {
@@ -11160,6 +13553,55 @@
       "tickets_status": "available",
       "source": "ra",
       "source_url": "https://ra.co/events/2431418",
+      "match": null
+    },
+    {
+      "id": "3a47a36be4a73867",
+      "title": "Maxim Emelyanychev & Scottish Chamber Orchestra: Beethoven & Mozart",
+      "date": "2026-05-27T20:15:00",
+      "date_end": "2026-05-27T22:15:00",
+      "venue": "Het Concertgebouw",
+      "venue_address": "Main Hall",
+      "event_type": "Concert",
+      "artists": [
+        "BeethovenSymphony No. 7 in A major, op. 92",
+        "MozartPiano Concerto No. 25 in C major, KV 503"
+      ],
+      "genres": [
+        "Orchestra",
+        "Chamber Music",
+        "Piano"
+      ],
+      "price_min": 35.0,
+      "price_max": null,
+      "tickets_url": "https://www.concertgebouw.nl/en/concerts/7803913-maxim-emelyanychev-scottish-chamber-orchestra-beethoven-mozart",
+      "tickets_status": "available",
+      "source": "concertgebouw",
+      "source_url": "https://www.concertgebouw.nl/en/concerts/7803913-maxim-emelyanychev-scottish-chamber-orchestra-beethoven-mozart",
+      "match": null
+    },
+    {
+      "id": "109e80bb3776dec4",
+      "title": "Rising Stars: Trio Concept",
+      "date": "2026-05-27T20:15:00",
+      "date_end": "2026-05-27T21:45:00",
+      "venue": "Het Concertgebouw",
+      "venue_address": "Recital Hall",
+      "event_type": "Concert",
+      "artists": [
+        "ElgarMarch for the Grafton family",
+        "RavelPiano Trio in A minor"
+      ],
+      "genres": [
+        "Chamber Music",
+        "Piano"
+      ],
+      "price_min": 19.0,
+      "price_max": null,
+      "tickets_url": "https://www.concertgebouw.nl/en/concerts/8505074-rising-stars-trio-concept",
+      "tickets_status": "available",
+      "source": "concertgebouw",
+      "source_url": "https://www.concertgebouw.nl/en/concerts/8505074-rising-stars-trio-concept",
       "match": null
     },
     {
@@ -11559,6 +14001,67 @@
       "tickets_status": "available",
       "source": "ra",
       "source_url": "https://ra.co/events/2432910",
+      "match": null
+    },
+    {
+      "id": "3ce677982c56d50a",
+      "title": "Milouska Meulens in Calefax-land",
+      "date": "2026-05-28T20:15:00",
+      "date_end": null,
+      "venue": "Muziekgebouw aan 't IJ",
+      "venue_address": "Grote Zaal, Piet Heinkade 1, 1019 BR Amsterdam",
+      "event_type": "Concert",
+      "artists": [
+        "Calefax",
+        "Milouska Meulens"
+      ],
+      "genres": [],
+      "price_min": 12.5,
+      "price_max": 40.0,
+      "tickets_url": "https://tickets.muziekgebouw.nl/en/buyingflow/tickets/44160/101280",
+      "tickets_status": "available",
+      "source": "muziekgebouw",
+      "source_url": "https://www.muziekgebouw.nl/en/agenda/milouska-meulens-in-calefax-land-qvrh",
+      "match": null
+    },
+    {
+      "id": "7b6bb1626126d4c1",
+      "title": "The Story: Stravinsky in Paris (Dutch spoken)",
+      "date": "2026-05-28T20:15:00",
+      "date_end": "2026-05-28T22:35:00",
+      "venue": "Het Concertgebouw",
+      "venue_address": "Main Hall",
+      "event_type": "Concert",
+      "artists": [],
+      "genres": [
+        "Classical"
+      ],
+      "price_min": 25.0,
+      "price_max": null,
+      "tickets_url": "https://www.concertgebouw.nl/en/concerts/8110227-the-story-stravinsky-in-paris-dutch-spoken",
+      "tickets_status": "available",
+      "source": "concertgebouw",
+      "source_url": "https://www.concertgebouw.nl/en/concerts/8110227-the-story-stravinsky-in-paris-dutch-spoken",
+      "match": null
+    },
+    {
+      "id": "f3201a36a58da36a",
+      "title": "Trafassi Jubilee Concert",
+      "date": "2026-05-28T20:15:00",
+      "date_end": "2026-05-28T22:15:00",
+      "venue": "Het Concertgebouw",
+      "venue_address": "Recital Hall",
+      "event_type": "Concert",
+      "artists": [],
+      "genres": [
+        "Classical"
+      ],
+      "price_min": 25.0,
+      "price_max": null,
+      "tickets_url": "https://www.concertgebouw.nl/en/concerts/45141656-trafassi-jubilee-concert",
+      "tickets_status": "sold_out",
+      "source": "concertgebouw",
+      "source_url": "https://www.concertgebouw.nl/en/concerts/45141656-trafassi-jubilee-concert",
       "match": null
     },
     {
@@ -12258,6 +14761,50 @@
       }
     },
     {
+      "id": "556be27cf114bffa",
+      "title": "Masters of Anatolia",
+      "date": "2026-05-29T20:15:00",
+      "date_end": null,
+      "venue": "Muziekgebouw aan 't IJ",
+      "venue_address": "Grote Zaal, Piet Heinkade 1, 1019 BR Amsterdam",
+      "event_type": "Concert",
+      "artists": [
+        "Mercan & Erdal Erzincan",
+        "Samiye & Zeynel Demir"
+      ],
+      "genres": [],
+      "price_min": 28.0,
+      "price_max": 35.0,
+      "tickets_url": "https://tickets.muziekgebouw.nl/en/buyingflow/tickets/43706/100595",
+      "tickets_status": "available",
+      "source": "muziekgebouw",
+      "source_url": "https://www.muziekgebouw.nl/en/agenda/masters-of-anatolia-93qy",
+      "match": null
+    },
+    {
+      "id": "6dcd6b9cf76e9143",
+      "title": "Danish String Quartet: Ravel and Stravinsky",
+      "date": "2026-05-29T20:15:00",
+      "date_end": "2026-05-29T22:05:00",
+      "venue": "Het Concertgebouw",
+      "venue_address": "Recital Hall",
+      "event_type": "Concert",
+      "artists": [
+        "RavelString Quartet in F major",
+        "StravinskySuite Italienne (arr. R. Tonsgaard Sørensen)"
+      ],
+      "genres": [
+        "Chamber Music"
+      ],
+      "price_min": 35.0,
+      "price_max": null,
+      "tickets_url": "https://www.concertgebouw.nl/en/concerts/8110492-danish-string-quartet-ravel-and-stravinsky",
+      "tickets_status": "available",
+      "source": "concertgebouw",
+      "source_url": "https://www.concertgebouw.nl/en/concerts/8110492-danish-string-quartet-ravel-and-stravinsky",
+      "match": null
+    },
+    {
       "id": "6e6e7da54039d7e0",
       "title": "Gitkin",
       "date": "2026-05-29T20:30:00",
@@ -12871,6 +15418,29 @@
       "match": null
     },
     {
+      "id": "4a6dbb2189538538",
+      "title": "Lahav Shani conducts Mahler 4",
+      "date": "2026-05-30T14:15:00",
+      "date_end": "2026-05-30T16:30:00",
+      "venue": "Het Concertgebouw",
+      "venue_address": "Main Hall",
+      "event_type": "Concert",
+      "artists": [
+        "MahlerSymphony No. 4 in G major",
+        "J. WagenaarOuverture 'Cyrano de Bergerac'"
+      ],
+      "genres": [
+        "Orchestra"
+      ],
+      "price_min": 45.0,
+      "price_max": null,
+      "tickets_url": "https://www.concertgebouw.nl/en/concerts/8924599-lahav-shani-conducts-mahler-4",
+      "tickets_status": "available",
+      "source": "concertgebouw",
+      "source_url": "https://www.concertgebouw.nl/en/concerts/8924599-lahav-shani-conducts-mahler-4",
+      "match": null
+    },
+    {
       "id": "8099fb6cbf8f78d0",
       "title": "Amsterdam Sessions V",
       "date": "2026-05-30T17:00:00",
@@ -13150,6 +15720,72 @@
       "tickets_status": "available",
       "source": "ra",
       "source_url": "https://ra.co/events/2426459",
+      "match": null
+    },
+    {
+      "id": "ffb4fcd4f91cc2f0",
+      "title": "Schubert’s Impromptus",
+      "date": "2026-05-30T20:15:00",
+      "date_end": null,
+      "venue": "Muziekgebouw aan 't IJ",
+      "venue_address": "Grote Zaal, Piet Heinkade 1, 1019 BR Amsterdam",
+      "event_type": "Concert",
+      "artists": [
+        "Imogen Cooper"
+      ],
+      "genres": [],
+      "price_min": 12.5,
+      "price_max": 49.0,
+      "tickets_url": "https://tickets.muziekgebouw.nl/en/buyingflow/tickets/43603/100397",
+      "tickets_status": "available",
+      "source": "muziekgebouw",
+      "source_url": "https://www.muziekgebouw.nl/en/agenda/schubert-s-impromptus-np6d",
+      "match": null
+    },
+    {
+      "id": "de433038eef33972",
+      "title": "Lorenzo Viotti conducts Rachmaninoff's Symfonic Dances",
+      "date": "2026-05-30T20:15:00",
+      "date_end": "2026-05-30T22:15:00",
+      "venue": "Het Concertgebouw",
+      "venue_address": "Main Hall",
+      "event_type": "Concert",
+      "artists": [
+        "RachmaninoffSymphonic Dances, op. 45",
+        "SjostakovitsjViolin Concerto No. 2, op. 129"
+      ],
+      "genres": [
+        "Orchestra"
+      ],
+      "price_min": 35.0,
+      "price_max": null,
+      "tickets_url": "https://www.concertgebouw.nl/en/concerts/9336096-lorenzo-viotti-conducts-rachmaninoffs-symfonic-dances",
+      "tickets_status": "available",
+      "source": "concertgebouw",
+      "source_url": "https://www.concertgebouw.nl/en/concerts/9336096-lorenzo-viotti-conducts-rachmaninoffs-symfonic-dances",
+      "match": null
+    },
+    {
+      "id": "588b960fd0269b16",
+      "title": "Danish String Quartet: Ravel and Stravinsky",
+      "date": "2026-05-30T20:15:00",
+      "date_end": "2026-05-30T22:05:00",
+      "venue": "Het Concertgebouw",
+      "venue_address": "Recital Hall",
+      "event_type": "Concert",
+      "artists": [
+        "RavelString Quartet in F major",
+        "StravinskySuite Italienne (arr. R. Tonsgaard Sørensen)"
+      ],
+      "genres": [
+        "Chamber Music"
+      ],
+      "price_min": 35.0,
+      "price_max": null,
+      "tickets_url": "https://www.concertgebouw.nl/en/concerts/8110493-danish-string-quartet-ravel-and-stravinsky",
+      "tickets_status": "available",
+      "source": "concertgebouw",
+      "source_url": "https://www.concertgebouw.nl/en/concerts/8110493-danish-string-quartet-ravel-and-stravinsky",
       "match": null
     },
     {
@@ -13791,6 +16427,29 @@
       "match": null
     },
     {
+      "id": "e6f5eb39e663d558",
+      "title": "Spanish Sunday Morning with Carmen, Falla and Rimsky-Korsakov",
+      "date": "2026-05-31T11:00:00",
+      "date_end": "2026-05-31T12:00:00",
+      "venue": "Het Concertgebouw",
+      "venue_address": "Main Hall",
+      "event_type": "Concert",
+      "artists": [
+        "FallaSuite 'El amor brujo'",
+        "SarasateCarmen Fantasy, op. 25"
+      ],
+      "genres": [
+        "Classical"
+      ],
+      "price_min": 21.0,
+      "price_max": null,
+      "tickets_url": "https://www.concertgebouw.nl/en/concerts/7557181-spanish-sunday-morning-with-carmen-falla-and-rimsky-korsakov",
+      "tickets_status": "available",
+      "source": "concertgebouw",
+      "source_url": "https://www.concertgebouw.nl/en/concerts/7557181-spanish-sunday-morning-with-carmen-falla-and-rimsky-korsakov",
+      "match": null
+    },
+    {
       "id": "e48e9e8fd3173eee",
       "title": "First Swim Le Bateau",
       "date": "2026-05-31T12:00:00",
@@ -13913,6 +16572,70 @@
       "match": null
     },
     {
+      "id": "99240bc3d90f21db",
+      "title": "Lorenzo Viotti conducts Rachmaninoff's Symfonic Dances",
+      "date": "2026-05-31T14:15:00",
+      "date_end": "2026-05-31T16:15:00",
+      "venue": "Het Concertgebouw",
+      "venue_address": "Main Hall",
+      "event_type": "Concert",
+      "artists": [
+        "RachmaninoffSymphonic Dances, op. 45",
+        "SjostakovitsjViolin Concerto No. 2, op. 129"
+      ],
+      "genres": [
+        "Orchestra"
+      ],
+      "price_min": 35.0,
+      "price_max": null,
+      "tickets_url": "https://www.concertgebouw.nl/en/concerts/9336097-lorenzo-viotti-conducts-rachmaninoffs-symfonic-dances",
+      "tickets_status": "available",
+      "source": "concertgebouw",
+      "source_url": "https://www.concertgebouw.nl/en/concerts/9336097-lorenzo-viotti-conducts-rachmaninoffs-symfonic-dances",
+      "match": null
+    },
+    {
+      "id": "1e63f62f4dae1917",
+      "title": "SoundLAB workshop",
+      "date": "2026-05-31T15:00:00",
+      "date_end": null,
+      "venue": "Muziekgebouw aan 't IJ",
+      "venue_address": "Atriumzaal, Piet Heinkade 1, 1019 BR Amsterdam",
+      "event_type": "Concert",
+      "artists": [
+        "Workshop for adults"
+      ],
+      "genres": [],
+      "price_min": null,
+      "price_max": null,
+      "tickets_url": "",
+      "tickets_status": "sold_out",
+      "source": "muziekgebouw",
+      "source_url": "https://www.muziekgebouw.nl/en/agenda/soundlab-workshop-bzqw",
+      "match": null
+    },
+    {
+      "id": "4d654a3e75f13546",
+      "title": "Black Sun",
+      "date": "2026-05-31T16:00:00",
+      "date_end": null,
+      "venue": "Muziekgebouw aan 't IJ",
+      "venue_address": "Grote Zaal, Piet Heinkade 1, 1019 BR Amsterdam",
+      "event_type": "Concert",
+      "artists": [
+        "Nieuw Amsterdams Peil",
+        "Katrien Baerts"
+      ],
+      "genres": [],
+      "price_min": 12.5,
+      "price_max": 29.0,
+      "tickets_url": "https://tickets.muziekgebouw.nl/en/buyingflow/tickets/43634/100458",
+      "tickets_status": "available",
+      "source": "muziekgebouw",
+      "source_url": "https://www.muziekgebouw.nl/en/agenda/black-sun-946r",
+      "match": null
+    },
+    {
       "id": "f1cc3c681ffef07c",
       "title": "SKDG - BRET",
       "date": "2026-05-31T17:00:00",
@@ -14030,6 +16753,29 @@
       "tickets_status": "available",
       "source": "melkweg",
       "source_url": "https://www.melkweg.nl/en/agenda/john-vincent-iii-31-05-2026",
+      "match": null
+    },
+    {
+      "id": "dddf88e56b4ec651",
+      "title": "Soprano Kristen Witmer sings Bach and Montéclair",
+      "date": "2026-05-31T20:15:00",
+      "date_end": "2026-05-31T22:35:00",
+      "venue": "Het Concertgebouw",
+      "venue_address": "Recital Hall",
+      "event_type": "Concert",
+      "artists": [
+        "M.P. MonteclairCantata 'La Mort de Didon'",
+        "J.S. BachSuite for Orchestra No. 3 in D major, BWV 1068"
+      ],
+      "genres": [
+        "Orchestra"
+      ],
+      "price_min": 35.0,
+      "price_max": null,
+      "tickets_url": "https://www.concertgebouw.nl/en/concerts/9127710-soprano-kristen-witmer-sings-bach-and-monteclair",
+      "tickets_status": "available",
+      "source": "concertgebouw",
+      "source_url": "https://www.concertgebouw.nl/en/concerts/9127710-soprano-kristen-witmer-sings-bach-and-monteclair",
       "match": null
     },
     {
@@ -14386,6 +17132,24 @@
       "match": null
     },
     {
+      "id": "0383742c67c5ad6e",
+      "title": "João Snikkers + Joséphine Aguerre-Zwart",
+      "date": "2026-06-03T12:30:00",
+      "date_end": null,
+      "venue": "Muziekgebouw aan 't IJ",
+      "venue_address": "Grote Zaal, Piet Heinkade 1, 1019 BR Amsterdam",
+      "event_type": "Concert",
+      "artists": [],
+      "genres": [],
+      "price_min": 6.5,
+      "price_max": 6.5,
+      "tickets_url": "https://tickets.muziekgebouw.nl/en/buyingflow/tickets/56384/117226",
+      "tickets_status": "available",
+      "source": "muziekgebouw",
+      "source_url": "https://www.muziekgebouw.nl/en/agenda/joao-snikkers-josephine-aguerre-zwart-cx93",
+      "match": null
+    },
+    {
       "id": "f20a4bfbe3fd4d40",
       "title": "16mm Cult Movie Night",
       "date": "2026-06-03T17:30:00",
@@ -14481,6 +17245,27 @@
       "tickets_status": "available",
       "source": "ra",
       "source_url": "https://ra.co/events/2436610",
+      "match": null
+    },
+    {
+      "id": "3823fe727be686d7",
+      "title": "If music...",
+      "date": "2026-06-03T20:15:00",
+      "date_end": null,
+      "venue": "Muziekgebouw aan 't IJ",
+      "venue_address": "Grote Zaal, Piet Heinkade 1, 1019 BR Amsterdam",
+      "event_type": "Concert",
+      "artists": [
+        "Jakub Józef Orliński",
+        "Michał Biel"
+      ],
+      "genres": [],
+      "price_min": 12.5,
+      "price_max": 65.0,
+      "tickets_url": "",
+      "tickets_status": "sold_out",
+      "source": "muziekgebouw",
+      "source_url": "https://www.muziekgebouw.nl/en/agenda/if-music-d45h",
       "match": null
     },
     {
@@ -14790,7 +17575,7 @@
     {
       "id": "8039ab457bfa5e33",
       "title": "Mokum Records",
-      "date": "2026-06-05T06:00:00",
+      "date": "2026-06-05T07:16:00",
       "date_end": null,
       "venue": "Paradiso",
       "venue_address": "Paradiso - Grote Zaal, Paradiso - Kelder",
@@ -14989,6 +17774,26 @@
       "tickets_status": "available",
       "source": "paradiso",
       "source_url": "https://www.paradiso.nl/en/program/puntjudith/2769020",
+      "match": null
+    },
+    {
+      "id": "5512b98e0ddd4d90",
+      "title": "Sneak preview De Schat van Scharlaken Rackham",
+      "date": "2026-06-05T19:45:00",
+      "date_end": null,
+      "venue": "Muziekgebouw aan 't IJ",
+      "venue_address": "Atrium, Piet Heinkade 1, 1019 BR Amsterdam",
+      "event_type": "Concert",
+      "artists": [
+        "Students HKU Utrechts Conservatorium"
+      ],
+      "genres": [],
+      "price_min": null,
+      "price_max": null,
+      "tickets_url": "",
+      "tickets_status": "available",
+      "source": "muziekgebouw",
+      "source_url": "https://www.muziekgebouw.nl/en/agenda/sneak-preview-de-schat-van-scharlaken-rackham-tmd3",
       "match": null
     },
     {
@@ -16146,6 +18951,30 @@
       "match": null
     },
     {
+      "id": "f8e6437f37f19e90",
+      "title": "Split Tooth: Saputjiji",
+      "date": "2026-06-07T20:30:00",
+      "date_end": null,
+      "venue": "Muziekgebouw aan 't IJ",
+      "venue_address": "Grote Zaal, Piet Heinkade 1, 1019 BR Amsterdam",
+      "event_type": "Concert",
+      "artists": [
+        "Tanya Tagaq"
+      ],
+      "genres": [],
+      "price_min": 22.75,
+      "price_max": 39.0,
+      "tickets_url": "https://tickets.muziekgebouw.nl/en/buyingflow/tickets/55754/116586",
+      "tickets_status": "available",
+      "source": "muziekgebouw",
+      "source_url": "https://www.muziekgebouw.nl/en/agenda/split-tooth-saputjiji-tmb4",
+      "match": {
+        "type": "Library Match",
+        "reason": "In your TIDAL library",
+        "score": 1
+      }
+    },
+    {
       "id": "deaecd29633be26e",
       "title": "Iliassopdebeat - Drugs & Geld Tour (10yr anniversary)",
       "date": "2026-06-07T22:00:00",
@@ -16358,6 +19187,26 @@
       "match": null
     },
     {
+      "id": "7f87ad1987e9f767",
+      "title": "Salukat",
+      "date": "2026-06-09T20:30:00",
+      "date_end": null,
+      "venue": "Muziekgebouw aan 't IJ",
+      "venue_address": "Grote Zaal, Piet Heinkade 1, 1019 BR Amsterdam",
+      "event_type": "Concert",
+      "artists": [
+        "Jameszoo, Gamelan Salukat, Het Muziek"
+      ],
+      "genres": [],
+      "price_min": 22.75,
+      "price_max": 39.0,
+      "tickets_url": "https://tickets.muziekgebouw.nl/en/buyingflow/tickets/55870/116587",
+      "tickets_status": "available",
+      "source": "muziekgebouw",
+      "source_url": "https://www.muziekgebouw.nl/en/agenda/salukat-mlz8",
+      "match": null
+    },
+    {
       "id": "471b146be8984769",
       "title": "[PHANTOM GROUP] SWEEP SELECTS",
       "date": "2026-06-09T23:00:00",
@@ -16537,6 +19386,26 @@
         "reason": "Similar to Laura Marling, Naima Bock, Dana Gavanski",
         "score": 6
       }
+    },
+    {
+      "id": "68f7e5dee236c679",
+      "title": "Salukat",
+      "date": "2026-06-10T20:30:00",
+      "date_end": null,
+      "venue": "Muziekgebouw aan 't IJ",
+      "venue_address": "Grote Zaal, Piet Heinkade 1, 1019 BR Amsterdam",
+      "event_type": "Concert",
+      "artists": [
+        "Jameszoo, Gamelan Salukat, Het Muziek"
+      ],
+      "genres": [],
+      "price_min": 22.75,
+      "price_max": 39.0,
+      "tickets_url": "https://tickets.muziekgebouw.nl/en/buyingflow/tickets/55871/116588",
+      "tickets_status": "available",
+      "source": "muziekgebouw",
+      "source_url": "https://www.muziekgebouw.nl/en/agenda/salukat-jfcd",
+      "match": null
     },
     {
       "id": "f9cb6d8b0c8fc2a8",
@@ -16831,6 +19700,24 @@
       "tickets_status": "available",
       "source": "ra",
       "source_url": "https://ra.co/events/2433277",
+      "match": null
+    },
+    {
+      "id": "3fdf00e70e8c24fd",
+      "title": "Rembrandt & Life",
+      "date": "2026-06-12T00:00:00",
+      "date_end": "2026-08-30T00:00:00",
+      "venue": "Museum Rembrandthuis, Amsterdam",
+      "venue_address": "",
+      "event_type": "Exhibition",
+      "artists": [],
+      "genres": [],
+      "price_min": null,
+      "price_max": null,
+      "tickets_url": "",
+      "tickets_status": "available",
+      "source": "museumkaart",
+      "source_url": "https://www.museum.nl/en/museum-rembrandthuis/exhibition/rembrandt-life",
       "match": null
     },
     {
@@ -17584,6 +20471,26 @@
       }
     },
     {
+      "id": "b8a59ca95f3955b3",
+      "title": "WE ARE THE HOUSE",
+      "date": "2026-06-13T20:30:00",
+      "date_end": null,
+      "venue": "Muziekgebouw aan 't IJ",
+      "venue_address": "Grote Zaal, Piet Heinkade 1, 1019 BR Amsterdam",
+      "event_type": "Concert",
+      "artists": [
+        "Tomoko Mukaiyama"
+      ],
+      "genres": [],
+      "price_min": 22.75,
+      "price_max": 39.0,
+      "tickets_url": "https://tickets.muziekgebouw.nl/en/buyingflow/tickets/56092/116859",
+      "tickets_status": "available",
+      "source": "muziekgebouw",
+      "source_url": "https://www.muziekgebouw.nl/en/agenda/we-are-the-house-qv6f",
+      "match": null
+    },
+    {
       "id": "edd09b8afa58bd50",
       "title": "MASSIEF",
       "date": "2026-06-13T21:00:00",
@@ -17940,6 +20847,27 @@
       }
     },
     {
+      "id": "7ad277fcc53d81a9",
+      "title": "SoundLAB workshop",
+      "date": "2026-06-14T13:00:00",
+      "date_end": null,
+      "venue": "Muziekgebouw aan 't IJ",
+      "venue_address": "Atriumzaal, Piet Heinkade 1, 1019 BR Amsterdam",
+      "event_type": "Concert",
+      "artists": [
+        "Workshop for children (7",
+        ") with adults"
+      ],
+      "genres": [],
+      "price_min": 10.0,
+      "price_max": 13.5,
+      "tickets_url": "https://tickets.muziekgebouw.nl/en/buyingflow/tickets/48367/106571",
+      "tickets_status": "available",
+      "source": "muziekgebouw",
+      "source_url": "https://www.muziekgebouw.nl/en/agenda/soundlab-workshop-tms9",
+      "match": null
+    },
+    {
       "id": "27d9aa1b1463f971",
       "title": "La Perle de la Canebière - Les Deux Timides d’Eugène Labiche by Monsieur Théâtre",
       "date": "2026-06-14T13:30:00",
@@ -18018,6 +20946,27 @@
       "match": null
     },
     {
+      "id": "aec7cc62d1468271",
+      "title": "Emerging in whispers",
+      "date": "2026-06-14T15:00:00",
+      "date_end": null,
+      "venue": "Muziekgebouw aan 't IJ",
+      "venue_address": "Plein Theater, Piet Heinkade 1, 1019 BR Amsterdam",
+      "event_type": "Concert",
+      "artists": [
+        "Irene Sorozábal, Michele Mazzini",
+        "Bea Álvarez"
+      ],
+      "genres": [],
+      "price_min": null,
+      "price_max": null,
+      "tickets_url": "https://plein-theater.stager.co/shop/nieuwe-noten-amsterdam/events/111607854?_gl=1*9cywf6*_gcl_au*MzgzMDUxNjY4LjE3Nzc4ODE2OTI.",
+      "tickets_status": "available",
+      "source": "muziekgebouw",
+      "source_url": "https://www.muziekgebouw.nl/en/agenda/emerging-in-whispers-tm5w",
+      "match": null
+    },
+    {
       "id": "f26426ee0390e28f",
       "title": "Woodstock'69 x Las Palapas: Mano Le Tough b2b Jonathan Kaspar, Juan Hansen (live) & Kyra Khaldi",
       "date": "2026-06-14T17:00:00",
@@ -18089,6 +21038,26 @@
       "match": null
     },
     {
+      "id": "48714d774d22ab88",
+      "title": "WE ARE THE HOUSE",
+      "date": "2026-06-14T20:30:00",
+      "date_end": null,
+      "venue": "Muziekgebouw aan 't IJ",
+      "venue_address": "Grote Zaal, Piet Heinkade 1, 1019 BR Amsterdam",
+      "event_type": "Concert",
+      "artists": [
+        "Tomoko Mukaiyama"
+      ],
+      "genres": [],
+      "price_min": 22.75,
+      "price_max": 39.0,
+      "tickets_url": "https://tickets.muziekgebouw.nl/en/buyingflow/tickets/56094/116862",
+      "tickets_status": "available",
+      "source": "muziekgebouw",
+      "source_url": "https://www.muziekgebouw.nl/en/agenda/we-are-the-house-1657",
+      "match": null
+    },
+    {
       "id": "79573b81f72aaf00",
       "title": "Good Flying Birds",
       "date": "2026-06-15T18:00:00",
@@ -18155,6 +21124,28 @@
         "reason": "Similar to Ty Segall, Cloud Nothings, Wavves",
         "score": 9
       }
+    },
+    {
+      "id": "d3f51c8f9d181540",
+      "title": "Photo Basel 2026",
+      "date": "2026-06-16T00:00:00",
+      "date_end": "2026-06-22T00:00:00",
+      "venue": "Rademakers Gallery",
+      "venue_address": "Amsterdam, Switzerland",
+      "event_type": "Expositie",
+      "artists": [
+        "Carla van de Puttelaar",
+        "Jens Buis",
+        "Etcetera"
+      ],
+      "genres": [],
+      "price_min": null,
+      "price_max": null,
+      "tickets_url": "",
+      "tickets_status": "available",
+      "source": "gallery_viewer",
+      "source_url": "https://galleryviewer.com/en/exhibition/6386",
+      "match": null
     },
     {
       "id": "5f2b8735e56f85b9",
@@ -18587,6 +21578,26 @@
       }
     },
     {
+      "id": "8c088cc5b1d5bd3f",
+      "title": "Spem in Alium",
+      "date": "2026-06-18T20:30:00",
+      "date_end": null,
+      "venue": "Muziekgebouw aan 't IJ",
+      "venue_address": "Grote Zaal, Piet Heinkade 1, 1019 BR Amsterdam",
+      "event_type": "Concert",
+      "artists": [
+        "Saburo Teshigawara, Vox Luminis XL"
+      ],
+      "genres": [],
+      "price_min": 22.75,
+      "price_max": 49.0,
+      "tickets_url": "https://tickets.muziekgebouw.nl/en/buyingflow/tickets/55872/116589",
+      "tickets_status": "available",
+      "source": "muziekgebouw",
+      "source_url": "https://www.muziekgebouw.nl/en/agenda/spem-in-alium-yq15",
+      "match": null
+    },
+    {
       "id": "6c7937473f5467cf",
       "title": "Madam by Night invites: MONARK",
       "date": "2026-06-18T21:00:00",
@@ -18888,6 +21899,26 @@
       "tickets_status": "available",
       "source": "paradiso",
       "source_url": "https://www.paradiso.nl/en/program/candy-dulfer/2790869",
+      "match": null
+    },
+    {
+      "id": "2c6bea34adba63d7",
+      "title": "Spem in Alium",
+      "date": "2026-06-19T20:30:00",
+      "date_end": null,
+      "venue": "Muziekgebouw aan 't IJ",
+      "venue_address": "Grote Zaal, Piet Heinkade 1, 1019 BR Amsterdam",
+      "event_type": "Concert",
+      "artists": [
+        "Saburo Teshigawara, Vox Luminis XL"
+      ],
+      "genres": [],
+      "price_min": 22.75,
+      "price_max": 49.0,
+      "tickets_url": "https://tickets.muziekgebouw.nl/en/buyingflow/tickets/55873/116590",
+      "tickets_status": "available",
+      "source": "muziekgebouw",
+      "source_url": "https://www.muziekgebouw.nl/en/agenda/spem-in-alium-7dn6",
       "match": null
     },
     {
@@ -19442,6 +22473,78 @@
       "match": null
     },
     {
+      "id": "54b791da7575bce0",
+      "title": "Designed World – Through the Eyes of Tata Ronkholz (1940–1997)",
+      "date": "2026-06-21T10:00:00",
+      "date_end": null,
+      "venue": "Huis Marseille, Museum for Photography, Amsterdam",
+      "venue_address": "",
+      "event_type": "Exhibition",
+      "artists": [],
+      "genres": [],
+      "price_min": null,
+      "price_max": null,
+      "tickets_url": "",
+      "tickets_status": "available",
+      "source": "museumkaart",
+      "source_url": "https://www.museum.nl/en/huis-marseille-museum-for-photography/exhibition/designed-world-through-the-eyes-of-tata-ronkholz-19401997",
+      "match": null
+    },
+    {
+      "id": "1bcc36d5bce18e8a",
+      "title": "Tata Ronkholz - Kiosks and snack bars (Trinkhallen und Imbissbuden)",
+      "date": "2026-06-21T10:00:00",
+      "date_end": null,
+      "venue": "Huis Marseille, Museum for Photography, Amsterdam",
+      "venue_address": "",
+      "event_type": "Exhibition",
+      "artists": [],
+      "genres": [],
+      "price_min": null,
+      "price_max": null,
+      "tickets_url": "",
+      "tickets_status": "available",
+      "source": "museumkaart",
+      "source_url": "https://www.museum.nl/en/huis-marseille-museum-for-photography/exhibition/tata-ronkholz-kiosks-and-snack-bars-trinkhallen-und-imbissbuden",
+      "match": null
+    },
+    {
+      "id": "3cded35b32449886",
+      "title": "Yumna Al-Arashi – Body as Resistance",
+      "date": "2026-06-21T10:00:00",
+      "date_end": null,
+      "venue": "Huis Marseille, Museum for Photography, Amsterdam",
+      "venue_address": "",
+      "event_type": "Exhibition",
+      "artists": [],
+      "genres": [],
+      "price_min": null,
+      "price_max": null,
+      "tickets_url": "",
+      "tickets_status": "available",
+      "source": "museumkaart",
+      "source_url": "https://www.museum.nl/en/huis-marseille-museum-for-photography/exhibition/yumna-al-arashi-body-as-resistance",
+      "match": null
+    },
+    {
+      "id": "d97df5c2c55fd448",
+      "title": "Yumna Al-Arashi – Let Me In",
+      "date": "2026-06-21T10:00:00",
+      "date_end": null,
+      "venue": "Huis Marseille, Museum for Photography, Amsterdam",
+      "venue_address": "",
+      "event_type": "Exhibition",
+      "artists": [],
+      "genres": [],
+      "price_min": null,
+      "price_max": null,
+      "tickets_url": "",
+      "tickets_status": "available",
+      "source": "museumkaart",
+      "source_url": "https://www.museum.nl/en/huis-marseille-museum-for-photography/exhibition/yumna-al-arashi-let-me-in",
+      "match": null
+    },
+    {
       "id": "927a4dc08ffe62f5",
       "title": "21 JUN - Thuishaven with DIØN 10HRS",
       "date": "2026-06-21T13:00:00",
@@ -19645,8 +22748,11 @@
   ],
   "venues": [
     "ADMnoord - ‘t Groene Veld",
+    "ARTIS-Groote Museum, Amsterdam",
+    "ARTIS-Micropia, Amsterdam",
     "Afas Live",
     "Akhnaton",
+    "Allard Pierson, Amsterdam",
     "Amsterdams Most Wanted",
     "Amsterdamse Bos",
     "Art'otel Amsterdam",
@@ -19659,6 +22765,7 @@
     "Bijhuub",
     "Bimhuis",
     "Bitterzoet",
+    "Bradwolff & Partners",
     "Bronze Beach",
     "Buurtwerkplaats Noorderhof",
     "CLUB RAUM",
@@ -19675,27 +22782,40 @@
     "De Fik Garden",
     "De Hoop",
     "De Nieuwe Anita",
+    "Diamant Museum Amsterdam, Amsterdam",
     "Doka",
     "Dokzaal",
+    "Edams Museum, Edam",
+    "Embassy of the Free Mind, Amsterdam",
+    "Eye Filmmuseum, Amsterdam",
     "Filmhuis Cavia",
+    "Forteiland Pampus, Muiden",
     "Framer Framed",
+    "Frans Hals Museum, Haarlem",
     "Free Willie Amsterdam",
+    "Galerie Franzis Engels",
     "Garage Noord",
+    "Grachtenmuseum Amsterdam, Amsterdam",
     "H7 Warehouse",
     "Helling 7",
     "Hemkade 48",
+    "Het Concertgebouw",
     "Het Dorp",
     "Het Groene Veld",
     "Het Salon",
+    "Het Scheepvaartmuseum, Amsterdam",
     "Het Sieraad",
     "Het Twiske",
     "Houtbaar Haarlem",
+    "Huis Marseille, Museum for Photography, Amsterdam",
+    "Huis van Hilde, Castricum",
     "Huis van Iemand Anders",
     "Ijland",
     "John Doe",
     "Kaap Amsterdam",
     "Kashmir Lounge",
     "Keizersgrachtkerk",
+    "Koninklijk Paleis Amsterdam, Amsterdam",
     "LIMA",
     "Leidse Amsterdam",
     "Levenslang Amsterdam",
@@ -19706,9 +22826,14 @@
     "Meerpark",
     "Melkweg",
     "Murmur",
+    "Museum Het Schip, Amsterdam",
+    "Museum Rembrandthuis, Amsterdam",
+    "Muziekgebouw aan 't IJ",
     "NDSM Docklands",
     "NDSM Treehouse",
+    "NEMO Science Museum, Amsterdam",
     "NSDSM Treehouse",
+    "Nationaal Reddingmuseum Dorus Rijkers, Den Helder",
     "Ndsm Wharf",
     "Ndsm x Helling",
     "Nieuwland",
@@ -19728,8 +22853,11 @@
     "Plantage Dok",
     "Plein Theater",
     "RADION",
+    "Rademakers Gallery",
     "Radio Radio",
     "Rederij t IJ",
+    "Rijksmuseum Amsterdam, Amsterdam",
+    "Rijksmuseum Muiderslot, Muiden",
     "Roode Bioscoop",
     "Ruby Emma Hotel & Bar",
     "SISSI'S Amsterdam",
@@ -19741,6 +22869,7 @@
     "Sloterpark",
     "Spaarnwoude (Deelplan Houtrak)",
     "Splendor",
+    "Stedelijk Museum Amsterdam, Amsterdam",
     "Studio Tumbuh",
     "TBA",
     "TBA - 48h before the event only to the ticket holders via email",
@@ -19751,20 +22880,27 @@
     "THE OTHER SIDE",
     "TILLATEC",
     "Teatro Munganga",
+    "Teylers Museum, Haarlem",
     "The Loft Amsterdam",
+    "The Willet-Holthuysen House, Amsterdam",
     "Thuishaven",
     "Toekomstmuziek",
     "Tolhuistuin",
     "Tuinen van West",
     "Undercurrent",
+    "Van Eesteren Museum, Amsterdam",
+    "Van Gogh Museum, Amsterdam",
     "Veronica Schip",
+    "Verzetsmuseum Amsterdam, Amsterdam",
     "Vondelbunker",
     "WG",
     "Warehouse Elementenstraat",
     "Waterhouse Studios",
     "Woodstock'69",
     "Yellow House",
+    "Zaans Museum, Zaandam",
     "Zonnehuis",
+    "Zuiderzeemuseum, Enkhuizen",
     "[ woonruimte coöperatief ]",
     "murmur",
     "nachbar"
@@ -19792,7 +22928,9 @@
     "Boy band",
     "Brit pop",
     "British",
+    "Chamber Music",
     "Cinematic",
+    "Classical",
     "Club",
     "Club night",
     "Coming-of-age",
@@ -19818,6 +22956,7 @@
     "Emo",
     "English subs",
     "Experimental",
+    "Family",
     "Fantasy",
     "Feel good",
     "Feminism",
@@ -19825,6 +22964,7 @@
     "Flemish",
     "Folk",
     "Folk metal",
+    "Free Lunchtime",
     "Fundraiser",
     "Funk",
     "Greek folk music",
@@ -19862,8 +23002,11 @@
     "Neo-soul",
     "Nostalgia",
     "Nu metal",
+    "Orchestra",
+    "Organ",
     "Party",
     "Party hits",
+    "Piano",
     "Pop",
     "Pop punk",
     "Post-hardcore",
@@ -19906,16 +23049,27 @@
     "Trip hop",
     "UK Garage",
     "Underground",
+    "Vocal Music",
     "Workshop",
     "Zeroes"
   ],
   "event_types": [
+    "Activity",
+    "Audio tour",
+    "Children’s party",
     "Club",
     "Clubnacht",
     "Concert",
+    "Event",
+    "Exhibition",
+    "Expositie",
     "Festival",
     "Film",
     "Misc",
-    "Talk"
+    "Online activity",
+    "Other",
+    "Scavenger hunt",
+    "Talk",
+    "Workshop"
   ]
 }

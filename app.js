@@ -4,9 +4,19 @@
 const SOURCE_LABELS = {
     melkweg: 'Melkweg', amsterdam_alt: 'Amsterdam Alternative',
     ra: 'Resident Advisor', paradiso: 'Paradiso', murmur: 'Murmur',
+    museumkaart: 'Museumkaart', gallery_viewer: 'Gallery Viewer',
+    concertgebouw: 'Concertgebouw', muziekgebouw: 'Muziekgebouw',
+    sitp: 'Space is the Place', splendor: 'Splendor',
 };
 const TYPE_EMOJI = {
     Concert: '🎸', Club: '🎧', Film: '🎬', Festival: '🎪', Expositie: '🖼️',
+};
+
+/* ── Category definitions ─────────────────────────────────────── */
+const CATEGORIES = {
+    art:      { sources: ['museumkaart', 'gallery_viewer'], venues: [], genres: [] },
+    classica: { sources: ['concertgebouw', 'muziekgebouw', 'splendor'], venues: ['Concertgebouw', 'Muziekgebouw', 'De Duif', 'Splendor'], genres: ['Classical'] },
+    jazz:     { sources: ['sitp'], venues: ['Bimhuis'], genres: ['Jazz'] },
 };
 const MONTHS = [
     'January','February','March','April','May','June',
@@ -23,6 +33,7 @@ const state = {
     currentMonth: 0,    // 0-indexed
     selectedDate: null,  // 'YYYY-MM-DD'
     filters: { venues: new Set(), genres: new Set(), types: new Set(), favOnly: false, search: '' },
+    activeCategory: null,
     favorites: new Set(),
 };
 
@@ -130,6 +141,11 @@ function bindEvents() {
         menu.addEventListener('change', handleFilterChange);
     });
 
+    // Category buttons
+    document.querySelectorAll('.category-btn').forEach(btn => {
+        btn.addEventListener('click', () => toggleCategory(btn.dataset.category));
+    });
+
     // Favorites toggle
     document.getElementById('btn-favorites')?.addEventListener('click', () => {
         state.filters.favOnly = !state.filters.favOnly;
@@ -179,6 +195,9 @@ function handleFilterChange(e) {
         badge.classList.toggle('visible', filterSet.size > 0);
     }
 
+    // Manual filter change deactivates any active category
+    deactivateCategory();
+
     onFiltersChanged();
 }
 
@@ -197,24 +216,59 @@ function clearFilters() {
     document.querySelectorAll('.dd-badge').forEach(b => { b.classList.remove('visible'); b.textContent = '0'; });
     document.querySelectorAll('.dd-item input').forEach(cb => { cb.checked = false; });
     document.querySelectorAll('.dd-item').forEach(item => item.classList.remove('checked'));
+    deactivateCategory();
     onFiltersChanged();
 }
 
 function onFiltersChanged() {
     const hasFilters = state.filters.venues.size || state.filters.genres.size ||
-        state.filters.types.size || state.filters.favOnly || state.filters.search;
+        state.filters.types.size || state.filters.favOnly || state.filters.search ||
+        state.activeCategory;
     document.getElementById('btn-clear')?.classList.toggle('hidden', !hasFilters);
     renderCalendar();
     if (state.selectedDate) renderDayDetail(state.selectedDate);
     updateStats();
 }
 
+/* ── Category Toggle ──────────────────────────────────────────── */
+function toggleCategory(catKey) {
+    if (state.activeCategory === catKey) {
+        deactivateCategory();
+    } else {
+        deactivateCategory();
+        state.activeCategory = catKey;
+        document.getElementById(`btn-cat-${catKey}`)?.classList.add('active');
+    }
+    onFiltersChanged();
+}
+
+function deactivateCategory() {
+    if (state.activeCategory) {
+        document.getElementById(`btn-cat-${state.activeCategory}`)?.classList.remove('active');
+    }
+    state.activeCategory = null;
+}
+
 /* ── Filtering Logic ──────────────────────────────────────────── */
+function matchesCategory(ev, catDef) {
+    if (catDef.sources.length && catDef.sources.includes(ev.source)) return true;
+    if (catDef.venues.length && catDef.venues.some(v => ev.venue && ev.venue.toLowerCase().includes(v.toLowerCase()))) return true;
+    if (catDef.genres.length && ev.genres.some(g => catDef.genres.some(cg => g.toLowerCase().includes(cg.toLowerCase())))) return true;
+    return false;
+}
+
 function getFiltered() {
     return state.raw.filter(ev => {
-        if (state.filters.venues.size && !state.filters.venues.has(ev.venue)) return false;
-        if (state.filters.genres.size && !ev.genres.some(g => state.filters.genres.has(g))) return false;
-        if (state.filters.types.size && !state.filters.types.has(ev.event_type)) return false;
+        // Category filter (overrides venue/genre/type dropdowns)
+        if (state.activeCategory) {
+            const catDef = CATEGORIES[state.activeCategory];
+            if (catDef && !matchesCategory(ev, catDef)) return false;
+        } else {
+            // Standard dropdown filters only apply when no category is active
+            if (state.filters.venues.size && !state.filters.venues.has(ev.venue)) return false;
+            if (state.filters.genres.size && !ev.genres.some(g => state.filters.genres.has(g))) return false;
+            if (state.filters.types.size && !state.filters.types.has(ev.event_type)) return false;
+        }
         if (state.filters.favOnly && !state.favorites.has(ev.id)) return false;
         if (state.filters.search) {
             const q = state.filters.search;
