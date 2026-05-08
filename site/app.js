@@ -491,7 +491,18 @@ function updateStats() {
     if (el('stat-venues')) el('stat-venues').textContent = vSet.size;
     if (el('stat-days')) el('stat-days').textContent = dates.size;
     if (el('stat-matches')) el('stat-matches').textContent = matches;
-    if (el('stat-sources')) el('stat-sources').textContent = srcSet.size;
+    if (el('stat-sources')) {
+        el('stat-sources').textContent = srcSet.size;
+        const srcArray = Array.from(srcSet).map(s => SOURCE_LABELS[s] || s).sort();
+        let srcText = 'Active sources feeding this calendar:\n\n';
+        if (srcArray.length <= 6) {
+            srcText += srcArray.join('\n• ');
+            if (srcArray.length > 0) srcText = srcText.replace('\n\n', '\n\n• ');
+        } else {
+            srcText += '• ' + srcArray.slice(0, 5).join('\n• ') + `\n... and ${srcArray.length - 5} more.`;
+        }
+        el('stat-sources').setAttribute('data-tip', srcText);
+    }
 }
 
 /* ── Favorites ────────────────────────────────────────────────── */
