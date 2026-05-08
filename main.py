@@ -37,6 +37,7 @@ from collectors.gallery_viewer_collector import GalleryViewerCollector
 from collectors.muziekgebouw_collector import MuziekgebouwCollector
 from collectors.concertgebouw_collector import ConcertgebouwCollector
 from collectors.splendor_collector import SplendorCollector
+from collectors.bimhuis_collector import BimhuisCollector
 
 COLLECTORS = {
     "melkweg": MelkwegCollector,
@@ -49,6 +50,7 @@ COLLECTORS = {
     "muziekgebouw": MuziekgebouwCollector,
     "concertgebouw": ConcertgebouwCollector,
     "splendor": SplendorCollector,
+    "bimhuis": BimhuisCollector,
 }
 
 logging.basicConfig(
