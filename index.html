@@ -8,8 +8,9 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="style.css?v=2">
     <link rel="icon" type="image/png" href="favicon.png">
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
 </head>
 <body>
     <!-- ── Header ── -->
@@ -20,6 +21,11 @@
                 <div class="search-box">
                     <svg class="search-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/></svg>
                     <input type="text" id="search-input" placeholder="Search events, artists, venues…" autocomplete="off">
+                </div>
+                <button id="btn-login" class="login-btn" type="button">Login</button>
+                <div id="user-profile" class="user-profile hidden">
+                    <span id="user-avatar" class="user-avatar"></span>
+                    <button id="btn-logout" class="logout-btn" type="button" title="Logout">🚪</button>
                 </div>
                 <a href="https://github.com/ultimoboulevard/amsterdam-events-digest/actions/workflows/weekly_digest.yml" target="_blank" rel="noopener" class="refresh-btn" title="Update events data">🔄 Update</a>
             </div>
@@ -45,6 +51,7 @@
             <button class="category-btn cat-art" id="btn-cat-art" data-category="art" type="button">🎨 l-ART</button>
             <button class="category-btn cat-classica" id="btn-cat-classica" data-category="classica" type="button">🎻 Classica</button>
             <button class="category-btn cat-jazz" id="btn-cat-jazz" data-category="jazz" type="button">🎷 Jazz</button>
+            <button class="fav-toggle" id="btn-friends" type="button" title="Log in to see friends' picks">🫂 Friends' Picks</button>
             <button class="fav-toggle" id="btn-favorites" type="button">⭐ Favorites</button>
             <button class="clear-btn hidden" id="btn-clear" type="button">✕ Clear</button>
         </div>
@@ -85,7 +92,7 @@
             <div class="stat-card"><span class="stat-val" id="stat-total">0</span><span class="stat-lbl">Events</span></div>
             <div class="stat-card"><span class="stat-val" id="stat-venues">0</span><span class="stat-lbl">Venues</span></div>
             <div class="stat-card"><span class="stat-val" id="stat-days">0</span><span class="stat-lbl">Days</span></div>
-            <div class="stat-card has-tooltip"><span class="stat-val" id="stat-matches" data-tip="Events where at least one performing artist is found in your personal Last.fm library or taste profile.">0</span><span class="stat-lbl">Matches</span></div>
+            <div class="stat-card has-tooltip"><span class="stat-val" id="stat-matches" data-tip="Events where at least one performing artist is found in Fra's Last.fm library or taste profile.">0</span><span class="stat-lbl">Matches</span></div>
             <div class="stat-card has-tooltip"><span class="stat-val" id="stat-sources" data-tip="Number of distinct platforms and venues actively feeding this calendar (e.g. Melkweg, Resident Advisor, Concertgebouw…).">0</span><span class="stat-lbl">Sources</span></div>
         </section>
     </main>
@@ -96,6 +103,21 @@
         <p class="gen-time" id="gen-time"></p>
     </footer>
 
-    <script src="app.js"></script>
+    <!-- Login Modal -->
+    <div id="login-modal" class="modal-overlay hidden">
+        <div class="modal-content">
+            <button id="btn-close-modal" class="modal-close">&times;</button>
+            <h2>Welcome Back</h2>
+            <p>Log in to save events and see what your friends are attending.</p>
+            
+            <form id="magic-link-form" class="magic-link-form">
+                <input type="email" id="login-email" placeholder="Enter your email" required>
+                <button type="submit" id="btn-send-magic-link" class="magic-link-btn">Send Magic Link</button>
+            </form>
+            <p id="login-message" class="login-message"></p>
+        </div>
+    </div>
+
+    <script src="app.js?v=4"></script>
 </body>
 </html>

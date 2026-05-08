@@ -1,6 +1,6 @@
 {
-  "generated_at": "2026-05-08T08:38:00.361771",
-  "event_count": 1051,
+  "generated_at": "2026-05-08T11:47:53.449605",
+  "event_count": 1057,
   "events": [
     {
       "id": "38d52751d1c39af0",
@@ -696,8 +696,8 @@
       "event_type": "Concert",
       "artists": [],
       "genres": [],
-      "price_min": 10.0,
-      "price_max": 12.5,
+      "price_min": null,
+      "price_max": null,
       "tickets_url": "",
       "tickets_status": "sold_out",
       "source": "muziekgebouw",
@@ -750,9 +750,9 @@
       "event_type": "Concert",
       "artists": [],
       "genres": [],
-      "price_min": 6.5,
-      "price_max": 6.5,
-      "tickets_url": "https://tickets.muziekgebouw.nl/en/buyingflow/tickets/43992/100986",
+      "price_min": null,
+      "price_max": null,
+      "tickets_url": "",
       "tickets_status": "available",
       "source": "muziekgebouw",
       "source_url": "https://www.muziekgebouw.nl/en/agenda/alicia-de-keulenaer-floor-kes-katja-naegele-fk17",
@@ -3011,9 +3011,11 @@
         "Efdemin",
         "Floid.live",
         "GiGi FM",
+        "Haumea",
         "Jin Synth",
         "Laura BCR",
         "Luigi Tozzi",
+        "Moss M",
         "Nelly (NL)"
       ],
       "genres": [],
@@ -3186,7 +3188,6 @@
       "venue_address": "Lijnbaansgracht 234A, Amsterdam",
       "event_type": "Clubnacht",
       "artists": [
-        "DOPE CAESAR",
         "EMSIFLYBOKOE",
         "GODSENDO",
         "TAYORISTAR",
@@ -6060,6 +6061,28 @@
       "match": null
     },
     {
+      "id": "0e975f566d791b09",
+      "title": "PILOT with S.A.M. & Voigtmann",
+      "date": "2026-05-15T22:00:00",
+      "date_end": "2026-05-16T06:00:00",
+      "venue": "BRET",
+      "venue_address": "Orlyplein 76, 1043 DP Amsterdam, Netherlands",
+      "event_type": "Club",
+      "artists": [
+        "S.A.M.",
+        "Voigtmann",
+        "Riverside (IT)"
+      ],
+      "genres": [],
+      "price_min": null,
+      "price_max": null,
+      "tickets_url": "",
+      "tickets_status": "available",
+      "source": "ra",
+      "source_url": "https://ra.co/events/2421757",
+      "match": null
+    },
+    {
       "id": "3e36fa5833232c5d",
       "title": "Onda Collective X BASS ASYLUM",
       "date": "2026-05-15T22:00:00",
@@ -6107,28 +6130,6 @@
       "tickets_status": "available",
       "source": "ra",
       "source_url": "https://ra.co/events/2421446",
-      "match": null
-    },
-    {
-      "id": "0e975f566d791b09",
-      "title": "PILOT with S.A.M. & Voigtmann",
-      "date": "2026-05-15T23:00:00",
-      "date_end": "2026-05-16T06:00:00",
-      "venue": "BRET",
-      "venue_address": "Orlyplein 76, 1043 DP Amsterdam, Netherlands",
-      "event_type": "Club",
-      "artists": [
-        "S.A.M.",
-        "Voigtmann",
-        "Riverside (IT)"
-      ],
-      "genres": [],
-      "price_min": null,
-      "price_max": null,
-      "tickets_url": "",
-      "tickets_status": "available",
-      "source": "ra",
-      "source_url": "https://ra.co/events/2421757",
       "match": null
     },
     {
@@ -9195,6 +9196,24 @@
     {
       "id": "acac055abb108df6",
       "title": "RAVING CHARLIE: Hard Techno / Rave",
+      "date": "2026-05-20T23:00:00",
+      "date_end": "2026-05-21T04:00:00",
+      "venue": "nachbar",
+      "venue_address": "Nieuwezijds Voorburgwal 169a",
+      "event_type": "Club",
+      "artists": [],
+      "genres": [],
+      "price_min": null,
+      "price_max": null,
+      "tickets_url": "",
+      "tickets_status": "available",
+      "source": "ra",
+      "source_url": "https://ra.co/events/2396849",
+      "match": null
+    },
+    {
+      "id": "ec669e6550b660f6",
+      "title": "RAVING CHARLIE: Hard Techno / Rave w/ SEMPLE / DAYON / KYNØ",
       "date": "2026-05-20T23:00:00",
       "date_end": "2026-05-21T04:00:00",
       "venue": "nachbar",
@@ -13691,6 +13710,26 @@
       "match": null
     },
     {
+      "id": "7426cfd5aa6d8a2c",
+      "title": "RAVING CHARLIE: Hard Techno / Rave w/ Zeyvers / STYC / MIMIKRY",
+      "date": "2026-05-27T23:00:00",
+      "date_end": "2026-05-28T04:00:00",
+      "venue": "nachbar",
+      "venue_address": "Nieuwezijds Voorburgwal 169a",
+      "event_type": "Club",
+      "artists": [
+        "Zeyvers"
+      ],
+      "genres": [],
+      "price_min": null,
+      "price_max": null,
+      "tickets_url": "",
+      "tickets_status": "available",
+      "source": "ra",
+      "source_url": "https://ra.co/events/2396851",
+      "match": null
+    },
+    {
       "id": "9e083f0bc0beb7e3",
       "title": "Fiber Festival At Murmur // Trois-Quarts Taxi System (Live) & Xenia Reaper (Live)",
       "date": "2026-05-28T00:00:00",
@@ -14368,6 +14407,24 @@
       "tickets_status": "available",
       "source": "amsterdam_alt",
       "source_url": "https://www.amsterdamalternative.nl/agenda/21864",
+      "match": null
+    },
+    {
+      "id": "4ce2c4c81ac8728a",
+      "title": "disobedient art school OPEN GATHERING #4",
+      "date": "2026-05-29T14:30:00",
+      "date_end": null,
+      "venue": "OT301",
+      "venue_address": "",
+      "event_type": "",
+      "artists": [],
+      "genres": [],
+      "price_min": 0.0,
+      "price_max": null,
+      "tickets_url": "",
+      "tickets_status": "available",
+      "source": "amsterdam_alt",
+      "source_url": "https://www.amsterdamalternative.nl/agenda/21953",
       "match": null
     },
     {
@@ -16758,6 +16815,28 @@
       "match": null
     },
     {
+      "id": "0c190f671b5d1fd1",
+      "title": "lostboyshawty",
+      "date": "2026-05-31T19:30:00",
+      "date_end": null,
+      "venue": "Paradiso",
+      "venue_address": "Paradiso - Boven Zaal",
+      "event_type": "Concert",
+      "artists": [
+        "lostboyshawty"
+      ],
+      "genres": [
+        "Hip hop / R&B"
+      ],
+      "price_min": null,
+      "price_max": null,
+      "tickets_url": "https://tickets.paradiso.nl/9ff67cf18a67444db71d92e5f0af922f",
+      "tickets_status": "available",
+      "source": "paradiso",
+      "source_url": "https://www.paradiso.nl/en/program/lostboyshawty/2890959",
+      "match": null
+    },
+    {
       "id": "dddf88e56b4ec651",
       "title": "Soprano Kristen Witmer sings Bach and Montéclair",
       "date": "2026-05-31T20:15:00",
@@ -17575,37 +17654,6 @@
       "match": null
     },
     {
-      "id": "8039ab457bfa5e33",
-      "title": "Mokum Records",
-      "date": "2026-06-05T08:37:00",
-      "date_end": null,
-      "venue": "Paradiso",
-      "venue_address": "Paradiso - Grote Zaal, Paradiso - Kelder",
-      "event_type": "Club",
-      "artists": [
-        "DJ Dano",
-        "Tellurian",
-        "Remsy",
-        "WICKED XXX",
-        "Party Animals (live)",
-        "T-GO",
-        "Arvid",
-        "Los Muñaños",
-        "XTNA"
-      ],
-      "genres": [
-        "Electronic",
-        "Club"
-      ],
-      "price_min": null,
-      "price_max": null,
-      "tickets_url": "https://tickets.paradiso.nl/76de8d60b85f4ab5b8b55413e895fe1f",
-      "tickets_status": "available",
-      "source": "paradiso",
-      "source_url": "https://www.paradiso.nl/en/program/mokum-records/2785742",
-      "match": null
-    },
-    {
       "id": "81ec4927bfceb4d6",
       "title": "Lunch at Café Gilde",
       "date": "2026-06-05T10:00:00",
@@ -17639,6 +17687,37 @@
       "tickets_status": "available",
       "source": "amsterdam_alt",
       "source_url": "https://www.amsterdamalternative.nl/agenda/21877",
+      "match": null
+    },
+    {
+      "id": "8039ab457bfa5e33",
+      "title": "Mokum Records",
+      "date": "2026-06-05T11:47:00",
+      "date_end": null,
+      "venue": "Paradiso",
+      "venue_address": "Paradiso - Grote Zaal, Paradiso - Kelder",
+      "event_type": "Club",
+      "artists": [
+        "DJ Dano",
+        "Tellurian",
+        "Remsy",
+        "WICKED XXX",
+        "Party Animals (live)",
+        "T-GO",
+        "Arvid",
+        "Los Muñaños",
+        "XTNA"
+      ],
+      "genres": [
+        "Electronic",
+        "Club"
+      ],
+      "price_min": null,
+      "price_max": null,
+      "tickets_url": "https://tickets.paradiso.nl/76de8d60b85f4ab5b8b55413e895fe1f",
+      "tickets_status": "available",
+      "source": "paradiso",
+      "source_url": "https://www.paradiso.nl/en/program/mokum-records/2785742",
       "match": null
     },
     {
@@ -18724,7 +18803,10 @@
       "artists": [
         "DJ Bone",
         "Zack Fox",
-        "Ellaweeez"
+        "Ellaweeez",
+        "Mr Andy",
+        "Seven (2)",
+        "Yeti Mind Tricks"
       ],
       "genres": [],
       "price_min": null,
@@ -18769,6 +18851,46 @@
       "tickets_status": "available",
       "source": "ra",
       "source_url": "https://ra.co/events/2437819",
+      "match": null
+    },
+    {
+      "id": "0bf3ebcbc8746976",
+      "title": "We Love 00s",
+      "date": "2026-06-06T23:00:00",
+      "date_end": null,
+      "venue": "Paradiso",
+      "venue_address": "Paradiso - Grote Zaal",
+      "event_type": "Club",
+      "artists": [],
+      "genres": [
+        "Club"
+      ],
+      "price_min": null,
+      "price_max": null,
+      "tickets_url": "https://tickets.paradiso.nl/4ba01d41d4554fc0b1afab3557284606",
+      "tickets_status": "available",
+      "source": "paradiso",
+      "source_url": "https://www.paradiso.nl/en/program/we-love-00s/2891177",
+      "match": null
+    },
+    {
+      "id": "af1aede8a0b3623d",
+      "title": "Indiesleaze",
+      "date": "2026-06-06T23:00:00",
+      "date_end": null,
+      "venue": "Paradiso",
+      "venue_address": "Paradiso - Kelder",
+      "event_type": "Club",
+      "artists": [],
+      "genres": [
+        "Club"
+      ],
+      "price_min": null,
+      "price_max": null,
+      "tickets_url": "https://tickets.paradiso.nl/153ef59707ec485f8e3b0f6362b5d4ea",
+      "tickets_status": "available",
+      "source": "paradiso",
+      "source_url": "https://www.paradiso.nl/en/program/indiesleaze/2891479",
       "match": null
     },
     {

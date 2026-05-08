@@ -1,6 +1,10 @@
 /* ── Amsterdam Events Calendar — Client App ──────────────────── */
 'use strict';
 
+const supabaseUrl = 'https://ktewpglahibpymvshwra.supabase.co';
+const supabaseKey = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Imt0ZXdwZ2xhaGlicHltdnNod3JhIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NzgyMzE0NTQsImV4cCI6MjA5MzgwNzQ1NH0.uOxMdL9JMMl3CMG6x0FRy8lgXQ5B6Me1JJxGV4kQBgg';
+const supabaseClient = window.supabase ? window.supabase.createClient(supabaseUrl, supabaseKey) : null;
+
 const SOURCE_LABELS = {
     melkweg: 'Melkweg', amsterdam_alt: 'Amsterdam Alternative',
     ra: 'Resident Advisor', paradiso: 'Paradiso', murmur: 'Murmur',
@@ -32,9 +36,11 @@ const state = {
     currentYear: 0,
     currentMonth: 0,    // 0-indexed
     selectedDate: null,  // 'YYYY-MM-DD'
-    filters: { venues: new Set(), genres: new Set(), types: new Set(), favOnly: false, search: '' },
+    filters: { venues: new Set(), genres: new Set(), types: new Set(), favOnly: false, friendsOnly: false, search: '' },
     activeCategory: null,
     favorites: new Set(),
+    user: null,
+    globalSavedEvents: [],
 };
 
 /* ── Init ─────────────────────────────────────────────────────── */
@@ -42,6 +48,17 @@ document.addEventListener('DOMContentLoaded', init);
 
 async function init() {
     loadFavorites();
+
+    // Auth Listener
+    if (supabaseClient) {
+        supabaseClient.auth.getSession().then(({ data: { session } }) => {
+            handleAuthChange(session);
+        });
+        supabaseClient.auth.onAuthStateChange((_event, session) => {
+            handleAuthChange(session);
+        });
+    }
+
     const main = document.querySelector('.container');
     main.innerHTML = '<div class="loading"><div class="spinner"></div><p>Loading events…</p></div>';
 
@@ -88,7 +105,7 @@ async function init() {
                 <div class="stat-card"><span class="stat-val" id="stat-total">0</span><span class="stat-lbl">Events</span></div>
                 <div class="stat-card"><span class="stat-val" id="stat-venues">0</span><span class="stat-lbl">Venues</span></div>
                 <div class="stat-card"><span class="stat-val" id="stat-days">0</span><span class="stat-lbl">Days</span></div>
-                <div class="stat-card has-tooltip"><span class="stat-val" id="stat-matches" data-tip="Events where at least one performing artist is found in your personal Last.fm library or taste profile.">0</span><span class="stat-lbl">Matches</span></div>
+                <div class="stat-card has-tooltip"><span class="stat-val" id="stat-matches" data-tip="Events where at least one performing artist is found in Fra's Last.fm library or taste profile.">0</span><span class="stat-lbl">Matches</span></div>
                 <div class="stat-card has-tooltip"><span class="stat-val" id="stat-sources" data-tip="Number of distinct platforms and venues actively feeding this calendar (e.g. Melkweg, Resident Advisor, Concertgebouw…).">0</span><span class="stat-lbl">Sources</span></div>
             </section>`;
 
@@ -154,6 +171,48 @@ function bindEvents() {
         onFiltersChanged();
     });
 
+    // Friends' Picks toggle
+    document.getElementById('btn-friends')?.addEventListener('click', () => {
+        if (!state.user) {
+            alert("Please log in to see what your friends are saving!");
+            return;
+        }
+        state.filters.friendsOnly = !state.filters.friendsOnly;
+        document.getElementById('btn-friends').classList.toggle('active', state.filters.friendsOnly);
+        onFiltersChanged();
+    });
+
+    // Auth & Modal events
+    document.getElementById('btn-login')?.addEventListener('click', () => {
+        document.getElementById('login-modal').classList.remove('hidden');
+        document.getElementById('login-message').textContent = '';
+    });
+    document.getElementById('btn-close-modal')?.addEventListener('click', () => {
+        document.getElementById('login-modal').classList.add('hidden');
+    });
+    document.getElementById('btn-logout')?.addEventListener('click', async () => {
+        if (supabaseClient) await supabaseClient.auth.signOut();
+    });
+    
+    document.getElementById('magic-link-form')?.addEventListener('submit', async (e) => {
+        e.preventDefault();
+        if (!supabaseClient) return;
+        const email = document.getElementById('login-email').value;
+        const msgEl = document.getElementById('login-message');
+        
+        msgEl.textContent = 'Sending...';
+        msgEl.className = 'login-message';
+        const { error } = await supabaseClient.auth.signInWithOtp({ email });
+        
+        if (error) {
+            msgEl.textContent = error.message;
+            msgEl.classList.add('error');
+        } else {
+            msgEl.textContent = 'Check your email for the login link!';
+            document.getElementById('login-email').value = '';
+        }
+    });
+
     // Clear filters
     document.getElementById('btn-clear')?.addEventListener('click', clearFilters);
 
@@ -211,9 +270,11 @@ function clearFilters() {
     state.filters.genres.clear();
     state.filters.types.clear();
     state.filters.favOnly = false;
+    state.filters.friendsOnly = false;
     state.filters.search = '';
     document.getElementById('search-input').value = '';
-    document.getElementById('btn-favorites').classList.remove('active');
+    document.getElementById('btn-favorites')?.classList.remove('active');
+    document.getElementById('btn-friends')?.classList.remove('active');
     document.querySelectorAll('.dd-badge').forEach(b => { b.classList.remove('visible'); b.textContent = '0'; });
     document.querySelectorAll('.dd-item input').forEach(cb => { cb.checked = false; });
     document.querySelectorAll('.dd-item').forEach(item => item.classList.remove('checked'));
@@ -223,7 +284,7 @@ function clearFilters() {
 
 function onFiltersChanged() {
     const hasFilters = state.filters.venues.size || state.filters.genres.size ||
-        state.filters.types.size || state.filters.favOnly || state.filters.search ||
+        state.filters.types.size || state.filters.favOnly || state.filters.friendsOnly || state.filters.search ||
         state.activeCategory;
     document.getElementById('btn-clear')?.classList.toggle('hidden', !hasFilters);
     renderCalendar();
@@ -271,6 +332,10 @@ function getFiltered() {
             if (state.filters.types.size && !state.filters.types.has(ev.event_type)) return false;
         }
         if (state.filters.favOnly && !state.favorites.has(ev.id)) return false;
+        if (state.filters.friendsOnly) {
+            const hasFriendSave = state.globalSavedEvents.some(s => s.event_id === ev.id && s.user_id !== state.user?.id);
+            if (!hasFriendSave) return false;
+        }
         if (state.filters.search) {
             const q = state.filters.search;
             const haystack = (ev.title + ' ' + ev.artists.join(' ') + ' ' + ev.venue).toLowerCase();
@@ -456,6 +521,28 @@ function cardHTML(ev) {
 
     const time = ev.date ? new Date(ev.date).toLocaleTimeString('en-GB', { hour: '2-digit', minute: '2-digit' }) : '';
 
+    let friendsHtml = '';
+    if (state.user && state.globalSavedEvents.length > 0) {
+        const friendsWhoSaved = state.globalSavedEvents.filter(s => s.event_id === ev.id && s.user_id !== state.user.id);
+        if (friendsWhoSaved.length > 0) {
+            const uniqueFriends = [];
+            const seenUsers = new Set();
+            for (const s of friendsWhoSaved) {
+                if (!seenUsers.has(s.user_id)) {
+                    seenUsers.add(s.user_id);
+                    uniqueFriends.push(s);
+                }
+            }
+            friendsHtml = `<div class="friends-saves" title="Saved by friends">` +
+                uniqueFriends.slice(0, 3).map(f => {
+                    const initial = (f.user_name || 'U').charAt(0).toUpperCase();
+                    return `<div class="friend-avatar">${esc(initial)}</div>`;
+                }).join('') +
+                (uniqueFriends.length > 3 ? `<div class="friend-avatar">+${uniqueFriends.length - 3}</div>` : '') +
+                `</div>`;
+        }
+    }
+
     return `<div class="event-card">
         <a href="${esc(ev.source_url)}" target="_blank" rel="noopener" class="card-link">
             <div class="card-top">
@@ -469,6 +556,7 @@ function cardHTML(ev) {
             <div class="card-footer">
                 ${venueHtml}
                 <span class="source">${esc(srcLabel)}</span>
+                ${friendsHtml}
             </div>
         </a>
         <div class="card-actions">
@@ -516,11 +604,82 @@ function saveFavorites() {
     localStorage.setItem('ams_events_favs', JSON.stringify([...state.favorites]));
 }
 
-function toggleFavorite(id) {
-    if (state.favorites.has(id)) state.favorites.delete(id);
-    else state.favorites.add(id);
+async function toggleFavorite(id) {
+    const isAdding = !state.favorites.has(id);
+    
+    if (isAdding) {
+        state.favorites.add(id);
+    } else {
+        state.favorites.delete(id);
+    }
     saveFavorites();
-    if (state.filters.favOnly) onFiltersChanged();
+    
+    if (state.user && supabaseClient) {
+        if (isAdding) {
+            const userName = state.user.email ? state.user.email.split('@')[0] : 'User';
+            const { error } = await supabaseClient.from('saved_events').insert([{ 
+                user_id: state.user.id, 
+                user_name: userName, 
+                event_id: id 
+            }]);
+            if (error) {
+                console.error("Supabase Save Error:", error);
+                alert("Could not save to cloud: " + error.message);
+            } else {
+                state.globalSavedEvents.push({ user_id: state.user.id, user_name: userName, event_id: id });
+            }
+        } else {
+            const { error } = await supabaseClient.from('saved_events').delete().match({ user_id: state.user.id, event_id: id });
+            if (error) console.error("Supabase Unsave Error:", error);
+            else state.globalSavedEvents = state.globalSavedEvents.filter(s => !(s.user_id === state.user.id && s.event_id === id));
+        }
+    }
+    
+    if (state.filters.favOnly || state.filters.friendsOnly) onFiltersChanged();
+}
+
+/* ── Auth Logic ───────────────────────────────────────────────── */
+async function handleAuthChange(session) {
+    state.user = session ? session.user : null;
+    const btnLogin = document.getElementById('btn-login');
+    const userProfile = document.getElementById('user-profile');
+    const userAvatar = document.getElementById('user-avatar');
+    
+    if (state.user) {
+        if (btnLogin) btnLogin.classList.add('hidden');
+        if (userProfile) userProfile.classList.remove('hidden');
+        const email = state.user.email || '';
+        const initial = email ? email.charAt(0).toUpperCase() : 'U';
+        if (userAvatar) userAvatar.textContent = initial;
+        document.getElementById('login-modal')?.classList.add('hidden');
+        
+        await fetchSavedEvents();
+    } else {
+        if (btnLogin) btnLogin.classList.remove('hidden');
+        if (userProfile) userProfile.classList.add('hidden');
+        state.globalSavedEvents = [];
+        state.filters.friendsOnly = false;
+        document.getElementById('btn-friends')?.classList.remove('active');
+        onFiltersChanged();
+    }
+}
+
+async function fetchSavedEvents() {
+    if (!supabaseClient || !state.user) return;
+    try {
+        const { data, error } = await supabaseClient.from('saved_events').select('*');
+        if (error) throw error;
+        state.globalSavedEvents = data || [];
+        
+        // Merge user's db saves into local favorites
+        const mySaves = state.globalSavedEvents.filter(s => s.user_id === state.user.id);
+        mySaves.forEach(s => state.favorites.add(s.event_id));
+        saveFavorites();
+        
+        onFiltersChanged();
+    } catch (err) {
+        console.error('Error fetching saved events:', err);
+    }
 }
 
 /* ── ICS Download ─────────────────────────────────────────────── */
