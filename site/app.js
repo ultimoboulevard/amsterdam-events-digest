@@ -496,10 +496,9 @@ function updateStats() {
         const srcArray = Array.from(srcSet).map(s => SOURCE_LABELS[s] || s).sort();
         let srcText = 'Active sources feeding this calendar:\n\n';
         if (srcArray.length <= 6) {
-            srcText += srcArray.join('\n• ');
-            if (srcArray.length > 0) srcText = srcText.replace('\n\n', '\n\n• ');
+            srcText += srcArray.map(s => '•\xa0' + s).join('\n');
         } else {
-            srcText += '• ' + srcArray.slice(0, 5).join('\n• ') + `\n... and ${srcArray.length - 5} more.`;
+            srcText += srcArray.slice(0, 5).map(s => '•\xa0' + s).join('\n') + `\n\n... and ${srcArray.length - 5} more.`;
         }
         el('stat-sources').setAttribute('data-tip', srcText);
     }
