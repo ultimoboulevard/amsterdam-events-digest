@@ -1,6 +1,6 @@
 {
-  "generated_at": "2026-05-08T11:50:47.717106",
-  "event_count": 1057,
+  "generated_at": "2026-05-08T13:51:40.114790",
+  "event_count": 1060,
   "events": [
     {
       "id": "38d52751d1c39af0",
@@ -887,6 +887,24 @@
     {
       "id": "60a2f21290fd97e7",
       "title": "Double Bill: BUST & A mouthful of stones - Première",
+      "date": "2026-05-08T18:30:00",
+      "date_end": null,
+      "venue": "Plein Theater",
+      "venue_address": "",
+      "event_type": "",
+      "artists": [],
+      "genres": [],
+      "price_min": 12.0,
+      "price_max": null,
+      "tickets_url": "",
+      "tickets_status": "available",
+      "source": "amsterdam_alt",
+      "source_url": "https://www.amsterdamalternative.nl/agenda/21467",
+      "match": null
+    },
+    {
+      "id": "b66d07cd2e5cdbbe",
+      "title": "Double Bill: BUST & A mouthful of stones - Première [SOLD OUT]",
       "date": "2026-05-08T18:30:00",
       "date_end": null,
       "venue": "Plein Theater",
@@ -3188,7 +3206,6 @@
       "venue_address": "Lijnbaansgracht 234A, Amsterdam",
       "event_type": "Clubnacht",
       "artists": [
-        "DOPE CAESAR",
         "EMSIFLYBOKOE",
         "GODSENDO",
         "TAYORISTAR",
@@ -3721,7 +3738,7 @@
       "price_min": null,
       "price_max": null,
       "tickets_url": "https://tickets.paradiso.nl/b233ad6e6c29438698a16002252a4dcc",
-      "tickets_status": "available",
+      "tickets_status": "postponed",
       "source": "paradiso",
       "source_url": "https://www.paradiso.nl/en/program/black-star/2764632",
       "match": null
@@ -7992,7 +8009,10 @@
       "venue_address": "Contactweg 68, 1014BW, Amsterdam, Nederland",
       "event_type": "Club",
       "artists": [
-        "Mr. Belt & Wezol"
+        "Mr. Belt & Wezol",
+        "DXNBY",
+        "Jay Latune",
+        "Marijn Jansen"
       ],
       "genres": [],
       "price_min": null,
@@ -17541,7 +17561,8 @@
         "Adaisy",
         "My Purse",
         "Wolfgang",
-        "Dear Omen"
+        "Dear Omen",
+        "The Bird Experience"
       ],
       "genres": [
         "Concert",
@@ -17691,37 +17712,6 @@
       "match": null
     },
     {
-      "id": "8039ab457bfa5e33",
-      "title": "Mokum Records",
-      "date": "2026-06-05T11:50:00",
-      "date_end": null,
-      "venue": "Paradiso",
-      "venue_address": "Paradiso - Grote Zaal, Paradiso - Kelder",
-      "event_type": "Club",
-      "artists": [
-        "DJ Dano",
-        "Tellurian",
-        "Remsy",
-        "WICKED XXX",
-        "Party Animals (live)",
-        "T-GO",
-        "Arvid",
-        "Los Muñaños",
-        "XTNA"
-      ],
-      "genres": [
-        "Electronic",
-        "Club"
-      ],
-      "price_min": null,
-      "price_max": null,
-      "tickets_url": "https://tickets.paradiso.nl/76de8d60b85f4ab5b8b55413e895fe1f",
-      "tickets_status": "available",
-      "source": "paradiso",
-      "source_url": "https://www.paradiso.nl/en/program/mokum-records/2785742",
-      "match": null
-    },
-    {
       "id": "9042676571599f55",
       "title": "PIV FESTIVAL 2026",
       "date": "2026-06-05T13:00:00",
@@ -17751,6 +17741,37 @@
       "tickets_status": "available",
       "source": "ra",
       "source_url": "https://ra.co/events/2314986",
+      "match": null
+    },
+    {
+      "id": "8039ab457bfa5e33",
+      "title": "Mokum Records",
+      "date": "2026-06-05T13:51:00",
+      "date_end": null,
+      "venue": "Paradiso",
+      "venue_address": "Paradiso - Grote Zaal, Paradiso - Kelder",
+      "event_type": "Club",
+      "artists": [
+        "DJ Dano",
+        "Tellurian",
+        "Remsy",
+        "WICKED XXX",
+        "Party Animals (live)",
+        "T-GO",
+        "Arvid",
+        "Los Muñaños",
+        "XTNA"
+      ],
+      "genres": [
+        "Electronic",
+        "Club"
+      ],
+      "price_min": null,
+      "price_max": null,
+      "tickets_url": "https://tickets.paradiso.nl/76de8d60b85f4ab5b8b55413e895fe1f",
+      "tickets_status": "available",
+      "source": "paradiso",
+      "source_url": "https://www.paradiso.nl/en/program/mokum-records/2785742",
       "match": null
     },
     {
@@ -20865,6 +20886,29 @@
       "match": null
     },
     {
+      "id": "72188c0023f5c134",
+      "title": "Club Roto x Paradiso",
+      "date": "2026-06-13T23:00:00",
+      "date_end": "2026-06-14T05:00:00",
+      "venue": "Paradiso",
+      "venue_address": "Weteringschans 6; 1017 Binnenstad; Amsterdam; Netherlands",
+      "event_type": "Club",
+      "artists": [
+        "Mateo Dufour",
+        "Samuel Deep",
+        "Noach",
+        "Jesse Maas"
+      ],
+      "genres": [],
+      "price_min": null,
+      "price_max": null,
+      "tickets_url": "",
+      "tickets_status": "available",
+      "source": "ra",
+      "source_url": "https://ra.co/events/2438514",
+      "match": null
+    },
+    {
       "id": "17452d16311165ec",
       "title": "Zer00's Heroes",
       "date": "2026-06-13T23:30:00",
@@ -21781,6 +21825,24 @@
       "tickets_status": "available",
       "source": "paradiso",
       "source_url": "https://www.paradiso.nl/en/program/dip-club-kids-common-culture/2890571",
+      "match": null
+    },
+    {
+      "id": "7dc3e53af1f15614",
+      "title": "Jouko & Camille Maria",
+      "date": "2026-06-19T00:00:00",
+      "date_end": null,
+      "venue": "Murmur",
+      "venue_address": "",
+      "event_type": "Misc",
+      "artists": [],
+      "genres": [],
+      "price_min": null,
+      "price_max": null,
+      "tickets_url": "",
+      "tickets_status": "",
+      "source": "murmur",
+      "source_url": "https://murmurmur.nl/",
       "match": null
     },
     {

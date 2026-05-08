@@ -202,7 +202,10 @@ function bindEvents() {
         
         msgEl.textContent = 'Sending...';
         msgEl.className = 'login-message';
-        const { error } = await supabaseClient.auth.signInWithOtp({ email });
+        const { error } = await supabaseClient.auth.signInWithOtp({ 
+            email,
+            options: { emailRedirectTo: window.location.href }
+        });
         
         if (error) {
             msgEl.textContent = error.message;
