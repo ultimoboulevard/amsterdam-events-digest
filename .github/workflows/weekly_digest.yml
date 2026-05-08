@@ -57,7 +57,7 @@ jobs:
           git config user.email "action@github.com"
           git add data/events.db data/lastfm_cache.db
           git commit -m "Auto-update DB: $(date +'%Y-%m-%d')" || echo "No changes"
-          git pull --rebase origin main || true
+          git pull --rebase --autostash origin main || true
           git push
 
       - name: Deploy calendar site to GitHub Pages
