@@ -194,13 +194,6 @@ function bindEvents() {
         if (supabaseClient) await supabaseClient.auth.signOut();
     });
     
-    document.getElementById('btn-google-login')?.addEventListener('click', async () => {
-        if (supabaseClient) await supabaseClient.auth.signInWithOAuth({ provider: 'google' });
-    });
-    document.getElementById('btn-apple-login')?.addEventListener('click', async () => {
-        if (supabaseClient) await supabaseClient.auth.signInWithOAuth({ provider: 'apple' });
-    });
-    
     document.getElementById('magic-link-form')?.addEventListener('submit', async (e) => {
         e.preventDefault();
         if (!supabaseClient) return;
