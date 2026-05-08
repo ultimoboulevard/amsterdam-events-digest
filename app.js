@@ -88,7 +88,7 @@ async function init() {
                 <div class="stat-card"><span class="stat-val" id="stat-total">0</span><span class="stat-lbl">Events</span></div>
                 <div class="stat-card"><span class="stat-val" id="stat-venues">0</span><span class="stat-lbl">Venues</span></div>
                 <div class="stat-card"><span class="stat-val" id="stat-days">0</span><span class="stat-lbl">Days</span></div>
-                <div class="stat-card"><span class="stat-val" id="stat-matches">0</span><span class="stat-lbl">Matches</span></div>
+                <div class="stat-card" title="Events featuring artists from your personal library"><span class="stat-val" id="stat-matches">0</span><span class="stat-lbl" style="cursor: help;">Matches ℹ️</span></div>
             </section>`;
 
         populateFilters();
