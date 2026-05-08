@@ -32,6 +32,10 @@ from collectors.amsterdam_alt_collector import AmsterdamAltCollector
 from collectors.ra_collector import ResidentAdvisorCollector
 from collectors.murmur_collector import MurmurCollector
 from collectors.paradiso_collector import ParadisoCollector
+from collectors.museumkaart_collector import MuseumkaartCollector
+from collectors.gallery_viewer_collector import GalleryViewerCollector
+from collectors.muziekgebouw_collector import MuziekgebouwCollector
+from collectors.concertgebouw_collector import ConcertgebouwCollector
 
 COLLECTORS = {
     "melkweg": MelkwegCollector,
@@ -39,6 +43,10 @@ COLLECTORS = {
     "ra": ResidentAdvisorCollector,
     "murmur": MurmurCollector,
     "paradiso": ParadisoCollector,
+    "museumkaart": MuseumkaartCollector,
+    "gallery_viewer": GalleryViewerCollector,
+    "muziekgebouw": MuziekgebouwCollector,
+    "concertgebouw": ConcertgebouwCollector,
 }
 
 logging.basicConfig(

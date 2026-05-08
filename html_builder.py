@@ -115,6 +115,8 @@ def _source_label(source: str) -> str:
         "amsterdam_alt": "Amsterdam Alternative",
         "ra": "Resident Advisor",
         "paradiso": "Paradiso",
+        "gallery_viewer": "Gallery Viewer",
+        "muziekgebouw": "Muziekgebouw",
     }.get(source, source.title())
 
 

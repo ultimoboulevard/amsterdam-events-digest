@@ -240,6 +240,71 @@ body {
 .fav-toggle:hover { border-color: var(--accent-orange); color: var(--accent-orange); }
 .fav-toggle.active { background: rgba(249, 115, 22, 0.15); border-color: var(--accent-orange); color: var(--accent-orange); }
 .clear-btn:hover { border-color: var(--accent-red); color: var(--accent-red); }
+
+/* ── Category Buttons ────────────────────────────────────────── */
+.filter-separator {
+    width: 1px;
+    height: 24px;
+    background: var(--border-subtle);
+    margin: 0 4px;
+    flex-shrink: 0;
+}
+
+.category-btn {
+    padding: 8px 14px;
+    background: var(--bg-card);
+    border: 1px solid var(--border-subtle);
+    border-radius: 20px;
+    color: var(--text-secondary);
+    font-family: inherit;
+    font-size: 0.8rem;
+    font-weight: 600;
+    cursor: pointer;
+    white-space: nowrap;
+    transition: all 0.25s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+/* l-ART — warm amber/gold */
+.category-btn.cat-art:hover {
+    border-color: #f59e0b;
+    color: #fbbf24;
+    box-shadow: 0 0 12px rgba(245, 158, 11, 0.15);
+}
+.category-btn.cat-art.active {
+    background: linear-gradient(135deg, rgba(245, 158, 11, 0.18) 0%, rgba(251, 191, 36, 0.10) 100%);
+    border-color: #f59e0b;
+    color: #fbbf24;
+    box-shadow: 0 0 16px rgba(245, 158, 11, 0.25), inset 0 0 12px rgba(245, 158, 11, 0.06);
+}
+
+/* Classica — elegant rose/mauve */
+.category-btn.cat-classica:hover {
+    border-color: #e879a8;
+    color: #f0abcb;
+    box-shadow: 0 0 12px rgba(232, 121, 168, 0.15);
+}
+.category-btn.cat-classica.active {
+    background: linear-gradient(135deg, rgba(232, 121, 168, 0.18) 0%, rgba(240, 171, 203, 0.10) 100%);
+    border-color: #e879a8;
+    color: #f0abcb;
+    box-shadow: 0 0 16px rgba(232, 121, 168, 0.25), inset 0 0 12px rgba(232, 121, 168, 0.06);
+}
+
+/* Jazz — cool blue/indigo */
+.category-btn.cat-jazz:hover {
+    border-color: #6366f1;
+    color: #a5b4fc;
+    box-shadow: 0 0 12px rgba(99, 102, 241, 0.15);
+}
+.category-btn.cat-jazz.active {
+    background: linear-gradient(135deg, rgba(99, 102, 241, 0.18) 0%, rgba(165, 180, 252, 0.10) 100%);
+    border-color: #6366f1;
+    color: #a5b4fc;
+    box-shadow: 0 0 16px rgba(99, 102, 241, 0.25), inset 0 0 12px rgba(99, 102, 241, 0.06);
+}
+
 .hidden { display: none !important; }
 
 /* ── Container ────────────────────────────────────────────────── */
