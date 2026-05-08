@@ -674,6 +674,95 @@ body {
     color: var(--text-muted);
 }
 
+/* ── Stat Card Custom Tooltip ─────────────────────────────────── */
+.has-tooltip {
+    position: relative;
+    cursor: default;
+}
+
+.has-tooltip .stat-lbl {
+    cursor: help;
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+}
+
+.has-tooltip .stat-lbl::after {
+    content: '?';
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 13px;
+    height: 13px;
+    background: rgba(124, 58, 237, 0.25);
+    border: 1px solid rgba(124, 58, 237, 0.5);
+    border-radius: 50%;
+    font-size: 0.55rem;
+    font-weight: 700;
+    color: var(--accent-purple);
+    line-height: 1;
+    vertical-align: middle;
+    transition: background var(--transition), border-color var(--transition);
+}
+
+.has-tooltip:hover .stat-lbl::after {
+    background: rgba(124, 58, 237, 0.5);
+    border-color: var(--accent-purple);
+}
+
+.has-tooltip [data-tip] {
+    position: relative;
+}
+
+.has-tooltip [data-tip]::before,
+.has-tooltip [data-tip]::after {
+    position: absolute;
+    bottom: calc(100% + 10px);
+    left: 50%;
+    transform: translateX(-50%);
+    pointer-events: none;
+    opacity: 0;
+    transition: opacity 0.2s ease, transform 0.2s ease;
+    transform: translateX(-50%) translateY(4px);
+    z-index: 9999;
+}
+
+.has-tooltip [data-tip]::before {
+    content: attr(data-tip);
+    background: rgba(18, 18, 30, 0.97);
+    border: 1px solid rgba(124, 58, 237, 0.4);
+    color: var(--text-primary);
+    font-size: 0.72rem;
+    font-weight: 500;
+    line-height: 1.5;
+    padding: 7px 12px;
+    border-radius: var(--radius-sm);
+    white-space: nowrap;
+    max-width: 240px;
+    white-space: normal;
+    text-align: left;
+    text-transform: none;
+    letter-spacing: normal;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.5), 0 0 0 1px rgba(124, 58, 237, 0.15);
+    backdrop-filter: blur(12px);
+}
+
+.has-tooltip [data-tip]::after {
+    content: '';
+    bottom: calc(100% + 4px);
+    width: 0;
+    height: 0;
+    border-left: 6px solid transparent;
+    border-right: 6px solid transparent;
+    border-top: 6px solid rgba(124, 58, 237, 0.4);
+}
+
+.has-tooltip:hover [data-tip]::before,
+.has-tooltip:hover [data-tip]::after {
+    opacity: 1;
+    transform: translateX(-50%) translateY(0);
+}
+
 /* ── Footer ───────────────────────────────────────────────────── */
 #site-footer {
     text-align: center;

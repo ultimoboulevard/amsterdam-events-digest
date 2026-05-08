@@ -88,7 +88,8 @@ async function init() {
                 <div class="stat-card"><span class="stat-val" id="stat-total">0</span><span class="stat-lbl">Events</span></div>
                 <div class="stat-card"><span class="stat-val" id="stat-venues">0</span><span class="stat-lbl">Venues</span></div>
                 <div class="stat-card"><span class="stat-val" id="stat-days">0</span><span class="stat-lbl">Days</span></div>
-                <div class="stat-card" title="Events featuring artists from your personal library"><span class="stat-val" id="stat-matches">0</span><span class="stat-lbl" style="cursor: help;">Matches ℹ️</span></div>
+                <div class="stat-card has-tooltip"><span class="stat-val" id="stat-matches" data-tip="Events where at least one performing artist is found in your personal Last.fm library or taste profile.">0</span><span class="stat-lbl">Matches</span></div>
+                <div class="stat-card has-tooltip"><span class="stat-val" id="stat-sources" data-tip="Number of distinct platforms and venues actively feeding this calendar (e.g. Melkweg, Resident Advisor, Concertgebouw…).">0</span><span class="stat-lbl">Sources</span></div>
             </section>`;
 
         populateFilters();
@@ -483,12 +484,14 @@ function updateStats() {
     const dates = new Set(filtered.map(ev => ev.date?.split('T')[0]).filter(Boolean));
     const vSet = new Set(filtered.map(ev => ev.venue).filter(Boolean));
     const matches = filtered.filter(ev => ev.match).length;
+    const srcSet = new Set(state.raw.map(ev => ev.source).filter(Boolean));
 
     const el = (id) => document.getElementById(id);
     if (el('stat-total')) el('stat-total').textContent = filtered.length;
     if (el('stat-venues')) el('stat-venues').textContent = vSet.size;
     if (el('stat-days')) el('stat-days').textContent = dates.size;
     if (el('stat-matches')) el('stat-matches').textContent = matches;
+    if (el('stat-sources')) el('stat-sources').textContent = srcSet.size;
 }
 
 /* ── Favorites ────────────────────────────────────────────────── */
