@@ -1,6 +1,6 @@
 {
-  "generated_at": "2026-05-09T06:20:17.327676",
-  "event_count": 1052,
+  "generated_at": "2026-05-09T08:54:15.978387",
+  "event_count": 1114,
   "events": [
     {
       "id": "de3ec5ba7d18b259",
@@ -1409,6 +1409,60 @@
       "match": null
     },
     {
+      "id": "18ef71bf375b0e7a",
+      "title": "Ryan Harris",
+      "date": "2026-05-09T20:30:00",
+      "date_end": null,
+      "venue": "Paradiso (Tolhuistuin)",
+      "venue_address": "Tolhuistuin - Club",
+      "event_type": "Concert",
+      "artists": [
+        "Ryan Harris",
+        "Ben Morgan"
+      ],
+      "genres": [
+        "Concert",
+        "Singer-songwriter / Folk",
+        "Stadspas"
+      ],
+      "price_min": null,
+      "price_max": null,
+      "tickets_url": "https://tickets.paradiso.nl/9bda40ce7b324673802e80687e6d94e3",
+      "tickets_status": "available",
+      "source": "paradiso",
+      "source_url": "https://www.paradiso.nl/en/program/ryan-harris/2675376",
+      "match": null
+    },
+    {
+      "id": "f21a676771c7a8b1",
+      "title": "Tsar B",
+      "date": "2026-05-09T20:30:00",
+      "date_end": null,
+      "venue": "Paradiso (Bitterzoet)",
+      "venue_address": "Bitterzoet - Concertzaal",
+      "event_type": "Concert",
+      "artists": [
+        "Tsar B",
+        "Gala Dragot"
+      ],
+      "genres": [
+        "Concert",
+        "Pop",
+        "Electronic"
+      ],
+      "price_min": null,
+      "price_max": null,
+      "tickets_url": "https://tickets.paradiso.nl/3a9c6b33b74e4abbad7918f03d0458d2",
+      "tickets_status": "available",
+      "source": "paradiso",
+      "source_url": "https://www.paradiso.nl/en/program/tsar-b/2733068",
+      "match": {
+        "type": "Discovery",
+        "reason": "Similar to Greentea Peng",
+        "score": 5
+      }
+    },
+    {
       "id": "276cac7bcf5ab078",
       "title": "Madam by Night invites: Guerrilla",
       "date": "2026-05-09T21:00:00",
@@ -2610,6 +2664,30 @@
       "match": null
     },
     {
+      "id": "88656922a2661131",
+      "title": "Isak Danielson",
+      "date": "2026-05-10T20:30:00",
+      "date_end": null,
+      "venue": "Paradiso (Zonnehuis)",
+      "venue_address": "Zonnehuis - Theaterzaal",
+      "event_type": "Concert",
+      "artists": [
+        "Isak Danielson"
+      ],
+      "genres": [
+        "Concert",
+        "Pop",
+        "Singer-songwriter / Folk"
+      ],
+      "price_min": null,
+      "price_max": null,
+      "tickets_url": "https://tickets.paradiso.nl/0a8c19e41b8b4f0eafb59141411104cb",
+      "tickets_status": "available",
+      "source": "paradiso",
+      "source_url": "https://www.paradiso.nl/en/program/isak-danielson/2825025",
+      "match": null
+    },
+    {
       "id": "f3a193bff35c3033",
       "title": "Black Star",
       "date": "2026-05-10T21:00:00",
@@ -2889,11 +2967,85 @@
       "match": null
     },
     {
+      "id": "7b2269ced0740803",
+      "title": "Kaitlin Butts",
+      "date": "2026-05-11T20:30:00",
+      "date_end": null,
+      "venue": "Paradiso (Tolhuistuin)",
+      "venue_address": "Tolhuistuin - Club",
+      "event_type": "Concert",
+      "artists": [
+        "Kaitlin Butts",
+        "Meels"
+      ],
+      "genres": [
+        "Concert",
+        "Roots / Americana / Country / Blues"
+      ],
+      "price_min": null,
+      "price_max": null,
+      "tickets_url": "https://tickets.paradiso.nl/12d4d73962ad46608cd5cd8d425bbd21",
+      "tickets_status": "available",
+      "source": "paradiso",
+      "source_url": "https://www.paradiso.nl/en/program/kaitlin-butts/2779058",
+      "match": null
+    },
+    {
+      "id": "7376cda2660f57b6",
+      "title": "Worldpeace DMT",
+      "date": "2026-05-11T20:30:00",
+      "date_end": null,
+      "venue": "Paradiso (Cinetol)",
+      "venue_address": "Cinetol - Concertzaal",
+      "event_type": "Concert",
+      "artists": [
+        "Worldpeace DMT",
+        "The Femcels",
+        "Samo"
+      ],
+      "genres": [
+        "Alternative / Indie",
+        "Pop",
+        "Electronic"
+      ],
+      "price_min": null,
+      "price_max": null,
+      "tickets_url": "https://tickets.paradiso.nl/5caf0cf2cdfa4df288758e6ea69fa3b8",
+      "tickets_status": "available",
+      "source": "paradiso",
+      "source_url": "https://www.paradiso.nl/en/program/worldpeace-dmt-the-femcels/2877018",
+      "match": null
+    },
+    {
       "id": "afe8bebddbcaff22",
       "title": "Lusho + BFL Quatro",
       "date": "2026-05-11T20:45:00",
       "date_end": null,
       "venue": "Bitterzoet",
+      "venue_address": "Bitterzoet - Concertzaal",
+      "event_type": "Concert",
+      "artists": [
+        "Lusho",
+        "BFL Quatro"
+      ],
+      "genres": [
+        "Concert",
+        "Hip hop / R&B"
+      ],
+      "price_min": null,
+      "price_max": null,
+      "tickets_url": "https://tickets.paradiso.nl/d6429af335ae44348ac8fd34c5c22bcd",
+      "tickets_status": "available",
+      "source": "paradiso",
+      "source_url": "https://www.paradiso.nl/en/program/lusho/2833942",
+      "match": null
+    },
+    {
+      "id": "395bc6934edf56af",
+      "title": "Lusho + BFL Quatro",
+      "date": "2026-05-11T20:45:00",
+      "date_end": null,
+      "venue": "Paradiso (Bitterzoet)",
       "venue_address": "Bitterzoet - Concertzaal",
       "event_type": "Concert",
       "artists": [
@@ -3148,6 +3300,31 @@
       "date": "2026-05-12T20:30:00",
       "date_end": null,
       "venue": "Tolhuistuin",
+      "venue_address": "Tolhuistuin - Club",
+      "event_type": "Concert",
+      "artists": [
+        "Florry",
+        "Rubin Carter"
+      ],
+      "genres": [
+        "Concert",
+        "Alternative / Indie",
+        "Roots / Americana / Country / Blues"
+      ],
+      "price_min": null,
+      "price_max": null,
+      "tickets_url": "https://tickets.paradiso.nl/b6e27f8809e94822a466aee72804ade0",
+      "tickets_status": "changeofvenue",
+      "source": "paradiso",
+      "source_url": "https://www.paradiso.nl/en/program/florry/2730724",
+      "match": null
+    },
+    {
+      "id": "b24048e7aca3454b",
+      "title": "Florry",
+      "date": "2026-05-12T20:30:00",
+      "date_end": null,
+      "venue": "Paradiso (Tolhuistuin)",
       "venue_address": "Tolhuistuin - Club",
       "event_type": "Concert",
       "artists": [
@@ -3697,6 +3874,30 @@
       "match": null
     },
     {
+      "id": "2ca81f1e4853cc1d",
+      "title": "Tamikrest",
+      "date": "2026-05-13T20:30:00",
+      "date_end": null,
+      "venue": "Paradiso (Tolhuistuin)",
+      "venue_address": "Tolhuistuin - Club",
+      "event_type": "Concert",
+      "artists": [
+        "Tamikrest"
+      ],
+      "genres": [
+        "Concert",
+        "Rock",
+        "Roots / Americana / Country / Blues"
+      ],
+      "price_min": null,
+      "price_max": null,
+      "tickets_url": "https://tickets.paradiso.nl/986afe5ef64949a889e26595a0dc671a",
+      "tickets_status": "available",
+      "source": "paradiso",
+      "source_url": "https://www.paradiso.nl/en/program/tamikrest/2705431",
+      "match": null
+    },
+    {
       "id": "424d82d72d935388",
       "title": "SWMRS",
       "date": "2026-05-13T22:00:00",
@@ -4139,6 +4340,30 @@
       "match": null
     },
     {
+      "id": "949566ce9e65789a",
+      "title": "Witch Post",
+      "date": "2026-05-14T20:00:00",
+      "date_end": null,
+      "venue": "Paradiso (Doka)",
+      "venue_address": "Extern - Overig",
+      "event_type": "Concert",
+      "artists": [
+        "Witch Post"
+      ],
+      "genres": [
+        "Rock",
+        "Alternative / Indie",
+        "Roots / Americana / Country / Blues"
+      ],
+      "price_min": null,
+      "price_max": null,
+      "tickets_url": "https://tickets.paradiso.nl/8f621b2d3eca4febb09009405ea07e8f",
+      "tickets_status": "available",
+      "source": "paradiso",
+      "source_url": "https://www.paradiso.nl/en/program/witch-post/2867876",
+      "match": null
+    },
+    {
       "id": "84246c725d3f2349",
       "title": "The best Dutch wind players 1: Maite Hontelé",
       "date": "2026-05-14T20:15:00",
@@ -4250,6 +4475,34 @@
       "source": "bimhuis",
       "source_url": "https://www.bimhuis.nl/en/calendar/music-meets-dance-annelie-koning-miri-lee-joshua-herwig-lea-ved-raphael-vanoli-tu-hoang-amber-docters-van-leeuwen-klara-alexova/",
       "match": null
+    },
+    {
+      "id": "818941478004f406",
+      "title": "Deerhoof",
+      "date": "2026-05-14T20:30:00",
+      "date_end": null,
+      "venue": "Paradiso (Tolhuistuin)",
+      "venue_address": "Tolhuistuin - Club",
+      "event_type": "Concert",
+      "artists": [
+        "Deerhoof",
+        "Magasin"
+      ],
+      "genres": [
+        "Concert",
+        "Alternative / Indie"
+      ],
+      "price_min": null,
+      "price_max": null,
+      "tickets_url": "https://tickets.paradiso.nl/61dd2917961d466d84c9762363d56459",
+      "tickets_status": "available",
+      "source": "paradiso",
+      "source_url": "https://www.paradiso.nl/en/program/deerhoof/2771269",
+      "match": {
+        "type": "Library Match",
+        "reason": "In your TIDAL library",
+        "score": 6
+      }
     },
     {
       "id": "09ed17f8a3714cb5",
@@ -4921,6 +5174,51 @@
       "tickets_status": "available",
       "source": "bimhuis",
       "source_url": "https://www.bimhuis.nl/en/calendar/lucrecia-dalt-a-danger-to-ourselves/",
+      "match": null
+    },
+    {
+      "id": "23fd50d9e66aa0df",
+      "title": "Corey Kent",
+      "date": "2026-05-15T20:30:00",
+      "date_end": null,
+      "venue": "Paradiso (Tolhuistuin)",
+      "venue_address": "Tolhuistuin - Club",
+      "event_type": "Concert",
+      "artists": [
+        "Corey Kent",
+        "Austin Jenckes"
+      ],
+      "genres": [],
+      "price_min": null,
+      "price_max": null,
+      "tickets_url": "https://tickets.paradiso.nl/46bd13d181d446e0bc1547d4f662c241",
+      "tickets_status": "available",
+      "source": "paradiso",
+      "source_url": "https://www.paradiso.nl/en/program/corey-kent/2764580",
+      "match": null
+    },
+    {
+      "id": "6fa71234bfb0eb38",
+      "title": "Dotan - Benefiet voor Vondelkerk",
+      "date": "2026-05-15T20:30:00",
+      "date_end": null,
+      "venue": "Paradiso (De Duif)",
+      "venue_address": "De Duif - Kerkzaal",
+      "event_type": "Concert",
+      "artists": [
+        "Dotan"
+      ],
+      "genres": [
+        "Concert",
+        "Pop",
+        "Singer-songwriter / Folk"
+      ],
+      "price_min": null,
+      "price_max": null,
+      "tickets_url": "https://tickets.paradiso.nl/d5193f58a633435392da3e3367d5050b",
+      "tickets_status": "available",
+      "source": "paradiso",
+      "source_url": "https://www.paradiso.nl/en/program/dotan-european-solo-acoustic-tour/2758915",
       "match": null
     },
     {
@@ -6337,6 +6635,30 @@
       "match": null
     },
     {
+      "id": "75222c4c0aa7987b",
+      "title": "Em Beihold - Tales of a Failed Shapeshifter Tour",
+      "date": "2026-05-16T20:30:00",
+      "date_end": null,
+      "venue": "Paradiso (Tolhuistuin)",
+      "venue_address": "Tolhuistuin - Club",
+      "event_type": "Concert",
+      "artists": [
+        "Em Beihold",
+        "Erica Manzoli"
+      ],
+      "genres": [
+        "Concert",
+        "Pop"
+      ],
+      "price_min": null,
+      "price_max": null,
+      "tickets_url": "https://tickets.paradiso.nl/569bef3be70e4bdfb7cceae415b4b844",
+      "tickets_status": "available",
+      "source": "paradiso",
+      "source_url": "https://www.paradiso.nl/en/program/em-beihold-tales-of-a-failed-shapeshifter-tour/2812798",
+      "match": null
+    },
+    {
       "id": "8b1e05fc1766de35",
       "title": "Madam by Night: A'DAM 10 Years",
       "date": "2026-05-16T21:00:00",
@@ -7339,6 +7661,30 @@
       "match": null
     },
     {
+      "id": "880a67dc9bbffd26",
+      "title": "Otis Gibbs",
+      "date": "2026-05-17T20:30:00",
+      "date_end": null,
+      "venue": "Paradiso (Tolhuistuin)",
+      "venue_address": "Tolhuistuin - Zonzij",
+      "event_type": "Concert",
+      "artists": [
+        "Otis Gibbs",
+        "Ags Connolly"
+      ],
+      "genres": [
+        "Concert",
+        "Roots / Americana / Country / Blues"
+      ],
+      "price_min": null,
+      "price_max": null,
+      "tickets_url": "https://tickets.paradiso.nl/65b94ce0a2fb4567bfbb7e051906a5d5",
+      "tickets_status": "available",
+      "source": "paradiso",
+      "source_url": "https://www.paradiso.nl/en/program/otis-gibbs/2706575",
+      "match": null
+    },
+    {
       "id": "3f8868fbb33a652e",
       "title": "PartyOf2",
       "date": "2026-05-17T22:00:00",
@@ -7570,6 +7916,54 @@
       "date": "2026-05-18T20:30:00",
       "date_end": null,
       "venue": "Bitterzoet",
+      "venue_address": "Bitterzoet - Concertzaal",
+      "event_type": "Concert",
+      "artists": [
+        "Lights"
+      ],
+      "genres": [
+        "Concert",
+        "Alternative / Indie",
+        "Pop",
+        "Singer-songwriter / Folk",
+        "Electronic"
+      ],
+      "price_min": null,
+      "price_max": null,
+      "tickets_url": "https://tickets.paradiso.nl/609ef65569d745f3bc1724d6a61045d1",
+      "tickets_status": "available",
+      "source": "paradiso",
+      "source_url": "https://www.paradiso.nl/en/program/lights/2818263",
+      "match": null
+    },
+    {
+      "id": "2fe862a078925771",
+      "title": "Chris Grey - Paradise Lost Tour",
+      "date": "2026-05-18T20:30:00",
+      "date_end": null,
+      "venue": "Paradiso (Tolhuistuin)",
+      "venue_address": "Tolhuistuin - Club",
+      "event_type": "Concert",
+      "artists": [
+        "Chris Grey"
+      ],
+      "genres": [
+        "Concert"
+      ],
+      "price_min": null,
+      "price_max": null,
+      "tickets_url": "https://tickets.paradiso.nl/74b6d5c9a37446fcb7fe42509b70489c",
+      "tickets_status": "available",
+      "source": "paradiso",
+      "source_url": "https://www.paradiso.nl/en/program/chris-grey-finding-paradise/2784990",
+      "match": null
+    },
+    {
+      "id": "166a4027084c99e2",
+      "title": "Lights",
+      "date": "2026-05-18T20:30:00",
+      "date_end": null,
+      "venue": "Paradiso (Bitterzoet)",
       "venue_address": "Bitterzoet - Concertzaal",
       "event_type": "Concert",
       "artists": [
@@ -7920,6 +8314,75 @@
       "match": null
     },
     {
+      "id": "1a8a08f045d677d5",
+      "title": "Science & Cocktails: Predicting human life",
+      "date": "2026-05-19T20:30:00",
+      "date_end": null,
+      "venue": "Paradiso (Tolhuistuin)",
+      "venue_address": "Tolhuistuin - Club",
+      "event_type": "Talk",
+      "artists": [
+        "Sune Lehmann",
+        "My Purse"
+      ],
+      "genres": [
+        "Concert",
+        "Literature / Science / Politics / Art",
+        "Stadspas"
+      ],
+      "price_min": null,
+      "price_max": null,
+      "tickets_url": "https://tickets.paradiso.nl/8a31175bbbd340ee81d300afcf82fc87",
+      "tickets_status": "available",
+      "source": "paradiso",
+      "source_url": "https://www.paradiso.nl/en/program/science-cocktails/2867223",
+      "match": null
+    },
+    {
+      "id": "8d541a1c3f6a5565",
+      "title": "Jack Cullen",
+      "date": "2026-05-19T20:30:00",
+      "date_end": null,
+      "venue": "Paradiso (Tolhuistuin)",
+      "venue_address": "Tolhuistuin - Zonzij",
+      "event_type": "Concert",
+      "artists": [],
+      "genres": [
+        "Alternative / Indie",
+        "Pop"
+      ],
+      "price_min": null,
+      "price_max": null,
+      "tickets_url": "https://tickets.paradiso.nl/5803ded49563416d85233aa0a0c35456",
+      "tickets_status": "available",
+      "source": "paradiso",
+      "source_url": "https://www.paradiso.nl/en/program/jack-cullen/2833891",
+      "match": null
+    },
+    {
+      "id": "6796630085a3efdc",
+      "title": "THE FATAL FLOWERS - TRY OUT",
+      "date": "2026-05-19T20:30:00",
+      "date_end": null,
+      "venue": "Paradiso (Cinetol)",
+      "venue_address": "Cinetol - Concertzaal",
+      "event_type": "Concert",
+      "artists": [
+        "The Fatal Flowers"
+      ],
+      "genres": [
+        "Concert",
+        "Rock"
+      ],
+      "price_min": null,
+      "price_max": null,
+      "tickets_url": "https://tickets.paradiso.nl/982baee14a0c4e659d705020faaa9a06",
+      "tickets_status": "available",
+      "source": "paradiso",
+      "source_url": "https://www.paradiso.nl/en/program/the-fatal-flowers-try-out/2876892",
+      "match": null
+    },
+    {
       "id": "8ce4d8182fcc310c",
       "title": "Rough Diamonds: Joep Grotendorst Quartet | brukle & Chamber Ensemble",
       "date": "2026-05-19T21:30:00",
@@ -8226,6 +8689,53 @@
       "date": "2026-05-20T20:30:00",
       "date_end": null,
       "venue": "Cinetol",
+      "venue_address": "Cinetol - Concertzaal",
+      "event_type": "Concert",
+      "artists": [
+        "The Fatal Flowers"
+      ],
+      "genres": [
+        "Concert",
+        "Rock"
+      ],
+      "price_min": null,
+      "price_max": null,
+      "tickets_url": "https://tickets.paradiso.nl/b84b0919490d470e89a91820caf7c56a",
+      "tickets_status": "available",
+      "source": "paradiso",
+      "source_url": "https://www.paradiso.nl/en/program/the-fatal-flowers-try-out/2876896",
+      "match": null
+    },
+    {
+      "id": "c491b50709beca9c",
+      "title": "Maddox Batson - live worldwide tour",
+      "date": "2026-05-20T20:30:00",
+      "date_end": null,
+      "venue": "Paradiso (Tolhuistuin)",
+      "venue_address": "Tolhuistuin - Club",
+      "event_type": "Concert",
+      "artists": [
+        "Maddox Batson"
+      ],
+      "genres": [
+        "Concert",
+        "Pop",
+        "Singer-songwriter / Folk"
+      ],
+      "price_min": null,
+      "price_max": null,
+      "tickets_url": "https://tickets.paradiso.nl/7ddc0c4150de467390ad48c1a0fc4fea",
+      "tickets_status": "available",
+      "source": "paradiso",
+      "source_url": "https://www.paradiso.nl/en/program/maddox-batson/2743388",
+      "match": null
+    },
+    {
+      "id": "72e7da2cbaddcc21",
+      "title": "THE FATAL FLOWERS - TRY OUT",
+      "date": "2026-05-20T20:30:00",
+      "date_end": null,
+      "venue": "Paradiso (Cinetol)",
       "venue_address": "Cinetol - Concertzaal",
       "event_type": "Concert",
       "artists": [
@@ -8813,11 +9323,81 @@
       "match": null
     },
     {
+      "id": "ed29be42027ae29c",
+      "title": "Au/Ra",
+      "date": "2026-05-21T20:30:00",
+      "date_end": null,
+      "venue": "Paradiso (Bitterzoet)",
+      "venue_address": "Bitterzoet - Concertzaal",
+      "event_type": "Concert",
+      "artists": [
+        "Au/Ra"
+      ],
+      "genres": [
+        "Concert",
+        "Pop",
+        "Electronic"
+      ],
+      "price_min": null,
+      "price_max": null,
+      "tickets_url": "https://tickets.paradiso.nl/732455c8b94c4df6875fe4e0e039b6e5",
+      "tickets_status": "available",
+      "source": "paradiso",
+      "source_url": "https://www.paradiso.nl/en/program/au-ra/2771093",
+      "match": null
+    },
+    {
+      "id": "935f812be7fa4c0d",
+      "title": "okgiorgio",
+      "date": "2026-05-21T20:30:00",
+      "date_end": null,
+      "venue": "Paradiso (Tolhuistuin)",
+      "venue_address": "Tolhuistuin - Club",
+      "event_type": "Club",
+      "artists": [
+        "okgiorgio"
+      ],
+      "genres": [
+        "Electronic",
+        "Club"
+      ],
+      "price_min": null,
+      "price_max": null,
+      "tickets_url": "https://tickets.paradiso.nl/87f1b79a2bfe464285ec9c0d04bcd650",
+      "tickets_status": "available",
+      "source": "paradiso",
+      "source_url": "https://www.paradiso.nl/en/program/okgiorgio/2792670",
+      "match": null
+    },
+    {
       "id": "60b6e956b4867f71",
       "title": "Jack Van Cleaf",
       "date": "2026-05-21T21:30:00",
       "date_end": null,
       "venue": "Tolhuistuin",
+      "venue_address": "Tolhuistuin - Zonzij",
+      "event_type": "Concert",
+      "artists": [
+        "Jack Van Cleaf"
+      ],
+      "genres": [
+        "Concert",
+        "Roots / Americana / Country / Blues"
+      ],
+      "price_min": null,
+      "price_max": null,
+      "tickets_url": "https://tickets.paradiso.nl/4978434550634462b1fb16feee5f1712",
+      "tickets_status": "available",
+      "source": "paradiso",
+      "source_url": "https://www.paradiso.nl/en/program/jack-van-cleaf/2884356",
+      "match": null
+    },
+    {
+      "id": "a08cd1ecee3d2205",
+      "title": "Jack Van Cleaf",
+      "date": "2026-05-21T21:30:00",
+      "date_end": null,
+      "venue": "Paradiso (Tolhuistuin)",
       "venue_address": "Tolhuistuin - Zonzij",
       "event_type": "Concert",
       "artists": [
@@ -9438,6 +10018,31 @@
       }
     },
     {
+      "id": "842b45b2430e8cb6",
+      "title": "Romperayo",
+      "date": "2026-05-22T20:30:00",
+      "date_end": null,
+      "venue": "Paradiso (Tolhuistuin)",
+      "venue_address": "Tolhuistuin - Club",
+      "event_type": "Concert",
+      "artists": [
+        "Romperayo",
+        "T.E.C.A"
+      ],
+      "genres": [
+        "Electronic",
+        "Afro / Reggae / Dancehall / Latin",
+        "Roots"
+      ],
+      "price_min": null,
+      "price_max": null,
+      "tickets_url": "https://tickets.paradiso.nl/bb243dbf601a4f769a753126c812e68e",
+      "tickets_status": "available",
+      "source": "paradiso",
+      "source_url": "https://www.paradiso.nl/en/program/romperayo/2779820",
+      "match": null
+    },
+    {
       "id": "4cfb1e0cc7777eca",
       "title": "Toy Tonics Jam",
       "date": "2026-05-22T21:00:00",
@@ -9916,6 +10521,32 @@
       "date": "2026-05-22T23:59:00",
       "date_end": null,
       "venue": "Parallel",
+      "venue_address": "Tolhuistuin - Club",
+      "event_type": "Club",
+      "artists": [
+        "Safety Trance / Cardopusher",
+        "Gabber Eleganza",
+        "Sukubratz",
+        "SLIMFIT"
+      ],
+      "genres": [
+        "Electronic",
+        "Club"
+      ],
+      "price_min": null,
+      "price_max": null,
+      "tickets_url": "https://tickets.parallel.am/17fddf7e738c4f1db98fc304b56a807f",
+      "tickets_status": "available",
+      "source": "paradiso",
+      "source_url": "https://www.paradiso.nl/en/program/destruccion/2887571",
+      "match": null
+    },
+    {
+      "id": "be1848c92e7a15a5",
+      "title": "DESTRUCCION",
+      "date": "2026-05-22T23:59:00",
+      "date_end": null,
+      "venue": "Paradiso (Parallel)",
       "venue_address": "Tolhuistuin - Club",
       "event_type": "Club",
       "artists": [
@@ -11708,6 +12339,36 @@
       "match": null
     },
     {
+      "id": "dcca0ee80208c1f2",
+      "title": "SUUNS",
+      "date": "2026-05-24T20:30:00",
+      "date_end": null,
+      "venue": "Paradiso (Bitterzoet)",
+      "venue_address": "Bitterzoet - Concertzaal",
+      "event_type": "Concert",
+      "artists": [
+        "SUUNS",
+        "Kelman Duran"
+      ],
+      "genres": [
+        "Surprise me",
+        "Concert",
+        "Alternative / Indie",
+        "Electronic"
+      ],
+      "price_min": null,
+      "price_max": null,
+      "tickets_url": "https://tickets.paradiso.nl/d47af66599ab49d2971ffc6a7334330d",
+      "tickets_status": "available",
+      "source": "paradiso",
+      "source_url": "https://www.paradiso.nl/en/program/suuns/2840442",
+      "match": {
+        "type": "Library Match",
+        "reason": "In your TIDAL library",
+        "score": 11
+      }
+    },
+    {
       "id": "5b7a8142d4028b28",
       "title": "Madam by Night invites: Zeldenrust b2b Eljoënai, JOKOÁ, Walter b2b Pablo",
       "date": "2026-05-24T21:00:00",
@@ -12357,6 +13018,34 @@
       "match": null
     },
     {
+      "id": "4bf02f3cb512635d",
+      "title": "Miles Ahead. Miles Davis 100th Birthday Party",
+      "date": "2026-05-26T19:30:00",
+      "date_end": null,
+      "venue": "Paradiso (Tolhuistuin)",
+      "venue_address": "Tolhuistuin - Club",
+      "event_type": "Concert",
+      "artists": [
+        "Eric Vloeimans",
+        "Michael Varekamp",
+        "Martin Fondse",
+        "Femi Dawkins",
+        "RADIOHOP",
+        "Lucas Benjamin"
+      ],
+      "genres": [
+        "Concert",
+        "Soul / Jazz / Funk"
+      ],
+      "price_min": null,
+      "price_max": null,
+      "tickets_url": "https://tickets.paradiso.nl/fcda4aaafed54660a01ad8dc7f40fc25",
+      "tickets_status": "available",
+      "source": "paradiso",
+      "source_url": "https://www.paradiso.nl/en/program/miles-davis-100th-birthday-party/2836714",
+      "match": null
+    },
+    {
       "id": "8fd16b86ebdc8082",
       "title": "North Star comes to Splendor",
       "date": "2026-05-26T20:00:00",
@@ -12448,6 +13137,31 @@
       "date": "2026-05-26T20:30:00",
       "date_end": null,
       "venue": "Toekomstmuziek",
+      "venue_address": "Extern - Overig",
+      "event_type": "Concert",
+      "artists": [
+        "The Itch",
+        "Tourist Trap"
+      ],
+      "genres": [
+        "Concert",
+        "Alternative / Indie",
+        "Pop"
+      ],
+      "price_min": null,
+      "price_max": null,
+      "tickets_url": "https://tickets.paradiso.nl/ccf9f8e45acc4d6e80e570a1dfeb8521",
+      "tickets_status": "available",
+      "source": "paradiso",
+      "source_url": "https://www.paradiso.nl/en/program/the-itch/2836051",
+      "match": null
+    },
+    {
+      "id": "c4e7dc798034f05d",
+      "title": "The Itch",
+      "date": "2026-05-26T20:30:00",
+      "date_end": null,
+      "venue": "Paradiso (Toekomstmuziek)",
       "venue_address": "Extern - Overig",
       "event_type": "Concert",
       "artists": [
@@ -13482,6 +14196,33 @@
       "match": null
     },
     {
+      "id": "5492bf6bc6a93217",
+      "title": "Mammal Hands",
+      "date": "2026-05-28T20:30:00",
+      "date_end": null,
+      "venue": "Paradiso (Tolhuistuin)",
+      "venue_address": "Tolhuistuin - Club",
+      "event_type": "Concert",
+      "artists": [
+        "Mammal Hands"
+      ],
+      "genres": [
+        "Concert",
+        "Soul / Jazz / Funk"
+      ],
+      "price_min": null,
+      "price_max": null,
+      "tickets_url": "https://tickets.paradiso.nl/a9ce3168b7b64a018fc548f8932a9066",
+      "tickets_status": "available",
+      "source": "paradiso",
+      "source_url": "https://www.paradiso.nl/en/program/mammal-hands/2719534",
+      "match": {
+        "type": "Discovery",
+        "reason": "Similar to Gogo Penguin, Avishai Cohen, Alfa Mist",
+        "score": 12
+      }
+    },
+    {
       "id": "34e3ee039d28e937",
       "title": "Alex Coly & Travis Allen: Unannounced Family Session",
       "date": "2026-05-28T22:00:00",
@@ -14183,6 +14924,36 @@
       "source": "bimhuis",
       "source_url": "https://www.bimhuis.nl/en/calendar/yanna-pelser/",
       "match": null
+    },
+    {
+      "id": "f3393fde8298e097",
+      "title": "Gitkin",
+      "date": "2026-05-29T20:30:00",
+      "date_end": null,
+      "venue": "Paradiso (Tolhuistuin)",
+      "venue_address": "Tolhuistuin - Zonzij",
+      "event_type": "Concert",
+      "artists": [
+        "Gitkin"
+      ],
+      "genres": [
+        "Concert",
+        "Soul / Jazz / Funk",
+        "Roots / Americana / Country / Blues",
+        "Afro / Reggae / Dancehall / Latin",
+        "Stadspas"
+      ],
+      "price_min": null,
+      "price_max": null,
+      "tickets_url": "https://tickets.paradiso.nl/ac68732e30aa4ad49717142e1cbfbf4c",
+      "tickets_status": "available",
+      "source": "paradiso",
+      "source_url": "https://www.paradiso.nl/en/program/gitkin/2834900",
+      "match": {
+        "type": "Discovery",
+        "reason": "Similar to Leifur James, Rahill, Loma",
+        "score": 5
+      }
     },
     {
       "id": "3cb72ecaf492e904",
@@ -15256,6 +16027,80 @@
       "match": null
     },
     {
+      "id": "e489072081385c09",
+      "title": "Blair Davie",
+      "date": "2026-05-30T20:30:00",
+      "date_end": null,
+      "venue": "Paradiso (Bitterzoet)",
+      "venue_address": "Bitterzoet - Concertzaal",
+      "event_type": "Concert",
+      "artists": [
+        "Blair Davie"
+      ],
+      "genres": [
+        "Concert",
+        "Pop",
+        "Singer-songwriter / Folk"
+      ],
+      "price_min": null,
+      "price_max": null,
+      "tickets_url": "https://tickets.paradiso.nl/7f758e16601d4bcf96d126c9e9db51f4",
+      "tickets_status": "available",
+      "source": "paradiso",
+      "source_url": "https://www.paradiso.nl/en/program/blair-davie/2817544",
+      "match": null
+    },
+    {
+      "id": "9cd8c551ca55dd13",
+      "title": "Annahstasia",
+      "date": "2026-05-30T20:30:00",
+      "date_end": null,
+      "venue": "Paradiso (Tolhuistuin)",
+      "venue_address": "Tolhuistuin - Club",
+      "event_type": "Concert",
+      "artists": [
+        "Annahstasia",
+        "Arima Ederra"
+      ],
+      "genres": [
+        "Concert",
+        "Soul / Jazz / Funk",
+        "Singer-songwriter / Folk"
+      ],
+      "price_min": null,
+      "price_max": null,
+      "tickets_url": "https://tickets.paradiso.nl/e9cb8ff1a1d042278fc486b7277192f0",
+      "tickets_status": "available",
+      "source": "paradiso",
+      "source_url": "https://www.paradiso.nl/en/program/annahstasia/2827984",
+      "match": {
+        "type": "Discovery",
+        "reason": "Similar to Moses Sumney, Hannah Frances, Joanne Robertson",
+        "score": 8
+      }
+    },
+    {
+      "id": "c32fd30cb4003efc",
+      "title": "Welcome To Night Vale",
+      "date": "2026-05-30T20:30:00",
+      "date_end": null,
+      "venue": "Paradiso (De Duif)",
+      "venue_address": "De Duif - Kerkzaal",
+      "event_type": "Talk",
+      "artists": [],
+      "genres": [
+        "Surprise me",
+        "Literature / Science / Politics / Art"
+      ],
+      "price_min": null,
+      "price_max": null,
+      "tickets_url": "https://tickets.paradiso.nl/047e581bd09e4dd29ff2f3150881c850",
+      "tickets_status": "available",
+      "source": "paradiso",
+      "source_url": "https://www.paradiso.nl/en/program/welcome-to-night-vale/2836720",
+      "match": null
+    },
+    {
       "id": "5b300003a6ab79c8",
       "title": "Madam by Night invites: WE ARE ICONYC",
       "date": "2026-05-30T21:00:00",
@@ -15319,6 +16164,29 @@
       "date": "2026-05-30T21:00:00",
       "date_end": null,
       "venue": "Tolhuistuin",
+      "venue_address": "",
+      "event_type": "Talk",
+      "artists": [],
+      "genres": [
+        "Soul / Jazz / Funk",
+        "Hip hop / R&B",
+        "Literature / Science / Politics / Art",
+        "Stadspas"
+      ],
+      "price_min": null,
+      "price_max": null,
+      "tickets_url": "https://tickets.paradiso.nl/2c273322e9084e97a49ef78ae0c6aa5e",
+      "tickets_status": "available",
+      "source": "paradiso",
+      "source_url": "https://www.paradiso.nl/en/program/we-the-people/2874994",
+      "match": null
+    },
+    {
+      "id": "fbcfd45fad2fa968",
+      "title": "We The People",
+      "date": "2026-05-30T21:00:00",
+      "date_end": null,
+      "venue": "Paradiso (Tolhuistuin)",
       "venue_address": "",
       "event_type": "Talk",
       "artists": [],
@@ -15718,8 +16586,26 @@
       "id": "3209f704b1cb9f3b",
       "title": "DLT",
       "date": "2026-05-30T23:59:00",
-      "date_end": null,
+      "date_end": "2026-05-31T05:00:00",
       "venue": "Parallel",
+      "venue_address": "Buiksloterweg 5C, 1031 CC Amsterdam",
+      "event_type": "Club",
+      "artists": [],
+      "genres": [],
+      "price_min": null,
+      "price_max": null,
+      "tickets_url": "",
+      "tickets_status": "available",
+      "source": "ra",
+      "source_url": "https://ra.co/events/2437380",
+      "match": null
+    },
+    {
+      "id": "3141829e66beb982",
+      "title": "DLT",
+      "date": "2026-05-30T23:59:00",
+      "date_end": null,
+      "venue": "Paradiso (Parallel)",
       "venue_address": "Tolhuistuin - Club",
       "event_type": "Club",
       "artists": [
@@ -15816,6 +16702,27 @@
       "tickets_status": "available",
       "source": "concertgebouw",
       "source_url": "https://www.concertgebouw.nl/en/concerts/7557181-spanish-sunday-morning-with-carmen-falla-and-rimsky-korsakov",
+      "match": null
+    },
+    {
+      "id": "f123e459f03da948",
+      "title": "Het Mooie Kinderboekenfestival 2026",
+      "date": "2026-05-31T11:00:00",
+      "date_end": null,
+      "venue": "Paradiso (Tolhuistuin)",
+      "venue_address": "Tolhuistuin - Club, Tolhuistuin - Zonzij, Tolhuistuin - IJzaal, Tolhuistuin - Tuin",
+      "event_type": "Talk",
+      "artists": [],
+      "genres": [
+        "Literature / Science / Politics / Art",
+        "Stadspas"
+      ],
+      "price_min": null,
+      "price_max": null,
+      "tickets_url": "https://tickets.paradiso.nl/5429c1f76a234cabb12166a30b426aa2",
+      "tickets_status": "available",
+      "source": "paradiso",
+      "source_url": "https://www.paradiso.nl/en/program/het-mooie-kinderboekenfestival/2854214",
       "match": null
     },
     {
@@ -16409,6 +17316,53 @@
       "match": null
     },
     {
+      "id": "5abc00c513050075",
+      "title": "Nana Benz du Togo",
+      "date": "2026-06-01T20:30:00",
+      "date_end": null,
+      "venue": "Paradiso (Tolhuistuin)",
+      "venue_address": "Tolhuistuin - Club",
+      "event_type": "Concert",
+      "artists": [
+        "Nana Benz du Togo"
+      ],
+      "genres": [
+        "Soul / Jazz / Funk",
+        "Electronic",
+        "Roots"
+      ],
+      "price_min": null,
+      "price_max": null,
+      "tickets_url": "https://tickets.paradiso.nl/be61cb791e0a4edb948ed463e270be13",
+      "tickets_status": "available",
+      "source": "paradiso",
+      "source_url": "https://www.paradiso.nl/en/program/nana-benz-du-togo/2778961",
+      "match": null
+    },
+    {
+      "id": "8e3f546a76056eb5",
+      "title": "Ondara",
+      "date": "2026-06-01T20:30:00",
+      "date_end": null,
+      "venue": "Paradiso (Bitterzoet)",
+      "venue_address": "Bitterzoet - Concertzaal",
+      "event_type": "Concert",
+      "artists": [
+        "Ondara"
+      ],
+      "genres": [
+        "Soul / Jazz / Funk",
+        "Singer-songwriter / Folk"
+      ],
+      "price_min": null,
+      "price_max": null,
+      "tickets_url": "https://tickets.paradiso.nl/6ea954d56a5d4606a5eb7b99de6f31a7",
+      "tickets_status": "available",
+      "source": "paradiso",
+      "source_url": "https://www.paradiso.nl/en/program/ondara/2843607",
+      "match": null
+    },
+    {
       "id": "224ac3c8b214c733",
       "title": "Lunch at Café Gilde",
       "date": "2026-06-02T10:00:00",
@@ -16524,6 +17478,54 @@
       "tickets_status": "available",
       "source": "paradiso",
       "source_url": "https://www.paradiso.nl/en/program/westside-gunn-heel-the-world-tour-with-smoke-dza-feed-the-family-and-special-guests/2877705",
+      "match": null
+    },
+    {
+      "id": "d73de33ba325dc38",
+      "title": "Barns Courtney",
+      "date": "2026-06-02T20:30:00",
+      "date_end": null,
+      "venue": "Paradiso (Bitterzoet)",
+      "venue_address": "Bitterzoet - Concertzaal",
+      "event_type": "Concert",
+      "artists": [
+        "Barns Courtney"
+      ],
+      "genres": [
+        "Concert",
+        "Rock",
+        "Alternative / Indie",
+        "Roots / Americana / Country / Blues"
+      ],
+      "price_min": null,
+      "price_max": null,
+      "tickets_url": "https://tickets.paradiso.nl/e71b8a3e2bf14c10b31b64524641557c",
+      "tickets_status": "available",
+      "source": "paradiso",
+      "source_url": "https://www.paradiso.nl/en/program/barns-courtney/2817338",
+      "match": null
+    },
+    {
+      "id": "f95efb666a311755",
+      "title": "Ben Kweller",
+      "date": "2026-06-02T20:30:00",
+      "date_end": null,
+      "venue": "Paradiso (Tolhuistuin)",
+      "venue_address": "Tolhuistuin - Club",
+      "event_type": "Concert",
+      "artists": [
+        "Ben Kweller"
+      ],
+      "genres": [
+        "Alternative / Indie",
+        "Singer-songwriter / Folk"
+      ],
+      "price_min": null,
+      "price_max": null,
+      "tickets_url": "https://tickets.paradiso.nl/7b676280fd6d447c8d5c488de0b8f311",
+      "tickets_status": "available",
+      "source": "paradiso",
+      "source_url": "https://www.paradiso.nl/en/program/ben-kweller/2830975",
       "match": null
     },
     {
@@ -16751,6 +17753,29 @@
       "date": "2026-06-03T20:30:00",
       "date_end": null,
       "venue": "Tolhuistuin",
+      "venue_address": "Tolhuistuin - Club",
+      "event_type": "Concert",
+      "artists": [
+        "Kitty Craft"
+      ],
+      "genres": [
+        "Concert",
+        "Alternative / Indie"
+      ],
+      "price_min": null,
+      "price_max": null,
+      "tickets_url": "https://tickets.paradiso.nl/c6c2274d9ef247b59d70d56cc35fdee3",
+      "tickets_status": "available",
+      "source": "paradiso",
+      "source_url": "https://www.paradiso.nl/en/program/kitty-craft/2840520",
+      "match": null
+    },
+    {
+      "id": "156df7436ea82f8e",
+      "title": "Kitty Craft",
+      "date": "2026-06-03T20:30:00",
+      "date_end": null,
+      "venue": "Paradiso (Tolhuistuin)",
       "venue_address": "Tolhuistuin - Club",
       "event_type": "Concert",
       "artists": [
@@ -17006,6 +18031,54 @@
       "match": null
     },
     {
+      "id": "f9262b022871db69",
+      "title": "The Good The Bad and The Zugly",
+      "date": "2026-06-04T20:30:00",
+      "date_end": null,
+      "venue": "Paradiso (Bitterzoet)",
+      "venue_address": "Bitterzoet - Concertzaal",
+      "event_type": "Concert",
+      "artists": [
+        "The Good The Bad and The Zugly"
+      ],
+      "genres": [
+        "Concert",
+        "Rock",
+        "Alternative / Indie",
+        "Punk / Noise"
+      ],
+      "price_min": null,
+      "price_max": null,
+      "tickets_url": "https://tickets.paradiso.nl/613f162bdbcb49dd8f8b6fc2b8e080f5",
+      "tickets_status": "available",
+      "source": "paradiso",
+      "source_url": "https://www.paradiso.nl/en/program/the-good-the-bad-and-the-zugly/2817548",
+      "match": null
+    },
+    {
+      "id": "5474831f7f95fc15",
+      "title": "The Dip",
+      "date": "2026-06-04T20:30:00",
+      "date_end": null,
+      "venue": "Paradiso (Tolhuistuin)",
+      "venue_address": "Tolhuistuin - Club",
+      "event_type": "Concert",
+      "artists": [
+        "The Dip"
+      ],
+      "genres": [
+        "Concert",
+        "Soul / Jazz / Funk"
+      ],
+      "price_min": null,
+      "price_max": null,
+      "tickets_url": "https://tickets.paradiso.nl/652f516f7b0d442bb5cd1ce9136df049",
+      "tickets_status": "available",
+      "source": "paradiso",
+      "source_url": "https://www.paradiso.nl/en/program/the-dip/2840438",
+      "match": null
+    },
+    {
       "id": "a13e5dc31fcfc266",
       "title": "Amsterdam Techno Sessions with Jauri (Illegal Alien Records - Kontra) Colombia",
       "date": "2026-06-04T23:00:00",
@@ -17029,7 +18102,7 @@
     {
       "id": "8039ab457bfa5e33",
       "title": "Mokum Records",
-      "date": "2026-06-05T06:19:00",
+      "date": "2026-06-05T08:53:00",
       "date_end": null,
       "venue": "Paradiso",
       "venue_address": "Paradiso - Grote Zaal, Paradiso - Kelder",
@@ -17303,6 +18376,34 @@
       }
     },
     {
+      "id": "3dd5bee37de21321",
+      "title": "Felbm",
+      "date": "2026-06-05T20:15:00",
+      "date_end": null,
+      "venue": "Paradiso (Tolhuistuin)",
+      "venue_address": "Tolhuistuin - Zonzij",
+      "event_type": "Concert",
+      "artists": [
+        "Felbm"
+      ],
+      "genres": [
+        "Concert",
+        "Soul / Jazz / Funk",
+        "Electronic"
+      ],
+      "price_min": null,
+      "price_max": null,
+      "tickets_url": "https://tickets.paradiso.nl/82f1514bf0ed4661b5563fa42d288334",
+      "tickets_status": "available",
+      "source": "paradiso",
+      "source_url": "https://www.paradiso.nl/en/program/felim/2882452",
+      "match": {
+        "type": "Discovery",
+        "reason": "Similar to The Vernon Spring, Wilson Tanner, John Carroll Kirby",
+        "score": 5
+      }
+    },
+    {
       "id": "960a95f60779044e",
       "title": "Hiqpy",
       "date": "2026-06-05T20:30:00",
@@ -17369,6 +18470,29 @@
       "tickets_status": "available",
       "source": "bimhuis",
       "source_url": "https://www.bimhuis.nl/en/calendar/misha-mengelberg-louis-andriessen-goede-maten/",
+      "match": null
+    },
+    {
+      "id": "53a4790ea51b8e3f",
+      "title": "Seasick Steve",
+      "date": "2026-06-05T20:30:00",
+      "date_end": null,
+      "venue": "Paradiso (Tolhuistuin)",
+      "venue_address": "Tolhuistuin - Club",
+      "event_type": "Concert",
+      "artists": [
+        "Seasick Steve"
+      ],
+      "genres": [
+        "Concert",
+        "Roots / Americana / Country / Blues"
+      ],
+      "price_min": null,
+      "price_max": null,
+      "tickets_url": "https://tickets.paradiso.nl/e2ecf5e30a8d405f8f2e3042c8eb92a0",
+      "tickets_status": "available",
+      "source": "paradiso",
+      "source_url": "https://www.paradiso.nl/en/program/seasick-steve/2861017",
       "match": null
     },
     {
@@ -17954,6 +19078,31 @@
       "date": "2026-06-06T20:30:00",
       "date_end": null,
       "venue": "Tolhuistuin",
+      "venue_address": "Tolhuistuin - Club",
+      "event_type": "Concert",
+      "artists": [
+        "HUMBE"
+      ],
+      "genres": [
+        "Concert",
+        "Alternative / Indie",
+        "Pop",
+        "Singer-songwriter / Folk"
+      ],
+      "price_min": null,
+      "price_max": null,
+      "tickets_url": "https://tickets.paradiso.nl/346debc529eb472e8682e3f833fd5966",
+      "tickets_status": "available",
+      "source": "paradiso",
+      "source_url": "https://www.paradiso.nl/en/program/humbe/2822210",
+      "match": null
+    },
+    {
+      "id": "c9b1f4acf97ebe67",
+      "title": "Humbe",
+      "date": "2026-06-06T20:30:00",
+      "date_end": null,
+      "venue": "Paradiso (Tolhuistuin)",
       "venue_address": "Tolhuistuin - Club",
       "event_type": "Concert",
       "artists": [
@@ -18669,6 +19818,30 @@
       }
     },
     {
+      "id": "685464be7499899c",
+      "title": "((( O )))",
+      "date": "2026-06-08T20:30:00",
+      "date_end": null,
+      "venue": "Paradiso (Tolhuistuin)",
+      "venue_address": "Tolhuistuin - Club",
+      "event_type": "Concert",
+      "artists": [],
+      "genres": [
+        "Concert"
+      ],
+      "price_min": null,
+      "price_max": null,
+      "tickets_url": "https://tickets.paradiso.nl/1e78eb1476ee4fecb7906afdf70582f3",
+      "tickets_status": "available",
+      "source": "paradiso",
+      "source_url": "https://www.paradiso.nl/en/program/o/2887943",
+      "match": {
+        "type": "Discovery",
+        "reason": "Similar to Tirzah, Liv.E, Mereba",
+        "score": 5
+      }
+    },
+    {
       "id": "cb015783cf2710f8",
       "title": "Lunch at Café Gilde",
       "date": "2026-06-09T10:00:00",
@@ -19055,6 +20228,28 @@
       "match": null
     },
     {
+      "id": "1aac2ee5ae636dd8",
+      "title": "The Del Fuegos",
+      "date": "2026-06-10T20:30:00",
+      "date_end": null,
+      "venue": "Paradiso (Zonnehuis)",
+      "venue_address": "Zonnehuis - Theaterzaal",
+      "event_type": "Concert",
+      "artists": [],
+      "genres": [
+        "Concert",
+        "Rock",
+        "Roots / Americana / Country / Blues"
+      ],
+      "price_min": null,
+      "price_max": null,
+      "tickets_url": "https://tickets.paradiso.nl/f30f56b3d7d64f41bc071a82eb51835a",
+      "tickets_status": "available",
+      "source": "paradiso",
+      "source_url": "https://www.paradiso.nl/en/program/the-del-fuegos/2791578",
+      "match": null
+    },
+    {
       "id": "f9cb6d8b0c8fc2a8",
       "title": "Iliassopdebeat - Drugs & Geld Tour (10yr anniversary)",
       "date": "2026-06-10T22:00:00",
@@ -19326,6 +20521,57 @@
       "match": null
     },
     {
+      "id": "a1def9fc4789e8f9",
+      "title": "Ntjam Rosie",
+      "date": "2026-06-11T20:30:00",
+      "date_end": null,
+      "venue": "Paradiso (Tolhuistuin)",
+      "venue_address": "Tolhuistuin - Club",
+      "event_type": "Concert",
+      "artists": [
+        "Ntjam Rosie"
+      ],
+      "genres": [
+        "Concert",
+        "Pop",
+        "Soul / Jazz / Funk",
+        "Stadspas",
+        "Roots"
+      ],
+      "price_min": null,
+      "price_max": null,
+      "tickets_url": "https://tickets.paradiso.nl/f93447a4fc7a498dbcbcf023ce086b73",
+      "tickets_status": "available",
+      "source": "paradiso",
+      "source_url": "https://www.paradiso.nl/en/program/ntjam-rosie/2817526",
+      "match": null
+    },
+    {
+      "id": "a7d74d6f96721603",
+      "title": "Liam St. John - Year of the Horse",
+      "date": "2026-06-11T20:30:00",
+      "date_end": null,
+      "venue": "Paradiso (Bitterzoet)",
+      "venue_address": "Bitterzoet - Concertzaal",
+      "event_type": "Concert",
+      "artists": [
+        "Liam St. John"
+      ],
+      "genres": [
+        "Concert",
+        "Rock",
+        "Roots / Americana / Country / Blues",
+        "Roots"
+      ],
+      "price_min": null,
+      "price_max": null,
+      "tickets_url": "https://tickets.paradiso.nl/ecca45ac9855473882d2c6d48ef10fcd",
+      "tickets_status": "available",
+      "source": "paradiso",
+      "source_url": "https://www.paradiso.nl/en/program/liam-st-john/2881752",
+      "match": null
+    },
+    {
       "id": "fa4c22f07157abca",
       "title": "Headsend",
       "date": "2026-06-11T21:30:00",
@@ -19575,6 +20821,34 @@
       "source": "bimhuis",
       "source_url": "https://www.bimhuis.nl/en/calendar/william-barrett-band/",
       "match": null
+    },
+    {
+      "id": "727344bfa115db7c",
+      "title": "Cass McCombs",
+      "date": "2026-06-12T20:30:00",
+      "date_end": null,
+      "venue": "Paradiso (Tolhuistuin)",
+      "venue_address": "Tolhuistuin - Club",
+      "event_type": "Concert",
+      "artists": [
+        "Cass McCombs"
+      ],
+      "genres": [
+        "Concert",
+        "Roots / Americana / Country / Blues",
+        "Singer-songwriter / Folk"
+      ],
+      "price_min": null,
+      "price_max": null,
+      "tickets_url": "https://tickets.paradiso.nl/370ed8d3bdf947299b5e777c8c1b9b93",
+      "tickets_status": "available",
+      "source": "paradiso",
+      "source_url": "https://www.paradiso.nl/en/program/cass-mccombs/2880629",
+      "match": {
+        "type": "Library Match",
+        "reason": "In your TIDAL library",
+        "score": 1
+      }
     },
     {
       "id": "d2dc5ca61517287a",
@@ -20468,6 +21742,32 @@
       "match": null
     },
     {
+      "id": "43aed4dcadd31d9d",
+      "title": "Tropikali Afterparty",
+      "date": "2026-06-13T23:00:00",
+      "date_end": null,
+      "venue": "Paradiso (Parallel)",
+      "venue_address": "Tolhuistuin - Club",
+      "event_type": "Club",
+      "artists": [
+        "Tekna",
+        "Tom Chiesa",
+        "Mother & Host: Miss Khristo"
+      ],
+      "genres": [
+        "Electronic",
+        "Club",
+        "LGBTQ+"
+      ],
+      "price_min": null,
+      "price_max": null,
+      "tickets_url": "https://sales.ticketing.cm.com/tropi26/en-gb/e151b332-0b04-4150-bf27-03c998585871",
+      "tickets_status": "available",
+      "source": "paradiso",
+      "source_url": "https://www.paradiso.nl/en/program/tropikali-afterparty/2874152",
+      "match": null
+    },
+    {
       "id": "17452d16311165ec",
       "title": "Zer00's Heroes",
       "date": "2026-06-13T23:30:00",
@@ -20806,6 +22106,32 @@
       "match": null
     },
     {
+      "id": "36eeed8a3a845863",
+      "title": "Red Leather",
+      "date": "2026-06-14T20:30:00",
+      "date_end": null,
+      "venue": "Paradiso (Tolhuistuin)",
+      "venue_address": "Tolhuistuin - Club",
+      "event_type": "Concert",
+      "artists": [
+        "Red Leather",
+        "Jady"
+      ],
+      "genres": [
+        "Concert",
+        "Alternative / Indie",
+        "Pop",
+        "Roots / Americana / Country / Blues"
+      ],
+      "price_min": null,
+      "price_max": null,
+      "tickets_url": "https://tickets.paradiso.nl/e43214020f26434ea4ad9b212c589bdc",
+      "tickets_status": "available",
+      "source": "paradiso",
+      "source_url": "https://www.paradiso.nl/en/program/red-leather/2809195",
+      "match": null
+    },
+    {
       "id": "79573b81f72aaf00",
       "title": "Good Flying Birds",
       "date": "2026-06-15T18:00:00",
@@ -20965,6 +22291,35 @@
       "source": "paradiso",
       "source_url": "https://www.paradiso.nl/en/program/dogstar/2771117",
       "match": null
+    },
+    {
+      "id": "3cab15b3ad7f9f4b",
+      "title": "Super Jet Kinoko",
+      "date": "2026-06-16T20:30:00",
+      "date_end": null,
+      "venue": "Paradiso (Tolhuistuin)",
+      "venue_address": "Tolhuistuin - Club",
+      "event_type": "Concert",
+      "artists": [
+        "Super Jet Kinoko"
+      ],
+      "genres": [
+        "Concert",
+        "Rock",
+        "Alternative / Indie",
+        "Soul / Jazz / Funk"
+      ],
+      "price_min": null,
+      "price_max": null,
+      "tickets_url": "https://tickets.paradiso.nl/496fe399e5844407bef5edf13b1488f0",
+      "tickets_status": "available",
+      "source": "paradiso",
+      "source_url": "https://www.paradiso.nl/en/program/super-jet-kinoko/2721327",
+      "match": {
+        "type": "Discovery",
+        "reason": "Similar to Goat, Ghostwoman, Kikagaku Moyo",
+        "score": 10
+      }
     },
     {
       "id": "74ac362935892d7e",
@@ -21155,6 +22510,30 @@
       "match": null
     },
     {
+      "id": "c0a20da2165aa9e0",
+      "title": "João Selva",
+      "date": "2026-06-17T20:30:00",
+      "date_end": null,
+      "venue": "Paradiso (Tolhuistuin)",
+      "venue_address": "Tolhuistuin - Club",
+      "event_type": "Concert",
+      "artists": [
+        "João Selva"
+      ],
+      "genres": [
+        "Concert",
+        "Soul / Jazz / Funk",
+        "Roots"
+      ],
+      "price_min": null,
+      "price_max": null,
+      "tickets_url": "https://tickets.paradiso.nl/ff2be51d945b462fabc00aa599bdd1b3",
+      "tickets_status": "available",
+      "source": "paradiso",
+      "source_url": "https://www.paradiso.nl/en/program/joao-selva/2825906",
+      "match": null
+    },
+    {
       "id": "812ec884550621aa",
       "title": "RAVING CHARLIE: Hard Techno / Rave",
       "date": "2026-06-17T23:00:00",
@@ -21295,6 +22674,28 @@
       "date": "2026-06-18T19:30:00",
       "date_end": null,
       "venue": "Tolhuistuin",
+      "venue_address": "",
+      "event_type": "Talk",
+      "artists": [],
+      "genres": [
+        "LGBTQ+",
+        "Literature / Science / Politics / Art",
+        "Poëzie / Spoken Word"
+      ],
+      "price_min": null,
+      "price_max": null,
+      "tickets_url": "https://tickets.paradiso.nl/9d89bc08e40b4421808c731b4f97b6e5",
+      "tickets_status": "available",
+      "source": "paradiso",
+      "source_url": "https://www.paradiso.nl/en/program/erotic-poetry-night/2871969",
+      "match": null
+    },
+    {
+      "id": "656881e0d9f3994c",
+      "title": "Erotic Poetry Night",
+      "date": "2026-06-18T19:30:00",
+      "date_end": null,
+      "venue": "Paradiso (Tolhuistuin)",
       "venue_address": "",
       "event_type": "Talk",
       "artists": [],
@@ -21767,6 +23168,28 @@
       "match": null
     },
     {
+      "id": "93833401c9a48312",
+      "title": "femtanyl",
+      "date": "2026-06-19T20:30:00",
+      "date_end": null,
+      "venue": "Paradiso (Tolhuistuin)",
+      "venue_address": "Tolhuistuin - Club",
+      "event_type": "Concert",
+      "artists": [
+        "femtanyl"
+      ],
+      "genres": [
+        "Electronic"
+      ],
+      "price_min": null,
+      "price_max": null,
+      "tickets_url": "https://tickets.paradiso.nl/17b431d7c97a48e18f281a4a73255a20",
+      "tickets_status": "available",
+      "source": "paradiso",
+      "source_url": "https://www.paradiso.nl/en/program/femtanyl/2828607",
+      "match": null
+    },
+    {
       "id": "d72c1dd9520de4a1",
       "title": "Madam by Night invites: Ópalo presents: LevyM (all night)",
       "date": "2026-06-19T21:00:00",
@@ -22206,6 +23629,29 @@
       "match": null
     },
     {
+      "id": "b2d5e862d4ec9be9",
+      "title": "Crowe Boys",
+      "date": "2026-06-20T20:30:00",
+      "date_end": null,
+      "venue": "Paradiso (Tolhuistuin)",
+      "venue_address": "Tolhuistuin - Zonzij",
+      "event_type": "Concert",
+      "artists": [
+        "Crowe Boys"
+      ],
+      "genres": [
+        "Roots / Americana / Country / Blues",
+        "Singer-songwriter / Folk"
+      ],
+      "price_min": null,
+      "price_max": null,
+      "tickets_url": "https://tickets.paradiso.nl/3f568c85c54e4c728fe658e7c321d488",
+      "tickets_status": "available",
+      "source": "paradiso",
+      "source_url": "https://www.paradiso.nl/en/program/crowe-boys/2887305",
+      "match": null
+    },
+    {
       "id": "ce1f260a433efd54",
       "title": "Madam by Night invites: The Jungle Room",
       "date": "2026-06-20T21:00:00",
@@ -22631,6 +24077,55 @@
       "match": null
     },
     {
+      "id": "026dd2deefe766c9",
+      "title": "Sorry",
+      "date": "2026-06-21T20:30:00",
+      "date_end": null,
+      "venue": "Paradiso (Tolhuistuin)",
+      "venue_address": "Tolhuistuin - Club",
+      "event_type": "Concert",
+      "artists": [
+        "Sorry"
+      ],
+      "genres": [
+        "Concert",
+        "Alternative / Indie"
+      ],
+      "price_min": null,
+      "price_max": null,
+      "tickets_url": "https://tickets.paradiso.nl/dce5865e313b498b80a404896f0811a1",
+      "tickets_status": "available",
+      "source": "paradiso",
+      "source_url": "https://www.paradiso.nl/en/program/sorry/2854151",
+      "match": {
+        "type": "Library Match",
+        "reason": "In your TIDAL library",
+        "score": 3
+      }
+    },
+    {
+      "id": "4a0bf20c2e65d091",
+      "title": "Asal",
+      "date": "2026-06-21T20:30:00",
+      "date_end": null,
+      "venue": "Paradiso (Bitterzoet)",
+      "venue_address": "Bitterzoet - Concertzaal",
+      "event_type": "Concert",
+      "artists": [
+        "Asal"
+      ],
+      "genres": [
+        "Concert"
+      ],
+      "price_min": null,
+      "price_max": null,
+      "tickets_url": "https://tickets.paradiso.nl/d22a76a9a5b64a1c9dc57d020747ddc7",
+      "tickets_status": "available",
+      "source": "paradiso",
+      "source_url": "https://www.paradiso.nl/en/program/asal/2854164",
+      "match": null
+    },
+    {
       "id": "319d789f9a20f816",
       "title": "Life Drawing Weekend Intensive",
       "date": "2026-06-22T16:00:00",
@@ -22740,6 +24235,30 @@
       "tickets_status": "available",
       "source": "paradiso",
       "source_url": "https://www.paradiso.nl/en/program/ben-harper/2846469",
+      "match": null
+    },
+    {
+      "id": "6c65a49b0abefcf2",
+      "title": "Science & Cocktails: Human needs and sustainability in the city",
+      "date": "2026-06-22T20:30:00",
+      "date_end": null,
+      "venue": "Paradiso (Tolhuistuin)",
+      "venue_address": "Tolhuistuin - Club",
+      "event_type": "Talk",
+      "artists": [
+        "Eveline van Leeuwen"
+      ],
+      "genres": [
+        "Concert",
+        "Literature / Science / Politics / Art",
+        "Stadspas"
+      ],
+      "price_min": null,
+      "price_max": null,
+      "tickets_url": "https://tickets.paradiso.nl/ae6da1eb397b47e48fef64035750923f",
+      "tickets_status": "available",
+      "source": "paradiso",
+      "source_url": "https://www.paradiso.nl/en/program/science-cocktails-human-needs-and-sustainability-in-the-city/2886020",
       "match": null
     },
     {
@@ -22860,6 +24379,14 @@
     "Paal69",
     "Panama",
     "Paradiso",
+    "Paradiso (Bitterzoet)",
+    "Paradiso (Cinetol)",
+    "Paradiso (De Duif)",
+    "Paradiso (Doka)",
+    "Paradiso (Parallel)",
+    "Paradiso (Toekomstmuziek)",
+    "Paradiso (Tolhuistuin)",
+    "Paradiso (Zonnehuis)",
     "Paradiso Noord / Tolhuistuin",
     "Parallel",
     "Patronaat",
