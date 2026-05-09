@@ -1,6 +1,6 @@
 {
-  "generated_at": "2026-05-09T08:57:04.643868",
-  "event_count": 1114,
+  "generated_at": "2026-05-09T13:56:28.417194",
+  "event_count": 1115,
   "events": [
     {
       "id": "de3ec5ba7d18b259",
@@ -1139,6 +1139,29 @@
       "match": null
     },
     {
+      "id": "20ad66618819139a",
+      "title": "Rossko x BRET",
+      "date": "2026-05-09T20:00:00",
+      "date_end": "2026-05-10T06:00:00",
+      "venue": "BRET",
+      "venue_address": "Orlyplein 76, 1043 DP Amsterdam, Netherlands",
+      "event_type": "Club",
+      "artists": [
+        "ELVI (SE)",
+        "Mino Abadier",
+        "Pascal Benjamin",
+        "Rossko"
+      ],
+      "genres": [],
+      "price_min": null,
+      "price_max": null,
+      "tickets_url": "",
+      "tickets_status": "available",
+      "source": "ra",
+      "source_url": "https://ra.co/events/2434768",
+      "match": null
+    },
+    {
       "id": "6b97220450bb13e6",
       "title": "Milo & Friends",
       "date": "2026-05-09T20:00:00",
@@ -1586,29 +1609,6 @@
       "tickets_status": "available",
       "source": "ra",
       "source_url": "https://ra.co/events/2393596",
-      "match": null
-    },
-    {
-      "id": "20ad66618819139a",
-      "title": "Rossko x BRET",
-      "date": "2026-05-09T22:00:00",
-      "date_end": "2026-05-10T06:00:00",
-      "venue": "BRET",
-      "venue_address": "Orlyplein 76, 1043 DP Amsterdam, Netherlands",
-      "event_type": "Club",
-      "artists": [
-        "ELVI (SE)",
-        "Mino Abadier",
-        "Pascal Benjamin",
-        "Rossko"
-      ],
-      "genres": [],
-      "price_min": null,
-      "price_max": null,
-      "tickets_url": "",
-      "tickets_status": "available",
-      "source": "ra",
-      "source_url": "https://ra.co/events/2434768",
       "match": null
     },
     {
@@ -9830,6 +9830,24 @@
       "tickets_status": "available",
       "source": "ra",
       "source_url": "https://ra.co/events/2399191",
+      "match": null
+    },
+    {
+      "id": "d318c31088d3ced7",
+      "title": "Animal – Opening Night",
+      "date": "2026-05-22T19:00:00",
+      "date_end": null,
+      "venue": "Filmhuis Cavia",
+      "venue_address": "",
+      "event_type": "",
+      "artists": [],
+      "genres": [],
+      "price_min": 10.0,
+      "price_max": null,
+      "tickets_url": "",
+      "tickets_status": "available",
+      "source": "amsterdam_alt",
+      "source_url": "https://www.amsterdamalternative.nl/agenda/21785",
       "match": null
     },
     {
@@ -18100,37 +18118,6 @@
       "match": null
     },
     {
-      "id": "8039ab457bfa5e33",
-      "title": "Mokum Records",
-      "date": "2026-06-05T08:56:00",
-      "date_end": null,
-      "venue": "Paradiso",
-      "venue_address": "Paradiso - Grote Zaal, Paradiso - Kelder",
-      "event_type": "Club",
-      "artists": [
-        "DJ Dano",
-        "Tellurian",
-        "Remsy",
-        "WICKED XXX",
-        "Party Animals (live)",
-        "T-GO",
-        "Arvid",
-        "Los Muñaños",
-        "XTNA"
-      ],
-      "genres": [
-        "Electronic",
-        "Club"
-      ],
-      "price_min": null,
-      "price_max": null,
-      "tickets_url": "https://tickets.paradiso.nl/76de8d60b85f4ab5b8b55413e895fe1f",
-      "tickets_status": "available",
-      "source": "paradiso",
-      "source_url": "https://www.paradiso.nl/en/program/mokum-records/2785742",
-      "match": null
-    },
-    {
       "id": "81ec4927bfceb4d6",
       "title": "Lunch at Café Gilde",
       "date": "2026-06-05T10:00:00",
@@ -18196,6 +18183,37 @@
       "tickets_status": "available",
       "source": "ra",
       "source_url": "https://ra.co/events/2314986",
+      "match": null
+    },
+    {
+      "id": "8039ab457bfa5e33",
+      "title": "Mokum Records",
+      "date": "2026-06-05T13:55:00",
+      "date_end": null,
+      "venue": "Paradiso",
+      "venue_address": "Paradiso - Grote Zaal, Paradiso - Kelder",
+      "event_type": "Club",
+      "artists": [
+        "DJ Dano",
+        "Tellurian",
+        "Remsy",
+        "WICKED XXX",
+        "Party Animals (live)",
+        "T-GO",
+        "Arvid",
+        "Los Muñaños",
+        "XTNA"
+      ],
+      "genres": [
+        "Electronic",
+        "Club"
+      ],
+      "price_min": null,
+      "price_max": null,
+      "tickets_url": "https://tickets.paradiso.nl/76de8d60b85f4ab5b8b55413e895fe1f",
+      "tickets_status": "available",
+      "source": "paradiso",
+      "source_url": "https://www.paradiso.nl/en/program/mokum-records/2785742",
       "match": null
     },
     {
