@@ -1,6 +1,6 @@
 {
-  "generated_at": "2026-05-09T13:56:28.417194",
-  "event_count": 1115,
+  "generated_at": "2026-05-09T14:11:14.420119",
+  "event_count": 1117,
   "events": [
     {
       "id": "de3ec5ba7d18b259",
@@ -1100,7 +1100,7 @@
     },
     {
       "id": "25003e593b7523fd",
-      "title": "Double Bill: BUST & A mouthful of stones",
+      "title": "Double Bill: BUST & A Mouthful Of Stones",
       "date": "2026-05-09T18:30:00",
       "date_end": null,
       "venue": "Plein Theater",
@@ -14689,6 +14689,24 @@
       "match": null
     },
     {
+      "id": "f305dfc2361f9bfd",
+      "title": "Misha Kosmos Festival",
+      "date": "2026-05-29T18:00:00",
+      "date_end": null,
+      "venue": "Filmhuis Cavia",
+      "venue_address": "",
+      "event_type": "",
+      "artists": [],
+      "genres": [],
+      "price_min": 5.0,
+      "price_max": null,
+      "tickets_url": "",
+      "tickets_status": "available",
+      "source": "amsterdam_alt",
+      "source_url": "https://www.amsterdamalternative.nl/agenda/21958",
+      "match": null
+    },
+    {
       "id": "958f98bce298af1f",
       "title": "Hachiku | support: Luka",
       "date": "2026-05-29T18:30:00",
@@ -15478,6 +15496,26 @@
       "tickets_status": "",
       "source": "murmur",
       "source_url": "https://murmurmur.nl/",
+      "match": null
+    },
+    {
+      "id": "195487b45929f630",
+      "title": "Blood Bonds | Bureaucratics Revisited",
+      "date": "2026-05-30T00:00:00",
+      "date_end": "2026-07-04T00:00:00",
+      "venue": "Galerie Fontana",
+      "venue_address": "Amsterdam, Nederland",
+      "event_type": "Expositie",
+      "artists": [
+        "Jan Banning"
+      ],
+      "genres": [],
+      "price_min": null,
+      "price_max": null,
+      "tickets_url": "",
+      "tickets_status": "available",
+      "source": "gallery_viewer",
+      "source_url": "https://galleryviewer.com/en/exhibition/6407",
       "match": null
     },
     {
@@ -18188,7 +18226,7 @@
     {
       "id": "8039ab457bfa5e33",
       "title": "Mokum Records",
-      "date": "2026-06-05T13:55:00",
+      "date": "2026-06-05T14:10:00",
       "date_end": null,
       "venue": "Paradiso",
       "venue_address": "Paradiso - Grote Zaal, Paradiso - Kelder",
@@ -24346,6 +24384,7 @@
     "Framer Framed",
     "Frans Hals Museum, Haarlem",
     "Free Willie Amsterdam",
+    "Galerie Fontana",
     "Galerie Franzis Engels",
     "Garage Noord",
     "Grachtenmuseum Amsterdam, Amsterdam",
