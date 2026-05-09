@@ -167,7 +167,8 @@ class ParadisoCollector(BaseCollector):
 
             # Venue / Location
             locations = item.get("location") or []
-            venue_name = locations[0]["title"] if locations else "Paradiso"
+            actual_venue = locations[0]["title"].strip() if locations else "Paradiso"
+            venue_name = "Paradiso" if actual_venue.lower() == "paradiso" else f"Paradiso ({actual_venue})"
 
             # Room / Area
             areas = item.get("areas") or []
