@@ -1,6 +1,6 @@
 {
-  "generated_at": "2026-05-09T14:22:06.492163",
-  "event_count": 1117,
+  "generated_at": "2026-05-09T21:44:49.031489",
+  "event_count": 1123,
   "events": [
     {
       "id": "de3ec5ba7d18b259",
@@ -1117,6 +1117,24 @@
       "match": null
     },
     {
+      "id": "c08ba2c0bb38cba7",
+      "title": "Double Bill: BUST & A Mouthful Of Stones [SOLD OUT]",
+      "date": "2026-05-09T18:30:00",
+      "date_end": null,
+      "venue": "Plein Theater",
+      "venue_address": "",
+      "event_type": "",
+      "artists": [],
+      "genres": [],
+      "price_min": 12.0,
+      "price_max": null,
+      "tickets_url": "",
+      "tickets_status": "available",
+      "source": "amsterdam_alt",
+      "source_url": "https://www.amsterdamalternative.nl/agenda/21470",
+      "match": null
+    },
+    {
       "id": "d17b6326095bac9c",
       "title": "Sokratis Malamas, Ioulia Karapataki & Giannis Malamas",
       "date": "2026-05-09T19:00:00",
@@ -1287,7 +1305,7 @@
       "genres": [],
       "price_min": null,
       "price_max": null,
-      "tickets_url": "https://splendor.stager.co/shop/default/events/111605627",
+      "tickets_url": "",
       "tickets_status": "available",
       "source": "splendor",
       "source_url": "https://www.splendoramsterdam.com/agenda/111605627/genz-voice-recitals-the-female-voice-corde-e-canto-songs-without-shores",
@@ -1326,9 +1344,9 @@
         "Philippe Herreweghe"
       ],
       "genres": [],
-      "price_min": 34.5,
-      "price_max": 43.0,
-      "tickets_url": "https://tickets.muziekgebouw.nl/en/buyingflow/tickets/43746/100663",
+      "price_min": null,
+      "price_max": null,
+      "tickets_url": "",
       "tickets_status": "available",
       "source": "muziekgebouw",
       "source_url": "https://www.muziekgebouw.nl/en/agenda/a-ladder-to-paradise-rb2l",
@@ -1352,7 +1370,7 @@
       "price_min": 35.0,
       "price_max": null,
       "tickets_url": "https://www.concertgebouw.nl/en/concerts/9133504-mahlers-symphony-no.-10-performed-by-the-netherlands-philharmonic",
-      "tickets_status": "last_tickets",
+      "tickets_status": "available",
       "source": "concertgebouw",
       "source_url": "https://www.concertgebouw.nl/en/concerts/9133504-mahlers-symphony-no.-10-performed-by-the-netherlands-philharmonic",
       "match": null
@@ -1484,6 +1502,24 @@
         "reason": "Similar to Greentea Peng",
         "score": 5
       }
+    },
+    {
+      "id": "7d4aacae4808c811",
+      "title": "House Of Silk - Amsterdam Weekender 2026 (FESTIVAL AFTER PARTY) YOU CAN PAY ON THE DOOR",
+      "date": "2026-05-09T21:00:00",
+      "date_end": "2026-05-11T05:00:00",
+      "venue": "Panama",
+      "venue_address": "Oostelijke Handelskade 4; 1019 Zeeburg; Amsterdam; Netherlands",
+      "event_type": "Club",
+      "artists": [],
+      "genres": [],
+      "price_min": null,
+      "price_max": null,
+      "tickets_url": "",
+      "tickets_status": "available",
+      "source": "ra",
+      "source_url": "https://ra.co/events/2307296",
+      "match": null
     },
     {
       "id": "276cac7bcf5ab078",
@@ -1786,21 +1822,26 @@
       "match": null
     },
     {
-      "id": "7d4aacae4808c811",
-      "title": "House Of Silk - Amsterdam Weekender 2026 (FESTIVAL AFTER PARTY)",
-      "date": "2026-05-09T23:00:00",
-      "date_end": "2026-05-11T02:30:00",
-      "venue": "Panama",
-      "venue_address": "Oostelijke Handelskade 4; 1019 Zeeburg; Amsterdam; Netherlands",
+      "id": "9a59563ff1406f59",
+      "title": "Michel de Hey - Dennis Quin b2b Fabio Santos - Stacie Fields - Nina Malay - Eyeris",
+      "date": "2026-05-09T22:00:00",
+      "date_end": "2026-05-10T05:00:00",
+      "venue": "Het Sieraad",
+      "venue_address": "Postjesweg 1, 1057 DT Amsterdam",
       "event_type": "Club",
-      "artists": [],
+      "artists": [
+        "Michel de Hey",
+        "Dennis Quin",
+        "Fabio Santos",
+        "iMarly"
+      ],
       "genres": [],
       "price_min": null,
       "price_max": null,
       "tickets_url": "",
       "tickets_status": "available",
       "source": "ra",
-      "source_url": "https://ra.co/events/2307296",
+      "source_url": "https://ra.co/events/2420540",
       "match": null
     },
     {
@@ -6206,6 +6247,24 @@
       "match": null
     },
     {
+      "id": "20e3c1b610e7fc76",
+      "title": "Nachtdienst Beach Opening",
+      "date": "2026-05-16T15:00:00",
+      "date_end": "2026-05-17T23:00:00",
+      "venue": "TBA - Duna",
+      "venue_address": "",
+      "event_type": "Club",
+      "artists": [],
+      "genres": [],
+      "price_min": null,
+      "price_max": null,
+      "tickets_url": "",
+      "tickets_status": "available",
+      "source": "ra",
+      "source_url": "https://ra.co/events/2439005",
+      "match": null
+    },
+    {
       "id": "1fd12f92257090f6",
       "title": "Cosmic Jungle w/ Franca - MAGA - Omer Tayar - Tim Engelhardt - Antoisonica b2b Ronja",
       "date": "2026-05-16T16:00:00",
@@ -6558,7 +6617,7 @@
         "Utopia"
       ],
       "genres": [],
-      "price_min": 12.5,
+      "price_min": 29.5,
       "price_max": 37.0,
       "tickets_url": "https://tickets.muziekgebouw.nl/en/buyingflow/tickets/44157/101276",
       "tickets_status": "available",
@@ -10932,6 +10991,24 @@
       "tickets_status": "available",
       "source": "concertgebouw",
       "source_url": "https://www.concertgebouw.nl/en/concerts/36485016-euregio-youth-orchestra-plays-shostakovich-rachmaninoff-and-john-williams",
+      "match": null
+    },
+    {
+      "id": "18734cc3ca54c1be",
+      "title": "Dinner at Café Gilde",
+      "date": "2026-05-23T15:00:00",
+      "date_end": null,
+      "venue": "OT301",
+      "venue_address": "",
+      "event_type": "",
+      "artists": [],
+      "genres": [],
+      "price_min": 12.0,
+      "price_max": null,
+      "tickets_url": "",
+      "tickets_status": "available",
+      "source": "amsterdam_alt",
+      "source_url": "https://www.amsterdamalternative.nl/agenda/21959",
       "match": null
     },
     {
@@ -15502,7 +15579,7 @@
       "id": "195487b45929f630",
       "title": "Blood Bonds | Bureaucratics Revisited",
       "date": "2026-05-30T00:00:00",
-      "date_end": "2026-07-04T00:00:00",
+      "date_end": "2026-06-27T00:00:00",
       "venue": "Galerie Fontana",
       "venue_address": "Amsterdam, Nederland",
       "event_type": "Expositie",
@@ -15616,6 +15693,24 @@
       "tickets_status": "available",
       "source": "concertgebouw",
       "source_url": "https://www.concertgebouw.nl/en/concerts/8924599-lahav-shani-conducts-mahler-4",
+      "match": null
+    },
+    {
+      "id": "cbb1e547ae0b244a",
+      "title": "Dinner at Café Gilde",
+      "date": "2026-05-30T15:00:00",
+      "date_end": null,
+      "venue": "OT301",
+      "venue_address": "",
+      "event_type": "",
+      "artists": [],
+      "genres": [],
+      "price_min": 12.0,
+      "price_max": null,
+      "tickets_url": "",
+      "tickets_status": "available",
+      "source": "amsterdam_alt",
+      "source_url": "https://www.amsterdamalternative.nl/agenda/21960",
       "match": null
     },
     {
@@ -18224,37 +18319,6 @@
       "match": null
     },
     {
-      "id": "8039ab457bfa5e33",
-      "title": "Mokum Records",
-      "date": "2026-06-05T14:21:00",
-      "date_end": null,
-      "venue": "Paradiso",
-      "venue_address": "Paradiso - Grote Zaal, Paradiso - Kelder",
-      "event_type": "Club",
-      "artists": [
-        "DJ Dano",
-        "Tellurian",
-        "Remsy",
-        "WICKED XXX",
-        "Party Animals (live)",
-        "T-GO",
-        "Arvid",
-        "Los Muñaños",
-        "XTNA"
-      ],
-      "genres": [
-        "Electronic",
-        "Club"
-      ],
-      "price_min": null,
-      "price_max": null,
-      "tickets_url": "https://tickets.paradiso.nl/76de8d60b85f4ab5b8b55413e895fe1f",
-      "tickets_status": "available",
-      "source": "paradiso",
-      "source_url": "https://www.paradiso.nl/en/program/mokum-records/2785742",
-      "match": null
-    },
-    {
       "id": "3192ab8c99292391",
       "title": "Queer Latin Night Amsterdam!",
       "date": "2026-06-05T17:00:00",
@@ -18615,6 +18679,37 @@
       "tickets_status": "available",
       "source": "ra",
       "source_url": "https://ra.co/events/2430756",
+      "match": null
+    },
+    {
+      "id": "8039ab457bfa5e33",
+      "title": "Mokum Records",
+      "date": "2026-06-05T21:44:00",
+      "date_end": null,
+      "venue": "Paradiso",
+      "venue_address": "Paradiso - Grote Zaal, Paradiso - Kelder",
+      "event_type": "Club",
+      "artists": [
+        "DJ Dano",
+        "Tellurian",
+        "Remsy",
+        "WICKED XXX",
+        "Party Animals (live)",
+        "T-GO",
+        "Arvid",
+        "Los Muñaños",
+        "XTNA"
+      ],
+      "genres": [
+        "Electronic",
+        "Club"
+      ],
+      "price_min": null,
+      "price_max": null,
+      "tickets_url": "https://tickets.paradiso.nl/76de8d60b85f4ab5b8b55413e895fe1f",
+      "tickets_status": "available",
+      "source": "paradiso",
+      "source_url": "https://www.paradiso.nl/en/program/mokum-records/2785742",
       "match": null
     },
     {
@@ -21116,6 +21211,26 @@
       "tickets_status": "available",
       "source": "ra",
       "source_url": "https://ra.co/events/2422976",
+      "match": null
+    },
+    {
+      "id": "66c975de74e0f020",
+      "title": "Paper's Journey: From Ancient Roots to Modern Art",
+      "date": "2026-06-13T00:00:00",
+      "date_end": "2026-08-01T00:00:00",
+      "venue": "SPAZIO NUOVO",
+      "venue_address": "Amsterdam, Nederland",
+      "event_type": "Expositie",
+      "artists": [
+        "Riccardo Ajossa"
+      ],
+      "genres": [],
+      "price_min": null,
+      "price_max": null,
+      "tickets_url": "",
+      "tickets_status": "available",
+      "source": "gallery_viewer",
+      "source_url": "https://galleryviewer.com/en/exhibition/6406",
       "match": null
     },
     {
@@ -24459,6 +24574,7 @@
     "Rijksmuseum Muiderslot, Muiden",
     "Roode Bioscoop",
     "SISSI'S Amsterdam",
+    "SPAZIO NUOVO",
     "San Francisco",
     "Schouwburg Het Park",
     "Shelter Amsterdam",
@@ -24471,6 +24587,7 @@
     "Studio Tumbuh",
     "TBA",
     "TBA - 48h before the event only to the ticket holders via email",
+    "TBA - Duna",
     "TBA - Frans Otten Stadium",
     "TBA - Het Vapen van Amsterdam NDSM",
     "TBA - Secret Location",

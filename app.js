@@ -204,7 +204,7 @@ function bindEvents() {
         msgEl.className = 'login-message';
         const { error } = await supabaseClient.auth.signInWithOtp({ 
             email,
-            options: { emailRedirectTo: window.location.href }
+            options: { emailRedirectTo: 'https://ultimoboulevard.github.io/amsterdam-events-digest/' }
         });
         
         if (error) {
