@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-05-09T21:44:49.031489",
+  "generated_at": "2026-05-09T21:46:43.904995",
   "event_count": 1123,
   "events": [
     {
@@ -1151,7 +1151,7 @@
       "price_min": null,
       "price_max": null,
       "tickets_url": "",
-      "tickets_status": "available",
+      "tickets_status": "sold_out",
       "source": "melkweg",
       "source_url": "https://www.melkweg.nl/en/agenda/sokratis-malamas-ioulia-karapataki-giannis-malamas-09-05-2026",
       "match": null
@@ -18684,7 +18684,7 @@
     {
       "id": "8039ab457bfa5e33",
       "title": "Mokum Records",
-      "date": "2026-06-05T21:44:00",
+      "date": "2026-06-05T21:46:00",
       "date_end": null,
       "venue": "Paradiso",
       "venue_address": "Paradiso - Grote Zaal, Paradiso - Kelder",
