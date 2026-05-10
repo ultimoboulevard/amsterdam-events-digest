@@ -14,6 +14,7 @@ jobs:
     permissions:
       contents: write
       pages: write
+      id-token: write
     steps:
       - name: Checkout code
         uses: actions/checkout@v5
@@ -60,8 +61,24 @@ jobs:
           git pull --rebase --autostash origin main || true
           git push
 
-      - name: Deploy calendar site to GitHub Pages
-        uses: peaceiris/actions-gh-pages@v4
+      - name: Setup Pages
+        uses: actions/configure-pages@v5
+
+      - name: Upload artifact
+        uses: actions/upload-pages-artifact@v3
         with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: ./site
+          path: './site'
+
+  deploy:
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    runs-on: ubuntu-latest
+    needs: update
+    permissions:
+      pages: write
+      id-token: write
+    steps:
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
