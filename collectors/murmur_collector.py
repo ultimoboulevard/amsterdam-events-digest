@@ -3,6 +3,7 @@ Murmur collector.
 Parses events from the landing page table.
 """
 import logging
+import socket
 from datetime import datetime
 from bs4 import BeautifulSoup
 import httpx
@@ -20,7 +21,10 @@ class MurmurCollector(BaseCollector):
     def collect(self) -> list[Event]:
         log.info(f"Collecting events from {self.name}...")
         try:
-            resp = httpx.get(MURMUR_URL, headers=HEADERS, timeout=REQUEST_TIMEOUT)
+            # Force IPv4 to avoid GitHub Actions IPv6 connectivity issues
+            transport = httpx.HTTPTransport(local_address="0.0.0.0")
+            with httpx.Client(transport=transport) as client:
+                resp = client.get(MURMUR_URL, headers=HEADERS, timeout=REQUEST_TIMEOUT)
             resp.raise_for_status()
             soup = BeautifulSoup(resp.text, 'html.parser')
         except Exception as e:
