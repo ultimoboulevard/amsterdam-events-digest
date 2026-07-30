@@ -1,6 +1,7 @@
 from __future__ import annotations
 
 import logging
+import time
 from datetime import datetime, timedelta
 from typing import Optional
 import urllib.parse
@@ -20,6 +21,12 @@ BIMHUIS_AGENDA_URL = BIMHUIS_BASE + "/en/calendar/"
 VENUE_NAME = "Bimhuis"
 VENUE_ADDRESS = "Piet Heinkade 3, 1019 BR Amsterdam"
 
+MAX_PAGES = 20
+PAGE_SIZE = 20          # a full page holds 20 tiles; fewer means the last page
+PAGE_DELAY = 0.3        # polite delay between page requests
+FETCH_RETRIES = 3       # pages answer in ~0.3s, so a failure is a transient blip
+RETRY_BACKOFF = 1.5     # seconds, multiplied by the attempt number
+
 
 class BimhuisCollector(BaseCollector):
     name = "bimhuis"
@@ -28,30 +35,24 @@ class BimhuisCollector(BaseCollector):
         log.info("Collecting events from Bimhuis...")
 
         events: list[Event] = []
-        page = 1
-        max_pages = 20
+        seen_urls: set[str] = set()
+        truncated_at: Optional[int] = None
 
-        while page <= max_pages:
-            url = f"{BIMHUIS_AGENDA_URL}?page={page}"
-            try:
-                resp = httpx.get(
-                    url,
-                    headers=HEADERS,
-                    timeout=REQUEST_TIMEOUT,
-                    follow_redirects=True,
-                )
-                resp.raise_for_status()
-            except httpx.HTTPError as e:
-                log.error("Failed to fetch Bimhuis agenda page %d: %s", page, e)
+        for page in range(1, MAX_PAGES + 1):
+            html = self._fetch_page(page)
+            if html is None:
+                # Give up on this page only after the retries are exhausted.
+                # Whatever we already have is a partial calendar, not a complete one.
+                truncated_at = page
                 break
 
-            soup = BeautifulSoup(resp.text, "html.parser")
-            
+            soup = BeautifulSoup(html, "html.parser")
+
             items = soup.select("div.agenda-tile__content")
-            
+
             # The structure often has empty placeholder items or repeats. We need to filter valid ones.
             valid_items = [i for i in items if i.select_one('a.agenda-tile__link')]
-            
+
             if not valid_items:
                 log.info("Bimhuis: No valid events found on page %d, stopping.", page)
                 break
@@ -61,19 +62,60 @@ class BimhuisCollector(BaseCollector):
                 # Actually, the image is in <div class="agenda-tile__img-tile">, which is a sibling of <div class="agenda-tile__content">
                 parent_tile = item.parent
                 ev = self._parse_item(item, parent_tile)
-                if ev:
+                if ev and ev.source_url not in seen_urls:
                     events.append(ev)
+                    seen_urls.add(ev.source_url)
 
             log.debug("Bimhuis: collected %d events from page %d", len(valid_items), page)
 
             # If there are less than 20 events on a page, it's the last page.
-            if len(valid_items) < 20:
+            if len(valid_items) < PAGE_SIZE:
                 break
-                
-            page += 1
 
-        log.info("Bimhuis: collected %d events total", len(events))
+            time.sleep(PAGE_DELAY)
+
+        if truncated_at:
+            log.error(
+                "Bimhuis: INCOMPLETE — page %d unreachable, calendar truncated at %d events",
+                truncated_at,
+                len(events),
+            )
+        else:
+            log.info("Bimhuis: collected %d events total", len(events))
+
         return events
+
+    # ── HTTP ───────────────────────────────────────────────────────
+
+    def _fetch_page(self, page: int) -> Optional[str]:
+        """Fetch one agenda page, retrying transient network failures."""
+        url = f"{BIMHUIS_AGENDA_URL}?page={page}"
+
+        for attempt in range(1, FETCH_RETRIES + 1):
+            try:
+                resp = httpx.get(
+                    url,
+                    headers=HEADERS,
+                    timeout=REQUEST_TIMEOUT,
+                    follow_redirects=True,
+                )
+                resp.raise_for_status()
+                return resp.text
+            except httpx.HTTPError as e:
+                if attempt == FETCH_RETRIES:
+                    log.error(
+                        "Failed to fetch Bimhuis agenda page %d after %d attempts: %s",
+                        page, FETCH_RETRIES, e,
+                    )
+                    return None
+                wait = RETRY_BACKOFF * attempt
+                log.warning(
+                    "Bimhuis page %d attempt %d/%d failed (%s) — retrying in %.1fs",
+                    page, attempt, FETCH_RETRIES, e, wait,
+                )
+                time.sleep(wait)
+
+        return None
 
     def _parse_item(self, item: Tag, parent_tile: Tag) -> Optional[Event]:
         try:

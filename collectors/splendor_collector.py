@@ -40,6 +40,26 @@ DUTCH_MONTHS = {
     "december": 12,
 }
 
+# The agenda switched to abbreviated month names ("Vr. 31 jul. 2026") in 2026.
+# "mei" is spelled the same either way, which is why May was the last month
+# the old full-name-only map could still read.
+DUTCH_MONTHS_ABBR = {
+    "jan": 1,
+    "feb": 2,
+    "mrt": 3,
+    "maa": 3,
+    "apr": 4,
+    "mei": 5,
+    "jun": 6,
+    "jul": 7,
+    "aug": 8,
+    "sep": 9,
+    "sept": 9,
+    "okt": 10,
+    "nov": 11,
+    "dec": 12,
+}
+
 class SplendorCollector(BaseCollector):
     name = "splendor"
 
@@ -145,24 +165,39 @@ class SplendorCollector(BaseCollector):
             return None
 
     @staticmethod
+    def _month_number(word: str) -> Optional[int]:
+        """Map a Dutch month name to its number, full or abbreviated."""
+        word = word.strip().rstrip(".").lower()
+        if not word:
+            return None
+        if word in DUTCH_MONTHS:
+            return DUTCH_MONTHS[word]
+        if word in DUTCH_MONTHS_ABBR:
+            return DUTCH_MONTHS_ABBR[word]
+        # Last resort: unambiguous prefix of a full name ("septem", "okto")
+        matches = {n for name, n in DUTCH_MONTHS.items() if name.startswith(word)}
+        return matches.pop() if len(matches) == 1 else None
+
+    @staticmethod
     def _parse_date(date_str: str) -> Optional[datetime]:
-        """Parse Dutch date string like 'Vr. 8 mei 2026 19:30 uur'."""
+        """Parse a Dutch date string like 'Vr. 31 jul. 2026 20:30 uur'."""
         if not date_str:
             return None
-        
+
         # Lowercase and clean
         date_str = date_str.lower().replace("uur", "").strip()
-        
-        # Regex to find day, month word, year, optional time
-        m = re.search(r'(\d{1,2})\s+([a-z]+)\s+(\d{4})(?:\s+(\d{1,2}:\d{2}))?', date_str)
+
+        # Regex to find day, month word (optionally abbreviated with a
+        # trailing dot), year, optional time
+        m = re.search(r'(\d{1,2})\s+([a-z]+)\.?\s+(\d{4})(?:\s+(\d{1,2}:\d{2}))?', date_str)
         if not m:
             return None
-            
+
         day_str, month_str, year_str, time_str = m.groups()
-        month = DUTCH_MONTHS.get(month_str)
+        month = SplendorCollector._month_number(month_str)
         if not month:
             return None
-            
+
         try:
             day = int(day_str)
             year = int(year_str)

@@ -61,12 +61,20 @@ logging.basicConfig(
 log = logging.getLogger("main")
 
 
-def cmd_collect(args: argparse.Namespace) -> None:
-    """Run collectors and store events in DB."""
+def cmd_collect(args: argparse.Namespace) -> list[str]:
+    """
+    Run collectors and store events in DB.
+
+    Returns the list of sources that collapsed to zero events despite already
+    having events in the DB — i.e. a scraper that used to work and just broke.
+    Callers propagate this so the process exits non-zero and CI goes red.
+    """
     init_db()
 
     sources = [args.source] if args.source else list(COLLECTORS.keys())
+    known_counts = get_stats()["by_source"]
 
+    broken: list[str] = []
     total_inserted = total_updated = 0
     for source_name in sources:
         cls = COLLECTORS.get(source_name)
@@ -81,10 +89,24 @@ def cmd_collect(args: argparse.Namespace) -> None:
             inserted, updated = upsert_many(events)
             total_inserted += inserted
             total_updated += updated
+        elif known_counts.get(source_name):
+            # Historically active source that now yields nothing: the site
+            # almost certainly changed its markup. Never let this pass quietly.
+            log.error(
+                "BROKEN SOURCE: %s returned 0 events but has %d in the DB — scraper likely stale",
+                source_name,
+                known_counts[source_name],
+            )
+            broken.append(source_name)
         else:
             log.warning("No events collected from %s", source_name)
 
     log.info("═══ Collection complete: %d new, %d updated ═══", total_inserted, total_updated)
+
+    if broken:
+        log.error("═══ %d broken source(s): %s ═══", len(broken), ", ".join(broken))
+
+    return broken
 
 
 def cmd_digest(args: argparse.Namespace) -> None:
@@ -103,21 +125,23 @@ def cmd_digest(args: argparse.Namespace) -> None:
         webbrowser.open(f"file://{path.resolve()}")
 
 
-def cmd_run(args: argparse.Namespace) -> None:
+def cmd_run(args: argparse.Namespace) -> list[str]:
     """Collect + digest in one shot."""
-    cmd_collect(args)
+    broken = cmd_collect(args)
     cmd_digest(args)
+    return broken
 
 
-def cmd_send(args: argparse.Namespace) -> None:
+def cmd_send(args: argparse.Namespace) -> list[str]:
     """Collect this week's events, build digest, and email it."""
     # Force days=6 so the digest covers Monday → Sunday
     args.days = 6
     args.source = None
     args.open = False
-    cmd_collect(args)
+    broken = cmd_collect(args)
     cmd_digest(args)
 
+    # A broken source must not stop the digest — send first, fail loudly after.
     ok = send_digest()
     if ok:
         log.info("═══ Weekly digest sent successfully ═══")
@@ -125,11 +149,13 @@ def cmd_send(args: argparse.Namespace) -> None:
         log.error("═══ Failed to send weekly digest ═══")
         sys.exit(1)
 
+    return broken
 
-def cmd_site(args: argparse.Namespace) -> None:
+
+def cmd_site(args: argparse.Namespace) -> list[str]:
     """Export events JSON and open the static site locally."""
     args.source = None
-    cmd_collect(args)
+    broken = cmd_collect(args)
     path = export_events_json(days=45)
     log.info("JSON exported: %s", path)
 
@@ -137,6 +163,8 @@ def cmd_site(args: argparse.Namespace) -> None:
     if index.exists():
         webbrowser.open(f"file://{index.resolve()}")
         log.info("Opened site in browser")
+
+    return broken
 
 
 def cmd_stats(args: argparse.Namespace) -> None:
@@ -193,7 +221,11 @@ def main() -> None:
     p_stats.set_defaults(func=cmd_stats)
 
     args = parser.parse_args()
-    args.func(args)
+    broken = args.func(args)
+
+    # Exit non-zero so a silently-broken scraper turns the CI run red.
+    if broken:
+        sys.exit(1)
 
 
 if __name__ == "__main__":

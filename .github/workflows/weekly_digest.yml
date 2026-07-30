@@ -9,6 +9,8 @@ on:
 jobs:
   update:
     runs-on: ubuntu-latest
+    outputs:
+      collect_outcome: ${{ steps.collect.outcome }}
     env:
       FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: true
     permissions:
@@ -32,7 +34,12 @@ jobs:
           pip install -r requirements.txt
 
       # ── Daily: collect events + update site ──
+      # main.py exits 1 when a source with history in the DB returns 0 events.
+      # We don't abort here — the digest, DB commit and Pages deploy must still
+      # run — the check-sources job below turns the whole run red instead.
       - name: Collect events from all sources
+        id: collect
+        continue-on-error: true
         run: python main.py collect
 
       - name: Export events JSON for calendar site
@@ -68,6 +75,20 @@ jobs:
         uses: actions/upload-pages-artifact@v3
         with:
           path: './site'
+
+  # Fails the run when a collector went silent, without having blocked any of
+  # the work above. This is what makes a stale scraper visible: before, a source
+  # collapsing to 0 events only logged a WARNING and the run stayed green.
+  check-sources:
+    runs-on: ubuntu-latest
+    needs: update
+    if: always() && needs.update.outputs.collect_outcome == 'failure'
+    steps:
+      - name: Report broken collectors
+        run: |
+          echo "::error::One or more collectors returned 0 events despite having history in the DB — see the 'Collect events from all sources' step log for the source names."
+          echo "⚠️ A collector went silent — check the collect step log." >> "$GITHUB_STEP_SUMMARY"
+          exit 1
 
   deploy:
     environment:

@@ -13,8 +13,9 @@ from __future__ import annotations
 import logging
 import re
 import time
-from datetime import datetime
+from datetime import datetime, timedelta
 from typing import Optional
+from zoneinfo import ZoneInfo
 
 import httpx
 from bs4 import BeautifulSoup, Tag
@@ -29,6 +30,9 @@ BASE_URL = "https://www.concertgebouw.nl"
 CALENDAR_URL = f"{BASE_URL}/en/concerts-and-tickets"
 MAX_PAGES = 10          # ~150 events, covers several months
 PAGE_DELAY = 0.5        # polite delay between page requests
+
+AMSTERDAM = ZoneInfo("Europe/Amsterdam")
+HALL_SUFFIXES = ("Hall", "Zaal")
 
 
 class ConcertgebouwCollector(BaseCollector):
@@ -109,31 +113,48 @@ class ConcertgebouwCollector(BaseCollector):
             )
             date_text = date_badge.get_text(strip=True) if date_badge else ""
 
+            # ── Start time ─────────────────────────────────────────
+            # The <time> tag carries a machine-readable UTC timestamp
+            # (datetime="2026-08-01T18:00:00.000Z"); its text is the
+            # localized range, e.g. "8:00 PM–9:30 PM".
+            time_el = article.select_one("time")
+            iso_start = time_el.get("datetime", "") if time_el else ""
+            time_text = time_el.get_text(" ", strip=True) if time_el else ""
+
             # ── Metadata from <ul> list items ──────────────────────
-            lis = article.select("section.c-content ul li")
-            time_text = ""
             hall = ""
             price_text = ""
             composers: list[str] = []
 
-            for li in lis:
-                txt = li.get_text(strip=True)
+            for li in article.select("section.c-content li"):
+                classes = li.get("class") or []
+                if "c-content-list-item" in classes:
+                    # Program entry: <span class="font-medium">composer</span>
+                    #                <span class="italic">piece</span>
+                    name_el = li.select_one("span.font-medium")
+                    piece_el = li.select_one("span.italic")
+                    name = name_el.get_text(strip=True) if name_el else ""
+                    piece = piece_el.get_text(strip=True) if piece_el else ""
+                    entry = ": ".join(p for p in (name, piece) if p)
+                    if entry:
+                        composers.append(entry)
+                    continue
+
+                if li.select_one("time"):
+                    continue
+                txt = li.get_text(" ", strip=True)
                 if not txt:
                     continue
-                # Time comes from <time> element or text like "8:15 PM–10:00 PM"
-                time_el = li.select_one("time")
-                if time_el:
-                    time_text = time_el.get_text(strip=True)
-                elif txt in ("Main Hall", "Recital Hall", "Choir Hall"):
+                if txt.endswith(HALL_SUFFIXES):
                     hall = txt
-                elif txt.startswith("From €"):
+                elif "€" in txt:
                     price_text = txt
-                elif "–" not in txt and "PM" not in txt and "AM" not in txt:
-                    # Likely a composer + piece entry
-                    composers.append(txt)
 
             # ── Parse date + time ──────────────────────────────────
-            event_date = self._parse_datetime(date_text, time_text)
+            # Prefer the ISO timestamp; fall back to the date badge text.
+            event_date = self._parse_iso(iso_start)
+            if event_date is None:
+                event_date = self._parse_datetime(date_text, time_text)
             if event_date is None:
                 return None
 
@@ -142,7 +163,7 @@ class ConcertgebouwCollector(BaseCollector):
                 return None
 
             # ── Parse end time ─────────────────────────────────────
-            event_end = self._parse_end_time(date_text, time_text)
+            event_end = self._parse_end_time(event_date, time_text)
 
             # ── Price ──────────────────────────────────────────────
             price_min = self._parse_price(price_text)
@@ -191,11 +212,27 @@ class ConcertgebouwCollector(BaseCollector):
     # ── Date / time helpers ────────────────────────────────────────
 
     @staticmethod
+    def _parse_iso(iso: str) -> Optional[datetime]:
+        """
+        Parse the <time datetime> attribute ("2026-08-01T18:00:00.000Z")
+        into naive local (Amsterdam) time — the rest of the pipeline is naive.
+        """
+        if not iso:
+            return None
+        try:
+            dt = datetime.fromisoformat(iso.strip().replace("Z", "+00:00"))
+        except ValueError:
+            return None
+        if dt.tzinfo is not None:
+            dt = dt.astimezone(AMSTERDAM).replace(tzinfo=None)
+        return dt
+
+    @staticmethod
     def _parse_datetime(date_text: str, time_text: str) -> Optional[datetime]:
         """
-        Parse date + time from Concertgebouw format.
-        date_text: "Fri, May 8, 2026"
-        time_text: "8:15 PM–10:00 PM"  (we take the start time)
+        Fallback for when the ISO attribute is missing: parse the date badge.
+        date_text: "Sat, Aug 1, 2026" (also accepts the older "Sat, August 1, 2026")
+        time_text: "8:15 PM – 10:00 PM"  (we take the start time)
         """
         if not date_text:
             return None
@@ -207,28 +244,23 @@ class ConcertgebouwCollector(BaseCollector):
             parts = re.split(r"[–\-—]", time_text)
             start_time = parts[0].strip()
 
-        # Try parsing with time
-        for fmt in (
-            "%a, %B %d, %Y %I:%M %p",
-            "%a, %B %d, %Y %I:%M%p",
-            "%a, %B %d, %Y",
-        ):
-            combined = f"{date_text} {start_time}".strip() if start_time else date_text
-            try:
-                return datetime.strptime(combined, fmt)
-            except ValueError:
-                continue
-
-        # Fallback: date only
-        try:
-            return datetime.strptime(date_text, "%a, %B %d, %Y")
-        except ValueError:
-            return None
+        # %b matches the abbreviated month names the site switched to in 2026;
+        # %B keeps the older full names working.
+        for date_fmt in ("%a, %b %d, %Y", "%a, %B %d, %Y"):
+            for time_fmt in (" %I:%M %p", " %I:%M%p", ""):
+                if time_fmt and not start_time:
+                    continue
+                combined = f"{date_text} {start_time}" if time_fmt else date_text
+                try:
+                    return datetime.strptime(combined, date_fmt + time_fmt)
+                except ValueError:
+                    continue
+        return None
 
     @staticmethod
-    def _parse_end_time(date_text: str, time_text: str) -> Optional[datetime]:
-        """Parse the end time from a time range like '8:15 PM–10:00 PM'."""
-        if not date_text or not time_text:
+    def _parse_end_time(start: datetime, time_text: str) -> Optional[datetime]:
+        """Derive the end time from a range like '8:15 PM – 10:00 PM'."""
+        if not start or not time_text:
             return None
 
         parts = re.split(r"[–\-—]", time_text)
@@ -236,14 +268,15 @@ class ConcertgebouwCollector(BaseCollector):
             return None
 
         end_time = parts[1].strip()
-        for fmt in (
-            "%a, %B %d, %Y %I:%M %p",
-            "%a, %B %d, %Y %I:%M%p",
-        ):
+        for fmt in ("%I:%M %p", "%I:%M%p", "%H:%M"):
             try:
-                return datetime.strptime(f"{date_text} {end_time}", fmt)
+                clock = datetime.strptime(end_time, fmt).time()
             except ValueError:
                 continue
+            end = datetime.combine(start.date(), clock)
+            if end < start:  # concert runs past midnight
+                end += timedelta(days=1)
+            return end
         return None
 
     @staticmethod
