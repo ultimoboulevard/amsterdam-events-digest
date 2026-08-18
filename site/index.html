@@ -5,10 +5,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Amsterdam Events Calendar</title>
     <meta name="description" content="Interactive monthly calendar of live music, club nights, and cultural events in Amsterdam.">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="style.css?v=3">
+    <!-- Google Fonts rimosso il 18/08/2026: rinviava l'IP di ogni visitatore
+         a Google a ogni caricamento. Inter e' ora in site/fonts/ (SIL OFL),
+         dichiarato in testa a style.css. Tolta anche una richiesta
+         bloccante al primo caricamento. -->
+    <link rel="stylesheet" href="style.css?v=4">
     <link rel="icon" type="image/png" href="favicon.png?v=2">
     <!-- Supabase DISATTIVATO il 18/08/2026: il progetto ktewpglahibpymvshwra
          non risolve piu' (NXDOMAIN) — login, Friends' Picks e sync dei
