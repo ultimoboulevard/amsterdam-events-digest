@@ -1,9 +1,13 @@
 name: Amsterdam Events Pipeline
 
+# DISARMATO il 18/08/2026. La pipeline e' stata rimpatriata su capitan il
+# 30/07/2026 (launchd: com.local.events-collect ogni giorno 06:00,
+# com.local.events-digest il lunedi 06:30). Lo schedule qui sotto era rimasto
+# armato: se avesse girato, il lunedi avrebbe inviato una SECONDA newsletter
+# identica allo stesso destinatario esterno, e avrebbe committato
+# "Auto-update DB" sopra il lavoro locale.
+# Resta solo il trigger manuale, come rete di sicurezza se capitan e' giu'.
 on:
-  schedule:
-    # Every day at 04:00 UTC = 06:00 CEST (Amsterdam summer)
-    - cron: '0 4 * * *'
   workflow_dispatch:  # Manual trigger button in GitHub Actions UI
 
 jobs:
@@ -55,7 +59,9 @@ jobs:
         env:
           EMAIL_USER: ${{ secrets.EMAIL_USER }}
           EMAIL_PASS: ${{ secrets.EMAIL_PASS }}
-          EMAIL_TO: "domizianafrancescon@gmail.com"
+          # Era l'indirizzo in chiaro di una persona reale, in un repo PUBBLICO,
+          # dal commit iniziale. Ora arriva dai secret come le altre credenziali.
+          EMAIL_TO: ${{ secrets.EMAIL_TO }}
         run: python main.py send
 
       # ── Daily: persist DB + deploy site ──

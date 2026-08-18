@@ -5,3 +5,14 @@ output/
 venv/
 .DS_Store
 site/data/
+.venv/
+
+# Aggiunti il 18/08/2026 — mine antiuomo per un "git add -A":
+# 149 MB di roba non del progetto vive dentro questo working tree, e il
+# repo su GitHub e' PUBBLICO.
+node_modules/
+logs/
+backups/
+primerily/
+scifai/
+debug_page.js
