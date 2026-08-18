@@ -8,6 +8,8 @@ from dataclasses import dataclass, field, asdict
 from datetime import datetime
 from typing import Optional
 
+from venues import venue_key
+
 
 @dataclass
 class Event:
@@ -47,13 +49,35 @@ class Event:
             self.dedup_key = self.compute_dedup_key()
 
     def compute_dedup_key(self) -> str:
-        """Deterministic dedup key: title + date + venue."""
+        """
+        Chiave deterministica: titolo + giorno + SALA CANONICA.
+
+        Il terzo campo passa da `venue.lower()` alla forma canonica di
+        venues.py, e questo e' tutto il cambiamento. Il locale grezzo e' il
+        campo su cui le fonti non vanno d'accordo: la fonte `paradiso` scrive
+        "Paradiso (Tolhuistuin)", RA scrive "Tolhuistuin", e "Muziekgebouw aan
+        't IJ" contro "aan t' IJ" differiscono per la posizione di un
+        apostrofo. Ogni grafia era una chiave diversa, quindi una riga in piu':
+        misurate 185 righe doppie su 8.962, di cui 90 su eventi futuri.
+
+        Si canonicalizza la SALA, non l'operatore. Appiattire su "Paradiso"
+        sarebbe l'errore opposto: il 22/08 "SOBER in the garden" e' a
+        Tolhuistuin E a Parallel, due url RA diverse, due eventi. Vedi
+        venues.py per il perche' esteso.
+
+        ATTENZIONE — questa e' la PRIMARY KEY della tabella (vedi sotto).
+        Cambiare questa formula senza migrare le righe gia' salvate significa
+        che il collect successivo non riconosce piu' niente, re-inserisce
+        tutto e lascia le vecchie orfane. La migrazione che accompagna questa
+        formula e' migrate_dedup_key.py; se la formula cambia ancora, si
+        rifa' la stessa strada.
+        """
         normalized = (
             self.title.lower().strip()[:60]
             + "|"
             + self.date.strftime("%Y-%m-%d")
             + "|"
-            + self.venue.lower().strip()[:30]
+            + venue_key(self.venue)[:30]
         )
         return hashlib.sha256(normalized.encode()).hexdigest()[:16]
 
