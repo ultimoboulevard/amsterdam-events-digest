@@ -100,7 +100,8 @@ class DiscoveryEngine:
                 "match": True,
                 "type": "Library Match",
                 "score": self.taste_profile[clean_artist],
-                "reason": "In your TIDAL library"
+                # Il "your" era falso su un sito pubblico: la libreria non e'" del lettore.
+                "reason": "Curators' pick"
             }
 
         # Tier 2: Fuzzy Match
@@ -113,7 +114,8 @@ class DiscoveryEngine:
                 "match": True,
                 "type": "Library Match",
                 "score": self.taste_profile[best_match],
-                "reason": f"Fuzzy match for '{best_match.title()}'"
+                # "Fuzzy match" era gergo interno, non copy da vetrina.
+                "reason": "Curators' pick"
             }
 
         # Tier 3: Semantic Discovery Match
@@ -134,7 +136,7 @@ class DiscoveryEngine:
                     "match": True,
                     "type": "Discovery",
                     "score": discovery_score,
-                    "reason": f"Similar to {', '.join(top_reasons)}"
+                    "reason": f"Curators' pick — if you like {', '.join(top_reasons)}"
                 }
 
         return {"match": False}

@@ -10,7 +10,7 @@ const SOURCE_LABELS = {
     ra: 'Resident Advisor', paradiso: 'Paradiso', murmur: 'Murmur',
     museumkaart: 'Museumkaart', gallery_viewer: 'Gallery Viewer',
     concertgebouw: 'Concertgebouw', muziekgebouw: 'Muziekgebouw',
-    sitp: 'Space is the Place', splendor: 'Splendor',
+    sitp: 'Space is the Place', splendor: 'Splendor', bimhuis: 'Bimhuis',
 };
 const TYPE_EMOJI = {
     Concert: '🎸', Club: '🎧', Film: '🎬', Festival: '🎪', Expositie: '🖼️',
@@ -105,7 +105,7 @@ async function init() {
                 <div class="stat-card"><span class="stat-val" id="stat-total">0</span><span class="stat-lbl">Events</span></div>
                 <div class="stat-card"><span class="stat-val" id="stat-venues">0</span><span class="stat-lbl">Venues</span></div>
                 <div class="stat-card"><span class="stat-val" id="stat-days">0</span><span class="stat-lbl">Days</span></div>
-                <div class="stat-card has-tooltip"><span class="stat-val" id="stat-matches" data-tip="Events where at least one performing artist is found in Fra's Last.fm library or taste profile.">0</span><span class="stat-lbl">Matches</span></div>
+                <div class="stat-card has-tooltip"><span class="stat-val" id="stat-matches" data-tip="Events picked by our curators, based on the artists playing.">0</span><span class="stat-lbl">Picks</span></div>
                 <div class="stat-card has-tooltip"><span class="stat-val" id="stat-sources" data-tip="Number of distinct platforms and venues actively feeding this calendar (e.g. Melkweg, Resident Advisor, Concertgebouw…).">0</span><span class="stat-lbl">Sources</span></div>
             </section>`;
 
@@ -113,6 +113,7 @@ async function init() {
         bindEvents();
         renderCalendar();
         updateStats();
+        selectInitialDate();
     } catch (err) {
         main.innerHTML = `<div class="empty-state"><div class="emoji">📡</div><h4>Could not load events</h4><p>${err.message}</p></div>`;
     }
@@ -204,7 +205,7 @@ function bindEvents() {
         msgEl.className = 'login-message';
         const { error } = await supabaseClient.auth.signInWithOtp({ 
             email,
-            options: { emailRedirectTo: 'https://ultimoboulevard.github.io/amsterdam-events-digest/' }
+            options: { emailRedirectTo: 'https://events.zenobj.net/' }
         });
         
         if (error) {
@@ -434,6 +435,33 @@ function changeMonth(delta) {
     clearDayDetail();
 }
 
+/* Al primo caricamento il pannello diceva "Select a day to see events": chi
+   arrivava sul sito vedeva una griglia di quadratini colorati e doveva
+   indovinare che si clicca un giorno — il momento di massimo abbandono, su
+   telefono soprattutto. Selezioniamo oggi; se oggi non ha eventi (o i filtri
+   attivi lo svuotano) andiamo al primo giorno utile entro due settimane, anche
+   se cade nel mese successivo.
+   Volutamente SENZA scrollIntoView: una pagina che salta da sola al
+   caricamento e' peggio del problema che risolve. Il calendario resta in cima
+   e l'intestazione del giorno spunta in fondo alla prima schermata, che e'
+   l'invito a scorrere. */
+function selectInitialDate() {
+    const filtered = getFiltered();
+    const now = new Date();
+    for (let i = 0; i < 14; i++) {
+        const d = new Date(now.getFullYear(), now.getMonth(), now.getDate() + i);
+        const ds = toDateStr(d);
+        if (eventsForDate(ds, filtered).length) {
+            state.currentYear = d.getFullYear();
+            state.currentMonth = d.getMonth();
+            state.selectedDate = ds;
+            renderCalendar();
+            renderDayDetail(ds);
+            return;
+        }
+    }
+}
+
 function goToday() {
     const now = new Date();
     state.currentYear = now.getFullYear();
@@ -521,6 +549,8 @@ function cardHTML(ev) {
         ? `<div class="genres">${ev.genres.slice(0, 4).map(g => `<span class="genre-tag">${esc(g)}</span>`).join('')}</div>` : '';
 
     const venueHtml = ev.venue ? `<span class="venue">${esc(ev.venue)}</span>` : '';
+    const srcRedundant = (ev.venue || '').trim().toLowerCase() === srcLabel.trim().toLowerCase();
+    const srcHtml = srcRedundant ? '' : `<span class="source">${esc(srcLabel)}</span>`;
 
     const time = ev.date ? new Date(ev.date).toLocaleTimeString('en-GB', { hour: '2-digit', minute: '2-digit' }) : '';
 
@@ -558,7 +588,7 @@ function cardHTML(ev) {
             ${genresHtml}
             <div class="card-footer">
                 ${venueHtml}
-                <span class="source">${esc(srcLabel)}</span>
+                ${srcHtml}
                 ${friendsHtml}
             </div>
         </a>

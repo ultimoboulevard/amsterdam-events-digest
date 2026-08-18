@@ -299,7 +299,11 @@ def send_digest(
 
     msg = MIMEMultipart("alternative")
     msg["Subject"] = subject
-    msg["From"] = smtp_user
+    # Il destinatario vedeva l'indirizzo Gmail personale come mittente. Il nome
+    # visualizzato lo copre; l'indirizzo resta quello autenticato (Gmail lo
+    # riscriverebbe comunque). Per togliere del tutto il personale serve
+    # un'identita' di invio su zenobj.net con SPF/DKIM propri.
+    msg["From"] = f"Amsterdam Events <{smtp_user}>"
     msg["To"] = recipient
 
     # Plain-text fallback
