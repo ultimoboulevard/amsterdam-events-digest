@@ -43,9 +43,24 @@ from collectors.muziekgebouw_collector import MuziekgebouwCollector
 from collectors.concertgebouw_collector import ConcertgebouwCollector
 from collectors.splendor_collector import SplendorCollector
 from collectors.bimhuis_collector import BimhuisCollector
+from collectors.sitp_collector import SitpCollector
+from collectors.offbeat_collector import OffbeatCollector
+from collectors.ndsm_collector import NdsmCollector
 
+# L'ORDINE QUI CONTA, e non e' estetico.
+# `dedup_key` e' la PRIMARY KEY (models.py): due fonti che descrivono lo
+# stesso evento producono la stessa chiave, e l'upsert fa vincere CHI SCRIVE
+# PER ULTIMO — riga sovrascritta, campo `source` compreso.
+# Quindi le fonti generaliste, che rastrellano mezza citta', vanno PRIMA di
+# quelle specifiche, che sui loro eventi hanno i dati migliori.
+# Misurato: lanciando `offbeat` da sola dopo le altre si prende 133 righe
+# altrui, `murmur` scende da 9 eventi a 1, `amsterdam_alt` da 125 a 72, e
+# health accende due allarmi temporali. Nell'ordine qui sotto non succede.
 COLLECTORS = {
     "melkweg": MelkwegCollector,
+    "sitp": SitpCollector,
+    "offbeat": OffbeatCollector,
+    "ndsm": NdsmCollector,
     "amsterdam_alt": AmsterdamAltCollector,
     "ra": ResidentAdvisorCollector,
     "murmur": MurmurCollector,

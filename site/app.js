@@ -11,6 +11,7 @@ const SOURCE_LABELS = {
     museumkaart: 'Museumkaart', gallery_viewer: 'Gallery Viewer',
     concertgebouw: 'Concertgebouw', muziekgebouw: 'Muziekgebouw',
     sitp: 'Space is the Place', splendor: 'Splendor', bimhuis: 'Bimhuis',
+    offbeat: 'Offbeat Amsterdam', ndsm: 'NDSM',
 };
 const TYPE_EMOJI = {
     Concert: '🎸', Club: '🎧', Film: '🎬', Festival: '🎪', Expositie: '🖼️',
@@ -259,9 +260,8 @@ function handleFilterChange(e) {
         badge.classList.toggle('visible', filterSet.size > 0);
     }
 
-    // Manual filter change deactivates any active category
-    deactivateCategory();
-
+    // La categoria NON si spegne piu' qui: i due filtri si compongono, e
+    // spegnerla di nascosto faceva saltare i risultati a ogni spunta tolta.
     onFiltersChanged();
 }
 
@@ -325,16 +325,18 @@ function matchesCategory(ev, catDef) {
 
 function getFiltered() {
     return state.raw.filter(ev => {
-        // Category filter (overrides venue/genre/type dropdowns)
+        // La categoria e' un filtro come gli altri e si SOMMA ai dropdown.
+        // Prima era un if/else: con una categoria attiva, VENUE/GENRE/TYPE
+        // diventavano inerti pur restando spuntati e col badge acceso, quindi
+        // il pannello dichiarava un filtro che non stava applicando —
+        // JAZZ + Paradiso mostrava 174 eventi invece di 40.
         if (state.activeCategory) {
             const catDef = CATEGORIES[state.activeCategory];
             if (catDef && !matchesCategory(ev, catDef)) return false;
-        } else {
-            // Standard dropdown filters only apply when no category is active
-            if (state.filters.venues.size && !state.filters.venues.has(ev.venue)) return false;
-            if (state.filters.genres.size && !ev.genres.some(g => state.filters.genres.has(g))) return false;
-            if (state.filters.types.size && !state.filters.types.has(ev.event_type)) return false;
         }
+        if (state.filters.venues.size && !state.filters.venues.has(ev.venue)) return false;
+        if (state.filters.genres.size && !ev.genres.some(g => state.filters.genres.has(g))) return false;
+        if (state.filters.types.size && !state.filters.types.has(ev.event_type)) return false;
         if (state.filters.favOnly && !state.favorites.has(ev.id)) return false;
         if (state.filters.friendsOnly) {
             const hasFriendSave = state.globalSavedEvents.some(s => s.event_id === ev.id && s.user_id !== state.user?.id);
