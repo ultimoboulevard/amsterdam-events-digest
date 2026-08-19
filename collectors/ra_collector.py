@@ -24,6 +24,7 @@ AMSTERDAM_AREA_ID = 29
 
 class ResidentAdvisorCollector(BaseCollector):
     name = "ra"
+    probe_url = RA_GRAPHQL_URL
 
     def collect(self) -> list[Event]:
         log.info("Collecting events from Resident Advisor (Amsterdam)...")

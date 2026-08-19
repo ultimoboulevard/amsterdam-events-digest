@@ -46,6 +46,7 @@ class GalleryViewerCollector(BaseCollector):
     """Fetch current art gallery exhibitions in Amsterdam."""
 
     name = "gallery_viewer"
+    probe_url = API_URL
 
     def collect(self) -> list[Event]:
         log.info("Collecting exhibitions from Gallery Viewer (Amsterdam)…")

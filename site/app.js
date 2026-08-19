@@ -552,7 +552,11 @@ function cardHTML(ev) {
     const srcRedundant = (ev.venue || '').trim().toLowerCase() === srcLabel.trim().toLowerCase();
     const srcHtml = srcRedundant ? '' : `<span class="source">${esc(srcLabel)}</span>`;
 
-    const time = ev.date ? new Date(ev.date).toLocaleTimeString('en-GB', { hour: '2-digit', minute: '2-digit' }) : '';
+    // 00:00 non e' un orario, e' il segnaposto delle fonti che l'ora non la
+    // danno (mostre, mercatini). Mostrarlo dice "mezzanotte", che e' falso
+    // nella grande maggioranza dei casi. Stessa regola in build_pages.py.
+    let time = ev.date ? new Date(ev.date).toLocaleTimeString('en-GB', { hour: '2-digit', minute: '2-digit' }) : '';
+    if (time === '00:00') time = '';
 
     let friendsHtml = '';
     if (state.user && state.globalSavedEvents.length > 0) {

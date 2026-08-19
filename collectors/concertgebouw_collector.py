@@ -39,6 +39,7 @@ class ConcertgebouwCollector(BaseCollector):
     """Scrape concerts from Het Concertgebouw calendar."""
 
     name = "concertgebouw"
+    probe_url = CALENDAR_URL
 
     def collect(self) -> list[Event]:
         log.info("Collecting events from Concertgebouw…")

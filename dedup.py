@@ -25,7 +25,9 @@ LA REGOLA, DELIBERATAMENTE STRETTA
 A parita' di giorno e di ora d'inizio, due casi e due soli:
 
   1. titoli normalizzati IDENTICI          → una riga sola, vince la piu' ricca
-  2. un titolo e' PREFISSO stretto di un
+  2. stesse PAROLE e stesso LOCALE         → una riga sola (ordine diverso, o una
+                                             parola in piu' tipo "in" o ": ")
+  3. un titolo e' PREFISSO stretto di un
      altro, su confine di parola           → la piu' corta e' un moncone, sparisce
 
 Due righe entrambe dettagliate non si fondono MAI, nemmeno se condividono un
@@ -58,6 +60,13 @@ log = logging.getLogger(__name__)
 # non e' un indizio: "live" sarebbe prefisso di mezzo cartellone.
 MIN_PREFIX = 10
 
+# Parole che non distinguono un evento da un altro: due titoli che differiscono
+# solo per queste sono lo stesso titolo scritto in due modi. Servono al caso 2.
+_PAROLE_VUOTE = {
+    "in", "on", "of", "the", "a", "an", "and", "at", "to", "for", "with",
+    "de", "het", "een", "van", "en", "x", "vs", "presents", "invites",
+}
+
 # Le fonti che pubblicano il proprio cartellone sanno come si chiama casa loro.
 # Gli aggregatori no, ma spesso hanno la line-up completa.
 VENUE_NATIVE = {
@@ -70,6 +79,11 @@ def normalize_title(title: str) -> str:
     """Minuscolo, senza punteggiatura, spazi singoli."""
     t = re.sub(r"[^a-z0-9 ]+", " ", (title or "").lower())
     return re.sub(r"\s+", " ", t).strip()
+
+
+def _content_words(title: str) -> frozenset:
+    """Le parole che portano significato, senza quelle di servizio."""
+    return frozenset(w for w in normalize_title(title).split() if w not in _PAROLE_VUOTE)
 
 
 def _is_stub_of(short: str, long_: str) -> bool:
@@ -159,7 +173,31 @@ def collapse_duplicates(events: list) -> list:
                     dropped += 1
             survivors.append(best)
 
-        # ── caso 2: monconi ──────────────────────────────────────
+        # ── caso 2: stesse parole, stesso locale ─────────────────
+        # Prende cio' che il prefisso non vede: parole invertite o una parola
+        # di servizio in piu'. Misurato sul DB: 7 coppie, tutte vere —
+        # "Syntax Error x TILT" / "TILT x Syntax Error",
+        # "An Encounter in Materials..." / "An Encounter: Materials...".
+        # Il vincolo sul LOCALE e' cio' che lo rende sicuro: senza, due serate
+        # diverse con le stesse parole in due posti diversi si fonderebbero.
+        per_parole: dict[tuple, list[int]] = defaultdict(list)
+        senza_parole: list[int] = []          # titoli fatti solo di parole di
+        for i in survivors:                   # servizio: passano oltre intatti,
+            parole = _content_words(events[i].title)   # non si confrontano fra loro
+            if parole:
+                per_parole[(parole, normalize_title(events[i].venue or ""))].append(i)
+            else:
+                senza_parole.append(i)
+        survivors = list(senza_parole)
+        for gruppo in per_parole.values():
+            best = max(gruppo, key=lambda i: (_richness(events[i]), events[i].dedup_key or ""))
+            for i in gruppo:
+                if i != best:
+                    keep[i] = False
+                    dropped += 1
+            survivors.append(best)
+
+        # ── caso 3: monconi ──────────────────────────────────────
         # Sopravvive solo chi non e' prefisso di nessun altro rimasto. Niente
         # transitivita': se restano due code diverse restano due eventi.
         for i in survivors:

@@ -3,14 +3,79 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Amsterdam Events Calendar</title>
+    <title>Amsterdam Events Calendar · FOMOdam</title>
     <meta name="description" content="Interactive monthly calendar of live music, club nights, and cultural events in Amsterdam.">
+    <link rel="canonical" href="https://events.zenobj.net/">
+    <!-- Open Graph: mancava del tutto sulla home. og:site_name e' anche il
+         posto da cui Google prende il nome del sito da mostrare accanto al
+         risultato, quindi e' li' che il marchio deve stare — non ripetuto in
+         ogni <title>, dove ruberebbe caratteri alla frase che la gente cerca. -->
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="FOMOdam">
+    <meta property="og:title" content="FOMOdam — fear of missing amsterdam">
+    <meta property="og:description" content="Every gig, club night and exhibition in Amsterdam, in one calendar. Updated daily.">
+    <meta property="og:url" content="https://events.zenobj.net/">
+    <meta name="twitter:card" content="summary">
+    <script type="application/ld+json">{"@context":"https://schema.org","@type":"WebSite","name":"FOMOdam","alternateName":"fear of missing amsterdam","url":"https://events.zenobj.net/"}</script>
     <!-- Google Fonts rimosso il 18/08/2026: rinviava l'IP di ogni visitatore
          a Google a ogni caricamento. Inter e' ora in site/fonts/ (SIL OFL),
          dichiarato in testa a style.css. Tolta anche una richiesta
          bloccante al primo caricamento. -->
     <link rel="stylesheet" href="style.css?v=4">
     <link rel="icon" type="image/png" href="favicon.png?v=2">
+    <!-- Le poche regole per la riga di link a /events/ stanno qui e non in
+         style.css apposta: cambiare style.css obbliga a bumpare il ?v= e a
+         far riscaricare 23 KB a tutti, per quattro link nel footer. -->
+    <style>
+        /* Il marchio. .logo in style.css ha text-transform: uppercase, che
+           trasformerebbe "FOMOdam" in "FOMODAM" e ucciderebbe il gioco fra le
+           due meta': lo annullo qui invece di modificare style.css, cosi' non
+           serve bumpare il ?v= e far riscaricare 23 KB a tutti.
+           Il payoff sparisce sotto i 900 px: fra 769 e 900 la riga starebbe
+           stretta e .header-inner (flex-wrap: wrap) manderebbe la ricerca a
+           capo, allungando l'header e scollandolo da .filters-bar { top: 65px }. */
+        .logo {
+            text-transform: none;
+            display: inline-flex;
+            align-items: baseline;
+        }
+        .logo-dam { opacity: 0.55; }
+        /* Il separatore era il glifo "·" a 1.4rem: un middle dot sta a meta'
+           della x-height del PROPRIO corpo, quindi fra una parola da 1.4rem e
+           un payoff da 0.7rem finiva in aria. Qui e' un cerchio disegnato,
+           centrato da flexbox: non dipende piu' dalle metriche del font. */
+        .logo-sep {
+            align-self: center;
+            flex: none;
+            width: 3px;
+            height: 3px;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.5);
+            margin: 0 11px;
+            /* flexbox lo centra su FOMOdam, che e' l'elemento piu' alto: cosi'
+               resta 3.6px sopra la mezzeria del payoff e legge come un apice.
+               Questi 2px lo riportano fra i due. Misurato, non a occhio. */
+            position: relative;
+            top: 2px;
+        }
+        .logo-tag {
+            font-size: 0.7rem;
+            font-weight: 700;
+            letter-spacing: 0.06em;
+            color: rgba(255, 255, 255, 0.78);
+        }
+        @media (max-width: 900px) { .logo-sep, .logo-tag { display: none; } }
+
+        .footer-nav { margin-bottom: 10px; }
+        .footer-nav a {
+            color: var(--text-secondary);
+            text-decoration: none;
+            border-bottom: 1px solid var(--border-subtle);
+            transition: var(--transition);
+        }
+        .footer-nav a:hover { color: #fff; border-color: #fff; }
+        .footer-nav .sep { color: var(--text-muted); margin: 0 6px; }
+    </style>
     <!-- Supabase DISATTIVATO il 18/08/2026: il progetto ktewpglahibpymvshwra
          non risolve piu' (NXDOMAIN) — login, Friends' Picks e sync dei
          preferiti sono morti. I preferiti restano, su localStorage.
@@ -22,7 +87,7 @@
     <!-- ── Header ── -->
     <header id="site-header">
         <div class="header-inner">
-            <h1 class="logo">🎛️ Amsterdam Events</h1>
+            <h1 class="logo" aria-label="FOMOdam — fear of missing amsterdam">FOMO<span class="logo-dam">dam</span><span class="logo-sep" aria-hidden="true"></span><span class="logo-tag">fear of missing amsterdam</span></h1>
             <div class="header-actions">
                 <div class="search-box">
                     <svg class="search-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/></svg>
@@ -111,7 +176,13 @@
 
     <!-- ── Footer ── -->
     <footer id="site-footer">
-        <p>Amsterdam Event Aggregator · Updated daily at 06:00 · Data from the venues and platforms listed above</p>
+        <!-- Le pagine sotto /events/ sono statiche e indicizzabili: questa riga
+             e' l'unico ponte fra la SPA e loro, per i crawler e per chi vuole
+             un URL da condividere. Generate da build_pages.py. -->
+        <p class="footer-nav">
+            <a href="events/">Browse by date</a><span class="sep">·</span><a href="events/today/">Today</a><span class="sep">·</span><a href="events/tonight/">Tonight</a><span class="sep">·</span><a href="events/this-weekend/">This weekend</a><span class="sep">·</span><a href="events/next-weekend/">Next weekend</a>
+        </p>
+        <p>FOMOdam · fear of missing amsterdam · Updated daily at 06:00 · Data from the venues and platforms listed above</p>
         <p>Independent project · Not affiliated with any venue or platform</p>
         <p class="gen-time" id="gen-time"></p>
     </footer>
@@ -133,7 +204,7 @@
 
     -->
 
-    <script src="app.js?v=9"></script>
+    <script src="app.js?v=10"></script>
 
     <!-- Cloudflare Web Analytics — installazione MANUALE apposta: il setup
          automatico avrebbe iniettato il beacon su tutta la zona zenobj.net,

@@ -7,7 +7,9 @@ import logging
 from datetime import datetime
 from pathlib import Path
 
+from artists import artists_for
 from db import init_db, get_upcoming_events
+from dedup import collapse_duplicates
 from discovery import DiscoveryEngine
 
 log = logging.getLogger(__name__)
@@ -16,10 +18,17 @@ SITE_DIR = Path(__file__).resolve().parent / "site"
 DATA_OUTPUT = SITE_DIR / "data"
 
 
-def export_events_json(days: int = 45) -> Path:
+# 135 giorni copre fino a fine dicembre. Con 45 il calendario si fermava al
+# 1 ottobre e teneva fuori 1.211 eventi, fra cui i 403 della settimana
+# dell'Amsterdam Dance Event (19-26 ottobre, picco 103 il giorno 23) —
+# in un mese, ottobre, che da solo ne ha 706.
+EXPORT_DAYS = 135
+
+
+def export_events_json(days: int = EXPORT_DAYS) -> Path:
     """Export upcoming events to a JSON file for the static site."""
     init_db()
-    events = get_upcoming_events(days=days)
+    events = collapse_duplicates(get_upcoming_events(days=days))
     discovery = DiscoveryEngine()
 
     events_list = []
@@ -28,7 +37,10 @@ def export_events_json(days: int = 45) -> Path:
     all_types = set()
 
     for ev in events:
-        artists_to_check = ev.artists if ev.artists else [ev.title]
+        # Il titolo intero NON e' piu' il ripiego: se lo scraper non da'
+        # artisti, artists_for() prova quelli estratti dal titolo e messi
+        # in cache da enrich_artists.py. Sola lettura, nessuna rete.
+        artists_to_check = artists_for(ev)
         match_res = discovery.evaluate_event(artists_to_check)
         match_data = None
         if match_res["match"]:
@@ -44,13 +56,15 @@ def export_events_json(days: int = 45) -> Path:
             "date": ev.date.isoformat() if ev.date else None,
             "date_end": ev.date_end.isoformat() if ev.date_end else None,
             "venue": ev.venue or "",
-            "venue_address": ev.venue_address or "",
             "event_type": ev.event_type or "",
             "artists": ev.artists or [],
             "genres": ev.genres or [],
-            "price_min": ev.price_min,
-            "price_max": ev.price_max,
-            "tickets_url": ev.tickets_url or "",
+            # venue_address, price_min, price_max e tickets_url NON sono qui:
+            # site/app.js non li legge (zero riferimenti), e triplicare la
+            # finestra da 45 a 135 giorni triplicava anche il JSON che ogni
+            # visitatore scarica prima di vedere un evento. Le pagine statiche
+            # in build_pages.py leggono dal DB, quindi il prezzo lo hanno
+            # comunque per il JSON-LD. Rimetterli e' una riga.
             "tickets_status": ev.tickets_status or "",
             "source": ev.source,
             "source_url": ev.source_url,

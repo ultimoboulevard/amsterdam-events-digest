@@ -1,0 +1,10 @@
+# Il sito e' dietro Cloudflare, che serve un robots.txt "gestito" con i
+# Content Signals. Questo file esiste per dichiarare la sitemap: se
+# Cloudflare lo sovrascrive invece di appenderci i suoi segnali, la sitemap
+# va dichiarata in Search Console e questo file resta innocuo.
+User-agent: *
+Allow: /
+# Un file per evento, nessun contenuto da indicizzare.
+Disallow: /events/ics/
+
+Sitemap: https://events.zenobj.net/sitemap.xml

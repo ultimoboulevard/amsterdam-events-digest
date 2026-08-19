@@ -13,6 +13,9 @@ from pathlib import Path
 from config import OUTPUT_DIR, CITY
 from models import Event
 from discovery import DiscoveryEngine
+# Le due mappe fonte→nome e tipo→emoji vivono in labels.py, condivise con
+# build_pages.py: qui ce n'era una copia ferma a 6 fonti su 11.
+from labels import source_label as _source_label, type_emoji as _event_type_emoji
 
 log = logging.getLogger(__name__)
 
@@ -86,17 +89,6 @@ def _write_ics_file(ev: Event, ics_dir: Path) -> str:
     return f"ics/{filename}"
 
 
-def _event_type_emoji(event_type: str) -> str:
-    """Map event types to emojis."""
-    return {
-        "Concert": "🎸",
-        "Club": "🎧",
-        "Film": "🎬",
-        "Festival": "🎪",
-        "Expositie": "🖼️",
-    }.get(event_type, "📌")
-
-
 def _status_badge(status: str) -> str:
     """Render a ticket status badge."""
     badges = {
@@ -106,18 +98,6 @@ def _status_badge(status: str) -> str:
         "free": '<span class="badge free">Free</span>',
     }
     return badges.get(status, "")
-
-
-def _source_label(source: str) -> str:
-    """Human-readable source name."""
-    return {
-        "melkweg": "Melkweg",
-        "amsterdam_alt": "Amsterdam Alternative",
-        "ra": "Resident Advisor",
-        "paradiso": "Paradiso",
-        "gallery_viewer": "Gallery Viewer",
-        "muziekgebouw": "Muziekgebouw",
-    }.get(source, source.title())
 
 
 def build_html_digest(

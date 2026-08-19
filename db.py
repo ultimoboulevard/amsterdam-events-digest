@@ -6,7 +6,7 @@ from __future__ import annotations
 import logging
 import sqlite3
 from contextlib import contextmanager
-from datetime import datetime, timedelta
+from datetime import date, datetime, timedelta
 from pathlib import Path
 from typing import Iterator, Optional
 
@@ -150,6 +150,36 @@ def get_upcoming_events(
 
     with _connection(db_path) as conn:
         rows = conn.execute(query, params).fetchall()
+
+    return [Event.from_row(dict(r)) for r in rows]
+
+
+def get_events_between(
+    start: date,
+    end: date,
+    db_path: Path = DB_PATH,
+) -> list[Event]:
+    """
+    Eventi in un intervallo di giorni, estremi inclusi.
+
+    Serve per guardare anche INDIETRO, cosa che get_upcoming_events() non sa
+    fare: parte sempre da oggi. Le pagine-giorno gia' pubblicate devono
+    sopravvivere qualche giorno alla data dell'evento, altrimenti chi arriva da
+    un risultato di ricerca vecchio trova un 404.
+
+    Nota sull'estremo destro: qui si confronta `date < end+1giorno` invece di
+    `date <= end`. La colonna contiene un timestamp ISO completo
+    ("2026-10-23T20:00:00"), quindi `<= "2026-10-23"` escluderebbe tutto il
+    giorno tranne la mezzanotte esatta.
+    """
+    lo = start.strftime("%Y-%m-%d")
+    hi = (end + timedelta(days=1)).strftime("%Y-%m-%d")
+
+    with _connection(db_path) as conn:
+        rows = conn.execute(
+            "SELECT * FROM events WHERE date >= ? AND date < ? ORDER BY date ASC",
+            (lo, hi),
+        ).fetchall()
 
     return [Event.from_row(dict(r)) for r in rows]
 

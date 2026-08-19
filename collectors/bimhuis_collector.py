@@ -30,6 +30,7 @@ RETRY_BACKOFF = 1.5     # seconds, multiplied by the attempt number
 
 class BimhuisCollector(BaseCollector):
     name = "bimhuis"
+    probe_url = BIMHUIS_AGENDA_URL
 
     def collect(self) -> list[Event]:
         log.info("Collecting events from Bimhuis...")

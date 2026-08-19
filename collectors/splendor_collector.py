@@ -62,6 +62,7 @@ DUTCH_MONTHS_ABBR = {
 
 class SplendorCollector(BaseCollector):
     name = "splendor"
+    probe_url = SPLENDOR_AGENDA_URL
 
     def collect(self) -> list[Event]:
         log.info("Collecting events from Splendor Amsterdam...")

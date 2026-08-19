@@ -16,3 +16,24 @@ backups/
 primerily/
 scifai/
 debug_page.js
+
+# Generate da build_pages.py a ogni collect (~150 pagine + un .ics per evento):
+# senza queste righe finirebbero nel repo pubblico e si ri-committerebbero
+# tutti i giorni. site/robots.txt invece e' scritto a mano e va versionato.
+site/events/
+site/sitemap.xml
+
+# Cache e artefatti rigenerabili, non sorgente.
+#
+# lastfm_cache.db era tracciato per errore: 1,5 MB che cambiano a ogni
+# collect, gia' 104 commit di rumore in un repo pubblico. Untracciata il
+# 19/08/2026 con `git rm --cached` (il file su disco resta). La storia
+# passata conserva comunque i vecchi blob: questo ferma il churn futuro,
+# non ripulisce l'archivio.
+data/lastfm_cache.db
+
+# Cache degli artisti estratti dai titoli (enrich_artists.py).
+data/artist_cache.db
+
+# Storico delle impronte degli scraper (health.py).
+data/source_health.db

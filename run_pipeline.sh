@@ -16,16 +16,40 @@ BASE="/Users/francescozaccaria/Newsletter eventi"
 PY="$BASE/.venv/bin/python"
 cd "$BASE" || exit 1
 
-# Credenziali SMTP: file non versionato, solo per il ramo "send".
-# Deve contenere EMAIL_USER / EMAIL_PASS / EMAIL_TO.
+# Credenziali: file non versionato. EMAIL_* servono al ramo "send",
+# GEMINI_API_KEY a enrich_artists.py e a diagnose.py nel ramo "collect".
+# Il "." da solo NON basta: senza il nome nella riga export la variabile
+# resta nella shell e non arriva al processo python. Una GEMINI_API_KEY
+# dimenticata qui farebbe girare lo step a vuoto ogni mattina, in silenzio,
+# perche' enrich_artists.py e' fail-soft per progetto.
 if [ -f "$BASE/.env" ]; then
     . "$BASE/.env"
-    export EMAIL_USER EMAIL_PASS EMAIL_TO
+    export EMAIL_USER EMAIL_PASS EMAIL_TO GEMINI_API_KEY
 fi
 
 case "$1" in
     collect)
-        "$PY" main.py collect && "$PY" export_json.py
+        "$PY" main.py collect && "$PY" enrich_artists.py \
+            && "$PY" export_json.py && "$PY" build_pages.py \
+            && "$PY" indexnow.py
+        # I controlli di salute degli scraper (health.py) e la diagnosi
+        # (diagnose.py) NON sono un passo a se': girano dentro "main.py
+        # collect", subito dopo la raccolta e prima di tutto il resto. Devono
+        # misurare l'output dei collector, che esiste solo li' dentro: dal DB
+        # si vedrebbe diluito con le righe buone di ieri. Non cambiano il
+        # codice d'uscita — con questo `&&`, un allarme su un campo fermerebbe
+        # il sito.
+        #
+        # enrich_artists.py sta QUI e non dentro i generatori: e' l'unico
+        # pezzo che parla con Gemini, export_json e build_pages leggono solo
+        # la cache. Se salta (chiave assente, API giu'), esce 0 e le pagine
+        # si generano identiche a ieri. In regime sono ~17 titoli nuovi al
+        # giorno: una chiamata.
+        # indexnow.py annuncia solo le 9 pagine che cambiano ogni giorno
+        # (today, tonight, weekend...), non tutte e 148: le pagine-data
+        # cambiano solo se cambia il cartellone di quel giorno.
+        # Non fallisce mai rumorosamente: se Bing non risponde, il sito
+        # e' comunque aggiornato e domani si riprova.
         ;;
     send)
         # La newsletter va a un destinatario esterno: se manca la password non

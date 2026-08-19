@@ -106,6 +106,7 @@ def _parse_artists(raw: str | None) -> list[str]:
 
 class MelkwegCollector(BaseCollector):
     name = "melkweg"
+    probe_url = MELKWEG_AGENDA_URL
 
     def collect(self) -> list[Event]:
         """Collect events from Melkweg via the __NEXT_DATA__ JSON blob."""
