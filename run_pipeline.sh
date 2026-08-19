@@ -24,7 +24,7 @@ cd "$BASE" || exit 1
 # perche' enrich_artists.py e' fail-soft per progetto.
 if [ -f "$BASE/.env" ]; then
     . "$BASE/.env"
-    export EMAIL_USER EMAIL_PASS EMAIL_TO GEMINI_API_KEY
+    export EMAIL_USER EMAIL_PASS EMAIL_TO GEMINI_API_KEY GOOGLE_SC_KEY
 fi
 
 case "$1" in
@@ -50,6 +50,15 @@ case "$1" in
         # cambiano solo se cambia il cartellone di quel giorno.
         # Non fallisce mai rumorosamente: se Bing non risponde, il sito
         # e' comunque aggiornato e domani si riprova.
+
+        # search_console.py sta FUORI dalla catena di `&&`, ed e' voluto: non
+        # misura quello che abbiamo appena costruito, misura quello che Google
+        # sta gia' mostrando. Se un collector crolla e la catena si ferma,
+        # perdere anche la giornata di storico sarebbe un danno in piu' senza
+        # nessun motivo — e quello storico non si recupera, perche' Search
+        # Console tiene 16 mesi mobili. Esce sempre 0: senza GOOGLE_SC_KEY
+        # dice che non e' configurato e non tocca niente.
+        "$PY" search_console.py
         ;;
     send)
         # La newsletter va a un destinatario esterno: se manca la password non

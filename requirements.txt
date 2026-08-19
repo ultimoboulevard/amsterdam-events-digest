@@ -2,3 +2,6 @@ beautifulsoup4>=4.12
 httpx>=0.25
 thefuzz>=0.22
 python-Levenshtein>=0.25
+# Solo per firmare il JWT del service account in search_console.py;
+# le chiamate le fa httpx.
+google-auth>=2.30
