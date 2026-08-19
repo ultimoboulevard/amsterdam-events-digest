@@ -3,8 +3,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Amsterdam Events Calendar · FOMOdam</title>
-    <meta name="description" content="Interactive monthly calendar of live music, club nights, and cultural events in Amsterdam.">
+    <!-- Il marchio non sta nel title: Google il nome del sito lo prende da
+         og:site_name e lo mostra su una riga sua accanto al risultato, quindi
+         "· FOMOdam" qui costava una decina di caratteri alla frase che la
+         gente digita davvero. Stessa regola di build_pages.py (SITE_NAME).
+         Il title e la description dicono la stessa cosa dell'h1 in fondo
+         alla pagina: se divergono, Google riscrive lo snippet per conto suo. -->
+    <title>What’s On in Amsterdam — Events, Concerts and Club Nights</title>
+    <meta name="description" content="Every gig, club night, exhibition and festival in Amsterdam in one calendar. Rebuilt every morning at 06:00.">
     <link rel="canonical" href="https://events.zenobj.net/">
     <!-- Open Graph: mancava del tutto sulla home. og:site_name e' anche il
          posto da cui Google prende il nome del sito da mostrare accanto al
@@ -12,10 +18,12 @@
          ogni <title>, dove ruberebbe caratteri alla frase che la gente cerca. -->
     <meta property="og:type" content="website">
     <meta property="og:site_name" content="FOMOdam">
-    <meta property="og:title" content="FOMOdam — fear of missing amsterdam">
+    <meta property="og:title" content="What’s On in Amsterdam — Events, Concerts and Club Nights">
     <meta property="og:description" content="Every gig, club night and exhibition in Amsterdam, in one calendar. Updated daily.">
     <meta property="og:url" content="https://events.zenobj.net/">
     <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="What’s On in Amsterdam — Events, Concerts and Club Nights">
+    <meta name="twitter:description" content="Every gig, club night and exhibition in Amsterdam, in one calendar. Updated daily.">
     <script type="application/ld+json">{"@context":"https://schema.org","@type":"WebSite","name":"FOMOdam","alternateName":"fear of missing amsterdam","url":"https://events.zenobj.net/"}</script>
     <!-- Google Fonts rimosso il 18/08/2026: rinviava l'IP di ogni visitatore
          a Google a ogni caricamento. Inter e' ora in site/fonts/ (SIL OFL),
@@ -36,6 +44,7 @@
            capo, allungando l'header e scollandolo da .filters-bar { top: 65px }. */
         .logo {
             text-transform: none;
+            text-decoration: none;
             display: inline-flex;
             align-items: baseline;
         }
@@ -75,6 +84,79 @@
         }
         .footer-nav a:hover { color: #fff; border-color: #fff; }
         .footer-nav .sep { color: var(--text-muted); margin: 0 6px; }
+
+        /* ── Blocco statico in fondo (scritto da build_pages.py) ──
+           Anche queste regole stanno qui e non in style.css: cambiare
+           style.css obbliga a bumpare il ?v= e a far riscaricare 23 KB a
+           tutti. I nomi delle variabili sono quelli di style.css. */
+        main.container { padding-bottom: 32px; }
+        .home-intro { max-width: 960px; margin: 0 auto; padding: 0 20px 72px; }
+        .home-intro h1.home-h1 {
+            font-size: 1.9rem;
+            font-weight: 900;
+            text-transform: uppercase;
+            letter-spacing: 0.03em;
+            line-height: 1.15;
+            margin-bottom: 10px;
+            background: var(--gradient-hero);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        .home-intro h2 {
+            font-size: 1.05rem;
+            font-weight: 900;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            margin: 40px 0 12px;
+            padding-bottom: 10px;
+            border-bottom: 2px solid var(--border-subtle);
+        }
+        .home-lede { color: var(--text-secondary); font-size: 0.9rem; max-width: 66ch; }
+        .hl-lede { color: var(--text-muted); font-size: 0.8rem; max-width: 66ch; margin-bottom: 14px; }
+        .hl-list { list-style: none; margin: 0; padding: 0; }
+        .hl-list li {
+            display: flex;
+            gap: 12px;
+            align-items: baseline;
+            flex-wrap: wrap;
+            padding: 9px 0;
+            border-bottom: 1px solid var(--border-subtle);
+            font-size: 0.85rem;
+        }
+        /* Larghezza fissa anche quando l'ora manca: la colonna dei titoli
+           deve restare allineata, non ballare riga per riga. */
+        .hl-time {
+            flex: none;
+            width: 42px;
+            font-weight: 800;
+            font-variant-numeric: tabular-nums;
+            color: var(--accent-cyan);
+        }
+        .hl-title { color: var(--text-primary); font-weight: 700; }
+        .hl-venue { color: var(--text-muted); font-size: 0.75rem; }
+        .hl-more { margin-top: 14px; font-size: 0.8rem; }
+        .hl-more a { color: var(--accent-cyan); text-decoration: none; font-weight: 800; }
+        .hl-more a:hover { text-decoration: underline; }
+        .hl-links { display: flex; flex-wrap: wrap; gap: 8px; }
+        .hl-links a {
+            text-decoration: none;
+            font-size: 0.75rem;
+            font-weight: 800;
+            padding: 8px 12px;
+            border: 1px solid var(--border-subtle);
+            border-radius: var(--radius);
+            color: var(--text-primary);
+            transition: var(--transition);
+        }
+        .hl-links a:hover { border-color: #fff; background: var(--bg-card-hover); }
+        .hl-links .n { color: var(--text-muted); font-weight: 700; }
+        .hl-sources { color: var(--text-secondary); font-size: 0.8rem; max-width: 78ch; line-height: 1.6; }
+        @media (max-width: 768px) {
+            .home-intro { padding: 0 12px 48px; }
+            .home-intro h1.home-h1 { font-size: 1.4rem; }
+            .hl-time { width: 100%; }
+        }
     </style>
     <!-- Supabase DISATTIVATO il 18/08/2026: il progetto ktewpglahibpymvshwra
          non risolve piu' (NXDOMAIN) — login, Friends' Picks e sync dei
@@ -87,7 +169,11 @@
     <!-- ── Header ── -->
     <header id="site-header">
         <div class="header-inner">
-            <h1 class="logo" aria-label="FOMOdam — fear of missing amsterdam">FOMO<span class="logo-dam">dam</span><span class="logo-sep" aria-hidden="true"></span><span class="logo-tag">fear of missing amsterdam</span></h1>
+            <!-- Era un <h1>. L'unico titolo di livello 1 della home diceva
+                 "FOMOdam", cioe' un marchio che nessuno cerca; l'h1 vero sta
+                 nel blocco statico in fondo e dice cosa c'e' ad Amsterdam.
+                 Stesso markup delle pagine sotto /events/ (a.logo). -->
+            <a class="logo" href="./" aria-label="FOMOdam — fear of missing amsterdam">FOMO<span class="logo-dam">dam</span><span class="logo-sep" aria-hidden="true"></span><span class="logo-tag">fear of missing amsterdam</span></a>
             <div class="header-actions">
                 <div class="search-box">
                     <svg class="search-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/></svg>
@@ -173,6 +259,34 @@
             <div class="stat-card has-tooltip"><span class="stat-val" id="stat-sources" data-tip="Number of distinct platforms and venues actively feeding this calendar (e.g. Melkweg, Resident Advisor, Concertgebouw…).">0</span><span class="stat-lbl">Sources</span></div>
         </section>
     </main>
+
+    <!-- ── Testo indicizzabile ──
+         Tutto quello che sta FRA i due segnaposti lo riscrive build_pages.py a
+         ogni collect: non metterci niente a mano, sparisce domattina alle 06:00.
+
+         Sta fuori da <main> apposta. app.js azzera l'innerHTML di .container
+         appena parte (site/app.js:63) e poi lo ricostruisce: qualunque cosa
+         scritta li' dentro sparirebbe dal DOM renderizzato, cioe' proprio da
+         quello che Google indicizza. Qui il JS non arriva. -->
+    <!-- FOMODAM:HOME-START -->
+<section class="home-intro">
+  <h1 class="home-h1">What’s on in Amsterdam</h1>
+  <p class="home-lede">Every gig, club night, exhibition and festival in Amsterdam in one calendar: 3,350 events at 287 venues, from 14 sources listed through March 2027, rebuilt every morning at 06:00.</p>
+  <h2>Amsterdam tonight, Wednesday 19 August 2026</h2>
+  <p class="hl-lede">20 events starting from 18:00 on Wednesday 19 August 2026. Highlights at NieuwLand, LAB111 and Oedipus Craft Space.</p>
+  <ul class="hl-list"><li><span class="hl-time">18:00</span><span class="hl-title">Yoga --  All Levels All Welcome</span><span class="hl-venue">NieuwLand</span></li><li><span class="hl-time">18:30</span><span class="hl-title">Taalcafé Noord</span><span class="hl-venue">de Tanker in Noord</span></li><li><span class="hl-time">19:00</span><span class="hl-title">Speak Easy Open Mic</span><span class="hl-venue">Molli Chaoot</span></li><li><span class="hl-time">19:15</span><span class="hl-title">SLAA x NOX: Première &#x27;Lorca&#x27;</span><span class="hl-venue">LAB111</span></li><li><span class="hl-time">20:00</span><span class="hl-title">Fuse</span><span class="hl-venue">Het Concertgebouw</span></li><li><span class="hl-time">20:00</span><span class="hl-title">Tokyo Underground: Avant-garde Art of the Far East</span><span class="hl-venue">Radio Radio</span></li><li><span class="hl-time">21:00</span><span class="hl-title">Lorena + The Tide</span><span class="hl-venue">Paradiso</span></li><li><span class="hl-time">23:00</span><span class="hl-title">RAVELAND: Hard Groove Night with Mischa Duncan, MelFerdi, Lunøva</span><span class="hl-venue">John Doe</span></li></ul>
+  <p class="hl-more"><a href="events/tonight/">All 20 events tonight →</a></p>
+  <h2>Amsterdam this weekend, Fri 21 – Sun 23 August 2026</h2>
+  <p class="hl-lede">155 events across Fri 21 – Sun 23 August 2026 — concerts, club nights and culture. Highlights at Garage Noord, ADMnoord - ‘t Groene Veld and Pllek.</p>
+  <ul class="hl-list"><li><span class="hl-time"></span><span class="hl-title">Goodmostlybad &amp; Kray Atief (The Krayzone)</span><span class="hl-venue">Murmur</span></li><li><span class="hl-time"></span><span class="hl-title">KABRA | Shiatsu massage</span><span class="hl-venue">NieuwLand</span></li><li><span class="hl-time">13:00</span><span class="hl-title">Green Ass Garden(ing)</span><span class="hl-venue">ADMnoord - ‘t Groene Veld</span></li><li><span class="hl-time">15:00</span><span class="hl-title">Progressive Friday</span><span class="hl-venue">Clink Noord</span></li><li><span class="hl-time">19:30</span><span class="hl-title">Shady Nasty</span><span class="hl-venue">Paradiso</span></li><li><span class="hl-time">19:30</span><span class="hl-title">Reinier Baas &amp; Ben van Gelder - Basement Sessions</span><span class="hl-venue">Het Concertgebouw</span></li><li><span class="hl-time">20:00</span><span class="hl-title">SPLENDORJAM</span><span class="hl-venue">Splendor</span></li><li><span class="hl-time">23:00</span><span class="hl-title">RAUM invites PAX-ROMANA 12HRS</span><span class="hl-venue">CLUB RAUM</span></li></ul>
+  <p class="hl-more"><a href="events/this-weekend/">All 155 events this weekend →</a></p>
+  <h2>Browse Amsterdam events by date</h2>
+  <div class="hl-links"><a href="events/today/">Today <span class="n">23</span></a><a href="events/tonight/">Tonight <span class="n">20</span></a><a href="events/tomorrow/">Tomorrow <span class="n">22</span></a><a href="events/this-weekend/">This weekend <span class="n">155</span></a><a href="events/next-weekend/">Next weekend <span class="n">180</span></a><a href="events/this-week/">This week <span class="n">200</span></a><a href="events/next-week/">Next week <span class="n">261</span></a><a href="events/2026-08/">August 2026 <span class="n">480</span></a><a href="events/2026-09/">September 2026 <span class="n">983</span></a><a href="events/2026-10/">October 2026 <span class="n">952</span></a><a href="events/2026-11/">November 2026 <span class="n">451</span></a><a href="events/2026-12/">December 2026 <span class="n">227</span></a><a href="events/2027-01/">January 2027 <span class="n">100</span></a><a href="events/2027-02/">February 2027 <span class="n">86</span></a><a href="events/2027-03/">March 2027 <span class="n">71</span></a><a href="events/">All dates</a></div>
+  <h2>Where the listings come from</h2>
+  <p class="hl-sources">14 sources, checked every morning: Amsterdam Alternative, Bimhuis, Concertgebouw, Gallery Viewer, Melkweg, Murmur, Museumkaart, Muziekgebouw, NDSM, Offbeat Amsterdam, Paradiso, Resident Advisor, Space is the Place, Splendor. Every listing links back to the venue or platform that published it. FOMOdam is an independent project: it sells nothing and is affiliated with no venue.</p>
+</section>
+<script type="application/ld+json">[{"@context":"https://schema.org","@type":"Event","name":"Yoga --  All Levels All Welcome","startDate":"2026-08-19T18:00:00+02:00","eventStatus":"https://schema.org/EventScheduled","eventAttendanceMode":"https://schema.org/OfflineEventAttendanceMode","location":{"@type":"Place","name":"NieuwLand","address":{"@type":"PostalAddress","streetAddress":"Pieter Nieuwlandstraat 93, 1093 XN Amsterdam","addressLocality":"Amsterdam","addressCountry":"NL"}},"url":"https://offbeat.amsterdam/event/yoga-all-levels-all-welcome-141"},{"@context":"https://schema.org","@type":"Event","name":"Taalcafé Noord","startDate":"2026-08-19T18:30:00+02:00","eventStatus":"https://schema.org/EventScheduled","eventAttendanceMode":"https://schema.org/OfflineEventAttendanceMode","location":{"@type":"Place","name":"de Tanker in Noord","address":{"@type":"PostalAddress","streetAddress":"Nieuwe Leeuwarderweg 15, 1022 BN Amsterdam","addressLocality":"Amsterdam","addressCountry":"NL"}},"url":"https://offbeat.amsterdam/event/taalcafe-noord-1","endDate":"2026-08-19T21:00:00+02:00"},{"@context":"https://schema.org","@type":"Event","name":"Speak Easy Open Mic","startDate":"2026-08-19T19:00:00+02:00","eventStatus":"https://schema.org/EventScheduled","eventAttendanceMode":"https://schema.org/OfflineEventAttendanceMode","location":{"@type":"Place","name":"Molli Chaoot","address":{"@type":"PostalAddress","streetAddress":"Van Ostadestraat 55hs, 1072 SN Amsterdam","addressLocality":"Amsterdam","addressCountry":"NL"}},"url":"https://offbeat.amsterdam/event/speak-easy-open-mic-11","endDate":"2026-08-19T22:30:00+02:00"},{"@context":"https://schema.org","@type":"Event","name":"SLAA x NOX: Première 'Lorca'","startDate":"2026-08-19T19:15:00+02:00","eventStatus":"https://schema.org/EventScheduled","eventAttendanceMode":"https://schema.org/OfflineEventAttendanceMode","location":{"@type":"Place","name":"LAB111","address":{"@type":"PostalAddress","streetAddress":"Arie Biemondstraat 111, 1054 PD Amsterdam","addressLocality":"Amsterdam","addressCountry":"NL"}},"url":"https://offbeat.amsterdam/event/slaa-x-nox-premiere-lorca"},{"@context":"https://schema.org","@type":"Event","name":"Fuse","startDate":"2026-08-19T20:00:00+02:00","eventStatus":"https://schema.org/EventScheduled","eventAttendanceMode":"https://schema.org/OfflineEventAttendanceMode","location":{"@type":"Place","name":"Het Concertgebouw","address":{"@type":"PostalAddress","streetAddress":"Recital Hall","addressLocality":"Amsterdam","addressCountry":"NL"}},"url":"https://www.concertgebouw.nl/en/concerts/42204616-fuse","endDate":"2026-08-19T22:00:00+02:00","performer":[{"@type":"PerformingGroup","name":"Zawinul: Birdland (arr. R. Horsting)"},{"@type":"PerformingGroup","name":"Azmeh: On Anxiety"}],"offers":{"@type":"Offer","price":33.0,"priceCurrency":"EUR","url":"https://www.concertgebouw.nl/en/concerts/42204616-fuse","availability":"https://schema.org/SoldOut"}},{"@context":"https://schema.org","@type":"Event","name":"Tokyo Underground: Avant-garde Art of the Far East","startDate":"2026-08-19T20:00:00+02:00","eventStatus":"https://schema.org/EventScheduled","eventAttendanceMode":"https://schema.org/OfflineEventAttendanceMode","location":{"@type":"Place","name":"Radio Radio","address":{"@type":"PostalAddress","streetAddress":"Pazzanistraat 3","addressLocality":"Amsterdam","addressCountry":"NL"}},"url":"https://ra.co/events/2499013","endDate":"2026-08-20T01:00:00+02:00"},{"@context":"https://schema.org","@type":"Event","name":"Lorena + The Tide","startDate":"2026-08-19T21:00:00+02:00","eventStatus":"https://schema.org/EventScheduled","eventAttendanceMode":"https://schema.org/OfflineEventAttendanceMode","location":{"@type":"Place","name":"Paradiso","address":{"@type":"PostalAddress","streetAddress":"Paradiso - Boven Zaal","addressLocality":"Amsterdam","addressCountry":"NL"}},"url":"https://www.paradiso.nl/en/program/lorena-the-tide/2908649","performer":[{"@type":"PerformingGroup","name":"Lorena + The Tide"}]},{"@context":"https://schema.org","@type":"Event","name":"RAVELAND: Hard Groove Night with Mischa Duncan, MelFerdi, Lunøva","startDate":"2026-08-19T23:00:00+02:00","eventStatus":"https://schema.org/EventScheduled","eventAttendanceMode":"https://schema.org/OfflineEventAttendanceMode","location":{"@type":"Place","name":"John Doe","address":{"@type":"PostalAddress","streetAddress":"Rembrandtplein 31, 1017 CT Amsterdam, Netherlands","addressLocality":"Amsterdam","addressCountry":"NL"}},"url":"https://ra.co/events/2446379","endDate":"2026-08-20T04:00:00+02:00","performer":[{"@type":"PerformingGroup","name":"Mischa Duncan"},{"@type":"PerformingGroup","name":"MelFerdi"}]},{"@context":"https://schema.org","@type":"Event","name":"Goodmostlybad \u0026 Kray Atief (The Krayzone)","startDate":"2026-08-21","eventStatus":"https://schema.org/EventScheduled","eventAttendanceMode":"https://schema.org/OfflineEventAttendanceMode","location":{"@type":"Place","name":"Murmur","address":{"@type":"PostalAddress","addressLocality":"Amsterdam","addressCountry":"NL"}},"url":"https://murmurmur.nl/"},{"@context":"https://schema.org","@type":"Event","name":"KABRA | Shiatsu massage","startDate":"2026-08-21","eventStatus":"https://schema.org/EventScheduled","eventAttendanceMode":"https://schema.org/OfflineEventAttendanceMode","location":{"@type":"Place","name":"NieuwLand","address":{"@type":"PostalAddress","streetAddress":"Pieter Nieuwlandstraat 93, 1093 XN Amsterdam","addressLocality":"Amsterdam","addressCountry":"NL"}},"url":"https://offbeat.amsterdam/event/kabra-or-shiatsu-massage-14"},{"@context":"https://schema.org","@type":"Event","name":"Green Ass Garden(ing)","startDate":"2026-08-21T13:00:00+02:00","eventStatus":"https://schema.org/EventScheduled","eventAttendanceMode":"https://schema.org/OfflineEventAttendanceMode","location":{"@type":"Place","name":"ADMnoord - ‘t Groene Veld","address":{"@type":"PostalAddress","addressLocality":"Amsterdam","addressCountry":"NL"}},"url":"https://www.amsterdamalternative.nl/agenda/22585","offers":{"@type":"Offer","price":0.0,"priceCurrency":"EUR","url":"https://www.amsterdamalternative.nl/agenda/22585","availability":"https://schema.org/InStock"}},{"@context":"https://schema.org","@type":"Event","name":"Progressive Friday","startDate":"2026-08-21T15:00:00+02:00","eventStatus":"https://schema.org/EventScheduled","eventAttendanceMode":"https://schema.org/OfflineEventAttendanceMode","location":{"@type":"Place","name":"Clink Noord","address":{"@type":"PostalAddress","streetAddress":"Badhuiskade 3, Amsterdam","addressLocality":"Amsterdam","addressCountry":"NL"}},"url":"https://ra.co/events/2514658","endDate":"2026-08-21T18:00:00+02:00","performer":[{"@type":"PerformingGroup","name":"PABLON"},{"@type":"PerformingGroup","name":"Gian Grassi"}]},{"@context":"https://schema.org","@type":"Event","name":"Shady Nasty","startDate":"2026-08-21T19:30:00+02:00","eventStatus":"https://schema.org/EventScheduled","eventAttendanceMode":"https://schema.org/OfflineEventAttendanceMode","location":{"@type":"Place","name":"Paradiso","address":{"@type":"PostalAddress","streetAddress":"Paradiso - Boven Zaal","addressLocality":"Amsterdam","addressCountry":"NL"}},"url":"https://www.paradiso.nl/en/program/shady-nasty/2903072","performer":[{"@type":"PerformingGroup","name":"Shady Nasty"}]},{"@context":"https://schema.org","@type":"Event","name":"Reinier Baas \u0026 Ben van Gelder - Basement Sessions","startDate":"2026-08-21T19:30:00+02:00","eventStatus":"https://schema.org/EventScheduled","eventAttendanceMode":"https://schema.org/OfflineEventAttendanceMode","location":{"@type":"Place","name":"Het Concertgebouw","address":{"@type":"PostalAddress","streetAddress":"Choir Hall","addressLocality":"Amsterdam","addressCountry":"NL"}},"url":"https://www.concertgebouw.nl/en/concerts/45471291-reinier-baas-ben-van-gelder---basement-sessions","endDate":"2026-08-21T20:30:00+02:00","offers":{"@type":"Offer","price":19.0,"priceCurrency":"EUR","url":"https://www.concertgebouw.nl/en/concerts/45471291-reinier-baas-ben-van-gelder---basement-sessions","availability":"https://schema.org/InStock"}},{"@context":"https://schema.org","@type":"Event","name":"SPLENDORJAM","startDate":"2026-08-21T20:00:00+02:00","eventStatus":"https://schema.org/EventScheduled","eventAttendanceMode":"https://schema.org/OfflineEventAttendanceMode","location":{"@type":"Place","name":"Splendor","address":{"@type":"PostalAddress","streetAddress":"Nieuwe Uilenburgerstraat 116, 1011 LX Amsterdam","addressLocality":"Amsterdam","addressCountry":"NL"}},"url":"https://www.splendoramsterdam.com/agenda/111687884/splendorjam","performer":[{"@type":"PerformingGroup","name":"Splendor presenteert"}]},{"@context":"https://schema.org","@type":"Event","name":"RAUM invites PAX-ROMANA 12HRS","startDate":"2026-08-22T23:00:00+02:00","eventStatus":"https://schema.org/EventScheduled","eventAttendanceMode":"https://schema.org/OfflineEventAttendanceMode","location":{"@type":"Place","name":"CLUB RAUM","address":{"@type":"PostalAddress","streetAddress":"Humberweg 3, 1043 AC Amsterdam","addressLocality":"Amsterdam","addressCountry":"NL"}},"url":"https://ra.co/events/2486464","endDate":"2026-08-23T11:00:00+02:00","performer":[{"@type":"PerformingGroup","name":"Altinbas"},{"@type":"PerformingGroup","name":"Delano Legito"},{"@type":"PerformingGroup","name":"BELLA (NL)"},{"@type":"PerformingGroup","name":"Lara Renner"},{"@type":"PerformingGroup","name":"Shinedoe"},{"@type":"PerformingGroup","name":"Tijana T"}]}]</script>
+<!-- FOMODAM:HOME-END -->
 
     <!-- ── Footer ── -->
     <footer id="site-footer">

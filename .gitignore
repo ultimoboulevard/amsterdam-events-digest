@@ -37,3 +37,7 @@ data/artist_cache.db
 
 # Storico delle impronte degli scraper (health.py).
 data/source_health.db
+
+# Impronte delle pagine, per il <lastmod> della sitemap (build_pages.py).
+# Cambia a ogni collect: e' stato, non sorgente.
+data/sitemap_state.json

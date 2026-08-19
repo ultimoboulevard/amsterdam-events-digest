@@ -20,6 +20,8 @@ COSA GENERA
     site/events/ics/*.ics           un file per evento (i bottoni Calendar
                                     delle pagine statiche non hanno JS)
     site/sitemap.xml
+    site/index.html                 solo il blocco fra i segnaposti
+                                    FOMODAM:HOME-START/END (vedi _write_home)
 
 Legge il DB direttamente, non site/data/events.json: le pagine-mese devono
 coprire l'orizzonte pieno anche quando la finestra del calendario e' piu'
@@ -36,6 +38,7 @@ locale omonima lo copre e html.escape() non viene mai chiamato).
 from __future__ import annotations
 
 import calendar
+import hashlib
 import html
 import json
 import logging
@@ -62,6 +65,11 @@ SITE_DIR = BASE_DIR / "site"
 PAGES_DIR = SITE_DIR / "events"
 ICS_DIR = PAGES_DIR / "ics"
 APP_JS = SITE_DIR / "app.js"
+HOME_FILE = SITE_DIR / "index.html"
+# L'impronta di ogni pagina, per sapere quando e' cambiata DAVVERO (vedi
+# _content_hash). Sta in data/ accanto alle altre cache rigenerabili ed e'
+# gitignorato: cambia a ogni collect e il repo e' pubblico.
+SITEMAP_STATE = BASE_DIR / "data" / "sitemap_state.json"
 
 BASE_URL = "https://events.zenobj.net"
 # Il marchio sta in og:site_name, nell'header e nel footer — non nei <title>.
@@ -100,6 +108,14 @@ TONIGHT_FROM_HOUR = 18
 WEEKEND_STARTS_FRIDAY = True
 # Quanti titoli di richiamo per giorno nella griglia delle pagine-mese.
 MONTH_HIGHLIGHTS = 3
+# Quante righe per sezione nel blocco statico della home. Sopra la decina la
+# home diventa il doppione di /events/tonight/ e le due si fanno concorrenza
+# da sole; sotto la mezza dozzina non dice abbastanza per valere un
+# posizionamento. I segnaposti delimitano la parte rigenerata: tutto il resto
+# di site/index.html resta scritto a mano.
+HOME_HIGHLIGHTS = 8
+HOME_START = "<!-- FOMODAM:HOME-START -->"
+HOME_END = "<!-- FOMODAM:HOME-END -->"
 
 WEEKDAYS_FULL = ["Monday", "Tuesday", "Wednesday", "Thursday",
                  "Friday", "Saturday", "Sunday"]
@@ -774,11 +790,16 @@ def build_pages(days: int = HORIZON_DAYS) -> dict:
         )
 
     written: list[tuple[str, str, float]] = []   # (slug, url, priority)
+    # url -> impronta del contenuto. Ci finiscono TUTTE le pagine scritte,
+    # anche quelle fuori sitemap: serve a _write_sitemap per capire quali
+    # sono cambiate davvero da ieri.
+    fingerprints: dict[str, str] = {}
 
     def write_page(slug: str, markup: str) -> None:
         out_dir = PAGES_DIR / slug
         out_dir.mkdir(parents=True, exist_ok=True)
         (out_dir / "index.html").write_text(markup, encoding="utf-8")
+        fingerprints[f"{BASE_URL}/events/{slug}/"] = _content_hash(markup)
 
     # ── Finestre relative ──────────────────────────────────────────
     specs = _window_specs(today)
@@ -947,10 +968,23 @@ def build_pages(days: int = HORIZON_DAYS) -> dict:
     # ── Indice ─────────────────────────────────────────────────────
     # len(future), non len(events): il conteggio in pagina deve escludere
     # i giorni di grazia, che sono passati.
-    _write_index(day_list, by_day, month_slugs, win_counts, generated, len(future))
+    index_markup = _write_index(day_list, by_day, month_slugs, win_counts,
+                                generated, len(future))
+    fingerprints[f"{BASE_URL}/events/"] = _content_hash(index_markup)
     written.append(("index", f"{BASE_URL}/events/", 0.6))
 
-    _write_sitemap(written, generated)
+    # La home: non e' generata, e' aggiornata fra i segnaposti (vedi _write_home).
+    # Va prima della sitemap: l'impronta di "/" si prende dal file finito.
+    home = _write_home(specs=specs, win_view=win_view, win_counts=win_counts,
+                       month_slugs=month_slugs, by_day=by_day, matches=matches,
+                       future=future, today=today)
+    try:
+        fingerprints[f"{BASE_URL}/"] = _content_hash(
+            HOME_FILE.read_text(encoding="utf-8"))
+    except OSError as exc:
+        log.warning("Impronta della home non calcolata: %s", exc)
+
+    _write_sitemap(written, generated, fingerprints)
 
     log.info("Scritte %d pagine sotto %s (+ %d in scadenza, fuori sitemap; %d file .ics).",
              len(written), PAGES_DIR, len(past_days), len(ics_rel))
@@ -961,12 +995,13 @@ def build_pages(days: int = HORIZON_DAYS) -> dict:
         "months": len(month_slugs),
         "ics": len(ics_rel),
         "events": len(events),
+        "home": home,
     }
 
 
 def _write_index(day_list: list[date], by_day: dict[date, list[Event]],
                  month_slugs: list[str], win_counts: list[tuple[str, str, int]],
-                 generated: datetime, total: int) -> None:
+                 generated: datetime, total: int) -> str:
     """
     L'elenco di tutte le pagine. Serve ai crawler (un solo hop da "/" a
     qualunque URL generato) e a chi arriva da una pagina e vuole guardarsi
@@ -1006,7 +1041,7 @@ def _write_index(day_list: list[date], by_day: dict[date, list[Event]],
     lede = (f"Every date we have listings for: {plural(total)} in Amsterdam across "
             f"{len(day_list)} days. Pick a day, a weekend or a whole month.")
 
-    (PAGES_DIR / "index.html").write_text(_shell(
+    markup = _shell(
         title="Amsterdam Events by Date — Every Day, Weekend and Month",
         description=lede, canonical=f"{BASE_URL}/events/", root="../",
         h1="Browse Amsterdam events by date", lede=lede,
@@ -1014,15 +1049,310 @@ def _write_index(day_list: list[date], by_day: dict[date, list[Event]],
         crumbs=_link("../", "◀ Calendar"),
         links=_link("../", "◀ Back to the calendar"),
         generated=generated,
-    ), encoding="utf-8")
+    )
+    (PAGES_DIR / "index.html").write_text(markup, encoding="utf-8")
+    return markup
 
 
-def _write_sitemap(written: list[tuple[str, str, float]], generated: datetime) -> None:
-    lastmod = generated.date().isoformat()
+# ── Blocco statico della home ──────────────────────────────────────
+def _home_pick(evs: list[Event], matches: dict[str, dict], n: int) -> list[Event]:
+    """
+    Quali titoli mostrare in home.
+
+    NON i primi n in ordine d'orario. Misurato su mercoledi' 19/08: delle 20
+    serate di stasera 13 vengono da una fonte sola, e siccome quella fonte
+    pubblica soprattutto roba di prima serata, la lista cronologica diventava
+    otto righe di corsi di yoga e caffe' linguistici — con Paradiso, il
+    Concertgebouw e i club di Resident Advisor tagliati fuori dalla pagina piu'
+    autorevole del sito.
+
+    Quindi: prima i picks (l'unico segnale editoriale che abbiamo, come nelle
+    pagine-mese), poi a giro fra le fonti, e mai due volte lo stesso locale
+    finche' ce n'e' un altro da mostrare. La lista finale torna cronologica:
+    una sequenza di orari che va avanti e indietro si legge come un errore.
+    """
+    late = datetime.max
+    # rank = quante volte quella fonte e' gia' comparsa, in ordine d'orario:
+    # ordinando per rank si prende la prima di ogni fonte, poi la seconda...
+    per_source: Counter = Counter()
+    ordered: list[tuple[int, int, datetime, Event]] = []
+    for ev in sorted(evs, key=lambda e: e.date or late):
+        ordered.append((0 if matches.get(ev.dedup_key) else 1,
+                        per_source[ev.source], ev.date or late, ev))
+        per_source[ev.source] += 1
+    # t[:3]: senza la fetta, a parita' di chiave proverebbe a confrontare
+    # due Event, che non sono ordinabili.
+    ordered.sort(key=lambda t: t[:3])
+
+    picked: list[Event] = []
+    seen: set[str] = set()
+    for _pick, _rank, _when, ev in ordered:
+        venue = (ev.venue or "").strip().lower()
+        if venue and venue in seen:
+            continue
+        picked.append(ev)
+        seen.add(venue)
+        if len(picked) == n:
+            break
+    if len(picked) < n:   # locali distinti finiti: si riempie col resto
+        rest = [ev for *_k, ev in ordered if ev not in picked]
+        picked += rest[:n - len(picked)]
+    return sorted(picked, key=lambda e: e.date or late)
+
+
+def _home_list(evs: list[Event]) -> str:
+    """Righe di testo, non schede: la home e' un sommario, e ogni sezione ha
+    gia' il suo link alla pagina che le schede ce le ha."""
+    rows = []
+    for ev in evs:
+        # Stessa regola delle schede: 00:00 non e' mezzanotte, e' il
+        # segnaposto di chi l'ora non la sa.
+        t = ev.date.strftime("%H:%M") if ev.date else ""
+        t = t if t and t != "00:00" else ""
+        rows.append(
+            f'<li><span class="hl-time">{esc(t)}</span>'
+            f'<span class="hl-title">{esc(ev.title)}</span>'
+            + (f'<span class="hl-venue">{esc(ev.venue)}</span>' if ev.venue else "")
+            + "</li>"
+        )
+    return f'<ul class="hl-list">{"".join(rows)}</ul>'
+
+
+def _write_home(*, specs: list[tuple[str, list[date], str, str]],
+                win_view: dict[str, dict[date, list[Event]]],
+                win_counts: list[tuple[str, str, int]],
+                month_slugs: list[str], by_day: dict[date, list[Event]],
+                matches: dict[str, dict], future: list[Event],
+                today: date) -> bool:
+    """
+    Riscrive il blocco fra HOME_START e HOME_END dentro site/index.html.
+
+    PERCHE'
+    "/" e' l'URL piu' autorevole del sito ed era il piu' povero: 693 caratteri
+    di testo e zero dati strutturati, perche' il calendario si disegna in
+    JavaScript. Tutte le pagine ricche stanno un livello sotto, in /events/.
+    Qui la radice dice finalmente cosa c'e' stasera ad Amsterdam, con i titoli
+    nel sorgente e i JSON-LD Event accanto.
+
+    FUORI DA <main>
+    app.js:63 sostituisce l'innerHTML di .container appena carica: qualunque
+    cosa scritta li' dentro sparisce dal DOM renderizzato — e Googlebot indicizza
+    il DOM renderizzato, non il sorgente. Il blocco vive fra </main> e <footer>,
+    dove il JS non arriva. I segnaposti stanno li' apposta: non spostarli
+    dentro .container.
+
+    Non genera il file: lo modifica fra i segnaposti. Cosi' site/index.html
+    resta scritto a mano (e commentato) e un guasto qui lascia online la home
+    di ieri invece di cancellarla. Se i segnaposti mancano, non fa niente.
+    """
+    if not future:
+        return False
+
+    counts = {slug: n for slug, _label, n in win_counts}
+    days_of = {slug: wdays for slug, wdays, _l, _p in specs}
+    copy_of = {slug: (label, phrase) for slug, _w, label, phrase in specs}
+
+    def first_with_events(candidates: list[str]) -> str | None:
+        return next((s for s in candidates if counts.get(s)), None)
+
+    # Stasera (o, se la serata e' finita, il primo giorno utile) piu' una
+    # finestra lunga: sono le due domande che la gente digita davvero.
+    primary = first_with_events(["tonight", "today", "tomorrow"])
+    secondary = first_with_events(
+        [s for s in ("this-weekend", "next-weekend", "this-week", "next-week")
+         if s != primary]
+    )
+
+    parts: list[str] = []
+    shown: list[Event] = []
+
+    total = len(future)
+    venues = len({ev.venue for ev in future if ev.venue})
+    sources = sorted({source_label(ev.source) for ev in future if ev.source})
+    horizon = ""
+    if month_slugs:
+        last = month_slugs[-1]
+        horizon = f" listed through {fmt_month_long(int(last[:4]), int(last[5:7]))}"
+
+    parts.append('<h1 class="home-h1">What\u2019s on in Amsterdam</h1>')
+    parts.append(
+        '<p class="home-lede">Every gig, club night, exhibition and festival in '
+        f'Amsterdam in one calendar: {total:,} events at {venues} venues, from '
+        f'{len(sources)} sources{horizon}, rebuilt every morning at 06:00.</p>'
+    )
+
+    for slug in (primary, secondary):
+        if not slug:
+            continue
+        label, phrase = copy_of[slug]
+        wdays = days_of[slug]
+        view = win_view[slug]
+        flat = [ev for d in sorted(view) for ev in view[d]]
+        n = len(flat)
+        _title, h2, lede = _window_copy(slug, label, phrase, wdays, n,
+                                        _top_venues(flat))
+        picked = _home_pick(flat, matches, HOME_HIGHLIGHTS)
+        shown.extend(picked)
+        parts.append(f'<h2>{esc(h2)}</h2>')
+        parts.append(f'<p class="hl-lede">{esc(lede)}</p>')
+        parts.append(_home_list(picked))
+        parts.append(
+            f'<p class="hl-more"><a href="events/{esc(slug)}/">'
+            f'All {esc(plural(n))} {esc(phrase)} \u2192</a></p>'
+        )
+
+    # ── Il percorso di crawl, con i numeri veri come anchor text ───
+    strip = "".join(
+        f'<a href="events/{esc(slug)}/">{esc(label)} <span class="n">{n}</span></a>'
+        for slug, label, n in win_counts if n
+    )
+    for m in month_slugs:
+        n = sum(len(evs) for d, evs in by_day.items()
+                if d >= today and d.strftime("%Y-%m") == m)
+        strip += (f'<a href="events/{esc(m)}/">'
+                  f'{esc(fmt_month_long(int(m[:4]), int(m[5:7])))} '
+                  f'<span class="n">{n}</span></a>')
+    strip += '<a href="events/">All dates</a>'
+    parts.append("<h2>Browse Amsterdam events by date</h2>")
+    parts.append(f'<div class="hl-links">{strip}</div>')
+
+    parts.append("<h2>Where the listings come from</h2>")
+    parts.append(
+        f'<p class="hl-sources">{len(sources)} sources, checked every morning: '
+        f'{esc(", ".join(sources))}. Every listing links back to the venue or '
+        'platform that published it. FOMOdam is an independent project: it '
+        'sells nothing and is affiliated with no venue.</p>'
+    )
+
+    block = ('<section class="home-intro">\n  '
+             + "\n  ".join(parts)
+             + "\n</section>\n"
+             + _jsonld_script(shown))
+
+    try:
+        page = HOME_FILE.read_text(encoding="utf-8")
+    except OSError as exc:
+        log.warning("Home non aggiornata, %s illeggibile: %s", HOME_FILE, exc)
+        return False
+
+    i, j = page.find(HOME_START), page.find(HOME_END)
+    if i == -1 or j == -1 or j < i:
+        log.warning("Segnaposti %s / %s assenti o invertiti in %s: "
+                    "home lasciata com'era.", HOME_START, HOME_END, HOME_FILE)
+        return False
+
+    updated = page[:i + len(HOME_START)] + "\n" + block + "\n" + page[j:]
+    if updated == page:
+        return True
+    # site/ e' servito dal vivo da com.local.events-site: una write_text()
+    # tronca il file e lo riempie in due tempi, e chi carica in mezzo prende
+    # una home a meta'. os.replace e' atomico.
+    tmp = HOME_FILE.with_name(HOME_FILE.name + ".tmp")
+    try:
+        tmp.write_text(updated, encoding="utf-8")
+        tmp.replace(HOME_FILE)
+    except OSError as exc:
+        log.warning("Home non aggiornata, scrittura fallita: %s", exc)
+        tmp.unlink(missing_ok=True)
+        return False
+    return True
+
+
+# ── Quando una pagina e' cambiata davvero ──────────────────────────
+# Cose che si muovono a ogni giro anche quando la pagina dice le stesse cose.
+# Se non si tolgono, l'impronta cambia tutte le mattine e <lastmod> torna a
+# essere la data di oggi su tutti e 231 gli URL, cioe' il problema di prima.
+_VOLATILE = (
+    # Il piede: "Generated 19 August 2026, 11:56".
+    re.compile(r'<p class="gen-time">[^<]*</p>'),
+    # Le due costanti di _freshness_script: il giorno di generazione e
+    # l'elenco dei giorni disponibili.
+    re.compile(r'var GEN = "[^"]*", OFFSET = \d+;'),
+    re.compile(r'var DAYS = \[[^\]]*\];'),
+    # La navigazione. La striscia delle finestre porta i conteggi di
+    # today/tonight/this-weekend, che cambiano ogni giorno su OGNI pagina:
+    # senza questa riga la pagina di marzo 2027 risulterebbe modificata tutti
+    # i giorni perche' stanotte e' cambiato il numero di eventi di stasera.
+    # Google chiede la data dell'ultima modifica *significativa*, e il
+    # contorno di navigazione non lo e'.
+    re.compile(r'(?s)<nav class="crumbs">.*?</nav>'),
+    re.compile(r'(?s)<nav class="page-links">.*?</nav>'),
+)
+
+
+def _content_hash(markup: str) -> str:
+    """Impronta di cio' che la pagina dice, non di come e quando e' stata scritta."""
+    for rx in _VOLATILE:
+        markup = rx.sub("", markup)
+    return hashlib.sha256(markup.encode("utf-8")).hexdigest()[:16]
+
+
+def _load_sitemap_state() -> dict[str, dict]:
+    """Le impronte del giro precedente. Se manca o e' illeggibile: si riparte
+    da zero, cioe' tutte le pagine risultano cambiate oggi. E' il caso del
+    primo giro, e non e' un guasto."""
+    try:
+        data = json.loads(SITEMAP_STATE.read_text(encoding="utf-8"))
+    except FileNotFoundError:
+        return {}
+    except (OSError, ValueError) as exc:
+        log.warning("Stato sitemap illeggibile (%s): tutte le pagine "
+                    "risulteranno cambiate oggi.", exc)
+        return {}
+    return data if isinstance(data, dict) else {}
+
+
+def _write_sitemap(written: list[tuple[str, str, float]], generated: datetime,
+                   fingerprints: dict[str, str]) -> None:
+    """
+    La sitemap, con un <lastmod> per pagina che dice la verita'.
+
+    PRIMA: `lastmod` era l'ora della generazione, stampata identica su tutti e
+    231 gli URL — quindi ogni mattina l'intero sito dichiarava "cambiato
+    oggi", compresa la pagina di marzo 2027 che non si muove da settimane.
+    Google ignora del tutto <changefreq> e <priority> e usa <lastmod> solo se
+    lo trova costantemente accurato: una data buona per tutto e' esattamente
+    il caso in cui smette di fidarsi e lo scarta.
+
+    ORA: l'impronta di ogni pagina viene confrontata con quella del giro
+    precedente (data/sitemap_state.json). Se il contenuto e' lo stesso,
+    `lastmod` resta la data in cui era cambiato davvero.
+
+    <changefreq> e' sparito: diceva "daily" su tutto, cioe' la stessa bugia in
+    un campo che Google butta comunque. <priority> resta — e' ignorato
+    anch'esso, ma almeno non afferma niente di falso.
+    """
+    today_iso = generated.date().isoformat()
+    prev = _load_sitemap_state()
+
+    # Lo stato copre TUTTE le pagine generate, non solo quelle in sitemap: le
+    # pagine-data di oggi e domani ne restano fuori finche' sono gemelle di
+    # /today/ e /tomorrow/, ma domani ci rientrano, e devono ritrovare la
+    # loro data invece di ripartire da oggi.
+    state: dict[str, dict] = {}
+    bumped = 0
+    for url, digest in fingerprints.items():
+        old = prev.get(url) or {}
+        same = old.get("hash") == digest and old.get("lastmod")
+        state[url] = {"hash": digest, "lastmod": old["lastmod"] if same else today_iso}
+        bumped += not same
+
+    try:
+        SITEMAP_STATE.parent.mkdir(parents=True, exist_ok=True)
+        SITEMAP_STATE.write_text(
+            json.dumps(state, ensure_ascii=False, indent=0, sort_keys=True),
+            encoding="utf-8",
+        )
+    except OSError as exc:
+        # Non fa fallire il giro: la sitemap di oggi e' comunque corretta,
+        # e' il confronto di domani che si perde.
+        log.warning("Stato sitemap non salvato: %s", exc)
+
     entries = [(f"{BASE_URL}/", 1.0)] + [(url, prio) for _slug, url, prio in written]
     body = "\n".join(
-        f"  <url><loc>{esc(url)}</loc><lastmod>{lastmod}</lastmod>"
-        f"<changefreq>daily</changefreq><priority>{prio}</priority></url>"
+        f"  <url><loc>{esc(url)}</loc>"
+        f"<lastmod>{esc(state.get(url, {}).get('lastmod', today_iso))}</lastmod>"
+        f"<priority>{prio}</priority></url>"
         for url, prio in entries
     )
     (SITE_DIR / "sitemap.xml").write_text(
@@ -1031,6 +1361,9 @@ def _write_sitemap(written: list[tuple[str, str, float]], generated: datetime) -
         f"{body}\n</urlset>\n",
         encoding="utf-8",
     )
+    log.info("Sitemap: %d URL. Pagine con contenuto nuovo rispetto a ieri: "
+             "%d su %d generate (le altre tengono il loro <lastmod>).",
+             len(entries), bumped, len(fingerprints))
 
 
 if __name__ == "__main__":
