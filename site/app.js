@@ -69,7 +69,10 @@ async function init() {
         const data = await resp.json();
         state.raw = data.events || [];
         state.venues = data.venues || [];
-        state.genres = data.genres || [];
+        // Il menu Genre elenca le 12 FAMIGLIE, non i 124 generi: un menu si naviga
+        // a colpo d'occhio o non si naviga. I generi di dettaglio restano sull'evento
+        // (visibili sulle card e cercabili dalla barra di ricerca).
+        state.genres = data.families || data.genres || [];
         state.eventTypes = data.event_types || [];
 
         const now = new Date();
@@ -350,7 +353,7 @@ function getFiltered() {
             if (catDef && !matchesCategory(ev, catDef)) return false;
         }
         if (state.filters.venues.size && !state.filters.venues.has(ev.venue)) return false;
-        if (state.filters.genres.size && !ev.genres.some(g => state.filters.genres.has(g))) return false;
+        if (state.filters.genres.size && !(ev.families || []).some(f => state.filters.genres.has(f))) return false;
         if (state.filters.types.size && !state.filters.types.has(ev.event_type)) return false;
         if (state.filters.favOnly && !state.favorites.has(ev.id)) return false;
         if (state.filters.friendsOnly) {

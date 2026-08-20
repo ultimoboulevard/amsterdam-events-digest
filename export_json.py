@@ -9,7 +9,8 @@ from pathlib import Path
 
 from artists import artists_for
 import collections
-from labels import GENRE_MIN_COUNT, canonical_type, is_genre, type_from_genres
+from labels import (GENRE_MIN_COUNT, canonical_type, genre_families, is_genre,
+                    type_from_genres)
 import venues as venues_mod
 from db import init_db, get_upcoming_events
 from dedup import collapse_duplicates
@@ -44,6 +45,7 @@ def export_events_json(days: int = EXPORT_DAYS) -> Path:
     events_list = []
     all_venues = set()
     all_genres = set()
+    all_families: set = set()
     genre_counts: collections.Counter = collections.Counter()
     all_types = set()
 
@@ -70,6 +72,7 @@ def export_events_json(days: int = EXPORT_DAYS) -> Path:
             "event_type": type_from_genres(ev.event_type or "", ev.genres),
             "artists": ev.artists or [],
             "genres": [g for g in (ev.genres or []) if is_genre(g)],
+            "families": genre_families(ev.genres or []),
             # venue_address, price_min, price_max e tickets_url NON sono qui:
             # site/app.js non li legge (zero riferimenti), e triplicare la
             # finestra da 45 a 135 giorni triplicava anche il JSON che ogni
@@ -85,6 +88,7 @@ def export_events_json(days: int = EXPORT_DAYS) -> Path:
         if ev.venue:
             all_venues.add(venue_display.get(ev.venue, ev.venue))
         all_genres.update(g for g in ev.genres if is_genre(g))
+        all_families.update(genre_families(ev.genres))
         genre_counts.update(g.strip().lower() for g in ev.genres if is_genre(g))
         if ev.event_type:
             all_types.add(type_from_genres(ev.event_type, ev.genres))
@@ -94,6 +98,7 @@ def export_events_json(days: int = EXPORT_DAYS) -> Path:
         "event_count": len(events_list),
         "events": events_list,
         "venues": sorted(all_venues),
+        "families": sorted(all_families),
         "genres": sorted(g for g in all_genres
                              if genre_counts[g.strip().lower()] >= GENRE_MIN_COUNT),
         "event_types": sorted(all_types),

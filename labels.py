@@ -72,7 +72,7 @@ TYPE_SYNONYMS: dict[str, str] = {
     "exhibition, art": "Exhibition",
     "food, kitchen": "Food",
     "online audiotour": "Tour",
-    "dance performance": "Dance",
+    
     # una festa di musica elettronica e' una club night: cosi' prende anche il colore giusto
     "electronic music, party": "Club",
     # categoria di UNA fonte, fuori contesto incomprensibile (segnalata dall'utente:
@@ -262,5 +262,65 @@ def type_from_genres(event_type: str, genres) -> str:
     """Tipo corretto: gli spettacoli di danza smettono di essere 'Concert'."""
     for g in (genres or []):
         if (g or "").strip().lower() in DANCE_GENRE_HINTS:
-            return "Dance"
+            return "Dance performance"   # il genere "Dance" e' la MUSICA da ballo
     return canonical_type(event_type)
+
+
+# ── Sopra-generi: 12 famiglie invece di 124 voci ───────────────────
+# I generi buoni restano centinaia perche' ogni locale usa la propria granularita':
+# Paradiso scrive "Alternative / Indie / Rock", Melkweg "Heavy", RA "Hard Techno".
+# Sono tutti veri, ma un menu non si naviga a 124 voci. Le famiglie sotto sono state
+# ricavate dai dati (20/08/2026), non da una tassonomia teorica: 213 generi ricadono
+# qui dentro e coprono l'81% degli eventi taggati.
+#
+# DANCE e' separata da ELECTRONIC per scelta esplicita: la divisione e' netta sui dati
+# (175 eventi ballabili contro 183 elettronici, appena 2 generi ambigui) e distingue
+# due serate diverse — una techno da club e un concerto ambient non sono la stessa cosa.
+#
+# L'ordine CONTA: si applica il primo che corrisponde. I casi speciali stanno in cima
+# per non farsi rubare i tag — "technologie" contiene "techno" ma e' tecnologia, e il
+# "garage" di "garage psych noise rock" e' garage ROCK, non UK garage.
+GENRE_FAMILIES: list[tuple[str, str]] = [
+    # guardie: tolgono di mezzo i falsi amici prima che li peschi qualcun altro
+    ("_skip", r"^technologie$|^technology$"),
+    ("Rock", r"garage psych|psych noise|noise rock|garage rock"),
+    # famiglie vere
+    ("Dance", r"\bhouse\b|techno|disco|\bedm\b|\bclub\b|rave|hardstyle|gabber|"
+              r"drum\s*&?\s*bass|\bdnb\b|jungle|dubstep|breakbeat|amapiano|dancehall|"
+              r"dance pop|indie dance|baile|bassline|trance|\bacid\b|\bgarage\b|\bdance\b"),
+    ("Electronic", r"electro|elektron|ambient|\bidm\b|synth|modular|electronic"),
+    ("Rock", r"\brock\b|punk|metal|hardcore|shoegaze|grunge|\bemo\b|stoner|psych|heavy"),
+    ("Hip hop/R&B", r"hip\s*-?hop|hiphop|\brap\b|r&b|rnb|trap|grime|drill|neo-?soul|urban"),
+    ("Jazz", r"\bjazz\b|impro|bebop|swing|fusion|big band"),
+    ("Classical", r"classic|orchestr|chamber|piano|opera|vocal music|baroque|symphon|"
+                  r"cello|strijk|koor|recital|klassiek"),
+    ("Soul/Funk", r"\bsoul\b|funk|motown|groove|groovy"),
+    ("Folk/Roots", r"folk|americana|country|roots|bluegrass|blues|celtic|traditional"),
+    ("World", r"afro|latin|reggae|\bska\b|arabic|balkan|brazil|bossa|cumbia|salsa|"
+              r"global|wereld|forr|world|oriental|turkish|k-?pop|anime|caribbean"),
+    ("Alternative/Indie", r"indie|alternative|eclectic"),
+    ("Pop", r"\bpop\b|singer-?songwriter|chanson|schlager|acoustic"),
+    ("Experimental", r"experiment|avant|drone|\bnoise\b|abstract|sound art"),
+]
+
+
+def genre_family(tag: str) -> str | None:
+    """Sopra-genere di un tag, o None se non ricade in nessuna famiglia."""
+    import re as _re
+    t = (tag or "").strip().lower()
+    if not t or not is_genre(t):
+        return None
+    for name, pat in GENRE_FAMILIES:
+        if _re.search(pat, t):
+            return None if name == "_skip" else name
+    return None
+
+
+def genre_families(tags) -> list[str]:
+    """Famiglie di un evento, senza ripetizioni e nell'ordine in cui compaiono."""
+    out: list[str] = []
+    for t in (tags or []):
+        f = genre_family(t)
+        if f and f not in out:
+            out.append(f)
+    return out
