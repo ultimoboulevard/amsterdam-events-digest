@@ -8,6 +8,7 @@ from datetime import datetime
 from pathlib import Path
 
 from artists import artists_for
+from labels import canonical_type
 import venues as venues_mod
 from db import init_db, get_upcoming_events
 from dedup import collapse_duplicates
@@ -64,7 +65,7 @@ def export_events_json(days: int = EXPORT_DAYS) -> Path:
             "date": ev.date.isoformat() if ev.date else None,
             "date_end": ev.date_end.isoformat() if ev.date_end else None,
             "venue": venue_display.get(ev.venue, ev.venue) or "",
-            "event_type": ev.event_type or "",
+            "event_type": canonical_type(ev.event_type or ""),
             "artists": ev.artists or [],
             "genres": ev.genres or [],
             # venue_address, price_min, price_max e tickets_url NON sono qui:
@@ -83,7 +84,7 @@ def export_events_json(days: int = EXPORT_DAYS) -> Path:
             all_venues.add(venue_display.get(ev.venue, ev.venue))
         all_genres.update(g for g in ev.genres if g)
         if ev.event_type:
-            all_types.add(ev.event_type)
+            all_types.add(canonical_type(ev.event_type))
 
     output = {
         "generated_at": datetime.now().isoformat(),

@@ -41,8 +41,50 @@ TYPE_EMOJI: dict[str, str] = {
     "Club": "🎧",
     "Film": "🎬",
     "Festival": "🎪",
-    "Expositie": "🖼️",
+    "Exhibition": "🖼️",   # era "Expositie": ora i tipi si normalizzano in inglese
 }
+
+
+# Le fonti scrivono il tipo ciascuna nella propria lingua e con le proprie sfumature:
+# "Clubnacht" accanto a "Club", "Tentoonstelling" accanto a "Expositie" e "Exhibition",
+# "Workshop, class" accanto a "Workshop". Un utente (20/08/2026) l'ha vista come una lista
+# ridondante da filtrare — ma il danno era peggiore e invisibile: dotClass() in app.js
+# confronta con 'Club' in INGLESE, quindi i 37 "Clubnacht" finivano nel pallino rosa
+# "Other" invece che nel ciano dei club. La tassonomia bilingue non era solo scomoda:
+# coloriva male il calendario.
+#
+# Le chiavi sono in minuscolo (confronto case-insensitive). Chi non e' qui resta com'e':
+# meglio un tipo grezzo che una traduzione inventata.
+TYPE_SYNONYMS: dict[str, str] = {
+    # olandese → inglese
+    "clubnacht": "Club",
+    "tentoonstelling": "Exhibition",
+    "expositie": "Exhibition",
+    "activiteit": "Activity",
+    "rondleiding": "Tour",
+    "lezing": "Talk",
+    # generici della fonte, che non dicono nulla ("evento", "tutto", "altro")
+    "evenement": "Misc",
+    "alles": "Misc",
+    "overige": "Misc",
+    # varianti inglesi della stessa cosa
+    "workshop, class": "Workshop",
+    "exhibition, art": "Exhibition",
+    "food, kitchen": "Food",
+    "online audiotour": "Tour",
+    "dance performance": "Dance",
+    # una festa di musica elettronica e' una club night: cosi' prende anche il colore giusto
+    "electronic music, party": "Club",
+    # categoria di UNA fonte, fuori contesto incomprensibile (segnalata dall'utente:
+    # "may be understood differently by others")
+    "demonstration, riot": "Misc",
+}
+
+
+def canonical_type(raw: str) -> str:
+    """Tipo normalizzato: una sola scrittura per lingua e variante. Ignoto → invariato."""
+    key = (raw or "").strip().lower()
+    return TYPE_SYNONYMS.get(key, (raw or "").strip())
 
 
 # ── Chi possiede un locale ─────────────────────────────────────────

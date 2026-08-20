@@ -56,7 +56,7 @@ from db import init_db, get_events_between
 from dedup import collapse_duplicates
 from discovery import DiscoveryEngine
 from html_builder import _status_badge, _write_ics_file
-from labels import SOURCE_LABELS, TYPE_EMOJI, source_label, type_emoji
+from labels import SOURCE_LABELS, TYPE_EMOJI, canonical_type, source_label, type_emoji
 from models import Event
 
 log = logging.getLogger(__name__)
@@ -237,7 +237,8 @@ def _window_specs(today: date) -> list[tuple[str, list[date], str, str]]:
 
 # ── Carta evento (specchio di cardHTML in site/app.js:528) ─────────
 def _event_card(ev: Event, match: dict | None, ics_rel: str) -> str:
-    emoji = type_emoji(ev.event_type)
+    tipo = canonical_type(ev.event_type)   # stessa scrittura del filtro, non quella della fonte
+    emoji = type_emoji(tipo)
     src_lbl = source_label(ev.source)
 
     match_html = ""
@@ -267,7 +268,7 @@ def _event_card(ev: Event, match: dict | None, ics_rel: str) -> str:
     # su 20 (misurato). Il prezzo e' che i 4 eventi che iniziano davvero a
     # mezzanotte perdono l'orario: meglio un dato in meno che uno sbagliato.
     time_txt = ev.date.strftime("%H:%M") if ev.date else ""
-    type_txt = f"{emoji} {esc(ev.event_type)}"
+    type_txt = f"{emoji} {esc(tipo)}"
     if time_txt and time_txt != "00:00":
         type_txt += f" · {time_txt}"
 
