@@ -630,7 +630,7 @@ function cardHTML(ev) {
         </a>
         <div class="card-actions">
             <button class="cal-btn" data-id="${ev.id}" type="button">📅 Calendar</button>
-            <button class="fav-btn ${isFav ? 'active' : ''}" data-id="${ev.id}" type="button">${isFav ? '★ Saved' : '☆ Save'}</button>
+            <button class="fav-btn ${isFav ? 'active' : ''}" data-id="${ev.id}" type="button" title="Kept in this browser — no account needed. Use Calendar to keep it for good.">${isFav ? '★ Saved' : '☆ Save'}</button>
         </div>
     </div>`;
 }
@@ -673,11 +673,32 @@ function saveFavorites() {
     localStorage.setItem('ams_events_favs', JSON.stringify([...state.favorites]));
 }
 
+// Il primo salvataggio merita una spiegazione, una volta sola. "★ Saved" e' una promessa,
+// e il sito non diceva DOVE: i preferiti vivono in localStorage, quindi in QUESTO browser.
+// Chi cambia telefono o svuota la cache li perde tutti, e finora non gliel'aveva detto
+// nessuno. Il ramo account (Supabase) e' spento dal 18/08/2026, quindi non c'e' un login
+// da proporre come alternativa: c'e' il tasto Calendar, che scarica un .ics e quello si',
+// finisce nel telefono. Il messaggio nomina quello invece di una funzione che non esiste.
+function avvisoPrimoSalvataggio() {
+    try {
+        if (localStorage.getItem('ams_fav_notice')) return;
+        localStorage.setItem('ams_fav_notice', '1');
+    } catch { return; }          // niente storage, niente avviso: non e' un errore
+    const el = document.createElement('div');
+    el.className = 'fav-notice';
+    el.innerHTML = 'Saved <strong>in this browser</strong>. No account needed \u2014 but if you '
+                 + 'switch device or clear your data it is gone. Use <strong>Calendar</strong> to keep it.';
+    document.body.appendChild(el);
+    setTimeout(() => el.classList.add('leaving'), 7000);
+    setTimeout(() => el.remove(), 7600);
+}
+
 async function toggleFavorite(id) {
     const isAdding = !state.favorites.has(id);
     
     if (isAdding) {
         state.favorites.add(id);
+        avvisoPrimoSalvataggio();
     } else {
         state.favorites.delete(id);
     }

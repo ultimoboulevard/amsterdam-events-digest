@@ -80,6 +80,17 @@
         /* In CIMA (sopra <main>) dal 20/08/2026: un utente esterno ha detto che e' la
            prima cosa che vorrebbe leggere. In coda bastava il margine sotto; qui
            serve respiro anche sopra, o il titolo si incolla all'header. */
+        /* Avviso del primo salvataggio: sta in basso, non blocca niente, se ne va da solo. */
+        .fav-notice {
+            position: fixed; left: 50%; bottom: 22px; transform: translateX(-50%);
+            max-width: min(560px, calc(100vw - 32px)); z-index: 999;
+            background: var(--bg-card, #16161c); color: var(--text-secondary, #c9c9d4);
+            border: 1px solid var(--border-subtle, #2a2a35); border-radius: var(--radius, 8px);
+            padding: 12px 16px; font-size: 0.8rem; line-height: 1.45;
+            box-shadow: 0 8px 28px rgba(0,0,0,0.45); opacity: 1; transition: opacity .55s ease;
+        }
+        .fav-notice strong { color: var(--text-primary, #fff); font-weight: 800; }
+        .fav-notice.leaving { opacity: 0; }
         .cal-legend {
             display: flex; flex-wrap: wrap; gap: 6px 18px; align-items: center;
             margin: 14px 2px 0; font-size: 0.72rem; color: var(--text-muted);
@@ -294,7 +305,7 @@
 
     
 
-    <script src="app.js?v=16"></script>
+    <script src="app.js?v=17"></script>
 
     
     <script type='module' src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "7d1d5dc28c4046539e1037ca65949b0a"}'></script>
