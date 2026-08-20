@@ -43,6 +43,7 @@ import sys
 from datetime import datetime, timezone
 from pathlib import Path
 
+from artists import artists_for
 from db import get_upcoming_events, init_db
 from labels import GENRE_FAMILIES, is_genre
 
@@ -159,7 +160,10 @@ def classify(events: list, key: str) -> list[tuple[str, str | None]]:
         lotto = events[i:i + BATCH_SIZE]
         voci = [
             {"i": n, "title": ev.title, "venue": ev.venue or "",
-             "type": ev.event_type or "", "artists": (ev.artists or [])[:4]}
+             "type": ev.event_type or "",
+             # artists_for e non ev.artists: gira DOPO enrich_artists, quindi qui ci sono
+             # anche i nomi estratti dai titoli — e sapere CHI suona e' meta' del lavoro.
+             "artists": artists_for(ev)[:4]}
             for n, ev in enumerate(lotto)
         ]
         raw = call_gemini(SYSTEM, json.dumps(voci, ensure_ascii=False), key,

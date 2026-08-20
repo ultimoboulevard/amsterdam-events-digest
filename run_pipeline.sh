@@ -30,6 +30,7 @@ fi
 case "$1" in
     collect)
         "$PY" main.py collect && "$PY" enrich_artists.py \
+            && "$PY" enrich_genres.py \
             && "$PY" export_json.py && "$PY" build_pages.py \
             && "$PY" indexnow.py
         # I controlli di salute degli scraper (health.py) e la diagnosi
@@ -39,6 +40,12 @@ case "$1" in
         # si vedrebbe diluito con le righe buone di ieri. Non cambiano il
         # codice d'uscita — con questo `&&`, un allarme su un campo fermerebbe
         # il sito.
+        #
+        # enrich_genres.py gira SUBITO DOPO enrich_artists e per lo stesso motivo, piu'
+        # uno: gli serve sapere chi suona, e quei nomi li mette in cache lo step prima.
+        # Classifica solo i titoli MAI visti (Concert/Club senza genere): a regime sono
+        # pochi al giorno, una chiamata o due. Fail-soft come il gemello: se salta, gli
+        # eventi nuovi restano senza famiglia e il resto del sito non se ne accorge.
         #
         # enrich_artists.py sta QUI e non dentro i generatori: e' l'unico
         # pezzo che parla con Gemini, export_json e build_pages leggono solo
