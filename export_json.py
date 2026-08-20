@@ -9,6 +9,12 @@ from pathlib import Path
 
 from artists import artists_for
 import collections
+
+
+def _gkey(t: str) -> str:
+    return " ".join((t or "").split()).strip().lower()
+
+from enrich_genres import cached_families
 from labels import (GENRE_MIN_COUNT, canonical_type, genre_families, is_genre,
                     type_from_genres)
 import venues as venues_mod
@@ -41,6 +47,10 @@ def export_events_json(days: int = EXPORT_DAYS) -> Path:
     # una voce sola. Il database conserva il grezzo: quella resta la verita' della fonte,
     # e la normalizzazione e' una scelta di presentazione, reversibile.
     venue_display = venues_mod.display_map(ev.venue for ev in events)
+    # Famiglie dedotte (enrich_genres.py) per gli eventi che la fonte pubblica senza
+    # genere: 1.005 fra Concert e Club. Sono un RIPIEGO — se la fonte un giorno
+    # comincia a dare il genere, quello vince e questa cache non si consulta nemmeno.
+    dedotte = cached_families()
 
     events_list = []
     all_venues = set()
@@ -72,7 +82,10 @@ def export_events_json(days: int = EXPORT_DAYS) -> Path:
             "event_type": type_from_genres(ev.event_type or "", ev.genres),
             "artists": ev.artists or [],
             "genres": [g for g in (ev.genres or []) if is_genre(g)],
-            "families": genre_families(ev.genres or []),
+            # I tag veri della fonte vincono sempre; la famiglia dedotta e' il ripiego.
+            "families": (genre_families(ev.genres or [])
+                         or ([dedotte[_gkey(ev.title)]]
+                             if _gkey(ev.title) in dedotte else [])),
             # venue_address, price_min, price_max e tickets_url NON sono qui:
             # site/app.js non li legge (zero riferimenti), e triplicare la
             # finestra da 45 a 135 giorni triplicava anche il JSON che ogni
@@ -88,7 +101,9 @@ def export_events_json(days: int = EXPORT_DAYS) -> Path:
         if ev.venue:
             all_venues.add(venue_display.get(ev.venue, ev.venue))
         all_genres.update(g for g in ev.genres if is_genre(g))
-        all_families.update(genre_families(ev.genres))
+        _fam = genre_families(ev.genres) or (
+            [dedotte[_gkey(ev.title)]] if _gkey(ev.title) in dedotte else [])
+        all_families.update(_fam)
         genre_counts.update(g.strip().lower() for g in ev.genres if is_genre(g))
         if ev.event_type:
             all_types.add(type_from_genres(ev.event_type, ev.genres))
