@@ -88,6 +88,11 @@
         .lg-dot { width: 8px; height: 8px; border-radius: 50%; display: inline-block; }
         .lg-concert { background: var(--accent-purple); }
         .lg-club { background: var(--accent-cyan); }
+        /* Il rosa e' il ramo `default` di dotClass(): tutto cio' che non e' concerto,
+           club, gratis, sold out o pick. E' il 45% dei pallini — il colore piu'
+           frequente del calendario — e mancava dalla legenda (segnalato 20/08/2026).
+           Dentro ci finiscono soprattutto eventi SENZA tipo (1.185 su 1.427). */
+        .lg-other { background: var(--accent-pink); }
         .lg-free { background: var(--accent-green); }
         .lg-sold { background: var(--text-muted); }
         .lg-sep { width: 1px; height: 12px; background: var(--border-subtle); }
@@ -289,7 +294,7 @@
 
     
 
-    <script src="app.js?v=11"></script>
+    <script src="app.js?v=12"></script>
 
     
     <script type='module' src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "7d1d5dc28c4046539e1037ca65949b0a"}'></script>

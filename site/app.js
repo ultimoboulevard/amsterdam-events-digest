@@ -102,6 +102,7 @@ async function init() {
                 <p class="cal-legend">
                     <span><i class="lg-dot lg-concert"></i>Concert</span>
                     <span><i class="lg-dot lg-club"></i>Club night</span>
+                    <span><i class="lg-dot lg-other"></i>Other</span>
                     <span><i class="lg-dot lg-free"></i>Free entry</span>
                     <span><i class="lg-dot lg-sold"></i>Sold out</span>
                     <span class="lg-sep"></span>
