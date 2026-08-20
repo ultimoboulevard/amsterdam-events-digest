@@ -8,7 +8,8 @@ from datetime import datetime
 from pathlib import Path
 
 from artists import artists_for
-from labels import canonical_type
+import collections
+from labels import GENRE_MIN_COUNT, canonical_type, is_genre
 import venues as venues_mod
 from db import init_db, get_upcoming_events
 from dedup import collapse_duplicates
@@ -43,6 +44,7 @@ def export_events_json(days: int = EXPORT_DAYS) -> Path:
     events_list = []
     all_venues = set()
     all_genres = set()
+    genre_counts: collections.Counter = collections.Counter()
     all_types = set()
 
     for ev in events:
@@ -67,7 +69,7 @@ def export_events_json(days: int = EXPORT_DAYS) -> Path:
             "venue": venue_display.get(ev.venue, ev.venue) or "",
             "event_type": canonical_type(ev.event_type or ""),
             "artists": ev.artists or [],
-            "genres": ev.genres or [],
+            "genres": [g for g in (ev.genres or []) if is_genre(g)],
             # venue_address, price_min, price_max e tickets_url NON sono qui:
             # site/app.js non li legge (zero riferimenti), e triplicare la
             # finestra da 45 a 135 giorni triplicava anche il JSON che ogni
@@ -82,7 +84,8 @@ def export_events_json(days: int = EXPORT_DAYS) -> Path:
 
         if ev.venue:
             all_venues.add(venue_display.get(ev.venue, ev.venue))
-        all_genres.update(g for g in ev.genres if g)
+        all_genres.update(g for g in ev.genres if is_genre(g))
+        genre_counts.update(g.strip().lower() for g in ev.genres if is_genre(g))
         if ev.event_type:
             all_types.add(canonical_type(ev.event_type))
 
@@ -91,7 +94,8 @@ def export_events_json(days: int = EXPORT_DAYS) -> Path:
         "event_count": len(events_list),
         "events": events_list,
         "venues": sorted(all_venues),
-        "genres": sorted(all_genres),
+        "genres": sorted(g for g in all_genres
+                             if genre_counts[g.strip().lower()] >= GENRE_MIN_COUNT),
         "event_types": sorted(all_types),
     }
 

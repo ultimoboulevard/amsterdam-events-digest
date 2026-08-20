@@ -166,3 +166,75 @@ def source_label(source: str) -> str:
 def type_emoji(event_type: str) -> str:
     """Emoji del tipo di evento. Fallback: 📌, come in app.js."""
     return TYPE_EMOJI.get(event_type, "📌")
+
+
+# ── Cosa NON e' un genere ──────────────────────────────────────────
+# Il campo `genres` non contiene generi: e' il raccoglitore dove ogni fonte versa le
+# proprie parole chiave. Misurato il 20/08/2026 sui 576 valori distinti: il terzo piu'
+# frequente e' "dapperbuurt", un QUARTIERE (327 volte), e offbeat da sola produce il 77%
+# dei tag. Un'utente l'aveva detto con altre parole: "too many sub-categories... makes it
+# really hard to filter".
+#
+# Qui si toglie dal FILTRO cio' che genere non e'. Il dato resta sull'evento: e' una
+# scelta di presentazione, non una cancellazione.
+#
+# I QUARTIERI si escludono ma si tengono raggruppati: non sono spazzatura, sono
+# l'informazione piu' utile che il sito non offre ancora ("cosa c'e' stasera in zona").
+# Diventeranno un filtro "Area" a parte — deciso di rimandarlo, non di buttarlo.
+GENRE_NEIGHBOURHOODS: frozenset[str] = frozenset({
+    "dapperbuurt", "spui", "eastern docklands", "de pijp", "transvaalbuurt",
+    "schinkelbuurt", "minervahaven", "westpoort", "westerpark", "hamerkwartier",
+    "buiksloterham", "leidseplein", "vondelparkbuurt", "ndsm", "noorderpark",
+    "burgwallen", "slotervaart", "rembrandtpark", "jordaan", "ijplein",
+    "weesperzijde", "sloterdijk", "oud-zuid", "oud-west", "schinkelterrein",
+})
+
+# Duplicano il filtro Type: e' la ridondanza fra i due menu che l'utente ha notato.
+GENRE_EVENT_TYPES: frozenset[str] = frozenset({
+    "concert", "theater", "theatre", "festivals", "film", "workshop", "performance",
+    "comedy", "cabaret", "exhibition", "club night", "club", "party", "kids", "bar",
+    "dance performance", "guided tour", "movie night", "lecture", "discussion",
+    "documentary", "music documentary", "stand-up", "meeting", "class", "classes",
+    "jam session", "opening", "kleinkunst", "muziektheater",
+})
+
+# Attivita' e temi: legittimi, ma non sono generi musicali.
+GENRE_ACTIVITIES: frozenset[str] = frozenset({
+    "yoga", "food", "community", "stories", "storytelling", "games", "books",
+    "dinner", "vegan", "meditation", "plants", "repair", "voku", "activism",
+    "gender", "lgbtq+", "flinta", "queer", "stadspas", "poetry", "poezie",
+    "creatieve industrie", "multidisciplinair", "emancipatie & identiteit",
+    "geopolitiek & mensenrechten", "politiek & democratie", "idee & verbeelding",
+    "literature / science / politics / art",
+})
+
+# Meta-tag che non restringono niente: "music" su un sito di musica.
+GENRE_NOISE: frozenset[str] = frozenset({
+    "music", "muziek", "live", "live music", "dj", "hits", "vinyl", "dutch", "urban",
+})
+
+# Nomi propri di rassegne: utili DENTRO un locale, incomprensibili in un menu globale.
+GENRE_PROGRAMMES: frozenset[str] = frozenset({
+    "ade", "amsterdam dance event", "cello bienna1e amsterdam", "cello biënnale amsterdam",
+    "impro focus", "headliners", "bimhuis & the rest is noise",
+    "bimhuis & space is the place", "new dutch jazz", "bimhuis composition assignment 2026", "free lunchtime", "summer dance forever",
+    "live after london calling", "live after lowlands", "live after best kept secret",
+    "live after down the rabbit hole",
+})
+
+GENRE_EXCLUDE = (GENRE_NEIGHBOURHOODS | GENRE_EVENT_TYPES | GENRE_ACTIVITIES
+                 | GENRE_NOISE | GENRE_PROGRAMMES)
+
+# Un genere che compare una volta sola non e' un filtro: ci clicchi e trovi un evento.
+# Sui dati del 20/08, 213 valori su 576 comparivano UNA volta. La soglia e' scelta sulla
+# curva misurata quel giorno, non a occhio:
+#     >=3 -> 159 voci, coprono l'88% degli eventi taggati
+#     >=5 ->  94 voci, coprono l'80%      <- scelta: -84% di voci, si perde il 20%
+#     >=8 ->  58 voci, coprono il 73%
+# I tag esclusi restano sull'evento e restano cercabili: sparisce solo la voce dal menu.
+GENRE_MIN_COUNT = 5
+
+
+def is_genre(tag: str) -> bool:
+    """False per quartieri, tipi, attivita', meta-tag e nomi di rassegna."""
+    return bool(tag) and tag.strip().lower() not in GENRE_EXCLUDE
