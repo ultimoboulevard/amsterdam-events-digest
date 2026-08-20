@@ -64,7 +64,12 @@ async function init() {
     main.innerHTML = '<div class="loading"><div class="spinner"></div><p>Loading events…</p></div>';
 
     try {
-        const resp = await fetch('data/events.json');
+        // `no-cache` = rivalida SEMPRE (If-Modified-Since), non riscarica se nulla e'
+        // cambiato: se il file e' identico il server risponde 304 e non passa un byte.
+        // Senza, il browser serviva la copia vecchia senza nemmeno chiedere — e con dati
+        // vecchi il menu Genre ripiegava sui 124 generi invece delle 12 famiglie, pur
+        // avendo il JS nuovo (visto il 20/08/2026). index.html ha il suo ?v= ma i DATI no.
+        const resp = await fetch('data/events.json', { cache: 'no-cache' });
         if (!resp.ok) throw new Error(resp.status);
         const data = await resp.json();
         state.raw = data.events || [];
