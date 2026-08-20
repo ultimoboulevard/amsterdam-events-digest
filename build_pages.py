@@ -41,6 +41,7 @@ import calendar
 import hashlib
 import html
 import json
+from functools import lru_cache
 import logging
 import re
 import shutil
@@ -70,6 +71,11 @@ HOME_FILE = SITE_DIR / "index.html"
 # _content_hash). Sta in data/ accanto alle altre cache rigenerabili ed e'
 # gitignorato: cambia a ogni collect e il repo e' pubblico.
 SITEMAP_STATE = BASE_DIR / "data" / "sitemap_state.json"
+# Override di title/description per singola pagina, scritti da `seo_adaptive.py` sulla
+# base di cio' che la gente CERCA davvero (Search Console). Il file puo' non esistere:
+# senza, `_shell` usa i testi generati e il sito e' byte-identico a prima — la catena
+# adattiva e' inerte finche' non c'e' qualcosa da adattare.
+SEO_OVERRIDES = BASE_DIR / "data" / "seo_overrides.json"
 
 BASE_URL = "https://events.zenobj.net"
 # Il marchio sta in og:site_name, nell'header e nel footer — non nei <title>.
@@ -116,6 +122,20 @@ MONTH_HIGHLIGHTS = 3
 HOME_HIGHLIGHTS = 8
 HOME_START = "<!-- FOMODAM:HOME-START -->"
 HOME_END = "<!-- FOMODAM:HOME-END -->"
+
+# I commenti HTML spiegano le scelte a chi legge il CODICE, ma finiscono nel sorgente
+# della pagina PUBBLICA: 23 note in italiano sulla sola home. Per Google sono innocui
+# (li ignora), ma nella ricerca conversazionale gli estrattori di testo non sempre li
+# scartano, e il 19/08/2026 erano la PRIMA cosa nel testo estratto della home — davanti
+# al contenuto vero. Restano nel .py (dove servono), spariscono dall'HTML servito.
+# I marker `FOMODAM:` sono ESCLUSI dallo strip: non sono documentazione, sono l'ancora
+# con cui _write_home ritrova il blocco da sostituire ad ogni build.
+_DEV_COMMENT_RE = re.compile(r"<!--(?!\s*FOMODAM:).*?-->", re.S)
+
+
+def _strip_dev_comments(html: str) -> str:
+    """HTML senza i commenti di sviluppo, con i marker FOMODAM: intatti."""
+    return _DEV_COMMENT_RE.sub("", html)
 
 WEEKDAYS_FULL = ["Monday", "Tuesday", "Wednesday", "Thursday",
                  "Friday", "Saturday", "Sunday"]
@@ -443,10 +463,37 @@ ANALYTICS = (
 )
 
 
+@lru_cache(maxsize=1)
+def _seo_overrides() -> dict:
+    """`{url: {"title": ..., "description": ...}}` da data/seo_overrides.json, o {}.
+
+    Cache per build: il file si legge una volta sola, non 231. Mai fatale — un JSON
+    rotto non deve impedire la pubblicazione del sito, che e' il lavoro vero.
+    """
+    try:
+        with open(SEO_OVERRIDES, encoding="utf-8") as fh:
+            data = json.load(fh)
+        return data if isinstance(data, dict) else {}
+    except FileNotFoundError:
+        return {}
+    except Exception as exc:
+        log.warning("seo_overrides.json non leggibile (%s) — uso i testi generati.", exc)
+        return {}
+
+
+def _apply_seo_override(canonical: str, title: str, description: str) -> tuple[str, str]:
+    """Sostituisce title/description se per QUESTA pagina c'e' un override."""
+    ov = _seo_overrides().get(canonical) or {}
+    return (ov.get("title") or title), (ov.get("description") or description)
+
+
 def _shell(*, title: str, description: str, canonical: str, root: str,
            h1: str, lede: str, body: str, jsonld: str = "",
            crumbs: str = "", links: str = "", extra_scripts: str = "",
            noindex: bool = False, generated: datetime) -> str:
+    # Gli override entrano QUI e non nei chiamanti: title/description alimentano anche
+    # og:title/og:description piu' sotto, quindi un solo punto copre tutta la pagina.
+    title, description = _apply_seo_override(canonical, title, description)
     return f"""<!DOCTYPE html>
 <html lang="en">
 <head>
@@ -798,7 +845,7 @@ def build_pages(days: int = HORIZON_DAYS) -> dict:
     def write_page(slug: str, markup: str) -> None:
         out_dir = PAGES_DIR / slug
         out_dir.mkdir(parents=True, exist_ok=True)
-        (out_dir / "index.html").write_text(markup, encoding="utf-8")
+        (out_dir / "index.html").write_text(_strip_dev_comments(markup), encoding="utf-8")
         fingerprints[f"{BASE_URL}/events/{slug}/"] = _content_hash(markup)
 
     # ── Finestre relative ──────────────────────────────────────────
@@ -985,6 +1032,7 @@ def build_pages(days: int = HORIZON_DAYS) -> dict:
         log.warning("Impronta della home non calcolata: %s", exc)
 
     _write_sitemap(written, generated, fingerprints)
+    _write_llms_txt(future, generated)
 
     log.info("Scritte %d pagine sotto %s (+ %d in scadenza, fuori sitemap; %d file .ics).",
              len(written), PAGES_DIR, len(past_days), len(ics_rel))
@@ -1050,7 +1098,7 @@ def _write_index(day_list: list[date], by_day: dict[date, list[Event]],
         links=_link("../", "◀ Back to the calendar"),
         generated=generated,
     )
-    (PAGES_DIR / "index.html").write_text(markup, encoding="utf-8")
+    (PAGES_DIR / "index.html").write_text(_strip_dev_comments(markup), encoding="utf-8")
     return markup
 
 
@@ -1249,7 +1297,7 @@ def _write_home(*, specs: list[tuple[str, list[date], str, str]],
     # una home a meta'. os.replace e' atomico.
     tmp = HOME_FILE.with_name(HOME_FILE.name + ".tmp")
     try:
-        tmp.write_text(updated, encoding="utf-8")
+        tmp.write_text(_strip_dev_comments(updated), encoding="utf-8")
         tmp.replace(HOME_FILE)
     except OSError as exc:
         log.warning("Home non aggiornata, scrittura fallita: %s", exc)
@@ -1300,6 +1348,53 @@ def _load_sitemap_state() -> dict[str, dict]:
                     "risulteranno cambiate oggi.", exc)
         return {}
     return data if isinstance(data, dict) else {}
+
+
+def _write_llms_txt(future: list[Event], generated: datetime) -> None:
+    """`llms.txt`: la mappa del sito per gli assistenti conversazionali.
+
+    Convenzione emergente (un markdown alla radice) per dire a un LLM che cosa c'e' qui
+    e da dove prenderlo, invece di lasciarglielo dedurre dal markup. Ha senso su QUESTO
+    sito piu' che su altri: pubblichiamo fatti freschi e datati — cosa suona, dove,
+    quando — cioe' esattamente cio' che un modello non sa dal training e deve andare a
+    cercare. E non e' teoria: nei log del 19-20/08/2026 `OAI-SearchBot` legge gia'
+    /data/events.json di sua iniziativa, e `ChatGPT-User` apre /events/tonight/ quando
+    un utente chiede cosa c'e' stasera. Qui gli si dice dove guardare, una volta sola.
+
+    Sola aggiunta, nessun effetto sulle pagine: un file statico in piu' accanto a
+    robots.txt e sitemap.xml.
+    """
+    venues = len({ev.venue for ev in future if ev.venue})
+    last = max((ev.date for ev in future), default=None)
+    through = f", listed through {last:%B %Y}" if last else ""
+    lines = [
+        f"# {SITE_NAME} — What's on in Amsterdam",
+        "",
+        f"> Every gig, club night, exhibition and festival in Amsterdam in one calendar: "
+        f"{len(future):,} events at {venues} venues{through}. "
+        f"Rebuilt every morning at 06:00 Europe/Amsterdam.",
+        "",
+        "## Data",
+        "",
+        f"- [All events as JSON]({BASE_URL}/data/events.json): every listed event in one "
+        f"file — title, venue, start time, link. No pagination, no API key.",
+        "",
+        "## Key pages",
+        "",
+        f"- [Tonight]({BASE_URL}/events/tonight/): what is on in Amsterdam today",
+        f"- [This weekend]({BASE_URL}/events/this-weekend/): Friday to Sunday",
+        f"- [All dates]({BASE_URL}/events/): one page per day, each listing that day's events",
+        "",
+        "## Notes",
+        "",
+        "- All times are local to Amsterdam (Europe/Amsterdam).",
+        "- Every page states its date in full (e.g. \"Monday 14 September 2026\"), so a "
+        "quoted line stays correct whenever it is read.",
+        "- Data is rebuilt daily; `sitemap.xml` carries a per-page `lastmod` that is accurate.",
+        f"- This file generated {generated:%Y-%m-%d %H:%M} Europe/Amsterdam.",
+        "",
+    ]
+    (SITE_DIR / "llms.txt").write_text("\n".join(lines), encoding="utf-8")
 
 
 def _write_sitemap(written: list[tuple[str, str, float]], generated: datetime,
