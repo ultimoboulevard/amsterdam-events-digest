@@ -29,6 +29,13 @@ const MONTHS = [
 ];
 
 /* ── State ────────────────────────────────────────────────────── */
+// Quanti artisti mostrare per evento. Erano 6 hardcoded in due punti, e su una line-up
+// vera tagliavano: SevenEight78 del 29/08 ne ha 7 dalla fonte e sulla card se ne vedevano
+// 6 — il settimo era Tiki Masawa, uno del nucleo fisso del collettivo. 10 copre tutti gli
+// eventi tranne pochissimi. Gemello di MAX_ARTISTS in enrich_artists.py, che governa
+// invece quanti nomi ESTRARRE dai titoli: due limiti diversi, stesso numero.
+const MAX_ARTISTI = 10;
+
 const state = {
     raw: [],            // all events from JSON
     venues: [],
@@ -568,7 +575,7 @@ function cardHTML(ev) {
     }
 
     const artistsHtml = ev.artists?.length
-        ? `<div class="artists">${esc(ev.artists.slice(0, 6).join(' · '))}</div>` : '';
+        ? `<div class="artists">${esc(ev.artists.slice(0, MAX_ARTISTI).join(' · '))}</div>` : '';
 
     const genresHtml = ev.genres?.length
         ? `<div class="genres">${ev.genres.slice(0, 4).map(g => `<span class="genre-tag">${esc(g)}</span>`).join('')}</div>` : '';
@@ -765,7 +772,7 @@ function downloadICS(ev) {
 
     const parts = [];
     if (ev.event_type) parts.push(ev.event_type);
-    if (ev.artists?.length) parts.push('Artists: ' + ev.artists.slice(0, 6).join(', '));
+    if (ev.artists?.length) parts.push('Artists: ' + ev.artists.slice(0, MAX_ARTISTI).join(', '));
     if (ev.source_url) parts.push(ev.source_url);
 
     const ics = [

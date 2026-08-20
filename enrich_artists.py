@@ -78,7 +78,7 @@ BATCH_SIZE = 25
 TIMEOUT = 120
 
 # Lo stesso cap di visualizzazione gia' usato in _event_card / JSON-LD.
-MAX_ARTISTS = 6
+MAX_ARTISTS = 10   # 6 tagliava line-up vere (vedi MAX_ARTISTI in app.js)
 
 SYSTEM_INSTRUCTION = (
     "You extract performer names from event titles for an Amsterdam events "
