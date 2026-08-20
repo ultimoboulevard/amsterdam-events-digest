@@ -335,17 +335,36 @@ def _event_jsonld(ev: Event) -> dict:
         obj["performer"] = [
             {"@type": "PerformingGroup", "name": a} for a in ev.artists[:6] if a
         ]
-    if ev.price_min is not None:
-        obj["offers"] = {
+    # `image`: Search Console la chiedeva su 7 pagine (20/08/2026) e ce l'avevamo in
+    # mano — 2.764 eventi futuri su 3.595 (77%), tutti URL assoluti, mai emessi. E' il
+    # campo che fa comparire la miniatura nel risultato ricco: il piu' visibile di tutti.
+    if ev.image_url:
+        obj["image"] = ev.image_url
+    # `description`: solo il 6% degli eventi ce l'ha, ma dove c'e' e' gratis. Su una riga
+    # e accorciata: nei dati grezzi arriva con a capo e code chilometriche.
+    if ev.description:
+        d = " ".join(ev.description.split())
+        obj["description"] = d[:300].rstrip() + ("\u2026" if len(d) > 300 else "")
+    # `offers` non richiede il prezzo per essere utile: dice DOVE si comprano i biglietti
+    # e se ce ne sono ancora. Legandolo a price_min (9% degli eventi) lo emettevamo su 3
+    # eventi su 16; col link biglietti si sale al 61%. Il prezzo, quando c'e', si aggiunge.
+    if ev.price_min is not None or ev.tickets_url:
+        offer: dict = {
             "@type": "Offer",
-            "price": ev.price_min,
-            "priceCurrency": "EUR",
             "url": ev.tickets_url or ev.source_url or None,
             "availability": (
                 "https://schema.org/SoldOut" if ev.tickets_status == "sold_out"
                 else "https://schema.org/InStock"
             ),
         }
+        if ev.price_min is not None:
+            offer["price"] = ev.price_min
+            offer["priceCurrency"] = "EUR"
+        obj["offers"] = offer
+    # `organizer` NON si emette: non abbiamo il dato. Il venue e' la location, non
+    # l'organizzatore, e spacciarlo per tale sarebbe dichiarare a Google una cosa che
+    # non sappiamo. Google stessa lo classifica come non critico: meglio un campo
+    # assente che un campo falso.
     return _drop_empty(obj)
 
 
