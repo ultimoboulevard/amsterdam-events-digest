@@ -238,3 +238,29 @@ GENRE_MIN_COUNT = 5
 def is_genre(tag: str) -> bool:
     """False per quartieri, tipi, attivita', meta-tag e nomi di rassegna."""
     return bool(tag) and tag.strip().lower() not in GENRE_EXCLUDE
+
+
+# ── Danza: un TIPO di evento, non un genere musicale ───────────────
+# Nei dati la parola "dance" vale tre cose diverse (misurato 20/08/2026):
+#   1. la DISCIPLINA — "Dance (contemporary, urban, etc)" del Paradiso: Locking &
+#      Waacking, Popping, Fresh Moves, in cartellone con Internationaal Theater e
+#      Chassé Dance Studios. Questi sono spettacoli di danza;
+#   2. la MUSICA da ballo — "Dancehall", "Dance pop", "Indie Dance": generi musicali,
+#      che stanno in World/Pop/Electronic e NON qui;
+#   3. il tag generico "dance" di offbeat, che mescola pole dance, feste e perfino una
+#      meditazione: inaffidabile, si ignora.
+# Il guaio pratico: gli spettacoli del gruppo 1 arrivano con event_type "Concert",
+# quindi la categoria Dance del filtro ne contava 12 invece di ~28. Qui si corregge il
+# TIPO leggendo il genere — l'unico segnale affidabile che quelle fonti danno.
+DANCE_GENRE_HINTS: frozenset[str] = frozenset({
+    "dance (contemporary, urban, etc)", "dance performance", "dans", "ballet",
+    "urban dance", "contemporary dance",
+})
+
+
+def type_from_genres(event_type: str, genres) -> str:
+    """Tipo corretto: gli spettacoli di danza smettono di essere 'Concert'."""
+    for g in (genres or []):
+        if (g or "").strip().lower() in DANCE_GENRE_HINTS:
+            return "Dance"
+    return canonical_type(event_type)

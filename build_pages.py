@@ -56,7 +56,8 @@ from db import init_db, get_events_between
 from dedup import collapse_duplicates
 from discovery import DiscoveryEngine
 from html_builder import _status_badge, _write_ics_file
-from labels import SOURCE_LABELS, TYPE_EMOJI, canonical_type, source_label, type_emoji
+from labels import (SOURCE_LABELS, TYPE_EMOJI, canonical_type, source_label,
+                    type_emoji, type_from_genres)
 from models import Event
 
 log = logging.getLogger(__name__)
@@ -237,7 +238,7 @@ def _window_specs(today: date) -> list[tuple[str, list[date], str, str]]:
 
 # ── Carta evento (specchio di cardHTML in site/app.js:528) ─────────
 def _event_card(ev: Event, match: dict | None, ics_rel: str) -> str:
-    tipo = canonical_type(ev.event_type)   # stessa scrittura del filtro, non quella della fonte
+    tipo = type_from_genres(ev.event_type, ev.genres)  # stessa regola del filtro (danza inclusa)
     emoji = type_emoji(tipo)
     src_lbl = source_label(ev.source)
 
