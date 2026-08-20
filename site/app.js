@@ -94,6 +94,20 @@ async function init() {
                     <div class="cal-hdr">Fri</div><div class="cal-hdr">Sat</div>
                     <div class="cal-hdr">Sun</div>
                 </div>
+                <!-- Legenda dei pallini e delle due icone dei pick: un utente esterno
+                     (20/08/2026) ha chiesto cosa distinguesse i colori, nel calendario e
+                     nei pick. Sta QUI e non nell'HTML statico perche' main.innerHTML qui
+                     sopra ricostruisce <main> da zero: quello che e' scritto nella pagina
+                     dentro <main> viene buttato via al primo caricamento dei dati. -->
+                <p class="cal-legend">
+                    <span><i class="lg-dot lg-concert"></i>Concert</span>
+                    <span><i class="lg-dot lg-club"></i>Club night</span>
+                    <span><i class="lg-dot lg-free"></i>Free entry</span>
+                    <span><i class="lg-dot lg-sold"></i>Sold out</span>
+                    <span class="lg-sep"></span>
+                    <span>🔥 In our music library</span>
+                    <span>✨ Discovery: similar artists</span>
+                </p>
             </section>
             <section class="day-detail" id="day-detail">
                 <div class="detail-header">
@@ -106,7 +120,7 @@ async function init() {
                 <div class="stat-card"><span class="stat-val" id="stat-total">0</span><span class="stat-lbl">Events</span></div>
                 <div class="stat-card"><span class="stat-val" id="stat-venues">0</span><span class="stat-lbl">Venues</span></div>
                 <div class="stat-card"><span class="stat-val" id="stat-days">0</span><span class="stat-lbl">Days</span></div>
-                <div class="stat-card has-tooltip"><span class="stat-val" id="stat-matches" data-tip="Events picked by our curators, based on the artists playing.">0</span><span class="stat-lbl">Picks</span></div>
+                <div class="stat-card has-tooltip"><span class="stat-val" id="stat-matches" data-tip="Events picked from our own music library and from artists similar to it \u2014 not from what is popular.">0</span><span class="stat-lbl">Picks</span></div>
                 <div class="stat-card has-tooltip"><span class="stat-val" id="stat-sources" data-tip="Number of distinct platforms and venues actively feeding this calendar (e.g. Melkweg, Resident Advisor, Concertgebouw…).">0</span><span class="stat-lbl">Sources</span></div>
             </section>`;
 
@@ -176,7 +190,7 @@ function bindEvents() {
     // Friends' Picks toggle
     document.getElementById('btn-friends')?.addEventListener('click', () => {
         if (!state.user) {
-            alert("Please log in to see what your friends are saving!");
+            alert("Log in to see what your friends are saving. Your own saves work without an account \u2014 they stay in this browser.");
             return;
         }
         state.filters.friendsOnly = !state.filters.friendsOnly;

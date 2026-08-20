@@ -122,6 +122,13 @@ MONTH_HIGHLIGHTS = 3
 HOME_HIGHLIGHTS = 8
 HOME_START = "<!-- FOMODAM:HOME-START -->"
 HOME_END = "<!-- FOMODAM:HOME-END -->"
+# Il blocco si e' sdoppiato il 20/08/2026. Un utente esterno voleva in cima "What's on in
+# Amsterdam" con la frase che spiega il sito — e aveva ragione — ma spostare l'INTERO
+# blocco (titolo + lede + stasera + weekend, 1.602px) buttava il calendario a 2,5 schermate
+# di scroll: un peggioramento travestito da miglioramento. Quindi: intestazione in cima,
+# liste dove erano. Se i segnaposti di sopra mancano la home resta valida, con tutto in coda.
+HOMETOP_START = "<!-- FOMODAM:HOMETOP-START -->"
+HOMETOP_END = "<!-- FOMODAM:HOMETOP-END -->"
 
 # I commenti HTML spiegano le scelte a chi legge il CODICE, ma finiscono nel sorgente
 # della pagina PUBBLICA: 23 note in italiano sulla sola home. Per Google sono innocui
@@ -1291,8 +1298,12 @@ def _write_home(*, specs: list[tuple[str, list[date], str, str]],
         'sells nothing and is affiliated with no venue.</p>'
     )
 
+    # parts[0] e parts[1] sono <h1> e lede: l'intestazione. Il resto sono le liste.
+    head_parts, list_parts = parts[:2], parts[2:]
+    block_top = ('<section class="home-intro home-intro--top">\n  '
+                 + "\n  ".join(head_parts) + "\n</section>")
     block = ('<section class="home-intro">\n  '
-             + "\n  ".join(parts)
+             + "\n  ".join(list_parts)
              + "\n</section>\n"
              + _jsonld_script(shown))
 
@@ -1302,13 +1313,24 @@ def _write_home(*, specs: list[tuple[str, list[date], str, str]],
         log.warning("Home non aggiornata, %s illeggibile: %s", HOME_FILE, exc)
         return False
 
-    i, j = page.find(HOME_START), page.find(HOME_END)
-    if i == -1 or j == -1 or j < i:
+    def _inject(doc: str, start: str, end: str, payload: str) -> str | None:
+        i, j = doc.find(start), doc.find(end)
+        if i == -1 or j == -1 or j < i:
+            return None
+        return doc[:i + len(start)] + "\n" + payload + "\n" + doc[j:]
+
+    updated = _inject(page, HOME_START, HOME_END, block)
+    if updated is None:
         log.warning("Segnaposti %s / %s assenti o invertiti in %s: "
                     "home lasciata com'era.", HOME_START, HOME_END, HOME_FILE)
         return False
-
-    updated = page[:i + len(HOME_START)] + "\n" + block + "\n" + page[j:]
+    # Zona in cima: OPZIONALE. Se manca, l'intestazione semplicemente non si duplica
+    # e la home resta quella di prima — non un errore, una configurazione piu' povera.
+    con_testa = _inject(updated, HOMETOP_START, HOMETOP_END, block_top)
+    if con_testa is not None:
+        updated = con_testa
+    else:
+        log.info("Nessuna zona %s: intestazione lasciata in coda.", HOMETOP_START)
     if updated == page:
         return True
     # site/ e' servito dal vivo da com.local.events-site: una write_text()

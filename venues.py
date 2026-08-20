@@ -181,3 +181,43 @@ def canonical(raw: str) -> Venue:
 def venue_key(raw: str) -> str:
     """Scorciatoia: la sola chiave di confronto. Usata da compute_dedup_key()."""
     return canonical(raw).key
+
+def _display_rank(form: str) -> tuple:
+    """Chiave d'ordinamento: piu' bassa = forma preferita per il display."""
+    citta = 1 if re.search(r",?\s*amsterdam\s*$", form, re.I) else 0
+    paren = 1 if _PAREN_RE.match(form) else 0
+    minuscole = any(c.islower() for c in form)
+    maiuscole = any(c.isupper() for c in form)
+    misto = 0 if (minuscole and maiuscole) else 1
+    return (citta, paren, misto, len(form), form)
+
+
+def display_name(forms) -> str:
+    """Una sola scrittura leggibile per le tante forme dello stesso locale.
+
+    `canonical()` normalizza la CHIAVE ma restituisce la stringa grezza come sala:
+    perfetto per deduplicare gli eventi, insufficiente per un menu a tendina, dove
+    "50 HERTZ" e "50:Hertz" restano due voci distinte. Segnalato da un utente il
+    2026-08-20 ("some items are repeated"), che di quel locale ne vedeva QUATTRO.
+
+    La scelta e' deterministica, per criteri in ordine:
+      1. senza il suffisso della citta': "Eye Filmmuseum" batte "Eye Filmmuseum, Amsterdam";
+      2. la sala nuda invece di "Operatore (Sala)", cosi' le tre sale del Paradiso si
+         comportano allo stesso modo — sceglierle per frequenza dava Bitterzoet come
+         "Paradiso (Bitterzoet)" e Cinetol come "Cinetol", cioe' un'incoerenza visibile;
+      3. capitalizzazione mista ("Murmur") invece di TUTTO MAIUSCOLO o tutto minuscolo:
+         il maiuscolo e' enfasi di chi pubblica, non il nome del posto;
+      4. la piu' corta, poi l'ordine alfabetico: a parita' serve un risultato STABILE,
+         altrimenti il filtro cambia nome da un giorno all'altro.
+    """
+    forms = [f for f in forms if f and f.strip()]
+    return min(forms, key=_display_rank) if forms else ""
+
+
+def display_map(raws) -> dict:
+    """`{forma grezza: forma da mostrare}` per un insieme di locali."""
+    gruppi: dict[str, set] = {}
+    for r in raws:
+        if r and r.strip():
+            gruppi.setdefault(venue_key(r), set()).add(r)
+    return {raw: display_name(forms) for forms in gruppi.values() for raw in forms}

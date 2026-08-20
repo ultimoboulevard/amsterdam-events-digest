@@ -8,6 +8,7 @@ from datetime import datetime
 from pathlib import Path
 
 from artists import artists_for
+import venues as venues_mod
 from db import init_db, get_upcoming_events
 from dedup import collapse_duplicates
 from discovery import DiscoveryEngine
@@ -30,6 +31,13 @@ def export_events_json(days: int = EXPORT_DAYS) -> Path:
     init_db()
     events = collapse_duplicates(get_upcoming_events(days=days))
     discovery = DiscoveryEngine()
+
+    # Un locale scritto in due modi resta due voci nel menu a tendina: il dedup degli
+    # EVENTI usa venue_key(), ma il filtro legge la stringa grezza. Qui si sceglie UNA
+    # scrittura per locale (venues.display_map), cosi' "50 HERTZ" e "50:Hertz" diventano
+    # una voce sola. Il database conserva il grezzo: quella resta la verita' della fonte,
+    # e la normalizzazione e' una scelta di presentazione, reversibile.
+    venue_display = venues_mod.display_map(ev.venue for ev in events)
 
     events_list = []
     all_venues = set()
@@ -55,7 +63,7 @@ def export_events_json(days: int = EXPORT_DAYS) -> Path:
             "title": ev.title,
             "date": ev.date.isoformat() if ev.date else None,
             "date_end": ev.date_end.isoformat() if ev.date_end else None,
-            "venue": ev.venue or "",
+            "venue": venue_display.get(ev.venue, ev.venue) or "",
             "event_type": ev.event_type or "",
             "artists": ev.artists or [],
             "genres": ev.genres or [],
@@ -72,7 +80,7 @@ def export_events_json(days: int = EXPORT_DAYS) -> Path:
         })
 
         if ev.venue:
-            all_venues.add(ev.venue)
+            all_venues.add(venue_display.get(ev.venue, ev.venue))
         all_genres.update(g for g in ev.genres if g)
         if ev.event_type:
             all_types.add(ev.event_type)
