@@ -66,6 +66,22 @@ case "$1" in
         # Console tiene 16 mesi mobili. Esce sempre 0: senza GOOGLE_SC_KEY
         # dice che non e' configurato e non tocca niente.
         "$PY" search_console.py
+
+        # seo_adaptive.py sta subito dopo, e sempre fuori dalla catena: legge cio' che
+        # search_console ha appena scaricato e ne ricava le pagine su cui varrebbe la
+        # pena intervenire. In sola lettura — scrive un rapporto, non tocca il sito.
+        #
+        # `--verify` e' l'altra meta' e va eseguito ogni giorno anche quando non c'e'
+        # nulla da verificare: e' il passo che, quattordici giorni dopo un override,
+        # confronta CTR e posizione con la baseline e RITIRA da solo quelli che hanno
+        # peggiorato. Un adattamento che sa solo applicare non e' adattivo: e' un
+        # cambiamento a senso unico che nessuno rilegge piu'.
+        #
+        # `--apply` NON e' qui, ed e' una scelta: applica modifiche ai titoli che Google
+        # vede, e finche' search_analytics e' vuota (nessuna pagina indicizzata, misurato
+        # il 20/08/2026) proporrebbe sul nulla. Si lancia a mano quando i dati ci sono.
+        "$PY" seo_adaptive.py
+        "$PY" seo_adaptive.py --verify
         ;;
     send)
         # La newsletter va a un destinatario esterno: se manca la password non
