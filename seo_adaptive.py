@@ -31,6 +31,8 @@ from __future__ import annotations
 
 import argparse
 import json
+import logging
+import re
 import sqlite3
 from dataclasses import dataclass, asdict
 from datetime import date, datetime, timedelta, timezone
@@ -41,6 +43,9 @@ SC_DB = BASE_DIR / "data" / "search_console.db"
 OVERRIDES = BASE_DIR / "data" / "seo_overrides.json"
 PROPOSALS = BASE_DIR / "data" / "seo_proposals.json"
 REPORT = BASE_DIR / "logs" / "seo_adaptive.md"
+log = logging.getLogger(__name__)
+SITE_LOG = BASE_DIR / "logs" / "site.err.log"
+GEO_DB = BASE_DIR / "data" / "geo_stats.db"
 
 WINDOW_DAYS = 28
 MIN_IMPRESSIONS = 30      # sotto questa soglia i numeri sono rumore, non segnale
@@ -226,11 +231,133 @@ def verify() -> list[str]:
     return esiti
 
 
+# ── GEO: la stessa domanda, posta agli assistenti ──────────────────
+# Per Google c'e' Search Console: query, CTR, posizione. Per ChatGPT e Perplexity non
+# esiste niente del genere — nessuno ti dice per quali domande vieni citato. L'unico
+# segnale reale e' il LOG del server, che dal 20/08/2026 registra lo user-agent.
+#
+# E il segnale c'e', anche se piccolo. I bot non sono tutti uguali:
+#   ChatGPT-User  = una PERSONA ha chiesto qualcosa a ChatGPT e lui e' venuto a leggere
+#                   QUI per risponderle. E' il piu' vicino a una visita che esista.
+#   OAI-SearchBot, PerplexityBot, ClaudeBot = indicizzazione, arrivano in anticipo.
+# La differenza fra le due famiglie e' la diagnosi: una pagina che i crawler leggono ma
+# che ChatGPT-User non apre mai e' indicizzata e mai citata — cioe' presente e inutile.
+#
+# I conteggi si accumulano in un DB perche' il log non e' eterno: c'e' un log-rotate nel
+# sistema e prima o poi tocchera' anche questo. I giorni gia' contati restano nel DB
+# anche quando spariscono dal file.
+GEO_BOTS = {
+    "chatgpt-user": "ChatGPT-User",
+    "oai-searchbot": "OAI-SearchBot",
+    "perplexitybot": "PerplexityBot",
+    "claudebot": "ClaudeBot",
+    "gptbot": "GPTBot",
+}
+_LOG_RE = re.compile(r'^(\S+) - - \[(\d{2})/(\w{3})/(\d{4})[^\]]*\] "(?:GET|HEAD) (\S+)[^"]*" (\d{3}) - "(.*)"$')
+_MESI = {m: i for i, m in enumerate(
+    "Jan Feb Mar Apr May Jun Jul Aug Sep Oct Nov Dec".split(), 1)}
+
+
+def _geo_init() -> None:
+    GEO_DB.parent.mkdir(parents=True, exist_ok=True)
+    with sqlite3.connect(str(GEO_DB)) as con:
+        con.execute("""CREATE TABLE IF NOT EXISTS geo_hits (
+            day TEXT NOT NULL, path TEXT NOT NULL, bot TEXT NOT NULL,
+            hits INTEGER NOT NULL, PRIMARY KEY (day, path, bot))""")
+
+
+def geo_snapshot() -> int:
+    """Conta i passaggi degli assistenti nel log e li accumula. Ritorna le righe scritte.
+
+    Idempotente: per ogni (giorno, pagina, bot) riscrive il totale letto dal log, quindi
+    rieseguirlo due volte nello stesso giorno non gonfia i numeri.
+    """
+    if not SITE_LOG.exists():
+        return 0
+    conteggi: dict[tuple[str, str, str], int] = {}
+    try:
+        with open(SITE_LOG, encoding="utf-8", errors="replace") as fh:
+            for riga in fh:
+                m = _LOG_RE.match(riga.strip())
+                if not m:
+                    continue
+                _ip, gg, mmm, aaaa, path, _code, ua = m.groups()
+                ua_l = ua.lower()
+                bot = next((nome for k, nome in GEO_BOTS.items() if k in ua_l), None)
+                if not bot:
+                    continue
+                mese = _MESI.get(mmm)
+                if not mese:
+                    continue
+                giorno = f"{aaaa}-{mese:02d}-{int(gg):02d}"
+                conteggi[(giorno, path, bot)] = conteggi.get((giorno, path, bot), 0) + 1
+    except OSError as exc:
+        log.warning("log del sito illeggibile (%s): niente statistiche GEO.", exc)
+        return 0
+    if not conteggi:
+        return 0
+    _geo_init()
+    with sqlite3.connect(str(GEO_DB)) as con:
+        con.executemany("INSERT OR REPLACE INTO geo_hits (day, path, bot, hits) VALUES (?,?,?,?)",
+                        [(g, p, b, n) for (g, p, b), n in conteggi.items()])
+    return len(conteggi)
+
+
+def _e_pagina(path: str) -> bool:
+    """True solo per le PAGINE. robots.txt, i font e il JSON sono risorse: contarli fra
+    le "pagine mai aperte" produceva una diagnosi che consigliava di migliorare il
+    contenuto di un file di font. Restano nel DB — che OAI-SearchBot legga events.json
+    e' un fatto che vale la pena sapere — ma fuori da questa lista."""
+    if path.endswith((".txt", ".xml", ".json", ".css", ".js", ".ics", ".woff2", ".png",
+                      ".jpg", ".svg", ".ico", ".webmanifest")):
+        return False
+    return path.startswith("/") and not path.startswith(("/data/", "/fonts/", "/events/ics/"))
+
+
+def geo_report_lines() -> list[str]:
+    """La sezione GEO del rapporto: chi passa, dove, e cosa non viene mai aperto."""
+    if not GEO_DB.exists():
+        return ["## Assistenti conversazionali", "", "Nessun dato: il log non e' ancora stato letto.", ""]
+    with sqlite3.connect(f"file:{GEO_DB}?mode=ro", uri=True) as con:
+        per_bot = dict(con.execute("SELECT bot, SUM(hits) FROM geo_hits GROUP BY bot"))
+        chiesti = dict(con.execute(
+            "SELECT path, SUM(hits) FROM geo_hits WHERE bot='ChatGPT-User' GROUP BY path"))
+        indicizzati = dict(con.execute(
+            "SELECT path, SUM(hits) FROM geo_hits WHERE bot<>'ChatGPT-User' GROUP BY path"))
+        giorni = [r[0] for r in con.execute("SELECT MIN(day), MAX(day) FROM geo_hits")][:1]
+    out = ["## Assistenti conversazionali", ""]
+    if not per_bot:
+        return out + ["Nessun passaggio registrato.", ""]
+    out += ["| bot | passaggi | cosa significa |", "|---|---:|---|"]
+    senso = {"ChatGPT-User": "una persona ha chiesto qualcosa a ChatGPT",
+             "OAI-SearchBot": "indicizzazione OpenAI", "PerplexityBot": "indicizzazione Perplexity",
+             "ClaudeBot": "indicizzazione Anthropic", "GPTBot": "addestramento/indice OpenAI"}
+    for b, n in sorted(per_bot.items(), key=lambda kv: -kv[1]):
+        out.append(f"| {b} | {n} | {senso.get(b, '')} |")
+    out += ["", "### Pagine che hanno risposto a una domanda vera", ""]
+    if chiesti:
+        for pth, n in sorted(((k, v) for k, v in chiesti.items() if _e_pagina(k)),
+                             key=lambda kv: -kv[1])[:10]:
+            out.append(f"- `{pth}` — {n} volte")
+    else:
+        out.append("- nessuna: finora nessun ChatGPT-User e' arrivato.")
+    mai = [p for p in indicizzati if p not in chiesti and _e_pagina(p)]
+    out += ["", "### Lette dai crawler, mai aperte per una domanda", ""]
+    out.append(f"- {len(mai)} pagine. Sono presenti nell'indice degli assistenti e non "
+               f"servono a rispondere a nessuno: il problema non e' l'accesso, e' il contenuto.")
+    for pth in sorted(mai, key=lambda p: -indicizzati[p])[:8]:
+        out.append(f"  - `{pth}` ({indicizzati[pth]} passaggi)")
+    out.append("")
+    return out
+
+
 def report() -> str:
+    geo_snapshot()          # prima si legge il log, poi si racconta
     found = diagnose()
     out = ["# SEO adattivo — cosa dicono le ricerche", "",
            f"Generato: {datetime.now().isoformat(timespec='seconds')}",
            f"Finestra: ultimi {WINDOW_DAYS} giorni · soglia {MIN_IMPRESSIONS} impression", ""]
+    out += geo_report_lines()
     if not _rows():
         out += ["## Nessun dato di ricerca",
                 "", "`search_analytics` e' vuota: finche' Google non indicizza e non arrivano",
