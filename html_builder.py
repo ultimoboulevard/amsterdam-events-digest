@@ -68,6 +68,7 @@ def _write_ics_file(ev: Event, ics_dir: Path) -> str:
         "CALSCALE:GREGORIAN",
         "METHOD:PUBLISH",
         "BEGIN:VEVENT",
+        f"DTSTAMP:{datetime.utcnow().strftime('%Y%m%dT%H%M%SZ')}",
         f"DTSTART:{start.strftime(dt_fmt)}",
         f"DTEND:{end.strftime(dt_fmt)}",
         f"SUMMARY:{_ics_escape(ev.title)}",
