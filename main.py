@@ -104,7 +104,15 @@ def cmd_collect(args: argparse.Namespace) -> list[str]:
             continue
 
         collector = cls()
-        events = collector.collect()
+        try:
+            events = collector.collect()
+        except Exception as e:  # noqa: BLE001 — one raising scraper must not kill the others
+            log.exception(
+                "BROKEN SOURCE: %s raised %s: %s — treating as 0 events, continuing",
+                source_name, type(e).__name__, e,
+            )
+            broken.append(source_name)
+            events = []
 
         # L'impronta si prende sull'output del collector, non sul DB: il DB
         # conserva le righe buone di ieri, quindi una rottura di oggi ci si

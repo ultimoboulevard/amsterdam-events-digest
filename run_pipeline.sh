@@ -29,7 +29,18 @@ fi
 
 case "$1" in
     collect)
-        "$PY" main.py collect && "$PY" enrich_artists.py \
+        # Resilienza: una fonte rotta (main.py collect esce 1 quando un
+        # collector torna 0 con storico > 0, o alza un'eccezione) NON deve
+        # fermare enrich/export/build/indexnow. Il log continua a gridare
+        # "BROKEN SOURCE" e "N broken source(s)", ma il sito si aggiorna
+        # comunque con le fonti sane. Prima: `&& enrich_artists ...` — un
+        # concertgebouw rotto lasciava il sito fermo di un giorno.
+        "$PY" main.py collect
+        collect_status=$?
+        if [ "$collect_status" -ne 0 ]; then
+            echo "WARN: main.py collect exited $collect_status — see log for broken source(s); continuing downstream"
+        fi
+        "$PY" enrich_artists.py \
             && "$PY" enrich_genres.py \
             && "$PY" export_json.py && "$PY" build_pages.py \
             && "$PY" indexnow.py
