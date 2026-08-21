@@ -311,6 +311,24 @@ _STATUS_SCHEMA = {
 }
 
 
+# Mappa tipo evento del DB → sottotipo schema.org piu' preciso. I nomi arrivano
+# come li scrive la fonte (misto EN/NL): mappiamo lower-case, senza inventare.
+# Fallback "Event" quando il tipo e' vuoto o non classificabile: meglio generico
+# corretto che specifico sbagliato.
+_TYPE_SCHEMA = {
+    "concert": "MusicEvent", "club": "MusicEvent", "clubnacht": "MusicEvent",
+    "electronic music, party": "MusicEvent",
+    "theatre": "TheaterEvent", "dance performance": "TheaterEvent",
+    "exhibition": "ExhibitionEvent", "expositie": "ExhibitionEvent",
+    "tentoonstelling": "ExhibitionEvent", "exhibition, art": "ExhibitionEvent",
+    "festival": "Festival",
+}
+
+def _schema_type(ev_type: str | None) -> str:
+    if not ev_type:
+        return "Event"
+    return _TYPE_SCHEMA.get(ev_type.strip().lower(), "Event")
+
 def _event_jsonld(ev: Event) -> dict:
     """Un oggetto schema.org/Event. Le date portano il fuso di Amsterdam."""
     # Stessa logica del display: se l'ora e' 00:00 non la conosciamo, e
@@ -320,7 +338,7 @@ def _event_jsonld(ev: Event) -> dict:
     solo_giorno = bool(ev.date and ev.date.hour == 0 and ev.date.minute == 0)
     obj: dict = {
         "@context": "https://schema.org",
-        "@type": "Event",
+        "@type": _schema_type(ev.event_type),
         "name": ev.title,
         "startDate": (start.date().isoformat() if solo_giorno
                       else start.isoformat()) if start else None,
@@ -1428,6 +1446,14 @@ def _write_llms_txt(future: list[Event], generated: datetime) -> None:
         f"- [Tonight]({BASE_URL}/events/tonight/): what is on in Amsterdam today",
         f"- [This weekend]({BASE_URL}/events/this-weekend/): Friday to Sunday",
         f"- [All dates]({BASE_URL}/events/): one page per day, each listing that day's events",
+        "",
+        "## Data structure",
+        "",
+        "- Each event page carries schema.org JSON-LD with a specific subtype where known: "
+        "`MusicEvent` (concerts, club nights), `TheaterEvent` (theatre, dance), "
+        "`ExhibitionEvent` (exhibitions), `Festival`, plus generic `Event` as fallback. "
+        "Nested `Place` with address, `Offer` with price when available, `eventStatus`, "
+        "and `eventAttendanceMode: OfflineEventAttendanceMode`.",
         "",
         "## Notes",
         "",
