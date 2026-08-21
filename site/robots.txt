@@ -2,9 +2,48 @@
 # Content Signals. Questo file esiste per dichiarare la sitemap: se
 # Cloudflare lo sovrascrive invece di appenderci i suoi segnali, la sitemap
 # va dichiarata in Search Console e questo file resta innocuo.
+
 User-agent: *
 Allow: /
+
+# Assistenti conversazionali e crawler AI: esplicitamente benvenuti.
+# La preferenza e' che ci leggano e ci citino — pubblichiamo fatti freschi
+# e datati che il modello non sa dal training. llms.txt in radice fa da mappa.
+User-agent: GPTBot
+Allow: /
+
+User-agent: ChatGPT-User
+Allow: /
+
+User-agent: OAI-SearchBot
+Allow: /
+
+User-agent: ClaudeBot
+Allow: /
+
+User-agent: anthropic-ai
+Allow: /
+
+User-agent: claude-web
+Allow: /
+
+User-agent: PerplexityBot
+Allow: /
+
+User-agent: Perplexity-User
+Allow: /
+
+User-agent: Google-Extended
+Allow: /
+
+User-agent: CCBot
+Allow: /
+
+User-agent: Applebot-Extended
+Allow: /
+
 # Un file per evento, nessun contenuto da indicizzare.
+User-agent: *
 Disallow: /events/ics/
 
 Sitemap: https://events.zenobj.net/sitemap.xml
