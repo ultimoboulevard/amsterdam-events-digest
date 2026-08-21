@@ -354,21 +354,22 @@ def _event_jsonld(ev: Event) -> dict:
     if ev.description:
         d = " ".join(ev.description.split())
         obj["description"] = d[:300].rstrip() + ("\u2026" if len(d) > 300 else "")
-    # `offers` non richiede il prezzo per essere utile: dice DOVE si comprano i biglietti
-    # e se ce ne sono ancora. Legandolo a price_min (9% degli eventi) lo emettevamo su 3
-    # eventi su 16; col link biglietti si sale al 61%. Il prezzo, quando c'e', si aggiunge.
-    if ev.price_min is not None or ev.tickets_url:
+    # `offers`: Google Search Console pretende `price` e `priceCurrency` dentro il blocco,
+    # altrimenti segnala "Missing field". Il link biglietti da solo non basta: senza prezzo
+    # il blocco viene marcato come non valido. Quindi lo emettiamo SOLO quando price_min c'e'
+    # (9% degli eventi, price_min=0 vale come gratuito). Meglio un `offers` assente che uno
+    # incompleto: Google non si lamenta di quello che non c'e'.
+    if ev.price_min is not None:
         offer: dict = {
             "@type": "Offer",
+            "price": ev.price_min,
+            "priceCurrency": "EUR",
             "url": ev.tickets_url or ev.source_url or None,
             "availability": (
                 "https://schema.org/SoldOut" if ev.tickets_status == "sold_out"
                 else "https://schema.org/InStock"
             ),
         }
-        if ev.price_min is not None:
-            offer["price"] = ev.price_min
-            offer["priceCurrency"] = "EUR"
         obj["offers"] = offer
     # `organizer` NON si emette: non abbiamo il dato. Il venue e' la location, non
     # l'organizzatore, e spacciarlo per tale sarebbe dichiarare a Google una cosa che
