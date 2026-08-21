@@ -24,10 +24,13 @@ essere pubblica per forza — quindi puo' stare tranquillamente nel repo.
 from __future__ import annotations
 
 import argparse
+import datetime
+import hashlib
 import json
 import logging
 import re
 import secrets
+import sqlite3
 from pathlib import Path
 
 import httpx
@@ -37,6 +40,7 @@ log = logging.getLogger(__name__)
 BASE_DIR = Path(__file__).resolve().parent
 SITE_DIR = BASE_DIR / "site"
 KEY_STORE = BASE_DIR / "data" / "indexnow.key"
+STATE_DB = BASE_DIR / "data" / "indexnow_state.db"
 SITEMAP = SITE_DIR / "sitemap.xml"
 
 HOST = "events.zenobj.net"
@@ -61,6 +65,11 @@ HOT_PATHS = [
     "/events/this-week/",
     "/events/next-week/",
 ]
+
+# Quanti giorni-avanti considerare per le pagine-data /events/YYYY-MM-DD/.
+# Trenta e' il compromesso: copre il "prossimo mese" che le persone cercano,
+# senza gonfiare ogni ping con URL di giorni che nessuno chiede ancora.
+DATE_LOOKAHEAD_DAYS = 30
 
 
 def get_or_create_key() -> str:
@@ -91,6 +100,76 @@ def sitemap_urls() -> list[str]:
     if not SITEMAP.exists():
         return []
     return re.findall(r"<loc>([^<]+)</loc>", SITEMAP.read_text(encoding="utf-8"))
+
+
+def _state_conn() -> sqlite3.Connection:
+    """Apre (e crea al primo giro) il DB dove teniamo l'hash dell'ultimo ping."""
+    STATE_DB.parent.mkdir(parents=True, exist_ok=True)
+    conn = sqlite3.connect(STATE_DB)
+    conn.execute(
+        "CREATE TABLE IF NOT EXISTS ping_state ("
+        "url TEXT PRIMARY KEY, "
+        "content_hash TEXT NOT NULL, "
+        "last_pinged TEXT NOT NULL)"
+    )
+    return conn
+
+
+def _sha256_file(path: Path) -> str:
+    """Digest dei byte: cosi' due giri identici non buttano lo stesso URL."""
+    return hashlib.sha256(path.read_bytes()).hexdigest()
+
+
+def date_page_candidates() -> list[tuple[str, str]]:
+    """
+    Le pagine-data per oggi + prossimi 30 giorni, dopo due cancelli che
+    contano: (a) l'URL deve stare nella sitemap, (b) l'HTML deve esistere su
+    disco. Ritorna coppie (url, hash_corrente) — l'hash lo calcoliamo qui una
+    volta sola, cosi' lo riusiamo sia per il diff sia per l'UPSERT post-ping.
+    """
+    in_sitemap = set(sitemap_urls())
+    today = datetime.date.today()
+    out: list[tuple[str, str]] = []
+    for i in range(DATE_LOOKAHEAD_DAYS + 1):
+        d = today + datetime.timedelta(days=i)
+        url = f"{BASE_URL}/events/{d.isoformat()}/"
+        html = SITE_DIR / "events" / d.isoformat() / "index.html"
+        if url not in in_sitemap:
+            continue
+        if not html.exists():
+            # Se manca l'HTML, non ha senso annunciarlo: 404 garantito.
+            log.warning("HTML mancante, salto %s", url)
+            continue
+        out.append((url, _sha256_file(html)))
+    return out
+
+
+def filter_changed(candidates: list[tuple[str, str]]) -> list[tuple[str, str]]:
+    """
+    Confronta l'hash corrente con quello nel DB. Tiene solo gli URL nuovi o
+    cambiati: gli identici li lasciamo in pace, cosi' non facciamo rumore.
+    """
+    if not candidates:
+        return []
+    with _state_conn() as conn:
+        seen = dict(conn.execute("SELECT url, content_hash FROM ping_state").fetchall())
+    return [(u, h) for (u, h) in candidates if seen.get(u) != h]
+
+
+def record_pings(pairs: list[tuple[str, str]]) -> None:
+    """UPSERT dello stato — solo dopo che IndexNow ha risposto 200/202."""
+    if not pairs:
+        return
+    now = datetime.datetime.now(datetime.UTC).isoformat()
+    with _state_conn() as conn:
+        conn.executemany(
+            "INSERT INTO ping_state(url, content_hash, last_pinged) "
+            "VALUES (?, ?, ?) "
+            "ON CONFLICT(url) DO UPDATE SET "
+            "content_hash=excluded.content_hash, last_pinged=excluded.last_pinged",
+            [(u, h, now) for u, h in pairs],
+        )
+        conn.commit()
 
 
 def submit(urls: list[str], dry_run: bool = False) -> int:
@@ -144,8 +223,26 @@ def main() -> None:
     ap.add_argument("--dry-run", action="store_true", help="stampa il payload, non invia")
     args = ap.parse_args()
 
-    urls = sitemap_urls() if args.all else [BASE_URL + p for p in HOT_PATHS]
+    # --all resta la "bomba idempotente": tutta la sitemap, niente filtri,
+    # niente stato. Serve quando si vuole rifare il pieno a mano.
+    hot_urls = [BASE_URL + p for p in HOT_PATHS]
+    to_record: list[tuple[str, str]] = []
+    if args.all:
+        urls = sitemap_urls()
+    else:
+        # Le HOT_PATHS partono sempre, senza passare dal DB: sono viste
+        # scorrevoli — "oggi" per definizione cambia ogni giorno.
+        to_record = filter_changed(date_page_candidates())
+        urls = hot_urls + [u for u, _ in to_record]
+
     code = submit(urls, dry_run=args.dry_run)
+
+    # Lo stato lo tocchiamo solo se il ping e' andato davvero a buon fine.
+    # Su errore, --dry-run o --all lasciamo il DB fermo: cosi' il prossimo
+    # giro riprova per davvero.
+    if not args.dry_run and not args.all and code in (200, 202):
+        record_pings(to_record)
+
     if not args.dry_run:
         if code in (200, 202):
             print(f"\n✅ IndexNow: HTTP {code} · {len(urls)} URL annunciati")

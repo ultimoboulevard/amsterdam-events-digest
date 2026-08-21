@@ -45,3 +45,4 @@ data/sitemap_state.json
 # Storico di Google Search Console (search_console.py). Cresce ogni giorno e
 # contiene le query di ricerca reali: fuori da un repo pubblico.
 data/search_console.db
+data/indexnow_state.db
