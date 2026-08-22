@@ -84,8 +84,10 @@ def _extract_ticket_status(attrs: dict) -> str:
         return "rescheduled"
     if attrs.get("isSoldOut"):
         return "sold_out"
-    if attrs.get("isFreeForMembers"):
-        return "free"
+    # `isFreeForMembers` = gratis SOLO per soci We Are Public / Subbacultcha, non
+    # per il pubblico generale. Marcarlo come "free" era una bugia agli occhi
+    # di chi non e' socio: 43 eventi Melkweg pagati stavano andando in giro
+    # etichettati gratis (bug scoperto su "When Chai Met Toast", 22/08/2026).
     return "available"
 
 
