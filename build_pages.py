@@ -1219,6 +1219,87 @@ def _write_index(day_list: list[date], by_day: dict[date, list[Event]],
     return markup
 
 
+# ── CTA "tonight" sopra la piega ───────────────────────────────────
+# Categorie mostrate nella riga breakdown. Ordine = ordine di apparizione.
+# Le chiavi corrispondono a cio' che restituisce type_from_genres()
+# (o canonical_type() come fallback), normalizzato lower().
+_CTA_CATEGORIES: list[tuple[str, tuple[str, ...], str]] = [
+    # (label singolare, alias lower-case da matchare, label plurale)
+    ("concert",    ("concert",),                        "concerts"),
+    ("club night", ("club", "clubnacht"),               "club nights"),
+    ("exhibition", ("exhibition", "expositie",
+                    "tentoonstelling"),                 "exhibitions"),
+    ("theatre",    ("theatre", "theater"),              "theatre shows"),
+    ("dance show", ("dance performance",),              "dance shows"),
+    ("festival",   ("festival",),                       "festivals"),
+]
+
+
+def _cta_breakdown(evs: list[Event], max_cats: int = 3) -> str:
+    """
+    Righetta 'X concerts · Y club nights · Z exhibitions'.
+
+    Categorie in ordine di dimensione, prime `max_cats` non vuote.
+    """
+    buckets: Counter = Counter()
+    for ev in evs:
+        tipo = (type_from_genres(ev.event_type, ev.genres) or "").strip().lower()
+        for label_sing, aliases, label_plur in _CTA_CATEGORIES:
+            if tipo in aliases:
+                buckets[label_plur] += 1
+                break
+    top = buckets.most_common(max_cats)
+    return " · ".join(f"{n} {lbl}" for lbl, n in top if n)
+
+
+def _tonight_cta_html(win_view: dict[str, dict[date, list[Event]]],
+                      counts: dict[str, int]) -> tuple[str, list[Event]]:
+    """
+    CTA prominente 'X events tonight in Amsterdam' + breakdown per categoria.
+
+    Sceglie la finestra piu' vicina che ha almeno un evento: tonight → today
+    → tomorrow. Se anche tomorrow e' vuota (mai visto in produzione) torna
+    stringa vuota, cosi' la home resta come prima invece di mostrare '0'.
+
+    Ritorna (html, eventi_mostrati): gli eventi servono a chi vuole caricare
+    dati strutturati per il blocco.
+    """
+    for slug, phrase in (("tonight", "tonight"),
+                         ("today", "today"),
+                         ("tomorrow", "tomorrow")):
+        n = counts.get(slug, 0)
+        if not n:
+            continue
+        evs = [ev for d in sorted(win_view[slug]) for ev in win_view[slug][d]]
+        breakdown = _cta_breakdown(evs)
+        # Inline: evita di toccare style.css e bumpare la ?v=. Colore accent
+        # arancione (var(--accent-orange)) coerente col design attuale.
+        html_out = (
+            f'<a class="tonight-cta" href="events/{slug}/" '
+            f'style="display:block;text-decoration:none;color:inherit;'
+            f'margin:0 0 18px;padding:20px 22px;border-radius:12px;'
+            f'background:linear-gradient(135deg,#f97316 0%,#ec4899 100%);'
+            f'box-shadow:0 8px 24px rgba(249,115,22,0.28);'
+            f'transition:transform .15s ease,box-shadow .15s ease;">'
+            f'<div style="display:flex;align-items:baseline;gap:14px;'
+            f'flex-wrap:wrap;color:#fff;">'
+            f'<span aria-hidden="true" style="font-size:1.8rem;'
+            f'font-weight:900;line-height:1;">&rarr;</span>'
+            f'<span style="font-size:2rem;font-weight:900;line-height:1;'
+            f'font-variant-numeric:tabular-nums;">{n}</span>'
+            f'<span style="font-size:1.15rem;font-weight:800;'
+            f'text-transform:uppercase;letter-spacing:0.04em;">'
+            f'events {esc(phrase)} in Amsterdam</span>'
+            f'</div>'
+            + (f'<div style="margin-top:8px;color:rgba(255,255,255,0.92);'
+               f'font-size:0.85rem;font-weight:700;letter-spacing:0.02em;">'
+               f'{esc(breakdown)}</div>' if breakdown else "")
+            + '</a>'
+        )
+        return html_out, evs
+    return "", []
+
+
 # ── Blocco statico della home ──────────────────────────────────────
 def _home_pick(evs: list[Event], matches: dict[str, dict], n: int) -> list[Event]:
     """
@@ -1339,6 +1420,14 @@ def _write_home(*, specs: list[tuple[str, list[date], str, str]],
         last = month_slugs[-1]
         horizon = f" listed through {fmt_month_long(int(last[:4]), int(last[5:7]))}"
 
+    # CTA sopra la piega: "\u2192 N events tonight in Amsterdam" + breakdown.
+    # Va PRIMA di h1 e lede: e' il primo pixel utile della home, deve intercettare
+    # la domanda concreta ("cosa faccio stasera?") prima della descrizione del sito.
+    cta_html, cta_evs = _tonight_cta_html(win_view, counts)
+    if cta_html:
+        parts.append(cta_html)
+        shown.extend(cta_evs[:HOME_HIGHLIGHTS])
+
     parts.append('<h1 class="home-h1">What\u2019s on in Amsterdam</h1>')
     parts.append(
         '<p class="home-lede">Every gig, club night, exhibition and festival in '
@@ -1389,8 +1478,10 @@ def _write_home(*, specs: list[tuple[str, list[date], str, str]],
         'sells nothing and is affiliated with no venue.</p>'
     )
 
-    # parts[0] e parts[1] sono <h1> e lede: l'intestazione. Il resto sono le liste.
-    head_parts, list_parts = parts[:2], parts[2:]
+    # In cima ci sono, in ordine: (0) la CTA "tonight" — solo se generata; (1) <h1>;
+    # (2) lede. L'intestazione (top block) copre CTA + h1 + lede; le liste stanno sotto.
+    head_len = 3 if cta_html else 2
+    head_parts, list_parts = parts[:head_len], parts[head_len:]
     block_top = ('<section class="home-intro home-intro--top">\n  '
                  + "\n  ".join(head_parts) + "\n</section>")
     block = ('<section class="home-intro">\n  '
