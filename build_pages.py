@@ -811,6 +811,24 @@ def _window_copy(slug: str, label: str, phrase: str,
 
 # ── Costruzione ────────────────────────────────────────────────────
 
+
+def _features_in_range(features_map: dict, dates) -> list:
+    """Feature items unificati, ordinati per data, deduplicati per slug.
+    Serve alle viste che coprono un range (mese, this-week, next-week...).
+    """
+    seen = set()
+    out = []
+    for d in sorted(dates):
+        key = d.isoformat() if hasattr(d, "isoformat") else str(d)
+        for it in features_map.get(key, []):
+            slug = it.get("slug") or it.get("url") or it.get("title") or ""
+            if slug in seen:
+                continue
+            seen.add(slug)
+            out.append(it)
+    return out
+
+
 def _load_features_map() -> dict:
     """Restituisce il mapping YYYY-MM-DD -> [{title,url,...}].
     Se il file non esiste o e malformato, il ritorno e vuoto e il rebuild
@@ -990,7 +1008,7 @@ def build_pages(days: int = HORIZON_DAYS) -> dict:
         write_page(slug, _shell(
             title=title, description=lede, canonical=f"{BASE_URL}/events/{slug}/",
             root="../../", h1=h1, lede=lede,
-            body=_events_section(shown, view, matches, ics_rel, headings=len(shown) > 1),
+            body=_feature_banner_html(_features_in_range(features_map, wdays)) + _events_section(shown, view, matches, ics_rel, headings=len(shown) > 1),
             jsonld=_jsonld_script(flat), crumbs=crumbs, links=links,
             extra_scripts=extra, generated=generated,
         ))
@@ -1105,7 +1123,7 @@ def build_pages(days: int = HORIZON_DAYS) -> dict:
             title=f"Amsterdam Events {name} — {plural(n)}, day by day",
             description=lede, canonical=f"{BASE_URL}/events/{mslug}/", root="../../",
             h1=f"Events in Amsterdam, {name}", lede=lede,
-            body=_month_body(y, m, by_day, matches, day_slugs),
+            body=_feature_banner_html(_features_in_range(features_map, mdays)) + _month_body(y, m, by_day, matches, day_slugs),
             crumbs=_link("../../", "◀ Calendar") + _link("../", "All dates"),
             links=links, generated=generated,
         ))
