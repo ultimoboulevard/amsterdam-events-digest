@@ -78,6 +78,11 @@ SITEMAP_STATE = BASE_DIR / "data" / "sitemap_state.json"
 # adattiva e' inerte finche' non c'e' qualcosa da adattare.
 SEO_OVERRIDES = BASE_DIR / "data" / "seo_overrides.json"
 
+# Redazionale: link stabile /events/YYYY-MM-DD/ -> /features/<slug>/ .
+# I banner sopravvivono al rebuild giornaliero perche partono da qui,
+# non da un patch a posteriori sul file HTML.
+FEATURES_MAP = BASE_DIR / "data" / "features_map.json"
+
 BASE_URL = "https://events.zenobj.net"
 # Il marchio sta in og:site_name, nell'header e nel footer — non nei <title>.
 # Google il nome del sito lo prende da og:site_name e lo mostra su una riga
@@ -805,6 +810,50 @@ def _window_copy(slug: str, label: str, phrase: str,
 
 
 # ── Costruzione ────────────────────────────────────────────────────
+
+def _load_features_map() -> dict:
+    """Restituisce il mapping YYYY-MM-DD -> [{title,url,...}].
+    Se il file non esiste o e malformato, il ritorno e vuoto e il rebuild
+    prosegue senza banner. Nessuna feature deve mai bloccare la pipeline.
+    """
+    if not FEATURES_MAP.exists():
+        return {}
+    try:
+        raw = json.loads(FEATURES_MAP.read_text(encoding="utf-8"))
+    except Exception as e:
+        log.warning("features_map.json non e JSON valido, lo ignoro: %s", e)
+        return {}
+    if not isinstance(raw, dict):
+        log.warning("features_map.json non e un dict, lo ignoro.")
+        return {}
+    return raw
+
+
+def _feature_banner_html(items: list[dict]) -> str:
+    """Callout in cima alla pagina-data che manda al long-read.
+    Stile inline, cosi non serve toccare style.css e bumpare la ?v=.
+    """
+    if not items:
+        return ""
+    out = []
+    for it in items:
+        title = esc(it.get("title") or "")
+        url = it.get("url") or ""
+        if not (title and url):
+            continue
+        out.append(
+            f'<a href="{esc(url)}" class="feature-callout" '
+            f'style="display:block;padding:14px 18px;'
+            f'background:linear-gradient(135deg,#7c3aed 0%,#ec4899 50%,#06b6d4 100%);'
+            f'border-radius:8px;text-decoration:none;color:#fff;margin-bottom:24px;'
+            f'font-weight:800;font-size:0.95rem;">'
+            f'<span style="font-size:0.65rem;letter-spacing:0.12em;'
+            f'text-transform:uppercase;opacity:0.85;display:block;margin-bottom:4px;">'
+            f'Feature</span>{title} &rarr;</a>'
+        )
+    return "".join(out)
+
+
 def build_pages(days: int = HORIZON_DAYS) -> dict:
     """Rigenera site/events/ da zero e riscrive site/sitemap.xml."""
     init_db()
@@ -812,6 +861,9 @@ def build_pages(days: int = HORIZON_DAYS) -> dict:
 
     generated = datetime.now()
     today = generated.date()
+
+    # Mapping data -> feature articles (redazionale). Vuoto se il file manca.
+    features_map = _load_features_map()
 
     # Si legge anche INDIETRO di PAST_DAY_GRACE_DAYS: le pagine gia' indicizzate
     # devono sopravvivere alla data dell'evento invece di diventare 404.
@@ -982,7 +1034,7 @@ def build_pages(days: int = HORIZON_DAYS) -> dict:
             title=f"Amsterdam Events on {long_day} — {plural(len(evs))}",
             description=lede, canonical=canonical, root="../../",
             h1=f"Events in Amsterdam on {long_day}", lede=lede,
-            body=_events_section([d], by_day, matches, ics_rel, headings=False),
+            body=_feature_banner_html(features_map.get(slug, [])) + _events_section([d], by_day, matches, ics_rel, headings=False),
             jsonld=_jsonld_script(evs), crumbs=crumbs, links=links, generated=generated,
         ))
         if not twin:
