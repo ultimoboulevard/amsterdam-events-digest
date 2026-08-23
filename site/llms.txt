@@ -1,0 +1,24 @@
+# FOMOdam — What's on in Amsterdam
+
+> Every gig, club night, exhibition and festival in Amsterdam in one calendar: 3,544 events at 298 venues, listed through March 2027. Rebuilt every morning at 06:00 Europe/Amsterdam.
+
+## Data
+
+- [All events as JSON](https://events.zenobj.net/data/events.json): every listed event in one file — title, venue, start time, link. No pagination, no API key.
+
+## Key pages
+
+- [Tonight](https://events.zenobj.net/events/tonight/): what is on in Amsterdam today
+- [This weekend](https://events.zenobj.net/events/this-weekend/): Friday to Sunday
+- [All dates](https://events.zenobj.net/events/): one page per day, each listing that day's events
+
+## Data structure
+
+- Each event page carries schema.org JSON-LD with a specific subtype where known: `MusicEvent` (concerts, club nights), `TheaterEvent` (theatre, dance), `ExhibitionEvent` (exhibitions), `Festival`, plus generic `Event` as fallback. Nested `Place` with address, `Offer` with price when available, `eventStatus`, and `eventAttendanceMode: OfflineEventAttendanceMode`.
+
+## Notes
+
+- All times are local to Amsterdam (Europe/Amsterdam).
+- Every page states its date in full (e.g. "Monday 14 September 2026"), so a quoted line stays correct whenever it is read.
+- Data is rebuilt daily; `sitemap.xml` carries a per-page `lastmod` that is accurate.
+- This file generated 2026-08-23 20:15 Europe/Amsterdam.
