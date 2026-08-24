@@ -12,7 +12,7 @@ Each entry documents: file path (or URL if hotlinked), source, license type, att
 
 | Asset | Path | Source | License | Attribution | Permission granted |
 |-------|------|--------|---------|-------------|--------------------|
-| Doronzo portrait (hero) | `site/features/giuseppe-doronzo-koper8-bimhuis-2026-10-25/assets/doronzo-hero.jpg` | https://backend.bimhuis.nl/app/uploads/2026/08/251026_koper8-photo4et.jpg | Editorial use with attribution | "Photo by Yiğit Demircioğlu, courtesy Bimhuis. Used with permission." | User (Francesco Zaccaria) confirmed via chat 2026-08-24 |
+| Koper8 quartet portrait (hero) | `site/features/giuseppe-doronzo-koper8-bimhuis-2026-10-25/assets/doronzo-hero.jpg` | https://backend.bimhuis.nl/app/uploads/2026/08/251026_koper8-photo4et.jpg | Editorial use with attribution | "Koper8 quartet — Doronzo, Anastasakis, Laubrock, Rainey. Photo by Yiğit Demircioğlu, courtesy Bimhuis. Used with permission." | User (Francesco Zaccaria) confirmed via chat 2026-08-24 |
 
 ### 2026-08-23 — Dave Clarke ADE 30 feature
 
