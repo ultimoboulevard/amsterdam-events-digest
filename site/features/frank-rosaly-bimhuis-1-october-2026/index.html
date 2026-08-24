@@ -193,7 +193,15 @@ article.feature p > img + em {
   text-align: center; margin: 0 0 40px; line-height: 1.5;
 }
 article.feature hr { border: 0; border-top: 1px solid var(--border-subtle); margin: 56px 0; }
-.odesli-embeds iframe { display: block; margin: 8px 0; border-radius: 6px; overflow: hidden; }
+.album-cards { display: grid; grid-template-columns: 1fr; gap: 12px; margin: 24px 0 28px; }
+@media (min-width: 620px) { .album-cards { grid-template-columns: 1fr 1fr; } }
+.album-card { display: flex; gap: 14px; align-items: center; padding: 12px; border: 1px solid var(--border-subtle); border-radius: var(--radius); background: rgba(255,255,255,0.02); }
+.album-card img { width: 72px; height: 72px; border-radius: 4px; margin: 0 !important; border: 1px solid var(--border-subtle); flex: none; }
+.album-card .meta { font-size: 0.9rem; line-height: 1.4; color: var(--text-primary); }
+.album-card .meta strong { display: block; color: #fff; font-size: 0.98rem; font-weight: 800; margin-bottom: 2px; }
+.album-card .meta .details { display: block; color: var(--text-secondary); font-size: 0.78rem; margin-bottom: 6px; }
+.album-card .meta a.listen { display: inline-block; padding: 4px 10px; border: 1px solid var(--accent-cyan); border-radius: 4px; color: var(--accent-cyan); font-size: 0.72rem; font-weight: 800; text-transform: uppercase; letter-spacing: 0.05em; text-decoration: none; }
+.album-card .meta a.listen:hover { background: var(--accent-cyan); color: #000; }
 </style>
 </head>
 <body>
@@ -232,11 +240,39 @@ article.feature hr { border: 0; border-top: 1px solid var(--border-subtle); marg
 <p>Five weeks before the Bimhuis date, on <strong><a href="https://www.concertgebouw.nl/en/concerts/45471289-ibelisse-guardia-ferragutti-frank-rosaly-with-mestizx---basement-sessions">Friday 28 August 2026, 19:30</a></strong>, Rosaly and Guardia Ferragutti bring the same <em>MESTIZX</em> material to the <a href="https://www.concertgebouw.nl/en/concerts/45471289-ibelisse-guardia-ferragutti-frank-rosaly-with-mestizx---basement-sessions">Concertgebouw&rsquo;s Choir Hall</a>, but stripped to duo — voice and drums, minimal electronics, no Parker, no Frye. It is a <a href="https://www.concertgebouw.nl/en/concerts/45471289-ibelisse-guardia-ferragutti-frank-rosaly-with-mestizx---basement-sessions">Basement Sessions concert</a>, part of the house&rsquo;s SummerConcerts strand, and at €19 (plus a €5 order fee) one of the cheapest doors the Concertgebouw offers all year. Different night, different bill, different room — same record at its intimate core. If you want to hear <em>MESTIZX</em> in the two most opposite institutional settings Amsterdam can offer, five weeks apart, this is the pairing. Tickets and details on the <a href="https://www.concertgebouw.nl/en/concerts/45471289-ibelisse-guardia-ferragutti-frank-rosaly-with-mestizx---basement-sessions">Concertgebouw page</a>.</p>
 <h2>A primer, if you&rsquo;re new to Jeff Parker</h2>
 <p>You don&rsquo;t need this section if Tortoise, International Anthem, or Suite for Max Brown already mean something to you. If they don&rsquo;t, here is a ninety-minute walk through Parker&rsquo;s world: start with Tortoise&rsquo;s 1996 <a href="https://en.wikipedia.org/wiki/Millions_Now_Living_Will_Never_Die">post-rock foundational text</a> for the Chicago context he arrived from; jump to his own 2012 Delmark solo record for the guitar language undiluted; then two International Anthem records &mdash; the 2016 debut and the 2020 breakthrough &mdash; that reset what a jazz-adjacent band could sound like on a small independent label; finish with a track from the 2024 live-in-Los Angeles record to hear him now. In order, one listen. You&rsquo;ll know by the end whether Rosaly&rsquo;s quartet at the Bimhuis is a night for you. The four Chicago and Los Angeles records are in the cards below.</p>
-<div class="odesli-embeds">
-  <iframe width="100%" height="52" src="https://odesli.co/embed/?url=https%3A%2F%2Falbum.link%2Fi%2F1107012831&theme=light" frameborder="0" allowfullscreen sandbox="allow-same-origin allow-scripts allow-presentation allow-popups allow-popups-to-escape-sandbox" allow="clipboard-read; clipboard-write"></iframe><!-- The New Breed -->
-  <iframe width="100%" height="52" src="https://odesli.co/embed/?url=https%3A%2F%2Falbum.link%2Fi%2F1491896043&theme=light" frameborder="0" allowfullscreen sandbox="allow-same-origin allow-scripts allow-presentation allow-popups allow-popups-to-escape-sandbox" allow="clipboard-read; clipboard-write"></iframe><!-- Suite for Max Brown -->
-  <iframe width="100%" height="52" src="https://odesli.co/embed/?url=https%3A%2F%2Falbum.link%2Fi%2F1777236922&theme=light" frameborder="0" allowfullscreen sandbox="allow-same-origin allow-scripts allow-presentation allow-popups allow-popups-to-escape-sandbox" allow="clipboard-read; clipboard-write"></iframe><!-- The Way Out of Easy -->
-  <iframe width="100%" height="52" src="https://odesli.co/embed/?url=https%3A%2F%2Falbum.link%2Fi%2F1732608936&theme=light" frameborder="0" allowfullscreen sandbox="allow-same-origin allow-scripts allow-presentation allow-popups allow-popups-to-escape-sandbox" allow="clipboard-read; clipboard-write"></iframe><!-- MESTIZX -->
+<div class="album-cards" role="list">
+  <div class="album-card" role="listitem">
+    <img src="https://f4.bcbits.com/img/a1291284488_5.jpg" alt="The New Breed album cover" width="72" height="72" loading="lazy">
+    <div class="meta">
+      <strong>The New Breed</strong>
+      <span class="details">Jeff Parker &middot; International Anthem, 2016</span>
+      <a class="listen" href="https://album.link/i/1107012831" target="_blank" rel="noopener">Listen</a>
+    </div>
+  </div>
+  <div class="album-card" role="listitem">
+    <img src="https://f4.bcbits.com/img/a0572868824_5.jpg" alt="Suite for Max Brown album cover" width="72" height="72" loading="lazy">
+    <div class="meta">
+      <strong>Suite for Max Brown</strong>
+      <span class="details">Jeff Parker &middot; International Anthem / Nonesuch, 2020</span>
+      <a class="listen" href="https://album.link/i/1491896043" target="_blank" rel="noopener">Listen</a>
+    </div>
+  </div>
+  <div class="album-card" role="listitem">
+    <img src="https://f4.bcbits.com/img/a2139666555_5.jpg" alt="The Way Out of Easy album cover" width="72" height="72" loading="lazy">
+    <div class="meta">
+      <strong>The Way Out of Easy</strong>
+      <span class="details">Jeff Parker ETA IVtet &middot; International Anthem, 2024</span>
+      <a class="listen" href="https://album.link/i/1777236922" target="_blank" rel="noopener">Listen</a>
+    </div>
+  </div>
+  <div class="album-card" role="listitem">
+    <img src="https://f4.bcbits.com/img/a1116156932_5.jpg" alt="MESTIZX album cover" width="72" height="72" loading="lazy">
+    <div class="meta">
+      <strong>MESTIZX</strong>
+      <span class="details">Ibelisse Guardia Ferragutti &amp; Frank Rosaly &middot; International Anthem, 2024</span>
+      <a class="listen" href="https://album.link/i/1732608936" target="_blank" rel="noopener">Listen</a>
+    </div>
+  </div>
 </div>
 <p>Full playlist on TIDAL: <strong><a href="https://tidal.com/playlist/6a303f8a-034d-42e8-8d3c-35b0aa69827a">the primer, in order</a></strong>.</p>
 <h2>Practical</h2>
