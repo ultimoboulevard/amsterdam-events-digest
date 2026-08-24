@@ -1,6 +1,6 @@
 # FOMOdam — What's on in Amsterdam
 
-> Every gig, club night, exhibition and festival in Amsterdam in one calendar: 3,594 events at 301 venues, listed through March 2027. Rebuilt every morning at 06:00 Europe/Amsterdam.
+> Every gig, club night, exhibition and festival in Amsterdam in one calendar: 3,592 events at 302 venues, listed through March 2027. Rebuilt every morning at 06:00 Europe/Amsterdam.
 
 ## Data
 
@@ -21,4 +21,4 @@
 - All times are local to Amsterdam (Europe/Amsterdam).
 - Every page states its date in full (e.g. "Monday 14 September 2026"), so a quoted line stays correct whenever it is read.
 - Data is rebuilt daily; `sitemap.xml` carries a per-page `lastmod` that is accurate.
-- This file generated 2026-08-24 08:37 Europe/Amsterdam.
+- This file generated 2026-08-24 11:53 Europe/Amsterdam.
