@@ -242,11 +242,31 @@ def _window_specs(today: date) -> list[tuple[str, list[date], str, str]]:
 
 
 # ── Carta evento (specchio di cardHTML in site/app.js:528) ─────────
-def _event_card(ev: Event, match: dict | None, ics_rel: str) -> str:
+def _event_feature_link(ev, day_features):
+    """Ritorna la feature (kind=feature) che matcha questo evento per titolo.
+    Match case-insensitive contro event_title_match. None se nessun match.
+    """
+    if not day_features or not ev or not getattr(ev, "title", None):
+        return None
+    t = ev.title.lower()
+    for f in day_features:
+        if f.get("kind") != "feature":
+            continue
+        for kw in f.get("event_title_match", []) or []:
+            if kw and kw.lower() in t:
+                return f
+    return None
+
+
+def _event_card(ev: Event, match: dict | None, ics_rel: str, feature_link: dict | None = None) -> str:
     tipo = type_from_genres(ev.event_type, ev.genres)  # stessa regola del filtro (danza inclusa)
     emoji = type_emoji(tipo)
     src_lbl = source_label(ev.source)
 
+    feature_html = (
+        f'<a class="feature-badge" href="{esc(feature_link["url"])}">Feature</a>'
+        if feature_link else ""
+    )
     match_html = ""
     if match:
         cls = "library" if match.get("type") == "Library Match" else "discovery"
@@ -300,6 +320,7 @@ def _event_card(ev: Event, match: dict | None, ics_rel: str) -> str:
             {_status_badge(ev.tickets_status)}
           </div>
           {match_html}
+          {feature_html}
           <h3 class="event-title">{esc(ev.title)}</h3>
           {artists_html}
           {genres_html}
@@ -705,7 +726,7 @@ def _page_horizon(events: list[Event], today: date) -> tuple[list[str], date]:
 # ── Blocchi di eventi ──────────────────────────────────────────────
 def _events_section(days: list[date], by_day: dict[date, list[Event]],
                     matches: dict[str, dict], ics_rel: dict[str, str],
-                    *, headings: bool) -> str:
+                    *, headings: bool, features_map: dict | None = None) -> str:
     out = []
     for d in days:
         evs = by_day.get(d, [])
@@ -718,7 +739,8 @@ def _events_section(days: list[date], by_day: dict[date, list[Event]],
                 f'<span class="count">{plural(len(evs))}</span></h2>'
             )
         cards = "\n".join(
-            _event_card(ev, matches.get(ev.dedup_key), ics_rel.get(ev.dedup_key, ""))
+            _event_card(ev, matches.get(ev.dedup_key), ics_rel.get(ev.dedup_key, ""),
+                        _event_feature_link(ev, (features_map or {}).get(d.isoformat(), [])))
             for ev in evs
         )
         out.append(f'<div class="events-grid">{cards}</div>')
@@ -1009,7 +1031,7 @@ def build_pages(days: int = HORIZON_DAYS) -> dict:
         write_page(slug, _shell(
             title=title, description=lede, canonical=f"{BASE_URL}/events/{slug}/",
             root="../../", h1=h1, lede=lede,
-            body=_feature_banner_html(_features_in_range(features_map, wdays)) + _events_section(shown, view, matches, ics_rel, headings=len(shown) > 1),
+            body=_feature_banner_html(_features_in_range(features_map, wdays)) + _events_section(shown, view, matches, ics_rel, headings=len(shown) > 1, features_map=features_map),
             jsonld=_jsonld_script(flat), crumbs=crumbs, links=links,
             extra_scripts=extra, generated=generated,
         ))
@@ -1053,7 +1075,7 @@ def build_pages(days: int = HORIZON_DAYS) -> dict:
             title=f"Amsterdam Events on {long_day} — {plural(len(evs))}",
             description=lede, canonical=canonical, root="../../",
             h1=f"Events in Amsterdam on {long_day}", lede=lede,
-            body=_feature_banner_html(features_map.get(slug, [])) + _events_section([d], by_day, matches, ics_rel, headings=False),
+            body=_feature_banner_html(features_map.get(slug, [])) + _events_section([d], by_day, matches, ics_rel, headings=False, features_map=features_map),
             jsonld=_jsonld_script(evs), crumbs=crumbs, links=links, generated=generated,
         ))
         if not twin:
@@ -1095,7 +1117,7 @@ def build_pages(days: int = HORIZON_DAYS) -> dict:
             title=f"Amsterdam Events on {long_day}",
             description=lede, canonical=f"{BASE_URL}/events/{slug}/", root="../../",
             h1=f"Events in Amsterdam on {long_day}", lede=lede,
-            body=notice + _events_section([d], by_day, matches, ics_rel, headings=False),
+            body=notice + _events_section([d], by_day, matches, ics_rel, headings=False, features_map=features_map),
             crumbs=_link("../../", "\u25c0 Calendar") + _link("../", "All dates"),
             links=links, noindex=True, generated=generated,
         ))
