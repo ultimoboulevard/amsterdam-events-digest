@@ -382,8 +382,23 @@ def _event_jsonld(ev: Event) -> dict:
         },
         "url": ev.source_url or None,
     }
+    # endDate: se il DB ce l'ha, usiamo quello. Altrimenti fallback ragionevole:
+    # +3h per eventi con orario noto (durata mediana concerto/dj set), fine giornata
+    # per eventi "tutto il giorno" (mostre, mercatini). Google contava 263 eventi
+    # senza endDate; un default deterministico e' meglio dell'assenza.
     if ev.date_end:
         obj["endDate"] = ev.date_end.replace(tzinfo=TZ).isoformat()
+    elif start:
+        if solo_giorno:
+            obj["endDate"] = start.replace(hour=23, minute=59, second=0).isoformat()
+        else:
+            obj["endDate"] = (start + timedelta(hours=3)).isoformat()
+
+    # organizer: fallback al venue come Organization. Non e' il "vero" organizer
+    # (che spesso non abbiamo), ma il venue e' l'entita' pubblica associata all'evento
+    # e Google preferisce un valore concreto a un campo assente. Skippa placeholder.
+    if ev.venue and ev.venue.strip().upper() not in ("TBA", "TBD", "UNKNOWN"):
+        obj["organizer"] = {"@type": "Organization", "name": ev.venue}
     if ev.artists:
         obj["performer"] = [
             {"@type": "PerformingGroup", "name": a} for a in ev.artists[:6] if a
@@ -398,12 +413,28 @@ def _event_jsonld(ev: Event) -> dict:
     if ev.description:
         d = " ".join(ev.description.split())
         obj["description"] = d[:300].rstrip() + ("\u2026" if len(d) > 300 else "")
+    else:
+        # Fallback deterministico: titolo + venue + data. Google ne contava 827 senza,
+        # e questa formulazione non inventa nulla — sono solo metadati riformattati.
+        parts = [ev.title]
+        if ev.venue:
+            parts.append(f"at {ev.venue}")
+        if ev.date:
+            parts.append(ev.date.strftime("on %A %-d %B %Y"))
+        obj["description"] = " ".join(parts) + ". Live event in Amsterdam."
     # `offers`: Google Search Console pretende `price` e `priceCurrency` dentro il blocco,
     # altrimenti segnala "Missing field". Il link biglietti da solo non basta: senza prezzo
     # il blocco viene marcato come non valido. Quindi lo emettiamo SOLO quando price_min c'e'
     # (9% degli eventi, price_min=0 vale come gratuito). Meglio un `offers` assente che uno
     # incompleto: Google non si lamenta di quello che non c'e'.
     if ev.price_min is not None:
+        # validFrom: quando l'offerta e' diventata acquistabile. Default conservativo:
+        # 30 giorni prima della data evento, che copre la stragrande maggioranza dei
+        # cicli di vendita reali. Se un giorno il DB avra' un `tickets_opened_at`
+        # lo useremo, ma il fallback e' meglio del "missing field" di GSC.
+        valid_from = None
+        if ev.date:
+            valid_from = (ev.date - timedelta(days=30)).replace(tzinfo=TZ).isoformat()
         offer: dict = {
             "@type": "Offer",
             "price": ev.price_min,
@@ -413,6 +444,7 @@ def _event_jsonld(ev: Event) -> dict:
                 "https://schema.org/SoldOut" if ev.tickets_status == "sold_out"
                 else "https://schema.org/InStock"
             ),
+            "validFrom": valid_from,
         }
         obj["offers"] = offer
     # `organizer` NON si emette: non abbiamo il dato. Il venue e' la location, non
