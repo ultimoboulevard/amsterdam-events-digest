@@ -32,6 +32,17 @@ class Handler(SimpleHTTPRequestHandler):
                          f'{fmt % args} "{ua}"\n')
         sys.stderr.flush()
 
+    def end_headers(self):
+        # PageSpeed 24/08/2026: asset versionati -> 1 anno; HTML/JSON brevi.
+        p = self.path.split("?", 1)[0].lower()
+        if p.endswith((".css", ".js", ".woff", ".woff2", ".ttf", ".otf", ".png", ".jpg", ".jpeg", ".gif", ".svg", ".webp", ".ico")):
+            self.send_header("Cache-Control", "public, max-age=31536000, immutable")
+        elif p.endswith((".json", ".xml")):
+            self.send_header("Cache-Control", "public, max-age=300")
+        else:
+            self.send_header("Cache-Control", "public, max-age=300, must-revalidate")
+        super().end_headers()
+
 
 if __name__ == "__main__":
     ThreadingHTTPServer.allow_reuse_address = True

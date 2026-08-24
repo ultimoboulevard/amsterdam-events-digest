@@ -179,7 +179,7 @@ body {
     outline: none;
     transition: var(--transition);
 }
-#search-input::placeholder { color: rgba(255,255,255,0.6); }
+#search-input::placeholder { color: rgba(255,255,255,0.8); }
 #search-input:focus { border-color: #fff; background: #000; }
 
 .refresh-btn, .login-btn {
