@@ -51,3 +51,16 @@ Each entry documents: file path (or URL if hotlinked), source, license type, att
 - **AI-generated hero images**: allowed but must be logged as "AI-generated, [tool used]". Prefer real images.
 
 Related: [[fomodam-events-zenobj]], [[fomodam-trademark-disclaimer]].
+
+## Social tags (Instagram handles used in features)
+
+Added 2026-08-24. Only verified or user-confirmed handles. Never invent.
+
+| Feature | Handles |
+|---------|---------|
+| Dave Clarke ADE | @melkwegamsterdam, @amsterdamdanceevent |
+| Frank Rosaly Bimhuis | @bimhuis, @concertgebouw, @radio3_rai |
+| Giuseppe Doronzo Koper8 | @bimhuis, @jampedals, @radio3_rai |
+| SevenEight Classic House Party | @ticketswap |
+
+Handles verified: @bimhuis (via bimhuis.nl footer), @seveneight_.78 (in-repo). User-confirmed via chat 2026-08-24: @radio3_rai (URL provided), plus institutional accounts @melkwegamsterdam, @concertgebouw, @paradisoamsterdam, @cinetol, @amsterdamdanceevent, @ticketswap, @jampedals.

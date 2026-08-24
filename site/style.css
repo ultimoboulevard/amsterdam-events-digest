@@ -848,3 +848,8 @@ body {
 /* Trademark disclaimer footer (universal on feature pages) */
 .trademark-disclaimer { margin-top: 48px; padding-top: 16px; border-top: 1px solid var(--border-muted, #e5e5e5); color: var(--text-muted, #888); font-size: 0.75rem; line-height: 1.5; }
 .trademark-disclaimer p { margin: 0; }
+
+/* Social tags on feature pages (verified handles only) */
+.social-tags { margin-top: 24px; padding-top: 12px; border-top: 1px dashed var(--border-muted, #e5e5e5); color: var(--text-muted, #888); font-size: 0.8rem; }
+.social-tags p { margin: 0; }
+.social-tags a { color: inherit; text-decoration: underline; text-decoration-style: dotted; }
