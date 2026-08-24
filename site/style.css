@@ -835,3 +835,8 @@ body {
     .nav-btn { width: 28px; height: 28px; font-size: 0.7rem; }
     .stats-section { grid-template-columns: repeat(2, 1fr); }
 }
+
+/* TIDAL playlist embed (features pages) */
+.tidal-playlist-embed { margin: 24px 0; }
+.tidal-playlist-embed iframe { border: 0; border-radius: 8px; overflow: hidden; display: block; }
+.playlist-alt-note { font-size: 0.85rem; color: var(--text-muted, #888); margin-top: 8px; text-align: center; }
