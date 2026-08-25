@@ -638,6 +638,7 @@ def _shell(*, title: str, description: str, canonical: str, root: str,
 <footer id="site-footer">
   <p>{esc(SITE_NAME)} · {esc(TAGLINE)} · Updated daily at 06:00 · Data from the venues and platforms we track</p>
   <p>Independent project · Not affiliated with any venue or platform</p>
+  <p><small>Press & partnerships: <a href="mailto:press@zenobj.net">press@zenobj.net</a></small></p>
   <p class="gen-time">Generated {generated.strftime('%d %B %Y, %H:%M')}</p>
 </footer>
 {extra_scripts}
