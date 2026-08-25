@@ -64,3 +64,12 @@ Added 2026-08-24. Only verified or user-confirmed handles. Never invent.
 | SevenEight Classic House Party | @ticketswap |
 
 Handles verified: @bimhuis (via bimhuis.nl footer), @seveneight_.78 (in-repo). User-confirmed via chat 2026-08-24: @radio3_rai (URL provided), plus institutional accounts @melkwegamsterdam, @concertgebouw, @paradisoamsterdam, @cinetol, @amsterdamdanceevent, @ticketswap, @jampedals.
+
+### 2026-08-25 — verified artist Instagram handles added
+
+| Handle | Feature | Source |
+|--------|---------|--------|
+| @giuseppedoronzotorarec | Doronzo | user-confirmed 2026-08-25 |
+| @frank_rosaly | Rosaly | user-confirmed 2026-08-25 |
+| @ibelisseguardiaferragutti | Rosaly | user-confirmed 2026-08-25 |
+| @intlanthem | Doronzo + Rosaly | user-confirmed 2026-08-25 |
