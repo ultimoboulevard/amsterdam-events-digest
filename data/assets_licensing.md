@@ -73,3 +73,10 @@ Handles verified: @bimhuis (via bimhuis.nl footer), @seveneight_.78 (in-repo). U
 | @frank_rosaly | Rosaly | user-confirmed 2026-08-25 |
 | @ibelisseguardiaferragutti | Rosaly | user-confirmed 2026-08-25 |
 | @intlanthem | Doronzo + Rosaly | user-confirmed 2026-08-25 |
+
+### 2026-08-25 (later) — additional artist handles
+
+| Handle | Feature | Source |
+|--------|---------|--------|
+| @jeffparkersounds | Rosaly | user-confirmed 2026-08-25 |
+| @trts | Doronzo (Tom Rainey) | user-confirmed 2026-08-25 |
