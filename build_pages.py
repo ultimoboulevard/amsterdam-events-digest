@@ -641,6 +641,7 @@ def _shell(*, title: str, description: str, canonical: str, root: str,
   <p class="gen-time">Generated {generated.strftime('%d %B %Y, %H:%M')}</p>
 </footer>
 {extra_scripts}
+<button id="back-to-top" aria-label="Back to top" title="Back to top">↑</button><script>(function(){{const b=document.getElementById('back-to-top');if(!b)return;const t=()=>b.classList.toggle('visible',window.scrollY>300);window.addEventListener('scroll',t,{{passive:true}});t();b.addEventListener('click',()=>window.scrollTo({{top:0,behavior:'smooth'}}))}})();</script>
 {ANALYTICS}
 </body>
 </html>

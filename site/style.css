@@ -853,3 +853,11 @@ body {
 .social-tags { margin-top: 24px; padding-top: 12px; border-top: 1px dashed var(--border-muted, #e5e5e5); color: var(--text-muted, #888); font-size: 0.8rem; }
 .social-tags p { margin: 0; }
 .social-tags a { color: inherit; text-decoration: underline; text-decoration-style: dotted; }
+
+/* Back-to-top floating button */
+#back-to-top { position: fixed; bottom: 24px; right: 24px; width: 44px; height: 44px; border: none; border-radius: 50
+/* Back-to-top floating button */
+#back-to-top { position: fixed; bottom: 24px; right: 24px; width: 44px; height: 44px; border: none; border-radius: 50%; background: var(--accent-orange, #d13); color: #fff; font-size: 1.25rem; font-weight: bold; cursor: pointer; opacity: 0; visibility: hidden; transition: opacity 0.2s, visibility 0.2s, transform 0.2s; z-index: 100; box-shadow: 0 2px 8px rgba(0,0,0,0.15); }
+#back-to-top:hover { transform: translateY(-2px); box-shadow: 0 4px 12px rgba(0,0,0,0.2); }
+#back-to-top.visible { opacity: 0.85; visibility: visible; }
+#back-to-top:focus { outline: 2px solid var(--accent-orange, #d13); outline-offset: 2px; }
