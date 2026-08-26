@@ -243,19 +243,24 @@ def _window_specs(today: date) -> list[tuple[str, list[date], str, str]]:
 
 # ── Carta evento (specchio di cardHTML in site/app.js:528) ─────────
 def _event_feature_link(ev, day_features):
-    """Ritorna la feature (kind=feature) che matcha questo evento per titolo.
-    Match case-insensitive contro event_title_match. None se nessun match.
+    """Ritorna la feature che matcha questo evento per titolo.
+    Match case-insensitive contro event_title_match. Include sia kind=feature
+    (feature del giorno) che kind=related (cross-link a una feature futura).
+    Preferisce kind=feature se piu di uno matcha. None se nessun match.
     """
     if not day_features or not ev or not getattr(ev, "title", None):
         return None
     t = ev.title.lower()
+    hit = None
     for f in day_features:
-        if f.get("kind") != "feature":
-            continue
         for kw in f.get("event_title_match", []) or []:
             if kw and kw.lower() in t:
-                return f
-    return None
+                if f.get("kind") == "feature":
+                    return f
+                if hit is None:
+                    hit = f
+                break
+    return hit
 
 
 def _event_card(ev: Event, match: dict | None, ics_rel: str, feature_link: dict | None = None) -> str:
@@ -263,10 +268,10 @@ def _event_card(ev: Event, match: dict | None, ics_rel: str, feature_link: dict 
     emoji = type_emoji(tipo)
     src_lbl = source_label(ev.source)
 
-    feature_html = (
-        f'<a class="feature-badge" href="{esc(feature_link["url"])}">Feature</a>'
-        if feature_link else ""
-    )
+    feature_html = ""
+    if feature_link:
+        _flabel = "Feature" if feature_link.get("kind") == "feature" else "Related feature →"
+        feature_html = f'<a class="feature-badge" href="{esc(feature_link["url"])}">{esc(_flabel)}</a>' 
     match_html = ""
     if match:
         cls = "library" if match.get("type") == "Library Match" else "discovery"
