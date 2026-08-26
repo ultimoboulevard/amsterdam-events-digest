@@ -325,12 +325,12 @@ def _event_card(ev: Event, match: dict | None, ics_rel: str, feature_link: dict 
             {_status_badge(ev.tickets_status)}
           </div>
           {match_html}
-          {feature_html}
           <h3 class="event-title">{esc(ev.title)}</h3>
           {artists_html}
           {genres_html}
           <div class="card-footer">{venue_html}{src_html}</div>
         </a>
+        {feature_html}
         {cal_html}
       </article>"""
 

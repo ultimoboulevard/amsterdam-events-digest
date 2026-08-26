@@ -842,7 +842,7 @@ body {
 .playlist-alt-note { font-size: 0.85rem; color: var(--text-muted, #888); margin-top: 8px; text-align: center; }
 
 /* Feature badge on event cards (per event_title_match in features_map) */
-.feature-badge { display: inline-block; padding: 3px 8px; border: 1px solid var(--accent-cyan); border-radius: 4px; color: var(--accent-cyan); font-size: 0.62rem; font-weight: 800; text-transform: uppercase; letter-spacing: 0.06em; text-decoration: none; margin: 8px 0 4px; position: relative; z-index: 2; }
+.feature-badge { display: inline-block; align-self: flex-start; padding: 3px 8px; border: 1px solid var(--accent-cyan); border-radius: 4px; color: var(--accent-cyan); font-size: 0.62rem; font-weight: 800; text-transform: uppercase; letter-spacing: 0.06em; text-decoration: none; margin: 0; position: relative; z-index: 2; }
 .feature-badge:hover { background: var(--accent-cyan); color: #000; }
 
 /* Trademark disclaimer footer (universal on feature pages) */
