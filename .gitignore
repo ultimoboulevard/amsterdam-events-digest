@@ -16,3 +16,58 @@ backups/
 primerily/
 scifai/
 debug_page.js
+
+# Generate da build_pages.py a ogni collect (~150 pagine + un .ics per evento):
+# senza queste righe finirebbero nel repo pubblico e si ri-committerebbero
+# tutti i giorni. site/robots.txt invece e' scritto a mano e va versionato.
+site/events/
+site/sitemap.xml
+
+# Cache e artefatti rigenerabili, non sorgente.
+#
+# lastfm_cache.db era tracciato per errore: 1,5 MB che cambiano a ogni
+# collect, gia' 104 commit di rumore in un repo pubblico. Untracciata il
+# 19/08/2026 con `git rm --cached` (il file su disco resta). La storia
+# passata conserva comunque i vecchi blob: questo ferma il churn futuro,
+# non ripulisce l'archivio.
+data/lastfm_cache.db
+
+# Cache degli artisti estratti dai titoli (enrich_artists.py).
+data/artist_cache.db
+
+# Storico delle impronte degli scraper (health.py).
+data/source_health.db
+
+# Impronte delle pagine, per il <lastmod> della sitemap (build_pages.py).
+# Cambia a ogni collect: e' stato, non sorgente.
+data/sitemap_state.json
+
+# Storico di Google Search Console (search_console.py). Cresce ogni giorno e
+# contiene le query di ricerca reali: fuori da un repo pubblico.
+data/search_console.db
+data/indexnow_state.db
+
+# ── Chiuse il 28/08/2026, dopo aver portato qui il codice che girava solo
+# su capitan. Le righe qui sopra elencavano i .db uno per uno, e ogni file
+# nuovo entrava nel repo PUBBLICO prima che qualcuno se ne accorgesse:
+# genre_cache.db e geo_stats.db erano arrivati cosi'. Meglio la regola.
+data/*.db
+# SQLite in WAL mode tiene due compagni accanto al file. Non erano coperti
+# da "data/search_console.db", e data/search_console.db-shm — 32 KB di cache
+# di pagina di un database che contiene le query di ricerca reali — era
+# finito fra i file tracciati.
+data/*.db-shm
+data/*.db-wal
+data/*.db-journal
+seo_adaptive.db
+
+# La chiave IndexNow. La genera indexnow.py al primo giro e la riscrive se
+# manca: e' una credenziale, non sorgente.
+data/indexnow.key
+
+# Stato di runtime di watch_adm.py.
+data/watch_adm.state
+
+# Detriti di un mount FUSE: file cancellati mentre erano ancora aperti.
+# Cinque da 32 KB erano finiti fra i tracciati.
+.fuse_hidden*
