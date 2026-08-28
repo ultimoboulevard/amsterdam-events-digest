@@ -16,16 +16,83 @@ BASE="/Users/francescozaccaria/Newsletter eventi"
 PY="$BASE/.venv/bin/python"
 cd "$BASE" || exit 1
 
-# Credenziali SMTP: file non versionato, solo per il ramo "send".
-# Deve contenere EMAIL_USER / EMAIL_PASS / EMAIL_TO.
+# Credenziali: file non versionato. EMAIL_* servono al ramo "send",
+# GEMINI_API_KEY a enrich_artists.py e a diagnose.py nel ramo "collect".
+# Il "." da solo NON basta: senza il nome nella riga export la variabile
+# resta nella shell e non arriva al processo python. Una GEMINI_API_KEY
+# dimenticata qui farebbe girare lo step a vuoto ogni mattina, in silenzio,
+# perche' enrich_artists.py e' fail-soft per progetto.
 if [ -f "$BASE/.env" ]; then
     . "$BASE/.env"
-    export EMAIL_USER EMAIL_PASS EMAIL_TO
+    export EMAIL_USER EMAIL_PASS EMAIL_TO GEMINI_API_KEY GOOGLE_SC_KEY
 fi
 
 case "$1" in
     collect)
-        "$PY" main.py collect && "$PY" export_json.py
+        # Resilienza: una fonte rotta (main.py collect esce 1 quando un
+        # collector torna 0 con storico > 0, o alza un'eccezione) NON deve
+        # fermare enrich/export/build/indexnow. Il log continua a gridare
+        # "BROKEN SOURCE" e "N broken source(s)", ma il sito si aggiorna
+        # comunque con le fonti sane. Prima: `&& enrich_artists ...` — un
+        # concertgebouw rotto lasciava il sito fermo di un giorno.
+        "$PY" main.py collect
+        collect_status=$?
+        if [ "$collect_status" -ne 0 ]; then
+            echo "WARN: main.py collect exited $collect_status — see log for broken source(s); continuing downstream"
+        fi
+        "$PY" enrich_artists.py \
+            && "$PY" enrich_genres.py \
+            && "$PY" export_json.py && "$PY" build_pages.py \
+            && "$PY" indexnow.py
+        # I controlli di salute degli scraper (health.py) e la diagnosi
+        # (diagnose.py) NON sono un passo a se': girano dentro "main.py
+        # collect", subito dopo la raccolta e prima di tutto il resto. Devono
+        # misurare l'output dei collector, che esiste solo li' dentro: dal DB
+        # si vedrebbe diluito con le righe buone di ieri. Non cambiano il
+        # codice d'uscita — con questo `&&`, un allarme su un campo fermerebbe
+        # il sito.
+        #
+        # enrich_genres.py gira SUBITO DOPO enrich_artists e per lo stesso motivo, piu'
+        # uno: gli serve sapere chi suona, e quei nomi li mette in cache lo step prima.
+        # Classifica solo i titoli MAI visti (Concert/Club senza genere): a regime sono
+        # pochi al giorno, una chiamata o due. Fail-soft come il gemello: se salta, gli
+        # eventi nuovi restano senza famiglia e il resto del sito non se ne accorge.
+        #
+        # enrich_artists.py sta QUI e non dentro i generatori: e' l'unico
+        # pezzo che parla con Gemini, export_json e build_pages leggono solo
+        # la cache. Se salta (chiave assente, API giu'), esce 0 e le pagine
+        # si generano identiche a ieri. In regime sono ~17 titoli nuovi al
+        # giorno: una chiamata.
+        # indexnow.py annuncia solo le 9 pagine che cambiano ogni giorno
+        # (today, tonight, weekend...), non tutte e 148: le pagine-data
+        # cambiano solo se cambia il cartellone di quel giorno.
+        # Non fallisce mai rumorosamente: se Bing non risponde, il sito
+        # e' comunque aggiornato e domani si riprova.
+
+        # search_console.py sta FUORI dalla catena di `&&`, ed e' voluto: non
+        # misura quello che abbiamo appena costruito, misura quello che Google
+        # sta gia' mostrando. Se un collector crolla e la catena si ferma,
+        # perdere anche la giornata di storico sarebbe un danno in piu' senza
+        # nessun motivo — e quello storico non si recupera, perche' Search
+        # Console tiene 16 mesi mobili. Esce sempre 0: senza GOOGLE_SC_KEY
+        # dice che non e' configurato e non tocca niente.
+        "$PY" search_console.py
+
+        # seo_adaptive.py sta subito dopo, e sempre fuori dalla catena: legge cio' che
+        # search_console ha appena scaricato e ne ricava le pagine su cui varrebbe la
+        # pena intervenire. In sola lettura — scrive un rapporto, non tocca il sito.
+        #
+        # `--verify` e' l'altra meta' e va eseguito ogni giorno anche quando non c'e'
+        # nulla da verificare: e' il passo che, quattordici giorni dopo un override,
+        # confronta CTR e posizione con la baseline e RITIRA da solo quelli che hanno
+        # peggiorato. Un adattamento che sa solo applicare non e' adattivo: e' un
+        # cambiamento a senso unico che nessuno rilegge piu'.
+        #
+        # `--apply` NON e' qui, ed e' una scelta: applica modifiche ai titoli che Google
+        # vede, e finche' search_analytics e' vuota (nessuna pagina indicizzata, misurato
+        # il 20/08/2026) proporrebbe sul nulla. Si lancia a mano quando i dati ci sono.
+        "$PY" seo_adaptive.py
+        "$PY" seo_adaptive.py --verify
         ;;
     send)
         # La newsletter va a un destinatario esterno: se manca la password non

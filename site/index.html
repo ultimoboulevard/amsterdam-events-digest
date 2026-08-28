@@ -3,46 +3,203 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Amsterdam Events Calendar</title>
-    <meta name="description" content="Interactive monthly calendar of live music, club nights, and cultural events in Amsterdam.">
-    <!-- Google Fonts rimosso il 18/08/2026: rinviava l'IP di ogni visitatore
-         a Google a ogni caricamento. Inter e' ora in site/fonts/ (SIL OFL),
-         dichiarato in testa a style.css. Tolta anche una richiesta
-         bloccante al primo caricamento. -->
+    <link rel="preconnect" href="https://static.cloudflareinsights.com" crossorigin>
+    
+    <title>What’s On in Amsterdam — Events, Concerts and Club Nights</title>
+    <meta name="description" content="Every gig, club night, exhibition and festival in Amsterdam in one calendar. Rebuilt every morning at 06:00.">
+    <link rel="canonical" href="https://events.zenobj.net/">
+    
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="FOMOdam">
+    <meta property="og:title" content="What’s On in Amsterdam — Events, Concerts and Club Nights">
+    <meta property="og:description" content="Every gig, club night and exhibition in Amsterdam, in one calendar. Updated daily.">
+    <meta property="og:url" content="https://events.zenobj.net/">
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="What’s On in Amsterdam — Events, Concerts and Club Nights">
+    <meta name="twitter:description" content="Every gig, club night and exhibition in Amsterdam, in one calendar. Updated daily.">
+    <script type="application/ld+json">{"@context":"https://schema.org","@type":"WebSite","name":"FOMOdam","alternateName":"fear of missing amsterdam","url":"https://events.zenobj.net/"}</script>
+    
     <link rel="stylesheet" href="style.css?v=4">
     <link rel="icon" type="image/png" href="favicon.png?v=2">
-    <!-- Supabase DISATTIVATO il 18/08/2026: il progetto ktewpglahibpymvshwra
-         non risolve piu' (NXDOMAIN) — login, Friends' Picks e sync dei
-         preferiti sono morti. I preferiti restano, su localStorage.
-         Per riattivare: ripristinare questo script e togliere i commenti
-         qui sotto (btn-login, user-profile, btn-friends, login-modal). -->
-    <!-- <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script> -->
+    
+    <style>
+        /* Il marchio. .logo in style.css ha text-transform: uppercase, che
+           trasformerebbe "FOMOdam" in "FOMODAM" e ucciderebbe il gioco fra le
+           due meta': lo annullo qui invece di modificare style.css, cosi' non
+           serve bumpare il ?v= e far riscaricare 23 KB a tutti.
+           Il payoff sparisce sotto i 900 px: fra 769 e 900 la riga starebbe
+           stretta e .header-inner (flex-wrap: wrap) manderebbe la ricerca a
+           capo, allungando l'header e scollandolo da .filters-bar { top: 65px }. */
+        .logo {
+            text-transform: none;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: baseline;
+        }
+        .logo-dam { opacity: 0.55; }
+        /* Il separatore era il glifo "·" a 1.4rem: un middle dot sta a meta'
+           della x-height del PROPRIO corpo, quindi fra una parola da 1.4rem e
+           un payoff da 0.7rem finiva in aria. Qui e' un cerchio disegnato,
+           centrato da flexbox: non dipende piu' dalle metriche del font. */
+        .logo-sep {
+            align-self: center;
+            flex: none;
+            width: 3px;
+            height: 3px;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.5);
+            margin: 0 11px;
+            /* flexbox lo centra su FOMOdam, che e' l'elemento piu' alto: cosi'
+               resta 3.6px sopra la mezzeria del payoff e legge come un apice.
+               Questi 2px lo riportano fra i due. Misurato, non a occhio. */
+            position: relative;
+            top: 2px;
+        }
+        .logo-tag {
+            font-size: 0.7rem;
+            font-weight: 700;
+            letter-spacing: 0.06em;
+            color: rgba(255, 255, 255, 0.78);
+        }
+        @media (max-width: 900px) { .logo-sep, .logo-tag { display: none; } }
+
+        .footer-nav { margin-bottom: 10px; }
+        .footer-nav a {
+            color: var(--text-secondary);
+            text-decoration: none;
+            border-bottom: 1px solid var(--border-subtle);
+            transition: var(--transition);
+        }
+        .footer-nav a:hover { color: #fff; border-color: #fff; }
+        .footer-nav .sep { color: var(--text-muted); margin: 0 6px; }
+
+        /* ── Blocco statico in fondo (scritto da build_pages.py) ──
+           Anche queste regole stanno qui e non in style.css: cambiare
+           style.css obbliga a bumpare il ?v= e a far riscaricare 23 KB a
+           tutti. I nomi delle variabili sono quelli di style.css. */
+        main.container { padding-bottom: 32px; }
+        /* In CIMA (sopra <main>) dal 20/08/2026: un utente esterno ha detto che e' la
+           prima cosa che vorrebbe leggere. In coda bastava il margine sotto; qui
+           serve respiro anche sopra, o il titolo si incolla all'header. */
+        /* Avviso del primo salvataggio: sta in basso, non blocca niente, se ne va da solo. */
+        .fav-notice {
+            position: fixed; left: 50%; bottom: 22px; transform: translateX(-50%);
+            max-width: min(560px, calc(100vw - 32px)); z-index: 999;
+            background: var(--bg-card, #16161c); color: var(--text-secondary, #c9c9d4);
+            border: 1px solid var(--border-subtle, #2a2a35); border-radius: var(--radius, 8px);
+            padding: 12px 16px; font-size: 0.8rem; line-height: 1.45;
+            box-shadow: 0 8px 28px rgba(0,0,0,0.45); opacity: 1; transition: opacity .55s ease;
+        }
+        .fav-notice strong { color: var(--text-primary, #fff); font-weight: 800; }
+        .fav-notice.leaving { opacity: 0; }
+        .cal-legend {
+            display: flex; flex-wrap: wrap; gap: 6px 18px; align-items: center;
+            margin: 14px 2px 0; font-size: 0.72rem; color: var(--text-muted);
+        }
+        .cal-legend span { display: inline-flex; align-items: center; gap: 6px; }
+        .lg-dot { width: 8px; height: 8px; border-radius: 50%; display: inline-block; }
+        .lg-concert { background: var(--accent-purple); }
+        .lg-club { background: var(--accent-cyan); }
+        /* Il rosa e' il ramo `default` di dotClass(): tutto cio' che non e' concerto,
+           club, gratis, sold out o pick. E' il 45% dei pallini — il colore piu'
+           frequente del calendario — e mancava dalla legenda (segnalato 20/08/2026).
+           Dentro ci finiscono soprattutto eventi SENZA tipo (1.185 su 1.427). */
+        .lg-other { background: var(--accent-pink); }
+        .lg-free { background: var(--accent-green); }
+        .lg-sold { background: var(--text-muted); }
+        .lg-sep { width: 1px; height: 12px; background: var(--border-subtle); }
+        @media (max-width: 640px) { .cal-legend { gap: 4px 12px; font-size: 0.66rem; } }
+        .home-intro { max-width: 960px; margin: 0 auto; padding: 28px 20px 56px; }
+        /* Solo intestazione: sotto viene subito il calendario, non serve un vuoto grande. */
+        .home-intro--top { padding-bottom: 22px; }
+        .home-intro h1.home-h1 {
+            font-size: 1.9rem;
+            font-weight: 900;
+            text-transform: uppercase;
+            letter-spacing: 0.03em;
+            line-height: 1.15;
+            margin-bottom: 10px;
+            background: var(--gradient-hero);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        .home-intro h2 {
+            font-size: 1.05rem;
+            font-weight: 900;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            margin: 40px 0 12px;
+            padding-bottom: 10px;
+            border-bottom: 2px solid var(--border-subtle);
+        }
+        .home-lede { color: var(--text-secondary); font-size: 0.9rem; max-width: 66ch; }
+        .hl-lede { color: var(--text-muted); font-size: 0.8rem; max-width: 66ch; margin-bottom: 14px; }
+        .hl-list { list-style: none; margin: 0; padding: 0; }
+        .hl-list li {
+            display: flex;
+            gap: 12px;
+            align-items: baseline;
+            flex-wrap: wrap;
+            padding: 9px 0;
+            border-bottom: 1px solid var(--border-subtle);
+            font-size: 0.85rem;
+        }
+        /* Larghezza fissa anche quando l'ora manca: la colonna dei titoli
+           deve restare allineata, non ballare riga per riga. */
+        .hl-time {
+            flex: none;
+            width: 42px;
+            font-weight: 800;
+            font-variant-numeric: tabular-nums;
+            color: var(--accent-cyan);
+        }
+        .hl-title { color: var(--text-primary); font-weight: 700; }
+        .hl-venue { color: var(--text-muted); font-size: 0.75rem; }
+        .hl-more { margin-top: 14px; font-size: 0.8rem; }
+        .hl-more a { color: var(--accent-cyan); text-decoration: none; font-weight: 800; }
+        .hl-more a:hover { text-decoration: underline; }
+        .hl-links { display: flex; flex-wrap: wrap; gap: 8px; }
+        .hl-links a {
+            text-decoration: none;
+            font-size: 0.75rem;
+            font-weight: 800;
+            padding: 8px 12px;
+            border: 1px solid var(--border-subtle);
+            border-radius: var(--radius);
+            color: var(--text-primary);
+            transition: var(--transition);
+        }
+        .hl-links a:hover { border-color: #fff; background: var(--bg-card-hover); }
+        .hl-links .n { color: var(--text-muted); font-weight: 700; }
+        .hl-sources { color: var(--text-secondary); font-size: 0.8rem; max-width: 78ch; line-height: 1.6; }
+        @media (max-width: 768px) {
+            .home-intro { padding: 20px 12px 40px; }
+            .home-intro h1.home-h1 { font-size: 1.4rem; }
+            .hl-time { width: 100%; }
+        }
+    </style>
+    
+    
 </head>
 <body>
-    <!-- ── Header ── -->
+    
     <header id="site-header">
         <div class="header-inner">
-            <h1 class="logo">🎛️ Amsterdam Events</h1>
+            
+            <a class="logo" href="./" aria-label="FOMOdam — fear of missing amsterdam">FOMO<span class="logo-dam">dam</span><span class="logo-sep" aria-hidden="true"></span><span class="logo-tag">fear of missing amsterdam</span></a>
             <div class="header-actions">
                 <div class="search-box">
                     <svg class="search-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/></svg>
                     <input type="text" id="search-input" placeholder="Search events, artists, venues…" autocomplete="off">
                 </div>
-                <!-- Login/profilo: richiedono Supabase (vedi nota in <head>).
-                <button id="btn-login" class="login-btn" type="button">Login</button>
-                <div id="user-profile" class="user-profile hidden">
-                    <span id="user-avatar" class="user-avatar"></span>
-                    <button id="btn-logout" class="logout-btn" type="button" title="Logout">🚪</button>
-                </div>
-                -->
-                <!-- Bottone "Update" rimosso il 18/08/2026: puntava al workflow
-                     GitHub Actions ritirato il 30/07 (la raccolta ora gira su
-                     capitan via launchd) ed esponeva il repo agli utenti. -->
+                
+                
             </div>
         </div>
     </header>
 
-    <!-- ── Filters ── -->
+    
     <div class="filters-bar" id="filters-bar">
         <div class="filters-inner">
             <div class="dropdown" id="dd-venue">
@@ -61,17 +218,23 @@
             <button class="category-btn cat-art" id="btn-cat-art" data-category="art" type="button">🎨 l-ART</button>
             <button class="category-btn cat-classica" id="btn-cat-classica" data-category="classica" type="button">🎻 Classica</button>
             <button class="category-btn cat-jazz" id="btn-cat-jazz" data-category="jazz" type="button">🎷 Jazz</button>
-            <!-- Friends' Picks: richiede Supabase (vedi nota in <head>).
-            <button class="fav-toggle" id="btn-friends" type="button" title="Log in to see friends' picks">🫂 Friends' Picks</button>
-            -->
+            
             <button class="fav-toggle" id="btn-favorites" type="button">⭐ Favorites</button>
             <button class="clear-btn hidden" id="btn-clear" type="button">✕ Clear</button>
         </div>
     </div>
 
-    <!-- ── Main ── -->
+    
+    <!-- FOMODAM:HOMETOP-START -->
+<section class="home-intro home-intro--top">
+  <a class="tonight-cta" href="events/tonight/" style="display:block;text-decoration:none;color:inherit;margin:0 0 18px;padding:20px 22px;border-radius:12px;background:linear-gradient(135deg,#f97316 0%,#ec4899 100%);box-shadow:0 8px 24px rgba(249,115,22,0.28);transition:transform .15s ease,box-shadow .15s ease;"><div style="display:flex;align-items:baseline;gap:14px;flex-wrap:wrap;color:#fff;"><span aria-hidden="true" style="font-size:1.8rem;font-weight:900;line-height:1;">&rarr;</span><span style="font-size:2rem;font-weight:900;line-height:1;font-variant-numeric:tabular-nums;">64</span><span style="font-size:1.15rem;font-weight:800;text-transform:uppercase;letter-spacing:0.04em;">events tonight in Amsterdam</span></div><div style="margin-top:8px;color:rgba(255,255,255,0.92);font-size:0.85rem;font-weight:700;letter-spacing:0.02em;">27 club nights · 7 concerts · 2 dance shows</div></a>
+  <h1 class="home-h1">What’s on in Amsterdam</h1>
+  <p class="home-lede">Every gig, club night, exhibition and festival in Amsterdam in one calendar: 3,932 events at 322 venues, from 15 sources listed through March 2027, rebuilt every morning at 06:00.</p>
+</section>
+<!-- FOMODAM:HOMETOP-END -->
+
     <main class="container">
-        <!-- Calendar -->
+        
         <section class="calendar-section" id="calendar-section">
             <div class="cal-nav">
                 <button id="btn-prev" class="nav-btn" type="button" aria-label="Previous month">◀</button>
@@ -90,7 +253,8 @@
             </div>
         </section>
 
-        <!-- Day Detail Panel -->
+        
+
         <section class="day-detail" id="day-detail">
             <div class="detail-header">
                 <h3 id="detail-title">Select a day to see events</h3>
@@ -99,7 +263,7 @@
             <div class="events-grid" id="events-grid"></div>
         </section>
 
-        <!-- Stats -->
+        
         <section class="stats-section" id="stats-section">
             <div class="stat-card"><span class="stat-val" id="stat-total">0</span><span class="stat-lbl">Events</span></div>
             <div class="stat-card"><span class="stat-val" id="stat-venues">0</span><span class="stat-lbl">Venues</span></div>
@@ -109,37 +273,44 @@
         </section>
     </main>
 
-    <!-- ── Footer ── -->
+    <!-- FOMODAM:HOME-START -->
+<section class="home-intro">
+  <h2>Amsterdam tonight, Friday 28 August 2026</h2>
+  <p class="hl-lede">64 events starting from 18:00 on Friday 28 August 2026. Highlights at Radio Radio, Pakhuis de Zwijger and Het Concertgebouw.</p>
+  <ul class="hl-list"><li><span class="hl-time">18:00</span><span class="hl-title">Chi-Kung</span><span class="hl-venue">ADMnoord - ‘t Groene Veld</span></li><li><span class="hl-time">18:00</span><span class="hl-title">Dine &amp; DJ | DJ Marcelo Umaña</span><span class="hl-venue">Pllek</span></li><li><span class="hl-time">18:00</span><span class="hl-title">Source: The Boatparty</span><span class="hl-venue">Supperclub Cruise</span></li><li><span class="hl-time">19:30</span><span class="hl-title">Ibelisse Guardia Ferragutti &amp; Frank Rosaly with Mestizx - Basement Sessions</span><span class="hl-venue">Het Concertgebouw</span></li><li><span class="hl-time">19:30</span><span class="hl-title">Robot Koch: Live</span><span class="hl-venue">The Stargate</span></li><li><span class="hl-time">20:00</span><span class="hl-title">TRACES (Try-out)</span><span class="hl-venue">Splendor</span></li><li><span class="hl-time">20:30</span><span class="hl-title">African Perspectives: Nadéeya GK / Carmel Loanga / Addy Daniel</span><span class="hl-venue">Paradiso (OBA Theater)</span></li><li><span class="hl-time">20:30</span><span class="hl-title">N∆BOU – Indigo</span><span class="hl-venue">Bimhuis</span></li></ul>
+  <p class="hl-more"><a href="events/tonight/">All 64 events tonight →</a></p>
+  <h2>Amsterdam this weekend, Fri 28 – Sun 30 August 2026</h2>
+  <p class="hl-lede">217 events across Fri 28 – Sun 30 August 2026 — concerts, club nights and culture. Highlights at Paradiso, ADMnoord - ‘t Groene Veld and Het Concertgebouw.</p>
+  <ul class="hl-list"><li><span class="hl-time">17:00</span><span class="hl-title">Paal69 invites GreenHouse</span><span class="hl-venue">Paal69</span></li><li><span class="hl-time">19:30</span><span class="hl-title">Ibelisse Guardia Ferragutti &amp; Frank Rosaly with Mestizx - Basement Sessions</span><span class="hl-venue">Het Concertgebouw</span></li><li><span class="hl-time">19:30</span><span class="hl-title">Robot Koch: Live</span><span class="hl-venue">The Stargate</span></li><li><span class="hl-time">12:00</span><span class="hl-title">Wooferland festival 2026</span><span class="hl-venue">Spaarnwoude (Deelplan Houtrak)</span></li><li><span class="hl-time">18:00</span><span class="hl-title">Sissi&#x27;s by Closecall x Ghosts of Garage</span><span class="hl-venue">SISSI&#x27;S Amsterdam</span></li><li><span class="hl-time">20:30</span><span class="hl-title">Peter Evans Extra ft. Petter Eldh &amp; Jim Black</span><span class="hl-venue">Bimhuis</span></li><li><span class="hl-time">20:30</span><span class="hl-title">Nyron Higor</span><span class="hl-venue">Paradiso (Tolhuistuin)</span></li><li><span class="hl-time">23:00</span><span class="hl-title">Vault All Vinyl WKNDR | Night | RADION</span><span class="hl-venue">RADION</span></li></ul>
+  <p class="hl-more"><a href="events/this-weekend/">All 217 events this weekend →</a></p>
+  <h2>Browse Amsterdam events by date</h2>
+  <div class="hl-links"><a href="events/today/">Today <span class="n">81</span></a><a href="events/tonight/">Tonight <span class="n">64</span></a><a href="events/tomorrow/">Tomorrow <span class="n">89</span></a><a href="events/this-weekend/">This weekend <span class="n">217</span></a><a href="events/next-weekend/">Next weekend <span class="n">238</span></a><a href="events/this-week/">This week <span class="n">217</span></a><a href="events/next-week/">Next week <span class="n">352</span></a><a href="events/2026-08/">August 2026 <span class="n">238</span></a><a href="events/2026-09/">September 2026 <span class="n">1377</span></a><a href="events/2026-10/">October 2026 <span class="n">1191</span></a><a href="events/2026-11/">November 2026 <span class="n">516</span></a><a href="events/2026-12/">December 2026 <span class="n">262</span></a><a href="events/2027-01/">January 2027 <span class="n">123</span></a><a href="events/2027-02/">February 2027 <span class="n">111</span></a><a href="events/2027-03/">March 2027 <span class="n">98</span></a><a href="events/">All dates</a></div>
+  <h2>Where the listings come from</h2>
+  <p class="hl-sources">15 sources, checked every morning: Amsterdam Alternative, Bimhuis, Concertgebouw, Gallery Viewer, Manual, Melkweg, Murmur, Museumkaart, Muziekgebouw, NDSM, Offbeat Amsterdam, Paradiso, Resident Advisor, Space is the Place, Splendor. Every listing links back to the venue or platform that published it. FOMOdam is an independent project: it sells nothing and is affiliated with no venue.</p>
+</section>
+<script type="application/ld+json">[{"@context":"https://schema.org","@type":"Event","name":"Chi-Kung","startDate":"2026-08-28T18:00:00+02:00","eventStatus":"https://schema.org/EventScheduled","eventAttendanceMode":"https://schema.org/OfflineEventAttendanceMode","location":{"@type":"Place","name":"ADMnoord - ‘t Groene Veld","address":{"@type":"PostalAddress","addressLocality":"Amsterdam","addressCountry":"NL"}},"url":"https://www.amsterdamalternative.nl/agenda/22595","endDate":"2026-08-28T21:00:00+02:00","organizer":{"@type":"Organization","name":"ADMnoord - ‘t Groene Veld"},"image":"https://www.amsterdamalternative.nl/media/content/21596_large.jpg","description":"Chi-Kung at ADMnoord - ‘t Groene Veld on Friday 28 August 2026. Live event in Amsterdam.","offers":{"@type":"Offer","price":0.0,"priceCurrency":"EUR","url":"https://www.amsterdamalternative.nl/agenda/22595","availability":"https://schema.org/InStock","validFrom":"2026-07-29T18:00:00+02:00"}},{"@context":"https://schema.org","@type":"Event","name":"Dine \u0026 DJ | DJ Marcelo Umaña","startDate":"2026-08-28T18:00:00+02:00","eventStatus":"https://schema.org/EventScheduled","eventAttendanceMode":"https://schema.org/OfflineEventAttendanceMode","location":{"@type":"Place","name":"Pllek","address":{"@type":"PostalAddress","streetAddress":"TT Neveritaweg 59, 1033 WB Amsterdam","addressLocality":"Amsterdam","addressCountry":"NL"}},"url":"https://offbeat.amsterdam/event/dine-and-dj-or-dj-marcelo-umana-7","endDate":"2026-08-28T22:00:00+02:00","organizer":{"@type":"Organization","name":"Pllek"},"image":"https://offbeat.amsterdam/media/21daec4736c9be5b5081194da4f39343.jpg","description":"Dine \u0026 DJ | DJ Marcelo Umaña at Pllek on Friday 28 August 2026. Live event in Amsterdam."},{"@context":"https://schema.org","@type":"Event","name":"Eetcafe ADM Noord","startDate":"2026-08-28T18:00:00+02:00","eventStatus":"https://schema.org/EventScheduled","eventAttendanceMode":"https://schema.org/OfflineEventAttendanceMode","location":{"@type":"Place","name":"Eetcafe ADM Noord","address":{"@type":"PostalAddress","streetAddress":"Buikslotermeerdijk 95, 1027 GE Amsterdam","addressLocality":"Amsterdam","addressCountry":"NL"}},"url":"https://offbeat.amsterdam/event/eetcafe-adm-noord-52","endDate":"2026-08-28T21:00:00+02:00","organizer":{"@type":"Organization","name":"Eetcafe ADM Noord"},"image":"https://offbeat.amsterdam/media/50c651c9760bde8fd1829ae8291fde6c.jpg","description":"Eetcafe ADM Noord at Eetcafe ADM Noord on Friday 28 August 2026. Live event in Amsterdam."},{"@context":"https://schema.org","@type":"MusicEvent","name":"Source: The Boatparty","startDate":"2026-08-28T18:00:00+02:00","eventStatus":"https://schema.org/EventScheduled","eventAttendanceMode":"https://schema.org/OfflineEventAttendanceMode","location":{"@type":"Place","name":"Supperclub Cruise","address":{"@type":"PostalAddress","streetAddress":"De Ruyterkade, Pier 14; Binnenstad Amsterdam; Netherlands","addressLocality":"Amsterdam","addressCountry":"NL"}},"url":"https://ra.co/events/2503439","endDate":"2026-08-28T23:00:00+02:00","organizer":{"@type":"Organization","name":"Supperclub Cruise"},"description":"Source: The Boatparty at Supperclub Cruise on Friday 28 August 2026. Live event in Amsterdam."},{"@context":"https://schema.org","@type":"Event","name":"Celebration All My Dead Jesters","startDate":"2026-08-28T18:30:00+02:00","eventStatus":"https://schema.org/EventScheduled","eventAttendanceMode":"https://schema.org/OfflineEventAttendanceMode","location":{"@type":"Place","name":"Perdu","address":{"@type":"PostalAddress","streetAddress":"Kloveniersburgwal 86, 1012 CZ Amsterdam","addressLocality":"Amsterdam","addressCountry":"NL"}},"url":"https://offbeat.amsterdam/event/celebration-all-my-dead-jesters","endDate":"2026-08-28T21:30:00+02:00","organizer":{"@type":"Organization","name":"Perdu"},"image":"https://offbeat.amsterdam/media/6ca9fb7ed0004a2a25110ab62cd727de.jpg","description":"Celebration All My Dead Jesters at Perdu on Friday 28 August 2026. Live event in Amsterdam."},{"@context":"https://schema.org","@type":"ExhibitionEvent","name":"Prosodia","startDate":"2026-08-28T18:30:00+02:00","eventStatus":"https://schema.org/EventScheduled","eventAttendanceMode":"https://schema.org/OfflineEventAttendanceMode","location":{"@type":"Place","name":"If I can’t dance, I don’t want to be part of your revolution","address":{"@type":"PostalAddress","addressLocality":"Amsterdam","addressCountry":"NL"}},"url":"https://www.amsterdamalternative.nl/agenda/22274","endDate":"2026-08-28T21:30:00+02:00","organizer":{"@type":"Organization","name":"If I can’t dance, I don’t want to be part of your revolution"},"performer":[{"@type":"PerformingGroup","name":"Nicoline van Harskamp"}],"image":"https://www.amsterdamalternative.nl/media/content/22228_large.jpg","description":"Prosodia at If I can’t dance, I don’t want to be part of your revolution on Friday 28 August 2026. Live event in Amsterdam.","offers":{"@type":"Offer","price":5.0,"priceCurrency":"EUR","url":"https://www.amsterdamalternative.nl/agenda/22274","availability":"https://schema.org/InStock","validFrom":"2026-07-29T18:30:00+02:00"}},{"@context":"https://schema.org","@type":"Event","name":"BUTZEMAN'S DEN | radio trapani + sara guidolin + brigadera + goatmother","startDate":"2026-08-28T19:00:00+02:00","eventStatus":"https://schema.org/EventScheduled","eventAttendanceMode":"https://schema.org/OfflineEventAttendanceMode","location":{"@type":"Place","name":"Cinetol","address":{"@type":"PostalAddress","streetAddress":"Tolstraat 182, 1074 VM Amsterdam","addressLocality":"Amsterdam","addressCountry":"NL"}},"url":"https://offbeat.amsterdam/event/butzemans-den-or-radio-trapani-sara-guidolin-brigadera-goatmother","endDate":"2026-08-28T22:00:00+02:00","organizer":{"@type":"Organization","name":"Cinetol"},"image":"https://offbeat.amsterdam/media/98ac10e1d9580dc0ed0d306159edc1f7.jpg","description":"BUTZEMAN'S DEN | radio trapani + sara guidolin + brigadera + goatmother at Cinetol on Friday 28 August 2026. Live event in Amsterdam."},{"@context":"https://schema.org","@type":"Event","name":"LAG social evening","startDate":"2026-08-28T19:00:00+02:00","eventStatus":"https://schema.org/EventScheduled","eventAttendanceMode":"https://schema.org/OfflineEventAttendanceMode","location":{"@type":"Place","name":"LAG","address":{"@type":"PostalAddress","streetAddress":"Eerste Schinkelstraat 14-16, 1075 TX Amsterdam","addressLocality":"Amsterdam","addressCountry":"NL"}},"url":"https://offbeat.amsterdam/event/lag-social-evening-23","endDate":"2026-08-28T22:00:00+02:00","organizer":{"@type":"Organization","name":"LAG"},"image":"https://offbeat.amsterdam/media/f92acd37ef4cd54ced7c7d57393eed84.jpg","description":"LAG social evening at LAG on Friday 28 August 2026. Live event in Amsterdam."},{"@context":"https://schema.org","@type":"Event","name":"Chi-Kung","startDate":"2026-08-28T18:00:00+02:00","eventStatus":"https://schema.org/EventScheduled","eventAttendanceMode":"https://schema.org/OfflineEventAttendanceMode","location":{"@type":"Place","name":"ADMnoord - ‘t Groene Veld","address":{"@type":"PostalAddress","addressLocality":"Amsterdam","addressCountry":"NL"}},"url":"https://www.amsterdamalternative.nl/agenda/22595","endDate":"2026-08-28T21:00:00+02:00","organizer":{"@type":"Organization","name":"ADMnoord - ‘t Groene Veld"},"image":"https://www.amsterdamalternative.nl/media/content/21596_large.jpg","description":"Chi-Kung at ADMnoord - ‘t Groene Veld on Friday 28 August 2026. Live event in Amsterdam.","offers":{"@type":"Offer","price":0.0,"priceCurrency":"EUR","url":"https://www.amsterdamalternative.nl/agenda/22595","availability":"https://schema.org/InStock","validFrom":"2026-07-29T18:00:00+02:00"}},{"@context":"https://schema.org","@type":"Event","name":"Dine \u0026 DJ | DJ Marcelo Umaña","startDate":"2026-08-28T18:00:00+02:00","eventStatus":"https://schema.org/EventScheduled","eventAttendanceMode":"https://schema.org/OfflineEventAttendanceMode","location":{"@type":"Place","name":"Pllek","address":{"@type":"PostalAddress","streetAddress":"TT Neveritaweg 59, 1033 WB Amsterdam","addressLocality":"Amsterdam","addressCountry":"NL"}},"url":"https://offbeat.amsterdam/event/dine-and-dj-or-dj-marcelo-umana-7","endDate":"2026-08-28T22:00:00+02:00","organizer":{"@type":"Organization","name":"Pllek"},"image":"https://offbeat.amsterdam/media/21daec4736c9be5b5081194da4f39343.jpg","description":"Dine \u0026 DJ | DJ Marcelo Umaña at Pllek on Friday 28 August 2026. Live event in Amsterdam."},{"@context":"https://schema.org","@type":"MusicEvent","name":"Source: The Boatparty","startDate":"2026-08-28T18:00:00+02:00","eventStatus":"https://schema.org/EventScheduled","eventAttendanceMode":"https://schema.org/OfflineEventAttendanceMode","location":{"@type":"Place","name":"Supperclub Cruise","address":{"@type":"PostalAddress","streetAddress":"De Ruyterkade, Pier 14; Binnenstad Amsterdam; Netherlands","addressLocality":"Amsterdam","addressCountry":"NL"}},"url":"https://ra.co/events/2503439","endDate":"2026-08-28T23:00:00+02:00","organizer":{"@type":"Organization","name":"Supperclub Cruise"},"description":"Source: The Boatparty at Supperclub Cruise on Friday 28 August 2026. Live event in Amsterdam."},{"@context":"https://schema.org","@type":"MusicEvent","name":"Ibelisse Guardia Ferragutti \u0026 Frank Rosaly with Mestizx - Basement Sessions","startDate":"2026-08-28T19:30:00+02:00","eventStatus":"https://schema.org/EventScheduled","eventAttendanceMode":"https://schema.org/OfflineEventAttendanceMode","location":{"@type":"Place","name":"Het Concertgebouw","address":{"@type":"PostalAddress","streetAddress":"Choir Hall","addressLocality":"Amsterdam","addressCountry":"NL"}},"url":"https://www.concertgebouw.nl/en/concerts/45471289-ibelisse-guardia-ferragutti-frank-rosaly-with-mestizx---basement-sessions","endDate":"2026-08-28T20:30:00+02:00","organizer":{"@type":"Organization","name":"Het Concertgebouw"},"image":"https://d35w1qwxagl33g.cloudfront.net/production/_908x545_crop_center-center_none/GUMO.png?stamp=2603271052\u0026tag=sm","description":"Ibelisse Guardia Ferragutti \u0026 Frank Rosaly with Mestizx - Basement Sessions at Het Concertgebouw on Friday 28 August 2026. Live event in Amsterdam.","offers":{"@type":"Offer","price":19.0,"priceCurrency":"EUR","url":"https://www.concertgebouw.nl/en/concerts/45471289-ibelisse-guardia-ferragutti-frank-rosaly-with-mestizx---basement-sessions","availability":"https://schema.org/InStock","validFrom":"2026-07-29T19:30:00+02:00"}},{"@context":"https://schema.org","@type":"MusicEvent","name":"Robot Koch: Live","startDate":"2026-08-28T19:30:00+02:00","eventStatus":"https://schema.org/EventScheduled","eventAttendanceMode":"https://schema.org/OfflineEventAttendanceMode","location":{"@type":"Place","name":"The Stargate","address":{"@type":"PostalAddress","streetAddress":"Prinses Irenestraat 19, 1077 WT, Amsterdam, Netherlands","addressLocality":"Amsterdam","addressCountry":"NL"}},"url":"https://ra.co/events/2489520","endDate":"2026-08-28T22:00:00+02:00","organizer":{"@type":"Organization","name":"The Stargate"},"performer":[{"@type":"PerformingGroup","name":"Robot Koch"}],"image":"https://images.ra.co/ed328cc48a18d895275a34468e252d72d94d9c67.png","description":"Robot Koch: Live at The Stargate on Friday 28 August 2026. Live event in Amsterdam."},{"@context":"https://schema.org","@type":"MusicEvent","name":"TRACES (Try-out)","startDate":"2026-08-28T20:00:00+02:00","eventStatus":"https://schema.org/EventScheduled","eventAttendanceMode":"https://schema.org/OfflineEventAttendanceMode","location":{"@type":"Place","name":"Splendor","address":{"@type":"PostalAddress","streetAddress":"Nieuwe Uilenburgerstraat 116, 1011 LX Amsterdam","addressLocality":"Amsterdam","addressCountry":"NL"}},"url":"https://www.splendoramsterdam.com/agenda/111670253/traces-try-out","endDate":"2026-08-28T23:00:00+02:00","organizer":{"@type":"Organization","name":"Splendor"},"performer":[{"@type":"PerformingGroup","name":"Wilbert Bulsink"}],"description":"Op weg naar een nieuwe compositie voor piano vierhanden en sampler"},{"@context":"https://schema.org","@type":"MusicEvent","name":"African Perspectives: Nadéeya GK / Carmel Loanga / Addy Daniel","startDate":"2026-08-28T20:30:00+02:00","eventStatus":"https://schema.org/EventScheduled","eventAttendanceMode":"https://schema.org/OfflineEventAttendanceMode","location":{"@type":"Place","name":"Paradiso (OBA Theater)","address":{"@type":"PostalAddress","addressLocality":"Amsterdam","addressCountry":"NL"}},"url":"https://www.paradiso.nl/en/program/african-perspectives-nadeeya-gk-carmel-loanga-addy-daniel/2888363","endDate":"2026-08-28T23:30:00+02:00","organizer":{"@type":"Organization","name":"Paradiso (OBA Theater)"},"description":"African Perspectives: Nadéeya GK / Carmel Loanga / Addy Daniel at Paradiso (OBA Theater) on Friday 28 August 2026. Live event in Amsterdam."},{"@context":"https://schema.org","@type":"MusicEvent","name":"N∆BOU – Indigo","startDate":"2026-08-28T20:30:00+02:00","eventStatus":"https://schema.org/EventScheduled","eventAttendanceMode":"https://schema.org/OfflineEventAttendanceMode","location":{"@type":"Place","name":"Bimhuis","address":{"@type":"PostalAddress","streetAddress":"Piet Heinkade 3, 1019 BR Amsterdam","addressLocality":"Amsterdam","addressCountry":"NL"}},"url":"https://www.bimhuis.nl/en/calendar/nabou-indigo/","endDate":"2026-08-28T23:30:00+02:00","organizer":{"@type":"Organization","name":"Bimhuis"},"image":"https://backend.bimhuis.nl/app/uploads/2026/05/2608027-N∆BOU-2026-2-©-Dave-Stapleton-607x340.jpg?2026-05-07T09:37:21","description":"Belgian trombonist and composer Nabou Claerhout presents her dreamy and melancholic third album."},{"@context":"https://schema.org","@type":"MusicEvent","name":"Paal69 invites GreenHouse","startDate":"2026-08-28T17:00:00+02:00","eventStatus":"https://schema.org/EventScheduled","eventAttendanceMode":"https://schema.org/OfflineEventAttendanceMode","location":{"@type":"Place","name":"Paal69","address":{"@type":"PostalAddress","streetAddress":"South Beach, Zandvoort, Netherlands","addressLocality":"Amsterdam","addressCountry":"NL"}},"url":"https://ra.co/events/2508844","endDate":"2026-08-28T23:30:00+02:00","organizer":{"@type":"Organization","name":"Paal69"},"image":"https://images.ra.co/2d9cd054b803630ba82e292bb17ef710d921b91c.jpg","description":"Paal69 invites GreenHouse at Paal69 on Friday 28 August 2026. Live event in Amsterdam."},{"@context":"https://schema.org","@type":"MusicEvent","name":"Ibelisse Guardia Ferragutti \u0026 Frank Rosaly with Mestizx - Basement Sessions","startDate":"2026-08-28T19:30:00+02:00","eventStatus":"https://schema.org/EventScheduled","eventAttendanceMode":"https://schema.org/OfflineEventAttendanceMode","location":{"@type":"Place","name":"Het Concertgebouw","address":{"@type":"PostalAddress","streetAddress":"Choir Hall","addressLocality":"Amsterdam","addressCountry":"NL"}},"url":"https://www.concertgebouw.nl/en/concerts/45471289-ibelisse-guardia-ferragutti-frank-rosaly-with-mestizx---basement-sessions","endDate":"2026-08-28T20:30:00+02:00","organizer":{"@type":"Organization","name":"Het Concertgebouw"},"image":"https://d35w1qwxagl33g.cloudfront.net/production/_908x545_crop_center-center_none/GUMO.png?stamp=2603271052\u0026tag=sm","description":"Ibelisse Guardia Ferragutti \u0026 Frank Rosaly with Mestizx - Basement Sessions at Het Concertgebouw on Friday 28 August 2026. Live event in Amsterdam.","offers":{"@type":"Offer","price":19.0,"priceCurrency":"EUR","url":"https://www.concertgebouw.nl/en/concerts/45471289-ibelisse-guardia-ferragutti-frank-rosaly-with-mestizx---basement-sessions","availability":"https://schema.org/InStock","validFrom":"2026-07-29T19:30:00+02:00"}},{"@context":"https://schema.org","@type":"MusicEvent","name":"Robot Koch: Live","startDate":"2026-08-28T19:30:00+02:00","eventStatus":"https://schema.org/EventScheduled","eventAttendanceMode":"https://schema.org/OfflineEventAttendanceMode","location":{"@type":"Place","name":"The Stargate","address":{"@type":"PostalAddress","streetAddress":"Prinses Irenestraat 19, 1077 WT, Amsterdam, Netherlands","addressLocality":"Amsterdam","addressCountry":"NL"}},"url":"https://ra.co/events/2489520","endDate":"2026-08-28T22:00:00+02:00","organizer":{"@type":"Organization","name":"The Stargate"},"performer":[{"@type":"PerformingGroup","name":"Robot Koch"}],"image":"https://images.ra.co/ed328cc48a18d895275a34468e252d72d94d9c67.png","description":"Robot Koch: Live at The Stargate on Friday 28 August 2026. Live event in Amsterdam."},{"@context":"https://schema.org","@type":"MusicEvent","name":"Wooferland festival 2026","startDate":"2026-08-29T12:00:00+02:00","eventStatus":"https://schema.org/EventScheduled","eventAttendanceMode":"https://schema.org/OfflineEventAttendanceMode","location":{"@type":"Place","name":"Spaarnwoude (Deelplan Houtrak)","address":{"@type":"PostalAddress","streetAddress":"Spaarnwoude, 2064 Spaarndam; Netherlands","addressLocality":"Amsterdam","addressCountry":"NL"}},"url":"https://ra.co/events/2395821","endDate":"2026-08-29T23:00:00+02:00","organizer":{"@type":"Organization","name":"Spaarnwoude (Deelplan Houtrak)"},"performer":[{"@type":"PerformingGroup","name":"Speedy J"},{"@type":"PerformingGroup","name":"Sander van Doorn"},{"@type":"PerformingGroup","name":"Marco Bailey"},{"@type":"PerformingGroup","name":"Marco V"},{"@type":"PerformingGroup","name":"Darren Emerson"},{"@type":"PerformingGroup","name":"Alexander Koning"}],"image":"https://images.ra.co/6903ec2c3e3a55df6192badf333abf59c7064faf.jpg","description":"Wooferland festival 2026 at Spaarnwoude (Deelplan Houtrak) on Saturday 29 August 2026. Live event in Amsterdam."},{"@context":"https://schema.org","@type":"MusicEvent","name":"Sissi's by Closecall x Ghosts of Garage","startDate":"2026-08-29T18:00:00+02:00","eventStatus":"https://schema.org/EventScheduled","eventAttendanceMode":"https://schema.org/OfflineEventAttendanceMode","location":{"@type":"Place","name":"SISSI'S Amsterdam","address":{"@type":"PostalAddress","streetAddress":"Anthony Fokkerweg 3, 1059 CM Amsterdam","addressLocality":"Amsterdam","addressCountry":"NL"}},"url":"https://ra.co/events/2493470","endDate":"2026-08-30T04:00:00+02:00","organizer":{"@type":"Organization","name":"SISSI'S Amsterdam"},"performer":[{"@type":"PerformingGroup","name":"SHUFFA"},{"@type":"PerformingGroup","name":"Becking"},{"@type":"PerformingGroup","name":"Itz3bby"},{"@type":"PerformingGroup","name":"Rich Reason"},{"@type":"PerformingGroup","name":"Larishka"},{"@type":"PerformingGroup","name":"Chunky"}],"image":"https://images.ra.co/d48b530211732177af5775f1b3e1e7048251d37d.jpg","description":"Sissi's by Closecall x Ghosts of Garage at SISSI'S Amsterdam on Saturday 29 August 2026. Live event in Amsterdam."},{"@context":"https://schema.org","@type":"MusicEvent","name":"Peter Evans Extra ft. Petter Eldh \u0026 Jim Black","startDate":"2026-08-29T20:30:00+02:00","eventStatus":"https://schema.org/EventScheduled","eventAttendanceMode":"https://schema.org/OfflineEventAttendanceMode","location":{"@type":"Place","name":"Bimhuis","address":{"@type":"PostalAddress","streetAddress":"Piet Heinkade 3, 1019 BR Amsterdam","addressLocality":"Amsterdam","addressCountry":"NL"}},"url":"https://www.bimhuis.nl/en/calendar/peter-evans-extra-ft-petter-eldh-jim-black/","endDate":"2026-08-29T23:30:00+02:00","organizer":{"@type":"Organization","name":"Bimhuis"},"image":"https://backend.bimhuis.nl/app/uploads/2026/06/290826-Peter-Evans-Extra-607x340.jpg?2026-06-22T07:59:59","description":"Super trio from New York en Berlin led by groundbreaking trumpeter. ‘Groove music where the beat is everywhere at once’ (JazzWise)."},{"@context":"https://schema.org","@type":"MusicEvent","name":"Nyron Higor","startDate":"2026-08-29T20:30:00+02:00","eventStatus":"https://schema.org/EventScheduled","eventAttendanceMode":"https://schema.org/OfflineEventAttendanceMode","location":{"@type":"Place","name":"Paradiso (Tolhuistuin)","address":{"@type":"PostalAddress","streetAddress":"Tolhuistuin - Zonzij","addressLocality":"Amsterdam","addressCountry":"NL"}},"url":"https://www.paradiso.nl/en/program/nyron-higor/2892713","endDate":"2026-08-29T23:30:00+02:00","organizer":{"@type":"Organization","name":"Paradiso (Tolhuistuin)"},"performer":[{"@type":"PerformingGroup","name":"Nyron Higor"}],"description":"Nyron Higor at Paradiso (Tolhuistuin) on Saturday 29 August 2026. Live event in Amsterdam."},{"@context":"https://schema.org","@type":"MusicEvent","name":"Vault All Vinyl WKNDR | Night | RADION","startDate":"2026-08-29T23:00:00+02:00","eventStatus":"https://schema.org/EventScheduled","eventAttendanceMode":"https://schema.org/OfflineEventAttendanceMode","location":{"@type":"Place","name":"RADION","address":{"@type":"PostalAddress","streetAddress":"Louwesweg 1 ,1066 EA Amsterdam","addressLocality":"Amsterdam","addressCountry":"NL"}},"url":"https://ra.co/events/2479292","endDate":"2026-08-30T08:00:00+02:00","organizer":{"@type":"Organization","name":"RADION"},"performer":[{"@type":"PerformingGroup","name":"Efdemin"},{"@type":"PerformingGroup","name":"Afra"},{"@type":"PerformingGroup","name":"Rosati"},{"@type":"PerformingGroup","name":"Laia"},{"@type":"PerformingGroup","name":"DJ Red"}],"image":"https://images.ra.co/1393ad17ce8900c7a77d093244cd4b63f2afc3c4.png","description":"Vault All Vinyl WKNDR | Night | RADION at RADION on Saturday 29 August 2026. Live event in Amsterdam."}]</script>
+<!-- FOMODAM:HOME-END -->
+
+
+    
+
+    
     <footer id="site-footer">
-        <p>Amsterdam Event Aggregator · Updated daily at 06:00 · Data from the venues and platforms listed above</p>
+        
+        <p class="footer-nav">
+            <a href="events/">Browse by date</a><span class="sep">·</span><a href="events/today/">Today</a><span class="sep">·</span><a href="events/tonight/">Tonight</a><span class="sep">·</span><a href="events/this-weekend/">This weekend</a><span class="sep">·</span><a href="events/next-weekend/">Next weekend</a>
+        </p>
+        <p>FOMOdam · fear of missing amsterdam · Updated daily at 06:00 · Data from the venues and platforms listed above</p>
         <p>Independent project · Not affiliated with any venue or platform</p>
+  <p><small>Press & partnerships: <a href="mailto:press@zenobj.net">press@zenobj.net</a></small></p>
         <p class="gen-time" id="gen-time"></p>
     </footer>
 
-    <!-- Login modal: richiede Supabase (vedi nota nell'head).
-    <div id="login-modal" class="modal-overlay hidden">
-        <div class="modal-content">
-            <button id="btn-close-modal" class="modal-close">&times;</button>
-            <h2>Welcome Back</h2>
-            <p>Log in to save events and see what your friends are attending.</p>
-            
-            <form id="magic-link-form" class="magic-link-form">
-                <input type="email" id="login-email" placeholder="Enter your email" required>
-                <button type="submit" id="btn-send-magic-link" class="magic-link-btn">Send Magic Link</button>
-            </form>
-            <p id="login-message" class="login-message"></p>
-        </div>
-    </div>
+    
 
-    -->
+    <script src="app.js?v=17"></script>
 
-    <script src="app.js?v=9"></script>
-
-    <!-- Cloudflare Web Analytics — installazione MANUALE apposta: il setup
-         automatico avrebbe iniettato il beacon su tutta la zona zenobj.net,
-         compresi oura/carta/playlist (personali) e il gateway Alexa. Stando
-         solo qui, misura events e nient'altro. Senza cookie: non serve
-         banner di consenso. -->
+    
     <script type='module' src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "7d1d5dc28c4046539e1037ca65949b0a"}'></script>
-</body>
+<button id="back-to-top" aria-label="Back to top" title="Back to top">↑</button><script>(function(){const b=document.getElementById('back-to-top');if(!b)return;const t=()=>b.classList.toggle('visible',window.scrollY>300);window.addEventListener('scroll',t,{passive:true});t();b.addEventListener('click',()=>window.scrollTo({top:0,behavior:'smooth'}))})();</script></body>
 </html>

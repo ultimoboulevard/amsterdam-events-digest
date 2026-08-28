@@ -11,6 +11,7 @@ const SOURCE_LABELS = {
     museumkaart: 'Museumkaart', gallery_viewer: 'Gallery Viewer',
     concertgebouw: 'Concertgebouw', muziekgebouw: 'Muziekgebouw',
     sitp: 'Space is the Place', splendor: 'Splendor', bimhuis: 'Bimhuis',
+    offbeat: 'Offbeat Amsterdam', ndsm: 'NDSM',
 };
 const TYPE_EMOJI = {
     Concert: '🎸', Club: '🎧', Film: '🎬', Festival: '🎪', Expositie: '🖼️',
@@ -28,6 +29,13 @@ const MONTHS = [
 ];
 
 /* ── State ────────────────────────────────────────────────────── */
+// Quanti artisti mostrare per evento. Erano 6 hardcoded in due punti, e su una line-up
+// vera tagliavano: SevenEight78 del 29/08 ne ha 7 dalla fonte e sulla card se ne vedevano
+// 6 — il settimo era Tiki Masawa, uno del nucleo fisso del collettivo. 10 copre tutti gli
+// eventi tranne pochissimi. Gemello di MAX_ARTISTS in enrich_artists.py, che governa
+// invece quanti nomi ESTRARRE dai titoli: due limiti diversi, stesso numero.
+const MAX_ARTISTI = 10;
+
 const state = {
     raw: [],            // all events from JSON
     venues: [],
@@ -63,12 +71,20 @@ async function init() {
     main.innerHTML = '<div class="loading"><div class="spinner"></div><p>Loading events…</p></div>';
 
     try {
-        const resp = await fetch('data/events.json');
+        // `no-cache` = rivalida SEMPRE (If-Modified-Since), non riscarica se nulla e'
+        // cambiato: se il file e' identico il server risponde 304 e non passa un byte.
+        // Senza, il browser serviva la copia vecchia senza nemmeno chiedere — e con dati
+        // vecchi il menu Genre ripiegava sui 124 generi invece delle 12 famiglie, pur
+        // avendo il JS nuovo (visto il 20/08/2026). index.html ha il suo ?v= ma i DATI no.
+        const resp = await fetch('data/events.json', { cache: 'no-cache' });
         if (!resp.ok) throw new Error(resp.status);
         const data = await resp.json();
         state.raw = data.events || [];
         state.venues = data.venues || [];
-        state.genres = data.genres || [];
+        // Il menu Genre elenca le 12 FAMIGLIE, non i 124 generi: un menu si naviga
+        // a colpo d'occhio o non si naviga. I generi di dettaglio restano sull'evento
+        // (visibili sulle card e cercabili dalla barra di ricerca).
+        state.genres = data.families || data.genres || [];
         state.eventTypes = data.event_types || [];
 
         const now = new Date();
@@ -93,6 +109,21 @@ async function init() {
                     <div class="cal-hdr">Fri</div><div class="cal-hdr">Sat</div>
                     <div class="cal-hdr">Sun</div>
                 </div>
+                <!-- Legenda dei pallini e delle due icone dei pick: un utente esterno
+                     (20/08/2026) ha chiesto cosa distinguesse i colori, nel calendario e
+                     nei pick. Sta QUI e non nell'HTML statico perche' main.innerHTML qui
+                     sopra ricostruisce <main> da zero: quello che e' scritto nella pagina
+                     dentro <main> viene buttato via al primo caricamento dei dati. -->
+                <p class="cal-legend">
+                    <span><i class="lg-dot lg-concert"></i>Concert</span>
+                    <span><i class="lg-dot lg-club"></i>Club night</span>
+                    <span><i class="lg-dot lg-other"></i>Other</span>
+                    <span><i class="lg-dot lg-free"></i>Free entry</span>
+                    <span><i class="lg-dot lg-sold"></i>Sold out</span>
+                    <span class="lg-sep"></span>
+                    <span>🔥 In our music library</span>
+                    <span>✨ Discovery: similar artists</span>
+                </p>
             </section>
             <section class="day-detail" id="day-detail">
                 <div class="detail-header">
@@ -105,7 +136,7 @@ async function init() {
                 <div class="stat-card"><span class="stat-val" id="stat-total">0</span><span class="stat-lbl">Events</span></div>
                 <div class="stat-card"><span class="stat-val" id="stat-venues">0</span><span class="stat-lbl">Venues</span></div>
                 <div class="stat-card"><span class="stat-val" id="stat-days">0</span><span class="stat-lbl">Days</span></div>
-                <div class="stat-card has-tooltip"><span class="stat-val" id="stat-matches" data-tip="Events picked by our curators, based on the artists playing.">0</span><span class="stat-lbl">Picks</span></div>
+                <div class="stat-card has-tooltip"><span class="stat-val" id="stat-matches" data-tip="Events picked from our own music library and from artists similar to it \u2014 not from what is popular.">0</span><span class="stat-lbl">Picks</span></div>
                 <div class="stat-card has-tooltip"><span class="stat-val" id="stat-sources" data-tip="Number of distinct platforms and venues actively feeding this calendar (e.g. Melkweg, Resident Advisor, Concertgebouw…).">0</span><span class="stat-lbl">Sources</span></div>
             </section>`;
 
@@ -175,7 +206,7 @@ function bindEvents() {
     // Friends' Picks toggle
     document.getElementById('btn-friends')?.addEventListener('click', () => {
         if (!state.user) {
-            alert("Please log in to see what your friends are saving!");
+            alert("Log in to see what your friends are saving. Your own saves work without an account \u2014 they stay in this browser.");
             return;
         }
         state.filters.friendsOnly = !state.filters.friendsOnly;
@@ -259,9 +290,8 @@ function handleFilterChange(e) {
         badge.classList.toggle('visible', filterSet.size > 0);
     }
 
-    // Manual filter change deactivates any active category
-    deactivateCategory();
-
+    // La categoria NON si spegne piu' qui: i due filtri si compongono, e
+    // spegnerla di nascosto faceva saltare i risultati a ogni spunta tolta.
     onFiltersChanged();
 }
 
@@ -325,16 +355,18 @@ function matchesCategory(ev, catDef) {
 
 function getFiltered() {
     return state.raw.filter(ev => {
-        // Category filter (overrides venue/genre/type dropdowns)
+        // La categoria e' un filtro come gli altri e si SOMMA ai dropdown.
+        // Prima era un if/else: con una categoria attiva, VENUE/GENRE/TYPE
+        // diventavano inerti pur restando spuntati e col badge acceso, quindi
+        // il pannello dichiarava un filtro che non stava applicando —
+        // JAZZ + Paradiso mostrava 174 eventi invece di 40.
         if (state.activeCategory) {
             const catDef = CATEGORIES[state.activeCategory];
             if (catDef && !matchesCategory(ev, catDef)) return false;
-        } else {
-            // Standard dropdown filters only apply when no category is active
-            if (state.filters.venues.size && !state.filters.venues.has(ev.venue)) return false;
-            if (state.filters.genres.size && !ev.genres.some(g => state.filters.genres.has(g))) return false;
-            if (state.filters.types.size && !state.filters.types.has(ev.event_type)) return false;
         }
+        if (state.filters.venues.size && !state.filters.venues.has(ev.venue)) return false;
+        if (state.filters.genres.size && !(ev.families || []).some(f => state.filters.genres.has(f))) return false;
+        if (state.filters.types.size && !state.filters.types.has(ev.event_type)) return false;
         if (state.filters.favOnly && !state.favorites.has(ev.id)) return false;
         if (state.filters.friendsOnly) {
             const hasFriendSave = state.globalSavedEvents.some(s => s.event_id === ev.id && s.user_id !== state.user?.id);
@@ -543,7 +575,7 @@ function cardHTML(ev) {
     }
 
     const artistsHtml = ev.artists?.length
-        ? `<div class="artists">${esc(ev.artists.slice(0, 6).join(' · '))}</div>` : '';
+        ? `<div class="artists">${esc(ev.artists.slice(0, MAX_ARTISTI).join(' · '))}</div>` : '';
 
     const genresHtml = ev.genres?.length
         ? `<div class="genres">${ev.genres.slice(0, 4).map(g => `<span class="genre-tag">${esc(g)}</span>`).join('')}</div>` : '';
@@ -552,7 +584,11 @@ function cardHTML(ev) {
     const srcRedundant = (ev.venue || '').trim().toLowerCase() === srcLabel.trim().toLowerCase();
     const srcHtml = srcRedundant ? '' : `<span class="source">${esc(srcLabel)}</span>`;
 
-    const time = ev.date ? new Date(ev.date).toLocaleTimeString('en-GB', { hour: '2-digit', minute: '2-digit' }) : '';
+    // 00:00 non e' un orario, e' il segnaposto delle fonti che l'ora non la
+    // danno (mostre, mercatini). Mostrarlo dice "mezzanotte", che e' falso
+    // nella grande maggioranza dei casi. Stessa regola in build_pages.py.
+    let time = ev.date ? new Date(ev.date).toLocaleTimeString('en-GB', { hour: '2-digit', minute: '2-digit' }) : '';
+    if (time === '00:00') time = '';
 
     let friendsHtml = '';
     if (state.user && state.globalSavedEvents.length > 0) {
@@ -594,7 +630,7 @@ function cardHTML(ev) {
         </a>
         <div class="card-actions">
             <button class="cal-btn" data-id="${ev.id}" type="button">📅 Calendar</button>
-            <button class="fav-btn ${isFav ? 'active' : ''}" data-id="${ev.id}" type="button">${isFav ? '★ Saved' : '☆ Save'}</button>
+            <button class="fav-btn ${isFav ? 'active' : ''}" data-id="${ev.id}" type="button" title="Kept in this browser — no account needed. Use Calendar to keep it for good.">${isFav ? '★ Saved' : '☆ Save'}</button>
         </div>
     </div>`;
 }
@@ -637,11 +673,32 @@ function saveFavorites() {
     localStorage.setItem('ams_events_favs', JSON.stringify([...state.favorites]));
 }
 
+// Il primo salvataggio merita una spiegazione, una volta sola. "★ Saved" e' una promessa,
+// e il sito non diceva DOVE: i preferiti vivono in localStorage, quindi in QUESTO browser.
+// Chi cambia telefono o svuota la cache li perde tutti, e finora non gliel'aveva detto
+// nessuno. Il ramo account (Supabase) e' spento dal 18/08/2026, quindi non c'e' un login
+// da proporre come alternativa: c'e' il tasto Calendar, che scarica un .ics e quello si',
+// finisce nel telefono. Il messaggio nomina quello invece di una funzione che non esiste.
+function avvisoPrimoSalvataggio() {
+    try {
+        if (localStorage.getItem('ams_fav_notice')) return;
+        localStorage.setItem('ams_fav_notice', '1');
+    } catch { return; }          // niente storage, niente avviso: non e' un errore
+    const el = document.createElement('div');
+    el.className = 'fav-notice';
+    el.innerHTML = 'Saved <strong>in this browser</strong>. No account needed \u2014 but if you '
+                 + 'switch device or clear your data it is gone. Use <strong>Calendar</strong> to keep it.';
+    document.body.appendChild(el);
+    setTimeout(() => el.classList.add('leaving'), 7000);
+    setTimeout(() => el.remove(), 7600);
+}
+
 async function toggleFavorite(id) {
     const isAdding = !state.favorites.has(id);
     
     if (isAdding) {
         state.favorites.add(id);
+        avvisoPrimoSalvataggio();
     } else {
         state.favorites.delete(id);
     }
@@ -736,7 +793,7 @@ function downloadICS(ev) {
 
     const parts = [];
     if (ev.event_type) parts.push(ev.event_type);
-    if (ev.artists?.length) parts.push('Artists: ' + ev.artists.slice(0, 6).join(', '));
+    if (ev.artists?.length) parts.push('Artists: ' + ev.artists.slice(0, MAX_ARTISTI).join(', '));
     if (ev.source_url) parts.push(ev.source_url);
 
     const ics = [

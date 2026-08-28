@@ -9,7 +9,9 @@ Usage:
     python main.py digest --days 7      # Next 7 days only
     python main.py run                  # collect + digest in one shot
     python main.py send                 # collect + digest (this week) + email
+    python main.py build-pages          # Rebuild the static /events/ pages
     python main.py stats                # Show DB stats
+    python main.py health               # Fill rates per source + broken-scraper alerts
 """
 from __future__ import annotations
 
@@ -22,7 +24,10 @@ from pathlib import Path
 
 from config import OUTPUT_DIR
 from export_json import export_events_json, SITE_DIR
+from build_pages import build_pages
+from dedup import collapse_duplicates
 from db import init_db, upsert_many, get_upcoming_events, get_stats
+from health import fill_rates, record_run, run_checks, write_report
 from html_builder import build_html_digest
 from mailer import send_digest
 
@@ -38,9 +43,24 @@ from collectors.muziekgebouw_collector import MuziekgebouwCollector
 from collectors.concertgebouw_collector import ConcertgebouwCollector
 from collectors.splendor_collector import SplendorCollector
 from collectors.bimhuis_collector import BimhuisCollector
+from collectors.sitp_collector import SitpCollector
+from collectors.offbeat_collector import OffbeatCollector
+from collectors.ndsm_collector import NdsmCollector
 
+# L'ORDINE QUI CONTA, e non e' estetico.
+# `dedup_key` e' la PRIMARY KEY (models.py): due fonti che descrivono lo
+# stesso evento producono la stessa chiave, e l'upsert fa vincere CHI SCRIVE
+# PER ULTIMO — riga sovrascritta, campo `source` compreso.
+# Quindi le fonti generaliste, che rastrellano mezza citta', vanno PRIMA di
+# quelle specifiche, che sui loro eventi hanno i dati migliori.
+# Misurato: lanciando `offbeat` da sola dopo le altre si prende 133 righe
+# altrui, `murmur` scende da 9 eventi a 1, `amsterdam_alt` da 125 a 72, e
+# health accende due allarmi temporali. Nell'ordine qui sotto non succede.
 COLLECTORS = {
     "melkweg": MelkwegCollector,
+    "sitp": SitpCollector,
+    "offbeat": OffbeatCollector,
+    "ndsm": NdsmCollector,
     "amsterdam_alt": AmsterdamAltCollector,
     "ra": ResidentAdvisorCollector,
     "murmur": MurmurCollector,
@@ -75,6 +95,7 @@ def cmd_collect(args: argparse.Namespace) -> list[str]:
     known_counts = get_stats()["by_source"]
 
     broken: list[str] = []
+    fresh: dict[str, tuple[int, dict[str, float]]] = {}
     total_inserted = total_updated = 0
     for source_name in sources:
         cls = COLLECTORS.get(source_name)
@@ -83,7 +104,22 @@ def cmd_collect(args: argparse.Namespace) -> list[str]:
             continue
 
         collector = cls()
-        events = collector.collect()
+        try:
+            events = collector.collect()
+        except Exception as e:  # noqa: BLE001 — one raising scraper must not kill the others
+            log.exception(
+                "BROKEN SOURCE: %s raised %s: %s — treating as 0 events, continuing",
+                source_name, type(e).__name__, e,
+            )
+            broken.append(source_name)
+            events = []
+
+        # L'impronta si prende sull'output del collector, non sul DB: il DB
+        # conserva le righe buone di ieri, quindi una rottura di oggi ci si
+        # vedrebbe solo diluita.
+        record_run(source_name, events)
+        if events:
+            fresh[source_name] = (len(events), fill_rates(events))
 
         if events:
             inserted, updated = upsert_many(events)
@@ -106,13 +142,57 @@ def cmd_collect(args: argparse.Namespace) -> list[str]:
     if broken:
         log.error("═══ %d broken source(s): %s ═══", len(broken), ", ".join(broken))
 
+    _check_health(fresh)
+
     return broken
+
+
+def _check_health(fresh: dict[str, tuple[int, dict[str, float]]]) -> None:
+    """Controlli di salute + diagnosi, subito dopo la raccolta.
+
+    Non solleva e NON cambia il codice d'uscita. Il non-zero resta riservato
+    alla fonte crollata a zero, come prima: run_pipeline.sh incatena i passi
+    con `&&`, quindi un exit 1 qui fermerebbe export_json, build_pages e
+    indexnow — e il sito smetterebbe di aggiornarsi per una rottura parziale
+    che riguarda un campo su nove di una fonte su undici. amsterdam_alt e'
+    rotto ADESSO: sarebbe successo dal primo giorno.
+    """
+    try:
+        alerts = run_checks(fresh or None)
+    except Exception as e:  # noqa: BLE001 — la salute non fa fallire la raccolta
+        log.warning("Controlli di salute saltati (%s: %s)", type(e).__name__, e)
+        return
+
+    if not alerts:
+        log.info("Salute degli scraper: nessun allarme.")
+        return
+
+    for a in alerts:
+        log.error("SALUTE: %s", a.line())
+
+    # La diagnosi col modello e' opzionale per costruzione: se manca la chiave
+    # o l'API e' giu', restano gli allarmi qui sopra, che sono il punto.
+    diagnoses = ""
+    try:
+        from diagnose import diagnose_alerts
+        diagnoses = diagnose_alerts(alerts)
+    except Exception as e:  # noqa: BLE001
+        log.warning("Diagnosi saltata (%s: %s)", type(e).__name__, e)
+
+    try:
+        path = write_report(alerts, diagnoses=diagnoses)
+        log.error("═══ %d allarme/i di salute · report in %s ═══", len(alerts), path)
+    except Exception as e:  # noqa: BLE001
+        log.warning("Report di salute non scritto (%s: %s)", type(e).__name__, e)
 
 
 def cmd_digest(args: argparse.Namespace) -> None:
     """Generate HTML digest from DB."""
     init_db()
-    events = get_upcoming_events(days=args.days, source=args.source)
+    # Stesso dedup del sito: il digest pesca dallo stesso DB e finora mandava
+    # le stesse righe doppie, per esempio "Cheeky Monday" del Melkweg accanto a
+    # "Cheeky Monday: Ray Keith" di Resident Advisor.
+    events = collapse_duplicates(get_upcoming_events(days=args.days, source=args.source))
 
     if not events:
         log.warning("No upcoming events found in DB. Run 'collect' first.")
@@ -156,8 +236,10 @@ def cmd_site(args: argparse.Namespace) -> list[str]:
     """Export events JSON and open the static site locally."""
     args.source = None
     broken = cmd_collect(args)
-    path = export_events_json(days=45)
+    path = export_events_json()
     log.info("JSON exported: %s", path)
+    stats = build_pages()
+    log.info("Static pages: %d under site/events/", stats["pages"])
 
     index = SITE_DIR / "index.html"
     if index.exists():
@@ -165,6 +247,26 @@ def cmd_site(args: argparse.Namespace) -> list[str]:
         log.info("Opened site in browser")
 
     return broken
+
+
+def cmd_build_pages(args: argparse.Namespace) -> None:
+    """Rebuild the indexable static pages under site/events/."""
+    stats = build_pages()
+    log.info(
+        "%d pagine: %d giorni, %d mesi, 7 finestre, 1 indice (%d eventi letti)",
+        stats["pages"], stats["days"], stats["months"], stats["events"],
+    )
+
+
+def cmd_health(args: argparse.Namespace) -> None:
+    """Stato di salute degli scraper, senza scaricare niente."""
+    from health import current_state, print_report
+
+    state = current_state()
+    alerts = run_checks(state)
+    print_report(state, alerts)
+    if args.write:
+        print(f"\nReport: {write_report(alerts, state)}")
 
 
 def cmd_stats(args: argparse.Namespace) -> None:
@@ -215,6 +317,22 @@ def main() -> None:
     # site
     p_site = sub.add_parser("site", help="Collect + export JSON + open calendar site")
     p_site.set_defaults(func=cmd_site)
+
+    # build-pages
+    p_pages = sub.add_parser(
+        "build-pages",
+        help="Rebuild the static, indexable pages under site/events/ (no scraping)",
+    )
+    p_pages.set_defaults(func=cmd_build_pages)
+
+    # health
+    p_health = sub.add_parser(
+        "health",
+        help="Riempimento dei campi per fonte + allarmi (nessuno scraping)",
+    )
+    p_health.add_argument("--write", action="store_true",
+                          help="scrive anche logs/health_report.md")
+    p_health.set_defaults(func=cmd_health)
 
     # stats
     p_stats = sub.add_parser("stats", help="Show database statistics")

@@ -7,7 +7,19 @@ import logging
 from datetime import datetime
 from pathlib import Path
 
+from artists import artists_for
+import collections
+
+
+def _gkey(t: str) -> str:
+    return " ".join((t or "").split()).strip().lower()
+
+from enrich_genres import cached_families
+from labels import (GENRE_MIN_COUNT, canonical_type, genre_families, is_genre,
+                    type_from_genres)
+import venues as venues_mod
 from db import init_db, get_upcoming_events
+from dedup import collapse_duplicates
 from discovery import DiscoveryEngine
 
 log = logging.getLogger(__name__)
@@ -16,19 +28,42 @@ SITE_DIR = Path(__file__).resolve().parent / "site"
 DATA_OUTPUT = SITE_DIR / "data"
 
 
-def export_events_json(days: int = 45) -> Path:
+# 135 giorni copre fino a fine dicembre. Con 45 il calendario si fermava al
+# 1 ottobre e teneva fuori 1.211 eventi, fra cui i 403 della settimana
+# dell'Amsterdam Dance Event (19-26 ottobre, picco 103 il giorno 23) —
+# in un mese, ottobre, che da solo ne ha 706.
+EXPORT_DAYS = 135
+
+
+def export_events_json(days: int = EXPORT_DAYS) -> Path:
     """Export upcoming events to a JSON file for the static site."""
     init_db()
-    events = get_upcoming_events(days=days)
+    events = collapse_duplicates(get_upcoming_events(days=days))
     discovery = DiscoveryEngine()
+
+    # Un locale scritto in due modi resta due voci nel menu a tendina: il dedup degli
+    # EVENTI usa venue_key(), ma il filtro legge la stringa grezza. Qui si sceglie UNA
+    # scrittura per locale (venues.display_map), cosi' "50 HERTZ" e "50:Hertz" diventano
+    # una voce sola. Il database conserva il grezzo: quella resta la verita' della fonte,
+    # e la normalizzazione e' una scelta di presentazione, reversibile.
+    venue_display = venues_mod.display_map(ev.venue for ev in events)
+    # Famiglie dedotte (enrich_genres.py) per gli eventi che la fonte pubblica senza
+    # genere: 1.005 fra Concert e Club. Sono un RIPIEGO — se la fonte un giorno
+    # comincia a dare il genere, quello vince e questa cache non si consulta nemmeno.
+    dedotte = cached_families()
 
     events_list = []
     all_venues = set()
     all_genres = set()
+    all_families: set = set()
+    genre_counts: collections.Counter = collections.Counter()
     all_types = set()
 
     for ev in events:
-        artists_to_check = ev.artists if ev.artists else [ev.title]
+        # Il titolo intero NON e' piu' il ripiego: se lo scraper non da'
+        # artisti, artists_for() prova quelli estratti dal titolo e messi
+        # in cache da enrich_artists.py. Sola lettura, nessuna rete.
+        artists_to_check = artists_for(ev)
         match_res = discovery.evaluate_event(artists_to_check)
         match_data = None
         if match_res["match"]:
@@ -43,14 +78,20 @@ def export_events_json(days: int = 45) -> Path:
             "title": ev.title,
             "date": ev.date.isoformat() if ev.date else None,
             "date_end": ev.date_end.isoformat() if ev.date_end else None,
-            "venue": ev.venue or "",
-            "venue_address": ev.venue_address or "",
-            "event_type": ev.event_type or "",
+            "venue": venue_display.get(ev.venue, ev.venue) or "",
+            "event_type": type_from_genres(ev.event_type or "", ev.genres),
             "artists": ev.artists or [],
-            "genres": ev.genres or [],
-            "price_min": ev.price_min,
-            "price_max": ev.price_max,
-            "tickets_url": ev.tickets_url or "",
+            "genres": [g for g in (ev.genres or []) if is_genre(g)],
+            # I tag veri della fonte vincono sempre; la famiglia dedotta e' il ripiego.
+            "families": (genre_families(ev.genres or [])
+                         or ([dedotte[_gkey(ev.title)]]
+                             if _gkey(ev.title) in dedotte else [])),
+            # venue_address, price_min, price_max e tickets_url NON sono qui:
+            # site/app.js non li legge (zero riferimenti), e triplicare la
+            # finestra da 45 a 135 giorni triplicava anche il JSON che ogni
+            # visitatore scarica prima di vedere un evento. Le pagine statiche
+            # in build_pages.py leggono dal DB, quindi il prezzo lo hanno
+            # comunque per il JSON-LD. Rimetterli e' una riga.
             "tickets_status": ev.tickets_status or "",
             "source": ev.source,
             "source_url": ev.source_url,
@@ -58,17 +99,23 @@ def export_events_json(days: int = 45) -> Path:
         })
 
         if ev.venue:
-            all_venues.add(ev.venue)
-        all_genres.update(g for g in ev.genres if g)
+            all_venues.add(venue_display.get(ev.venue, ev.venue))
+        all_genres.update(g for g in ev.genres if is_genre(g))
+        _fam = genre_families(ev.genres) or (
+            [dedotte[_gkey(ev.title)]] if _gkey(ev.title) in dedotte else [])
+        all_families.update(_fam)
+        genre_counts.update(g.strip().lower() for g in ev.genres if is_genre(g))
         if ev.event_type:
-            all_types.add(ev.event_type)
+            all_types.add(type_from_genres(ev.event_type, ev.genres))
 
     output = {
         "generated_at": datetime.now().isoformat(),
         "event_count": len(events_list),
         "events": events_list,
         "venues": sorted(all_venues),
-        "genres": sorted(all_genres),
+        "families": sorted(all_families),
+        "genres": sorted(g for g in all_genres
+                             if genre_counts[g.strip().lower()] >= GENRE_MIN_COUNT),
         "event_types": sorted(all_types),
     }
 

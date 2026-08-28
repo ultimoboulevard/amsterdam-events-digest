@@ -53,6 +53,7 @@ QUERY_TEMPLATE = """{{
 
 class ParadisoCollector(BaseCollector):
     name = "paradiso"
+    probe_url = PARADISO_GQL_URL
 
     def collect(self) -> list[Event]:
         log.info("Collecting events from Paradiso (CraftCMS GraphQL)...")

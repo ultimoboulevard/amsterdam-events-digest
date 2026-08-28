@@ -44,6 +44,7 @@ VENUE_ADDRESS = "Piet Heinkade 1, 1019 BR Amsterdam"
 
 class MuziekgebouwCollector(BaseCollector):
     name = "muziekgebouw"
+    probe_url = MUZIEKGEBOUW_AGENDA_URL
 
     def collect(self) -> list[Event]:
         """Scrape upcoming events from the Muziekgebouw English agenda."""

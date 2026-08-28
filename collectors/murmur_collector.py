@@ -17,6 +17,7 @@ MURMUR_URL = "https://murmurmur.nl/"
 
 class MurmurCollector(BaseCollector):
     name = "murmur"
+    probe_url = MURMUR_URL
 
     def collect(self) -> list[Event]:
         log.info(f"Collecting events from {self.name}...")

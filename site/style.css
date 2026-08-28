@@ -179,7 +179,7 @@ body {
     outline: none;
     transition: var(--transition);
 }
-#search-input::placeholder { color: rgba(255,255,255,0.6); }
+#search-input::placeholder { color: rgba(255,255,255,0.8); }
 #search-input:focus { border-color: #fff; background: #000; }
 
 .refresh-btn, .login-btn {
@@ -835,3 +835,29 @@ body {
     .nav-btn { width: 28px; height: 28px; font-size: 0.7rem; }
     .stats-section { grid-template-columns: repeat(2, 1fr); }
 }
+
+/* TIDAL playlist embed (features pages) */
+.tidal-playlist-embed { margin: 24px 0; }
+.tidal-playlist-embed iframe { border: 0; border-radius: 8px; overflow: hidden; display: block; }
+.playlist-alt-note { font-size: 0.85rem; color: var(--text-muted, #888); margin-top: 8px; text-align: center; }
+
+/* Feature badge on event cards (per event_title_match in features_map) */
+.feature-badge { display: inline-block; align-self: flex-start; padding: 3px 8px; border: 1px solid var(--accent-cyan); border-radius: 4px; color: var(--accent-cyan); font-size: 0.62rem; font-weight: 800; text-transform: uppercase; letter-spacing: 0.06em; text-decoration: none; margin: 0; position: relative; z-index: 2; }
+.feature-badge:hover { background: var(--accent-cyan); color: #000; }
+
+/* Trademark disclaimer footer (universal on feature pages) */
+.trademark-disclaimer { margin-top: 48px; padding-top: 16px; border-top: 1px solid var(--border-muted, #e5e5e5); color: var(--text-muted, #888); font-size: 0.75rem; line-height: 1.5; }
+.trademark-disclaimer p { margin: 0; }
+
+/* Social tags on feature pages (verified handles only) */
+.social-tags { margin-top: 24px; padding-top: 12px; border-top: 1px dashed var(--border-muted, #e5e5e5); color: var(--text-muted, #888); font-size: 0.8rem; }
+.social-tags p { margin: 0; }
+.social-tags a { color: inherit; text-decoration: underline; text-decoration-style: dotted; }
+
+/* Back-to-top floating button */
+#back-to-top { position: fixed; bottom: 24px; right: 24px; width: 44px; height: 44px; border: none; border-radius: 50
+/* Back-to-top floating button */
+#back-to-top { position: fixed; bottom: 24px; right: 24px; width: 44px; height: 44px; border: none; border-radius: 50%; background: var(--accent-orange, #d13); color: #fff; font-size: 1.25rem; font-weight: bold; cursor: pointer; opacity: 0; visibility: hidden; transition: opacity 0.2s, visibility 0.2s, transform 0.2s; z-index: 100; box-shadow: 0 2px 8px rgba(0,0,0,0.15); }
+#back-to-top:hover { transform: translateY(-2px); box-shadow: 0 4px 12px rgba(0,0,0,0.2); }
+#back-to-top.visible { opacity: 0.85; visibility: visible; }
+#back-to-top:focus { outline: 2px solid var(--accent-orange, #d13); outline-offset: 2px; }

@@ -39,6 +39,7 @@ class ConcertgebouwCollector(BaseCollector):
     """Scrape concerts from Het Concertgebouw calendar."""
 
     name = "concertgebouw"
+    probe_url = CALENDAR_URL
 
     def collect(self) -> list[Event]:
         log.info("Collecting events from Concertgebouw…")
@@ -72,17 +73,39 @@ class ConcertgebouwCollector(BaseCollector):
     # ── HTTP ───────────────────────────────────────────────────────
 
     def _fetch_page(self, page: int) -> list[Tag] | None:
-        """Fetch one page and return a list of <article> tags."""
-        url = f"{CALENDAR_URL}?page={page}"
-        try:
-            resp = httpx.get(url, headers=HEADERS, timeout=REQUEST_TIMEOUT)
-            resp.raise_for_status()
-        except httpx.HTTPError as exc:
-            log.error("Concertgebouw page %d fetch failed: %s", page, exc)
-            return None
+        """Fetch one page and return a list of <article> tags.
 
-        soup = BeautifulSoup(resp.text, "html.parser")
-        return soup.find_all("article")
+        The site sits behind an nginx CDN (s-maxage=60,
+        stale-while-revalidate=60, stale-if-error=60) which occasionally
+        caches an empty SSR response for a given ?page= value. That empty
+        response used to look like "end of pagination" and truncated the
+        collection (the classic "15 events vs median 37" warning). We now:
+          1. append a cache-buster query so every request is a fresh MISS,
+          2. retry ONCE on an empty response before believing the page is
+             actually empty.
+        """
+        for attempt in range(2):
+            url = f"{CALENDAR_URL}?page={page}&_={int(time.time() * 1000)}"
+            try:
+                resp = httpx.get(url, headers=HEADERS, timeout=REQUEST_TIMEOUT)
+                resp.raise_for_status()
+            except httpx.HTTPError as exc:
+                log.error("Concertgebouw page %d fetch failed: %s", page, exc)
+                return None
+            soup = BeautifulSoup(resp.text, "html.parser")
+            articles = soup.find_all("article")
+            # Real content -> return immediately.
+            if any(a.select_one("h3.c-content__title") for a in articles):
+                return articles
+            # Empty response: retry once (SSR glitch upstream of the CDN).
+            if attempt == 0:
+                log.warning(
+                    "Concertgebouw page %d returned no concert cards; retrying",
+                    page,
+                )
+                time.sleep(1.0)
+                continue
+            return articles  # genuinely empty -> caller will break the loop
 
     # ── Article parsing ────────────────────────────────────────────
 
