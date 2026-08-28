@@ -34,6 +34,14 @@ REQUEST_TIMEOUT = 60
 # mattina alle 06:00, quindi oltre 36 ore c'e' qualcosa di rotto.
 STALE_HOURS = 36
 
+# Fonti che il JSON pubblica e che NON sono collector, per costruzione.
+# `manual`: righe inserite a mano nel DB quando nessuna fonte copre un evento
+# (watch_adm.py lo documenta e ne aggiunge). Senza questa riga il confronto le
+# segnalava come "codice che esiste solo su capitan", e lo script non poteva
+# uscire 0 nemmeno con il repo perfettamente allineato — cioe' proprio il caso
+# che deve saper riconoscere.
+SORGENTI_NON_COLLECTOR = {"manual"}
+
 
 def collectors_nel_repo() -> set[str]:
     """Chiavi del dizionario COLLECTORS in main.py, lette senza importarlo."""
@@ -77,7 +85,7 @@ def main() -> None:
         problemi.append(f"JSON fermo da {eta.days}g: il collect su capitan non gira.")
 
     # Fonti che il sito pubblica e che qui non esistono: codice solo su capitan.
-    solo_in_produzione = pubblicate - nel_repo - {""}
+    solo_in_produzione = pubblicate - nel_repo - SORGENTI_NON_COLLECTOR - {""}
     if solo_in_produzione:
         problemi.append("collector presenti in produzione ma non nel repo")
         print("\nnon versionati — il codice esiste solo su capitan:")
@@ -96,7 +104,12 @@ def main() -> None:
 
     print("\nfonti pubblicate:")
     for s, n in conteggi.most_common():
-        marca = " ·" if s in nel_repo else " ← non nel repo"
+        if s in nel_repo:
+            marca = " ·"
+        elif s in SORGENTI_NON_COLLECTOR:
+            marca = " · (inserita a mano, nessun collector)"
+        else:
+            marca = " ← non nel repo"
         print(f"  {s or '(vuota)':<16}{n:>5}{marca}")
 
     if problemi:
