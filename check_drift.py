@@ -21,7 +21,8 @@ import argparse
 import collections
 import re
 import sys
-from datetime import datetime, timedelta
+from datetime import datetime, timedelta, timezone
+from zoneinfo import ZoneInfo
 from pathlib import Path
 
 import httpx
@@ -61,8 +62,13 @@ def main() -> None:
     pubblicate = set(conteggi)
     nel_repo = collectors_nel_repo()
 
+    # generated_at e' scritto da capitan in ora locale (Europe/Amsterdam) senza
+    # fuso: confrontarlo con datetime.now() di un container UTC dava un'eta'
+    # negativa, e il controllo di staleness non scattava mai.
     generato = datetime.fromisoformat(dati["generated_at"])
-    eta = datetime.now() - generato
+    if generato.tzinfo is None:
+        generato = generato.replace(tzinfo=ZoneInfo("Europe/Amsterdam"))
+    eta = datetime.now(timezone.utc) - generato
     date = [e["date"][:10] for e in eventi if e.get("date")]
 
     print(f"pubblicato   {args.url}")
