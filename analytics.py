@@ -32,8 +32,12 @@ import httpx
 
 API_URL = "https://api.cloudflare.com/client/v4/graphql"
 
-# Token del beacon in site/index.html — identifica il sito, non autentica.
-DEFAULT_SITE_TAG = "7d1d5dc28c4046539e1037ca65949b0a"
+# Site tag di Web Analytics, verificato contro l'API il 24/10/2026. NON e' il
+# token del beacon che sta in site/index.html (7d1d5dc2...): quello identifica
+# lo snippet, questo il sito nel dataset RUM, e i due valori non coincidono.
+# Assumere che fossero lo stesso faceva restituire zero pageview senza errori.
+# `--discover` rielenca i tag con dati, se un giorno cambia.
+DEFAULT_SITE_TAG = "02845e48cf3841188305e87988ece122"
 
 REQUEST_TIMEOUT = 30
 
@@ -172,11 +176,59 @@ def report(dati: dict, days: int) -> None:
         )
 
 
+QUERY_TAG = """
+query Tag($accountTag: String!, $start: Date!, $end: Date!) {
+  viewer {
+    accounts(filter: {accountTag: $accountTag}) {
+      rumPageloadEventsAdaptiveGroups(
+        filter: {date_geq: $start, date_leq: $end}
+        orderBy: [count_DESC]
+        limit: 20
+      ) {
+        count
+        sum { visits }
+        dimensions { siteTag }
+      }
+    }
+  }
+}
+"""
+
+
+def scopri(token: str, account_id: str, days: int) -> None:
+    """Quali site tag hanno dati: serve quando la misura torna zero."""
+    end = date.today()
+    start = end - timedelta(days=days - 1)
+    resp = httpx.post(
+        API_URL,
+        headers={"Authorization": f"Bearer {token}", "Content-Type": "application/json"},
+        json={"query": QUERY_TAG, "variables": {
+            "accountTag": account_id, "start": start.isoformat(), "end": end.isoformat()}},
+        timeout=REQUEST_TIMEOUT,
+    )
+    resp.raise_for_status()
+    payload = resp.json()
+    if payload.get("errors"):
+        for err in payload["errors"]:
+            print(f"errore API: {err.get('message', err)}", file=sys.stderr)
+        raise SystemExit(1)
+    gruppi = payload["data"]["viewer"]["accounts"][0]["rumPageloadEventsAdaptiveGroups"]
+    if not gruppi:
+        print("Nessun site tag con dati: il beacon non sta riportando nulla.")
+        return
+    print(f"site tag con dati negli ultimi {days} giorni:")
+    for g in gruppi:
+        print(f"  {g['dimensions']['siteTag']}  {g['sum']['visits']:>6} visite  "
+              f"{g['count']:>6} pageview")
+
+
 def main() -> None:
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--days", type=int, default=7, help="giorni indietro (default 7)")
     parser.add_argument("--site-tag", default=os.getenv("CF_SITE_TAG", DEFAULT_SITE_TAG))
     parser.add_argument("--json", action="store_true", help="output grezzo, senza tabelle")
+    parser.add_argument("--discover", action="store_true",
+                        help="elenca i site tag che hanno dati, invece di misurare")
     args = parser.parse_args()
 
     token = os.getenv("CF_API_TOKEN")
@@ -187,6 +239,10 @@ def main() -> None:
             "Il token si crea su dash.cloudflare.com → My Profile → API Tokens,\n"
             "con permesso Account → Account Analytics → Read."
         )
+
+    if args.discover:
+        scopri(token, account_id, args.days)
+        return
 
     dati = fetch(token, account_id, args.site_tag, args.days)
     if args.json:
