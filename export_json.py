@@ -9,6 +9,7 @@ from pathlib import Path
 
 from db import init_db, get_upcoming_events
 from discovery import DiscoveryEngine
+from venue_aliases import canonicalizza
 
 log = logging.getLogger(__name__)
 
@@ -38,12 +39,16 @@ def export_events_json(days: int = 45) -> Path:
                 "score": match_res.get("score", 0),
             }
 
+        venue = canonicalizza(ev.venue or "")
+
         events_list.append({
             "id": ev.dedup_key,
             "title": ev.title,
             "date": ev.date.isoformat() if ev.date else None,
             "date_end": ev.date_end.isoformat() if ev.date_end else None,
-            "venue": ev.venue or "",
+            # La stessa venue arriva con grafie diverse a seconda della fonte:
+            # si canonicalizza qui, in uscita, lasciando intatto il DB.
+            "venue": venue,
             "venue_address": ev.venue_address or "",
             "event_type": ev.event_type or "",
             "artists": ev.artists or [],
@@ -57,8 +62,8 @@ def export_events_json(days: int = 45) -> Path:
             "match": match_data,
         })
 
-        if ev.venue:
-            all_venues.add(ev.venue)
+        if venue:
+            all_venues.add(venue)
         all_genres.update(g for g in ev.genres if g)
         if ev.event_type:
             all_types.add(ev.event_type)
